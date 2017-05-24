@@ -1,5 +1,10 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\astroncite{chi}{}]{chime:16}
+Chime speech separation and recognition challenge.
+\newblock \url{http://spandh.dcs.shef.ac.uk/chime_challenge/}.
+\newblock Accessed: 2016-02-18.
+
 \bibitem[\protect\astroncite{Allen and Fernandez}{1960}]{allen:60}
 Allen, G. and Fernandez, C. (1960).
 \newblock The mechanism of bone conduction.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.5.15)  24 MAY 2017 08:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.5.15)  24 MAY 2017 15:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -439,14 +439,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip57
 )
-(./chapter_2.aux
-
-LaTeX Warning: Label `spctgrmNarrowMouthNoise_35' multiply defined.
-
-
-LaTeX Warning: Label `sub@spctgrmNarrowMouthNoise_35' multiply defined.
-
-)
+(./chapter_2.aux)
 \openout1 = `chapter_2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
@@ -537,185 +530,179 @@ Underfull \hbox (badness 2035) in paragraph at lines 165--167
  []
 
 [2 <./figure/bekesy60-3b.png>] [3]
-<figure/eac_mod_diffs.png, id=139, 369.38pt x 381.425pt>
+<figure/eac_mod_diffs.png, id=143, 369.38pt x 381.425pt>
 File: figure/eac_mod_diffs.png Graphic file (type png)
 
 <use figure/eac_mod_diffs.png>
 Package pdftex.def Info: figure/eac_mod_diffs.png used on input line 189.
 (pdftex.def)             Requested size: 213.19627pt x 220.14993pt.
  [4]
-
-LaTeX Warning: Reference `fig:hansenAverageOEb' on page 5 undefined on input li
-ne 208.
-
-[5 <./figure/eac_mod_diffs.png>]
-<figure/hansenAverageOE.png, id=218, 701.62125pt x 602.25pt>
-File: figure/hansenAverageOE.png Graphic file (type png)
-
-<use figure/hansenAverageOE.png>
-Package pdftex.def Info: figure/hansenAverageOE.png used on input line 217.
-(pdftex.def)             Requested size: 213.19627pt x 183.00136pt.
-
-<figure/Hansen_OE-plot_a.png, id=219, 235.63031pt x 155.07938pt>
-File: figure/Hansen_OE-plot_a.png Graphic file (type png)
-
-<use figure/Hansen_OE-plot_a.png>
-Package pdftex.def Info: figure/Hansen_OE-plot_a.png used on input line 224.
-(pdftex.def)             Requested size: 213.19627pt x 140.31552pt.
-
-<figure/Hansen_OE-plot_b.png, id=220, 234.8775pt x 152.82094pt>
-File: figure/Hansen_OE-plot_b.png Graphic file (type png)
-
-<use figure/Hansen_OE-plot_b.png>
-Package pdftex.def Info: figure/Hansen_OE-plot_b.png used on input line 227.
-(pdftex.def)             Requested size: 213.19627pt x 138.71513pt.
- [6] [7]
-
-Package natbib Warning: Citation `tonndorf:97' on page 8 undefined on input lin
-e 250.
-
-<figure/BCrelAC_e_s.png, id=268, 953.5625pt x 376.40625pt>
+<figure/BCrelAC_e_s.png, id=179, 842.14626pt x 319.1925pt>
 File: figure/BCrelAC_e_s.png Graphic file (type png)
 
 <use figure/BCrelAC_e_s.png>
-Package pdftex.def Info: figure/BCrelAC_e_s.png used on input line 257.
-(pdftex.def)             Requested size: 426.39255pt x 168.31294pt.
- [8] [9 <./figure/BCrelAC_e_s.png> <./figure/hansenAverageOE.png (PNG copy)> <.
-/figure/Hansen_OE-plot_a.png (PNG copy)> <./figure/Hansen_OE-plot_b.png (PNG co
-py)>]
-<figure/BC_rel_AC_all.png, id=290, 457.71pt x 709.65125pt>
+Package pdftex.def Info: figure/BCrelAC_e_s.png used on input line 212.
+(pdftex.def)             Requested size: 426.39255pt x 161.61223pt.
+ [5]
+
+Package wrapfig Warning: Collision between wrapping environments on input line 
+220.
+
+<figure/BC_rel_AC_all.png, id=195, 457.71pt x 709.65125pt>
 File: figure/BC_rel_AC_all.png Graphic file (type png)
 
 <use figure/BC_rel_AC_all.png>
-Package pdftex.def Info: figure/BC_rel_AC_all.png used on input line 267.
+Package pdftex.def Info: figure/BC_rel_AC_all.png used on input line 222.
 (pdftex.def)             Requested size: 213.19627pt x 330.54749pt.
-
+ [6 <./figure/BCrelAC_e_s.png (PNG copy)>]
+[7 <./figure/eac_mod_diffs.png>]
 
 Package wrapfig Warning: Collision between wrapping environments on input line 
-279.
+234.
 
-<figure/bekesy60-3.png, id=304, 331.89998pt x 178.86826pt>
+<figure/bekesy60-3.png, id=221, 331.89998pt x 178.86826pt>
 File: figure/bekesy60-3.png Graphic file (type png)
 
 <use figure/bekesy60-3.png>
-Package pdftex.def Info: figure/bekesy60-3.png used on input line 280.
+Package pdftex.def Info: figure/bekesy60-3.png used on input line 235.
 (pdftex.def)             Requested size: 213.19627pt x 114.89833pt.
- [10] [11 <./figure/BC_rel_AC_all.png>] [12 <./figure/bekesy60-3.png>]
+ [8] [9 <./figure/BC_rel_AC_all.png>]
+<figure/bekesy60-1.png, id=254, 257.46187pt x 150.14093pt>
+File: figure/bekesy60-1.png Graphic file (type png)
 
-Package natbib Warning: Citation `chimeURL:2016' on page 13 undefined on input 
-line 309.
+<use figure/bekesy60-1.png>
+Package pdftex.def Info: figure/bekesy60-1.png used on input line 250.
+(pdftex.def)             Requested size: 213.19627pt x 124.33055pt.
+ [10 <./figure/bekesy60-3.png>] [11 <./figure/bekesy60-1.png>] <figure/hansenAv
+erageOE.png, id=321, 701.62125pt x 602.25pt>
+File: figure/hansenAverageOE.png Graphic file (type png)
 
+<use figure/hansenAverageOE.png>
+Package pdftex.def Info: figure/hansenAverageOE.png used on input line 270.
+(pdftex.def)             Requested size: 213.19627pt x 183.00136pt.
 
-Package natbib Warning: Citation `factoryURL' on page 13 undefined on input lin
-e 309.
+<figure/Hansen_OE-plot_a.png, id=322, 235.63031pt x 155.07938pt>
+File: figure/Hansen_OE-plot_a.png Graphic file (type png)
 
+<use figure/Hansen_OE-plot_a.png>
+Package pdftex.def Info: figure/Hansen_OE-plot_a.png used on input line 277.
+(pdftex.def)             Requested size: 213.19627pt x 140.31552pt.
 
-Package natbib Warning: Citation `harvardSentencesURL' on page 13 undefined on 
-input line 314.
+<figure/Hansen_OE-plot_b.png, id=323, 234.8775pt x 152.82094pt>
+File: figure/Hansen_OE-plot_b.png Graphic file (type png)
 
-[13]
+<use figure/Hansen_OE-plot_b.png>
+Package pdftex.def Info: figure/Hansen_OE-plot_b.png used on input line 280.
+(pdftex.def)             Requested size: 213.19627pt x 138.71513pt.
+ [12] [13 <./figure/hansenAverageOE.png (PNG copy)> <./figure/Hansen_OE-plot_a.
+png (PNG copy)> <./figure/Hansen_OE-plot_b.png (PNG copy)>] [14]
 
-LaTeX Warning: Reference `appendixB' on page 14 undefined on input line 327.
-
-
-LaTeX Warning: Reference `appendixB' on page 14 undefined on input line 327.
-
-[14]
-
-LaTeX Warning: Reference `earplugInserted0.png' on page 15 undefined on input l
-ine 329.
-
-
-LaTeX Warning: Reference `overallSetUp1.png' on page 15 undefined on input line
- 331.
-
-
-LaTeX Warning: Reference `appendixB' on page 15 undefined on input line 331.
+Package natbib Warning: Citation `harvardsentenceURL' on page 15 undefined on i
+nput line 328.
 
 [15]
 
-LaTeX Warning: Reference `microphoneDetailSetup2.png' on page 16 undefined on i
-nput line 333.
+LaTeX Warning: Reference `appendixB' on page 16 undefined on input line 341.
+
+
+LaTeX Warning: Reference `appendixB' on page 16 undefined on input line 341.
 
 [16]
 
-LaTeX Warning: Reference `appendixC' on page 17 undefined on input line 341.
+LaTeX Warning: Reference `earplugInserted0.png' on page 17 undefined on input l
+ine 343.
 
-<figure/spctgrmNarrowMouth_35.pdf, id=371, 433.62pt x 289.08pt>
+
+LaTeX Warning: Reference `overallSetUp1.png' on page 17 undefined on input line
+ 345.
+
+
+LaTeX Warning: Reference `appendixB' on page 17 undefined on input line 345.
+
+[17]
+
+LaTeX Warning: Reference `microphoneDetailSetup2.png' on page 18 undefined on i
+nput line 347.
+
+[18]
+
+LaTeX Warning: Reference `appendixC' on page 19 undefined on input line 355.
+
+<figure/spctgrmNarrowMouth_35.pdf, id=405, 433.62pt x 289.08pt>
 File: figure/spctgrmNarrowMouth_35.pdf Graphic file (type pdf)
 
 <use figure/spctgrmNarrowMouth_35.pdf>
-Package pdftex.def Info: figure/spctgrmNarrowMouth_35.pdf used on input line 35
-1.
+Package pdftex.def Info: figure/spctgrmNarrowMouth_35.pdf used on input line 36
+5.
 (pdftex.def)             Requested size: 213.19627pt x 142.13123pt.
 
-<figure/spctgrmWideMouth_35.pdf, id=372, 433.62pt x 289.08pt>
+<figure/spctgrmWideMouth_35.pdf, id=406, 433.62pt x 289.08pt>
 File: figure/spctgrmWideMouth_35.pdf Graphic file (type pdf)
 
 <use figure/spctgrmWideMouth_35.pdf>
-Package pdftex.def Info: figure/spctgrmWideMouth_35.pdf used on input line 358.
+Package pdftex.def Info: figure/spctgrmWideMouth_35.pdf used on input line 372.
 
 (pdftex.def)             Requested size: 213.19627pt x 142.13123pt.
-
-<figure/spctgrmNarrowEar_35.pdf, id=373, 433.62pt x 289.08pt>
+ [19]
+<figure/spctgrmNarrowEar_35.pdf, id=418, 433.62pt x 289.08pt>
 File: figure/spctgrmNarrowEar_35.pdf Graphic file (type pdf)
 
 <use figure/spctgrmNarrowEar_35.pdf>
-Package pdftex.def Info: figure/spctgrmNarrowEar_35.pdf used on input line 371.
+Package pdftex.def Info: figure/spctgrmNarrowEar_35.pdf used on input line 385.
 
 (pdftex.def)             Requested size: 213.19627pt x 142.13123pt.
 
-<figure/spctgrmWideEar_35.pdf, id=374, 433.62pt x 289.08pt>
+<figure/spctgrmWideEar_35.pdf, id=419, 433.62pt x 289.08pt>
 File: figure/spctgrmWideEar_35.pdf Graphic file (type pdf)
 
 <use figure/spctgrmWideEar_35.pdf>
-Package pdftex.def Info: figure/spctgrmWideEar_35.pdf used on input line 378.
+Package pdftex.def Info: figure/spctgrmWideEar_35.pdf used on input line 392.
 (pdftex.def)             Requested size: 213.19627pt x 142.13123pt.
- [17] [18 <./figure/spctgrmNarrowMouth_35.pdf> <./figure/spctgrmWideMouth_35.pd
-f> <./figure/spctgrmNarrowEar_35.pdf> <./figure/spctgrmWideEar_35.pdf>]
-<figure/spctgrmNarrowMthNoise_35.pdf, id=456, 433.62pt x 289.08pt>
+
+<figure/spctgrmNarrowMthNoise_35.pdf, id=422, 433.62pt x 289.08pt>
 File: figure/spctgrmNarrowMthNoise_35.pdf Graphic file (type pdf)
 
 <use figure/spctgrmNarrowMthNoise_35.pdf>
 Package pdftex.def Info: figure/spctgrmNarrowMthNoise_35.pdf used on input line
- 396.
+ 410.
 (pdftex.def)             Requested size: 213.19627pt x 142.13123pt.
 
-<figure/spctgrmNarrowEarNoise_35.pdf, id=457, 433.62pt x 289.08pt>
+<figure/spctgrmNarrowEarNoise_35.pdf, id=423, 433.62pt x 289.08pt>
 File: figure/spctgrmNarrowEarNoise_35.pdf Graphic file (type pdf)
 
 <use figure/spctgrmNarrowEarNoise_35.pdf>
 Package pdftex.def Info: figure/spctgrmNarrowEarNoise_35.pdf used on input line
- 403.
+ 417.
 (pdftex.def)             Requested size: 213.19627pt x 142.13123pt.
-
-<figure/spctgrmNarrowEarNoisePremp.pdf, id=459, 433.62pt x 289.08pt>
+ [20 <./figure/spctgrmNarrowMouth_35.pdf> <./figure/spctgrmWideMouth_35.pdf> <.
+/figure/spctgrmNarrowEar_35.pdf> <./figure/spctgrmWideEar_35.pdf>]
+<figure/spctgrmNarrowEarNoisePremp.pdf, id=494, 433.62pt x 289.08pt>
 File: figure/spctgrmNarrowEarNoisePremp.pdf Graphic file (type pdf)
 
 <use figure/spctgrmNarrowEarNoisePremp.pdf>
 Package pdftex.def Info: figure/spctgrmNarrowEarNoisePremp.pdf used on input li
-ne 414.
+ne 428.
 (pdftex.def)             Requested size: 213.19627pt x 142.13123pt.
 
-<figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf, id=462, 433.62pt x 289.08pt>
+<figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf, id=497, 433.62pt x 289.08pt>
 File: figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf Graphic file (type pdf)
 
 <use figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf>
 Package pdftex.def Info: figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf used on
- input line 425.
+ input line 439.
 (pdftex.def)             Requested size: 213.19627pt x 142.13123pt.
 File: figure/spctgrmNarrowMthNoise_35.pdf Graphic file (type pdf)
 
 <use figure/spctgrmNarrowMthNoise_35.pdf>
 Package pdftex.def Info: figure/spctgrmNarrowMthNoise_35.pdf used on input line
- 432.
+ 446.
 (pdftex.def)             Requested size: 213.19627pt x 142.13123pt.
- [19 <./figure/spctgrmNarrowMthNoise_35.pdf> <./figure/spctgrmNarrowEarNoise_35
-.pdf> <./figure/spctgrmNarrowEarNoisePremp.pdf>] (./chapter_2.bbl [20 <./figure
+ [21 <./figure/spctgrmNarrowMthNoise_35.pdf> <./figure/spctgrmNarrowEarNoise_35
+.pdf> <./figure/spctgrmNarrowEarNoisePremp.pdf>] (./chapter_2.bbl [22 <./figure
 /spctgrmNarrowEarNoisePrempFiltPremp.pdf>]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¶ in font cmr12!
- [21
+ [23
 
 ]
 Missing character: There is no Ã in font cmr12!
@@ -732,35 +719,32 @@ Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¥ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¶ in font cmr12!
- [22])
+ [24])
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 451.
-[23]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 451.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 465.
+[25]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 465.
  (./chapter_2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 451.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 451.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 465.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 465.
 Package rerunfilecheck Info: File `chapter_2.out' has not changed.
 (rerunfilecheck)             Checksum: A27ACB3EAC2EFFB1AC4FE857B1C49C98;722.
 
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 451.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 465.
  ) 
 Here is how much of TeX's memory you used:
- 10162 strings out of 493304
- 150527 string characters out of 6139871
- 249965 words of memory out of 5000000
- 13377 multiletter control sequences out of 15000+600000
- 10536 words of font info for 37 fonts, out of 8000000 for 9000
+ 10179 strings out of 493304
+ 150860 string characters out of 6139871
+ 251285 words of memory out of 5000000
+ 13384 multiletter control sequences out of 15000+600000
+ 10705 words of font info for 38 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 48i,9n,75p,1314b,600s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,9n,75p,1463b,600s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
@@ -768,11 +752,12 @@ ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmti12.pfb></usr/share/texmf/fonts/type1/fkr/tipa/tipa12.pfb>
-Output written on chapter_2.pdf (23 pages, 10243329 bytes).
+lic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/fkr/tipa/tipa12.pfb>
+Output written on chapter_2.pdf (25 pages, 10478476 bytes).
 PDF statistics:
- 602 PDF objects out of 1000 (max. 8388607)
- 499 compressed objects within 5 object streams
- 88 named destinations out of 1000 (max. 500000)
- 169 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 646 PDF objects out of 1000 (max. 8388607)
+ 536 compressed objects within 6 object streams
+ 96 named destinations out of 1000 (max. 500000)
+ 174 words of extra memory for PDF output out of 10000 (max. 10000000)
 
