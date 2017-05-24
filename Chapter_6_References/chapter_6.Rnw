@@ -1,0 +1,49 @@
+% Sample Dissertation, Thesis, or Document %
+%            for use with the              %
+%  University of Arizona Thesis Class,     %
+%               uathesis.cls               %
+%------------------------------------------%
+
+% We'll use the uathesis document class (duh).  The uncommented line
+% below will produce a Dissertation, the others would produce a Thesis
+% or a Document.  There are other options available to you like turning
+% on the copyright statement and replacing the year on the title page
+% with a "generated on" stamp (handy for early drafts).  To find out
+% what the available options are, take a look into the uathesis.cls
+% file and look for the \DeclareOption commands near the top of that
+% file.
+% There are five copyright options.  Copyright, no copyright, and three
+% different Creative Commons licences.  Use the one you want (If you go
+% Creative Commons, I (DM) think the CC-BY-ND makes the most sense)  See
+% uathesis.cls for the reason why the non-commercial licenses are not
+% included.
+\documentclass[dissertation]{uathesis}
+%\documentclass[dissertation,copyright]{uathesis}
+%\documentclass[dissertation,CC-BY]{uathesis}
+%\documentclass[dissertation,CC-BY-SA]{uathesis}
+%documentclass[dissertation,CC-BY-ND]{uathesis}
+%\documentclass[thesis]{uathesis}
+%\documentclass[document]{uathesis}
+
+% Package Usage
+% These are the packages that we need
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{natbib}		
+
+%Also works! Change dvips to driverfallback=dvips.
+\usepackage[driverfallback=dvips,bookmarks,colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black]{hyperref}
+
+
+\begin{document}
+
+
+\nocite{liberman_role_1954, halle_acoustic_1957, ohman_coarticulation_1966, liberman_perception_1967, cole_toward_1974, dorman_perception_1975, stevens_invariant_1978, blumstein_acoustic_1979, blumstein_perceptual_1980, klatt_software_1980, remez_speech_1981, stevens_search_1981, walley_onset_1983, kewley-port_perception_1983, nearey_formant_1987, sussman_neural_1989, sussman_investigation_1991, remez_perceptual_1994, sussman_locus_1995, association_guidelines_1997, fruchter_perceptual_1997, story_2005, hillenbrand_open_2005, story_vowel_2009, lindblom_2010, iskarous_locus_2010, story_2010, warner_phonetic_2011, lindblom_dissecting_2012, lotto_speech_2015, lotto_frame_2015, lotto_chapter_2016}
+
+% Create the References list
+%\bibliographystyle{uabibnat}
+\bibliographystyle{apa}
+\bibliography{Diss_Bib}
+
+%\printbibliography
+\end{document}

@@ -1,0 +1,98 @@
+% Sample Dissertation, Thesis, or Document %
+%            for use with the              %
+%  University of Arizona Thesis Class,     %
+%               uathesis.cls               %
+%------------------------------------------%
+
+% We'll use the uathesis document class (duh).  The uncommented line
+% below will produce a Dissertation, the others would produce a Thesis
+% or a Document.  There are other options available to you like turning
+% on the copyright statement and replacing the year on the title page
+% with a "generated on" stamp (handy for early drafts).  To find out
+% what the available options are, take a look into the uathesis.cls
+% file and look for the \DeclareOption commands near the top of that
+% file.
+% There are five copyright options.  Copyright, no copyright, and three
+% different Creative Commons licences.  Use the one you want (If you go
+% Creative Commons, I (DM) think the CC-BY-ND makes the most sense)  See
+% uathesis.cls for the reason why the non-commercial licenses are not
+% included.
+\documentclass[dissertation]{uathesis}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+%\documentclass[dissertation,copyright]{uathesis}
+%\documentclass[dissertation,CC-BY]{uathesis}
+%\documentclass[dissertation,CC-BY-SA]{uathesis}
+%documentclass[dissertation,CC-BY-ND]{uathesis}
+%\documentclass[thesis]{uathesis}
+%\documentclass[document]{uathesis}
+
+% Package Usage
+% These are the packages that we need
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{natbib}		
+
+%Also works! Change dvips to driverfallback=dvips.
+\usepackage[driverfallback=dvips,bookmarks,colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black]{hyperref}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+
+\nocite{liberman_role_1954, halle_acoustic_1957, ohman_coarticulation_1966, liberman_perception_1967, cole_toward_1974, dorman_perception_1975, stevens_invariant_1978, blumstein_acoustic_1979, blumstein_perceptual_1980, klatt_software_1980, remez_speech_1981, stevens_search_1981, walley_onset_1983, kewley-port_perception_1983, nearey_formant_1987, sussman_neural_1989, sussman_investigation_1991, remez_perceptual_1994, sussman_locus_1995, association_guidelines_1997, fruchter_perceptual_1997, story_2005, hillenbrand_open_2005, story_vowel_2009, lindblom_2010, iskarous_locus_2010, story_2010, warner_phonetic_2011, lindblom_dissecting_2012, lotto_speech_2015, lotto_frame_2015, lotto_chapter_2016}
+
+% Create the References list
+%\bibliographystyle{uabibnat}
+\bibliographystyle{apa}
+\bibliography{Diss_Bib}
+
+%\printbibliography
+\end{document}

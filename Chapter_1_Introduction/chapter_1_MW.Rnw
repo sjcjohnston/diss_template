@@ -1,0 +1,83 @@
+%\Sexpr{set_parent(‘/Users/mwilli/Documents/Spring_2017/Dissertation_Document/Dissertation_Working_Directory_Draft/Dissertation_Main.Rnw')}
+
+<<chunk_options, echo=FALSE>>=
+# This is where we set basic knitr options.
+opts_chunk$set(echo=TRUE, message=FALSE, warning = FALSE, cache = FALSE, comment="")
+options(width=75) # This sets how wide the R printout can be.
+@
+
+ <<setup-child, include=FALSE>>=
+ set_parent('/home/sam/Templates/Final_Dissertation_Template_3_5_17/Dissertation_Main_Template/Dissertation_Main.Rnw')
+@
+
+<<load_libraries, echo=FALSE>>=
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(lme4)
+library(lsmeans)
+library(car)
+library(pbkrtest)
+library(xtable)
+library(cowplot)
+library(plyr)
+@
+
+\chapter{Relative Theories of Place Perception\label{chapter1}}
+
+
+\section{Introduction}
+
+The purpose of Experiment 1 is to investigate the perceptual, predictive power of relative formant deflection patterns compared to locus equation variables. The study consists of a partial re-creation of the pseudo-stop, synthetic speech experiment conducted by Lindblom and Sussman (2010) using an airway modulation model of the vocal tract area function (Story, 2005). The goal of the experiment is to 1) test the direct predictive nature of locus equation variables and relative formant deflection patterns; 2) demonstrate how relative formant deflection patterns differ from a locus equation-based theory of stop consonant perception.\footnote{Look at me!  I'm a footnote!}.
+
+
+\section{Math Example\label{math}}
+
+This is a real short example of using the equation environment.
+
+\begin{equation}
+	y = mx + b
+\end{equation}
+
+There is an awful lot that the equation environment and math mode
+can do for you.
+
+\section{Experiment 1: Relative Formant Deflection Patterns vs. Locus Equations\label{Exp1}}
+\subsection{Methods}
+Here are my methods.
+\subsection{Results}
+Here are my results. 
+\section{Summary and Discussion}
+Here is my summary and discussion.
+\section{Conclusion}
+Here is my conclusion for this chapter.
+
+
+<<Exp_1_Graph, echo=FALSE, eval = TRUE, fig.cap = "Plot 1", results='asis', include=TRUE>>=
+
+#Visualize Exp.1 Data:
+
+#Read in Exp.1 data:
+Exp1Data <- read.csv("/Users/mwilli/Documents/Spring_2017/Dissertation_Data/Experiment_1/Exp1_Summary_Data_for_Stats/Exp1_Dissertation_Data_Summary.csv")
+Exp1Data$Hypothesis <- revalue(Exp1Data$Hypothesis, c("LE"="Locus Equation", "RFDP"="Relative Formant Deflection Pattern"))
+
+#Bar Graph with error bar Exp.1:
+ggplot(Exp1Data, aes(x=Hypothesis, y=Percent_Participant_Agreement, fill=Vowel_Context)) + 
+    stat_summary(fun.y = mean, geom = "bar", position="dodge") + 
+    stat_summary(fun.data = mean_se, geom = "errorbar", position="dodge") +ggtitle("Hypothesis Comparison") + labs(x=" Hypothesis ", y=" % Participant Agreement") +ylim(0,100)
+
+@
+
+<<Exp_1_Data, echo=FALSE, results='asis', include=TRUE>>=
+
+#Stats with Mean and Standard deviation:
+library(doBy)
+tab <- summaryBy(Percent_Participant_Agreement ~ Hypothesis + Vowel_Context, data = Exp1Data, FUN = function(x) { c(m = mean(x), s = sd(x)) } )
+
+library(xtable)
+tab2 <- xtable(tab, caption = "Hypothesis Evaluation Results")
+print(tab2)
+
+
+@
+

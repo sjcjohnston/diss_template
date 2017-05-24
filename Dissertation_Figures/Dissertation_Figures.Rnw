@@ -1,0 +1,565 @@
+% Sample Dissertation, Thesis, or Document %
+%            for use with the              %
+%  University of Arizona Thesis Class,     %
+%               uathesis.cls               %
+%------------------------------------------%
+
+% We'll use the uathesis document class (duh).  The uncommented line
+% below will produce a Dissertation, the others would produce a Thesis
+% or a Document.  There are other options available to you like turning
+% on the copyright statement and replacing the year on the title page
+% with a "generated on" stamp (handy for early drafts).  To find out
+% what the available options are, take a look into the uathesis.cls
+% file and look for the \DeclareOption commands near the top of that
+% file.
+% There are five copyright options.  Copyright, no copyright, and three
+% different Creative Commons licences.  Use the one you want (If you go
+% Creative Commons, I (DM) think the CC-BY-ND makes the most sense)  See
+% uathesis.cls for the reason why the non-commercial licenses are not
+% included.
+\documentclass[dissertation]{uathesis}
+%\documentclass[dissertation,copyright]{uathesis}
+%\documentclass[dissertation,CC-BY]{uathesis}
+%\documentclass[dissertation,CC-BY-SA]{uathesis}
+%documentclass[dissertation,CC-BY-ND]{uathesis}
+%\documentclass[thesis]{uathesis}
+%\documentclass[document]{uathesis}
+
+% Package Usage
+% These are the packages that we need
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{natbib}			% natbib is available on most systems, and is
+					% terribly handy.
+					% If you want to use a different Bibliography package, 
+					% you should be able to, just change this
+					% and the \bibliographystyle command below.  Be warned
+					% that you may need to do a little hacking to get
+					% the REFERENCES item to show up in your TOC.
+
+% Compatibility with the AASTEX package 
+% of the American Astronomical Society.
+%\usepackage{deluxetable}		% Allows use of AASTEX deluxe tables
+%\usepackage{aastex_hack}		% Allows other AASTEX functionality.
+
+% These are other packages that you might find useful.
+% For controlling the fonts, see
+% http://www.math.uiuc.edu/~hartke/computer/latex/survey/survey.html
+% The following is a nice font set:
+%\usepackage{mathtime}			% Times for letters; Belleek math.
+%
+%\usepackage{amsmath}			% AMS Math (advanced math typesetting)
+%\usepackage{lscape}			% Used for making fitting large tables in by putting them landscape
+%\usepackage{refs}			
+%
+% If you are using hyper-ref (recommended), this command must go after all 
+% other package inclusions (from the hyperref package documentation).
+% The purpose of hyperref is to make the PDF created extensively
+% cross-referenced.
+
+%Also works! Change dvips to driverfallback=dvips.
+\usepackage[driverfallback=dvips,bookmarks,colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black]{hyperref}
+
+%Works!
+%\usepackage[pdftex,bookmarks,colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black]{hyperref}
+%HERE IS THE THING THAT NEEDS TO CHANGE TO GET LATEX TO WORK WITH RSTUDIO. USE pdftex instead of dvips.
+
+% Set up some values.
+\completetitle{Working Title: Perception of Patterns of Relative Formant Change in Reduced, Voiced, Stop Consonants}
+\fullname{Megan Marie Willi}			% Grad college wants your full name here.
+\degreename{Doctor of Philosophy}	% Title of your degree.
+
+\begin{document}
+
+
+% Set up the title page
+\maketitlepage
+{DEPARTMENT OF SPEECH, LANGUAGE, AND HEARING SCIENCES}	% Title of your department.
+{2017}							
+
+% Insert the approval form.  Note that for electronic submission
+% of your Ph. D. dissertation, you must bring *two* copies of the
+% approval page to your final defense.  These must be signed by
+% the committee.  Make two photocopies: one for Pam and the other
+% for your records.  Then, bring the two signed originals to the
+% graduate college when you submit the final version of the
+% dissertation to the University of Arizona.
+\approval
+{10 April 2017}		% Defense Date	
+{Brad Story}	% Dissertation Director
+{Brad Story}	% 1st committee member
+{Natasha Warner}		% 2nd committee member
+{Elena Plante}		% 3rd committee member
+{}		% 4th committee member
+{}		% 5th committee member
+
+% Include the ``Statement by Author'' for Dissertations
+\statementbyauthor
+% If this is a Thesis, use the following form, with your thesis director's
+% name and title in the square brackets like so (you should also omit the 
+% approval form insertion above):
+%\statementbyauthor[Jane M. Doe\\Professor of Chemistry]
+
+% Include the ``Acknowledgements''
+\incacknowledgements{acknowledgements}
+
+% Include the ``Dedication''
+\incdedication{dedication}
+
+% Create a ``Table of Contents''
+\tableofcontents
+
+% Create a ``List of Figures''
+\listoffigures
+
+% Create a ``List of Tables''
+\listoftables
+
+% Include the ``Abstract''
+\incabstract{abstract}
+
+<<chunk_options, echo=FALSE>>=
+# This is where we set basic knitr options.
+opts_chunk$set(echo=TRUE, message=FALSE, warning = FALSE, cache = FALSE, comment="")
+options(width=75) # This sets how wide the R printout can be.
+@
+
+<<load_libraries, echo=FALSE>>=
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(lme4)
+library(lsmeans)
+library(car)
+library(pbkrtest)
+library(xtable)
+library(cowplot)
+library(plyr)
+@
+
+<<Exp_1_Data, echo=FALSE, results='asis'>>=
+
+#Visualize Exp.1 Data:
+
+#Read in Exp.1 data:
+Exp1Data <- read.csv("/Users/mwilli/Documents/Spring_2017/Dissertation_Data/Experiment_1/Exp1_Summary_Data_for_Stats/Exp1_Dissertation_Data_Summary.csv")
+Exp1Data$Hypothesis <- revalue(Exp1Data$Hypothesis, c("LE"="Locus Equation", "RFDP"="Relative Formant Deflection Pattern"))
+
+#Bar Graph with error bar Exp.1:
+ggplot(Exp1Data, aes(x=Hypothesis, y=Percent_Participant_Agreement, fill=Vowel_Context)) + 
+    stat_summary(fun.y = mean, geom = "bar", position="dodge") + 
+    stat_summary(fun.data = mean_se, geom = "errorbar", position="dodge") +ggtitle("Hypothesis Comparison") + labs(x=" Hypothesis ", y=" % Participant Agreement") +ylim(0,100)
+
+#Stats with Mean and Standard deviation:
+library(doBy)
+tab <- summaryBy(Percent_Participant_Agreement ~ Hypothesis + Vowel_Context, data = Exp1Data, FUN = function(x) { c(m = mean(x), s = sd(x)) } )
+
+library(xtable)
+tab2 <- xtable(tab, caption = "Demographic information")
+#print(tab2)
+## If I want to print an xtable using the 'xtable' command rather than having xtable output code that if included in the 'LaTex' portion of the document will create a table, then I need to uncomment 'print(tab2) and make sure 'results' in the code block specifications is set to 'asis' (i.e. as is).
+
+@
+
+%Print xtable then hand edit:
+\begin{table}[ht]
+\centering
+\begin{tabular}{rllrr}
+  \hline
+ & Hypothesis & Vowel & Mean & Standard Deviation \\ 
+  \hline
+1 & LE & V0 & 23.03 & 4.54 \\ 
+  2 & LE & V1 & 39.88 & 21.75 \\ 
+  3 & LE & V2 & 23.03 & 5.72 \\ 
+  4 & LE & V3 & 23.03 & 3.10 \\ 
+  5 & RFDP & V0 & 75.27 & 6.40 \\ 
+  6 & RFDP & V1 & 55.03 & 18.62 \\ 
+  7 & RFDP & V2 & 73.94 & 6.15 \\ 
+  8 & RFDP & V3 & 64.97 & 8.54 \\ 
+   \hline
+\end{tabular}
+\caption{Percent Participant Agreeement} 
+\end{table}
+
+
+<<Exp_2_Data, echo=FALSE>>=
+
+#Visualize Exp.2 Data:
+
+#Read in Exp.2 data Place:
+Exp2Data_Place <- read.csv("/Users/mwilli/Documents/Spring_2017/Dissertation_Data/Experiment_2/Exp2_Stats_Summary/Exp.2_Place_Stats_Data.csv")
+
+#Plot descriptive Bar Graph:
+ggplot(Exp2Data_Place, aes(x=Place, y=Per_Pattern_Match)) + geom_bar(stat="identity", position="dodge")+ggtitle("Acoustic Validation Place") +labs(x=" Place ", y=" % Pattern Match") +ylim(0,100)
+ 
+#Read in Exp.2 data RFDP:
+Exp2Data_RFDP <- read.csv("/Users/mwilli/Documents/Spring_2017/Dissertation_Data/Experiment_2/Exp2_Stats_Summary/Exp.2_RFDP_Stats_Data.csv")
+Exp2Data_RFDP$RFDP <- factor(Exp2Data_RFDP$RFDP, levels = c("DDD","DDU","DUU","DUD"))
+Exp2Data_RFDP$RFDP <- revalue(Exp2Data_RFDP$RFDP, c("DDD"="---", "DDU"="--+", "DUU"="-++", "DUD"="-+-"))
+
+#Plot descriptive Bar Graph:
+ggplot(Exp2Data_RFDP, aes(x=RFDP, y=Per_Pattern_Match, fill=RFDP)) + geom_bar(stat="identity", position="dodge")+ggtitle("Acoustic Validation Relative Formant Deflection Pattern") +labs(x=" Relative Formant Deflection Pattern ", y=" % Pattern Match") +ylim(0,100)
+
+@
+
+<<Exp_3_Data, echo=FALSE>>=
+
+#Visualize Exp.3 Data:
+
+#Read in Exp.3 data and change/order variables:
+Exp3Data <- read.csv("/Users/mwilli/Documents/Spring_2017/Dissertation_Data/Experiment_3/Exp.3_Summary_Data_for_Stats/Exp3_Dissertation_Data_Summary.csv")
+Exp3Data$Predicted.RFDP <- factor(Exp3Data$Predicted.RFDP, levels = c("DDD","DDU","DUU","DUD"))
+Exp3Data$Predicted.RFDP <- revalue(Exp3Data$Predicted.RFDP, c("DDD"="---", "DDU"="--+", "DUU"="-++", "DUD"="-+-"))
+
+#Bar Graph with error bar Exp.3:
+Plt1 <- ggplot(Exp3Data, aes(x=Predicted.RFDP, y=X.b, fill=Predicted.RFDP)) + 
+    stat_summary(fun.y = mean, geom = "bar", position="dodge") + 
+    stat_summary(fun.data = mean_se, geom = "errorbar", position="dodge") +ggtitle("Reduced Speech") + labs(x=" ", y=" % /b/ ID") +ylim(0,100)
+
+Plt2 <- ggplot(Exp3Data, aes(x=Predicted.RFDP, y=X.d, fill=Predicted.RFDP)) + 
+    stat_summary(fun.y = mean, geom = "bar", position="dodge") + 
+    stat_summary(fun.data = mean_se, geom = "errorbar", position="dodge") + labs(x=" ", y=" % /d/ ID") +ylim(0,100)
+
+Plt3 <- ggplot(Exp3Data, aes(x=Predicted.RFDP, y=X.g, fill=Predicted.RFDP)) + 
+    stat_summary(fun.y = mean, geom = "bar", position="dodge") + 
+    stat_summary(fun.data = mean_se, geom = "errorbar", position="dodge") + labs(x=" Relative Formant Deflection Pattern ", y=" % /g/ ID") +ylim(0,100)
+
+require(cowplot)
+plot_grid(Plt1, Plt2, Plt3, ncol = 1, rel_heights = c(1, 1, 1))
+
+#Stats with Mean and Standard deviation:
+Exp3_Avg_b <-aggregate(X.b~Predicted.RFDP, data=Exp3Data, FUN = function(x) c(mean = mean(x), sd = sd(x), n = length(x)))
+
+Exp3_Avg_b <- do.call(data.frame, Exp3_Avg_b)
+#Exp3_Avg_b
+
+Exp3_Avg_d <-aggregate(X.d~Predicted.RFDP, data=Exp3Data, FUN = function(x) c(mean = mean(x), sd = sd(x), n = length(x)))
+
+Exp3_Avg_d <- do.call(data.frame, Exp3_Avg_d)
+#Exp3_Avg_d
+
+Exp3_Avg_g <-aggregate(X.g~Predicted.RFDP, data=Exp3Data, FUN = function(x) c(mean = mean(x), sd = sd(x), n = length(x)))
+
+Exp3_Avg_g <- do.call(data.frame, Exp3_Avg_g)
+#Exp3_Avg_g
+
+## Question: The mean and standard deviation do NOT make sense. Do I need to average over items within a specific RFDP BEFORE averaging over Subjects? Or can I aggregate everything together.
+## It looks like I can aggregate across items within a RFDP without first averaging within individual subjects. But what is causing the error? Maybe I need to break data into Per_b, Per_d, Per_g before aggregating. Maybe the really high n is due to items being counted multiple times. 
+
+
+@
+
+<<Exp_4_Data, echo=FALSE>>=
+
+#Visualize Exp.4 Data:
+
+#Read in Exp.4 Data:
+Exp4Data <- read.csv("/Users/mwilli/Documents/Spring_2017/Dissertation_Data/Experiment_4/Exp4_Summary_Data_for_Stats/Exp4_Dissertation_Data_Percent_Phoneme_Summary.csv")
+Exp4Data$RFDP <- factor(Exp4Data$RFDP, levels = c("DDD","DDU","DUU","DUD"))
+Exp4Data$RFDP <- revalue(Exp4Data$RFDP, c("DDD"="---", "DDU"="--+", "DUU"="-++", "DUD"="-+-")) 
+
+#Break data into vowel context subsets:
+Ex4dataV0 <- subset(Exp4Data,Vowel_Context=="V0")
+Ex4dataV1 <- subset(Exp4Data,Vowel_Context=="V1")
+Ex4dataV2 <- subset(Exp4Data,Vowel_Context=="V2")
+Ex4dataV3 <- subset(Exp4Data,Vowel_Context=="V2")
+
+#Bar Graph with error bar Exp.4 for V0 context:
+Plt1 <- ggplot(Ex4dataV0, aes(x=RFDP, y=Percent_b, fill=Condition)) + 
+    stat_summary(fun.y = mean, geom = "bar", position="dodge") + 
+    stat_summary(fun.data = mean_se, geom = "errorbar", position="dodge") +ggtitle("Simulated vs. Sine Wave Speech") + labs(x=" ", y=" % /b/ ID") +ylim(0,100)
+
+Plt2 <- ggplot(Ex4dataV0, aes(x=RFDP, y=Percent_d, fill=Condition)) + 
+    stat_summary(fun.y = mean, geom = "bar", position="dodge") + 
+    stat_summary(fun.data = mean_se, geom = "errorbar", position="dodge") + labs(x=" ", y=" % /d/ ID") +ylim(0,100)
+
+Plt3 <- ggplot(Ex4dataV0, aes(x=RFDP, y=Percent_g, fill=Condition)) + 
+    stat_summary(fun.y = mean, geom = "bar", position="dodge") + 
+    stat_summary(fun.data = mean_se, geom = "errorbar", position="dodge") + labs(x=" Relative Formant Deflection Pattern ", y=" % /g/ ID") +ylim(0,100)
+
+require(cowplot)
+plot_grid(Plt1, Plt2, Plt3, ncol = 1, rel_heights = c(1, 1, 1))
+
+#Bar Graph with error bar Exp.4 for V1 context:
+Plt1 <- ggplot(Ex4dataV1, aes(x=RFDP, y=Percent_b, fill=Condition)) + 
+    stat_summary(fun.y = mean, geom = "bar", position="dodge") + 
+    stat_summary(fun.data = mean_se, geom = "errorbar", position="dodge") +ggtitle("Simulated vs. Sine Wave Speech") + labs(x=" ", y=" % /b/ ID") +ylim(0,100)
+
+Plt2 <- ggplot(Ex4dataV1, aes(x=RFDP, y=Percent_d, fill=Condition)) + 
+    stat_summary(fun.y = mean, geom = "bar", position="dodge") + 
+    stat_summary(fun.data = mean_se, geom = "errorbar", position="dodge") + labs(x=" ", y=" % /d/ ID") +ylim(0,100)
+
+Plt3 <- ggplot(Ex4dataV1, aes(x=RFDP, y=Percent_g, fill=Condition)) + 
+    stat_summary(fun.y = mean, geom = "bar", position="dodge") + 
+    stat_summary(fun.data = mean_se, geom = "errorbar", position="dodge") + labs(x=" Relative Formant Deflection Pattern ", y=" % /g/ ID") +ylim(0,100)
+
+require(cowplot)
+plot_grid(Plt1, Plt2, Plt3, ncol = 1, rel_heights = c(1, 1, 1))
+
+#Bar Graph with error bar Exp.4 for V2 context:
+Plt1 <- ggplot(Ex4dataV2, aes(x=RFDP, y=Percent_b, fill=Condition)) + 
+    stat_summary(fun.y = mean, geom = "bar", position="dodge") + 
+    stat_summary(fun.data = mean_se, geom = "errorbar", position="dodge") +ggtitle("Simulated vs. Sine Wave Speech") + labs(x=" ", y=" % /b/ ID") +ylim(0,100)
+
+Plt2 <- ggplot(Ex4dataV2, aes(x=RFDP, y=Percent_d, fill=Condition)) + 
+    stat_summary(fun.y = mean, geom = "bar", position="dodge") + 
+    stat_summary(fun.data = mean_se, geom = "errorbar", position="dodge") + labs(x=" ", y=" % /d/ ID") +ylim(0,100)
+
+Plt3 <- ggplot(Ex4dataV2, aes(x=RFDP, y=Percent_g, fill=Condition)) + 
+    stat_summary(fun.y = mean, geom = "bar", position="dodge") + 
+    stat_summary(fun.data = mean_se, geom = "errorbar", position="dodge") + labs(x=" Relative Formant Deflection Pattern ", y=" % /g/ ID") +ylim(0,100)
+
+require(cowplot)
+plot_grid(Plt1, Plt2, Plt3, ncol = 1, rel_heights = c(1, 1, 1))
+
+#Bar Graph with error bar Exp.4 for V3 context:
+Plt1 <- ggplot(Ex4dataV3, aes(x=RFDP, y=Percent_b, fill=Condition)) + 
+    stat_summary(fun.y = mean, geom = "bar", position="dodge") + 
+    stat_summary(fun.data = mean_se, geom = "errorbar", position="dodge") +ggtitle("Simulated vs. Sine Wave Speech") + labs(x=" ", y=" % /b/ ID") +ylim(0,100)
+
+Plt2 <- ggplot(Ex4dataV3, aes(x=RFDP, y=Percent_d, fill=Condition)) + 
+    stat_summary(fun.y = mean, geom = "bar", position="dodge") + 
+    stat_summary(fun.data = mean_se, geom = "errorbar", position="dodge") + labs(x=" ", y=" % /d/ ID") +ylim(0,100)
+
+Plt3 <- ggplot(Ex4dataV3, aes(x=RFDP, y=Percent_g, fill=Condition)) + 
+    stat_summary(fun.y = mean, geom = "bar", position="dodge") + 
+    stat_summary(fun.data = mean_se, geom = "errorbar", position="dodge") + labs(x=" Relative Formant Deflection Pattern ", y=" % /g/ ID") +ylim(0,100)
+
+require(cowplot)
+plot_grid(Plt1, Plt2, Plt3, ncol = 1, rel_heights = c(1, 1, 1))
+
+@
+
+
+<<Extra_Exp_4_Data, echo=FALSE>>=
+
+# Ex4dataV0 <- subset(Exp4Data,Vowel_Context=="V0")
+# Ex4dataV1 <- subset(Exp4Data,Vowel_Context=="V1")
+# Ex4dataV2 <- subset(Exp4Data,Vowel_Context=="V2")
+# Ex4dataV3 <- subset(Exp4Data,Vowel_Context=="V2")
+# 
+# #Average Summary for VO:
+# V0_RFDP_mean_Per_b<-aggregate(Percent_b~RFDP+Condition, data=Ex4dataV0, FUN=mean, na.rm=TRUE)
+# V0_RFDP_mean_Per_b$RFDP <- factor(V0_RFDP_mean_Per_b$RFDP, levels = c("DDD","DDU","DUU","DUD"))
+# V0_RFDP_mean_Per_b$RFDP <- revalue(V0_RFDP_mean_Per_b$RFDP, c("DDD"="---", "DDU"="--+", "DUU"="-++", "DUD"="-+-"))
+# 
+# V0_RFDP_mean_Per_d<-aggregate(Percent_d~RFDP+Condition, data=Ex4dataV0, FUN=mean, na.rm=TRUE)
+# V0_RFDP_mean_Per_d$RFDP <- factor(V0_RFDP_mean_Per_d$RFDP, levels = c("DDD","DDU","DUU","DUD"))
+# V0_RFDP_mean_Per_d$RFDP <- revalue(V0_RFDP_mean_Per_d$RFDP, c("DDD"="---", "DDU"="--+", "DUU"="-++", "DUD"="-+-"))
+# 
+# V0_RFDP_mean_Per_g<-aggregate(Percent_g~RFDP+Condition, data=Ex4dataV0, FUN=mean, na.rm=TRUE)
+# V0_RFDP_mean_Per_g$RFDP <- factor(V0_RFDP_mean_Per_g$RFDP, levels = c("DDD","DDU","DUU","DUD"))
+# V0_RFDP_mean_Per_g$RFDP <- revalue(V0_RFDP_mean_Per_g$RFDP, c("DDD"="---", "DDU"="--+", "DUU"="-++", "DUD"="-+-"))
+# 
+# #Bar Graph Exp4 V0 Data:
+# 
+# V0.plt1 <- ggplot(V0_RFDP_mean_Per_b, aes(x=RFDP, y=Percent_b, fill=Condition))+ geom_bar(stat="identity", position="dodge")+ggtitle("V0_Context") +labs(x=" ", y=" % /b/ ID")
+# 
+# V0.plt2 <- ggplot(V0_RFDP_mean_Per_d, aes(x=RFDP, y=Percent_d, fill=Condition))+ geom_bar(stat="identity", position="dodge")+labs(x=" ", y=" % /d/ ID")
+# 
+# V0.plt3 <- ggplot(V0_RFDP_mean_Per_g, aes(x=RFDP, y=Percent_g, fill=Condition))+ geom_bar(stat="identity", position="dodge") +labs(x="Relative Formant Deflection Pattern",y=" % /g/ ID")
+# 
+# require(cowplot)
+# plot_grid(V0.plt1, V0.plt2, V0.plt3, ncol = 1, rel_heights = c(1, 1, 1))
+# 
+# #Average Summary for V1:
+# V1_RFDP_mean_Per_b<-aggregate(Percent_b~RFDP+Condition, data=Ex4dataV1, FUN=mean, na.rm=TRUE)
+# V1_RFDP_mean_Per_b$RFDP <- factor(V1_RFDP_mean_Per_b$RFDP, levels = c("DDD","DDU","DUU","DUD"))
+# V1_RFDP_mean_Per_b$RFDP <- revalue(V1_RFDP_mean_Per_b$RFDP, c("DDD"="---", "DDU"="--+", "DUU"="-++", "DUD"="-+-"))
+# 
+# V1_RFDP_mean_Per_d<-aggregate(Percent_d~RFDP+Condition, data=Ex4dataV1, FUN=mean, na.rm=TRUE)
+# V1_RFDP_mean_Per_d$RFDP <- factor(V1_RFDP_mean_Per_d$RFDP, levels = c("DDD","DDU","DUU","DUD"))
+# V1_RFDP_mean_Per_d$RFDP <- revalue(V1_RFDP_mean_Per_d$RFDP, c("DDD"="---", "DDU"="--+", "DUU"="-++", "DUD"="-+-"))
+# 
+# V1_RFDP_mean_Per_g<-aggregate(Percent_g~RFDP+Condition, data=Ex4dataV1, FUN=mean, na.rm=TRUE)
+# V1_RFDP_mean_Per_g$RFDP <- factor(V1_RFDP_mean_Per_g$RFDP, levels = c("DDD","DDU","DUU","DUD"))
+# V1_RFDP_mean_Per_g$RFDP <- revalue(V1_RFDP_mean_Per_g$RFDP, c("DDD"="---", "DDU"="--+", "DUU"="-++", "DUD"="-+-"))
+# 
+# #Bar Graph Exp4 V1 Data:
+# 
+# V1.plt1 <- ggplot(V1_RFDP_mean_Per_b, aes(x=RFDP, y=Percent_b, fill=Condition))+ geom_bar(stat="identity", position="dodge")+ggtitle("V1_Context") +labs(x=" ", y=" % /b/ ID")
+# 
+# V1.plt2 <- ggplot(V1_RFDP_mean_Per_d, aes(x=RFDP, y=Percent_d, fill=Condition))+ geom_bar(stat="identity", position="dodge")+labs(x=" ", y=" % /d/ ID")
+# 
+# V1.plt3 <- ggplot(V1_RFDP_mean_Per_g, aes(x=RFDP, y=Percent_g, fill=Condition))+ geom_bar(stat="identity", position="dodge") +labs(x="Relative Formant Deflection Pattern",y=" % /g/ ID")
+# 
+# require(cowplot)
+# plot_grid(V1.plt1, V1.plt2, V1.plt3, ncol = 1, rel_heights = c(1, 1, 1))
+# 
+# #Average Summary for V2:
+# V2_RFDP_mean_Per_b<-aggregate(Percent_b~RFDP+Condition, data=Ex4dataV2, FUN=mean, na.rm=TRUE)
+# V2_RFDP_mean_Per_b$RFDP <- factor(V2_RFDP_mean_Per_b$RFDP, levels = c("DDD","DDU","DUU","DUD"))
+# V2_RFDP_mean_Per_b$RFDP <- revalue(V2_RFDP_mean_Per_b$RFDP, c("DDD"="---", "DDU"="--+", "DUU"="-++", "DUD"="-+-"))
+# 
+# V2_RFDP_mean_Per_d<-aggregate(Percent_d~RFDP+Condition, data=Ex4dataV2, FUN=mean, na.rm=TRUE)
+# V2_RFDP_mean_Per_d$RFDP <- factor(V2_RFDP_mean_Per_d$RFDP, levels = c("DDD","DDU","DUU","DUD"))
+# V2_RFDP_mean_Per_d$RFDP <- revalue(V2_RFDP_mean_Per_d$RFDP, c("DDD"="---", "DDU"="--+", "DUU"="-++", "DUD"="-+-"))
+# 
+# V2_RFDP_mean_Per_g<-aggregate(Percent_g~RFDP+Condition, data=Ex4dataV2, FUN=mean, na.rm=TRUE)
+# V2_RFDP_mean_Per_g$RFDP <- factor(V2_RFDP_mean_Per_g$RFDP, levels = c("DDD","DDU","DUU","DUD"))
+# V2_RFDP_mean_Per_g$RFDP <- revalue(V2_RFDP_mean_Per_g$RFDP, c("DDD"="---", "DDU"="--+", "DUU"="-++", "DUD"="-+-"))
+# 
+# #Bar Graph Exp4 V1 Data:
+# 
+# V2.plt1 <- ggplot(V2_RFDP_mean_Per_b, aes(x=RFDP, y=Percent_b, fill=Condition))+ geom_bar(stat="identity", position="dodge")+ggtitle("V2_Context") +labs(x=" ", y=" % /b/ ID")
+# 
+# V2.plt2 <- ggplot(V2_RFDP_mean_Per_d, aes(x=RFDP, y=Percent_d, fill=Condition))+ geom_bar(stat="identity", position="dodge")+labs(x=" ", y=" % /d/ ID")
+# 
+# V2.plt3 <- ggplot(V2_RFDP_mean_Per_g, aes(x=RFDP, y=Percent_g, fill=Condition))+ geom_bar(stat="identity", position="dodge") +labs(x="Relative Formant Deflection Pattern",y=" % /g/ ID")
+# 
+# require(cowplot)
+# plot_grid(V2.plt1, V2.plt2, V2.plt3, ncol = 1, rel_heights = c(1, 1, 1))
+# 
+# #Average Summary for V3:
+# V3_RFDP_mean_Per_b<-aggregate(Percent_b~RFDP+Condition, data=Ex4dataV3, FUN=mean, na.rm=TRUE)
+# V3_RFDP_mean_Per_b$RFDP <- factor(V3_RFDP_mean_Per_b$RFDP, levels = c("DDD","DDU","DUU","DUD"))
+# V3_RFDP_mean_Per_b$RFDP <- revalue(V3_RFDP_mean_Per_b$RFDP, c("DDD"="---", "DDU"="--+", "DUU"="-++", "DUD"="-+-"))
+# 
+# V3_RFDP_mean_Per_d<-aggregate(Percent_d~RFDP+Condition, data=Ex4dataV3, FUN=mean, na.rm=TRUE)
+# V3_RFDP_mean_Per_d$RFDP <- factor(V3_RFDP_mean_Per_d$RFDP, levels = c("DDD","DDU","DUU","DUD"))
+# V3_RFDP_mean_Per_d$RFDP <- revalue(V3_RFDP_mean_Per_d$RFDP, c("DDD"="---", "DDU"="--+", "DUU"="-++", "DUD"="-+-"))
+# 
+# V3_RFDP_mean_Per_g<-aggregate(Percent_g~RFDP+Condition, data=Ex4dataV3, FUN=mean, na.rm=TRUE)
+# V3_RFDP_mean_Per_g$RFDP <- factor(V3_RFDP_mean_Per_g$RFDP, levels = c("DDD","DDU","DUU","DUD"))
+# V3_RFDP_mean_Per_g$RFDP <- revalue(V3_RFDP_mean_Per_g$RFDP, c("DDD"="---", "DDU"="--+", "DUU"="-++", "DUD"="-+-"))
+# 
+# #Bar Graph Exp4 V3 Data:
+# 
+# V3.plt1 <- ggplot(V3_RFDP_mean_Per_b, aes(x=RFDP, y=Percent_b, fill=Condition))+ geom_bar(stat="identity", position="dodge")+ggtitle("V3_Context") +labs(x=" ", y=" % /b/ ID")
+# 
+# V3.plt2 <- ggplot(V3_RFDP_mean_Per_d, aes(x=RFDP, y=Percent_d, fill=Condition))+ geom_bar(stat="identity", position="dodge")+labs(x=" ", y=" % /d/ ID")
+# 
+# V3.plt3 <- ggplot(V3_RFDP_mean_Per_g, aes(x=RFDP, y=Percent_g, fill=Condition))+ geom_bar(stat="identity", position="dodge") +labs(x="Relative Formant Deflection Pattern",y=" % /g/ ID")
+# 
+# require(cowplot)
+# plot_grid(V3.plt1, V3.plt2, V3.plt3, ncol = 1, rel_heights = c(1, 1, 1))
+@
+
+<<Exp_4_Constriction_Location_Data, echo=FALSE>>=
+
+#Import Exp.4 Constriction Location Data:
+Exp4Data_CL <- read.csv("/Users/mwilli/Documents/Spring_2017/Dissertation_Data/Experiment_4/Exp4_Summary_Data_for_Stats/Exp4_With_Constriction_Location_Dissertation_Data_Percent_Phoneme_Summary.csv")
+
+#Create Vowel_Context Subsets:
+Ex4CLdataV0 <- subset(Exp4Data_CL,Vowel_Context=="V0")
+Ex4CLdataV1 <- subset(Exp4Data_CL,Vowel_Context=="V1")
+Ex4CLdataV2 <- subset(Exp4Data_CL,Vowel_Context=="V2")
+Ex4CLdataV3 <- subset(Exp4Data_CL,Vowel_Context=="V3")
+
+#Average Summary for VO:
+V0_Avg_b<-aggregate(Percent_b~Constriction.Location+Condition, data=Ex4CLdataV0, FUN=mean, na.rm=TRUE)
+V0_Avg_b$Percent_b <- V0_Avg_b$Percent_b/100
+
+V0_Avg_d<-aggregate(Percent_d~Constriction.Location+Condition, data=Ex4CLdataV0, FUN=mean, na.rm=TRUE)
+V0_Avg_d$Percent_d <- V0_Avg_d$Percent_d/100
+
+V0_Avg_g<-aggregate(Percent_g~Constriction.Location+Condition, data=Ex4CLdataV0, FUN=mean, na.rm=TRUE)
+V0_Avg_g$Percent_g <- V0_Avg_g$Percent_g/100
+
+
+# ID Curves with Model Fitting:
+plt1_m <- ggplot(V0_Avg_b, aes(x=Constriction.Location, y=Percent_b, group=Condition, colour=Condition)) +stat_smooth( aes(y = Percent_b),  method="glm", method.args=list(family="binomial"), se=F) 
+
+plt2_m <- ggplot(V0_Avg_d, aes(x=Constriction.Location, y=Percent_d, group=Condition, colour=Condition)) + geom_smooth(method = "lm", formula = y ~ poly(x, 3), se = FALSE) 
+
+plt3_m <- ggplot(V0_Avg_g, aes(x=Constriction.Location, y=Percent_g, group=Condition, colour=Condition)) +stat_smooth( aes(y = Percent_g),  method="glm", method.args=list(family="binomial"), se=F) 
+
+#Combining Plots:
+require(cowplot)
+plot_grid(plt1_m, plt2_m, plt3_m, ncol = 1, rel_heights = c(1,1,1))
+
+
+#ID Curves without Model Fitting:
+plt1 <- ggplot(V0_Avg_b, aes(x=Constriction.Location, y=Percent_b, group=Condition, colour=Condition)) +stat_smooth( aes(y = Percent_b), se=F) 
+
+plt2 <- ggplot(V0_Avg_d, aes(x=Constriction.Location, y=Percent_d, group=Condition, colour=Condition)) +stat_smooth( aes(y = Percent_d), se=F)
+
+plt3 <- ggplot(V0_Avg_g, aes(x=Constriction.Location, y=Percent_g, group=Condition, colour=Condition)) +stat_smooth( aes(y = Percent_g), se=F) 
+
+#Combining Plots:
+require(cowplot)
+plot_grid(plt1, plt2, plt3, ncol = 1, rel_heights = c(1,1,1))
+
+@
+
+<<Exp_5_Data, echo=FALSE>>=
+
+#Import Exp.5 Data:
+Exp5Data <- read.csv("/Users/mwilli/Documents/Spring_2017/Dissertation_Data/Experiment_5/Exp5_Summary_Data_for_Stats/Exp5_Dissertation_Data_Summary.csv")
+
+Exp5_Hypothesis <- subset(Exp5Data, Neutralized_Formants=="N_010" | Neutralized_Formants=="N_110" | Neutralized_Formants== "N_011" | Neutralized_Formants=="N_111")
+Exp5_Hypothesis$Neutralized_Formants <- factor(Exp5_Hypothesis$Neutralized_Formants, levels = c("N_010","N_110","N_011","N_111"))
+
+Exp5_Null <- subset(Exp5Data, Neutralized_Formants=="N_000" | Neutralized_Formants=="N_100" | Neutralized_Formants== "N_001" | Neutralized_Formants=="N_101")
+Exp5_Null$Neutralized_Formants <- factor(Exp5_Null$Neutralized_Formants, levels = c("N_000","N_100","N_001","N_101"))
+
+#Bar Graph with error bar Exp.5:
+plt1 <- ggplot(Exp5_Hypothesis, aes(x=Neutralized_Formants, y=Percent_Match, fill=Vowel_Context)) +
+    stat_summary(fun.y = mean, geom = "bar", position="dodge") +
+    stat_summary(fun.data = mean_se, geom = "errorbar", position="dodge") +ggtitle("Neutralized Patterns: Hypothesis") + labs(x=" Neutralized Formant Patterns ", y=" % Match with Perception") +ylim(0,100)
+
+plt2 <- ggplot(Exp5_Null, aes(x=Neutralized_Formants, y=Percent_Match, fill=Vowel_Context)) +
+    stat_summary(fun.y = mean, geom = "bar", position="dodge") +
+    stat_summary(fun.data = mean_se, geom = "errorbar", position="dodge") +ggtitle("Neutralized Patterns: Null") + labs(x=" Neutralized Formant Patterns ", y=" % Match with Perception") +ylim(0,100)
+
+require(cowplot)
+plot_grid(plt1, plt2, ncol = 1, rel_heights = c(1,1))
+
+# #Average Summary for VO:
+# V0_RFDP_mean_Per_Match<-aggregate(Percent_Match~Neutralized_Formants, data=Ex5dataV0, FUN=mean, na.rm=TRUE)
+# 
+# V0_RFDP_mean_Per_Match$Neutralized_Formants <- factor(V0_RFDP_mean_Per_Match$Neutralized_Formants, levels = c("N_000","N_100","N_010","N_001","N_101","N_110","N_011","N_111"))
+# 
+# V0_Partial <- subset(V0_RFDP_mean_Per_Match, Neutralized_Formants=="N_010" | Neutralized_Formants=="N_110" | Neutralized_Formants=="N_011" | Neutralized_Formants=="N_111")
+# 
+# #Bar Graph Exp5 V0 Data:
+# V0.plt <- ggplot(V0_RFDP_mean_Per_Match, aes(x=Neutralized_Formants, y=Percent_Match))+ geom_bar(stat="identity", position="dodge")+ggtitle("V0_Context") +labs(x="Neutralized Formant Pattern", y=" % Match")
+# 
+# #Bar Graph Exp5 V0_Partial Data:
+# ggplot(V0_Partial, aes(x=Neutralized_Formants, y=Percent_Match))+ geom_bar(stat="identity", position="dodge")+ggtitle("V0_Context") +labs(x="Neutralized Formant Pattern", y=" % Match")
+# 
+# #Average Summary for V1:
+# V1_RFDP_mean_Per_Match<-aggregate(Percent_Match~Neutralized_Formants, data=Ex5dataV1, FUN=mean, na.rm=TRUE)
+# V1_RFDP_mean_Per_Match$Neutralized_Formants <- factor(V1_RFDP_mean_Per_Match$Neutralized_Formants, levels = c("N_000","N_100","N_010","N_001","N_101","N_110","N_011","N_111"))
+# 
+# #Bar Graph Exp5 V1 Data:
+# V1.plt <- ggplot(V1_RFDP_mean_Per_Match, aes(x=Neutralized_Formants, y=Percent_Match))+ geom_bar(stat="identity", position="dodge")+ggtitle("V1_Context") +labs(x="Neutralized Formant Pattern", y=" % Match")
+# 
+# #Average Summary for V2:
+# V2_RFDP_mean_Per_Match<-aggregate(Percent_Match~Neutralized_Formants, data=Ex5dataV2, FUN=mean, na.rm=TRUE)
+# 
+# V2_RFDP_mean_Per_Match$Neutralized_Formants <- factor(V2_RFDP_mean_Per_Match$Neutralized_Formants, levels = c("N_000","N_100","N_010","N_001","N_101","N_110","N_011","N_111"))
+# 
+# #Bar Graph Exp5 V0 Data:
+# V2.plt <- ggplot(V2_RFDP_mean_Per_Match, aes(x=Neutralized_Formants, y=Percent_Match))+ geom_bar(stat="identity", position="dodge")+ggtitle("V2_Context") +labs(x="Neutralized Formant Pattern", y=" % Match")
+# 
+# #Average Summary for V3:
+# V3_RFDP_mean_Per_Match<-aggregate(Percent_Match~Neutralized_Formants, data=Ex5dataV3, FUN=mean, na.rm=TRUE)
+# 
+# V3_RFDP_mean_Per_Match$Neutralized_Formants <- factor(V3_RFDP_mean_Per_Match$Neutralized_Formants, levels = c("N_000","N_100","N_010","N_001","N_101","N_110","N_011","N_111"))
+# 
+# #Bar Graph Exp5 V0 Data:
+# V3.plt <- ggplot(V3_RFDP_mean_Per_Match, aes(x=Neutralized_Formants, y=Percent_Match))+ geom_bar(stat="identity", position="dodge")+ggtitle("V3_Context") +labs(x="Neutralized Formant Pattern", y=" % Match")
+
+# require(cowplot)
+# plot_grid(V0.plt, V1.plt, V2.plt, V3.plt, ncol = 1, rel_heights = c(1,1,1,1))
+@
+
+
+% Include the various chapters
+\include{chapter_1}
+\include{chapter_2}
+
+% Include the various appendices
+\appendix
+\include{appendix_A}
+
+% Switch the spacing to single-spaced for the references
+\renewcommand{\baselinestretch}{1}		% chaning the value
+\small\normalsize						% switch size to make the value take
+
+% Create the References list
+\bibliographystyle{uabibnat}
+\bibliography{bibliography}
+
+\end{document}

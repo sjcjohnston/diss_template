@@ -1,0 +1,260 @@
+% Sample Dissertation, Thesis, or Document %
+%            for use with the              %
+%  University of Arizona Thesis Class,     %
+%               uathesis.cls               %
+%------------------------------------------%
+
+% We'll use the uathesis document class (duh).  The uncommented line
+% below will produce a Dissertation, the others would produce a Thesis
+% or a Document.  There are other options available to you like turning
+% on the copyright statement and replacing the year on the title page
+% with a "generated on" stamp (handy for early drafts).  To find out
+% what the available options are, take a look into the uathesis.cls
+% file and look for the \DeclareOption commands near the top of that
+% file.
+% There are five copyright options.  Copyright, no copyright, and three
+% different Creative Commons licences.  Use the one you want (If you go
+% Creative Commons, I (DM) think the CC-BY-ND makes the most sense)  See
+% uathesis.cls for the reason why the non-commercial licenses are not
+% included.
+\documentclass[dissertation]{uathesis}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+%\documentclass[dissertation,copyright]{uathesis}
+%\documentclass[dissertation,CC-BY]{uathesis}
+%\documentclass[dissertation,CC-BY-SA]{uathesis}
+%documentclass[dissertation,CC-BY-ND]{uathesis}
+%\documentclass[thesis]{uathesis}
+%\documentclass[document]{uathesis}
+
+% Package Usage
+% These are the packages that we need
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{natbib}			% natbib is available on most systems, and is
+					% terribly handy.
+					% If you want to use a different Bibliography package, 
+					% you should be able to, just change this
+					% and the \bibliographystyle command below.  Be warned
+					% that you may need to do a little hacking to get
+					% the REFERENCES item to show up in your TOC.
+
+% Compatibility with the AASTEX package 
+% of the American Astronomical Society.
+%\usepackage{deluxetable}		% Allows use of AASTEX deluxe tables
+%\usepackage{aastex_hack}		% Allows other AASTEX functionality.
+
+% These are other packages that you might find useful.
+% For controlling the fonts, see
+% http://www.math.uiuc.edu/~hartke/computer/latex/survey/survey.html
+% The following is a nice font set:
+%\usepackage{mathtime}			% Times for letters; Belleek math.
+%
+%\usepackage{amsmath}			% AMS Math (advanced math typesetting)
+%\usepackage{lscape}			% Used for making fitting large tables in by putting them landscape
+%\usepackage{refs}			
+%
+% If you are using hyper-ref (recommended), this command must go after all 
+% other package inclusions (from the hyperref package documentation).
+% The purpose of hyperref is to make the PDF created extensively
+% cross-referenced.
+
+%Also works! Change dvips to driverfallback=dvips.
+\usepackage[driverfallback=dvips,bookmarks,colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black]{hyperref}
+
+%Works!
+%\usepackage[pdftex,bookmarks,colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black]{hyperref}
+%HERE IS THE THING THAT NEEDS TO CHANGE TO GET LATEX TO WORK WITH RSTUDIO. USE pdftex instead of dvips.
+
+% Set up some values.
+\completetitle{Working Title: Perception of Patterns of Relative Formant Change in Reduced, Voiced, Stop Consonants}
+\fullname{Megan Marie Willi}			% Grad college wants your full name here.
+\degreename{Doctor of Philosophy}	% Title of your degree.
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+
+% Set up the title page
+\maketitlepage
+{DEPARTMENT OF SPEECH, LANGUAGE, AND HEARING SCIENCES}	% Title of your department.
+{2017}							
+
+% Insert the approval form.  Note that for electronic submission
+% of your Ph. D. dissertation, you must bring *two* copies of the
+% approval page to your final defense.  These must be signed by
+% the committee.  Make two photocopies: one for Pam and the other
+% for your records.  Then, bring the two signed originals to the
+% graduate college when you submit the final version of the
+% dissertation to the University of Arizona.
+\approval
+{10 April 2017}		% Defense Date	
+{Brad Story}	% Dissertation Director
+{Brad Story}	% 1st committee member
+{Natasha Warner}		% 2nd committee member
+{Elena Plante}		% 3rd committee member
+{}		% 4th committee member
+{}		% 5th committee member
+
+% Include the ``Statement by Author'' for Dissertations
+\statementbyauthor
+% If this is a Thesis, use the following form, with your thesis director's
+% name and title in the square brackets like so (you should also omit the 
+% approval form insertion above):
+%\statementbyauthor[Jane M. Doe\\Professor of Chemistry]
+
+% Include the ``Acknowledgements''
+\incacknowledgements{acknowledgements}
+
+% Include the ``Dedication''
+\incdedication{dedication}
+
+% Create a ``Table of Contents''
+\tableofcontents
+
+% Create a ``List of Figures''
+\listoffigures
+
+% Create a ``List of Tables''
+\listoftables
+
+% Include the ``Abstract''
+\incabstract{abstract}
+
+
+
+
+
+
+\includegraphics[width=\maxwidth]{figure/Exp_1_Data-1} 
+
+
+%Print xtable then hand edit:
+\begin{table}[ht]
+\centering
+\begin{tabular}{rllrr}
+  \hline
+ & Hypothesis & Vowel & Mean & Standard Deviation \\ 
+  \hline
+1 & LE & V0 & 23.03 & 4.54 \\ 
+  2 & LE & V1 & 39.88 & 21.75 \\ 
+  3 & LE & V2 & 23.03 & 5.72 \\ 
+  4 & LE & V3 & 23.03 & 3.10 \\ 
+  5 & RFDP & V0 & 75.27 & 6.40 \\ 
+  6 & RFDP & V1 & 55.03 & 18.62 \\ 
+  7 & RFDP & V2 & 73.94 & 6.15 \\ 
+  8 & RFDP & V3 & 64.97 & 8.54 \\ 
+   \hline
+\end{tabular}
+\caption{Percent Participant Agreeement} 
+\end{table}
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/Exp_2_Data-1} 
+
+\includegraphics[width=\maxwidth]{figure/Exp_2_Data-2} 
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/Exp_3_Data-1} 
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/Exp_4_Data-1} 
+
+\includegraphics[width=\maxwidth]{figure/Exp_4_Data-2} 
+
+\includegraphics[width=\maxwidth]{figure/Exp_4_Data-3} 
+
+\includegraphics[width=\maxwidth]{figure/Exp_4_Data-4} 
+
+\end{knitrout}
+
+
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/Exp_4_Constriction_Location_Data-1} 
+
+\includegraphics[width=\maxwidth]{figure/Exp_4_Constriction_Location_Data-2} 
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/Exp_5_Data-1} 
+
+\end{knitrout}
+
+
+% Include the various chapters
+\include{chapter_1}
+\include{chapter_2}
+
+% Include the various appendices
+\appendix
+\include{appendix_A}
+
+% Switch the spacing to single-spaced for the references
+\renewcommand{\baselinestretch}{1}		% chaning the value
+\small\normalsize						% switch size to make the value take
+
+% Create the References list
+\bibliographystyle{uabibnat}
+\bibliography{bibliography}
+
+\end{document}

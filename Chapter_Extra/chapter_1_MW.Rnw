@@ -1,0 +1,82 @@
+%\Sexpr{set_parent(‘/Users/mwilli/Documents/Spring_2017/Dissertation_Document/Dissertation_Working_Directory_Draft/Dissertation_Main.Rnw')}
+
+<<chunk_options, echo=FALSE>>=
+# This is where we set basic knitr options.
+opts_chunk$set(echo=TRUE, message=FALSE, warning = FALSE, cache = FALSE, comment="")
+options(width=75) # This sets how wide the R printout can be.
+@
+
+ <<setup-child, include=FALSE>>=
+ set_parent('/Users/mwilli/Documents/Spring_2017/Dissertation_Document/Dissertation_Draft_2/Dissertation_Main.Rnw')
+@
+
+<<load_libraries, echo=FALSE>>=
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(lme4)
+library(lsmeans)
+library(car)
+library(pbkrtest)
+library(xtable)
+library(cowplot)
+library(plyr)
+@
+
+\chapter{Sample First Chapter\label{chap1}}
+
+
+\section{Introduction}
+
+I wouldn't actually name any of my chapter files chapter1.tex,
+chapter2.tex, etc. End-of-sentence citation:\citep{story_2010}
+   You might decide to swap them around at some
+point, and then things can get messy, especially if you've labeled
+things inside those files with labels like ``chap1.''  Computers
+are good at counting things, let \LaTeX\ do that for you.  Be general
+with your naming scheme, you can always rearrange things by altering
+their order in the main dissertation.tex file.\footnote{Look at me!  I'm a footnote!}.
+
+
+\section{Math Example\label{math}}
+
+This is a real short example of using the equation environment.
+
+\begin{equation}
+	y = mx + b
+\end{equation}
+
+There is an awful lot that the equation environment and math mode
+can do for you.
+
+
+<<Exp_1_Data, echo=FALSE, results='asis'>>=
+
+#Visualize Exp.1 Data:
+
+#Read in Exp.1 data:
+Exp1Data <- read.csv("/Users/mwilli/Documents/Spring_2017/Dissertation_Data/Experiment_1/Exp1_Summary_Data_for_Stats/Exp1_Dissertation_Data_Summary.csv")
+Exp1Data$Hypothesis <- revalue(Exp1Data$Hypothesis, c("LE"="Locus Equation", "RFDP"="Relative Formant Deflection Pattern"))
+
+#Bar Graph with error bar Exp.1:
+ggplot(Exp1Data, aes(x=Hypothesis, y=Percent_Participant_Agreement, fill=Vowel_Context)) + 
+    stat_summary(fun.y = mean, geom = "bar", position="dodge") + 
+    stat_summary(fun.data = mean_se, geom = "errorbar", position="dodge") +ggtitle("Hypothesis Comparison") + labs(x=" Hypothesis ", y=" % Participant Agreement") +ylim(0,100)
+
+#Stats with Mean and Standard deviation:
+Exp1_Avg <-aggregate(Percent_Participant_Agreement~Hypothesis+Vowel_Context, data=Exp1Data, FUN = function(x) c(mean = mean(x), sd = sd(x), n = length(x)))
+
+Exp1_mydata <- do.call(data.frame, Exp1_Avg)
+#Exp1_mydata
+
+#Stats with Mean and Standard deviation:
+library(doBy)
+tab <- summaryBy(Percent_Participant_Agreement ~ Hypothesis + Vowel_Context, data = Exp1Data, FUN = function(x) { c(m = mean(x), s = sd(x)) } )
+
+library(xtable)
+tab2 <- xtable(tab, caption = "Demographic information")
+print(tab2)
+
+
+@
+
