@@ -219,12 +219,12 @@ In alignment with the CHiME challenge\footnote{The CHiME challenge tasks researc
 Three noise levels were used.  Since conversational speech is generally around 70 dB, the noise levels chosen were 60 dB, 70 dB, and 80 dB\footnote{These were the `averaged' dB levels over the course of the sound file}.  This would result in approximate SNR conditions of +10 (60 dB), 0 (70 dB), and -10 (80 dB).  80 dB was also chosen as a max loudness in order to leave a wide margin between it and any (albeit remote) possibility of hearing damage. A `clean' condition was also utilized (no noise).  Thus far this creates 16 different conditions (5 noise types * 3 noise levels + 1 `clean' condition).  
 
 \subsection{Stimuli}
-Thirty sentences were chosen from 3 Harvard Sentence lists\footnote{The `Harvard Sentences' is comprised of 72 lists, each 10 sentences long, where each list of 10 sentences is phonetically balanced, where the proportion of each phone in the list corresponds with it's occurrence in the English language.\cite{harvardsentenceURL}}.  Lists 14, 28, and 57 were used, and chosen semi randomly, eliminating lists with potentially unfamiliar or rare words.  Each sentence occurs in all 16 conditions, resulting in 480 total stimuli.
+Thirty sentences were chosen from 3 Harvard Sentence lists\footnote{The `Harvard Sentences' is comprised of 72 lists, each 10 sentences long, where each list of 10 sentences is phonetically balanced, where the proportion of each phone in the list corresponds with it's occurrence in the English language.\cite{harvardSents}}.  Lists 14, 28, and 57 were used, and chosen semi randomly, eliminating lists with potentially unfamiliar or rare words.  Each sentence occurs in all 16 conditions, resulting in 480 total stimuli.
 
   
 \subsection{Equipment}
 
-The experiment took place in a XXXX soundbooth.  To create the artificially noisy environment a Yamaha MS101 III loudspeaker was hooked to an HP ProBook 6470b laptop.  A sound pressure level meter (SPL meter; Larson Davis Model 831) with a PCB Piezotronics Model 377B20 condenser microphone (omnidirectional) was placed 1 meter from the loudspeaker and measured the sound pressure to verify each of the three noise levels for each of the 5 noise types. A Grason-Stadler GSI Typstar Middle Ear Analyzer was used to measure the ear canal volume and test for plug leaks.  Two Countryman B2D directional lavalier microphones with fixed XLR connections were used to record the mouth speech and the ear speech.  These were hooked up to a PreSonus Digital Audio Firebox preamplifier, which was connected via TRS cables to a Zoom H6 Handy Recorder. A pair of 3M Professional Peltor Earmuffs with an NRR of -30 dB SPL were worn by the participant during the experiment.
+The experiment took place in a large soundbooth.  To create the artificially noisy environment a Yamaha MS101 III loudspeaker was hooked to an HP ProBook 6470b laptop.  A sound pressure level meter (SPL meter; Larson Davis Model 831) with a PCB Piezotronics Model 377B20 condenser microphone (omnidirectional) was placed 1 meter from the loudspeaker and measured the sound pressure to verify each of the three noise levels for each of the 5 noise types. A Grason-Stadler GSI Typstar Middle Ear Analyzer was used to measure the ear canal volume and test for plug leaks.  Two Countryman B2D directional lavalier microphones with fixed XLR connections were used to record the mouth speech and the ear speech.  These were hooked up to a PreSonus Digital Audio Firebox preamplifier, which was connected via TRS cables to a Zoom H6 Handy Recorder. A pair of 3M Professional Peltor Earmuffs with an NRR of -30 dB SPL were worn by the participant during the experiment.
 
 
 \subsection{Participants}
@@ -254,40 +254,40 @@ Each individual sentence was isolated in each recording with a Praat textgrid an
 
 \begin{figure}
 \centering
-\begin{subfigure}{.5\textwidth}
+\begin{subfigure}{.475\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{figure/spctgrmNarrowMouth_35.pdf}
-  \caption{spctgrm Narrow Mouth 35}
+  \caption{Narrow band spectrogram of speech recorded at the mouth.}
   \label{spctgrmNarrowMouth_35}
 \end{subfigure}%
 \hfill
-\begin{subfigure}{.5\textwidth}
+\begin{subfigure}{.475\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{figure/spctgrmWideMouth_35.pdf}
-  \caption{spctgrm Wide Mouth 35}
+  \caption{Wide band spectrogram of speech recorded at the mouth.}
   \label{spctgrmWideMouth_35}
 \end{subfigure}
-\caption{FIGURE CAPTION}
+\caption{Both (\ref{spctgrmNarrowMouth_35}) and (\ref{spctgrmWideMouth_35}) are the same sentence, ``A cramp is no small danger on a swim'', spoken by a female participant. This is the exact same sentence spoken at the exact same time as that in fig. \ref{fig:spect_ear}.}
 \label{fig:spect_mouth}
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[b!]
 \centering
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.475\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{figure/spctgrmNarrowEar_35.pdf}
-  \caption{spctgrm Narrow Ear 35}
+  \caption{Narrow band spectrogram of speech recorded from inside the ear canal.}
   \label{spctgrmNarrowEar_35}
 \end{subfigure}%
 \hfill
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.475\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{figure/spctgrmWideEar_35.pdf}
-  \caption{spctgrm Wide Ear 35}
+  \caption{Wide band spectrogram of speech recorded from inside the ear canal.}
   \label{spctgrmWideEar_35}
 \end{subfigure}
-\caption{FIGURE CAPTION}
+\caption{Both (\ref{spctgrmNarrowEar_35}) and (\ref{spctgrmWideEar_35}) are the same sentence, ``A cramp is no small danger on a swim'', spoken by a female participant. This is the exact same sentence spoken at the exact same time as that in fig. \ref{fig:spect_mouth}.}
 \label{fig:spect_ear}
 \end{figure}
 
@@ -297,58 +297,76 @@ However, there are still clear harmonics in the existing range in the ear-record
 
 When noise is present, it can be seen in Figs. \ref{spctgrmNarrowMouthNoise_35} and \ref{spctgrmNarrowEarNoise_35} that the noise does not affect the ear recorded signal nearly as much.  There appears to be some of the louder noise (seen in the mouth-recorded speech in fig. \ref{spctgrmNarrowMouthNoise_35}) present in the upper frequencies of the ear recorded speech, but it is significantly dampened and the signal has an overall higher speech to noise ratio (SNR).
 
-It should also be noted that the SNR in fig. \ref{spctgrmNarrowMouthNoise_35} is much lower than originally intended.  For this particular example, the speech was recorded with an 80dB noise background, with the intent of obtaining a -10dB SNR.  Instead, the SNR is 6 dB\footnote{The SNR was calculated by using background noises recorded in isolation in the soundbooth.  These were recorded at 60, 70, and 80 dB in the same soundbooth, with the same conditions and set up as a normal recording.  The speech sound file was passed through a Hilbert Envelope, and a threshold was applied in order to extract just the speech data.  The RMS values of both the speech and noise vectors were calculated, averaged, and then used in the SNR calculation.  For explicit code, see Appendix E\ref{appendixE}}.  This is attributed to a) the participant speaking louder than anticipated, resulting in a higher speech theshold, and b) the directionality of the microphone used eliminated much more background noise than anticipated.
+It should also be noted that the SNR in fig. \ref{spctgrmNarrowMouthNoise_35} is much higher than originally intended.  For this particular example, the speech was recorded with an 80dB noise background, with the intent of obtaining a -10dB SNR.  Instead, the SNR is +6dB\footnote{The SNR was calculated by using background noises recorded in isolation in the soundbooth.  These were recorded at 60, 70, and 80 dB in the same soundbooth, with the same conditions and set up as a normal recording.  The speech sound file was passed through a Hilbert Envelope, and a threshold was applied in order to extract just the speech data.  The RMS values of both the speech and noise vectors were calculated, averaged, and then used in the SNR calculation.  For explicit code, see Appendix E\ref{appendixE}}.  This is attributed to a) the participant speaking louder than anticipated, resulting in a higher speech theshold, and b) the directionality of the microphone used eliminated much more background noise than anticipated.
 
 \begin{figure}
 \centering
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.475\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{figure/spctgrmNarrowMthNoise_35.pdf}
-  \caption{spctgrm Narrow Mth Noise 35}
+  \caption{Narrow band spectogram of speech recorded at the mouth, with 80dB bus noise playing in the background.}
   \label{spctgrmNarrowMouthNoise_35}
 \end{subfigure}%
 \hfill
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.475\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{figure/spctgrmNarrowEarNoise_35.pdf}
-  \caption{spctgrm Narrow Ear Noise 35}
+  \caption{Narrow band spectogram of speech recorded from inside the ear canal, with 80dB bus noise playing in the background.}
   \label{spctgrmNarrowEarNoise_35}
 \end{subfigure}
-\caption{FIGURE CAPTION}
+\caption{Both \ref{spctgrmNarrowMouthNoise_35} and \ref{spctgrmNarrowEarNoise_35} were spoken by a female participant, recorded simultaneously, the sentence ``A cramp is no small danger on a swim''.}
 \label{fig:noise_mth_ear}
 \end{figure}
 
-In an attempt to see if there are recoverable frequencies in the higher ranges, the ear speech was preemphasized, seen in fig \ref{spctgrmNarrowEarNoisePremp_35}, which has been placed next to its non-preemphasized counterpart for comparison.  It appears that while those fainter harmonics in the midrange frequencies have become more pronounced, there is no new speech information in the upper frequencies which has made it past the noise threshold.  To be certain, the spectrogram range of the non-premphasized ear signal was increased from 5kHz to 20kHz (see fig. \ref{spctgrmEarNarrowNoise_35_20kHz}). There is certainly acoustic energy that makes it to the higher frequencies, but there does not appear to be harmonics, nor does any of the visible acoustic energy appear to correlate with the speech seen in the lower frequencies.
-
-\begin{wrapfigure}{L}{0.5\textwidth}
-\includegraphics[width=0.5\textwidth]{figure/spctgrmNarrowEarNoisePremp.pdf}
-\caption{spctgrm Narrow Ear Noise P 35}
-\label{spctgrmNarrowEarNoisePremp_35}
-\end{wrapfigure}
-
-This ear-recorded signal was then low-pass filtered at 2500 Hz with a 500 Hz smoothing slope. To further emphasize the higher frequencies (and to smooth over the 'muffled' attribute a bit), the sound was preemphasized a second time (after filtering).  This can be seen in Figure \ref{spctgrmNarrowEarNoisePrempFiltPremp_35}, next to the noisy mouth speech for comparison \ref{spctgrmNarrowMouthNoise_35_compare}.
-
+In an attempt to see if there are recoverable frequencies in the higher ranges, the spectrogram range of the non-premphasized ear signal was increased from 5kHz to 20kHz (see fig. \ref{spctgrmEarNarrow20kHz}). There is certainly acoustic energy that makes it to the higher frequencies, but there does not appear to be harmonics, nor does any of the visible acoustic energy appear to correlate with the speech seen in the lower frequencies.
+To be certain, the ear speech was pre-emphasized, seen in fig. \ref{spctgrmNarrowEarNoisePremp_35}.    
 \begin{figure}
 \centering
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.475\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{figure/spctgrmEarNarrow20kHz.pdf}
+  \caption{Narrow band spectogram of ear recorded speech with 80dB bus background noise.}
+  \label{spctgrmEarNarrow20kHz}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{0.475\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{figure/spctgrmNarrowEarNoisePremp.pdf}
+  \caption{Narrow band spectogram of ear recorded speech with 80dB bus background noise.  The signal has been pre-emphasized.}
+  \label{spctgrmNarrowEarNoisePremp_35}
+\end{subfigure}
+\caption{Narrow band spectogram of ear-recorded speech from 0-20kHz to look for possible speech information in higher frequencies, of the sentence ``A cramp is no small danger on a swim'' spoken by a female participant.}
+\end{figure}
+\begin{figure}[b!]
+\centering
+\begin{subfigure}{0.475\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf}
-  \caption{spctgrm Narrow Ear Noise PFP 35}
+  \caption{The ear recorded speech which has been pre-emphasized, filtered at 2500 Hz, and pre-emphasized a second time.}
   \label{spctgrmNarrowEarNoisePrempFiltPremp_35}
 \end{subfigure}%
 \hfill
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.475\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{figure/spctgrmNarrowMthNoise_35.pdf}
-  \caption{spctgrm Narrow Mth Noise 35}
+  \caption{The noisy spectogram of the mouth-recorded speech; previously seen in \ref{spctgrmNarrowMouthNoise_35}, repeated here for ease of comparison.}
   \label{spctgrmNarrowMouthNoise_35_compare}
 \end{subfigure}
-\caption{FIGURE CAPTION}
+\caption{Narrow band spectogram of ``A cramp is no small danger on a swim'' recorded at the ear (\ref{spctgrmNarrowEarNoisePrempFiltPremp_35}) and the mouth (\ref{spctgrmNarrowMouthNoise_35_compare}) and spoken by a female participant, with 80dB bus noise in the background.}
 \label{fig:ear_pfp}
 \end{figure}
+It appears that while those fainter harmonics in the lower midrange frequencies have become more pronounced, there is no new speech information in the upper frequencies which has made it past the noise threshold.
 
-\section{Summary and Discussion}
-Here is my summary and discussion. \textbf{Mention the limitations - namely the directionality of the microphone affecting the lack of noisyness in the data}
+This ear-recorded signal was then low-pass filtered at 2500 Hz with a 500 Hz smoothing slope. To further emphasize the higher frequencies in the available range (and to smooth over the 'muffled' attribute a bit), the sound was preemphasized a second time (after filtering).  This can be seen in Figure \ref{spctgrmNarrowEarNoisePrempFiltPremp_35}, next to the noisy mouth speech for comparison \ref{spctgrmNarrowMouthNoise_35_compare}.
+
+\section{Discussion}
+
+The results from the data collection study above largely agree with the discussed literature.  While there is some speaker variation, the speech recorded from inside the ear canal contains information up to approximately 2700Hz.  By using two, very basic acoustic transformations (pre-emphasis and bandpass filtering), the heavily lowpass filtered speech becomes remarkably intelligible, considering the location of recording and the minimal effort required. 
+
+Given the relatively well-preserved lower frequency speech information that is present in the signal, no further acoustic transformation to these frequencies is deemed necessary\footnote{E.g. such as a spectral subtraction technique based on the frequency responses given in the literature by \ref{hansen:97b} and \ref{reinfeldt:10}, among others.}.  Limited gains might be seen from a sound or sound-category specific alteration, particularly among fricative sounds and those with the majority of speech information located in frequencies above 2700Hz
+
+\subsection{Limitations}
+\textbf{Mention the limitations - namely the directionality of the microphone affecting the lack of noisyness in the data}
 
 
 

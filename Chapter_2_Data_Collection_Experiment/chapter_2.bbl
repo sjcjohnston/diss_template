@@ -1,10 +1,5 @@
 \begin{thebibliography}{}
 
-\bibitem[\protect\astroncite{chi}{}]{chime:16}
-Chime speech separation and recognition challenge.
-\newblock \url{http://spandh.dcs.shef.ac.uk/chime_challenge/}.
-\newblock Accessed: 2016-02-18.
-
 \bibitem[\protect\astroncite{Allen and Fernandez}{1960}]{allen:60}
 Allen, G. and Fernandez, C. (1960).
 \newblock The mechanism of bone conduction.
@@ -24,13 +19,19 @@ B\'{e}k\'{e}sy, G.~v. (1948).
 \bibitem[\protect\astroncite{B\'{e}k\'{e}sy}{1960}]{bekesy:60}
 B\'{e}k\'{e}sy, G.~v. (1960).
 \newblock {\em Experiments in {Hearing}}.
-\newblock McGraw Hill Book Co.
+\newblock McGraw Hill Book Co., New York.
 
 \bibitem[\protect\astroncite{Borghese et~al.}{1997}]{borghese:97}
 Borghese, N.~A., Ferrigno, G., Redolfi, M., and Pedotti, A. (1997).
 \newblock Automatic integrated analysis of jaw and lip movement in speech
   production.
 \newblock {\em Jour. of Acoust. Soc. of Am.}, 101(1):482--487.
+
+\bibitem[\protect\astroncite{{CHiME Challenge}}{2016}]{chime:16}
+{CHiME Challenge} (2016).
+\newblock Chime speech separation and recognition challenge.
+\newblock \url{http://spandh.dcs.shef.ac.uk/chime_challenge/}.
+\newblock Online; accessed 02-18-2016.
 
 \bibitem[\protect\astroncite{Dean and Martin}{2000}]{dean:00}
 Dean, M.~S. and Martin, F.~N. (2000).
@@ -52,6 +53,11 @@ Hansen, M. (1998).
 H\r{a}kansson, B., Brandt, A., Peder, C., and Tjellström, A. (1994).
 \newblock Resonant {Frequencies} of the {Human} {Skull} in vivo.
 \newblock {\em Jour. of the Acoust. Soc. of Am.}, 95(3):1474--1481.
+
+\bibitem[\protect\astroncite{IEEE}{1969}]{harvardSents}
+IEEE (1969).
+\newblock {IEEE} recommended practice for speech quality measurements.
+\newblock {\em IEEE Transactions on Audio and Electroacoustics}, 17.
 
 \bibitem[\protect\astroncite{Kelly and Reger}{1937}]{kelly:37}
 Kelly, N.~H. and Reger, S.~N. (1937).
@@ -81,7 +87,7 @@ P{\o}rschmann, C. (2000).
 \newblock {\em Acta Acustica}, 86:1038--1045.
 
 \bibitem[\protect\astroncite{Reinfeldt et~al.}{2010}]{reinfeldt:10}
-Reinfeldt, S., Östli, P., Håkansson, B., and Stenfelt, S. (2010).
+Reinfeldt, S., \"{O}stli, P., H\r{a}kansson, B., and Stenfelt, S. (2010).
 \newblock Hearing one’s own voice during phoneme
   vocalization—{Transmission} by air and bone conduction.
 \newblock {\em The Journal of the Acoustical Society of America},
@@ -90,6 +96,7 @@ Reinfeldt, S., Östli, P., Håkansson, B., and Stenfelt, S. (2010).
 \bibitem[\protect\astroncite{Rosen and Howell}{1991}]{rosen:91}
 Rosen, S. and Howell, P. (1991).
 \newblock {\em Signals and systems for speech and hearing}.
+\newblock Academic Press Inc., San Diego.
 
 \bibitem[\protect\astroncite{Salvinelli et~al.}{1991}]{salvinelli:91}
 Salvinelli, F., Maurizi, M., Calamita, S., D'Alatri, L., Capellis, A., and
@@ -116,11 +123,14 @@ Stinson, M.~R. and Lawton, B.~W. (1989).
 
 \bibitem[\protect\astroncite{Thorup}{1996}]{thorup:96}
 Thorup, A. (1996).
-\newblock Okklusion: (in danish).
+\newblock Okklusion (in danish).
+\newblock Master's thesis, Technical University of Denmark.
 
-\bibitem[\protect\astroncite{Tonndorf}{1968}]{tonndorf:72}
-Tonndorf, J. (1968).
-\newblock Bone conduction.
+\bibitem[\protect\astroncite{Tonndorf}{1972}]{tonndorf:72}
+Tonndorf, J. (1972).
+\newblock {\em Foundations of Modern Auditory Theory}, chapter Bone Conduction,
+  pages 195--238.
+\newblock Academic Press Inc., New York.
 
 \bibitem[\protect\astroncite{Wheatstone}{1879}]{wheatstone:79}
 Wheatstone, C. (1879).

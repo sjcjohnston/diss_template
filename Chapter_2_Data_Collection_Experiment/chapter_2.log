@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.5.15)  24 MAY 2017 19:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.5.15)  25 MAY 2017 13:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -595,12 +595,7 @@ File: figure/Hansen_OE-plot_b.png Graphic file (type png)
 Package pdftex.def Info: figure/Hansen_OE-plot_b.png used on input line 280.
 (pdftex.def)             Requested size: 213.19627pt x 138.71513pt.
  [12] [13 <./figure/hansenAverageOE.png (PNG copy)> <./figure/Hansen_OE-plot_a.
-png (PNG copy)> <./figure/Hansen_OE-plot_b.png (PNG copy)>] [14]
-
-Package natbib Warning: Citation `harvardsentenceURL' on page 15 undefined on i
-nput line 328.
-
-[15]
+png (PNG copy)> <./figure/Hansen_OE-plot_b.png (PNG copy)>] [14] [15]
 
 LaTeX Warning: Reference `appendixB' on page 16 undefined on input line 341.
 
@@ -628,96 +623,112 @@ nput line 347.
 
 LaTeX Warning: Reference `appendixC' on page 19 undefined on input line 355.
 
-<figure/spctgrmNarrowMouth_35.pdf, id=405, 433.62pt x 289.08pt>
+<figure/spctgrmNarrowMouth_35.pdf, id=410, 433.62pt x 289.08pt>
 File: figure/spctgrmNarrowMouth_35.pdf Graphic file (type pdf)
 
 <use figure/spctgrmNarrowMouth_35.pdf>
 Package pdftex.def Info: figure/spctgrmNarrowMouth_35.pdf used on input line 36
 5.
-(pdftex.def)             Requested size: 213.19627pt x 142.13123pt.
+(pdftex.def)             Requested size: 202.53906pt x 135.0251pt.
 
-<figure/spctgrmWideMouth_35.pdf, id=406, 433.62pt x 289.08pt>
+<figure/spctgrmWideMouth_35.pdf, id=411, 433.62pt x 289.08pt>
 File: figure/spctgrmWideMouth_35.pdf Graphic file (type pdf)
 
 <use figure/spctgrmWideMouth_35.pdf>
 Package pdftex.def Info: figure/spctgrmWideMouth_35.pdf used on input line 372.
 
-(pdftex.def)             Requested size: 213.19627pt x 142.13123pt.
- [19]
-<figure/spctgrmNarrowEar_35.pdf, id=418, 433.62pt x 289.08pt>
+(pdftex.def)             Requested size: 202.53906pt x 135.0251pt.
+
+Underfull \hbox (badness 1394) in paragraph at lines 373--373
+[]\OT1/cmr/m/n/10.95 (b) |Wide band spec-tro-gram of speech
+ []
+
+[19] <figure/spctgrmNarrowEar_35.pdf, id=428, 433.62pt x 289.08pt>
 File: figure/spctgrmNarrowEar_35.pdf Graphic file (type pdf)
 
 <use figure/spctgrmNarrowEar_35.pdf>
 Package pdftex.def Info: figure/spctgrmNarrowEar_35.pdf used on input line 385.
 
-(pdftex.def)             Requested size: 213.19627pt x 142.13123pt.
+(pdftex.def)             Requested size: 202.53906pt x 135.0251pt.
 
-<figure/spctgrmWideEar_35.pdf, id=419, 433.62pt x 289.08pt>
+<figure/spctgrmWideEar_35.pdf, id=429, 433.62pt x 289.08pt>
 File: figure/spctgrmWideEar_35.pdf Graphic file (type pdf)
 
 <use figure/spctgrmWideEar_35.pdf>
 Package pdftex.def Info: figure/spctgrmWideEar_35.pdf used on input line 392.
-(pdftex.def)             Requested size: 213.19627pt x 142.13123pt.
+(pdftex.def)             Requested size: 202.53906pt x 135.0251pt.
 
-
-LaTeX Warning: Reference `appendixE' on page 20 undefined on input line 406.
+Underfull \hbox (badness 1394) in paragraph at lines 393--393
+[]\OT1/cmr/m/n/10.95 (b) |Wide band spec-tro-gram of speech
+ []
 
 [20 <./figure/spctgrmNarrowMouth_35.pdf> <./figure/spctgrmWideMouth_35.pdf> <./
 figure/spctgrmNarrowEar_35.pdf> <./figure/spctgrmWideEar_35.pdf>]
-<figure/spctgrmNarrowMthNoise_35.pdf, id=494, 433.62pt x 289.08pt>
+
+LaTeX Warning: Reference `appendixE' on page 21 undefined on input line 406.
+
+<figure/spctgrmNarrowMthNoise_35.pdf, id=510, 433.62pt x 289.08pt>
 File: figure/spctgrmNarrowMthNoise_35.pdf Graphic file (type pdf)
 
 <use figure/spctgrmNarrowMthNoise_35.pdf>
 Package pdftex.def Info: figure/spctgrmNarrowMthNoise_35.pdf used on input line
  412.
-(pdftex.def)             Requested size: 213.19627pt x 142.13123pt.
+(pdftex.def)             Requested size: 202.53906pt x 135.0251pt.
 
-<figure/spctgrmNarrowEarNoise_35.pdf, id=495, 433.62pt x 289.08pt>
+<figure/spctgrmNarrowEarNoise_35.pdf, id=511, 433.62pt x 289.08pt>
 File: figure/spctgrmNarrowEarNoise_35.pdf Graphic file (type pdf)
 
 <use figure/spctgrmNarrowEarNoise_35.pdf>
 Package pdftex.def Info: figure/spctgrmNarrowEarNoise_35.pdf used on input line
  419.
-(pdftex.def)             Requested size: 213.19627pt x 142.13123pt.
+(pdftex.def)             Requested size: 202.53906pt x 135.0251pt.
 
+<figure/spctgrmEarNarrow20kHz.pdf, id=518, 433.62pt x 289.08pt>
+File: figure/spctgrmEarNarrow20kHz.pdf Graphic file (type pdf)
 
-LaTeX Warning: Reference `spctgrmEarNarrowNoise_35_20kHz' on page 21 undefined 
-on input line 427.
+<use figure/spctgrmEarNarrow20kHz.pdf>
+Package pdftex.def Info: figure/spctgrmEarNarrow20kHz.pdf used on input line 43
+3.
+(pdftex.def)             Requested size: 202.53906pt x 135.0251pt.
 
-[21 <./figure/spctgrmNarrowMthNoise_35.pdf> <./figure/spctgrmNarrowEarNoise_35.
-pdf>] <figure/spctgrmNarrowEarNoisePremp.pdf, id=536, 433.62pt x 289.08pt>
+Underfull \hbox (badness 4819) in paragraph at lines 434--434
+[]\OT1/cmr/m/n/10.95 (a) |Nar-row band spec-togram of ear
+ []
+
+<figure/spctgrmNarrowEarNoisePremp.pdf, id=519, 433.62pt x 289.08pt>
 File: figure/spctgrmNarrowEarNoisePremp.pdf Graphic file (type pdf)
 
 <use figure/spctgrmNarrowEarNoisePremp.pdf>
 Package pdftex.def Info: figure/spctgrmNarrowEarNoisePremp.pdf used on input li
-ne 430.
-(pdftex.def)             Requested size: 213.19627pt x 142.13123pt.
+ne 440.
+(pdftex.def)             Requested size: 202.53906pt x 135.0251pt.
 
-<figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf, id=539, 433.62pt x 289.08pt>
+Underfull \hbox (badness 4569) in paragraph at lines 441--441
+[]\OT1/cmr/m/n/10.95 (b) |Nar-row band spec-togram of ear
+ []
+
+<figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf, id=520, 433.62pt x 289.08pt>
 File: figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf Graphic file (type pdf)
 
 <use figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf>
 Package pdftex.def Info: figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf used on
- input line 441.
-(pdftex.def)             Requested size: 213.19627pt x 142.13123pt.
+ input line 450.
+(pdftex.def)             Requested size: 202.53906pt x 135.0251pt.
 File: figure/spctgrmNarrowMthNoise_35.pdf Graphic file (type pdf)
 
 <use figure/spctgrmNarrowMthNoise_35.pdf>
 Package pdftex.def Info: figure/spctgrmNarrowMthNoise_35.pdf used on input line
- 448.
-(pdftex.def)             Requested size: 213.19627pt x 142.13123pt.
- (./chapter_2.bbl [22 <./figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf> <./fig
-ure/spctgrmNarrowEarNoisePremp.pdf>]
+ 457.
+(pdftex.def)             Requested size: 202.53906pt x 135.0251pt.
+ [21 <./figure/spctgrmNarrowMthNoise_35.pdf> <./figure/spctgrmNarrowEarNoise_35
+.pdf>] [22 <./figure/spctgrmEarNarrow20kHz.pdf> <./figure/spctgrmNarrowEarNoise
+Premp.pdf> <./figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf>] (./chapter_2.bbl
+ [23]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¶ in font cmr12!
-
-[23
+ [24
 
 ]
-Missing character: There is no Ã in font cmr12!
-Missing character: There is no – in font cmr12!
-Missing character: There is no Ã in font cmr12!
-Missing character: There is no ¥ in font cmr12!
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
@@ -728,32 +739,29 @@ Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¥ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¶ in font cmr12!
- [24])
-
-Package natbib Warning: There were undefined citations.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 467.
-[25]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 467.
+ [25])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 479.
+ [26]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 479.
  (./chapter_2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 467.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 467.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 479.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 479.
 Package rerunfilecheck Info: File `chapter_2.out' has not changed.
 (rerunfilecheck)             Checksum: A27ACB3EAC2EFFB1AC4FE857B1C49C98;722.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 467.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 479.
  ) 
 Here is how much of TeX's memory you used:
- 10182 strings out of 493304
- 150915 string characters out of 6139871
- 251285 words of memory out of 5000000
- 13386 multiletter control sequences out of 15000+600000
+ 10194 strings out of 493304
+ 151212 string characters out of 6139871
+ 253700 words of memory out of 5000000
+ 13395 multiletter control sequences out of 15000+600000
  10705 words of font info for 38 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 48i,9n,75p,1463b,600s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,9n,75p,1463b,614s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
@@ -763,10 +771,10 @@ onts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/fkr/tipa/tipa12.pfb>
-Output written on chapter_2.pdf (25 pages, 10480190 bytes).
+Output written on chapter_2.pdf (26 pages, 11442522 bytes).
 PDF statistics:
- 651 PDF objects out of 1000 (max. 8388607)
- 541 compressed objects within 6 object streams
- 97 named destinations out of 1000 (max. 500000)
- 174 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 711 PDF objects out of 1000 (max. 8388607)
+ 580 compressed objects within 6 object streams
+ 99 named destinations out of 1000 (max. 500000)
+ 179 words of extra memory for PDF output out of 10000 (max. 10000000)
 
