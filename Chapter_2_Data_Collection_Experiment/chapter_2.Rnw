@@ -297,7 +297,7 @@ However, there are still clear harmonics in the existing range in the ear-record
 
 When noise is present, it can be seen in Figs. \ref{spctgrmNarrowMouthNoise_35} and \ref{spctgrmNarrowEarNoise_35} that the noise does not affect the ear recorded signal nearly as much.  There appears to be some of the louder noise (seen in the mouth-recorded speech in fig. \ref{spctgrmNarrowMouthNoise_35}) present in the upper frequencies of the ear recorded speech, but it is significantly dampened and the signal has an overall higher speech to noise ratio (SNR).
 
-It should also be noted that the SNR in fig. \ref{spctgrmNarrowMouthNoise_35} is much lower than originally intended.  For this particular example, the speech was recorded with an 80dB noise background, with the intent of obtaining a -10dB SNR.  Instead, the SNR is XXX\footnote{The SNR was calculated by using background noises recorded in isolation in the soundbooth.  These were recorded at 60, 70, and 80 dB in the same soundbooth, with the same conditions and set up as a normal recording.  XYZ}.  This is attributed to a) the participant speaking louder than anticipated, resulting in a higher speech theshold, and b) the directionality of the microphone used eliminated much more background noise than anticipated.
+It should also be noted that the SNR in fig. \ref{spctgrmNarrowMouthNoise_35} is much lower than originally intended.  For this particular example, the speech was recorded with an 80dB noise background, with the intent of obtaining a -10dB SNR.  Instead, the SNR is 6 dB\footnote{The SNR was calculated by using background noises recorded in isolation in the soundbooth.  These were recorded at 60, 70, and 80 dB in the same soundbooth, with the same conditions and set up as a normal recording.  The speech sound file was passed through a Hilbert Envelope, and a threshold was applied in order to extract just the speech data.  The RMS values of both the speech and noise vectors were calculated, averaged, and then used in the SNR calculation.  For explicit code, see Appendix E\ref{appendixE}}.  This is attributed to a) the participant speaking louder than anticipated, resulting in a higher speech theshold, and b) the directionality of the microphone used eliminated much more background noise than anticipated.
 
 \begin{figure}
 \centering
@@ -318,7 +318,7 @@ It should also be noted that the SNR in fig. \ref{spctgrmNarrowMouthNoise_35} is
 \label{fig:noise_mth_ear}
 \end{figure}
 
-In an attempt to see if there are recoverable frequencies in the higher ranges, the ear speech was preemphasized, seen in Fig \ref{spctgrmNarrowEarNoisePremp_35}, which has been placed next to its non-preemphasized counterpart for comparison.  It appears that while those fainter harmonics in the midrange frequencies have become more pronounced, there is no new speech information in the upper frequencies which has made it past the noise threshold.
+In an attempt to see if there are recoverable frequencies in the higher ranges, the ear speech was preemphasized, seen in fig \ref{spctgrmNarrowEarNoisePremp_35}, which has been placed next to its non-preemphasized counterpart for comparison.  It appears that while those fainter harmonics in the midrange frequencies have become more pronounced, there is no new speech information in the upper frequencies which has made it past the noise threshold.  To be certain, the spectrogram range of the non-premphasized ear signal was increased from 5kHz to 20kHz (see fig. \ref{spctgrmEarNarrowNoise_35_20kHz}). There is certainly acoustic energy that makes it to the higher frequencies, but there does not appear to be harmonics, nor does any of the visible acoustic energy appear to correlate with the speech seen in the lower frequencies.
 
 \begin{wrapfigure}{L}{0.5\textwidth}
 \includegraphics[width=0.5\textwidth]{figure/spctgrmNarrowEarNoisePremp.pdf}
@@ -326,7 +326,7 @@ In an attempt to see if there are recoverable frequencies in the higher ranges, 
 \label{spctgrmNarrowEarNoisePremp_35}
 \end{wrapfigure}
 
-This signal was then low-pass filtered at 2500 Hz with a 500 Hz smoothing slope. To further emphasize the higher frequencies (and to smooth over the 'muffled' attribute a bit), the sound was preemphasized a second time (after filtering).  This can be seen in Figure \ref{spctgrmNarrowEarNoisePrempFiltPremp_35}, next to the noisy mouth speech for comparison \ref{spctgrmNarrowMouthNoise_35_compare}.
+This ear-recorded signal was then low-pass filtered at 2500 Hz with a 500 Hz smoothing slope. To further emphasize the higher frequencies (and to smooth over the 'muffled' attribute a bit), the sound was preemphasized a second time (after filtering).  This can be seen in Figure \ref{spctgrmNarrowEarNoisePrempFiltPremp_35}, next to the noisy mouth speech for comparison \ref{spctgrmNarrowMouthNoise_35_compare}.
 
 \begin{figure}
 \centering
