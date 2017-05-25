@@ -292,7 +292,7 @@ Each individual sentence was isolated in each recording with a Praat textgrid an
 \end{figure}
 
 
-As can be seen, the speech collected at the ear is heavily low-pass filtered, and the mouth speech by itself has much more speech information.
+As can be seen, the speech collected at the ear is heavily low-pass filtered, and the mouth speech by itself has much more speech information.\footnote{It should be noted that while the two signals - from the mouth and from the ear - appear to have the same loudness, this is due only to the gain adjustment on the recording device during the experiment.  The speech from the ear was consistently \textit{louder} than the speech from the mouth; on a scale of 0-10, the ear microphone was normally set anywhere between 2 and 4, while the mouth microphone was normally set anywhere between 4 and 6.}
 However, there are still clear harmonics in the existing range in the ear-recorded speech, and most of the lower two formants can also be seen.
 
 When noise is present, it can be seen in Figs. \ref{spctgrmNarrowMouthNoise_35} and \ref{spctgrmNarrowEarNoise_35} that the noise does not affect the ear recorded signal nearly as much.  There appears to be some of the louder noise (seen in the mouth-recorded speech in fig. \ref{spctgrmNarrowMouthNoise_35}) present in the upper frequencies of the ear recorded speech, but it is significantly dampened and the signal has an overall higher speech to noise ratio (SNR).
@@ -361,12 +361,22 @@ This ear-recorded signal was then low-pass filtered at 2500 Hz with a 500 Hz smo
 
 \section{Discussion}
 
+\subsection{Limitations}
+
+During data collection, there were several issues that have affected the data.  
+The particular recorder which was used, when the gain knobs were turned up into the slightly higher range, would produce a low-frequency humming sound.  This was only present for the mouth-recorded signals, as the gain for this channel was turned up higher.  Since the headphones the researcher was using were plugged into the preamplifier, this was not noticed until most participants were already recorded.
+
+On a physical level, the earplugs which were used are fairly standard audiological silicone earplugs, which were the correct size to fit the microphones that were used.  It is unknown the degree of noise damping these plugs have, as they are not inherently designed for noise reduction.  It is very likely that a better NRR earplug could be found and used in conjunction with the 30dB NRR earmuffs to achieve a greater noise reduction at even higher noise levels.
+
+Also, as mentioned earlier, the primary limitation is that the background noise was not loud enough to be able to test the full range of SNR ratios desired.  The two options to remedy this would be to a) ask the participants to speak more quietly, or b) increase the volume of the loudspeaker.  Option (a) is more appealing, as it continues to keep the ambient noise outside the range of amplitude which could possibly damage hearing.  However, it is difficult for a participant to consciously modify their loudness, and keep that consistent for the duration of the experiment; the need to repeat sentences spoken above a certain amplitude would drastically increase the length of time of the experiment.  On top of this, it would be difficult for the researcher monitoring the speech to determine whether or not the speech was an appropriate loudness, particularly with the additive background noise.  
+
+Option (b) - increasing the noise level itself - is less appealing in that it results in a higher risk for hearing damage.  Given the SNR of +6dB for the 80dB noise condition (with some 80dB noise conditions having upwards of +10dB SNR), this would mean increasing the ambient noise from 80dB to at least 96dB in order to acheive the -10dB SNR that was originally desired.  The risk is mitigated by the use of 30dB NRR earmuffs, however at noises of this magnitude, it would be difficult to find a location which insulated the sound from affecting a significant radius outside the sound booth.  It is also very likely that a different loudspeaker would be required to reach that amplitude without clipping.
+
+\subsection{Conclusions}
+
 The results from the data collection study above largely agree with the discussed literature.  While there is some speaker variation, the speech recorded from inside the ear canal contains information up to approximately 2700Hz.  By using two, very basic acoustic transformations (pre-emphasis and bandpass filtering), the heavily lowpass filtered speech becomes remarkably intelligible, considering the location of recording and the minimal effort required. 
 
-Given the relatively well-preserved lower frequency speech information that is present in the signal, no further acoustic transformation to these frequencies is deemed necessary\footnote{E.g. such as a spectral subtraction technique based on the frequency responses given in the literature by \ref{hansen:97b} and \ref{reinfeldt:10}, among others.}.  Limited gains might be seen from a sound or sound-category specific alteration, particularly among fricative sounds and those with the majority of speech information located in frequencies above 2700Hz
-
-\subsection{Limitations}
-\textbf{Mention the limitations - namely the directionality of the microphone affecting the lack of noisyness in the data}
+Given the relatively well-preserved lower frequency speech information that is present in the signal, no further acoustic transformation to these frequencies is deemed necessary\footnote{E.g. such as a spectral subtraction technique based on the frequency responses given in the literature by \ref{hansen:97b} and \ref{reinfeldt:10}, among others.}.  Limited gains might be seen from a sound or sound-category specific alteration, particularly among fricative sounds and those with the majority of speech information located in frequencies above 2700Hz.  However, it is believed from the observed data that enough information is present for the speech to be recognizeable.  This hypothesis will be tested in a human perception experiment, described in Chapter \ref{chapter2} below.
 
 
 
