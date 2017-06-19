@@ -142,4 +142,11 @@ Wimmer, V. (1986).
 \newblock The occlusion effect from earmolds.
 \newblock {\em Hearing Instruments}, 37:19--57.
 
+\bibitem[\protect\astroncite{Zhang et~al.}{2017}]{zhang:17}
+Zhang, Z., Geiger, J., Pohjalainen, J., Mousa, A. E.-D., and Schuller, B.
+  (2017).
+\newblock Deep {Learning} for {Environmentally} {Robust} {Speech}
+  {Recognition}: {An} {Overview} of {Recent} {Developments}.
+\newblock {\em arXiv preprint arXiv:1705.10874}.
+
 \end{thebibliography}

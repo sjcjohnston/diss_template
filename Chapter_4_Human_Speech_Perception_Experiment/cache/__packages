@@ -1,0 +1,15 @@
+base
+knitr
+tidyr
+dplyr
+ggplot2
+Matrix
+lme4
+ez
+estimability
+lsmeans
+car
+pbkrtest
+xtable
+cowplot
+plyr

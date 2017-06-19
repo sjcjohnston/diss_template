@@ -51,6 +51,16 @@
 %\usepackage{mathtime}			% Times for letters; Belleek math.
 %
 \usepackage{wrapfig}
+
+\newenvironment{lydiawrapfigure}
+ {%
+%  \setlength{\intextsep}{0pt}% <--- Wrong!
+  \setlength{\columnsep}{15pt}%
+  \wrapfloat{figure}%
+ }
+ {\endwrapfloat}
+ 
+ 
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{tipa}
