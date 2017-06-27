@@ -177,6 +177,7 @@ However, under the framework of auditory scene analysis, the human auditory syst
 Of course, there reaches a point at which the auditory system fails and can no longer differentiate all sources, or, more relevant to this paper, recognize the information in a human speech signal when embedded with background noise from one or more additional sources.  The following section will describe in more depth the acoustics of speech in noise.
   
 \subsection{Acoustics of Speech in Noise}
+\label{bkgrnd:speech_in_noise}
 
 Speech in noise can be intuitively grouped into two components, the speech (more specifically the voice one is intending to hear) and the noise, called the ``masking'' element.  Broadly, masking can be defined as ``the process by which the threshold of hearing for one sound is raised by the presence of another'' (\cite{ansi:13}, 61).  This masking element is anything \textit{but} the voice\footnote{For the purposes of this paper, the term ``voice'' will be used throughout to refer to the singular speech source the listener desires to hear out of the masked signal.} (speech signal) that one is interested in.
 %which, as indicated in Chapter 2\ref{chapter2}, could be of any form or loudness.
@@ -231,7 +232,7 @@ The five different background noises used in the study described in Chapter 2\re
   \caption{Factory background noise.}
   \label{fig:fac-bkgrnd}
 \end{subfigure}
-\caption{Example spectograms of the first five seconds of the background noise tracks.}
+\caption{Example spectograms of the first five seconds of the background noise tracks. Most recorded sentences occurred within these stretches of noise.}
 \label{fig:bkgrnd-noises}
 \end{figure}
 
@@ -328,52 +329,53 @@ The participant was seated in the sound booth in front of a keyboard and compute
 
 The participant was told that the first set of eight utterances they heard were part of a ``training'' set of eight utterances.  These were given to introduce the participants to the experiment and their task\footnote{The same eight sentences were heard by every participant}.  None of the utterances from the training set were used in the analysis.  Once completed with this initial set, participants were asked if they had any questions.  Afterwards they began the task in the soundbooth.  They would hear one of the sentences, and type their answer in a text box.  When finished with their answer, they would either click to advance to the next sentence, or, if they ran into the time limit, were prevented from modifying their answer, and were prompted to click another button to advance.  When finished with all 72 stimuli, the participant was given a brief questionnaire to fill out.  
 
-After the experiment, the researcher would double check participant answers for correct spelling.  Only obvious errors were modified (e.g. `teh' to `the', `crakers' to `crackers', `mantle' to `mantel'), while ambiguous errors were left as-is (e.g. `blo' was not changed to `block', `finde' was not changed to `fine').  Numbers were also lexicalized (e.g. `30' to `thirty').  Punctuation was removed for ease of analysis and calculation of word error rate.  Exact responses are given by each participant can be found in Appendix F\ref{appendixF}.
+After the experiment, the researcher would double check participant answers for correct spelling.  Only obvious errors were modified (e.g. `teh' to `the', `crakers' to `crackers', `mantle' to `mantel'), while ambiguous errors were left as-is (e.g. `blo' was not changed to `block', `finde' was not changed to `fine').  Numbers were also lexicalized (e.g. `30' to `thirty').  Punctuation was removed for ease of analysis and calculation of word error rate.  Exact responses given by each participant can be found in Appendix F\ref{appendixF}.
 
 
 \section{Results}
+\label{ch4:results}
 
 
 
 The word error rate (WER) for each (spell-checked) response for each participant was calculated. The code for the WER calculation can be found in Appendix F\ref{appendix?}
 
-A 3-way, within-subjects ANOVA was performed with the collected data, 72 sentences each from 24 participants. Factors included the gender of the speaker (of the stimulus) with two levels, male and female, the location of the recording microphone with two levels, at the mouth and at the ear, and the background noise type with six levels, bus noise, cafe noise, pedestrian noise, factory noise, street noise, and no noise.  There was no significant 3-way interaction between speaker gender, noise type, and mic location, as can be seen in Tables \ref{tab:anova1_by_subj} and \ref{tab:anova1_by_item}. Two, two-way interactions were significant, speaker gender by mic location, and noise-type by mic location.  The main effects of all three factors were also significant (cf. Tables \ref{tab:anova1_by_subj} and \ref{tab:anova1_by_item}).
+A 3-way, within-subjects ANOVA was performed with the collected data, 72 sentences from each of the 24 participants. Factors included the gender of the speaker (of the stimulus) with two levels - male and female - the location of the recording microphone with two levels - at the mouth and at the ear - and the background noise type with six levels -no noise, bus noise, cafe noise, pedestrian noise, street noise, and factory noise.  There was no significant 3-way interaction between speaker gender, noise type, and mic location, as can be seen in the by-subjects ANOVA (Table \ref{tab:anova1_by_subj}) and the by-items ANOVA (Table \ref{tab:anova1_by_item}). Two, two-way interactions were significant, speaker gender by mic location, and noise-type by mic location. The two way interaction between speaker gender and noise type was not significant.  The main effects of all three factors were also significant (cf. Tables \ref{tab:anova1_by_subj} and \ref{tab:anova1_by_item}).
 
 % latex table generated in R 3.4.0 by xtable 1.8-2 package
-% Sun Jun 25 07:26:25 2017
+% Tue Jun 27 06:51:55 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrrrl}
   \hline
 Effect & DFn & DFd & F & p & p$<$.05 \\ 
   \hline
-speaker\_gender & 1.00 & 23.00 & 5.90 & 0.02 & * \\ 
-  noise\_type & 5.00 & 115.00 & 70.59 & 0.00 & * \\ 
-  mic\_location & 1.00 & 23.00 & 129.09 & 0.00 & * \\ 
-  speaker\_gender:noise\_type & 5.00 & 115.00 & 0.58 & 0.72 &  \\ 
-  speaker\_gender:mic\_location & 1.00 & 23.00 & 14.87 & 0.00 & * \\ 
-  noise\_type:mic\_location & 5.00 & 115.00 & 47.97 & 0.00 & * \\ 
-  speaker\_gender:noise\_type:mic\_location & 5.00 & 115.00 & 1.70 & 0.14 &  \\ 
+speaker\_gender & 1.00 & 23.00 & 6.69 & 0.02 & * \\ 
+  noise\_type & 5.00 & 115.00 & 84.83 & 0.00 & * \\ 
+  mic\_location & 1.00 & 23.00 & 155.07 & 0.00 & * \\ 
+  speaker\_gender:noise\_type & 5.00 & 115.00 & 0.55 & 0.74 &  \\ 
+  speaker\_gender:mic\_location & 1.00 & 23.00 & 18.53 & 0.00 & * \\ 
+  noise\_type:mic\_location & 5.00 & 115.00 & 55.53 & 0.00 & * \\ 
+  speaker\_gender:noise\_type:mic\_location & 5.00 & 115.00 & 1.61 & 0.16 &  \\ 
    \hline
 \end{tabular}
 \caption{ANOVA for by-subjects analysis of the three-factor, within-subjects experiment.} 
 \label{tab:anova1_by_subj}
 \end{table}
 % latex table generated in R 3.4.0 by xtable 1.8-2 package
-% Sun Jun 25 07:26:26 2017
+% Tue Jun 27 06:51:56 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrrrl}
   \hline
 Effect & DFn & DFd & F & p & p$<$.05 \\ 
   \hline
-speaker\_gender & 1.00 & 71.00 & 4.36 & 0.04 & * \\ 
-  noise\_type & 5.00 & 355.00 & 100.88 & 0.00 & * \\ 
-  mic\_location & 1.00 & 71.00 & 282.24 & 0.00 & * \\ 
-  speaker\_gender:noise\_type & 5.00 & 355.00 & 0.56 & 0.73 &  \\ 
-  speaker\_gender:mic\_location & 1.00 & 71.00 & 17.38 & 0.00 & * \\ 
-  noise\_type:mic\_location & 5.00 & 355.00 & 65.00 & 0.00 & * \\ 
-  speaker\_gender:noise\_type:mic\_location & 5.00 & 355.00 & 1.69 & 0.14 &  \\ 
+speaker\_gender & 1.00 & 71.00 & 4.01 & 0.05 & * \\ 
+  noise\_type & 5.00 & 355.00 & 103.50 & 0.00 & * \\ 
+  mic\_location & 1.00 & 71.00 & 354.53 & 0.00 & * \\ 
+  speaker\_gender:noise\_type & 5.00 & 355.00 & 0.52 & 0.76 &  \\ 
+  speaker\_gender:mic\_location & 1.00 & 71.00 & 21.36 & 0.00 & * \\ 
+  noise\_type:mic\_location & 5.00 & 355.00 & 71.03 & 0.00 & * \\ 
+  speaker\_gender:noise\_type:mic\_location & 5.00 & 355.00 & 1.86 & 0.10 &  \\ 
    \hline
 \end{tabular}
 \caption{ANOVA for by-items analysis of the three-factor, within-subjects experiment.} 
@@ -385,68 +387,71 @@ speaker\_gender & 1.00 & 71.00 & 4.36 & 0.04 & * \\
 Mauchley's Test for Sphericity was conducted, both for the by-subjects and by-items ANOVAs.  Significant sphericity violations were found for the main effect of noise type, and the interaction of speaker gender and noise type, as can be seen in Tables \ref{tab:anova1_subj_sph_test} and \ref{tab:anova1_item_sph_test}. 
 
 % latex table generated in R 3.4.0 by xtable 1.8-2 package
-% Sun Jun 25 07:26:26 2017
+% Tue Jun 27 06:51:56 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrl}
   \hline
 Effect & W & p & p$<$.05 \\ 
   \hline
-noise\_type & 0.27 & 0.02 & * \\ 
-  speaker\_gender:noise\_type & 0.62 & 0.76 &  \\ 
-  noise\_type:mic\_location & 0.43 & 0.23 &  \\ 
-  speaker\_gender:noise\_type:mic\_location & 0.59 & 0.69 &  \\ 
+noise\_type & 0.21 & 0.00 & * \\ 
+  speaker\_gender:noise\_type & 0.61 & 0.73 &  \\ 
+  noise\_type:mic\_location & 0.39 & 0.13 &  \\ 
+  speaker\_gender:noise\_type:mic\_location & 0.67 & 0.87 &  \\ 
    \hline
 \end{tabular}
 \caption{Sphericity test for the by-subjects ANOVA.} 
 \label{tab:anova1_subj_sph_test}
 \end{table}
 % latex table generated in R 3.4.0 by xtable 1.8-2 package
-% Sun Jun 25 07:26:26 2017
+% Tue Jun 27 06:51:56 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrl}
   \hline
 Effect & W & p & p$<$.05 \\ 
   \hline
-noise\_type & 0.79 & 0.28 &  \\ 
-  speaker\_gender:noise\_type & 0.67 & 0.02 & * \\ 
-  noise\_type:mic\_location & 0.86 & 0.75 &  \\ 
-  speaker\_gender:noise\_type:mic\_location & 0.86 & 0.71 &  \\ 
+noise\_type & 0.78 & 0.26 &  \\ 
+  speaker\_gender:noise\_type & 0.64 & 0.01 & * \\ 
+  noise\_type:mic\_location & 0.85 & 0.66 &  \\ 
+  speaker\_gender:noise\_type:mic\_location & 0.86 & 0.70 &  \\ 
    \hline
 \end{tabular}
 \caption{Sphericity test for the by-items ANOVA.} 
 \label{tab:anova1_item_sph_test}
 \end{table}
+
+The corrections for sphericity were performed using a Greenhouse-Geisser test, for both by-subjects and by-items ANOVAs.  Both resulted in a change to the two way interaction between speaker gender and noise; it is no longer a significant interaction.
+
 % latex table generated in R 3.4.0 by xtable 1.8-2 package
-% Sun Jun 25 07:26:26 2017
+% Tue Jun 27 06:51:56 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrl}
   \hline
 Effect & GGe & p[GG] & p[GG]$<$.05 \\ 
   \hline
-noise\_type & 0.63 & 0.00 & * \\ 
-  speaker\_gender:noise\_type & 0.86 & 0.69 &  \\ 
+noise\_type & 0.61 & 0.00 & * \\ 
+  speaker\_gender:noise\_type & 0.86 & 0.71 &  \\ 
   noise\_type:mic\_location & 0.77 & 0.00 & * \\ 
-  speaker\_gender:noise\_type:mic\_location & 0.83 & 0.15 &  \\ 
+  speaker\_gender:noise\_type:mic\_location & 0.87 & 0.17 &  \\ 
    \hline
 \end{tabular}
 \caption{Sphericity corrections for the by-subjects ANOVA.} 
 \label{tab:anova1_subj_sph_corr}
 \end{table}
 % latex table generated in R 3.4.0 by xtable 1.8-2 package
-% Sun Jun 25 07:26:26 2017
+% Tue Jun 27 06:51:56 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrl}
   \hline
 Effect & GGe & p[GG] & p[GG]$<$.05 \\ 
   \hline
-noise\_type & 0.92 & 0.00 & * \\ 
-  speaker\_gender:noise\_type & 0.87 & 0.71 &  \\ 
-  noise\_type:mic\_location & 0.95 & 0.00 & * \\ 
-  speaker\_gender:noise\_type:mic\_location & 0.95 & 0.14 &  \\ 
+noise\_type & 0.91 & 0.00 & * \\ 
+  speaker\_gender:noise\_type & 0.87 & 0.73 &  \\ 
+  noise\_type:mic\_location & 0.94 & 0.00 & * \\ 
+  speaker\_gender:noise\_type:mic\_location & 0.95 & 0.11 &  \\ 
    \hline
 \end{tabular}
 \caption{Sphericity corrections for the by-subjects ANOVA.} 
@@ -454,19 +459,22 @@ noise\_type & 0.92 & 0.00 & * \\
 \end{table}
 
 
-The sphericity tests for both by-subjects and by-items ANOVAs both returned with a change in the two way interaction between speaker gender and noise, it not being significant.  Noting the sphericity violations involving noise type, the data was viewed in the box plots in Figures \ref{fig:anova1_noise_boxplot}, \ref{fig:anova1_noiseXspkr_boxplot}, and \ref{fig:anova1_noiseXmic_boxplot}.  It can easily be noted that the conditions in which there was no background noise differ distinctly from the conditions in which there is background noise.
-
-
-\begin{wrapfigure}{L}{0.75\textwidth}
+Noting the sphericity violations involving the noise type condition, the data was viewed in the box plots in Figures \ref{fig:anova1_noise_boxplot}, \ref{fig:anova1_noiseXspkr_boxplot}, and \ref{fig:anova1_noiseXmic_boxplot}.
+%
+\begin{wrapfigure}{L}{0.5\textwidth}
 
 \includegraphics[width=\maxwidth]{figure/boxplot_noise-1} 
 
 \caption{Boxplot displaying the average word error rate (WER) averaged over each participant for every noise type. WER is the variable on the y-axis, and noise type is on the x-axis.}
 \label{fig:anova1_noise_boxplot}
 \end{wrapfigure}
+%
+When viewing the simple effects of noise in Figure \ref{fig:anova1_noise_boxplot}, it is apparent that the no-noise condition differs distinctly from the other noise types.
+
+This holds true when viewing the interaction of speaker gender and noise type in Figure \ref{fig:anova1_noiseXspkr_boxplot} and the interaction of noise type and mic location in Figure \ref{fig:anova1_noiseXmic_boxplot}.  The conditions in which there is no noise present differs noticeably from those with noise; this can visually seen even in the condition in which the speech was recorded at the ear. This is likely the root of the sphericity violations.
 
 %\begin{wrapfigure}{L}{1\textwidth}
-\begin{wrapfigure}{L}{0.75\textwidth}
+\begin{wrapfigure}{L}{\textwidth}
 
 \includegraphics[width=\maxwidth]{figure/boxplot_noiseXspkr-1} 
 
@@ -474,7 +482,7 @@ The sphericity tests for both by-subjects and by-items ANOVAs both returned with
 \label{fig:anova1_noiseXspkr_boxplot}
 \end{wrapfigure}
 
-\begin{wrapfigure}{L}{0.75\textwidth}
+\begin{wrapfigure}{L}{\textwidth}
 
 \includegraphics[width=\maxwidth]{figure/boxplot_noiseXmic-1} 
 
@@ -482,54 +490,236 @@ The sphericity tests for both by-subjects and by-items ANOVAs both returned with
 \label{fig:anova1_noiseXmic_boxplot}
 \end{wrapfigure}
 
-This is likely the root of the sphericity violations.  Since it there is a main effect of statistical difference in noise, and since the ``no noise'' condition is very apparently different from the rest, this condition was removed, and another ANOVA calculated to test for statistical difference only in noise conditions containing noise. 
+
+Since it there is a main effect of statistical difference in noise, and since the ``no noise'' condition is very apparently different from the rest another ANOVA was calculated with the ``no noise'' level of nose type removed.  This was to test for statistical difference only in noise conditions containing actual noise (and any resulting interaction). 
+
+This modified ANOVA is a two by two by five design, with the noise type factor only having 5 levels (with the ``no noise'' condition removed from the noise type factor).
 
 % latex table generated in R 3.4.0 by xtable 1.8-2 package
-% Sun Jun 25 07:26:26 2017
+% Tue Jun 27 06:51:56 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrrrl}
   \hline
 Effect & DFn & DFd & F & p & p$<$.05 \\ 
   \hline
-speaker\_gender & 1.00 & 23.00 & 5.17 & 0.03 & * \\ 
-  noise\_type & 4.00 & 92.00 & 4.35 & 0.00 & * \\ 
-  mic\_location & 1.00 & 23.00 & 185.74 & 0.00 & * \\ 
-  speaker\_gender:noise\_type & 4.00 & 92.00 & 0.62 & 0.65 &  \\ 
-  speaker\_gender:mic\_location & 1.00 & 23.00 & 13.41 & 0.00 & * \\ 
-  noise\_type:mic\_location & 4.00 & 92.00 & 5.44 & 0.00 & * \\ 
-  speaker\_gender:noise\_type:mic\_location & 4.00 & 92.00 & 1.44 & 0.23 &  \\ 
+speaker\_gender & 1.00 & 23.00 & 5.26 & 0.03 & * \\ 
+  noise\_type & 4.00 & 92.00 & 5.95 & 0.00 & * \\ 
+  mic\_location & 1.00 & 23.00 & 215.08 & 0.00 & * \\ 
+  speaker\_gender:noise\_type & 4.00 & 92.00 & 0.60 & 0.66 &  \\ 
+  speaker\_gender:mic\_location & 1.00 & 23.00 & 16.68 & 0.00 & * \\ 
+  noise\_type:mic\_location & 4.00 & 92.00 & 6.00 & 0.00 & * \\ 
+  speaker\_gender:noise\_type:mic\_location & 4.00 & 92.00 & 1.14 & 0.34 &  \\ 
    \hline
 \end{tabular}
 \caption{ANOVA for by-subjects analysis of the three-factor, within-subjects experiment. The ``no noise'' condition was removed from the noise type factor, resulting in a 2x2x5 design.} 
-\label{tab:anova1_by_subj}
+\label{tab:anova2_by_subj}
 \end{table}
 % latex table generated in R 3.4.0 by xtable 1.8-2 package
-% Sun Jun 25 07:26:27 2017
+% Tue Jun 27 06:51:56 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{lrrrrl}
   \hline
 Effect & DFn & DFd & F & p & p$<$.05 \\ 
   \hline
-speaker\_gender & 1.00 & 71.00 & 3.67 & 0.06 &  \\ 
-  noise\_type & 4.00 & 284.00 & 6.23 & 0.00 & * \\ 
-  mic\_location & 1.00 & 71.00 & 436.86 & 0.00 & * \\ 
-  speaker\_gender:noise\_type & 4.00 & 284.00 & 0.60 & 0.66 &  \\ 
-  speaker\_gender:mic\_location & 1.00 & 71.00 & 16.48 & 0.00 & * \\ 
-  noise\_type:mic\_location & 4.00 & 284.00 & 6.82 & 0.00 & * \\ 
-  speaker\_gender:noise\_type:mic\_location & 4.00 & 284.00 & 1.41 & 0.23 &  \\ 
+speaker\_gender & 1.00 & 71.00 & 3.46 & 0.07 &  \\ 
+  noise\_type & 4.00 & 284.00 & 6.92 & 0.00 & * \\ 
+  mic\_location & 1.00 & 71.00 & 515.73 & 0.00 & * \\ 
+  speaker\_gender:noise\_type & 4.00 & 284.00 & 0.55 & 0.70 &  \\ 
+  speaker\_gender:mic\_location & 1.00 & 71.00 & 20.62 & 0.00 & * \\ 
+  noise\_type:mic\_location & 4.00 & 284.00 & 7.14 & 0.00 & * \\ 
+  speaker\_gender:noise\_type:mic\_location & 4.00 & 284.00 & 1.35 & 0.25 &  \\ 
    \hline
 \end{tabular}
 \caption{ANOVA for by-items analysis of the three-factor, within-subjects experiment. The ``no noise'' condition was removed from the noise type factor, resulting in a 2x2x5 design.} 
-\label{tab:anova1_by_item}
+\label{tab:anova2_by_item}
 \end{table}
+
+
+The results are similar, with no significant three-way interaction, but - as before - two significant two-way interactions of speaker gender by mic location and noise-type by mic location (cf. Tables \ref{tab:anova2_by_subj} and \ref{tab:anova2_by_items}).  There are main effects of noise type and mic location.  Speaker gender only significant in the by-subjects anova, but is not significant in the by-items anovas.
+
+% latex table generated in R 3.4.0 by xtable 1.8-2 package
+% Tue Jun 27 06:51:56 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrl}
+  \hline
+Effect & W & p & p$<$.05 \\ 
+  \hline
+noise\_type & 0.26 & 0.00 & * \\ 
+  speaker\_gender:noise\_type & 0.76 & 0.74 &  \\ 
+  noise\_type:mic\_location & 0.58 & 0.23 &  \\ 
+  speaker\_gender:noise\_type:mic\_location & 0.82 & 0.89 &  \\ 
+   \hline
+\end{tabular}
+\caption{Sphericity test for the by-subjects ANOVA with the ``no noise'' condition removed.} 
+\label{tab:anova2_subj_sph_test}
+\end{table}
+% latex table generated in R 3.4.0 by xtable 1.8-2 package
+% Tue Jun 27 06:51:56 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrl}
+  \hline
+Effect & W & p & p$<$.05 \\ 
+  \hline
+noise\_type & 0.87 & 0.36 &  \\ 
+  speaker\_gender:noise\_type & 0.88 & 0.43 &  \\ 
+  noise\_type:mic\_location & 0.93 & 0.86 &  \\ 
+  speaker\_gender:noise\_type:mic\_location & 0.98 & 1.00 &  \\ 
+   \hline
+\end{tabular}
+\caption{Sphericity test for the by-items ANOVA with the ``no noise'' condition removed.} 
+\label{tab:anova2_item_sph_test}
+\end{table}
+
+
+Again, Mauchley's Test for Sphericity was conducted, resulting only in a significant sphericity violation in the by-subjects ANOVA for noise (cf. Tables \ref{tab:anova2_subj_sph_test} and \ref{tab:anova2_item_sph_test}).  This was corrected with a Greenhouse-Geisser test, which resulted in the interaction between speaker gender and mic location no longer being significant, but the interaction between noise type and mic location, and the main effects of noise type and mic location, remaining significant (cf. Tables \ref{tab:anova2_subj_sph_corr} and \ref{tab:anova2_item_sph_corr}).
+
+% latex table generated in R 3.4.0 by xtable 1.8-2 package
+% Tue Jun 27 06:51:56 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrl}
+  \hline
+Effect & GGe & p[GG] & p[GG]$<$.05 \\ 
+  \hline
+noise\_type & 0.57 & 0.00 & * \\ 
+  speaker\_gender:noise\_type & 0.90 & 0.65 &  \\ 
+  noise\_type:mic\_location & 0.82 & 0.00 & * \\ 
+  speaker\_gender:noise\_type:mic\_location & 0.91 & 0.34 &  \\ 
+   \hline
+\end{tabular}
+\caption{Sphericity corrections for the by-subjects ANOVA with the ``no noise'' condition removed.} 
+\label{tab:anova2_subj_sph_corr}
+\end{table}
+% latex table generated in R 3.4.0 by xtable 1.8-2 package
+% Tue Jun 27 06:51:56 2017
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrrl}
+  \hline
+Effect & GGe & p[GG] & p[GG]$<$.05 \\ 
+  \hline
+noise\_type & 0.93 & 0.00 & * \\ 
+  speaker\_gender:noise\_type & 0.94 & 0.69 &  \\ 
+  noise\_type:mic\_location & 0.97 & 0.00 & * \\ 
+  speaker\_gender:noise\_type:mic\_location & 0.99 & 0.25 &  \\ 
+   \hline
+\end{tabular}
+\caption{Sphericity corrections for the by-items ANOVA with the ``no noise'' condition removed.} 
+\label{tab:anova2_item_sph_corr}
+\end{table}
+
+
 
 
 
 \section{Initial Discussion}
 
+% Points to hit here:
+% X- Ear speech is more easily recognized than noisy speech from the mouth (print bar graph of mic loc simple effects)
+% X- There is still a main effect of noise even when 'no noise' is removed, print bar graph w/ no 'no noise' and discuss simple effects
+% X- Touch on 'near-significance' of speaker gender, how it isn't as near significant as it appears - likely an SNR effect (print graph).
+% - Discuss noiseXmic interation data, re-print graph
+% X-- Mention differences in mouth noise performance which come out in this interaction, medians ranging from approximately 60% (factory) to near 90% (bus); reference noise spectograms, give possible explanation
+% X-- Non-noisy mouth speech is still the most easily recognized - median of zero - but non-noisy ear-speech does well for itself with a median nearing 15% WER.
+% X-- There still appears to be a noticeable difference between ear-no noise and ear-noisy speech (some noise must get through), but no noticeable difference between noises within ear-speech category; nevertheless, median noisy ear-speech recognition appears to hover near 30% WER.
+% X-- Comment on how this is evidence for ''predictable'' noise that is (more or less) non-varying between noise types.
+% - Look at longitudinal effects
+% -- Surveys - add in later
+% - Move on to limitations
+% -- Mention not all sound files had normalized amplitude - some were quite louder than others, which may be an explanation for some of the observed variability.
+% -- Mention the computer screen distraction.
+
+
+The primary hypotheses from Chapter 2\ref{chapter2} included a) that the signal recorded from the ear, premphasized, filtered, and preemphasized again, would be intelligible by human listeners, and b) that it would be more intelligible than speech with a noisy background.  The results in Section \ref{ch4:results} above show a statistical difference between the WERs of the sentence transcriptions of the speech recorded from the ear canal and the speech recorded in front of the mouth.  
+%
+\begin{wrapfigure}{L}{0.5\textwidth}
+
+\includegraphics[width=\maxwidth]{figure/Mic-location_simple-1} 
+
+\caption{Simple effects of Microphone Location.}
+\label{fig:mic_loc_simple}
+\end{wrapfigure}
+%
+This can be seen more clearly in the graph of the simple effects of microphone location, in Figure \ref{fig:mic_loc_simple}.  The speech recorded at the ear has a significantly lower transcripiton word error rate than the speech recorded at the mouth, over all noise conditions (including clean speech). These primary hypotheses seem to have been validated.
+
+A ``near'' main effect of speaker gender can be observed, in that speaker gender there was a statistical main effect of speaker gender for the by-subjects ANOVA, but not the by-items.  To dissuade the notion that there is an effect of gender, it should also be noted that, in the instance of these two particular speakers, gender is also confounded with SNR.  The average female speaker's SNR was higher than the male speaker's SNR\footnote{\textbf{These two SNR values are on a computer in the US - will add later}}.  This likely contributed to the observed `near' significance.
+
+There is also a definite main effect of noise.  It is obvious that the speech recorded with no background noise (particularly at the mouth) would be easier to transcribe and recognize than the speech recorded with background noise.  However, when the level of `no noise' within the noise-type factor is removed, the statistical difference within this condition remains. 
+
+A closer look at the main effect of noise-type, excluding the level of `no noise', can be seen in Figure \ref{fig:noise-type_non-no-noise_main}.
+%
+\begin{wrapfigure}{L}{0.5\textwidth}
+
+\includegraphics[width=\maxwidth]{figure/Noise-type_simple-1} 
+
+\caption{Simple effects of Noise Type, excluding the level of `no noise'.}
+\label{fig:noise-type_non-no-noise_main}
+\end{wrapfigure}
+%
+The difference here is not nearly as stark as that seen within the microphone location distinction in Figure \ref{fig:mic_loc_simple}.  Even still, there is a noticeable difference, particularly between the bus background noise (with the highest relative WER) and the factory background noise (with the lowest relative WER).  
+
+Referring back to Figure \ref{fig:bkgrnd-noises}, containing the spectograms of the background noises in Section \ref{bkgrnd:speech-in-noise}, it is certain appears that the bus noise (cf. Figure \ref{fig:fac-bkgrnd}) contains bands in the frequency spectrum that contain higher amplitude.  This may adversely affect a person's ability to parse the harmonics and/or formants from the desired speech. 
+
+It is unclear, however, why the cafe background noise, among the other noises, has a relatively lower WER, since it also contains many more bands of frequency in this area from speaker babble. It is possible that the more prominent frequency bands in the bus noise play a role.  Similarly, it is difficult to observe much difference between the factory background noise and the pedestrian background noise, despite the pedestrian noise having a higher upper bound.
+
+To see if any more apparent difference can be found, Figure \ref{fig:noiseXmic2} shows the noise-type factor split between the two levels of mic-location, displaying what was originally seen above in Figure \ref{fig:anova1_noiseXmic_boxplot}.  When only looking at the noise as it occurs in the mouth-recorded condition, the differences between the levels of noise become much more stark.  In particular, the difference between the bus noise (high WER) and factory noise (relatively low WER) greatly expands. 
+%
+\begin{figure}
+
+\includegraphics[width=\maxwidth]{figure/boxplot_noiseXmic2-1} 
+
+\caption{Boxplot displaying the average word error rate (WER) averaged over each participant for the interaction of every noise type by the mic location. WER is the variable on the y-axis, and noise type by mic location is on the x-axis.}
+\label{fig:noiseXmic2}
+\end{figure}
+
+This distinction reaches as low as a median of approximately 60\% WER for the factory background noise conditions, and nearly a median of 90\% WER for the bus background noise.  The variance within noise conditions also differs, with the bus noise containing less variance (upper quartile 100\% WER, lower quartile ~68\% WER) than the factory noise condition (upper quartile ~90\% WER, lower quartile ~30\% WER).  The remaining noise conditions are more similar to one another, and fall in between the two, with median WERs hovering near 80\%.
+
+The differences between the transcription WERs of the bus and cafe noises and factory and pedestrian noises, despite the seemingly similar spectograms, are also heightened.  As stated earlier, the bus noise has more distinct frequency bands, which might offer an explanation for it's divergence from the WER of the cafe noise, but no explanation is proposed for the apparent difference between the factory and pedestrian noises.
+
+Returning again to Figure \ref{fig:noiseXmic2}, the WER frontrunner is quite clearly the speech recorded at the mouth with no background noise.  There was never any doubt that this would be the case, as speech with relatively little background noise is the sort of speech from which learners acquire their language model, and whereby most communication occurs.  The median WER is, unsuprisingly, 0\%, though there is some variance from perfect perception; some errors do occasionally occur. The ear-recorded speech in a clean environment manages to also acheive a respectable transcription WER median of approximately 15\%, with a lower quartile boundary at 0\% WER and an upper quartile boundary of 35\% WER.
+
+Despite being more similar than their mouth recorded counterparts, there is still an noticeable difference between the ear recorded speech with no noise, and ear recorded speech under noise conditions.  Most noise conditions recorded from the ear acheive a near 0\% lower quartile boundary, but the upper quartile boundary for most nears 60\% WER.  The median WER for noise conditions generally falls at or slightly below 30\%. 
+
+Even though a higher WER than the no-noise condition, the ear-recorded speech in noise is quite consistent across noise categories.  This is very different from the mouth-recorded speech in noise, which vary greatly between noise conditions.  This indicates that while a noise presence hampers transcription ability and increases WER in ear-recorded conditions, the varying qualities of the different background noises were dampened to the point of having no effect resembling that which occurs in the mouth-recorded speech.
+
+Since the ear-recorded speech, even in noise, appears to be quite consistent, the conditions are right for the participants to use perceptual learning to improve their recognition performance of the ear-recorded speech.
+
+\begin{figure}%{L}{0.5\textwidth}
+\begin{subfigure}{0.47\textwidth}
+
+\includegraphics[width=\maxwidth]{figure/line_graph_chrono_m-1} 
+
+\caption{Scatterplot of all participants' WER values for responses to speech recorded at the mouth \textbf{and} in noise.}
+\label{fig:linear_performance_m}
+\end{subfigure}
+%\hfill
+\begin{subfigure}{0.47\textwidth}%{L}{0.5\textwidth}
+
+\includegraphics[width=\maxwidth]{figure/line_graph_chrono-1} 
+
+\caption{Scatterplot of all participants' WER values for responses to speech recorded at the ear.}
+\label{fig:linear_performance_e}
+\end{subfigure}
+\caption{The x-axis is the order of the responses; eg. ``1'' on the x-axis is the first response given by the participants.  The x-axis only corresponds to order of response, and does not indicate the specific noise type or gender of the speaker.  A line was fitted to the data using linear regression.}
+\end{figure}
+
+To visualize whether the performance of participants generally improves after exposure to ear-recorded speech, a scatterplot graph following participant's chronological performance with mouth-recorded speech over the course of the experiment can be seen in Figure \ref{fig:linear_performance_m}. A linear regression model was fit onto the data, with a slope of $-0.0048728$.
+A similar graph, containing the participant's performance with ear-recorded speech can be seen in Figure \ref{fig:linear_performance_e}.  A linear regression model was also fit to this data, having a slope of $-0.0016076$.
+
+It is important to note the linear scales both axes, particularly the y-axis, as an explanation for why the slope values themselves are so small.  The take away from both graphs and both fitted regression models in Figures \ref{fig:linear_performance_m} and \ref{fig:linear_performance_e} is that participants do improve over the course of the experiment for both mouth recorded speech and ear recorded speech.
+
+
+\subsection{Limitations}
+
+Normalized amplitude.
+
 *Some participants noted that the computer screen was a distraction to their ability to perceive the utterances. Cite \cite{mattys:13} regarding ``Reduced Attentional Capacity'', briefly touched on in the Background/lit review.
+
+Number of participants is low.
 
 
 \section{Follow-up Pilot Experiments}
@@ -557,6 +747,30 @@ Four native speakers of English with self-reported normal hearing participated i
 
 \subsection{``F0'' Study Results}
 
+\begin{wrapfigure}{L}{0.75\textwidth}
+
+\includegraphics[width=\maxwidth]{figure/F0_boxplot_noise-1} 
+
+\caption{Using the data from the five participants who performed the experiment using the speech in which the higher frequencies were added back in from the noisy mouth-recorded speech.  Boxplot displaying the average word error rate (WER) averaged over each participant for every noise type. WER is the variable on the y-axis, and noise type is on the x-axis.}
+\label{fig:F0_noise_boxplot}
+\end{wrapfigure}
+
+\begin{wrapfigure}{L}{\textwidth}
+
+\includegraphics[width=\maxwidth]{figure/F0_boxplot_noiseXspkr-1} 
+
+\caption{Using the data from the five participants who performed the experiment using the speech in which the higher frequencies were added back in from the noisy mouth-recorded speech.  Boxplot displaying the average word error rate (WER) averaged over each participant for the interaction of every noise type by the speaker gender. WER is the variable on the y-axis, and noise type by speaker gender is on the x-axis.}
+\label{fig:F0_noiseXspkr_boxplot}
+\end{wrapfigure}
+
+\begin{wrapfigure}{L}{\textwidth}
+
+\includegraphics[width=\maxwidth]{figure/F0_boxplot_noiseXmic-1} 
+
+\caption{Using the data from the five participants who performed the experiment using the speech in which the higher frequencies were added back in from the noisy mouth-recorded speech.  Boxplot displaying the average word error rate (WER) averaged over each participant for the interaction of every noise type by the mic location. WER is the variable on the y-axis, and noise type by mic location is on the x-axis.}
+\label{fig:F0_noiseXmic_boxplot}
+\end{wrapfigure}
+
 
 \subsection{``Perceptual Learning'' Methods}
 
@@ -566,14 +780,49 @@ There were four native speakers of English with self-reported normal hearing who
 
 \subsection{``Perceptual Learning'' Results}
 
+\begin{wrapfigure}{L}{0.75\textwidth}
 
+\includegraphics[width=\maxwidth]{figure/perc_boxplot_noise-1} 
+
+\caption{Using the data from the four participants who performed the training task in which they listened and read along to a story prior to the experiment.  Boxplot displaying the average word error rate (WER) averaged over each participant for every noise type. WER is the variable on the y-axis, and noise type is on the x-axis.}
+\label{fig:perc_noise_boxplot}
+\end{wrapfigure}
+
+\begin{wrapfigure}{L}{\textwidth}
+
+\includegraphics[width=\maxwidth]{figure/perc_boxplot_noiseXspkr-1} 
+
+\caption{Using the data from the four participants who performed the training task in which they listened and read along to a story prior to the experiment.  Boxplot displaying the average word error rate (WER) averaged over each participant for the interaction of every noise type by the speaker gender. WER is the variable on the y-axis, and noise type by speaker gender is on the x-axis.}
+\label{fig:perc_noiseXspkr_boxplot}
+\end{wrapfigure}
+
+\begin{figure}
+
+\includegraphics[width=\maxwidth]{figure/perc_boxplot_noiseXmic-1} 
+
+\caption{Using the data from the four participants who performed the training task in which they listened and read along to a story prior to the experiment. Boxplot displaying the average word error rate (WER) averaged over each participant for the interaction of every noise type by the mic location. WER is the variable on the y-axis, and noise type by mic location is on the x-axis.}
+\label{fig:perc_noiseXmic_boxplot}
+\end{figure}
+
+blah
 
 \subsection{Global Discussion}
 
+\begin{figure}
 
+\includegraphics[width=\maxwidth]{figure/boxplot_noiseXmicXall_ear-1} 
 
+\caption{AllData-ear. Boxplot displaying the average word error rate (WER) averaged over each participant for the interaction of every noise type by the mic location. WER is the variable on the y-axis, and noise type by mic location is on the x-axis.}
+\label{fig:ALLXperc_noiseXmic_ear_boxplot}
+\end{figure}
 
+\begin{figure}
 
+\includegraphics[width=\maxwidth]{figure/boxplot_noiseXmicXall_mouth-1} 
+
+\caption{AllData-mouth. Boxplot displaying the average word error rate (WER) averaged over each participant for the interaction of every noise type by the mic location. WER is the variable on the y-axis, and noise type by mic location is on the x-axis.}
+\label{fig:ALLXperc_noiseXmic_mouth_boxplot}
+\end{figure}
 \bibliographystyle{apa}
 \bibliography{DissRefs.bib}
 \end{document}

@@ -62,6 +62,7 @@ However, under the framework of auditory scene analysis, the human auditory syst
 Of course, there reaches a point at which the auditory system fails and can no longer differentiate all sources, or, more relevant to this paper, recognize the information in a human speech signal when embedded with background noise from one or more additional sources.  The following section will describe in more depth the acoustics of speech in noise.
   
 \subsection{Acoustics of Speech in Noise}
+\label{bkgrnd:speech_in_noise}
 
 Speech in noise can be intuitively grouped into two components, the speech (more specifically the voice one is intending to hear) and the noise, called the ``masking'' element.  Broadly, masking can be defined as ``the process by which the threshold of hearing for one sound is raised by the presence of another'' (\cite{ansi:13}, 61).  This masking element is anything \textit{but} the voice\footnote{For the purposes of this paper, the term ``voice'' will be used throughout to refer to the singular speech source the listener desires to hear out of the masked signal.} (speech signal) that one is interested in.
 %which, as indicated in Chapter 2\ref{chapter2}, could be of any form or loudness.
@@ -116,7 +117,7 @@ The five different background noises used in the study described in Chapter 2\re
   \caption{Factory background noise.}
   \label{fig:fac-bkgrnd}
 \end{subfigure}
-\caption{Example spectograms of the first five seconds of the background noise tracks.}
+\caption{Example spectograms of the first five seconds of the background noise tracks. Most recorded sentences occurred within these stretches of noise.}
 \label{fig:bkgrnd-noises}
 \end{figure}
 
@@ -213,10 +214,11 @@ The participant was seated in the sound booth in front of a keyboard and compute
 
 The participant was told that the first set of eight utterances they heard were part of a ``training'' set of eight utterances.  These were given to introduce the participants to the experiment and their task\footnote{The same eight sentences were heard by every participant}.  None of the utterances from the training set were used in the analysis.  Once completed with this initial set, participants were asked if they had any questions.  Afterwards they began the task in the soundbooth.  They would hear one of the sentences, and type their answer in a text box.  When finished with their answer, they would either click to advance to the next sentence, or, if they ran into the time limit, were prevented from modifying their answer, and were prompted to click another button to advance.  When finished with all 72 stimuli, the participant was given a brief questionnaire to fill out.  
 
-After the experiment, the researcher would double check participant answers for correct spelling.  Only obvious errors were modified (e.g. `teh' to `the', `crakers' to `crackers', `mantle' to `mantel'), while ambiguous errors were left as-is (e.g. `blo' was not changed to `block', `finde' was not changed to `fine').  Numbers were also lexicalized (e.g. `30' to `thirty').  Punctuation was removed for ease of analysis and calculation of word error rate.  Exact responses are given by each participant can be found in Appendix F\ref{appendixF}.
+After the experiment, the researcher would double check participant answers for correct spelling.  Only obvious errors were modified (e.g. `teh' to `the', `crakers' to `crackers', `mantle' to `mantel'), while ambiguous errors were left as-is (e.g. `blo' was not changed to `block', `finde' was not changed to `fine').  Numbers were also lexicalized (e.g. `30' to `thirty').  Punctuation was removed for ease of analysis and calculation of word error rate.  Exact responses given by each participant can be found in Appendix F\ref{appendixF}.
 
 
 \section{Results}
+\label{ch4:results}
 
 <<Exp_1_Data, echo=FALSE, results='markdown'>>=
 
@@ -303,7 +305,7 @@ by_item_ez_anova2 = ezANOVA(
 
 The word error rate (WER) for each (spell-checked) response for each participant was calculated. The code for the WER calculation can be found in Appendix F\ref{appendix?}
 
-A 3-way, within-subjects ANOVA was performed with the collected data, 72 sentences each from 24 participants. Factors included the gender of the speaker (of the stimulus) with two levels, male and female, the location of the recording microphone with two levels, at the mouth and at the ear, and the background noise type with six levels, bus noise, cafe noise, pedestrian noise, factory noise, street noise, and no noise.  There was no significant 3-way interaction between speaker gender, noise type, and mic location, as can be seen in Tables \ref{tab:anova1_by_subj} and \ref{tab:anova1_by_item}. Two, two-way interactions were significant, speaker gender by mic location, and noise-type by mic location.  The main effects of all three factors were also significant (cf. Tables \ref{tab:anova1_by_subj} and \ref{tab:anova1_by_item}).
+A 3-way, within-subjects ANOVA was performed with the collected data, 72 sentences from each of the 24 participants. Factors included the gender of the speaker (of the stimulus) with two levels - male and female - the location of the recording microphone with two levels - at the mouth and at the ear - and the background noise type with six levels -no noise, bus noise, cafe noise, pedestrian noise, street noise, and factory noise.  There was no significant 3-way interaction between speaker gender, noise type, and mic location, as can be seen in the by-subjects ANOVA (Table \ref{tab:anova1_by_subj}) and the by-items ANOVA (Table \ref{tab:anova1_by_item}). Two, two-way interactions were significant, speaker gender by mic location, and noise-type by mic location. The two way interaction between speaker gender and noise type was not significant.  The main effects of all three factors were also significant (cf. Tables \ref{tab:anova1_by_subj} and \ref{tab:anova1_by_item}).
 
 <<ANOVA1_results, echo=FALSE, results='asis'>>=
 by_subj_ez_anova$ANOVA$ges <- NULL
@@ -316,7 +318,7 @@ print(xtable(by_item_ez_anova$ANOVA, label="tab:anova1_by_item", caption="ANOVA 
 
 Mauchley's Test for Sphericity was conducted, both for the by-subjects and by-items ANOVAs.  Significant sphericity violations were found for the main effect of noise type, and the interaction of speaker gender and noise type, as can be seen in Tables \ref{tab:anova1_subj_sph_test} and \ref{tab:anova1_item_sph_test}. 
 
-<<ANOVA1_sphericity, echo=FALSE, results='asis'>>=
+<<ANOVA1_sphericity_test, echo=FALSE, results='asis'>>=
 print(xtable(by_subj_ez_anova$`Mauchly's Test for Sphericity`, label="tab:anova1_subj_sph_test", caption="Sphericity test for the by-subjects ANOVA."), include.rownames=FALSE)
 print(xtable(by_item_ez_anova$`Mauchly's Test for Sphericity`, label="tab:anova1_item_sph_test", caption="Sphericity test for the by-items ANOVA."), include.rownames=FALSE)
 by_subj_ez_anova$`Sphericity Corrections`$HFe <- NULL
@@ -325,23 +327,30 @@ by_subj_ez_anova$`Sphericity Corrections`$`p[HF]` <- NULL
 by_item_ez_anova$`Sphericity Corrections`$`p[HF]` <- NULL
 by_subj_ez_anova$`Sphericity Corrections`$`p[HF]<.05` <- NULL
 by_item_ez_anova$`Sphericity Corrections`$`p[HF]<.05` <- NULL
+@
+The corrections for sphericity were performed using a Greenhouse-Geisser test, for both by-subjects and by-items ANOVAs.  Both resulted in a change to the two way interaction between speaker gender and noise; it is no longer a significant interaction.
+
+<<ANOVA1_sphericity_corr, echo=FALSE, results='asis'>>=
 print(xtable(by_subj_ez_anova$`Sphericity Corrections`, label="tab:anova1_subj_sph_corr", caption="Sphericity corrections for the by-subjects ANOVA."), include.rownames=FALSE)
 print(xtable(by_item_ez_anova$`Sphericity Corrections`, label="tab:anova1_item_sph_corr", caption="Sphericity corrections for the by-subjects ANOVA."), include.rownames=FALSE)
 @
 
-The sphericity tests for both by-subjects and by-items ANOVAs both returned with a change in the two way interaction between speaker gender and noise, it not being significant.  Noting the sphericity violations involving noise type, the data was viewed in the box plots in Figures \ref{fig:anova1_noise_boxplot}, \ref{fig:anova1_noiseXspkr_boxplot}, and \ref{fig:anova1_noiseXmic_boxplot}.  It can easily be noted that the conditions in which there was no background noise differ distinctly from the conditions in which there is background noise.
-
-
-\begin{wrapfigure}{L}{0.75\textwidth}
+Noting the sphericity violations involving the noise type condition, the data was viewed in the box plots in Figures \ref{fig:anova1_noise_boxplot}, \ref{fig:anova1_noiseXspkr_boxplot}, and \ref{fig:anova1_noiseXmic_boxplot}.
+%
+\begin{wrapfigure}{L}{0.5\textwidth}
 <<boxplot_noise, echo=FALSE, results='asis'>>=
-boxplot(wer~noise_type,col=c("white","lightgray"),mydata, las=2, names=c("No Noise","Bus","Cafe","Pedestrian","Street","Factory"))
+boxplot(wer~noise_type,col=c("white","lightgray"),mydata, las=2, names=c("No Noise","Bus","Cafe","Pedestrian","Street","Factory"),ylab="WER")
 @
 \caption{Boxplot displaying the average word error rate (WER) averaged over each participant for every noise type. WER is the variable on the y-axis, and noise type is on the x-axis.}
 \label{fig:anova1_noise_boxplot}
 \end{wrapfigure}
+%
+When viewing the simple effects of noise in Figure \ref{fig:anova1_noise_boxplot}, it is apparent that the no-noise condition differs distinctly from the other noise types.
+
+This holds true when viewing the interaction of speaker gender and noise type in Figure \ref{fig:anova1_noiseXspkr_boxplot} and the interaction of noise type and mic location in Figure \ref{fig:anova1_noiseXmic_boxplot}.  The conditions in which there is no noise present differs noticeably from those with noise; this can visually seen even in the condition in which the speech was recorded at the ear. This is likely the root of the sphericity violations.
 
 %\begin{wrapfigure}{L}{1\textwidth}
-\begin{wrapfigure}{L}{0.75\textwidth}
+\begin{wrapfigure}{L}{\textwidth}
 <<boxplot_noiseXspkr, echo=FALSE, results='asis'>>=
 boxplot(wer~noise_type*speaker_gender,col=c("white","lightgray"),mydata, names=c("Female\nNo Noise","Female\nBus","Female\nCafe","Female\nPedestrian","Female\nStreet","Female\nFactory","Male\nNo Noise","Male\nBus","Male\nCafe","Male\nPedestrian","Male\nStreet","Male\nFactory"),ylab="WER",las=2)
 @
@@ -349,7 +358,7 @@ boxplot(wer~noise_type*speaker_gender,col=c("white","lightgray"),mydata, names=c
 \label{fig:anova1_noiseXspkr_boxplot}
 \end{wrapfigure}
 
-\begin{wrapfigure}{L}{0.75\textwidth}
+\begin{wrapfigure}{L}{\textwidth}
 <<boxplot_noiseXmic, echo=FALSE, results='asis'>>=
 boxplot(wer~noise_type*mic_location,col=c("white","lightgray"),mydata, names=c("Ear\nNo Noise","Ear\nBus","Ear\nCafe","Ear\nPedestrian","Ear\nStreet","Ear\nFactory","Mouth\nNo Noise","Mouth\nBus","Mouth\nCafe","Mouth\nPedestrian","Mouth\nStreet","Mouth\nFactory"),ylab="WER",las=2)
 @
@@ -357,33 +366,174 @@ boxplot(wer~noise_type*mic_location,col=c("white","lightgray"),mydata, names=c("
 \label{fig:anova1_noiseXmic_boxplot}
 \end{wrapfigure}
 
-This is likely the root of the sphericity violations.  Since it there is a main effect of statistical difference in noise, and since the ``no noise'' condition is very apparently different from the rest, this condition was removed, and another ANOVA calculated to test for statistical difference only in noise conditions containing noise. This results in a two by two by five design, with the noise type factor only having 5 levels (with the ``no noise'' condition removed from the noise type factor).
+
+Since it there is a main effect of statistical difference in noise, and since the ``no noise'' condition is very apparently different from the rest another ANOVA was calculated with the ``no noise'' level of nose type removed.  This was to test for statistical difference only in noise conditions containing actual noise (and any resulting interaction). 
+
+This modified ANOVA is a two by two by five design, with the noise type factor only having 5 levels (with the ``no noise'' condition removed from the noise type factor).
 
 <<ANOVA2_results, echo=FALSE, results='asis'>>=
 by_subj_ez_anova2$ANOVA$ges <- NULL
 by_item_ez_anova2$ANOVA$ges <- NULL
-print(xtable(by_subj_ez_anova2$ANOVA, label="tab:anova1_by_subj", caption="ANOVA for by-subjects analysis of the three-factor, within-subjects experiment. The ``no noise'' condition was removed from the noise type factor, resulting in a 2x2x5 design."), include.rownames=FALSE)
-print(xtable(by_item_ez_anova2$ANOVA, label="tab:anova1_by_item", caption="ANOVA for by-items analysis of the three-factor, within-subjects experiment. The ``no noise'' condition was removed from the noise type factor, resulting in a 2x2x5 design."), include.rownames=FALSE)
+print(xtable(by_subj_ez_anova2$ANOVA, label="tab:anova2_by_subj", caption="ANOVA for by-subjects analysis of the three-factor, within-subjects experiment. The ``no noise'' condition was removed from the noise type factor, resulting in a 2x2x5 design."), include.rownames=FALSE)
+print(xtable(by_item_ez_anova2$ANOVA, label="tab:anova2_by_item", caption="ANOVA for by-items analysis of the three-factor, within-subjects experiment. The ``no noise'' condition was removed from the noise type factor, resulting in a 2x2x5 design."), include.rownames=FALSE)
 
 @
+
+The results are similar, with no significant three-way interaction, but - as before - two significant two-way interactions of speaker gender by mic location and noise-type by mic location (cf. Tables \ref{tab:anova2_by_subj} and \ref{tab:anova2_by_items}).  There are main effects of noise type and mic location.  Speaker gender only significant in the by-subjects anova, but is not significant in the by-items anovas.
+
+<<ANOVA2_sphericity_test, echo=FALSE, results='asis'>>=
+print(xtable(by_subj_ez_anova2$`Mauchly's Test for Sphericity`, label="tab:anova2_subj_sph_test", caption="Sphericity test for the by-subjects ANOVA with the ``no noise'' condition removed."), include.rownames=FALSE)
+print(xtable(by_item_ez_anova2$`Mauchly's Test for Sphericity`, label="tab:anova2_item_sph_test", caption="Sphericity test for the by-items ANOVA with the ``no noise'' condition removed."), include.rownames=FALSE)
+by_subj_ez_anova2$`Sphericity Corrections`$HFe <- NULL
+by_item_ez_anova2$`Sphericity Corrections`$HFe <- NULL
+by_subj_ez_anova2$`Sphericity Corrections`$`p[HF]` <- NULL
+by_item_ez_anova2$`Sphericity Corrections`$`p[HF]` <- NULL
+by_subj_ez_anova2$`Sphericity Corrections`$`p[HF]<.05` <- NULL
+by_item_ez_anova2$`Sphericity Corrections`$`p[HF]<.05` <- NULL
+@
+
+Again, Mauchley's Test for Sphericity was conducted, resulting only in a significant sphericity violation in the by-subjects ANOVA for noise (cf. Tables \ref{tab:anova2_subj_sph_test} and \ref{tab:anova2_item_sph_test}).  This was corrected with a Greenhouse-Geisser test, which resulted in the interaction between speaker gender and mic location no longer being significant, but the interaction between noise type and mic location, and the main effects of noise type and mic location, remaining significant (cf. Tables \ref{tab:anova2_subj_sph_corr} and \ref{tab:anova2_item_sph_corr}).
+
+<<ANOVA2_sphericity_corr, echo=FALSE, results='asis'>>=
+print(xtable(by_subj_ez_anova2$`Sphericity Corrections`, label="tab:anova2_subj_sph_corr", caption="Sphericity corrections for the by-subjects ANOVA with the ``no noise'' condition removed."), include.rownames=FALSE)
+print(xtable(by_item_ez_anova2$`Sphericity Corrections`, label="tab:anova2_item_sph_corr", caption="Sphericity corrections for the by-items ANOVA with the ``no noise'' condition removed."), include.rownames=FALSE)
+@
+
+
 
 
 \section{Initial Discussion}
 
-*Some participants noted that the computer screen was a distraction to their ability to perceive the utterances. Cite \cite{mattys:13} regarding ``Reduced Attentional Capacity'', briefly touched on in the Background/lit review.
+% Points to hit here:
+% X- Ear speech is more easily recognized than noisy speech from the mouth (print bar graph of mic loc simple effects)
+% X- There is still a main effect of noise even when 'no noise' is removed, print bar graph w/ no 'no noise' and discuss simple effects
+% X- Touch on 'near-significance' of speaker gender, how it isn't as near significant as it appears - likely an SNR effect (print graph).
+% - Discuss noiseXmic interation data, re-print graph
+% X-- Mention differences in mouth noise performance which come out in this interaction, medians ranging from approximately 60% (factory) to near 90% (bus); reference noise spectograms, give possible explanation
+% X-- Non-noisy mouth speech is still the most easily recognized - median of zero - but non-noisy ear-speech does well for itself with a median nearing 15% WER.
+% X-- There still appears to be a noticeable difference between ear-no noise and ear-noisy speech (some noise must get through), but no noticeable difference between noises within ear-speech category; nevertheless, median noisy ear-speech recognition appears to hover near 30% WER.
+% X-- Comment on how this is evidence for ''predictable'' noise that is (more or less) non-varying between noise types.
+% X- Look at longitudinal effects
+% -- Surveys - add in later
+% X- Move on to limitations
+% -- Mention not all sound files had normalized amplitude - some were quite louder than others, which may be an explanation for some of the observed variability.
+% -- Mention the computer screen distraction.
+
+
+The primary hypotheses from Chapter 2\ref{chapter2} included a) that the signal recorded from the ear, premphasized, filtered, and preemphasized again, would be intelligible by human listeners, and b) that it would be more intelligible than speech with a noisy background.  The results in Section \ref{ch4:results} above show a statistical difference between the WERs of the sentence transcriptions of the speech recorded from the ear canal and the speech recorded in front of the mouth.  
+%
+\begin{wrapfigure}{L}{0.5\textwidth}
+<<Mic-location_simple, echo=FALSE, results='asis'>>=
+boxplot(wer~mic_location,col=c("white","lightgray"),mydata, names=c("Ear-Recorded","Mouth-Recorded"),ylab="WER")
+@
+\caption{Simple effects of Microphone Location.}
+\label{fig:mic_loc_simple}
+\end{wrapfigure}
+%
+This can be seen more clearly in the graph of the simple effects of microphone location, in Figure \ref{fig:mic_loc_simple}.  The speech recorded at the ear has a significantly lower transcripiton word error rate than the speech recorded at the mouth, over all noise conditions (including clean speech). These primary hypotheses seem to have been validated.
+
+A ``near'' main effect of speaker gender can be observed, in that speaker gender there was a statistical main effect of speaker gender for the by-subjects ANOVA, but not the by-items.  To dissuade the notion that there is an effect of gender, it should also be noted that, in the instance of these two particular speakers, gender is also confounded with SNR.  The average female speaker's SNR was higher than the male speaker's SNR\footnote{\textbf{These two SNR values are on a computer in the US - will add later}}.  This likely contributed to the observed `near' significance.
+
+There is also a definite main effect of noise.  It is obvious that the speech recorded with no background noise (particularly at the mouth) would be easier to transcribe and recognize than the speech recorded with background noise.  However, when the level of `no noise' within the noise-type factor is removed, the statistical difference within this condition remains. 
+
+A closer look at the main effect of noise-type, excluding the level of `no noise', can be seen in Figure \ref{fig:noise-type_non-no-noise_main}.
+%
+\begin{wrapfigure}{L}{0.5\textwidth}
+<<Noise-type_simple, echo=FALSE, results='asis'>>=
+noiseless_data <- subset(mydata, noise_type!=0)
+#par(mar=c(6,5,2,2))
+boxplot(wer~droplevels(noise_type),col=c("white","lightgray"),noiseless_data, names=c("Bus","Cafe","Pedestrian","Street","Factory"),ylab="WER",las=2)
+@
+\caption{Simple effects of Noise Type, excluding the level of `no noise'.}
+\label{fig:noise-type_non-no-noise_main}
+\end{wrapfigure}
+%
+The difference here is not nearly as stark as that seen within the microphone location distinction in Figure \ref{fig:mic_loc_simple}.  Even still, there is a noticeable difference, particularly between the bus background noise (with the highest relative WER) and the factory background noise (with the lowest relative WER).  
+
+Referring back to Figure \ref{fig:bkgrnd-noises}, containing the spectograms of the background noises in Section \ref{bkgrnd:speech-in-noise}, it is certain appears that the bus noise (cf. Figure \ref{fig:fac-bkgrnd}) contains bands in the frequency spectrum that contain higher amplitude.  This may adversely affect a person's ability to parse the harmonics and/or formants from the desired speech. 
+
+It is unclear, however, why the cafe background noise, among the other noises, has a relatively lower WER, since it also contains many more bands of frequency in this area from speaker babble. It is possible that the more prominent frequency bands in the bus noise play a role.  Similarly, it is difficult to observe much difference between the factory background noise and the pedestrian background noise, despite the pedestrian noise having a higher upper bound.
+
+To see if any more apparent difference can be found, Figure \ref{fig:noiseXmic2} shows the noise-type factor split between the two levels of mic-location, displaying what was originally seen above in Figure \ref{fig:anova1_noiseXmic_boxplot}.  When only looking at the noise as it occurs in the mouth-recorded condition, the differences between the levels of noise become much more stark.  In particular, the difference between the bus noise (high WER) and factory noise (relatively low WER) greatly expands. 
+%
+\begin{figure}
+<<boxplot_noiseXmic2, echo=FALSE, results='asis'>>=
+boxplot(wer~noise_type*mic_location,col=c("white","lightgray"),mydata, names=c("Ear\nNo Noise","Ear\nBus","Ear\nCafe","Ear\nPedestrian","Ear\nStreet","Ear\nFactory","Mouth\nNo Noise","Mouth\nBus","Mouth\nCafe","Mouth\nPedestrian","Mouth\nStreet","Mouth\nFactory"),ylab="WER",las=2)
+@
+\caption{Boxplot displaying the average word error rate (WER) averaged over each participant for the interaction of every noise type by the mic location. WER is the variable on the y-axis, and noise type by mic location is on the x-axis.}
+\label{fig:noiseXmic2}
+\end{figure}
+
+This distinction reaches as low as a median of approximately 60\% WER for the factory background noise conditions, and nearly a median of 90\% WER for the bus background noise.  The variance within noise conditions also differs, with the bus noise containing less variance (upper quartile 100\% WER, lower quartile ~68\% WER) than the factory noise condition (upper quartile ~90\% WER, lower quartile ~30\% WER).  The remaining noise conditions are more similar to one another, and fall in between the two, with median WERs hovering near 80\%.
+
+The differences between the transcription WERs of the bus and cafe noises and factory and pedestrian noises, despite the seemingly similar spectograms, are also heightened.  As stated earlier, the bus noise has more distinct frequency bands, which might offer an explanation for it's divergence from the WER of the cafe noise, but no explanation is proposed for the apparent difference between the factory and pedestrian noises.
+
+Returning again to Figure \ref{fig:noiseXmic2}, the WER frontrunner is quite clearly the speech recorded at the mouth with no background noise.  There was never any doubt that this would be the case, as speech with relatively little background noise is the sort of speech from which learners acquire their language model, and whereby most communication occurs.  The median WER is, unsuprisingly, 0\%, though there is some variance from perfect perception; some errors do occasionally occur. The ear-recorded speech in a clean environment manages to also acheive a respectable transcription WER median of approximately 15\%, with a lower quartile boundary at 0\% WER and an upper quartile boundary of 35\% WER.
+
+Despite being more similar than their mouth recorded counterparts, there is still an noticeable difference between the ear recorded speech with no noise, and ear recorded speech under noise conditions.  Most noise conditions recorded from the ear acheive a near 0\% lower quartile boundary, but the upper quartile boundary for most nears 60\% WER.  The median WER for noise conditions generally falls at or slightly below 30\%. 
+
+Even though a higher WER than the no-noise condition, the ear-recorded speech in noise is quite consistent across noise categories.  This is very different from the mouth-recorded speech in noise, which vary greatly between noise conditions.  This indicates that while a noise presence hampers transcription ability and increases WER in ear-recorded conditions, the varying qualities of the different background noises were dampened to the point of having no effect resembling that which occurs in the mouth-recorded speech.
+
+Since the ear-recorded speech, even in noise, appears to be quite consistent, the conditions are right for the participants to use perceptual learning to improve their recognition performance of the ear-recorded speech.
+
+\begin{figure}%{L}{0.5\textwidth}
+\begin{subfigure}{0.47\textwidth}
+<<line_graph_chrono_m, echo=FALSE, results='asis'>>=
+data1 <- read.csv("/home/sam/Dissertation/line_graph_combined_results_mouth.csv")
+plot(data1$sent_num, data1$wer, pch = 16, cex = 1.3, col = "black", main = "Linear Regression of performance over time", xlab = "Stimulus Presentation Order", ylab = "WER")
+mod_m = lm(wer~sent_num, data=data1)
+abline(mod_m)
+@
+\caption{Scatterplot of all participants' WER values for responses to speech recorded at the mouth \textbf{and} in noise.}
+\label{fig:linear_performance_m}
+\end{subfigure}
+%\hfill
+\begin{subfigure}{0.47\textwidth}%{L}{0.5\textwidth}
+<<line_graph_chrono, echo=FALSE, results='asis'>>=
+data1 <- read.csv("/home/sam/Dissertation/line_graph_combined_results_ear.csv")
+plot(data1$sent_num, data1$wer, pch = 16, cex = 1.3, col = "black", main = "Linear Regression of performance over time", xlab = "Stimulus Presentation Order", ylab = "WER")
+mod = lm(wer~sent_num, data=data1)
+abline(mod)
+@
+\caption{Scatterplot of all participants' WER values for responses to speech recorded at the ear.}
+\label{fig:linear_performance_e}
+\end{subfigure}
+\caption{The x-axis is the order of the responses; eg. ``1'' on the x-axis is the first response given by the participants.  The x-axis only corresponds to order of response, and does not indicate the specific noise type or gender of the speaker.  A line was fitted to the data using linear regression.}
+\end{figure}
+
+To visualize whether the performance of participants generally improves after exposure to ear-recorded speech, a scatterplot graph following participant's chronological performance with mouth-recorded speech over the course of the experiment can be seen in Figure \ref{fig:linear_performance_m}. A linear regression model was fit onto the data, with a slope of $\Sexpr{coef(mod_m)[2]}$.
+A similar graph, containing the participant's performance with ear-recorded speech can be seen in Figure \ref{fig:linear_performance_e}.  A linear regression model was also fit to this data, having a slope of $\Sexpr{coef(mod)[2]}$.
+
+It is important to note the linear scales both axes, particularly the y-axis, as an explanation for why the slope values themselves are so small (ie. the y-axis range is from \textit{0.0} to \textit{1.2}).  The primary take away from both graphs and both fitted regression models in Figures \ref{fig:linear_performance_m} and \ref{fig:linear_performance_e} is that participants' recognition ability does improve over the course of the experiment for both mouth recorded speech and ear recorded speech.  Mouth-recorded speech has a greater negative slope than the slope of the ear-recorded speech, indicating greater improvement over the course of the task.  However, as already seen, the overall performance on noisy, mouth recorded speech falls well below that of ear-recorded speech. It could be possible that there are larger gains with this speech simply due to greater room for improvement, but it could also be due to the presence of high frequency speech information in the signal, ie. the speech, beneath the noise, is ``normal'' speech containing full frequency information that the participant would be used to listening for.
+
+Of particular interest for the goals of this study, is the fact that - although very modest - there is improvement in recognition of ear-recorded speech that appears to correlate with an increase in exposure time to the ear-recorded speech.  That is, as more ear-recorded speech is heard, participants see modest gains in their ability to correctly recognize and transcribe it.  These gains were seen without providing the participant with feedback or given the correct answer itself; it has been shown (\cite{davis:05}) to improve and speed up the perceptual learning process when listeners are able to correctly identify what was said.  This will be discussed further in Section \ref{ch4:follow-up-expts} below, and a follow up pilot experiment will be conducted pertaining to this.
+
+
+\subsection{Limitations}
+
+There are several limitations that were noted during the experiment.  The first was brought up by a participant during discussion while filling out a questionnaire, and, while minor, has interesting ties to the literature.  This participant (including several others), mentioned the fact that they found the task particularly difficult due to the computer monitor in front of them.  The participant said that in order to focus on the sentence itself, they had to turn away from the monitor and cover their eyes while they listened.  T
+
+his is in line with what was found in \cite{francis:09; francis:10} concerning working memory and perception; in this instance staring at the computer monitor proved to be a distraction, and overload the working memory of the participant, which was already overloaded by trying to interpret the noisy and degraded speech.  The computer monitor being a distraction was echoed by several participants.  This diversion of working memory may have had a detrimental effect on recognition (cf. \cite{caplan:99}).  The soundbooths used in this experiment did not have the greatest lighting, and this may have partially exacerbated the distraction of the glow from the monitor.
+
+Furthermore, it was realized partway through the experiment that not all of the sound files had a normalized amplitude.  There were some which the amplitude of the sound was below what it should have been, and some in which this amplitude was greater than it should have been.  This occurred seemingly randomly throughout all conditions, and likely resulted in more variance towards the higher WERs and poorer performance on these sentences with ``abnormal'' amplitudes.
+
+Perhaps most notably, the number of participants is rather low.  There are 24 total participants, but only one in each counter-balanced group.  This means that only one person heard each individual sentence in a given condition combination\footnote{For example, only one person heard ``A cramp is no small danger on a swim'' spoken by the male speaker, recorded at the mouth with bus background noise; this is true of all sentence-condition combinations.}.  If more participants were able to be run in each counter-balanced group, this would present a more accurate representation of performance on a given item, rather than having only one WER for each sentence-condition combination.
+
+Additionally, as stated earlier in Sections \ref{ch2:limitations} and \ref{chap4:methods:stimuli}, the method of recording these stimuli to acheive a higher SNR ratio\footnote{Recall, the microphone in front of the mouth was pointed towards the loudspeaker} may have artificially increased some of the differences seen between the noisy speech recorded at the mouth and the same speech recorded at the ear.  Since there still appears to be some noise that reaches the microphone at the ear (there is a difference between the noisy conditions at the ear and the non-noise condition at the ear), this may have had a detrimental effect on listener's performance on these sentences.  Future research could avoid this by increasing the ambient noise using a capable loudspeaker with appropriate hearing protection for both participant and researcher, and in an environment where the surrounding environment can be insulated from this level of noise (cf. Section \ref{ch2:limitations} for more details).
 
 
 \section{Follow-up Pilot Experiments}
+\label{ch4:follow-up-expts}
 
-To expound on the previous study, two additional pilot studies were performed to give insights into possible future directions.  The impetus for the first study was the study performed by \cite{bird:98}, which demonstrated that the fundamental frequency (F0) was a tool used by the auditory system to separate a desired source from masking noise.  This follow up proposes to recombine the very clear, lower frequencies with the ``noisy'' upper frequencies recorded at the mouth.  The hypothesis is that the auditory system will use the clear fundamental frequency harmonic information in the lower frequencies to extract the upper harmonics out of the noise.  Accuracy is predicted to improve over that of the low-pass filtered, ``muffled'', ear speech (which many participants subjectively observed to be annoying and difficult to understand), as more high frequency information will be present and available for participants.  This speech will sacrifice the advantage of being completely ``noise-free'', to sound more natural.  Additionally, since the ear-recorded speech consists of very clean harmonics, it is hypothesized that this speech, combined with the higher frequency mouth recorded speech in the noise-free condition, will perform equal to the plain ``clean'' speech condition. This will be referred to as the ``F0'' study.
+To expound on the previous study, two additional pilot studies were performed to give insights into possible future directions.  The impetus for the first study was the study performed by \cite{bird:98}, which demonstrated that the fundamental frequency (F0) was a tool used by the auditory system to separate a desired source from masking noise.  This follow up proposes to recombine the very clear, lower frequencies with the ``noisy'' upper frequencies recorded at the mouth.  The hypothesis is that the auditory system will use the clear fundamental frequency harmonic information in the lower frequencies to extract the upper harmonics out of the noise.  Accuracy is predicted to improve over that of the low-pass filtered, ``muffled'', ear speech (which many participants subjectively observed to be annoying and difficult to understand), as more high frequency information will be present and available for listeners' auditory systems.  This speech will sacrifice the advantage of being completely or nearly ``noise-free'', to sound more natural.  Additionally, since the ear-recorded speech consists of very clean harmonics, it is hypothesized that this speech, combined with the higher frequency mouth recorded speech in the noise-free condition, will perform equal to the plain ``clean'' speech condition. This will be referred to as the ``F0'' study.
 
-The second follow-up experiment was based on the concept of ``perceptual learning'' discussed earlier.  This presumes that the auditory system can learn to adapt to understand speech in a degraded signal better over time.  According to \cite{mattys:12}, significant learning can occur with even a small number of training trials. While also intuitive, \cite{davis:05} demonstrate that during training, successful recognition of a degraded signal will help one recognize a similar signal more than unsuccessful recognition of a degraded signal.  Based on these findings, a short story was read and recorded from inside the ear canal for the participants in this follow up study to listen to prior to completing the experiment itself.  Since the type of distortion from the ear recorded signal is regular and predictable, it is hypothesized that perceptual learning will take place (unlike with the unpredictable speech in noise c.f. \cite{peelle:05}), and those who have listened to the training story will perform better on ear-recorded speech than those who had not. This will be referred to as the ``perceptual learning'' study.
+The second follow-up experiment was based on the concept of ``perceptual learning'' discussed earlier.  This presumes that the auditory system can learn to adapt to understand speech in a degraded signal better over time.  According to \cite{mattys:12}, significant learning can occur with even a small number of training trials. While also intuitive, \cite{davis:05} demonstrate that during training, successful recognition of a degraded signal will help one recognize a similar signal more than unsuccessful recognition of a degraded signal.  Based on the implications of these findings, a short story was read and was recorded from inside the ear canal for the participants in this follow up study to listen to prior to completing the experiment itself.  This will serve as a brief ``training'' for participants. Since the type of distortion from the ear recorded signal is regular and predictable, it is hypothesized that perceptual learning will take place, and those who have listened to the training story will perform better on ear-recorded speech than those who had not (ie. those in the primary study). This will be referred to as the ``perceptual learning'' study.
 
 
 \subsection{``F0'' Study Methods}
 \label{F0-methods}
 
-The stimuli used for this study consisted of the exact same sentences produced by the exact same speakers.  No modification was performed to the sentences recorded at the mouth.  For the sentences recorded at the ear, the same modifications as before (pre-emphasis, lowpass filtering\footnote{Lowpass filtered allowing 0-2500Hz, with a 500 Hz slope}, and a second pre-emphasis), but this time the simultaneously recorded speech from the mouth was filtered and combined with the ear-recorded speech.  The speech from the mouth was bandpass filtered between 3000Hz and 8000Hz, with a 500Hz slope.  This allowed for an overlap of the frequencies from the mouth-recorded speech and the lowpass filtered ear-recorded speech.  The two signals were converted to a stereo signal, and then combined into a mono signal.  This resulted in clean speech below approximately 2700Hz, and noisy speech above approximately 2700Hz, as seen in Figure \ref{fig:combined-signal}.
+The stimuli used for this study consisted of the exact same sentences produced by the exact same speakers.  No modification was performed to the sentences recorded at the mouth.  For the sentences recorded at the ear, the same modifications as before (pre-emphasis, lowpass filtering\footnote{Lowpass filtered allowing 0-2500Hz, with a 500 Hz slope}, and a second pre-emphasis), but this time the simultaneously recorded speech from the mouth was filtered and combined with the ear-recorded speech.  The speech from the mouth was bandpass filtered between 3000Hz and 8000Hz, with a 500Hz slope.  
 %
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
@@ -392,26 +542,165 @@ The stimuli used for this study consisted of the exact same sentences produced b
   \label{fig:combined-signal}
 \end{wrapfigure}
 %
+This allowed for an overlap of the frequencies from the mouth-recorded speech and the lowpass filtered ear-recorded speech.  The two signals were converted to a stereo signal, and then combined into a mono signal.  This resulted in clean speech below approximately 2700Hz, and noisy speech above approximately 2700Hz, as seen in Figure \ref{fig:combined-signal}.
 
-Four native speakers of English with self-reported normal hearing participated in this study.  The design and procedure of this experiment was exactly the same as the initial perception experiment, save the alteration in modifications performed on the ear-recorded stimuli.
+Four native speakers of English with self-reported normal hearing participated in this study.  The design and procedure of this experiment was exactly the same as the initial perception experiment, save the alteration in modifications performed on the ear-recorded stimuli, described above.
 
 
-\subsection{``F0'' Study Results}
+\subsection{``F0'' Study Results and Discussion}
+\label{ch4:F0_discussion}
 
+%\begin{wrapfigure}{L}{0.75\textwidth}
+<<F0_boxplot_noise, echo=FALSE, results='asis'>>=
+F0data <- read.csv("/home/sam/Dissertation/combined_results_C.csv")
+
+# ensure column names have the correct name (I think this just renames the columns in the data structure)
+colnames(F0data)[1]="subject"
+colnames(F0data)[2]="group"
+colnames(F0data)[3]="sentence_number"
+colnames(F0data)[4]="sentence"
+colnames(F0data)[5]="speaker_gender"
+colnames(F0data)[6]="noise_type"
+colnames(F0data)[7]="mic_location"
+colnames(F0data)[8]="wer"
+
+#attach(mydata)
+
+# This sets each column (that you specify) as a factor.  Failing to do this will result in wonky degrees of freedom
+F0data$subject = as.factor(F0data$subject)
+attach(F0data)
+
+F0data$group = as.factor(F0data$group)
+attach(F0data)
+
+F0data$speaker_gender = as.factor(F0data$speaker_gender)
+attach(F0data)
+
+F0data$noise_type = as.factor(F0data$noise_type)
+attach(F0data)
+
+F0data$mic_location = as.factor(F0data$mic_location)
+attach(F0data)
+
+#boxplot(wer~noise_type,col=c("white","lightgray"),F0data, las=2, names=c("No Noise","Bus","Cafe","Pedestrian","Street","Factory"),ylab="WER")
+@
+% \caption{Using the data from the five participants who performed the experiment using the speech in which the higher frequencies were added back in from the noisy mouth-recorded speech.  Boxplot displaying the average word error rate (WER) averaged over each participant for every noise type. WER is the variable on the y-axis, and noise type is on the x-axis.}
+% \label{fig:F0_noise_boxplot}
+% \end{wrapfigure}
+
+% \begin{figure}%{L}{\textwidth}
+% <<F0_boxplot_noiseXspkr, echo=FALSE, results='asis'>>=
+% boxplot(wer~noise_type*speaker_gender,col=c("white","lightgray"),F0data, names=c("Female\nNo Noise","Female\nBus","Female\nCafe","Female\nPedestrian","Female\nStreet","Female\nFactory","Male\nNo Noise","Male\nBus","Male\nCafe","Male\nPedestrian","Male\nStreet","Male\nFactory"),ylab="WER",las=2)
+% @
+% \caption{Using the data from the five participants who performed the experiment using the speech in which the higher frequencies were added back in from the noisy mouth-recorded speech.  Boxplot displaying the average word error rate (WER) averaged over each participant for the interaction of every noise type by the speaker gender. WER is the variable on the y-axis, and noise type by speaker gender is on the x-axis.}
+% \label{fig:F0_noiseXspkr_boxplot}
+% \end{figure}
+
+Since there were only 5 participants in this follow-up study, no actual statistics could be run to test for significance.  The results here are to be used in a basic comparison of possible directions these altered methods may be able to take future research.
+
+The boxplot in Figure \ref{fig:F0_noiseXmic_boxplot} demonstrates the interaction of most interest, that of noise-type and microphone location, as identified by the ANOVAs performed on the primary experiment above.  There was no change to any of the mouth-recorded speech signals, so there ought not be any change ot the performance of these signals outside of human listener variation that is to be expected.
+
+\begin{figure}{t}%{L}{\textwidth}
+<<F0_boxplot_noiseXmic, echo=FALSE, results='asis'>>=
+boxplot(wer~noise_type*mic_location,col=c("white","lightgray"),F0data, names=c("Ear\nNo Noise","Ear\nBus","Ear\nCafe","Ear\nPedestrian","Ear\nStreet","Ear\nFactory","Mouth\nNo Noise","Mouth\nBus","Mouth\nCafe","Mouth\nPedestrian","Mouth\nStreet","Mouth\nFactory"),ylab="WER",las=2)
+@
+\caption{Using the data from the five participants who performed the experiment using the speech in which the higher frequencies were added back in from the noisy mouth-recorded speech.  Boxplot displaying the average word error rate (WER) averaged over each participant for the interaction of every noise type by the mic location. WER is the variable on the y-axis, and noise type by mic location is on the x-axis.}
+\label{fig:F0_noiseXmic_boxplot}
+\end{figure}
+
+It is interesting to note that the difference between the clean ear speech and the ``noisy'' ear speech has essentially disappeared. The speech added to the clean ear-recorded speech would have been from the simultaneous clean mouth-recorded speech, and so there is still no noise present in these ear-recorded signals.  From this plot, it appears that - if this follow up study were to be extended - there would be a dramatic difference between the noisy speech recorded at the mouth, and the speech recorded at the ear.
+Further discussion concerning the comparison of these results with those of the primary study and the ``perceptual learning'' study can be found below in Section \ref{h4:glob_discussion}.
 
 \subsection{``Perceptual Learning'' Methods}
 
-For this study, a new speaker was recorded from the ear canal (with the same set-up as all previous recordings) reciting the short story ``Peter Rabbit'', by Beatrix Potter.  The recorded had a total length of approximately 5 minutes and 13 seconds.  The recorded story underwent the same transformations as the ear-recorded stimuli (pre-emphasis, lowpass filtering\footnote{Lowpass filter of 0-2500Hz with a 500Hz slope.}, and pre-emphasis).
+For this study, a new speaker was recorded from the ear canal (with the same set-up as all previous recordings) reciting the short story ``Peter Rabbit'', by Beatrix Potter.  The recorded story, as was presented to the participants, had a total length of approximately 5 minutes and 13 seconds.  The recorded story underwent the same transformations as the ear-recorded stimuli in the primary study (ie. pre-emphasis, lowpass filtering\footnote{Lowpass filter of 0-2500Hz with a 500Hz slope.}, and pre-emphasis again).
 
-There were four native speakers of English with self-reported normal hearing who participated in this follow up study.  They were first presented with a transcript of the story, and asked to listen to the audio and read along.  This offers ample chance for ``successful'' recognition of the degraded ear-recorded signal (cf. \cite{davis:05}).  After the reading session, the participants conducted the experiment as was done in the other studies mentioned in Sections \ref{hsp-main-procedure} and \ref{F0-methods}.
+There were four native speakers of English with self-reported normal hearing who participated in this follow up study.  They were first presented with a transcript of the story, and asked to listen to the audio and read along.  This offers ample chance for ``successful'' recognition of the degraded ear-recorded signal (cf. \cite{davis:05}).  After the reading session, the participants conducted the experiment as was done in the other studies mentioned in Sections \ref{hsp-main-procedure} and \ref{F0-methods}, with the exact same stimuli as in the primary experiment.
 
-\subsection{``Perceptual Learning'' Results}
+\subsection{``Perceptual Learning'' Results and Discusson}
 
+%\begin{wrapfigure}{L}{0.75\textwidth}
+<<perc_boxplot_noise, echo=FALSE, results='asis'>>=
+perc_data <- read.csv("/home/sam/Dissertation/combined_results_R.csv")
+# ensure column names have the correct name (I think this just renames the columns in the data structure)
+colnames(perc_data)[1]="subject"
+colnames(perc_data)[2]="group"
+colnames(perc_data)[3]="sentence_number"
+colnames(perc_data)[4]="sentence"
+colnames(perc_data)[5]="speaker_gender"
+colnames(perc_data)[6]="noise_type"
+colnames(perc_data)[7]="mic_location"
+colnames(perc_data)[8]="wer"
 
+#attach(mydata)
 
-\subsection{Global Discussion}
+# This sets each column (that you specify) as a factor.  Failing to do this will result in wonky degrees of freedom
+perc_data$subject = as.factor(perc_data$subject)
+attach(perc_data)
 
+perc_data$group = as.factor(perc_data$group)
+attach(perc_data)
 
+perc_data$speaker_gender = as.factor(perc_data$speaker_gender)
+attach(perc_data)
 
+perc_data$noise_type = as.factor(perc_data$noise_type)
+attach(perc_data)
 
+perc_data$mic_location = as.factor(perc_data$mic_location)
+attach(perc_data)
 
+#boxplot(wer~noise_type,col=c("white","lightgray"),perc_data, las=2, names=c("No Noise","Bus","Cafe","Pedestrian","Street","Factory"),ylab="WER")
+@
+% \caption{Using the data from the four participants who performed the training task in which they listened and read along to a story prior to the experiment.  Boxplot displaying the average word error rate (WER) averaged over each participant for every noise type. WER is the variable on the y-axis, and noise type is on the x-axis.}
+% \label{fig:perc_noise_boxplot}
+% \end{wrapfigure}
+
+% \begin{wrapfigure}{L}{\textwidth}
+% <<perc_boxplot_noiseXspkr, echo=FALSE, results='asis'>>=
+% boxplot(wer~noise_type*speaker_gender,col=c("white","lightgray"),perc_data, names=c("Female\nNo Noise","Female\nBus","Female\nCafe","Female\nPedestrian","Female\nStreet","Female\nFactory","Male\nNo Noise","Male\nBus","Male\nCafe","Male\nPedestrian","Male\nStreet","Male\nFactory"),ylab="WER",las=2)
+% @
+% \caption{Using the data from the four participants who performed the training task in which they listened and read along to a story prior to the experiment.  Boxplot displaying the average word error rate (WER) averaged over each participant for the interaction of every noise type by the speaker gender. WER is the variable on the y-axis, and noise type by speaker gender is on the x-axis.}
+% \label{fig:perc_noiseXspkr_boxplot}
+% \end{wrapfigure}
+
+As stated in the discussion of the ``F0'' study in Section \ref{ch4:F0_discussion}, there are too few participants to run actual statistics on the results of this follow up study, and so implications here should be taken lightly and used to prepare further future research in this area. The only difference between this study and the primary study are that the participants in this study heard a 5 minute, 13 second ``training'' story beforehand, recorded from the narrator's ear.
+
+\begin{figure}
+<<perc_boxplot_noiseXmic, echo=FALSE, results='asis'>>=
+boxplot(wer~noise_type*mic_location,col=c("white","lightgray"),perc_data, names=c("Ear\nNo Noise","Ear\nBus","Ear\nCafe","Ear\nPedestrian","Ear\nStreet","Ear\nFactory","Mouth\nNo Noise","Mouth\nBus","Mouth\nCafe","Mouth\nPedestrian","Mouth\nStreet","Mouth\nFactory"),ylab="WER",las=2)
+@
+\caption{Using the data from the four participants who performed the training task in which they listened and read along to a story prior to the experiment. Boxplot displaying the average word error rate (WER) averaged over each participant for the interaction of every noise type by the mic location. WER is the variable on the y-axis, and noise type by mic location is on the x-axis.}
+\label{fig:perc_noiseXmic_boxplot}
+\end{figure}
+
+blah
+
+\section{Global Discussion}
+\label{ch4:glob_discussion}
+
+\begin{figure}
+<<boxplot_noiseXmicXall_ear, echo=FALSE, results='asis'>>=
+mydata1 = cbind(mydata, style='A')
+F0data1 = cbind(F0data, style='C')
+perc_data1 = cbind(perc_data, style='R')
+
+alldata = rbind(mydata1,F0data1,perc_data1)
+
+alldata1 <- subset(alldata, mic_location!=1)
+par(mar=c(6,5,2,2))
+boxplot(wer~noise_type*droplevels(mic_location)*style,col=c("white","lightgray"),alldata1, las=2, names=c("No Noise.R","Bus.R","Cafe.R","Pedestrian.R","Street.R","Factory.R","No Noise.F","Bus.F","Cafe.F","Pedestrian.F","Street.F","Factory.F","No Noise.T","Bus.T","Cafe.T","Pedestrian.T","Street.T","Factory.T"),ylab="WER",las=2)
+@
+\caption{AllData-ear. Boxplot displaying the average word error rate (WER) averaged over each participant for the interaction of every noise type by the mic location. WER is the variable on the y-axis, and noise type by mic location is on the x-axis.}
+\label{fig:ALLXperc_noiseXmic_ear_boxplot}
+\end{figure}
+
+\begin{figure}
+<<boxplot_noiseXmicXall_mouth, echo=FALSE, results='asis'>>=
+alldata2 <- subset(alldata, mic_location!=0)
+par(mar=c(6,5,2,2))
+boxplot(wer~noise_type*droplevels(mic_location)*style,col=c("white","lightgray"),alldata2, las=2, names=c("No Noise.R","Bus.R","Cafe.R","Pedestrian.R","Street.R","Factory.R","No Noise.F","Bus.F","Cafe.F","Pedestrian.F","Street.F","Factory.F","No Noise.T","Bus.T","Cafe.T","Pedestrian.T","Street.T","Factory.T"),ylab="WER",las=2)
+@
+\caption{AllData-mouth. Boxplot displaying the average word error rate (WER) averaged over each participant for the interaction of every noise type by the mic location. WER is the variable on the y-axis, and noise type by mic location is on the x-axis.}
+\label{fig:ALLXperc_noiseXmic_mouth_boxplot}
+\end{figure}
