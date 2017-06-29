@@ -1,3 +1,111 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\astroncite{ANSI}{2013}]{ansi:13}
+ANSI (2013).
+\newblock Ansi s1.1-2013.
+\newblock {\em Acoustical Terminology}.
+\newblock Washington, D.C: American National Standards Institute.
+
+\bibitem[\protect\astroncite{Bird and Darwin}{1997}]{bird:97}
+Bird, J. and Darwin, C. (1997).
+\newblock Effects of a difference in fundamental frequency in separating two
+  sentences.
+\newblock Grantham, UK.
+
+\bibitem[\protect\astroncite{Bregman and McAdams}{1994}]{bregman:94}
+Bregman, A.~S. and McAdams, S. (1994).
+\newblock Auditory {Scene} {Analysis}: {The} {Perceptual} {Organization} of
+  {Sound}.
+\newblock {\em The Journal of the Acoustical Society of America},
+  95(2):1177--1178.
+
+\bibitem[\protect\astroncite{Brungart}{2001}]{brungart:01}
+Brungart, D.~S. (2001).
+\newblock Informational and energetic masking effects in the perception of two
+  simultaneous talkers.
+\newblock {\em The Journal of the Acoustical Society of America},
+  109(3):1101--1109.
+
+\bibitem[\protect\astroncite{Caplan and Waters}{1999}]{caplan:99}
+Caplan, D. and Waters, G.~S. (1999).
+\newblock Verbal working memory and sentence comprehension.
+\newblock {\em Behavioral and Brain Sciences}, 22(1):77--94.
+
+\bibitem[\protect\astroncite{Davis et~al.}{2005}]{davis:05}
+Davis, M.~H., Johnsrude, I.~S., Hervais-Adelman, A., Taylor, K., and
+  McGettigan, C. (2005).
+\newblock Lexical {Information} {Drives} {Perceptual} {Learning} of {Distorted}
+  {Speech}: {Evidence} {From} the {Comprehension} of {Noise}-{Vocoded}
+  {Sentences}.
+\newblock {\em Journal of Experimental Psychology: General}, 134(2):222--241.
+
+\bibitem[\protect\astroncite{Ding and Simon}{2013}]{ding:13}
+Ding, N. and Simon, J.~Z. (2013).
+\newblock Adaptive {Temporal} {Encoding} {Leads} to a
+  {Background}-{Insensitive} {Cortical} {Representation} of {Speech}.
+\newblock {\em Journal of Neuroscience}, 33(13):5728--5735.
+
+\bibitem[\protect\astroncite{Durlach}{2006}]{durlach:06}
+Durlach, N. (2006).
+\newblock Auditory masking: {Need} for improved conceptual structure.
+\newblock {\em The Journal of the Acoustical Society of America},
+  120(4):1787--1790.
+
+\bibitem[\protect\astroncite{Francis}{2010}]{francis:10}
+Francis, A.~L. (2010).
+\newblock Improved segregation of simultaneous talkers differentially affects
+  perceptual and cognitive capacity demands for recognizing speech in competing
+  speech.
+\newblock {\em Attention, Perception, \& Psychophysics}, 72(2):501--516.
+
+\bibitem[\protect\astroncite{Francis and Nusbaum}{2009}]{francis:09}
+Francis, A.~L. and Nusbaum, H.~C. (2009).
+\newblock Effects of intelligibility on working memory demand for speech
+  perception.
+\newblock {\em Attention, Perception, \& Psychophysics}, 71(6):1360--1374.
+
+\bibitem[\protect\astroncite{Garofolo et~al.}{1993}]{garofolo:93}
+Garofolo, J., Lamel, L., Fisher, W., Fiscus, J., Pallett, D., and Dahlgren, N.
+  (1993).
+\newblock Timit acoustic-phonetic continuous speech corpus ldc93s1.
+\newblock Philadelphia: Linguistic Data Consortium.
+
+\bibitem[\protect\astroncite{Gilbert et~al.}{2013}]{gilbert:13}
+Gilbert, J.~L., Tamati, T.~N., and Pisoni, D.~B. (2013).
+\newblock Development, {Reliability}, and {Validity} of {PRESTO}: {A} {New}
+  {High}-{Variability} {Sentence} {Recognition} {Test}.
+\newblock {\em Journal of the American Academy of Audiology}, 24(1):26--36.
+
+\bibitem[\protect\astroncite{Hirsh}{1948}]{hirsh:48}
+Hirsh, I.~J. (1948).
+\newblock The {Influence} of {Interaural} {Phase} on {Interaural} {Summation}
+  and {Inhibition}.
+\newblock {\em The Journal of the Acoustical Society of America},
+  20(4):536--544.
+
+\bibitem[\protect\astroncite{Mattys et~al.}{2010}]{mattys:10}
+Mattys, S.~L., Carroll, L.~M., Li, C.~K., and Chan, S.~L. (2010).
+\newblock Effects of energetic and informational masking on speech segmentation
+  by native and non-native speakers.
+\newblock {\em Speech Communication}, 52(11-12):887--899.
+
+\bibitem[\protect\astroncite{Mattys et~al.}{2012}]{mattys:12}
+Mattys, S.~L., Davis, M.~H., Bradlow, A.~R., and Scott, S.~K. (2012).
+\newblock Speech recognition in adverse conditions: {A} review.
+\newblock {\em Language and Cognitive Processes}, 27(7-8):953--978.
+
+\bibitem[\protect\astroncite{Middlebrooks et~al.}{2017}]{middlebrooks:17}
+Middlebrooks, J.~C., Simon, J.~Z., Popper, A.~N., and Fay, R.~R., editors
+  (2017).
+\newblock {\em The {Auditory} {System} at the {Cocktail} {Party}}, volume~60 of
+  {\em Springer {Handbook} of {Auditory} {Research}}.
+\newblock Springer International Publishing, Cham.
+\newblock DOI: 10.1007/978-3-319-51662-2.
+
+\bibitem[\protect\astroncite{Tamati et~al.}{2013}]{tamati:13}
+Tamati, T.~N., Gilbert, J.~L., and Pisoni, D.~B. (2013).
+\newblock Some {Factors} {Underlying} {Individual} {Differences} in {Speech}
+  {Recognition} on {PRESTO}: {A} {First} {Report}.
+\newblock {\em Journal of the American Academy of Audiology}, 24(7):616--634.
+
 \end{thebibliography}

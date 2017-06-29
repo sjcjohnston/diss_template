@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.5.15)  27 JUN 2017 06:52
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.5.15)  28 JUN 2017 15:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -443,26 +443,26 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 (./chapter_4.aux)
 \openout1 = `chapter_4.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 133.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 133.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 132.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 132.
  (/usr/share/texmf/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 132.
+LaTeX Font Info:    ... okay on input line 132.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -496,7 +496,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring ON on input line 133.
+Package hyperref Info: Link coloring ON on input line 132.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -506,9 +506,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count153
 )
-LaTeX Info: Redefining \ref on input line 133.
-LaTeX Info: Redefining \pageref on input line 133.
-LaTeX Info: Redefining \nameref on input line 133.
+LaTeX Info: Redefining \ref on input line 132.
+LaTeX Info: Redefining \pageref on input line 132.
+LaTeX Info: Redefining \nameref on input line 132.
 
 (./chapter_4.out) (./chapter_4.out)
 \@outlinefile=\write3
@@ -516,682 +516,451 @@ LaTeX Info: Redefining \nameref on input line 133.
 
 
 CHAPTER 1.
-
-Package natbib Warning: Citation `mattys:12' on page 1 undefined on input line 
-155.
-
-
-Package natbib Warning: Citation `bregman:94' on page 1 undefined on input line
- 157.
-
-<figure/single-channel-animals.png, id=86, 1957.3125pt x 903.375pt>
+<figure/single-channel-animals.png, id=93, 1957.3125pt x 903.375pt>
 File: figure/single-channel-animals.png Graphic file (type png)
 
 <use figure/single-channel-animals.png>
 Package pdftex.def Info: figure/single-channel-animals.png used on input line 1
-63.
+62.
 (pdftex.def)             Requested size: 191.87534pt x 88.55081pt.
 
-Underfull \hbox (badness 2753) in paragraph at lines 159--166
+Underfull \hbox (badness 1178) in paragraph at lines 158--165
 []\OT1/cmr/m/n/12 To vi-su-al-ize the au-di-tory scene, note the wave-form (ie.
- the graph
- []
-
-
-Underfull \hbox (badness 5302) in paragraph at lines 159--166
-\OT1/cmr/m/n/12 of air pres-sure fluc-tu-a-tions) that reaches the tym-panic me
-m-brane, eg.
- []
-
-
-Underfull \hbox (badness 8113) in paragraph at lines 159--166
-\OT1/cmr/m/n/12 see Fig-ure [][]1.1[][]. It is com-posed of all en-vi-ron-men-t
-al sounds con-
- []
-
-
-Underfull \hbox (badness 6792) in paragraph at lines 159--166
-\OT1/cmr/m/n/12 tribut-ing to the air pres-sure fluc-tu-a-tion at the tym-panic
- mem-brane[][][][][].
+ the graph of
  []
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
+Underfull \hbox (badness 1168) in paragraph at lines 165--168
+[]\OT1/cmr/m/n/12 It is com-posed of all en-vi-ron-men-tal
+ []
 
-Package natbib Warning: Citation `middlebrooks:17' on page 2 undefined on input
- line 168.
-
-<figure/multi-channel-animals_w-text.png, id=98, 1927.2pt x 1011.78pt>
+<figure/multi-channel-animals_w-text.png, id=109, 1927.2pt x 1011.78pt>
 File: figure/multi-channel-animals_w-text.png Graphic file (type png)
 
 <use figure/multi-channel-animals_w-text.png>
 Package pdftex.def Info: figure/multi-channel-animals_w-text.png used on input 
-line 172.
+line 175.
 (pdftex.def)             Requested size: 405.07161pt x 212.64989pt.
- [2 <./figure/multi-channel-animals_w-text.png (PNG copy)> <./figure/single-cha
-nnel-animals.png>]
-
-Package natbib Warning: Citation `ansi:13' on page 3 undefined on input line 18
-2.
 
 
-Package natbib Warning: Citation `brungart:01' on page 3 undefined on input lin
-e 185.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Package natbib Warning: Citation `mattys:12' on page 3 undefined on input line 
-185.
-
-
-Package natbib Warning: Citation `mattys:10' on page 3 undefined on input line 
-187.
-
-
-Package natbib Warning: Citation `middlebrooks:17' on page 3 undefined on input
- line 189.
-
-
-<figure/speech-on-speech_masked_spectrograms.png, id=113, 841.1425pt x 615.2987
+[2 <./figure/single-channel-animals.png>] [3 <./figure/multi-channel-animals_w-
+text.png (PNG copy)>]
+<figure/speech-on-speech_masked_spectrograms.png, id=143, 841.1425pt x 615.2987
 5pt>
 File: figure/speech-on-speech_masked_spectrograms.png Graphic file (type png)
  <use figure/speech-on-speech_masked_spectrograms.png>
 Package pdftex.def Info: figure/speech-on-speech_masked_spectrograms.png used o
-n input line 193.
+n input line 196.
 (pdftex.def)             Requested size: 405.07161pt x 296.31647pt.
- [3] [4 <./figure/speech-on-speech_masked_spectrograms.png (PNG copy)>]
+ [4 <./figure/speech-on-speech_masked_spectrograms.png (PNG copy)>]
 
-LaTeX Warning: Reference `chapter2' on page 5 undefined on input line 200.
+LaTeX Warning: Reference `chapter2' on page 5 undefined on input line 203.
 
-
-LaTeX Warning: Reference `fig:bckgrnd-noises' on page 5 undefined on input line
- 200.
-
-
-LaTeX Warning: Reference `fig:spctgrm-cafe-background' on page 5 undefined on i
-nput line 200.
-
-<figure/spctgrm-bus-background.png, id=124, 1957.3125pt x 1053.9375pt>
+<figure/spctgrm-bus-background.png, id=151, 1957.3125pt x 1053.9375pt>
 File: figure/spctgrm-bus-background.png Graphic file (type png)
 
 <use figure/spctgrm-bus-background.png>
 Package pdftex.def Info: figure/spctgrm-bus-background.png used on input line 2
-05.
-(pdftex.def)             Requested size: 191.87534pt x 103.3093pt.
+08.
+(pdftex.def)             Requested size: 182.2839pt x 98.14703pt.
 
-<figure/spctgrm-cafe-background.png, id=125, 1957.3125pt x 1053.9375pt>
+<figure/spctgrm-cafe-background.png, id=152, 1957.3125pt x 1053.9375pt>
 File: figure/spctgrm-cafe-background.png Graphic file (type png)
 
 <use figure/spctgrm-cafe-background.png>
 Package pdftex.def Info: figure/spctgrm-cafe-background.png used on input line 
-211.
-(pdftex.def)             Requested size: 191.87534pt x 103.3093pt.
+215.
+(pdftex.def)             Requested size: 182.2839pt x 98.14703pt.
 
-<figure/spctgrm-ped-background.png, id=126, 1957.3125pt x 1053.9375pt>
+<figure/spctgrm-ped-background.png, id=153, 1957.3125pt x 1053.9375pt>
 File: figure/spctgrm-ped-background.png Graphic file (type png)
 
 <use figure/spctgrm-ped-background.png>
 Package pdftex.def Info: figure/spctgrm-ped-background.png used on input line 2
-18.
-(pdftex.def)             Requested size: 191.87534pt x 103.3093pt.
+23.
+(pdftex.def)             Requested size: 182.2839pt x 98.14703pt.
 
-<figure/spctgrm-str-background.png, id=127, 1957.3125pt x 1053.9375pt>
+<figure/spctgrm-str-background.png, id=154, 1957.3125pt x 1053.9375pt>
 File: figure/spctgrm-str-background.png Graphic file (type png)
 
 <use figure/spctgrm-str-background.png>
 Package pdftex.def Info: figure/spctgrm-str-background.png used on input line 2
-24.
-(pdftex.def)             Requested size: 191.87534pt x 103.3093pt.
+30.
+(pdftex.def)             Requested size: 182.2839pt x 98.14703pt.
 
-<figure/spctgrm-fac-background.png, id=128, 1957.3125pt x 1053.9375pt>
+Overfull \hbox (4.79642pt too wide) in paragraph at lines 206--236
+[]$[]$  $[]$ 
+ []
+
+
+Overfull \hbox (4.79642pt too wide) in paragraph at lines 206--236
+[]$  $[]$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--236
+
+ []
+
+<figure/spctgrm-fac-background.png, id=155, 1957.3125pt x 1053.9375pt>
 File: figure/spctgrm-fac-background.png Graphic file (type png)
 
 <use figure/spctgrm-fac-background.png>
 Package pdftex.def Info: figure/spctgrm-fac-background.png used on input line 2
-31.
-(pdftex.def)             Requested size: 191.87534pt x 103.3093pt.
-
-Overfull \hbox (2.61108pt too wide) in paragraph at lines 203--235
-[]$[]$ $[]$
- []
+39.
+(pdftex.def)             Requested size: 182.2839pt x 98.14703pt.
 
 
-Overfull \hbox (2.61108pt too wide) in paragraph at lines 203--235
-[]$ $[]$
- []
-
-
-Package natbib Warning: Citation `middlebrooks:17' on page 5 undefined on input
- line 239.
-
-
-Package natbib Warning: Citation `durlach:06' on page 5 undefined on input line
- 240.
-
-
-Package natbib Warning: Citation `hirsh:47' on page 5 undefined on input line 2
-41.
-
-
-Package natbib Warning: Citation `bregman:94' on page 5 undefined on input line
- 241.
-
-
-Package natbib Warning: Citation `bregman:94' on page 5 undefined on input line
- 243.
-
-
-Package natbib Warning: Citation `bird:98' on page 5 undefined on input line 24
-3.
-
-
-Package natbib Warning: Citation `middlebrooks:17' on page 5 undefined on input
- line 243.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [5] [6 <./figure/spctgrm-bus-background.png> <./figure/spctgrm-cafe-background.
 png> <./figure/spctgrm-ped-background.png> <./figure/spctgrm-str-background.png
-> <./figure/spctgrm-fac-background.png>]
+> <./figure/spctgrm-fac-background.png>] [7]
 
-Package natbib Warning: Citation `ding:13' on page 7 undefined on input line 24
-8.
-
-
-Package natbib Warning: Citation `gilbert:13' on page 7 undefined on input line
- 250.
+LaTeX Warning: Reference `chapter2' on page 8 undefined on input line 267.
 
 
-Package natbib Warning: Citation `garofolo:93' on page 7 undefined on input lin
-e 250.
+LaTeX Warning: Reference `chapter2' on page 8 undefined on input line 281.
 
 
-Package natbib Warning: Citation `gilbert:13' on page 7 undefined on input line
- 250.
-
-
-Package natbib Warning: Citation `ding:13' on page 7 undefined on input line 25
-0.
-
-
-Package natbib Warning: Citation `ding:13' on page 7 undefined on input line 25
-2.
-
-
-Package natbib Warning: Citation `gilbert:13' on page 7 undefined on input line
- 252.
-
-
-Package natbib Warning: Citation `francis:10' on page 7 undefined on input line
- 254.
-
-
-Package natbib Warning: Citation `francis:09' on page 7 undefined on input line
- 254.
-
-
-Package natbib Warning: Citation `caplan:99' on page 7 undefined on input line 
-254.
-
-
-Package natbib Warning: Citation `tamati:13' on page 7 undefined on input line 
-254.
-
-[7]
-
-Package natbib Warning: Citation `mattys:12' on page 8 undefined on input line 
-256.
-
-
-Package natbib Warning: Citation `ding:13' on page 8 undefined on input line 25
-8.
-
-
-Package natbib Warning: Citation `gilbert:13' on page 8 undefined on input line
- 258.
-
-
-LaTeX Warning: Reference `chapter2' on page 8 undefined on input line 258.
-
-
-LaTeX Warning: Reference `chapter2' on page 8 undefined on input line 272.
-
-
-LaTeX Warning: Reference `ch2:limitations' on page 8 undefined on input line 27
-2.
+LaTeX Warning: Reference `ch2:limitations' on page 8 undefined on input line 28
+1.
 
 [8]
 
-LaTeX Warning: Reference `chapter2' on page 9 undefined on input line 277.
+LaTeX Warning: Reference `chapter2' on page 9 undefined on input line 286.
 
-<figure/overallSetUp_new.png, id=153, 442.65375pt x 352.31625pt>
+<figure/overallSetUp_new.png, id=236, 442.65375pt x 352.31625pt>
 File: figure/overallSetUp_new.png Graphic file (type png)
 
 <use figure/overallSetUp_new.png>
-Package pdftex.def Info: figure/overallSetUp_new.png used on input line 283.
+Package pdftex.def Info: figure/overallSetUp_new.png used on input line 292.
 (pdftex.def)             Requested size: 191.87534pt x 152.71873pt.
 
 
-LaTeX Warning: Reference `chapter2' on page 9 undefined on input line 284.
+LaTeX Warning: Reference `chapter2' on page 9 undefined on input line 293.
 
 
-LaTeX Warning: Reference `chapter2' on page 9 undefined on input line 284.
+LaTeX Warning: Reference `chapter2' on page 9 undefined on input line 293.
 
 
-LaTeX Warning: Reference `ch2:limitations' on page 9 undefined on input line 28
-8.
+LaTeX Warning: Reference `ch2:limitations' on page 9 undefined on input line 29
+7.
 
 
-LaTeX Warning: Reference `ch2:limitations' on page 9 undefined on input line 28
-8.
+LaTeX Warning: Reference `chap2' on page 9 undefined on input line 297.
 
-<figure/spectNewMouthNoise.png, id=157, 1957.3125pt x 1053.9375pt>
+
+LaTeX Warning: Reference `ch2:limitations' on page 9 undefined on input line 29
+7.
+
+<figure/spectNewMouthNoise.png, id=240, 1957.3125pt x 1053.9375pt>
 File: figure/spectNewMouthNoise.png Graphic file (type png)
 
 <use figure/spectNewMouthNoise.png>
-Package pdftex.def Info: figure/spectNewMouthNoise.png used on input line 293.
+Package pdftex.def Info: figure/spectNewMouthNoise.png used on input line 302.
 (pdftex.def)             Requested size: 191.87534pt x 103.3093pt.
 
-<figure/spectNewEarNoise.png, id=158, 1957.3125pt x 1053.9375pt>
+<figure/spectNewEarNoise.png, id=241, 1957.3125pt x 1053.9375pt>
 File: figure/spectNewEarNoise.png Graphic file (type png)
 
 <use figure/spectNewEarNoise.png>
-Package pdftex.def Info: figure/spectNewEarNoise.png used on input line 299.
+Package pdftex.def Info: figure/spectNewEarNoise.png used on input line 309.
 (pdftex.def)             Requested size: 191.87534pt x 103.3093pt.
 
-Overfull \hbox (2.61108pt too wide) in paragraph at lines 291--303
+Overfull \hbox (2.61108pt too wide) in paragraph at lines 300--313
 []$[]$ $[]$ 
+ []
+
+
+Underfull \hbox (badness 1748) in paragraph at lines 295--315
+\OT1/cmr/bx/it/12 ter 2: Lim-i-ta-tions][] \OT1/cmr/m/n/12 in Chap-
  []
 
 [9 <./figure/overallSetUp_new.png>] [10 <./figure/spectNewMouthNoise.png> <./fi
 gure/spectNewEarNoise.png>] [11]
 
-LaTeX Warning: Reference `appendixF' on page 12 undefined on input line 332.
+LaTeX Warning: Reference `appendixF' on page 12 undefined on input line 342.
 
 
-LaTeX Warning: Reference `appendix?' on page 12 undefined on input line 340.
+LaTeX Warning: Reference `appendix?' on page 12 undefined on input line 350.
 
-[12] [13] <figure/boxplot_noise-1.pdf, id=206, 505.89pt x 505.89pt>
+[12] [13] <figure/boxplot_noise-1.pdf, id=294, 505.89pt x 505.89pt>
 File: figure/boxplot_noise-1.pdf Graphic file (type pdf)
 
 <use figure/boxplot_noise-1.pdf>
-Package pdftex.def Info: figure/boxplot_noise-1.pdf used on input line 466.
+Package pdftex.def Info: figure/boxplot_noise-1.pdf used on input line 478.
 (pdftex.def)             Requested size: 213.19627pt x 213.19795pt.
 
-
-Package wrapfig Warning: Collision between wrapping environments on input line 
-477.
-
-<figure/boxplot_noiseXspkr-1.pdf, id=210, 505.89pt x 505.89pt>
+<figure/boxplot_noiseXspkr-1.pdf, id=295, 505.89pt x 505.89pt>
 File: figure/boxplot_noiseXspkr-1.pdf Graphic file (type pdf)
 
 <use figure/boxplot_noiseXspkr-1.pdf>
-Package pdftex.def Info: figure/boxplot_noiseXspkr-1.pdf used on input line 479
+Package pdftex.def Info: figure/boxplot_noiseXspkr-1.pdf used on input line 489
 .
 (pdftex.def)             Requested size: 426.39255pt x 426.40363pt.
- [14]
 
-Package wrapfig Warning: Collision between wrapping environments on input line 
-485.
 
-<figure/boxplot_noiseXmic-1.pdf, id=219, 505.89pt x 505.89pt>
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figure/boxplot_noiseXmic-1.pdf, id=296, 505.89pt x 505.89pt>
 File: figure/boxplot_noiseXmic-1.pdf Graphic file (type pdf)
 
 <use figure/boxplot_noiseXmic-1.pdf>
-Package pdftex.def Info: figure/boxplot_noiseXmic-1.pdf used on input line 487.
+Package pdftex.def Info: figure/boxplot_noiseXmic-1.pdf used on input line 497.
 
 (pdftex.def)             Requested size: 426.39255pt x 426.40363pt.
- [15 <./figure/boxplot_noise-1.pdf>]
-[16 <./figure/boxplot_noiseXspkr-1.pdf>]
-Overfull \hbox (50.53708pt too wide) in paragraph at lines 496--497
-[][]\OT1/cmr/m/n/12 This
- []
 
 
-Overfull \hbox (36.43723pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 mod-
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+[14] [15 <./figure/boxplot_noise-1.pdf>]
 
-Overfull \hbox (17.18048pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 i-
- []
+LaTeX Warning: Reference `chapter2' on page 16 undefined on input line 616.
 
-
-Overfull \hbox (28.27759pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 fied
- []
-
-
-Overfull \hbox (52.73984pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 ANOVA
- []
-
-
-Overfull \hbox (17.89853pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 is
- []
-
-
-Overfull \hbox (15.87494pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 a
- []
-
-
-Overfull \hbox (28.27759pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 two
- []
-
-
-Overfull \hbox (22.40265pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 by
- []
-
-
-Overfull \hbox (28.27759pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 two
- []
-
-
-Overfull \hbox (22.40265pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 by
- []
-
-
-Overfull \hbox (27.62482pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 five
- []
-
-
-Overfull \hbox (25.6665pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 de-
- []
-
-
-Overfull \hbox (33.56503pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 sign,
- []
-
-
-Overfull \hbox (32.84698pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 with
- []
-
-
-Overfull \hbox (26.31927pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 the
- []
-
-
-Overfull \hbox (35.52335pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 noise
- []
-
-
-Overfull \hbox (32.5206pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 type
- []
-
-
-Overfull \hbox (28.60397pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 fac-
- []
-
-
-Overfull \hbox (25.01373pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 tor
- []
-
-
-Overfull \hbox (31.86783pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 only
- []
-
-
-Overfull \hbox (32.19421pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 hav-
- []
-
-
-Overfull \hbox (25.6665pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 ing
- []
-
-
-Overfull \hbox (15.87494pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 5
- []
-
-
-Overfull \hbox (28.60397pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 lev-
- []
-
-
-Overfull \hbox (23.1207pt too wide) in paragraph at lines 496--497
-\OT1/cmr/m/n/12 els
- []
-
-
-LaTeX Warning: Reference `tab:anova2_by_items' on page 17 undefined on input li
-ne 540.
-
-[17 <./figure/boxplot_noiseXmic-1.pdf>]
-
-LaTeX Warning: Reference `chapter2' on page 18 undefined on input line 637.
-
-<figure/Mic-location_simple-1.pdf, id=255, 505.89pt x 505.89pt>
+[16 <./figure/boxplot_noiseXspkr-1.pdf>] [17 <./figure/boxplot_noiseXmic-1.pdf>
+] <figure/Mic-location_simple-1.pdf, id=347, 505.89pt x 505.89pt>
 File: figure/Mic-location_simple-1.pdf Graphic file (type pdf)
 
 <use figure/Mic-location_simple-1.pdf>
-Package pdftex.def Info: figure/Mic-location_simple-1.pdf used on input line 64
-1.
+Package pdftex.def Info: figure/Mic-location_simple-1.pdf used on input line 62
+3.
 (pdftex.def)             Requested size: 213.19627pt x 213.19795pt.
  [18] [19]
+<figure/spkr-gender_mic-location_interaction-1.pdf, id=369, 505.89pt x 505.89pt
+>
+File: figure/spkr-gender_mic-location_interaction-1.pdf Graphic file (type pdf)
 
-Package wrapfig Warning: Collision between wrapping environments on input line 
-655.
+ <use figure/spkr-gender_mic-location_interaction-1.pdf>
+Package pdftex.def Info: figure/spkr-gender_mic-location_interaction-1.pdf used
+ on input line 651.
+(pdftex.def)             Requested size: 213.19627pt x 213.19795pt.
 
-<figure/Noise-type_simple-1.pdf, id=274, 505.89pt x 505.89pt>
+Underfull \hbox (badness 4193) in paragraph at lines 647--655
+[]\OT1/cmr/m/n/12 To see if any more ap-par-ent dif-fer-ence can be found, Fig-
+ure [][]1.13[][]
+ []
+
+
+Underfull \hbox (badness 5403) in paragraph at lines 647--655
+\OT1/cmr/m/n/12 shows the noise type fac-tor split be-tween the two lev-els of 
+mic lo-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 647--655
+\OT1/cmr/m/n/12 ca-tion, dis-play-ing what was orig-i-nally seen above in Fig-u
+re [][]1.9[][].
+ []
+
+[20 <./figure/Mic-location_simple-1.pdf>]
+<figure/Noise-type_simple-1.pdf, id=382, 505.89pt x 505.89pt>
 File: figure/Noise-type_simple-1.pdf Graphic file (type pdf)
 
 <use figure/Noise-type_simple-1.pdf>
-Package pdftex.def Info: figure/Noise-type_simple-1.pdf used on input line 657.
+Package pdftex.def Info: figure/Noise-type_simple-1.pdf used on input line 667.
 
 (pdftex.def)             Requested size: 213.19627pt x 213.19795pt.
- [20]
 
-LaTeX Warning: Reference `bkgrnd:speech-in-noise' on page 21 undefined on input
- line 665.
+Underfull \hbox (badness 1189) in paragraph at lines 663--671
+[]\OT1/cmr/m/n/12 Out of all con-di-tion com-bi-na-tions in Fig-ure [][]1.13[][
+], the WER-frontrunner
+ []
 
-[21 <./figure/Mic-location_simple-1.pdf> <./figure/Noise-type_simple-1.pdf>]
-<figure/boxplot_noiseXmic2-1.pdf, id=302, 505.89pt x 505.89pt>
+
+Underfull \hbox (badness 3128) in paragraph at lines 663--671
+\OT1/cmr/m/n/12 is quite clearly the speech recorded at the mouth with no back-
+ground
+ []
+
+
+Underfull \hbox (badness 3449) in paragraph at lines 663--671
+\OT1/cmr/m/n/12 noise. There was never any doubt that this would be the case, a
+s
+ []
+
+
+Underfull \hbox (badness 2173) in paragraph at lines 663--671
+\OT1/cmr/m/n/12 speech with rel-a-tively lit-tle back-ground noise is the sort 
+of speech from
+ []
+
+
+Underfull \hbox (badness 1466) in paragraph at lines 663--671
+\OT1/cmr/m/n/12 which learn-ers ac-quire their lan-guage model, and whereby mos
+t com-mu-ni-
+ []
+
+
+Underfull \hbox (badness 1540) in paragraph at lines 663--671
+\OT1/cmr/m/n/12 ca-tion oc-curs. The me-dian WER is, un-supris-ingly, 0%, thoug
+h there is
+ []
+
+
+Underfull \hbox (badness 1661) in paragraph at lines 663--671
+\OT1/cmr/m/n/12 some vari-ance from per-fect per-cep-tion; some er-rors do oc-c
+a-sion-ally oc-cur.
+ []
+
+[21 <./figure/spkr-gender_mic-location_interaction-1.pdf>]
+Underfull \hbox (badness 1694) in paragraph at lines 675--676
+[]\OT1/cmr/m/n/12 Despite be-ing more sim-i-lar than
+ []
+
+
+Underfull \hbox (badness 5711) in paragraph at lines 675--676
+\OT1/cmr/m/n/12 their mouth recorded coun-ter-parts,
+ []
+
+
+Underfull \hbox (badness 1178) in paragraph at lines 675--676
+\OT1/cmr/m/n/12 tween the ear recorded speech with
+ []
+
+<figure/boxplot_noiseXmic2-1.pdf, id=392, 505.89pt x 505.89pt>
 File: figure/boxplot_noiseXmic2-1.pdf Graphic file (type pdf)
 
 <use figure/boxplot_noiseXmic2-1.pdf>
-Package pdftex.def Info: figure/boxplot_noiseXmic2-1.pdf used on input line 673
+Package pdftex.def Info: figure/boxplot_noiseXmic2-1.pdf used on input line 684
 .
 (pdftex.def)             Requested size: 426.39255pt x 426.40363pt.
- [22] [23 <./figure/boxplot_noiseXmic2-1.pdf>] <figure/line_graph_chrono_m-1.pd
-f, id=318, 505.89pt x 505.89pt>
+ [22 <./figure/Noise-type_simple-1.pdf>]
+<figure/line_graph_chrono_m-1.pdf, id=404, 505.89pt x 505.89pt>
 File: figure/line_graph_chrono_m-1.pdf Graphic file (type pdf)
 
 <use figure/line_graph_chrono_m-1.pdf>
 Package pdftex.def Info: figure/line_graph_chrono_m-1.pdf used on input line 69
-4.
+5.
 (pdftex.def)             Requested size: 200.40501pt x 200.40715pt.
 
-<figure/line_graph_chrono-1.pdf, id=319, 505.89pt x 505.89pt>
+<figure/line_graph_chrono-1.pdf, id=405, 505.89pt x 505.89pt>
 File: figure/line_graph_chrono-1.pdf Graphic file (type pdf)
 
 <use figure/line_graph_chrono-1.pdf>
-Package pdftex.def Info: figure/line_graph_chrono-1.pdf used on input line 702.
+Package pdftex.def Info: figure/line_graph_chrono-1.pdf used on input line 703.
 
 (pdftex.def)             Requested size: 200.40501pt x 200.40715pt.
- [24] [25 <./figure/line_graph_chrono_m-1.pdf> <./figure/line_graph_chrono-1.pd
-f>]
+ [23 <./figure/boxplot_noiseXmic2-1.pdf>]
+[24 <./figure/line_graph_chrono_m-1.pdf> <./figure/line_graph_chrono-1.pdf>]
+[25]
 
-Package natbib Warning: Citation `mattys:13' on page 26 undefined on input line
- 720.
-
-
-Package natbib Warning: Citation `bird:98' on page 26 undefined on input line 7
-27.
+LaTeX Warning: Reference `ch2:limitations' on page 26 undefined on input line 7
+28.
 
 
-Package natbib Warning: Citation `mattys:12' on page 26 undefined on input line
- 729.
+LaTeX Warning: Reference `ch2:limitations' on page 26 undefined on input line 7
+28.
 
-
-Package natbib Warning: Citation `davis:05' on page 26 undefined on input line 
-729.
-
-
-Package natbib Warning: Citation `peelle:05' on page 26 undefined on input line
- 729.
-
-[26] <figure/combined-signal.png, id=353, 1957.3125pt x 1053.9375pt>
+[26] [27] <figure/combined-signal.png, id=472, 1957.3125pt x 1053.9375pt>
 File: figure/combined-signal.png Graphic file (type png)
 
 <use figure/combined-signal.png>
-Package pdftex.def Info: figure/combined-signal.png used on input line 739.
+Package pdftex.def Info: figure/combined-signal.png used on input line 750.
 (pdftex.def)             Requested size: 191.87534pt x 103.3093pt.
 
-Underfull \hbox (badness 2189) in paragraph at lines 745--746
+Underfull \hbox (badness 1629) in paragraph at lines 753--756
+[]\OT1/cmr/m/n/12 This al-lowed for an over-lap of the
+ []
+
+
+Underfull \hbox (badness 1394) in paragraph at lines 753--756
+\OT1/cmr/m/n/12 fre-quen-cies from the mouth-recorded
+ []
+
+
+Underfull \hbox (badness 2189) in paragraph at lines 757--758
 \OT1/cmr/m/n/12 self-reported nor-mal hear-ing par-tic-i-
  []
 
-[27 <./figure/combined-signal.png>]
-<figure/F0_boxplot_noise-1.pdf, id=360, 505.89pt x 505.89pt>
-File: figure/F0_boxplot_noise-1.pdf Graphic file (type pdf)
-
-<use figure/F0_boxplot_noise-1.pdf>
-Package pdftex.def Info: figure/F0_boxplot_noise-1.pdf used on input line 752.
-(pdftex.def)             Requested size: 319.7944pt x 319.80078pt.
-
-
-Package wrapfig Warning: Collision between wrapping environments on input line 
-758.
-
-<figure/F0_boxplot_noiseXspkr-1.pdf, id=361, 505.89pt x 505.89pt>
-File: figure/F0_boxplot_noiseXspkr-1.pdf Graphic file (type pdf)
-
-<use figure/F0_boxplot_noiseXspkr-1.pdf>
-Package pdftex.def Info: figure/F0_boxplot_noiseXspkr-1.pdf used on input line 
-760.
-(pdftex.def)             Requested size: 426.39255pt x 426.40363pt.
-
-
-Package wrapfig Warning: Collision between wrapping environments on input line 
-766.
-
-<figure/F0_boxplot_noiseXmic-1.pdf, id=362, 505.89pt x 505.89pt>
+<figure/F0_boxplot_noiseXmic-1.pdf, id=474, 505.89pt x 505.89pt>
 File: figure/F0_boxplot_noiseXmic-1.pdf Graphic file (type pdf)
 
 <use figure/F0_boxplot_noiseXmic-1.pdf>
 Package pdftex.def Info: figure/F0_boxplot_noiseXmic-1.pdf used on input line 7
-68.
+79.
 (pdftex.def)             Requested size: 426.39255pt x 426.40363pt.
- [28 <./figure/F0_boxplot_noise-1.pdf>]
-[29 <./figure/F0_boxplot_noiseXspkr-1.pdf>]
-
-Package natbib Warning: Citation `davis:05' on page 30 undefined on input line 
-779.
-
-
-Package wrapfig Warning: Collision between wrapping environments on input line 
-783.
-
-<figure/perc_boxplot_noise-1.pdf, id=386, 505.89pt x 505.89pt>
-File: figure/perc_boxplot_noise-1.pdf Graphic file (type pdf)
-
-<use figure/perc_boxplot_noise-1.pdf>
-Package pdftex.def Info: figure/perc_boxplot_noise-1.pdf used on input line 785
-.
-(pdftex.def)             Requested size: 319.7944pt x 319.80078pt.
- [30]
-
-Package wrapfig Warning: Collision between wrapping environments on input line 
-791.
-
-<figure/perc_boxplot_noiseXspkr-1.pdf, id=392, 505.89pt x 505.89pt>
-File: figure/perc_boxplot_noiseXspkr-1.pdf Graphic file (type pdf)
-
-<use figure/perc_boxplot_noiseXspkr-1.pdf>
-Package pdftex.def Info: figure/perc_boxplot_noiseXspkr-1.pdf used on input lin
-e 793.
-(pdftex.def)             Requested size: 426.39255pt x 426.40363pt.
-
-<figure/perc_boxplot_noiseXmic-1.pdf, id=393, 505.89pt x 505.89pt>
+ [28 <./figure/combined-signal.png>]
+[29 <./figure/F0_boxplot_noiseXmic-1.pdf>] [30]
+<figure/perc_boxplot_noiseXmic-1.pdf, id=503, 505.89pt x 505.89pt>
 File: figure/perc_boxplot_noiseXmic-1.pdf Graphic file (type pdf)
 
 <use figure/perc_boxplot_noiseXmic-1.pdf>
 Package pdftex.def Info: figure/perc_boxplot_noiseXmic-1.pdf used on input line
- 801.
+ 826.
 (pdftex.def)             Requested size: 426.39255pt x 426.40363pt.
- [31 <./figure/F0_boxplot_noiseXmic-1.pdf>] <figure/boxplot_noiseXmicXall_ear-1
-.pdf, id=405, 505.89pt x 505.89pt>
-File: figure/boxplot_noiseXmicXall_ear-1.pdf Graphic file (type pdf)
-
-<use figure/boxplot_noiseXmicXall_ear-1.pdf>
-Package pdftex.def Info: figure/boxplot_noiseXmicXall_ear-1.pdf used on input l
-ine 813.
-(pdftex.def)             Requested size: 426.39255pt x 426.40363pt.
-
-<figure/boxplot_noiseXmicXall_mouth-1.pdf, id=406, 505.89pt x 505.89pt>
+ [31 <./figure/perc_boxplot_noiseXmic-1.pdf>]
+<figure/boxplot_noiseXmicXall_mouth-1.pdf, id=518, 505.89pt x 505.89pt>
 File: figure/boxplot_noiseXmicXall_mouth-1.pdf Graphic file (type pdf)
 
 <use figure/boxplot_noiseXmicXall_mouth-1.pdf>
 Package pdftex.def Info: figure/boxplot_noiseXmicXall_mouth-1.pdf used on input
- line 821.
+ line 844.
 (pdftex.def)             Requested size: 426.39255pt x 426.40363pt.
- (./chapter_4.bbl [32 <./figure/perc_boxplot_noise-1.pdf>] [33 <./figure/perc_b
-oxplot_noiseXmic-1.pdf>] [34 <./figure/boxplot_noiseXmicXall_ear-1.pdf>] [35 <.
-/figure/boxplot_noiseXmicXall_mouth-1.pdf>] [36 <./figure/perc_boxplot_noiseXsp
-kr-1.pdf>]
 
-Package natbib Warning: Empty `thebibliography' environment on input line 3.
 
-)
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Package natbib Warning: There were undefined citations.
+[32] [33 <./figure/boxplot_noiseXmicXall_mouth-1.pdf>]
+<figure/boxplot_noiseXmicXall_ear-1.pdf, id=535, 505.89pt x 505.89pt>
+File: figure/boxplot_noiseXmicXall_ear-1.pdf Graphic file (type pdf)
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 828.
-[37
+<use figure/boxplot_noiseXmicXall_ear-1.pdf>
+Package pdftex.def Info: figure/boxplot_noiseXmicXall_ear-1.pdf used on input l
+ine 864.
+(pdftex.def)             Requested size: 426.39255pt x 426.40363pt.
 
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 828.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[34] [35 <./figure/boxplot_noiseXmicXall_ear-1.pdf>]
+
+LaTeX Warning: Reference `chapter2' on page 36 undefined on input line 880.
+
+[36] (./chapter_4.bbl [37] [38
+
+])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 888.
+ [39]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 888.
  (./chapter_4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 828.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 828.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 888.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 888.
 Package rerunfilecheck Info: File `chapter_4.out' has not changed.
-(rerunfilecheck)             Checksum: CC139F169BCE43738717BEA5F11B4A42;1445.
+(rerunfilecheck)             Checksum: E8AF7ABE8380A39EBE4F1BF361F37785;1527.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 828.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 888.
  ) 
 Here is how much of TeX's memory you used:
- 10211 strings out of 493304
- 152795 string characters out of 6139871
- 264050 words of memory out of 5000000
- 13402 multiletter control sequences out of 15000+600000
- 10046 words of font info for 36 fonts, out of 8000000 for 9000
+ 10244 strings out of 493304
+ 153117 string characters out of 6139871
+ 263226 words of memory out of 5000000
+ 13419 multiletter control sequences out of 15000+600000
+ 10405 words of font info for 37 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 48i,9n,75p,1368b,612s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,10n,75p,1184b,639s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmti12.pfb>
-Output written on chapter_4.pdf (37 pages, 12825953 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmti12.pfb>
+Output written on chapter_4.pdf (39 pages, 12854097 bytes).
 PDF statistics:
- 520 PDF objects out of 1000 (max. 8388607)
- 418 compressed objects within 5 object streams
- 101 named destinations out of 1000 (max. 500000)
- 301 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 634 PDF objects out of 1000 (max. 8388607)
+ 534 compressed objects within 6 object streams
+ 119 named destinations out of 1000 (max. 500000)
+ 294 words of extra memory for PDF output out of 10000 (max. 10000000)
 

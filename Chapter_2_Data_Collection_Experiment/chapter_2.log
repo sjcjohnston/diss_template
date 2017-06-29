@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.5.15)  18 JUN 2017 08:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.5.15)  27 JUN 2017 15:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -612,264 +612,264 @@ Package pdftex.def Info: figure/bekesy60-3b.png used on input line 226.
 File: figure/eac_mod_diffs.png Graphic file (type png)
 
 <use figure/eac_mod_diffs.png>
-Package pdftex.def Info: figure/eac_mod_diffs.png used on input line 243.
+Package pdftex.def Info: figure/eac_mod_diffs.png used on input line 242.
 (pdftex.def)             Requested size: 170.55441pt x 176.11528pt.
 
-Underfull \hbox (badness 1354) in paragraph at lines 237--250
+Underfull \hbox (badness 1354) in paragraph at lines 237--248
 \OT1/cmr/m/n/12 res-onat-ing char-ac-ter-is-tics and am-pli-
  []
 
 [5 <./figure/bekesy60-3b.png>] [6]
-Underfull \hbox (badness 2538) in paragraph at lines 260--263
+Underfull \hbox (badness 2538) in paragraph at lines 258--261
 \OT1/cmr/m/n/12 in par-tic-u-lar (c.f. [][]B^^Sek^^Sesy[][] ([][]1948[][]),
  []
 
 
-Underfull \hbox (badness 1259) in paragraph at lines 260--263
+Underfull \hbox (badness 1259) in paragraph at lines 258--261
 [][]\OT1/cmr/m/n/12 P^^\rschmann[][] ([][]2000[][]), [][]Re-in-feldt et al.[][]
 
  []
 
 [7 <./figure/eac_mod_diffs.png>]
-<figure/BCrelAC_e_s.png, id=234, 842.14626pt x 319.1925pt>
+<figure/BCrelAC_e_s.png, id=236, 842.14626pt x 319.1925pt>
 File: figure/BCrelAC_e_s.png Graphic file (type png)
 
 <use figure/BCrelAC_e_s.png>
-Package pdftex.def Info: figure/BCrelAC_e_s.png used on input line 276.
+Package pdftex.def Info: figure/BCrelAC_e_s.png used on input line 273.
 (pdftex.def)             Requested size: 426.39255pt x 161.61223pt.
  [8]
-<figure/BC_rel_AC_all.png, id=252, 457.71pt x 709.65125pt>
+<figure/BC_rel_AC_all.png, id=254, 457.71pt x 709.65125pt>
 File: figure/BC_rel_AC_all.png Graphic file (type png)
 
 <use figure/BC_rel_AC_all.png>
-Package pdftex.def Info: figure/BC_rel_AC_all.png used on input line 286.
+Package pdftex.def Info: figure/BC_rel_AC_all.png used on input line 283.
 (pdftex.def)             Requested size: 191.87534pt x 297.4884pt.
  [9 <./figure/BCrelAC_e_s.png (PNG copy)>]
-Underfull \hbox (badness 1127) in paragraph at lines 295--296
+Underfull \hbox (badness 1127) in paragraph at lines 292--293
 \OT1/cmr/m/n/12 body-conducted am-pli-tude of phones
  []
 
-<figure/bekesy60-3.png, id=266, 331.89998pt x 178.86826pt>
+<figure/bekesy60-3.png, id=268, 331.89998pt x 178.86826pt>
 File: figure/bekesy60-3.png Graphic file (type png)
 
 <use figure/bekesy60-3.png>
-Package pdftex.def Info: figure/bekesy60-3.png used on input line 299.
+Package pdftex.def Info: figure/bekesy60-3.png used on input line 296.
 (pdftex.def)             Requested size: 213.19627pt x 114.89833pt.
  [10 <./figure/BC_rel_AC_all.png>] [11 <./figure/bekesy60-3.png>] <figure/bekes
-y60-1.png, id=321, 257.46187pt x 150.14093pt>
+y60-1.png, id=323, 257.46187pt x 150.14093pt>
 File: figure/bekesy60-1.png Graphic file (type png)
 
 <use figure/bekesy60-1.png>
-Package pdftex.def Info: figure/bekesy60-1.png used on input line 319.
+Package pdftex.def Info: figure/bekesy60-1.png used on input line 316.
 (pdftex.def)             Requested size: 213.19627pt x 124.33055pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 316--322
+Underfull \hbox (badness 10000) in paragraph at lines 313--319
 [][][]\OT1/cmr/m/n/12 Stenfelt and Re-in-feldt[][] ([][]2007[][]) de-vel-oped a
  model of an oc-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 316--322
+Underfull \hbox (badness 10000) in paragraph at lines 313--319
 \OT1/cmr/m/n/12 cluded ear us-ing mea-sure-ments gen-er-ated from stim-u-lat-in
 g the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 316--322
+Underfull \hbox (badness 10000) in paragraph at lines 313--319
 \OT1/cmr/m/n/12 skull sep-a-rately at both the frontal bone and the mas-toid pr
 o-cess.
  []
 
 
 Package wrapfig Warning: Collision between wrapping environments on input line 
-326.
+323.
 
-<figure/hansenAverageOE.png, id=328, 701.62125pt x 602.25pt>
+<figure/hansenAverageOE.png, id=330, 701.62125pt x 602.25pt>
 File: figure/hansenAverageOE.png Graphic file (type png)
 
 <use figure/hansenAverageOE.png>
-Package pdftex.def Info: figure/hansenAverageOE.png used on input line 329.
+Package pdftex.def Info: figure/hansenAverageOE.png used on input line 326.
 (pdftex.def)             Requested size: 153.50084pt x 131.76024pt.
 
-<figure/Hansen_OE-plot_a.png, id=329, 235.63031pt x 155.07938pt>
+<figure/Hansen_OE-plot_a.png, id=331, 235.63031pt x 155.07938pt>
 File: figure/Hansen_OE-plot_a.png Graphic file (type png)
 
 <use figure/Hansen_OE-plot_a.png>
-Package pdftex.def Info: figure/Hansen_OE-plot_a.png used on input line 337.
+Package pdftex.def Info: figure/Hansen_OE-plot_a.png used on input line 334.
 (pdftex.def)             Requested size: 170.55766pt x 112.25336pt.
 
-<figure/Hansen_OE-plot_b.png, id=330, 234.8775pt x 152.82094pt>
+<figure/Hansen_OE-plot_b.png, id=332, 234.8775pt x 152.82094pt>
 File: figure/Hansen_OE-plot_b.png Graphic file (type png)
 
 <use figure/Hansen_OE-plot_b.png>
-Package pdftex.def Info: figure/Hansen_OE-plot_b.png used on input line 341.
+Package pdftex.def Info: figure/Hansen_OE-plot_b.png used on input line 338.
 (pdftex.def)             Requested size: 170.55766pt x 110.9707pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 335--343
+Underfull \hbox (badness 10000) in paragraph at lines 332--340
 []$[]$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--346
+Underfull \hbox (badness 10000) in paragraph at lines 324--343
 []$[]$
  []
 
 
 Package wrapfig Warning: Stationary wrapfigure forced to float on input line 34
-8.
+5.
 
 [12 <./figure/bekesy60-1.png>]
-Underfull \hbox (badness 2600) in paragraph at lines 352--353
+Underfull \hbox (badness 2600) in paragraph at lines 349--350
 \OT1/cmr/m/n/12 quen-cies be-low 2 kHz, and damp-
  []
 
 
-Underfull \hbox (badness 2245) in paragraph at lines 352--353
+Underfull \hbox (badness 2245) in paragraph at lines 349--350
 \OT1/cmr/m/n/12 en-ing of those above; all in-ser-tion
  []
 
 
-Underfull \hbox (badness 1067) in paragraph at lines 355--357
+Underfull \hbox (badness 1067) in paragraph at lines 352--354
 \OT1/cmr/m/n/12 sep-a-rate pub-li-ca-tions[][][][][] (Fig. [][]1.10a[][]).
  []
 
 [13 <./figure/hansenAverageOE.png (PNG copy)> <./figure/Hansen_OE-plot_a.png (P
 NG copy)> <./figure/Hansen_OE-plot_b.png (PNG copy)>] [14] [15] [16] [17]
 
-LaTeX Warning: Reference `appendixB' on page 18 undefined on input line 420.
+LaTeX Warning: Reference `appendixB' on page 18 undefined on input line 417.
 
 
-LaTeX Warning: Reference `appendixB' on page 18 undefined on input line 420.
+LaTeX Warning: Reference `appendixB' on page 18 undefined on input line 417.
 
 [18]
 
-LaTeX Warning: Reference `appendixB' on page 19 undefined on input line 425.
+LaTeX Warning: Reference `appendixB' on page 19 undefined on input line 422.
 
-<figure/overallSetUp.png, id=449, 442.65375pt x 352.31625pt>
+<figure/overallSetUp.png, id=451, 442.65375pt x 352.31625pt>
 File: figure/overallSetUp.png Graphic file (type png)
 
 <use figure/overallSetUp.png>
-Package pdftex.def Info: figure/overallSetUp.png used on input line 428.
+Package pdftex.def Info: figure/overallSetUp.png used on input line 425.
 (pdftex.def)             Requested size: 213.19627pt x 169.69048pt.
  [19] [20 <./figure/overallSetUp.png (PNG copy)>]
 
-LaTeX Warning: Reference `appendixC' on page 21 undefined on input line 442.
+LaTeX Warning: Reference `appendixC' on page 21 undefined on input line 439.
 
-<figure/spctgrmNarrowMouth_35.pdf, id=468, 433.62pt x 289.08pt>
+<figure/spctgrmNarrowMouth_35.pdf, id=470, 433.62pt x 289.08pt>
 File: figure/spctgrmNarrowMouth_35.pdf Graphic file (type pdf)
 
 <use figure/spctgrmNarrowMouth_35.pdf>
 Package pdftex.def Info: figure/spctgrmNarrowMouth_35.pdf used on input line 45
-3.
+0.
 (pdftex.def)             Requested size: 202.53906pt x 135.0251pt.
 
-<figure/spctgrmWideMouth_35.pdf, id=469, 433.62pt x 289.08pt>
+<figure/spctgrmWideMouth_35.pdf, id=471, 433.62pt x 289.08pt>
 File: figure/spctgrmWideMouth_35.pdf Graphic file (type pdf)
 
 <use figure/spctgrmWideMouth_35.pdf>
-Package pdftex.def Info: figure/spctgrmWideMouth_35.pdf used on input line 460.
+Package pdftex.def Info: figure/spctgrmWideMouth_35.pdf used on input line 457.
 
 (pdftex.def)             Requested size: 202.53906pt x 135.0251pt.
 
-Underfull \hbox (badness 1394) in paragraph at lines 461--461
+Underfull \hbox (badness 1394) in paragraph at lines 458--458
 []\OT1/cmr/m/n/10.95 (b) |Wide band spec-tro-gram of speech
  []
 
-<figure/spctgrmNarrowEar_35.pdf, id=476, 433.62pt x 289.08pt>
+<figure/spctgrmNarrowEar_35.pdf, id=478, 433.62pt x 289.08pt>
 File: figure/spctgrmNarrowEar_35.pdf Graphic file (type pdf)
 
 <use figure/spctgrmNarrowEar_35.pdf>
-Package pdftex.def Info: figure/spctgrmNarrowEar_35.pdf used on input line 473.
+Package pdftex.def Info: figure/spctgrmNarrowEar_35.pdf used on input line 470.
 
 (pdftex.def)             Requested size: 202.53906pt x 135.0251pt.
 
-<figure/spctgrmWideEar_35.pdf, id=477, 433.62pt x 289.08pt>
+<figure/spctgrmWideEar_35.pdf, id=479, 433.62pt x 289.08pt>
 File: figure/spctgrmWideEar_35.pdf Graphic file (type pdf)
 
 <use figure/spctgrmWideEar_35.pdf>
-Package pdftex.def Info: figure/spctgrmWideEar_35.pdf used on input line 480.
+Package pdftex.def Info: figure/spctgrmWideEar_35.pdf used on input line 477.
 (pdftex.def)             Requested size: 202.53906pt x 135.0251pt.
 
-Underfull \hbox (badness 1394) in paragraph at lines 481--481
+Underfull \hbox (badness 1394) in paragraph at lines 478--478
 []\OT1/cmr/m/n/10.95 (b) |Wide band spec-tro-gram of speech
  []
 
 [21]
 
-LaTeX Warning: Reference `appendixE' on page 22 undefined on input line 494.
+LaTeX Warning: Reference `appendixE' on page 22 undefined on input line 491.
 
 [22 <./figure/spctgrmNarrowMouth_35.pdf> <./figure/spctgrmWideMouth_35.pdf> <./
 figure/spctgrmNarrowEar_35.pdf> <./figure/spctgrmWideEar_35.pdf>]
-<figure/spctgrmNarrowMthNoise_35.pdf, id=569, 433.62pt x 289.08pt>
+<figure/spctgrmNarrowMthNoise_35.pdf, id=571, 433.62pt x 289.08pt>
 File: figure/spctgrmNarrowMthNoise_35.pdf Graphic file (type pdf)
 
 <use figure/spctgrmNarrowMthNoise_35.pdf>
 Package pdftex.def Info: figure/spctgrmNarrowMthNoise_35.pdf used on input line
- 500.
+ 497.
 (pdftex.def)             Requested size: 202.53906pt x 135.0251pt.
 
-<figure/spctgrmNarrowEarNoise_35.pdf, id=570, 433.62pt x 289.08pt>
+<figure/spctgrmNarrowEarNoise_35.pdf, id=572, 433.62pt x 289.08pt>
 File: figure/spctgrmNarrowEarNoise_35.pdf Graphic file (type pdf)
 
 <use figure/spctgrmNarrowEarNoise_35.pdf>
 Package pdftex.def Info: figure/spctgrmNarrowEarNoise_35.pdf used on input line
- 507.
+ 504.
 (pdftex.def)             Requested size: 202.53906pt x 135.0251pt.
 
-<figure/spctgrmEarNarrow20kHz.pdf, id=577, 433.62pt x 289.08pt>
+<figure/spctgrmEarNarrow20kHz.pdf, id=579, 433.62pt x 289.08pt>
 File: figure/spctgrmEarNarrow20kHz.pdf Graphic file (type pdf)
 
 <use figure/spctgrmEarNarrow20kHz.pdf>
-Package pdftex.def Info: figure/spctgrmEarNarrow20kHz.pdf used on input line 52
-1.
+Package pdftex.def Info: figure/spctgrmEarNarrow20kHz.pdf used on input line 51
+8.
 (pdftex.def)             Requested size: 202.53906pt x 135.0251pt.
 
-Underfull \hbox (badness 4819) in paragraph at lines 522--522
+Underfull \hbox (badness 4819) in paragraph at lines 519--519
 []\OT1/cmr/m/n/10.95 (a) |Nar-row band spec-togram of ear
  []
 
-<figure/spctgrmNarrowEarNoisePremp.pdf, id=578, 433.62pt x 289.08pt>
+<figure/spctgrmNarrowEarNoisePremp.pdf, id=580, 433.62pt x 289.08pt>
 File: figure/spctgrmNarrowEarNoisePremp.pdf Graphic file (type pdf)
 
 <use figure/spctgrmNarrowEarNoisePremp.pdf>
 Package pdftex.def Info: figure/spctgrmNarrowEarNoisePremp.pdf used on input li
-ne 528.
+ne 525.
 (pdftex.def)             Requested size: 202.53906pt x 135.0251pt.
 
-Underfull \hbox (badness 4569) in paragraph at lines 529--529
+Underfull \hbox (badness 4569) in paragraph at lines 526--526
 []\OT1/cmr/m/n/10.95 (b) |Nar-row band spec-togram of ear
  []
 
-<figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf, id=579, 433.62pt x 289.08pt>
+<figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf, id=581, 433.62pt x 289.08pt>
 File: figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf Graphic file (type pdf)
 
 <use figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf>
 Package pdftex.def Info: figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf used on
- input line 538.
+ input line 535.
 (pdftex.def)             Requested size: 202.53906pt x 135.0251pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 539--539
+Underfull \hbox (badness 10000) in paragraph at lines 536--536
 []\OT1/cmr/m/n/10.95 (a) |The ear recorded speech, pre-
  []
 
 
-Underfull \hbox (badness 2221) in paragraph at lines 539--539
+Underfull \hbox (badness 2221) in paragraph at lines 536--536
 \OT1/cmr/m/n/10.95 emphasized, fil-tered at 2500 Hz with
  []
 
 File: figure/spctgrmNarrowMthNoise_35.pdf Graphic file (type pdf)
 <use figure/spctgrmNarrowMthNoise_35.pdf>
 Package pdftex.def Info: figure/spctgrmNarrowMthNoise_35.pdf used on input line
- 545.
+ 542.
 (pdftex.def)             Requested size: 202.53906pt x 135.0251pt.
  [23 <./figure/spctgrmNarrowMthNoise_35.pdf> <./figure/spctgrmNarrowEarNoise_35
 .pdf>] [24 <./figure/spctgrmEarNarrow20kHz.pdf> <./figure/spctgrmNarrowEarNoise
 Premp.pdf> <./figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf>] [25]
 
-LaTeX Warning: Reference `chapter3' on page 26 undefined on input line 575.
+LaTeX Warning: Reference `chapter3' on page 26 undefined on input line 573.
 
 
-LaTeX Warning: Reference `chapter4' on page 26 undefined on input line 575.
+LaTeX Warning: Reference `chapter4' on page 26 undefined on input line 573.
 
 (./chapter_2.bbl [26]
 Missing character: There is no Ã in font cmr12!
@@ -891,25 +891,25 @@ Missing character: There is no ¶ in font cmr12!
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 585.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 583.
 [29]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 585.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 583.
  (./chapter_2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 585.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 585.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 583.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 583.
 Package rerunfilecheck Info: File `chapter_2.out' has not changed.
 (rerunfilecheck)             Checksum: 1B0DB501538AAE4A7A7690277815DC9B;1321.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 585.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 583.
  ) 
 Here is how much of TeX's memory you used:
- 10256 strings out of 493304
- 152330 string characters out of 6139871
- 254724 words of memory out of 5000000
- 13437 multiletter control sequences out of 15000+600000
+ 10257 strings out of 493304
+ 152347 string characters out of 6139871
+ 254770 words of memory out of 5000000
+ 13438 multiletter control sequences out of 15000+600000
  10705 words of font info for 38 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  48i,10n,75p,1453b,614s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -922,10 +922,10 @@ onts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/fkr/tipa/tipa12.pfb>
-Output written on chapter_2.pdf (29 pages, 13171493 bytes).
+Output written on chapter_2.pdf (29 pages, 13171564 bytes).
 PDF statistics:
- 782 PDF objects out of 1000 (max. 8388607)
- 642 compressed objects within 7 object streams
+ 784 PDF objects out of 1000 (max. 8388607)
+ 644 compressed objects within 7 object streams
  114 named destinations out of 1000 (max. 500000)
  268 words of extra memory for PDF output out of 10000 (max. 10000000)
 
