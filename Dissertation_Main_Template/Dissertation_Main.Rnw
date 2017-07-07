@@ -87,7 +87,7 @@
 %HERE IS THE THING THAT NEEDS TO CHANGE TO GET LATEX TO WORK WITH RSTUDIO. USE pdftex instead of dvips.
 
 % Set up some values.
-\completetitle{Working Title: Ear Recorded Speech: A novel approach to automatic and human speech recognition}
+\completetitle{Working Title: An approach to automatic and human speech recognition using ear-recorded speech.}
 \fullname{Samuel John Charles Johnston}			% Grad college wants your full name here.
 \degreename{Doctor of Philosophy}	% Title of your degree.
 

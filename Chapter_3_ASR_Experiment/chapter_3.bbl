@@ -1,0 +1,141 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\astroncite{ets}{2002}]{etsi:02}
+ (2002).
+\newblock {ETSI}.
+\newblock {\em Speech processing, transmission and quality aspects (STQ);
+  distributed speech recognition; advanced front-end feature extraction
+  algorithm; compression algorithms}.
+
+\bibitem[\protect\astroncite{Atal}{1974}]{atal:74}
+Atal, B. (1974).
+\newblock Effectiveness of linear prediction characteristics of the speech wave
+  for automatic speaker identification and verification.
+\newblock {\em J. Acoust. Soc. Am.}, 55(5):1304--1312.
+
+\bibitem[\protect\astroncite{Berouti et~al.}{1979}]{berouti:79}
+Berouti, M., Schwartz, R., and Makhoul, J. (1979).
+\newblock Enhancement of speech corrupted by acoustic noise.
+\newblock In {\em Acoustics, {Speech}, and {Signal} {Processing}, {IEEE}
+  {International} {Conference} on {ICASSP}'79.}, volume~4, pages 208--211.
+  IEEE.
+
+\bibitem[\protect\astroncite{Boll}{1979}]{boll:79}
+Boll, S.~F. (1979).
+\newblock Suppression of {Acoustic} {Noise} in {Speech} {Using} {Spectral}
+  {Subraction}.
+\newblock {\em IEEE}, ASSP-27(2):113--120.
+
+\bibitem[\protect\astroncite{Droppo and Acero}{2008}]{droppo:08}
+Droppo, J. and Acero, A. (2008).
+\newblock Environmental robustness.
+\newblock In {\em springer handbook of speech processing}, pages 653--680.
+  Springer.
+
+\bibitem[\protect\astroncite{Fazel and Chakrabartty}{2012}]{fazel:12}
+Fazel, A. and Chakrabartty, S. (2012).
+\newblock Sparse {Auditory} {Reproducing} {Kernal} ({SPARK}) {Features} for
+  {Noise}-robust {Speech} {Recognition}.
+\newblock {\em IEEE Trans. Audio, Speech, Lang Process.}, 20(4):1362--1371.
+
+\bibitem[\protect\astroncite{Gales}{1998}]{gales:98}
+Gales, M.~J. (1998).
+\newblock Maximum likelihood linear transformations for {HMM}-based speech
+  recognition.
+\newblock {\em Computer speech \& language}, 12(2):75--98.
+
+\bibitem[\protect\astroncite{Hermansky et~al.}{1985}]{hermansky:85}
+Hermansky, H., Hanson, B., and Wakita, H. (1985).
+\newblock Perceptually based linear predictive analysis of speech.
+\newblock In {\em Acoustics, {Speech}, and {Signal} {Processing}, {IEEE}
+  {International} {Conference} on {ICASSP}'85.}, volume~10, pages 509--512.
+  IEEE.
+
+\bibitem[\protect\astroncite{Hermansky et~al.}{1992}]{hermansky:92}
+Hermansky, H., Morgan, N., Bayya, A., and Kohn, P. (1992).
+\newblock {RASTA}-{PLP} speech analysis technique.
+\newblock In {\em Acoustics, {Speech}, and {Signal} {Processing}, 1992.
+  {ICASSP}-92., 1992 {IEEE} {International} {Conference} on}, volume~1, pages
+  121--124. IEEE.
+
+\bibitem[\protect\astroncite{Hori et~al.}{2015}]{hori:15}
+Hori, T., Chen, Z., Erdogan, H., Hershey, J.~R., Le~Roux, J., Mitra, V., and
+  Watanabe, S. (2015).
+\newblock The {MERL}/{SRI} system for the 3rd {CHiME} challenge using
+  beamforming, robust feature extraction, and advanced speech recognition.
+\newblock In {\em Automatic {Speech} {Recognition} and {Understanding}
+  ({ASRU}), 2015 {IEEE} {Workshop} on}, pages 475--481. IEEE.
+
+\bibitem[\protect\astroncite{Kim et~al.}{1999}]{kim:99}
+Kim, D.~S., Lee, Y.~S., and Kil, R.~M. (1999).
+\newblock Auditory {Processing} of {Speech} {Signals} for {Robust} {Speech}
+  {Recognition} in {Real}-world {Noisy} {Environments}.
+\newblock {\em IEEE Trans. Speech Audio Process.}, 7(1):55--69.
+
+\bibitem[\protect\astroncite{Leggetter and Woodland}{1995}]{leggetter:95}
+Leggetter, C.~J. and Woodland, P.~C. (1995).
+\newblock Maximum likelihood linear regression for speaker adaptation of
+  continuous density hidden {Markov} models.
+\newblock {\em Computer Speech \& Language}, 9(2):171--185.
+
+\bibitem[\protect\astroncite{Li et~al.}{2014}]{li:14}
+Li, J., Deng, L., Gong, Y., and Haeb-Umbach, R. (2014).
+\newblock An {Overview} of noise robust automatic speech recognition.
+\newblock {\em IEEE/ACM Transactions on Audio, Speech, and Language
+  Processing}, 22(4):745--777.
+
+\bibitem[\protect\astroncite{Mirsamadi and Hansen}{2015}]{mirsamadi:15}
+Mirsamadi, S. and Hansen, J.~H. (2015).
+\newblock A study on deep neural network acoustic model adaptation for robust
+  far-field speech recognition.
+\newblock In {\em Sixteenth {Annual} {Conference} of the {International}
+  {Speech} {Communication} {Association}}.
+
+\bibitem[\protect\astroncite{Moritz et~al.}{2015}]{moritz:15}
+Moritz, N., Anemueller, J., and Kollmeier, B. (2015).
+\newblock An {Auditory} {Inspired} {Amplitude} {Modulation} {Filter} {Bank} for
+  {Robust} {Feature} {Extraction} in {Automatic} {Speech} {Recognition}.
+\newblock {\em IEEE/ACM Transactions on Audio, Speech, and Language
+  Processing}, pages 1--1.
+
+\bibitem[\protect\astroncite{Paliwal et~al.}{2012}]{paliwal:12}
+Paliwal, K., Schwerin, B., and Wójcicki, K. (2012).
+\newblock Speech enhancement using a minimum mean-square error short-time
+  spectral modulation magnitude estimator.
+\newblock {\em Speech Communication}, 54(2):282--305.
+
+\bibitem[\protect\astroncite{Seltzer et~al.}{2013}]{seltzer:13}
+Seltzer, M.~L., Yu, D., and Wang, Y. (2013).
+\newblock An investigation of deep neural networks for noise robust speech
+  recognition.
+\newblock In {\em Acoustics, {Speech} and {Signal} {Processing} ({ICASSP}),
+  2013 {IEEE} {International} {Conference} on}, pages 7398--7402. IEEE.
+
+\bibitem[\protect\astroncite{Sivasankaran et~al.}{2015}]{sivasankaran:15}
+Sivasankaran, S., Nugraha, A.~A., Vincent, E., Morales-Cordovilla, J.~A.,
+  Dalmia, S., Illina, I., and Liutkus, A. (2015).
+\newblock Robust {ASR} using neural network based speech enhancement and
+  feature simulation.
+\newblock In {\em Automatic {Speech} {Recognition} and {Understanding}
+  ({ASRU}), 2015 {IEEE} {Workshop} on}, pages 482--489. IEEE.
+
+\bibitem[\protect\astroncite{Van~Veen and Buckley}{1988}]{veen:88}
+Van~Veen, B.~D. and Buckley, K.~M. (1988).
+\newblock Beamforming: {A} versatile approach to spatial filtering.
+\newblock {\em IEEE assp magazine}, 5(2):4--24.
+
+\bibitem[\protect\astroncite{Weninger et~al.}{2013}]{weninger:13}
+Weninger, F., Geiger, J., Wöllmer, M., Schuller, B., and Rigoll, G. (2013).
+\newblock The {Munich} feature enhancement approach to the 2nd {CHiME}
+  challenge using {BLSTM} recurrent neural networks.
+\newblock In {\em Proceedings of the 2nd {CHiME} workshop on machine listening
+  in multisource environments}, pages 86--90.
+
+\bibitem[\protect\astroncite{Zhang et~al.}{2017}]{zhang:17}
+Zhang, Z., Geiger, J., Pohjalainen, J., Mousa, A. E.-D., and Schuller, B.
+  (2017).
+\newblock Deep {Learning} for {Environmentally} {Robust} {Speech}
+  {Recognition}: {An} {Overview} of {Recent} {Developments}.
+\newblock {\em arXiv preprint arXiv:1705.10874}.
+
+\end{thebibliography}
