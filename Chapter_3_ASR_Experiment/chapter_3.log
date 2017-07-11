@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.5.15)  7 JUL 2017 11:43
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.5.15)  7 JUL 2017 13:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -516,56 +516,60 @@ LaTeX Info: Redefining \nameref on input line 132.
 
 
 CHAPTER 1.
+
+Package natbib Warning: Citation `povey:11' on page 1 undefined on input line 1
+52.
+
+
+Package natbib Warning: Citation `panayotov:15' on page 1 undefined on input li
+ne 152.
+
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]
-
-Package natbib Warning: Citation `lippmann:87' on page 2 undefined on input lin
-e 192.
-
-[2]
+] [2]
 
 Package natbib Warning: Citation `story:10' on page 3 undefined on input line 2
-04.
+02.
 
 [3]
 
 Package natbib Warning: Citation `weiner:79' on page 4 undefined on input line 
-213.
+211.
+
+[4]
+
+Package natbib Warning: Citation `argawal:99' on page 5 undefined on input line
+ 213.
 
 
-Package natbib Warning: Citation `argawal:99' on page 4 undefined on input line
- 215.
+Package natbib Warning: Citation `macho:02;macho:01;mauuary:98' on page 5 undef
+ined on input line 213.
 
-
-Package natbib Warning: Citation `macho:02;macho:01;mauuary:98' on page 4 undef
-ined on input line 215.
-
-[4] [5]
+[5]
 
 Package natbib Warning: Citation `lippmann:87' on page 6 undefined on input lin
-e 262.
+e 261.
 
 [6]
 
 Package natbib Warning: Citation `heyman:15' on page 7 undefined on input line 
-268.
+267.
 
 
 Package natbib Warning: Citation `heyman:16' on page 7 undefined on input line 
-268.
+267.
 
 [7]
 
-LaTeX Warning: Reference `chapter2' on page 8 undefined on input line 317.
+LaTeX Warning: Reference `chapter2' on page 8 undefined on input line 316.
 
 
-LaTeX Warning: Reference `chapter2' on page 8 undefined on input line 321.
+LaTeX Warning: Reference `chapter2' on page 8 undefined on input line 320.
 
 [8]
 
-LaTeX Warning: Reference `chapter2' on page 9 undefined on input line 337.
+LaTeX Warning: Reference `chapter2' on page 9 undefined on input line 336.
 
 (./chapter_3.bbl [9] [10
 
@@ -579,28 +583,28 @@ Missing character: There is no ¶ in font cmr12!
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 344.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 343.
 [12]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 344.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 343.
  (./chapter_3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 344.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 344.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 343.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 343.
 Package rerunfilecheck Info: File `chapter_3.out' has not changed.
-(rerunfilecheck)             Checksum: 25A42A56112369C7EBC05ABE2DEDE8F7;701.
+(rerunfilecheck)             Checksum: DF640AC642B0CF2F5510E9B632AA97E9;797.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 344.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 343.
  ) 
 Here is how much of TeX's memory you used:
  9973 strings out of 493304
- 146242 string characters out of 6139871
+ 146262 string characters out of 6139871
  245845 words of memory out of 5000000
- 13247 multiletter control sequences out of 15000+600000
- 9831 words of font info for 35 fonts, out of 8000000 for 9000
+ 13248 multiletter control sequences out of 15000+600000
+ 9130 words of font info for 33 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 48i,8n,38p,1481b,451s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,8n,38p,1637b,451s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
@@ -608,12 +612,11 @@ ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmti8.pfb>
-Output written on chapter_3.pdf (12 pages, 139091 bytes).
+lic/amsfonts/cm/cmti12.pfb>
+Output written on chapter_3.pdf (12 pages, 130744 bytes).
 PDF statistics:
- 251 PDF objects out of 1000 (max. 8388607)
- 225 compressed objects within 3 object streams
- 47 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 252 PDF objects out of 1000 (max. 8388607)
+ 227 compressed objects within 3 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
 

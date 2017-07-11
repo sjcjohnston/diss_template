@@ -30,11 +30,11 @@ library(plyr)
 
 The automatic recognition of human speech by a computer has been a subject of interest spanning decades.  Humans first and foremost communicate their ideas via speech and human language, and teaching computers to be able to take verbal instructions would make interaction with them much easier for a majority of the population, particularly the elderly and disabled.  Since this seemingly simple task has been a subject of much study for over half a century, and is only recently gaining much success, it will be important to briefly discuss the reasons for the challenges, traditional ways of dealing with them, and more recent successes.
 
-Despite these successes, challenges still remain when there is noise in the signal.  As before, it is important to understand the mechnics and acoustics of why this proves to be a challenge for automatic speech recognition (ASR), and traditional methods of dealing with this as well as more modern techniques.
+Despite these successes, challenges still remain when there is noise in the signal (\cite{zhang:17}).  As before, it is important to understand the mechanics and acoustics of why this proves to be a challenge for automatic speech recognition (ASR), and traditional methods of dealing with this as well as more modern techniques.
 
 % Insert bit about it being still not perfect?
 
-In the previous chapter, data was collected using a novel technique aimed to overcome the difficulty of accurately perceiving speech in a noisy environment, for recognition both by computer (ASR) or by human speech perception.  This collected data will be used in an experiment using a standard open source ASR system with a standard, open source acoustic model.
+In the previous chapter, data was collected using a novel technique aimed to overcome the difficulty of accurately perceiving speech in a noisy environment, for recognition both by computer (ASR) or by human speech perception.  This collected data will be used in an experiment using the standard open source ASR system Kaldi (\cite{povey:11}) with the standard, open source acoustic model developed from the LibriSpeech corpus (\cite{panayotov:15}).
 
 \section{Background}
 \label{chap3:background}
@@ -74,9 +74,9 @@ where $x$ is the clean speech signal, $h$ is any convolution (ie. room reverbera
 
 %Multi-style training, what it is (training with multiple types of noise) - it is ineffective.  Older - paper cited was written in 1987. \cite{li:14}, \cite{lippmann:87}.
 
-It is difficult to categorize the plethora of noise-robustness techniques utilized by hundreds of researchers over the years, but, broadly, two domains can be discerned (\cite{li:14,zhang:17}).  The first is the ``feature-space'' domain, which focuses on front-end processing of the signal $y$ itself.  The second group utilizes the ``model space'' domain, or the back-end processing that modifies the acoustic model itself to account for any noise in the signal $y$.
+It is difficult to categorize the plethora of noise-robustness techniques utilized by hundreds of researchers over the years, but, broadly, two domains can be discerned (\cite{li:14,zhang:17}).  The first is the ``feature-space'' domain, which focuses on front-end processing of the signal $y$ itself.  The second group utilizes the ``model space'' domain, or the back-end processing that modifies the acoustic model itself to account for any noise in the signal $y$.  Advances in neural network technology has also lent itself to application in noise-robust ASR.  These have provided novel methods of tackling the problem.
 
-\subsection{Feature Space Domian} %pace vs Model Domain space compensation
+\subsection{Feature Space Domain}
 
 Feature space is the part of the ASR process where an acoustic vector is transformed into `features' about the acoustic signal that the ASR model will receive as input.  Model space, imperatively, then, comes after Feature space in the ASR process, and encompasses the acoustic model parameters, methods of training the model, etc.
 
@@ -84,7 +84,7 @@ Noise can be accounted for in either or both domains.  In the feature domain, no
 
 In the model space, acoustic parameters themselves can be modified in accordance with the noisy signal.  This generally results in high computation cost when training the acoustic model.  There is normally a trade-off of computation and performance, with Model Domain space alterations generally yielding higher performance improvement (\cite{li:14}).
 
-In the feature domain space, there are a number of techniques, including (a) noise-resistant features, (b) feature normalization, and  (c) feature compensation.  Noise resistant features are, quite simply, features in the acoustic signal which are not sensitive to environmental changes.  Many methods of deriving these features have been proposed that incorporate features of the human auditory system, including Perceptual linear prediction (\cite{hermansky:85}), which aims to replicate \textbf{XXXX}, and Relative Spectral processing (RASTA) applied to Perceptual Linear Prediction (\cite{hermansky:92}), making perceptual linear prediction less sensitive to slow varying speech information, and more sensitive to the quick-varying transitions of speech (\cite{story:10}).  \textbf{ALSO \cite{kim:99}, mimicking XXX}. These methods are quite effective at dealing with short-term, stationary, additive noise (\cite{zhang:17}).  More recent methods include SPARK (\cite{fazel:12}), which mimics \textbf{XXXX}, (\cite{moritz:15}), which mimics \textbf{XXXXX}.  These methods generally outperform normal MFCC methods. Difficulties utilizing these methods include that it is difficult to determine the parameters.  Also the generation of these features can be quite complex, preventing widespread usage with other techniques, and difficulty deriving a relation between clean and noisy speech (which makes explicit distortion modelling difficult).
+In the feature domain space, there are a number of techniques, including (a) noise-resistant features, (b) feature normalization, and  (c) feature compensation.  Noise resistant features are, quite simply, features in the acoustic signal which are not sensitive to environmental changes.  Many methods of deriving these features have been proposed that incorporate features of the human auditory system, including Perceptual Linear Prediction (PLP, \cite{hermansky:85}), which introduces the ``auditory spectrum'' and explicit F1/F2 information into ASR processing, and Relative Spectral processing (RASTA) applied to PLP (\cite{hermansky:92}), making PLP less sensitive to slow varying speech information, and more sensitive to the quick-varying transitions of speech (\cite{story:10}).  \cite{kim:99} attempts to model functions of the cochlea and auditory nerve. These methods are quite effective at dealing with short-term, stationary, additive noise (\cite{zhang:17}).  More recent methods include SPARK (\cite{fazel:12}, 1369), which is ``neurobiologically inspired'' by ``auditory receptive fields'' and ``local competative behavior'', and \cite{moritz:15}, which emulates the amplitude modulation found in mamillian auditory cortexes.  These methods generally outperform vanilla MFCC methods. Difficulties utilizing these methods include that the features can be quite complex to generate and the parameters difficult to set, preventing widespread usage with other techniques.  Due to the complexity involved, it is also difficult to derive a relation between clean and noisy speech \cite{li:14}.
 
 Feature normalization generally involves normalizing cepstral feature vectors in the form of cepstral mean normalization (CMN) and cepstral mean and variance normalization (CMVN).  CMN invovles finding the mean values out of all cepstral vectors (\cite{atal:74}).  All cepstral vectors are then normalized, such that the mean cepstral value becomes zero.  This is primarily used to eliminate reverberation and channel-related distortion, but signals with noise and no channel distortion also see improvement (\cite{droppo:08}).  ``CMVN normalizes the mean and covariance together'' (\cite{li:14}, 752), yielding improved performance on speech data with additive noise.
 These methods do not work in real-time, however, as they require cepstral vectors from the entire utterance in order to calculate a mean.
@@ -98,11 +98,40 @@ Weiner filtering (\cite{weiner:79}) is another method used to remove noise from 
 More standard, is the ``advanced front-end'' (AFE) ensemble proposed in \cite{etsi:02}.  It yields more than 50\% improvement over standard MFCC features alone, and has become a frequent baseline for comparison in noisy ASR research.  It is composed of three separate `tools': two stage Mel-warped Weiner filtering, SNR-dependant waveform processing, and blind equalization (cf. \cite{argawal:99,macho:02;macho:01;mauuary:98}, respectively.
 
 
+Most of the heavy work is performed by the Mel-warped Weiner filtering (\cite{li:14}).  This differs from the more standard Weiner filter in that it uses the Mel-frequency power spectrum in the Weiner filter calculations, the result of which is then converted back into the time domain.  The filter is applied once, and then a second time to remove residual noise.  SNR-dependant waveform processing (SDWP) assumes that the noise is relatively constant, whereas the speech signal will cause variation in the amplitude of the signal.  SDWP uses this assumption to dampen portions of the signal with a relatively low SNR (ie, speech-less) compared with the high SNR (ie, speech-bearing) portions of the signal, which are boosted.  Blind equalization serves to eliminate convolutional (ie. reverberant) distortion from the signal.
 
-Most of the heavy work is performed by the Mel-warped Weiner filtering (\cite{li:14}).  This differs from the more standard Weiner filter in that it uses \textbf{Mel Weiner filtering???}, which is performed once, and then a second time to remove residual noise.  SNR-dependant waveform processing (SDWP) assumes that the noise is relatively constant, whereas the speech signal will cause variation in the amplitude of the signal.  SDWP uses this assumption to dampen portions of the signal with a relatively low SNR (ie, speech-less) compared with the high SNR (ie, speech-bearing) portions of the signal, which are boosted.  Blind equalization serves to eliminate convolutional (ie. reverberant) distortion from the signal.
+Considered to be the best ``general purpose'' noise-removal tool (\cite{zhang:17}, 4) using traditional (non-neural network) techniques, the mimimum mean square error (MMSE) magnitude modulation estimator (MME) was developed by \cite{paliwal:12}, and based on the acoustic modulation estimator (AME) first proposed by \cite{ephraim:84}.  The novel approach utilizes the spectral modulation magnitude domain, rather than the spectral frequency domain, which is where it has been able to see much of its success.
 
-Model domain compensation usually involves adapting an existing acoustic model (presumably trained on relatively clean speech) to enable recognition of more noisy features.  Most popularly, variations of maximum likelihood linear regression (MLLR, \cite{leggetter:95}) are used to adjust the gaussian component vector means and the covariance parameters.  A slight variation in the caculation allows these transforms to be applied to the features themselves (feature-space MLLR, or fMLLR, \cite{gales:98}), moving this method into an on-line feature space tranformation.
+% Neural Network Feature Space
 
+There are two primary categories of utilizing neural networks to account for noisy speech, ``mapping methods'' and ``masking methods''.  This involves finding the non-linear function that maps the noisy speech to the clean speech.  In neural network terms, the noisy speech is the input to some type of neural network (eg. DNN, CNN, RNN, etc.) and the (intended) output is an approximation of the clean speech.  Due to the complexity of speech in the temporal domain, the input to the neural network usually comes from one of the later input transformations, such as from the spectral or cepstral domains (\cite{zhang:17}).
+
+Masking-based approaches work similarly to a traditional filter, albeit learned via a neural network. An `Ideal Ratio Mask' will learn the ratio (value between 0 and 1) of the clean speech to the noisy speech.  The function can be learned - via an neural network architecture - between the noisy speech signal and the masking value.  Most beneficial when using spectral or cepstral features as input, a masking value is learned for each set of features.  These masking values are then multiplied elementwise to each feature in the set, at that time index within the signal, ie. a method very similar to that of a traditional filter (\cite{zhang:17}).
+
+
+% Model Space
+\subsection{Model Space Domain}
+
+Not much time will be spent describing existing model space domain compensation techniques, as this is not the focus of the present study.  This form of compensation usually involves adapting an existing acoustic model (presumably trained on relatively clean speech) to enable recognition of more noisy features.  Most popularly, variations of maximum likelihood linear regression (MLLR, \cite{leggetter:95}) are used to adjust the gaussian component vector means and the covariance parameters to account for differences in the signal that noise introduces.  A slight variation in the caculation allows these transforms to be applied to the features themselves (feature-space MLLR, or fMLLR, \cite{gales:98}), moving this method into an on-line feature space tranformation.  
+
+There are also a few model-based approaches using neural networks for noise robust ASR.  Most widely used is multi-condition training (\cite{seltzer:13,zhang:17}, which, similar to multi-style training originally developed by \cite{lippmann:87}, uses an collection of training data which exhibits a wide range of noise conditions.  Another method, similar to methods used in non-neural network approaches, involves adapting the already trained acoustic model with a small subset of noisy data.  However, as doing so can inadvertently result in significant overfitting, \cite{mirsamadi:15} has developed a technique unique to neural networks that - instead of slightly adjusting all weights, adds an additional layer to the neural network with its own weights.  This largely avoids the issue of overfitting, while increasing the model's robustness to noise.
+
+Much work is also beginning to combine modifications in the feature space domain, with modififications in the model space domain (eg, \cite{weninger:13}), called joint model training.  Broadly, this takes the form of using the feature-enhanced data output from feature-based noise removal as training data itself for the acoustic model.
+
+\subsection{Microphone Arrays}
+
+There are also techniques that employ multiple microphones as source-separation technique to separate the speech source from any extraneous noise sources.  The study at hand does not use multiple microphones, and so this will simply be mentioned a reference.  
+
+Beamforming (\cite{veen:88}) has become a central technique to using microphone arrays for source separation (\cite{hori:15,zhang:17}).
+This is done by calculating the direction of arrival of the different sound sources, taking into account the distance between the two (or more) microphones, and the time of arrival of the different sources in each signal recorded by the microphone.  Neural networks have also been employed to aid and enhance the beamforming process (cf. \cite{heyman:15,sivasankaran:15,heyman:16}). 
+
+\subsection{Summary}
+
+Most research over the past few decades has focused on feature space domain modifications.  This is likely due to the intensive computation required by many model space domain techniques.  Leading techniques include MMSE-MME (\cite{paliwal:12}) and AFE (\cite{etsi:02}) which is often used as a standard baseline for comparison with new feature space modifications.  A model space domain approach is using MLLR (\cite{leggetter:95}), which is used to adjust the acoustic model parameters, though more standard is the fMLLR technique which is used in feature space.  In the last few years, that advent of neural network approaches has seen further improvement in both feature and model space domains.  Other recent approaches have combined feature and model space modifications (joint model training).  The incorporation of multiple microphones into a microphone input array has also relatively recently become more mainstream, as the recent CHiME challenges (\cite{chime:16}) have incorporated the use of multi-channel ASR input in addition to single channel input as part of its task.
+
+Most of these employed feature and model space techniques to account for noise are still forced to make estimations about noise type, SNR, and noise location in the signal.  As would be expected, as SNR decreases, and as noise becomes more variable (non-stationary), these methods begin to falter.  What is proposed in Chapter 2\ref{chapter2} is a method of collecting speech in noisy environments that is proposed to be largely immune to noise type and the stationarity of noise.  It does not require any noise estimation or inference.  It would be classified as a form of feature-space modification, affecting the signal in the temporal domain before it reaches the microphone.  The only drawback encountered is that the speech in the recorded signal is heavily low-pass filtered, where the highest speech frequencies are generally found near 2.7 kHz.
+
+The only processing utilized after the signal is recorded is pre-emphasis and low-pass filtering, which could be easily built into the recording mechanism itself.  It is hypothesized that this method of passive noise removal via recording speech from the ear canal, plus the minimal modification of pre-emphasis and low-pass filtering, will demonstrate similar gains over the baseline AFE method as many of the other techniques described above.
 
 
 % Another tool used is the exploitation of any prior knowledge about the distortion (\cite{li:14}); this is prior knowledge that is utilized during the training stage, not knowledge about the noise during the testing stage.  Some methods include learning the mapping between noisy and non-noisy pairs of acoustic signals.  This mapping is then extended to novel noisy utterances during testing.  This is used in feature domain space to enhance a noisy speech feature to then send to the model.  
@@ -113,10 +142,8 @@ Model domain compensation usually involves adapting an existing acoustic model (
 % %Implicit vs Explicit Distortion Modelling
 % 
 % Explicit distortion modelling uses a ``physical model'' which allows for high performance with few distortion parameters. An example of an explicit distortion model would be spectral subtraction, discussed earlier.  It seems obvious that spectral subtraction, when matched with an agreeable signal that best utilizes its noise removal abilities, would result in more accurate speech recognition.  Consequently, other noise reduction methods that \textit{explicitly} specify the distortion tend to perform well.
-
-
-[\textbf{Read \cite{paliwal:12}, find out where to put it in above discussion, introduces MMSE (minimum mean square error). \cite{zhang:17}, 4 that it is still considered to be the best ``general purpose'' noise-removal tool.}]
-
+%
+%
 % \textbf{For examples of what this distortion model actually is, go to the primary literature:}
 % Y. Zhao and B. H. Juang, “A comparative study of noise estimation
 % algorithms for VTS-based robust speech recognition,” in
@@ -138,17 +165,12 @@ Model domain compensation usually involves adapting an existing acoustic model (
 % Comput., Speech, Lang.
 % , vol. 23, no. 3, pp. 389–405, 2009.
 
-There are two primary categories of utilizing neural networks to account for noisy speech, ``mapping methods'' and ``masking methods''.  Mapping methods primarily fall underneath the umbrella of feature-space methods.  This involves finding the non-linear function that maps the noisy speech to the clean speech.  In neural network terms, the noisy speech is the input to some type of neural network (eg. DNN, CNN, RNN, etc.) and the (intended) output is an approximation of the clean speech.  Due to the complexity of speech in the temporal domain, the input to the neural network usually comes from one of the later input transformations, such as from the spectral or cepstral domains (\cite{zhang:17}).
-
-Masking-based approaches work similarly to a traditional filter, albeit learned via a neural network. These are also performed as a feature-space tool.  An `Ideal Ratio Mask' will learn the ratio (value between 0 and 1) of the clean speech to the noisy speech.  The function can be learned - via an neural network architecture - between the noisy speech signal and the masking value.  Most beneficial when using spectral or cepstral features as input, a masking value is learned for each set of features.  These masking values are then multiplied elementwise to each feature in the set, at that time index within the signal, ie. a method very similar to that of a traditional filter (\cite{zhang:17}).
-
-There are also a few model-based approaches using neural networks for noise robust ASR.  Most widely used is multi-condition training (\cite{seltzer:13,zhang:17}, which, similar to multi-style training originally developed by \cite{lippmann:87}, uses an collection of training data which exhibits a wide range of noise conditions.  Another method, similar to methods used in non-neural network approaches, involves adapting the already trained acoustic model with a small subset of noisy data.  However, as doing so can inadvertently result in significant overfitting, \cite{mirsamadi:15} has developed a technique unique to neural networks that - instead of slightly adjusting all weights, adds an additional layer to the neural network with its own weights, instead of modifying all weights.  This largely avoids the issue of overfitting, while increasing the model's robustness to noise.
-
-Much work is also turning to combine modifications in the feature space domain, with modififications in the model space domain (\cite{weninger:13}).  Most simply, this takes the form of using the feature-enhanced data output from feature-based noise removal as training data itself for the acoustic model.
 
 
-There are also techniques that employ multiple microphones as source-separation technique to separate the speech source from any extraneous noise sources.  The study at hand does not use multiple microphones, and so this will be discusses as only a reference.  Beamforming (\cite{veen:88}) has become a central technique to using microphone arrays in source separation (\cite{hori:15,zhang:17}).
-This is done by calculating the direction of arrival of the different sound sources, taking into account the distance between the two (or more) microphones, and the time of arrival of the different sources in each signal recorded by the microphone.  Neural networks have also been employed to aid and enhance the beamforming process (\cite{heyman:15,sivasankaran:15,heyman:16}).  
+
+
+
+ 
 
 
 
@@ -214,6 +236,8 @@ It is quite possible that, due to the ear-recorded speech only containing inform
 \subsection{Results}
 
 \section{Discussion}
+
+An advantage of this technique is that, due to affecting the signal at the lowest level of processing (in the temporal domain), prior to any feature extraction techniques, is that any of the proposed feature enhancement techniques can be applied to this signal just as a speech signal recorded via any other method.
 
 \subsection{Limitations and Future Research}
 
