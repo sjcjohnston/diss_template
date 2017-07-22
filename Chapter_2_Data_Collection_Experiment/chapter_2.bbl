@@ -27,6 +27,19 @@ Borghese, N.~A., Ferrigno, G., Redolfi, M., and Pedotti, A. (1997).
   production.
 \newblock {\em Jour. of Acoust. Soc. of Am.}, 101(1):482--487.
 
+\bibitem[\protect\astroncite{Braun et~al.}{2016}]{braun:16}
+Braun, S., Neil, D., and Liu, S.-C. (2016).
+\newblock A {Curriculum} {Learning} {Method} for {Improved} {Noise}
+  {Robustness} in {Automatic} {Speech} {Recognition}.
+\newblock {\em arXiv preprint arXiv:1606.06864}.
+
+\bibitem[\protect\astroncite{Brungart et~al.}{2012}]{brungart:12}
+Brungart, D.~S., Cord, M.~T., Solomon, N.~P., Dietrich-Burns, K., and Block, K.
+  (2012).
+\newblock Evaluating the effects of hearing protection on speech production in
+  noisy environments.
+\newblock In {\em The {Listening} {Talker}}.
+
 \bibitem[\protect\astroncite{{CHiME Challenge}}{2016}]{chime:16}
 {CHiME Challenge} (2016).
 \newblock Chime speech separation and recognition challenge.
@@ -38,10 +51,11 @@ Dean, M.~S. and Martin, F.~N. (2000).
 \newblock Insert {Earphone} {Depth} and the {Occlusion} {Effect}.
 \newblock {\em American Journal of Audiology}, 9(2):131--134.
 
-\bibitem[\protect\astroncite{Goldstein and Hayes}{1965}]{goldstein:65}
-Goldstein, D.~P. and Hayes, C.~S. (1965).
-\newblock The {Occlusion} {Effect} in {Bone} {Conduction} {Hearing}.
-\newblock {\em Journal of Speech, Language, and Hearing Research}, 8:137--148.
+\bibitem[\protect\astroncite{Gilbert et~al.}{2013}]{gilbert:13}
+Gilbert, J.~L., Tamati, T.~N., and Pisoni, D.~B. (2013).
+\newblock Development, {Reliability}, and {Validity} of {PRESTO}: {A} {New}
+  {High}-{Variability} {Sentence} {Recognition} {Test}.
+\newblock {\em Journal of the American Academy of Audiology}, 24(1):26--36.
 
 \bibitem[\protect\astroncite{Hansen}{1998}]{hansen:97b}
 Hansen, M. (1998).
@@ -66,12 +80,24 @@ Kelly, N.~H. and Reger, S.~N. (1937).
   {Sound}.
 \newblock {\em Jour. of Experimental Psychology}, 21(2):211--217.
 
+\bibitem[\protect\astroncite{Lane and Tranel}{1971}]{lane:71}
+Lane, H. and Tranel, B. (1971).
+\newblock The {Lombard} sign and the role of hearing in speech.
+\newblock {\em Journal of Speech, Language, and Hearing Research},
+  14(4):677--709.
+
 \bibitem[\protect\astroncite{Littler et~al.}{1952}]{littler:52}
 Littler, T.~S., Knight, J.~J., and Strange, P.~H. (1952).
 \newblock Hearing by {Bone} {Conduction} and the {Use} of {Bone} {Conduction}
   {Hearing} {Aids}.
 \newblock In {\em Proceedings of the {Royal} {Society} of {Medicine}},
   volume~45, pages 783--790.
+
+\bibitem[\protect\astroncite{Lombard}{}]{lombard:11}
+Lombard, E.
+\newblock Le signe de l'\'{e}l\'{e}vation de la voix.
+\newblock {\em Annales des Maladies de L'Oreille et du Larynx. XXXVII},
+  (2):101--109.
 
 \bibitem[\protect\astroncite{May and Dillon}{1992}]{may:92}
 May, A. and Dillon, H. (1992).
@@ -125,12 +151,6 @@ Stinson, M.~R. and Lawton, B.~W. (1989).
 Thorup, A. (1996).
 \newblock Okklusion (in danish).
 \newblock Master's thesis, Technical University of Denmark.
-
-\bibitem[\protect\astroncite{Tonndorf}{1972}]{tonndorf:72}
-Tonndorf, J. (1972).
-\newblock {\em Foundations of Modern Auditory Theory}, chapter Bone Conduction,
-  pages 195--238.
-\newblock Academic Press Inc., New York.
 
 \bibitem[\protect\astroncite{Wheatstone}{1879}]{wheatstone:79}
 Wheatstone, C. (1879).

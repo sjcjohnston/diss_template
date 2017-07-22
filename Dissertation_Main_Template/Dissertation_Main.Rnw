@@ -69,7 +69,30 @@
 \usepackage[inline]{enumitem}
 \usepackage{breakurl}
 \usepackage{mathtools}
-\usepackage{amsmath}			% AMS Math (advanced math typesetting)
+\usepackage{amsmath}
+% \usepackage[normalem]{ulem}
+% \usepackage{xyling,comment}			% AMS Math (advanced math typesetting)
+% includecomment{delall}
+% %\excludecomment{delall}
+% 
+% %default: don't show edits
+% 
+% \newcommand{\add}[1]{#1}
+% \newcommand{\del}[1]{}
+% \newcommand{\delni}[1]{}
+% \newcommand{\addtab}{}
+% 
+% %block to show edits controlled by include/exclude-comment above
+% \begin{delall}
+% %added stuff
+% \renewcommand{\add}[1]{\textcolor{blue}{#1}}
+% %added table
+% \renewcommand{\addtab}{\color{blue}}
+% %deleted stuff
+% \renewcommand{\del}[1]{\textcolor{red}{\sout{#1}}}
+% \renewcommand{\delni}[1]{\noindent\textcolor{red}{\sout{#1}}}
+% \end{delall}
+
 %\usepackage{lscape}			% Used for making fitting large tables in by putting them landscape
 %\usepackage{refs}			
 %

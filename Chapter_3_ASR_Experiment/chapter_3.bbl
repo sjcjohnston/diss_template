@@ -1,11 +1,9 @@
 \begin{thebibliography}{}
 
-\bibitem[\protect\astroncite{ets}{2002}]{etsi:02}
- (2002).
-\newblock {ETSI}.
-\newblock {\em Speech processing, transmission and quality aspects (STQ);
-  distributed speech recognition; advanced front-end feature extraction
-  algorithm; compression algorithms}.
+\bibitem[\protect\astroncite{Agarwal and Cheng}{1999}]{agarwal:99}
+Agarwal, A. and Cheng, Y.~M. (1999).
+\newblock Two-stage {Mel}-warped {Wiener} filter for robust speech recognition.
+\newblock In {\em Proc. {ASRU}}, volume~99, pages 67--70.
 
 \bibitem[\protect\astroncite{Atal}{1974}]{atal:74}
 Atal, B. (1974).
@@ -26,11 +24,31 @@ Boll, S.~F. (1979).
   {Subraction}.
 \newblock {\em IEEE}, ASSP-27(2):113--120.
 
+\bibitem[\protect\astroncite{{CHiME Challenge}}{2016}]{chime:16}
+{CHiME Challenge} (2016).
+\newblock Chime speech separation and recognition challenge.
+\newblock \url{http://spandh.dcs.shef.ac.uk/chime_challenge/}.
+\newblock Online; accessed 02-18-2016.
+
 \bibitem[\protect\astroncite{Droppo and Acero}{2008}]{droppo:08}
 Droppo, J. and Acero, A. (2008).
 \newblock Environmental robustness.
 \newblock In {\em springer handbook of speech processing}, pages 653--680.
   Springer.
+
+\bibitem[\protect\astroncite{Ephraim and Malah}{1984}]{ephraim:84}
+Ephraim, Y. and Malah, D. (1984).
+\newblock Speech {Enhancement} {Using} a {Minimum} {Mean}-{Square} {Error}
+  {Short}-{Time} {Spectral} {Amplitude} {Estimator}.
+\newblock {\em IEEE Transactions on Acoustics, Speech, and Signal Processing},
+  32(6):1109--1121.
+
+\bibitem[\protect\astroncite{ETSI}{2002}]{etsi:02}
+ETSI (2002).
+\newblock Speech processing, transmission and quality aspects (stq);
+  distributed speech recognition; advanced front-end feature extraction
+  algorithm; compression algorithms.
+\newblock {\em ETSI ES 202 050 Ver.1.1.1}.
 
 \bibitem[\protect\astroncite{Fazel and Chakrabartty}{2012}]{fazel:12}
 Fazel, A. and Chakrabartty, S. (2012).
@@ -58,6 +76,20 @@ Hermansky, H., Morgan, N., Bayya, A., and Kohn, P. (1992).
   {ICASSP}-92., 1992 {IEEE} {International} {Conference} on}, volume~1, pages
   121--124. IEEE.
 
+\bibitem[\protect\astroncite{Heymann et~al.}{2015}]{heymann:15}
+Heymann, J., Drude, L., Chinaev, A., and Haeb-Umbach, R. (2015).
+\newblock {BLSTM} supported {GEV} beamformer front-end for the 3rd {CHiME}
+  challenge.
+\newblock In {\em Automatic {Speech} {Recognition} and {Understanding}
+  ({ASRU}), 2015 {IEEE} {Workshop} on}, pages 444--451. IEEE.
+
+\bibitem[\protect\astroncite{Heymann et~al.}{2016}]{heymann:16}
+Heymann, J., Drude, L., and Haeb-Umbach, R. (2016).
+\newblock Neural network based spectral mask estimation for acoustic
+  beamforming.
+\newblock In {\em Acoustics, {Speech} and {Signal} {Processing} ({ICASSP}),
+  2016 {IEEE} {International} {Conference} on}, pages 196--200. IEEE.
+
 \bibitem[\protect\astroncite{Hori et~al.}{2015}]{hori:15}
 Hori, T., Chen, Z., Erdogan, H., Hershey, J.~R., Le~Roux, J., Mitra, V., and
   Watanabe, S. (2015).
@@ -84,6 +116,39 @@ Li, J., Deng, L., Gong, Y., and Haeb-Umbach, R. (2014).
 \newblock {\em IEEE/ACM Transactions on Audio, Speech, and Language
   Processing}, 22(4):745--777.
 
+\bibitem[\protect\astroncite{Lim and Oppenheim}{1979}]{lim:79}
+Lim, J.~S. and Oppenheim, A.~V. (1979).
+\newblock Enhancement and bandwidth compression of noisy speech.
+\newblock In {\em in {Proc}. {IEEE}}, volume~67, pages 1586--1604.
+
+\bibitem[\protect\astroncite{Lippman et~al.}{1987}]{lippman:87}
+Lippman, P., R., Martin, E.~A., and Paul, D.~B. (1987).
+\newblock Multi-{Style} {Training} for {Robust} {Isolated}-{Word} {Speech}
+  {Recognition}.
+\newblock {\em Acoustics, Speech and Signal Processing, IEE International
+  Converence on ICASSP}.
+
+\bibitem[\protect\astroncite{Macho and Cheng}{2001}]{macho:01}
+Macho, D. and Cheng, Y.~M. (2001).
+\newblock {SNR}-dependent waveform processing for improving the robustness of
+  {ASR} front-end.
+\newblock In {\em Acoustics, {Speech}, and {Signal} {Processing}, 2001.
+  {Proceedings}.({ICASSP}'01). 2001 {IEEE} {International} {Conference} on},
+  volume~1, pages 305--308. IEEE.
+
+\bibitem[\protect\astroncite{Macho et~al.}{2002}]{macho:02}
+Macho, D., Mauuary, L., NoÈ, B., Cheng, Y.~M., Ealey, D., Jouvet, D.,
+  Kelleher, H., Pearce, D., and Saadoun, F. (2002).
+\newblock Evaluation of a noise-robust {DSR} front-end on {Aurora} databases.
+\newblock In {\em Seventh {International} {Conference} on {Spoken} {Language}
+  {Processing}}.
+
+\bibitem[\protect\astroncite{Mauuary}{1998}]{mauuary:98}
+Mauuary, L. (1998).
+\newblock Blind equalization in the cepstral domain for robust telephone based
+  speech recognition.
+\newblock {\em EUSIPCO}, 1:359--363.
+
 \bibitem[\protect\astroncite{Mirsamadi and Hansen}{2015}]{mirsamadi:15}
 Mirsamadi, S. and Hansen, J.~H. (2015).
 \newblock A study on deep neural network acoustic model adaptation for robust
@@ -103,6 +168,25 @@ Paliwal, K., Schwerin, B., and Wójcicki, K. (2012).
 \newblock Speech enhancement using a minimum mean-square error short-time
   spectral modulation magnitude estimator.
 \newblock {\em Speech Communication}, 54(2):282--305.
+
+\bibitem[\protect\astroncite{Panayotov et~al.}{2015}]{panayotov:15}
+Panayotov, V., Chen, G., Povey, D., and Khudanpur, S. (2015).
+\newblock Librispeech: an {ASR} corpus based on public domain audio books.
+\newblock In {\em Acoustics, {Speech} and {Signal} {Processing} ({ICASSP}),
+  2015 {IEEE} {International} {Conference} on}, pages 5206--5210. IEEE.
+
+\bibitem[\protect\astroncite{Paul and Baker}{1992}]{paul:92}
+Paul, D.~B. and Baker, J.~M. (1992).
+\newblock The design for the {Wall} {Street} {Journal}-based {CSR} corpus.
+\newblock In {\em Proceedings of the workshop on {Speech} and {Natural}
+  {Language}}, pages 357--362. Association for Computational Linguistics.
+
+\bibitem[\protect\astroncite{Povey et~al.}{2011}]{povey:11}
+Povey, D., Ghoshal, A., Boulianne, G., Burget, L., Glembek, O., Goel, N.,
+  Hannemann, M., Motlicek, P., Qian, Y., Schwarz, P., and {others} (2011).
+\newblock The {Kaldi} speech recognition toolkit.
+\newblock In {\em {IEEE} 2011 workshop on automatic speech recognition and
+  understanding}. IEEE Signal Processing Society.
 
 \bibitem[\protect\astroncite{Seltzer et~al.}{2013}]{seltzer:13}
 Seltzer, M.~L., Yu, D., and Wang, Y. (2013).
@@ -124,12 +208,26 @@ Van~Veen, B.~D. and Buckley, K.~M. (1988).
 \newblock Beamforming: {A} versatile approach to spatial filtering.
 \newblock {\em IEEE assp magazine}, 5(2):4--24.
 
+\bibitem[\protect\astroncite{Viikki et~al.}{1998}]{viikki:98}
+Viikki, O., Bye, D., and Laurila, K. (1998).
+\newblock A recursive feature vector normalization approach for robust speech
+  recognition in noise.
+\newblock In {\em Acoustics, {Speech} and {Signal} {Processing}, 1998.
+  {Proceedings} of the 1998 {IEEE} {International} {Conference} on}, volume~2,
+  pages 733--736. IEEE.
+
 \bibitem[\protect\astroncite{Weninger et~al.}{2013}]{weninger:13}
 Weninger, F., Geiger, J., Wöllmer, M., Schuller, B., and Rigoll, G. (2013).
 \newblock The {Munich} feature enhancement approach to the 2nd {CHiME}
   challenge using {BLSTM} recurrent neural networks.
 \newblock In {\em Proceedings of the 2nd {CHiME} workshop on machine listening
   in multisource environments}, pages 86--90.
+
+\bibitem[\protect\astroncite{Willi}{2017}]{willi:17}
+Willi, M. (2017).
+\newblock {\em The {Perceptual} {Significance} of a {Relative} {Acoustic}
+  {Representation} of {Speech}}.
+\newblock PhD thesis, The University of Arizona.
 
 \bibitem[\protect\astroncite{Zhang et~al.}{2017}]{zhang:17}
 Zhang, Z., Geiger, J., Pohjalainen, J., Mousa, A. E.-D., and Schuller, B.
