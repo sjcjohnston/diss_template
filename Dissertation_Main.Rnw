@@ -186,8 +186,8 @@ library(cowplot)
 
 \include{./Chapter_1_Introduction/chapter_1_Introduction}
 \include{./Chapter_2_Data_Collection_Experiment/chapter_2}
-\include{./Chapter_3_ASR_Experiment/chapter_3}
-\include{./Chapter_4_Human_Speech_Perception_Experiment/chapter_4}
+\include{./Chapter_3_Human_Speech_Perception_Experiment/chapter_3}
+\include{./Chapter_4_ASR_Experiment/chapter_4}
 \include{./Chapter_5_Discussion/chapter_5_Discussion}
 
 % ADD: Include the various appendices
