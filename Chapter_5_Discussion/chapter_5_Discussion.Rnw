@@ -39,7 +39,7 @@ These recordings were then observed.  Overall, the ear-recorded speech was highl
 
 To increase the amplitude of the speech information in the higher frequencies, the author pre-emphasized the signal (Fig. \ref{x}).  As there was no speech information found above approximately 2.7 kHz, and since the pre-emphasis resulted in the presence of white noise in the higher frequencies, the signal was then low-pass filtered at 2500 Hz with a slope of 500 Hz (Fig. \ref{x}).  The lower frequencies in this signal were still much more prominent than the upper frequencies, and so pre-emphasis was applied a second time (Fig. \ref{}).  The average maximum normalized cross-correlation metric was obtained using the newly transformed ear-recorded speech, and each signal was compared to its simultaneously mouth-recorded counterpart.  As before, only clean speech, with no background noise, was included in this comparison.  This gave a nearly doubled cross-correlation value of 0.674.
 
-The spectra and spectrograms for the sentence ``He said the same phrase thirty times'', spoken by a male participant, are provided for better visualization of speech intelligibility and noise reduction.  A comparison between speech recorded at the mouth and at the ear, with transformations, and with no background noise can be seen in Figures \ref{x} and \ref{y}); the same utterance is displayed, spoken at the mouth with bus background noise (60, 70, and 80dB; Figs. \ref{}, \ref{} and \ref{}) and at the ear (after transformations) with bus background noise (60, 70, and 80dB; Figs. \ref{}, \ref{}, and \ref{}).  Each mouth- and ear-recorded pair is the exact same utterance; they were recorded simultaneously (e.g. the already mentioned Figures \ref{x} at the ear and \ref{y} at the mouth).
+The spectra and spectrograms for the sentence ``He said the same phrase thirty times'', spoken by a male participant, are provided for better visualization of speech intelligibility and noise reduction.  A comparison between speech recorded at the mouth and at the ear, with transformations, and with no background noise can be seen in Figures \ref{x} and \ref{y}); the same utterance is displayed, spoken at the mouth with bus background noise (60, 70, and 80dB; Figs. \ref{}, \ref{} and \ref{}) and at the ear (after transformations) with bus background noise (60, 70, and 80dB; Figs. \ref{}, \ref{}, and \ref{}).  Each mouth- and ear-recorded pair is the exact same utterance; they were recorded simultaneously (eg. the already mentioned Figures \ref{x} at the ear and \ref{y} at the mouth).
 
 The figures containing noisy speech recorded at the mouth (ie. Figs. \ref{}, \ref{}, and \ref{}) demonstrate one of the limitations of the collected data - that the SNR of the signal recorded by the mouth microphone was very high for all noise categories.  The noise did not drown out the speech in the high noise (80 dB) condition as originally intended.  The SNR needed to be high to compare the recognition performance of humans and computers on the ear-recorded speech, compared with the noisy mouth speech.  If the noise wasn't sufficiently high enough to interfere with the recognition of speech, then the mouth-recorded speech would be too easy to understand, and an adequate comparison between ear-recorded speech and noisy mouth-recorded speech could not be made.
 
@@ -50,7 +50,17 @@ These recordings demonstrate that using the ear canal as a location of recording
 
 \section{Review of Human Perception of Ear-Recorded Speech}\label{sec:chap3-review}
 
-\textbf{Will be included with revised statistics}
+Due to the high SNR of the speech recorded in the data collection experiment, described in Chapter 2\ref{chapter2} and Section \ref{sec:chap2-review} above, two additional speakers were recorded in the same manner, ie. with a microphone placed in an earplug and in their ear canal, with earmuffs placed over their ears.  Another directional microphone was placed in front of their mouth, except instead of pointing at their mouth, the microphone pointed at the loudspeaker in the room, which produced the background noise. The ear-recorded speech was pre-emphasized and lowpass filtered in the same manner as the recordings conducted in Chapter 2\ref{chapter2}. For further details about the collection of these additional recordings, refer to Chapter 3\ref{chapter3}, Section \ref{expt2}.
+
+The speech recorded from these two speakers was used as stimuli for the human perception experiment.  There were 24 participants, all native speakers of English, who listened to the provided stimuli.  There were 24 conditions, gender of the speaker of the stimulus (male,female), recording location of the stimulus (in front of mouth, in ear canal) and noise type (clean (no noise), bus, caf\'{e}, pedestrian area, street, factory).  The stimuli were placed in counter-balanced groups, where each sentence stimulus occurred in each of the 24 conditions.  Each of the 24 participants recieved one of the 24 counter-balanced stimulus groups, meaning that each distict sentence-condition pairing was only heard by one participant listener.
+%Each participant listener heard each stimulus utterance once, and heard three utterances per condition.  This yielded 72 stimuli (72 distinct utterances), with each of the 24 conditions repeated three times.  Each listener could only hear a given utterance once before they would be given an advantage to understanding it.  To avoid this, counter-balanced lists were developed to place each stimulus in each of the 24 conditions, requiring
+
+The participant listeners would hear an utterance, and type what they heard into a response box.  They were instructed that what they heard may not be a complete sentence, and to only type what they thought they heard.  These responses were recorded for each participant, and WER was calculated between the actual utterance transcription and the proposed transcription provided by the participant listeners.
+
+A 3-way ANOVA was conducted on the data, with dependent variable WER, and factors included ``speaker [of the stimulus] gender'' (female, male), ``recording [mic] location'' (mouth, ear), and ``noise type'' (clean, bus, caf\'{e}, pedestrian, street, factory).  
+
+\textbf{[Further discussion will be included when stats are fixed.]}
+
 
 
 \section{Review of Automatic Speech Recognition of Ear Recorded Speech}\label{sec:chap4-review}
@@ -63,7 +73,7 @@ The clean speech from the ear and the mouth can be compared in Table \ref{tab:cl
 \begin{center}
 \begin{tabular}{| c | c |} \hline
  Mouth-Recorded, Clean & Ear-Recorded, Clean \\ \hline\hline
- 9.38 & ?? \\ \hline
+ 9.38 & 79.30 \\ \hline
 \end{tabular}
 \end{center}
 \caption{A comparison of ASR performance on mouth-recorded speech and ear-recorded speech with no background noise. These values are obtained from the highest-performing (4-gram) language model, utilizing the 960-hour LibriSpeech DNN acoustic model - both trained using the LibriSpeech corpus.  All values are give as WER.}\label{tab:clean-wers}
@@ -75,9 +85,9 @@ The clean speech from the ear and the mouth can be compared in Table \ref{tab:cl
 \begin{tabular}{| c || c | c | c | c | c | c | c | c | c | c | c | c |} \hline
       & \multicolumn{2}{|c|}{Bus} & \multicolumn{2}{|c|}{Cafe} & \multicolumn{2}{|c|}{Ped.} & \multicolumn{2}{|c|}{Street} & \multicolumn{2}{|c|}{Factory} \\ \hline
       & Mth & Ear & Mth & Ear & Mth & Ear & Mth & Ear & Mth & Ear \\ \hline\hline
-60 dB & 21.5 & ?? & 20.3 & ?? & 18.6 & ?? & 19.0 & ?? & 17.9 & ??  \\ \hline
-70 dB & 41.7 & ?? & 32.9 & ?? & 32.0 & ?? & 36.4 & ?? & 29.9 & ??  \\ \hline
-80 dB & 88.2 & ?? & 73.3 & ?? & 75.6 & ?? & 85.0 & ?? & 71.4 & ??  \\ \hline
+60 dB & 21.5 & 81.18 & 20.3 & 82.17 & 18.6 & 81.55 & 19.0 & 81.43 & 17.9 & 80.66  \\ \hline
+70 dB & 41.7 & 81.88 & 32.9 & 80.66 & 32.0 & 82.71 & 36.4 & 82.05 & 29.9 & 81.82  \\ \hline
+80 dB & 88.2 & 83.08 & 73.3 & 82.62 & 75.6 & 85.00 & 85.0 & 85.72 & 71.4 & 85.02 \\ \hline
 \end{tabular}
 \end{center}
 \caption{These values are obtained from the highest-performing (4-gram) language model, utilizing the 960-hour LibriSpeech DNN acoustic model - both trained using the LibriSpeech corpus.  Each row is a different noise level, and each column a different noise type (excluding the `clean' noise type), with each subcolumn comparing the performance on mouth-recorded speech in that condition with ear-recorded speech in that condition.  All values are given as WER.}\label{tab:disc-all-wers}
@@ -90,9 +100,9 @@ In an attempt to improve the recognition of ear-recorded speech, two additional 
 \begin{tabular}{| c || c | c | c | c | c | c | c | c | c | c | c | c |} \hline
       & \multicolumn{2}{|c|}{Bus} & \multicolumn{2}{|c|}{Cafe} & \multicolumn{2}{|c|}{Ped.} & \multicolumn{2}{|c|}{Street} & \multicolumn{2}{|c|}{Factory} \\ \hline
       & Mth & E/M & Mth & E/M & Mth & E/M & Mth & E/M & Mth & E/M \\ \hline\hline
-60 dB & 21.5 & ?? & 20.3 & ?? & 18.6 & ?? & 19.0 & ?? & 17.9 & ??  \\ \hline
-70 dB & 41.7 & ?? & 32.9 & ?? & 32.0 & ?? & 36.4 & ?? & 29.9 & ??  \\ \hline
-80 dB & 88.2 & ?? & 73.3 & ?? & 75.6 & ?? & 85.0 & ?? & 71.4 & ??  \\ \hline
+60 dB & 21.5 & 52.77 & 20.3 & 51.16 & 18.6 & 52.23 & 19.0 & 51.38 & 17.9 & 51.82  \\ \hline
+70 dB & 41.7 & 58.80 & 32.9 & 54.30 & 32.0 & 55.10 & 36.4 & 56.16 & 29.9 & 53.49  \\ \hline
+80 dB & 88.2 & 78.78 & 73.3 & 70.04 & 75.6 & 71.82 & 85.0 & 74.21 & 71.4 & 71.51  \\ \hline
 \end{tabular}
 \end{center}
 \caption{These values are obtained from the highest-performing (4-gram) language model, utilizing the 960-hour LibriSpeech DNN acoustic model - both trained using the LibriSpeech corpus.  Each row is a different noise level, and each column a different noise type (excluding the `clean' noise type), with each subcolumn comparing the performance on mouth-recorded speech in that condition with the combination of lowpass ear-recorded speech and `higher' bandpassed mouth-recorded speech in the same condition.  All values are given as WER.}\label{tab:disc-all-wers}
@@ -100,16 +110,16 @@ In an attempt to improve the recognition of ear-recorded speech, two additional 
 
 \textbf{Further discussion will be included when results are obtained.}
 
-A common method of improving ASR performance on speech with different characteristics (e.g. in noise, with different dialects, etc.) is to train the ASR acoustic model on speech in that domain.  This also mimics the use of additional training for the human speech perception task described in Chapter 3\ref{chapter3} and Section \ref{sec:chap3-review} above.  Rather than recording enough ear-recorded speech to train a model, the 100-hour dataset from the LibriSpeech corpus was used.  The speech in this dataset was lowpassed with the exact same filter used on the ear-recorded speech - 2.5 kHz with a 500 Hz slope.  A speaker-adapted GMM-HMM model was trained on this data.  Due to resource constraints, computationally and otherwise, only the 100-hour dataset was used (not 960 hour), and a DNN model was not trained.  These results are displayed in Table \ref{tab:retrainedGMM}.
+A common method of improving ASR performance on speech with different characteristics (eg. in noise, with different dialects, etc.) is to train the ASR acoustic model on speech in that domain.  This also mimics the use of additional training for the human speech perception task described in Chapter 3\ref{chapter3} and Section \ref{sec:chap3-review} above.  Rather than recording enough ear-recorded speech to train a model, the 100-hour dataset from the LibriSpeech corpus was used.  The speech in this dataset was lowpassed with the exact same filter used on the ear-recorded speech - 2.5 kHz with a 500 Hz slope.  A speaker-adapted GMM-HMM model was trained on this data.  Due to resource constraints, computationally and otherwise, only the 100-hour dataset was used (not 960 hour), and a DNN model was not trained.  These results are displayed in Table \ref{tab:retrainedGMM}.
 
-\begin{table}[h]
-\begin{center}
-\begin{tabular}
-
-\end{tabular}
-\end{center}
-\caption{}\label{tab:retrainedGMM}
-\end{table}
+% \begin{table}[h]
+% \begin{center}
+% \begin{tabular}
+% 
+% \end{tabular}
+% \end{center}
+% \caption{}\label{tab:retrainedGMM}
+% \end{table}
 
 \textbf{Further discussion will be included when results are obtained.}
 
@@ -121,5 +131,18 @@ Note that the model used for the ear-recorded speech in Table \ref{tab:retrained
 
 
 \section{Future Direction}
+
+One of the primary limitations discussed throughout this report is that the SNR for the speech recorded in the original data collection experiment (cf. Chapter 2\ref{chapter2}) was much higher than originally intended or hoped for, by slightly more than +20 dB SNR for each condition.  This yielded noisy speech which was largely greater than +10 dB SNR; current ASR technology is rather adept at recognizing signals with these levels of noise (cf. \cite{braun:16}).  Due to this, it was difficult to see how much improvement could be gained over very noisy, low-SNR signals.  Two possibilities stand out as potentially workable solutions.  The first, would be to simply increase the ambient background noise level, and the second involves using an omnidirectional microphone to record the speech from the mouth (rather than a directional microphone).  
+
+The former introduces potential risk to those exposed to the noise, depending on the level of noise and the amount of hearing protection offered.  Additionally, for very high noise conditions, it would be difficult to limit the noise exposure to the surrounding area.  The latter solution allows the speaker to talk normally and for the ambient noise level to remain relatively low.  However, this does not necessarily result in a fair comparison between ear-recorded and mouth-recorded speech, as in any real-life application, a directional microphone would be utilized with the specific intention of reducing the noise picked up by the microphone.  If adequate hearing protection is offered, and the noise contained, the former solution offers the most realistic comparison between the two microphone locations.
+
+Regarding human speech perception, ear-recorded speech seems promising.  There is a significant difference between the ability of human listeners to recognize ear-recorded speech and mouth-recorded speech in noise.  Ear-recorded speech does not provide the same recognition performance as speech recorded at the mouth without background noise.  However, two methods were proposed to further improve the performance of ear-recorded speech.  The first introduced a training session prior to the actual experiment in which participants listened to the narration of a short story, recorded from the ear canal.  The second spliced the low-frequency ear-recorded speech with the higher frequencies of the mouth-recorded speech.  Neither of these tested methods were performed with enough participants (due to resource limitations) to run adequate statistics (due to requiring counter-balanced groups).  
+
+The non-statistical, preliminary results for the former (training) method showed little or no improvement over the standard ear-recorded speech, while the non-statistical, preliminary results for the latter (spliced) method provided indication that this could yield a noticeable improvement.  Future research should test these methods statistically.  The former (training) method may need altered methodology in order to determine whether a form of training could result in an improvement in future recognition of ear-recorded speech.  A training task that requires interaction and provides feedback may promote active attention during the training task, unlike passively listening to a story as used in this study.  In the method using spliced stimuli, further research should pursue the possibility of using the clean, lower frequencies to actively clean any noise from the higher mouth-recorded frequencies.  
+
+The ASR recognition task initially indicated that ear-recorded speech offered essentially no performance improvement over noisy mouth-recorded speech. \textbf{add more details when available.}
+
+Additional research should also pursue other methods of improving the human or computer recognition of ear-recorded speech, especially those which would not require a secondary microphone at the mouth. \textbf{say something else.}
+
 
 

@@ -4,4 +4,10 @@
 *.pdf
 *.synctex.gz
 *.aux
-
+*.toc
+*.lot
+*.lof
+*.blg
+*.eps
+Makefile*
+*.pdf

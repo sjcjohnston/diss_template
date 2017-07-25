@@ -1,3 +1,10 @@
 \contentsline {chapter}{LIST OF FIGURES}{7}{chapter*.6}
 \contentsline {chapter}{LIST OF TABLES}{8}{chapter*.7}
 \contentsline {chapter}{ABSTRACT}{9}{chapter*.8}
+\contentsline {chapter}{CHAPTER \numberline {1}Introduction}{11}{chapter.1}
+\contentsline {section}{\numberline {1.1}Background}{11}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Overview of Anatomy and Physiology of the Peripheral Auditory System}{12}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Acoustic Structure of Human Speech}{14}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}Acoustics of Multiple Signals}{16}{subsection.1.1.3}
+\contentsline {subsection}{\numberline {1.1.4}Difficulties of Speech in Noise}{17}{subsection.1.1.4}
+\contentsline {section}{\numberline {1.2}Overview of Dissertation}{18}{section.1.2}

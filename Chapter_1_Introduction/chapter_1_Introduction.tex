@@ -1,165 +1,27 @@
-\documentclass[dissertation,copyright]{uathesis}
-\usepackage[]{graphicx}\usepackage[]{color}
-%% maxwidth is the original width if it is less than linewidth
-%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
-\makeatletter
-\def\maxwidth{ %
-  \ifdim\Gin@nat@width>\linewidth
-    \linewidth
-  \else
-    \Gin@nat@width
-  \fi
-}
-\makeatother
-
-\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
-\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
-\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
-\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
-\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
-\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
-\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
-\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
-\let\hlipl\hlkwb
-
-\usepackage{framed}
-\makeatletter
-\newenvironment{kframe}{%
- \def\at@end@of@kframe{}%
- \ifinner\ifhmode%
-  \def\at@end@of@kframe{\end{minipage}}%
-  \begin{minipage}{\columnwidth}%
- \fi\fi%
- \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
- \colorbox{shadecolor}{##1}\hskip-\fboxsep
-     % There is no \\@totalrightmargin, so:
-     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
- \MakeFramed {\advance\hsize-\width
-   \@totalleftmargin\z@ \linewidth\hsize
-   \@setminipage}}%
- {\par\unskip\endMakeFramed%
- \at@end@of@kframe}
-\makeatother
-
-\definecolor{shadecolor}{rgb}{.97, .97, .97}
-\definecolor{messagecolor}{rgb}{0, 0, 0}
-\definecolor{warningcolor}{rgb}{1, 0, 1}
-\definecolor{errorcolor}{rgb}{1, 0, 0}
-\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
-
-\usepackage{alltt}
-\newcommand{\SweaveOpts}[1]{}  % do not interfere with LaTeX
-\newcommand{\SweaveInput}[1]{} % because they are not real TeX commands
-\newcommand{\Sexpr}[1]{}       % will only be parsed by R
-
-
-%\documentclass[dissertation,CC-BY]{uathesis}
-%\documentclass[dissertation,CC-BY-SA]{uathesis}
-%documentclass[dissertation,CC-BY-ND]{uathesis}
-%\documentclass[thesis]{uathesis}
-%\documentclass[document]{uathesis}
-
-% Package Usage
-% These are the packages that we need
-\usepackage{booktabs}
-\usepackage{graphicx}
-\usepackage{natbib}			% natbib is available on most systems, and is
-					% terribly handy.
-					
-%May need to remove! Trying to fix nocite{*} biblography problem:
-					% If you want to use a different Bibliography package, 
-					% you should be able to, just change this
-					% and the \bibliographystyle command below.  Be warned
-					% that you may need to do a little hacking to get
-					% the REFERENCES item to show up in your TOC.
-
-% Compatibility with the AASTEX package 
-% of the American Astronomical Society.
-%\usepackage{deluxetable}		% Allows use of AASTEX deluxe tables
-%\usepackage{aastex_hack}		% Allows other AASTEX functionality.
-
-% These are other packages that you might find useful.
-% For controlling the fonts, see
-% http://www.math.uiuc.edu/~hartke/computer/latex/survey/survey.html
-% The following is a nice font set:
-%\usepackage{mathtime}			% Times for letters; Belleek math.
-%
-\usepackage{wrapfig}
-
-\newenvironment{lydiawrapfigure}
- {%
-%  \setlength{\intextsep}{0pt}% <--- Wrong!
-  \setlength{\columnsep}{15pt}%
-  \wrapfloat{figure}%
- }
- {\endwrapfloat}
- 
-\usepackage{caption}
-\usepackage{subcaption}
-\usepackage{tipa}
-\usepackage{color,soul}
-\usepackage{url}
-\usepackage{blindtext}
-\usepackage[inline]{enumitem}
-\usepackage{breakurl}
-\usepackage{mathtools}
-\usepackage{amsmath}
-% \usepackage[normalem]{ulem}
-% \usepackage{xyling,comment}			% AMS Math (advanced math typesetting)
-% includecomment{delall}
-% %\excludecomment{delall}
+% %set_parent(‘/Users/mwilli/Documents/Spring_2017/Dissertation_Document/Dissertation_Working_Directory_Draft/Dissertation_Main.Rnw')
 % 
-% %default: don't show edits
+% <<chunk_options, echo=FALSE>>=
+% # This is where we set basic knitr options.
+% opts_chunk$set(echo=TRUE, message=FALSE, warning = FALSE, cache = FALSE, comment="")
+% options(width=75) # This sets how wide the R printout can be.
+% @
 % 
-% \newcommand{\add}[1]{#1}
-% \newcommand{\del}[1]{}
-% \newcommand{\delni}[1]{}
-% \newcommand{\addtab}{}
+%  <<setup-child, include=FALSE>>=
+%  set_parent('/home/sam/Dissertation/Dissertation_Template/Dissertation_Main_Template/Dissertation_Main.Rnw')
+% @
 % 
-% %block to show edits controlled by include/exclude-comment above
-% \begin{delall}
-% %added stuff
-% \renewcommand{\add}[1]{\textcolor{blue}{#1}}
-% %added table
-% \renewcommand{\addtab}{\color{blue}}
-% %deleted stuff
-% \renewcommand{\del}[1]{\textcolor{red}{\sout{#1}}}
-% \renewcommand{\delni}[1]{\noindent\textcolor{red}{\sout{#1}}}
-% \end{delall}
-
-%\usepackage{lscape}			% Used for making fitting large tables in by putting them landscape
-%\usepackage{refs}			
-%
-% If you are using hyper-ref (recommended), this command must go after all 
-% other package inclusions (from the hyperref package documentation).
-% The purpose of hyperref is to make the PDF created extensively
-% cross-referenced.
-
-%Also works! Change dvips to driverfallback=dvips.
-\usepackage[driverfallback=dvips,bookmarks,colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black]{hyperref}
-
-
-%Works!
-%\usepackage[pdftex,bookmarks,colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black]{hyperref}
-%HERE IS THE THING THAT NEEDS TO CHANGE TO GET LATEX TO WORK WITH RSTUDIO. USE pdftex instead of dvips.
-
-% Set up some values.
-\completetitle{Working Title: An approach to automatic and human speech recognition using ear-recorded speech.}
-\fullname{Samuel John Charles Johnston}			% Grad college wants your full name here.
-\degreename{Doctor of Philosophy}	% Title of your degree.
-
-
-
-\begin{document}
-%set_parent(‘/Users/mwilli/Documents/Spring_2017/Dissertation_Document/Dissertation_Working_Directory_Draft/Dissertation_Main.Rnw')
-
-
-
- 
-
-
+% <<load_libraries, echo=FALSE>>=
+% library(tidyr)
+% library(dplyr)
+% library(ggplot2)
+% library(lme4)
+% library(lsmeans)
+% library(car)
+% library(pbkrtest)
+% library(xtable)
+% library(cowplot)
+% library(plyr)
+% @
 
 \chapter{Introduction\label{chapter1}}
 
@@ -374,6 +236,3 @@ The intention of this study is to determine a) if recording human speech from th
 Since currently there is no established corpus of data that contain speech recorded from the inside of the ear canal together with speech simultaneously recorded from the mouth in noisy environments, it was necessary to record speakers in this environment and create a new corpus.  The theory behind the acoustics of recording speech from the ear canal, as well as the process for developing this corpus are described in Chapter 2\ref{chapter2}, along with a discussion of the recorded speech.  Chapter 3\ref{chapter3} will outline a human perception experiment, tasking listeners with the transcription of various sentences of speech recorded at the mouth in noise in noise, and recorded from the ear.   Chapter 4\ref{chapter4} describes the use of this same speech with an ASR system, and its recognition performance.  Chapter 5\ref{chapter5} will summarize the previous chapters and engage in an overall discussion of the implications of the results, the limitations of the present experiments and methods, and suggestions for future research direction.
 
 
-\bibliographystyle{apa}
-\bibliography{DissRefs.bib}
-\end{document}

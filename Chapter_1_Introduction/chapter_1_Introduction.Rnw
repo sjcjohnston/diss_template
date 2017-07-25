@@ -204,7 +204,7 @@ The auditory system is actually quite skilled at identifying separate sources, e
 
 \subsection{Difficulties of Speech in Noise}
 
-Nevertheless, there are still situations in which it is difficult to parse speech in noise.  This is most often due to signals with energy at similar frequencies that overlap.  The greater the amplitude of a signal at frequencies overlapping with those of speech, the more difficult the speech will be to understand.  This can be visualized in the spectrograms of the sentence ``A rich farm is rare in this sandy waste.'' in Figure \ref{fig:signal-SNR-intro}.  In Figure \ref{fig:signal-SNR-intro-high}, the amplitude, or loudness, of the noise is well below that of speech; one would likely easily understand this speech.  However, Figure \ref{fig:signal-SNR-intro-low} has a much greater noise level compared to speech.
+Nevertheless, there are still situations in which it is difficult to parse speech in noise.  This is most often due to signals with energy at similar frequencies that overlap.  The greater the amplitude of a signal at frequencies overlapping with those of speech, the more difficult the speech will be to understand.  This can be visualized in the spectrograms of the sentence ``A rich farm is rare in this sandy waste.'' in Figure \ref{fig:signal-SNR-intro}.  In Figure \ref{fig:signal-SNR-intro-high}, the amplitude, or loudness, of the noise is well below that of speech, which would likely be easily understand by a listener.  Figure \ref{fig:signal-SNR-intro-low} has a much greater noise amplitude level compared to the amplitude level of speech and consequently would likely be more difficult for a listener to understand.
 
 \begin{figure}[h!]
 \centering
@@ -229,7 +229,7 @@ This poses a problem for human listeners, but generally is more difficult to dea
 
 \section{Overview of Dissertation}\label{ch1:diss-overview}
 
-This report aims to explore a novel method of human speech perception and automatic speech recognition (ASR) in noisy environments.  The method proposes that speech be recorded from the inside of the ear canal of the speaker, and slightly transformed, sent to the human hearer or the computer receiver for recognition.  By collecting speech from the ear, it allows for usage of the human skull and adjacent tissues to passively filter out the noisy environment, leaving only - or mostly - the human speech carrying the intended message.  
+This report aims to explore a novel method of human speech perception and automatic speech recognition (ASR) in noisy environments.  The method proposes that speech be recorded from the inside of the ear canal of the speaker, slightly transformed, and sent to the human listener or the computer receiver for recognition.  Collecting speech from the ear allows for usage of the human skull and adjacent tissues to passively filter out the noisy environment, leaving only - or mostly - the human speech carrying the intended message.  
 	
 The intention of this study is to determine a) if recording human speech from the inside of the ear canal can significantly reduce background noise in a signal, b) if intelligible speech, suitable for communication, can be collected from the inside of the ear canal, c) if humans find speech recorded from the ear canal more intelligible than speech in noisy conditions, and finally d) if ASR systems are able to recognize speech recorded in the ear canal with greater accuracy than speech recorded in noise.
 	

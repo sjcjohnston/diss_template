@@ -105,7 +105,30 @@
 \usepackage[inline]{enumitem}
 \usepackage{breakurl}
 \usepackage{mathtools}
-\usepackage{amsmath}			% AMS Math (advanced math typesetting)
+\usepackage{amsmath}
+% \usepackage[normalem]{ulem}
+% \usepackage{xyling,comment}			% AMS Math (advanced math typesetting)
+% includecomment{delall}
+% %\excludecomment{delall}
+% 
+% %default: don't show edits
+% 
+% \newcommand{\add}[1]{#1}
+% \newcommand{\del}[1]{}
+% \newcommand{\delni}[1]{}
+% \newcommand{\addtab}{}
+% 
+% %block to show edits controlled by include/exclude-comment above
+% \begin{delall}
+% %added stuff
+% \renewcommand{\add}[1]{\textcolor{blue}{#1}}
+% %added table
+% \renewcommand{\addtab}{\color{blue}}
+% %deleted stuff
+% \renewcommand{\del}[1]{\textcolor{red}{\sout{#1}}}
+% \renewcommand{\delni}[1]{\noindent\textcolor{red}{\sout{#1}}}
+% \end{delall}
+
 %\usepackage{lscape}			% Used for making fitting large tables in by putting them landscape
 %\usepackage{refs}			
 %
@@ -143,13 +166,13 @@
 
 \section{Introduction}
 
-The automatic recognition of human speech by a computer has been a subject of interest spanning decades.  Humans first and foremost communicate their ideas via speech and human language, and teaching computers to be able to take verbal instructions would make interaction with them much easier for a majority of the population, particularly the elderly and disabled.  Since this seemingly simple task has been a subject of much study for over half a century, and is only recently gaining much success, it will be important to briefly discuss the reasons for the challenges, traditional ways of dealing with them, and more recent successes.
+The automatic recognition of human speech by a computer has been a subject of interest spanning decades.  Humans first and foremost communicate their ideas via speech and human language, and teaching computers to be able to take verbal instructions would make interaction with them much easier for a majority of the population, particularly the elderly and disabled.  Since this task has been a subject of much study for over half a century, and is only recently gaining much success, it is important to briefly discuss these successes and the challenges that still remain.
 
-Despite these successes, challenges still remain when there is noise in the signal (\cite{zhang:17}).  As before, it is important to understand the mechanics and acoustics of why this proves to be a challenge for automatic speech recognition (ASR), and traditional methods of dealing with this as well as more modern techniques.
+%Despite these successes, challenges still remain when there is noise in the signal (\cite{zhang:17}).  As before, it is important to understand the mechanics and acoustics of why this proves to be a challenge for automatic speech recognition (ASR), and traditional methods of dealing with this as well as more modern techniques.
 
 % Insert bit about it being still not perfect?
-
-In the previous chapter, data was collected using a novel technique aimed to overcome the difficulty of accurately perceiving speech in a noisy environment, for recognition both by computer (ASR) or by human speech perception.  This collected data will be used in an experiment using the standard open source ASR system Kaldi (\cite{povey:11}) with the standard, open source acoustic model developed from the LibriSpeech corpus (\cite{panayotov:15}).
+The present study proposes a new technique to be used in the advancement of noise-robust automatic speech recognition (ASR).
+The experiment in Chapter 2\ref{chapter2} collected ear-recorded speech data, which aimed to overcome the difficulty of accurately perceiving speech in a noisy environment, for recognition both by computer (ASR) or by human speech perception.  This collected data will be used in an experiment utilizing the standard open-source ASR system Kaldi (\cite{povey:11}) with the standard, freely-available acoustic model developed from the LibriSpeech corpus (\cite{panayotov:15}).
 
 \section{Background}
 \label{chap3:background}
@@ -179,46 +202,71 @@ In the previous chapter, data was collected using a novel technique aimed to ove
 %   \label{fig:waveform}
 % \end{wrapfigure}
 
-While there are more than 30 years of research involving ASR, and nearly as many working with speech in noisy environments, it is impossible to touch on all techniques in this very brief overview.  Therefore, only several areas of research in noise-robust ASR will be discussed pertaining to the present research.
+While there are more than 30 years of research involving ASR, and nearly as many working with speech in noisy environments, it is impossible to mention all or even most developed techniques within this very brief overview.  Therefore, the discussion will involve only several areas of research in noise-robust ASR that pertain to the present study.
 
 Equation \ref{eq:basic} is often used to represent the combination of speech and noise,
 \begin{equation}\label{eq:basic}
-y = x * h + n
+x * h + n = y
 \end{equation}
-where $x$ is the clean speech signal, $h$ is any convolution (ie. room reverberation, microphone channel warp), $n$ is additive noise, and $y$ is the noisy speech signal.  There is also the effect that phase plays on the combination of the parts of this equation.  Taking phase into account means that additive noise is not always simply additive, as energy at frequencies with competing phases could cancel each other out at varying degrees, depending on phase.  While there is some research that does take phase into account and demonstrates that by doing so, greater noise removal can be acheived, attempting to model phase adds significant complexity, and the, albeit (many researchers in this subfield admit) problematic, assumption is made that phase plays no role.  
+where $x$ is the clean speech signal, $h$ is any convolution (eg. room reverberation, microphone channel warp, etc.) of the original speech signal, $n$ is additive noise, and $y$ is the noisy speech signal.  In addition, the phase of the component signals contributing to the resulting signal $y$ also has an effect.  Taking phase into account means that additive noise is not always simply additive, as energy at frequencies with competing phases could cancel each other out to varying degrees, depending on phase.  While there is some research that does take phase into account and demonstrates that by doing so, more accurate noise removal can be achieved, attempting to model phase adds significant complexity, and the - albeit problematic (many researchers admit) - assumption is frequently made that phase plays no role (\cite{li:14}).  
 
 %Multi-style training, what it is (training with multiple types of noise) - it is ineffective.  Older - paper cited was written in 1987. \cite{li:14}, \cite{lippmann:87}.
 
-It is difficult to categorize the plethora of noise-robustness techniques utilized by hundreds of researchers over the years, but, broadly, two domains can be discerned (\cite{li:14,zhang:17}).  The first is the ``feature-space'' domain, which focuses on front-end processing of the signal $y$ itself.  The second group utilizes the ``model space'' domain, or the back-end processing that modifies the acoustic model itself to account for any noise in the signal $y$.  Advances in neural network technology has also lent itself to application in noise-robust ASR.  These have provided novel methods of tackling the problem.
+The categorization of noise-robustness techniques utilized by hundreds of researchers over the years is difficult, but, broadly, two domains can be outlined (\cite{li:14,zhang:17}).  The first is the ``feature-space'' domain, which focuses on front-end processing of the signal $y$ itself.  The second group utilizes the ``model space'' domain, or the back-end processing that modifies the acoustic model to account for any noise in the signal $y$.  Feature space is the part of the ASR process where an acoustic vector is transformed into `features' describing salient parts the acoustic signal that the ASR model will receive as input.  Model space, consequently, then, comes after feature space in the ASR process, and encompasses the acoustic model parameters, methods of training the model, etc.  
 
-\subsection{Feature Space Domain vs Model Space Domain}
+Noise can be accounted for in either the feature space domain or the model space domain, or both.  In the feature domain, noise is dealt with, and the signal is enhanced, prior to sending the features to the acoustic model for recognition.  These modifications are made without altering the acoustic model parameters, resulting in low computation cost.  In the model space, acoustic parameters themselves can be modified in accordance with the noisy signal.  This generally results in high computation cost when training the acoustic model.  There is normally a trade-off between the two domains: one of computation efficiency and performance. Model space alterations often yielding higher performance improvement, while feature space alterations are less computationally intensive (\cite{li:14}).
+Advances in neural network technology have also lent itself to application in noise-robust ASR.  These have provided additional methods of tackling the problem.
 
-Feature space is the part of the ASR process where an acoustic vector is transformed into `features' about the acoustic signal that the ASR model will receive as input.  Model space, imperatively, then, comes after Feature space in the ASR process, and encompasses the acoustic model parameters, methods of training the model, etc.
+\subsection{Feature Space Domain}
 
-Noise can be accounted for in either or both domains.  In the feature domain, noise is dealt with prior to the sending the features to the acoustic model.  These noise reduction processes intend to enhance the signal before it reaches the model.  This is mostly done without altering the acoustic model parameters, resulting in low computation cost.
+In the feature space domain of noise-robust ASR processing, there are a number of broad techniques, including (a) noise-resistant features, (b) feature normalization, and  (c) feature compensation.  Noise resistant features are, quite simply, features in the acoustic signal which are not sensitive to environmental changes.  Many researchers have proposed many methods of signal derivation that incorporate features of the human auditory system, including Perceptual Linear Prediction (PLP, \cite{hermansky:85}), introducing the ``auditory spectrum'' and explicit formant information into ASR processing, and Relative Spectral processing (RASTA) applied to PLP (\cite{hermansky:92}), making PLP less sensitive to slow varying speech information and more sensitive to the more rapid-varying transitions of speech, which is important in human speech perception (\cite{willi:17}).  \cite{kim:99} attempts to model functions of the cochlea and auditory nerve. These methods are quite effective at dealing with short-term, stationary, additive noise (\cite{zhang:17}).  More recent methods include SPARK (\cite{fazel:12}, 1369), which is ``neurobiologically inspired'' by ``auditory receptive fields'' and ``local competitive behavior'', and that proposed by \cite{moritz:15}, which emulates the amplitude modulation found in mammalian auditory cortexes.  These are just a selection of methods incorporating biologically based noise resistant features, which generally outperform ``vanilla'' MFCC methods. The fact that these features can be quite complex to generate, and the parameters difficult to set, makes it hard to utilize a combination of them, preventing widespread usage and incorporation with other techniques.  A straightforward relation between the cleaned features and noisy speech is also difficult to derive due to the complexity involved in the feature calculation (\cite{li:14}).
 
-In the model space, acoustic parameters themselves can be modified in accordance with the noisy signal.  This generally results in high computation cost when training the acoustic model.  There is normally a trade-off of computation and performance, with Model Domain space alterations generally yielding higher performance improvement (\cite{li:14}).
+Feature normalization (b) generally involves normalizing cepstral feature vectors in the form of cepstral mean normalization (CMN) and cepstral mean and variance normalization (CMVN).  CMN involves finding the mean values out of all cepstral vectors (\cite{atal:74}).  All cepstral vectors are then normalized, such that the mean cepstral value becomes zero.  CMN primarily eliminates reverberation and channel-related distortion, but signals with noise and no channel distortion also see improvement (\cite{droppo:08}).  CMVN takes the mean and normalizes it together with the co-variance of the cepstral vectors, yielding improved performance on speech data with additive noise (\cite{viikki:98}).
+These methods do not work in real-time, however, as they require cepstral vectors from the entire utterance in order to calculate means and variances.
 
-In the feature domain space, there are a number of techniques, including (a) noise-resistant features, (b) feature normalization, and  (c) feature compensation.  Noise resistant features are, quite simply, features in the acoustic signal which are not sensitive to environmental changes.  Many methods of deriving these features have been proposed that incorporate features of the human auditory system, including Perceptual Linear Prediction (PLP, \cite{hermansky:85}), which introduces the ``auditory spectrum'' and explicit F1/F2 information into ASR processing, and Relative Spectral processing (RASTA) applied to PLP (\cite{hermansky:92}), making PLP less sensitive to slow varying speech information, and more sensitive to the quick-varying transitions of speech (\cite{story:10}).  \cite{kim:99} attempts to model functions of the cochlea and auditory nerve. These methods are quite effective at dealing with short-term, stationary, additive noise (\cite{zhang:17}).  More recent methods include SPARK (\cite{fazel:12}, 1369), which is ``neurobiologically inspired'' by ``auditory receptive fields'' and ``local competative behavior'', and \cite{moritz:15}, which emulates the amplitude modulation found in mamillian auditory cortexes.  These methods generally outperform vanilla MFCC methods. Difficulties utilizing these methods include that the features can be quite complex to generate and the parameters difficult to set, preventing widespread usage with other techniques.  Due to the complexity involved, it is also difficult to derive a relation between clean and noisy speech \cite{li:14}.
+Feature compensation (c) actually attempts to remove the noise from the noisy speech signal, allowing for use of traditional features. Spectral subtraction (\cite{boll:79} is an intuitive method of removing noise by taking a small window of the waveform, turning the linear signal into the spectral domain, and subtracting an existing or estimated noise spectrum $n$ from a noisy speech spectrum $y$, leaving a spectrum of clean speech $x$.  This is then converted back into the time domain, and the process is repeated all along the waveform.  Spectral subtraction often estimates the noise by looking at sections of the observed signal that do not contain speech information.  
 
-Feature normalization generally involves normalizing cepstral feature vectors in the form of cepstral mean normalization (CMN) and cepstral mean and variance normalization (CMVN).  CMN invovles finding the mean values out of all cepstral vectors (\cite{atal:74}).  All cepstral vectors are then normalized, such that the mean cepstral value becomes zero.  This is primarily used to eliminate reverberation and channel-related distortion, but signals with noise and no channel distortion also see improvement (\cite{droppo:08}).  ``CMVN normalizes the mean and covariance together'' (\cite{li:14}, 752), yielding improved performance on speech data with additive noise.
-These methods do not work in real-time, however, as they require cepstral vectors from the entire utterance in order to calculate a mean.
+This method still has several problems (\cite{li:14}). First and foremost, the location of speech in the signal in a noisy environment is difficult to detect, which consequently affects the ability to accurately compute a noise average. It also requires relatively stationary, slow-variation noise; noise that changes quickly can have a different average spectrum during the portion of the signal containing speech than the portion of the signal in which the noisy spectrum was calculated.  Furthermore, this is only an average of the noise, and not exactly the noise itself.  This subtraction of the average can inadvertently have an additive noise effect by producing extraneous acoustic artifacts in the ``clean'' signal which were not there to begin with (\cite{berouti:79}).
 
-Feature compensation actually attempts to remove the noise from the noisy speech signal, allowing for use of traditional features. Spectral subtraction (\cite{boll:79} is an older and intuitive method of removing noise by turning the linear signal into the spectral domain, subtracting a noise spectrum from a noisy speech spectrum, leaving the clean speech spectrum.  This is then converted back into the series of samples that derive the clean speech spectrum.  This is performed all along the waveform.  The noise can be estimated by looking at sections of the observed signal that do not contain speech information.  
+Wiener filtering (\cite{lim:79}) is another method used to remove noise from a signal.  As opposed to spectral subtraction, however, this is a linear filter that works without the need to convert the signal into spectra.  However, this method also requires an estimation of the noise.  Furthermore, it does not do well in very low SNR environments, as it generally results in suppression and dampening of the entire signal, and not just the noise (\cite{li:14}).
 
-This method still comes with several problems (\cite{li:14}). First and foremost, it is difficult to detect the location of speech in the signal in a noisy environment, which consequently affects the ability to accurately compute a noise average. It also requires relatively stationary, slow-variation noise, as noise that changes quickly very possibly has a different average spectrum during the portion of the signal containing speech than the portion of the signal in which it was calculated.  Furthermore, this is only an average of the noise, and not exactly the noise itself; this subtraction can inadvertently have an additive noise effect by producing extraneous acoustic artifacts in the ``clean'' signal which were not there to begin with (\cite{berouti:79})
+More standard, is the ``advanced front-end'' (AFE) ensemble proposed in \cite{etsi:02}.  It yields more than 50\% improvement over standard MFCC features alone, and has become a frequent baseline for comparison in noisy ASR research.  It is composed of three separate `tools': two-stage Mel-warped Wiener filtering, SNR-dependent waveform processing, and blind equalization (cf. \cite{agarwal:99,macho:02,macho:01,mauuary:98}).
 
-Weiner filtering (\cite{weiner:79}) is another method used to remove noise from a signal.  As opposed to spectral subtraction, however, this is a linear filter that works without the need to convert the signal into spectra.  However, this method also requires an estimation of the noise.  Furthermore, it does not do well in very low SNR enviroments, as it generally results in suppression and dampening of the entire signal (\cite{li:14}).
+Most of the heavy work of the AFE ensemble is performed by the Mel-warped Wiener filtering (\cite{agarwal:99,li:14}).  This filter differs from the more standard Wiener filter in that it uses the Mel-frequency power spectrum in the Wiener filter calculations, as opposed to the linear signal, the result of which is then converted back into the time domain.  The filter is applied once, and then a second time to remove residual noise.  SNR-dependent waveform processing (SDWP, \cite{macho:01}) assumes that the noise remains relatively constant, whereas the speech signal causes variation in the amplitude of the signal.  SDWP uses this assumption to dampen portions of the signal with a relatively constant and low SNR compared with the high SNR (ie, speech-less versus speech-bearing) portions of the signal, which are amplified.  Blind equalization serves to eliminate convolutional (eg. reverberant) distortion from the signal (\cite{mauuary:98}).
 
-More standard, is the ``advanced front-end'' (AFE) ensemble proposed in \cite{etsi:02}.  It yields more than 50\% improvement over standard MFCC features alone, and has become a frequent baseline for comparison in noisy ASR research.  It is composed of three separate `tools': two stage Mel-warped Weiner filtering, SNR-dependant waveform processing, and blind equalization (cf. \cite{argawal:99,macho:02;macho:01;mauuary:98}, respectively.
+Considered to be the best ``general purpose'' noise-removal tool (\cite{zhang:17}, 4) using traditional (non-neural network) techniques, the minimum mean square error (MMSE) magnitude modulation estimator (MME) was developed by \cite{paliwal:12}, and based on the acoustic modulation estimator (AME) first proposed by \cite{ephraim:84}.  The approach utilizes the spectral modulation magnitude domain, rather than the spectral frequency domain (as is used in the AME method), which is where much of its success originates.
+
+\subsection{Feature Space Domain: Neural Networks}
+
+Broadly, there are two primary categories of utilizing neural networks to account for noisy speech: ``mapping methods'' and ``masking methods'' (\cite{zhang:17}).  Mapping methods involve finding the non-linear function that maps the noisy speech to the clean speech.  In neural network terms, the noisy speech is the input to some type of neural network (eg. Deep Neural Network (NN), Convolutional NN, Recurrent NN, etc.) and the (intended) output is an approximation of the clean speech.  Due to the complexity of speech in the temporal domain, the input to the neural network usually comes from one of the higher-processed input transformations, such as from the spectral or cepstral domains.
+
+Masking-based approaches work similarly to a traditional filter, albeit learned via a neural network. A method using an `Ideal Ratio Mask' will use a neural network to learn the ratio (value between 0 and 1) of the presence of clean speech to noise.  %The neural network then ``learns'' this masking ratio value that can be applied to the noisy speech signal $y$ to ideally return the clean speech $x$ as output.  
+This process is most beneficial when using spectral or cepstral features as inputs.  These calculated masking ratio values are then multiplied element-wise to each spectral or cepstral feature (from the noisy signal $y$) at every time index, returning the estimation of the clean speech $x$ as output (\cite{zhang:17}).
 
 
-Most of the heavy work is performed by the Mel-warped Weiner filtering (\cite{li:14}).  This differs from the more standard Weiner filter in that it uses the Mel-frequency power spectrum in the Weiner filter calculations, the result of which is then converted back into the time domain.  The filter is applied once, and then a second time to remove residual noise.  SNR-dependant waveform processing (SDWP) assumes that the noise is relatively constant, whereas the speech signal will cause variation in the amplitude of the signal.  SDWP uses this assumption to dampen portions of the signal with a relatively low SNR (ie, speech-less) compared with the high SNR (ie, speech-bearing) portions of the signal, which are boosted.  Blind equalization serves to eliminate convolutional (ie. reverberant) distortion from the signal.
+% Model Space
+\subsection{Model Space Domain}
 
+The description of model space domain compensation techniques will be brief, as this is not the focus of the present study.  This form of compensation usually involves adapting an existing acoustic model (presumably trained on relatively clean speech) to enable recognition of more noisy features.  Variations of maximum likelihood linear regression (MLLR, \cite{leggetter:95}) are often used to adjust the %gaussian component vector 
+model means and co-variance parameters to account for differences in the signal that is introduced by noise.  There are many variations and extensions of MLLR; one such variation, feature-space MLLR, or fMLLR, actually moves MLLR application into the feature domain (\cite{gales:98}).  
 
+There are also a few model-based approaches using neural networks for noise-robust ASR.  Most widely used is multi-condition training (\cite{seltzer:13,zhang:17}), which, similar to multi-style training originally developed by \cite{lippman:87}, uses a collection of training data that exhibits a wide range of noise conditions.  Another technique, similar to methods used in non-neural network approaches, involves adapting the already trained acoustic model with a small subset of noisy data.  However, as doing so can inadvertently result in significant overfitting, \cite{mirsamadi:15} have developed a technique unique to neural networks that - instead of slightly adjusting all weights, adds an additional layer to the neural network with its own weights.  This largely avoids the issue of overfitting, while increasing the model's robustness to noise.
 
-Not much time will be spent describing existing model space domain compensation techniques, as this is not the focus of the present study.  This form of compensation usually involves adapting an existing acoustic model (presumably trained on relatively clean speech) to enable recognition of more noisy features.  Most popularly, variations of maximum likelihood linear regression (MLLR, \cite{leggetter:95}) are used to adjust the gaussian component vector means and the covariance parameters to account for differences in the signal that noise introduces.  A slight variation in the caculation allows these transforms to be applied to the features themselves (feature-space MLLR, or fMLLR, \cite{gales:98}), moving this method into an on-line feature space tranformation.  There has also been increasing research that combines the modification of features with the training of the acoustic model, called joint model training.  Broadly, this uses the acoustic features modified by techniques such as those described above within the training data for building the acoustic model.
+\cite{weninger:13}, among many others, also combine the modifications in the feature space domain with modifications in the model space domain, referred to as joint model training.  Broadly, this takes the form of using the feature-based noise removal techniques to output feature-enhanced data which is then used as training data itself for the acoustic model.
 
+\subsection{Microphone Arrays}
+
+There are also techniques that employ multiple microphones as a method of source-separation to extract the speech source from any extraneous noise sources. Beamforming (\cite{veen:88}), for example, has become a central technique to using microphone arrays for source separation (\cite{hori:15,zhang:17}).
+The direction of arrival of the different sound sources is calculated, taking into account the distance between the two (or more) microphones, and the time of arrival of the different sources in each signal recorded by each microphone.  Recent work (cf. \cite{heymann:15,sivasankaran:15,heymann:16}) has also employed neural networks to aid and enhance the beamforming process . 
+
+\subsection{Summary}
+
+Most research over the past few decades has focused on feature space domain modifications.  This is likely due to the intensive computation required by many model space domain techniques.  Leading feature-space techniques include MMSE-MME (\cite{paliwal:12}) and AFE (\cite{etsi:02}). %which is often used as a standard baseline for comparison with new feature space modifications.  
+Model space domain approaches include adjusting the acoustic model parameters, often using a form of MLLR (\cite{leggetter:95}), which can also take the form of fMLLR in the feature space domain.  In the last few years, the advent of neural networks has seen further improvement in both feature and model space domains.  Other recent approaches have combined feature and model space modifications (joint model training), and the use of multiple microphones into a microphone input array has also become more mainstream. The recent CHiME challenges (\cite{chime:16}) have incorporated the use of multi-channel ASR input as well as single channel input as part of its task.
+
+Most of these employed feature and model space techniques that are used to account for noise are still forced to make estimations about noise type, SNR, and noise location in the signal.  As would be expected, as SNR decreases, and as noise becomes more variable (non-stationary), these methods begin to falter.  Chapter 2\ref{chapter2} proposes a method of collecting speech in noisy environments (recording speech from the inside of the ear canal) that is hypothesized to be largely immune to noise type and the stationarity (or lack thereof) of noise.  It does not require any noise estimation or inference.  It would be classified as a form of feature-space modification, affecting the signal in the temporal domain before it even reaches the microphone.  The only drawback encountered is that the speech in the recorded signal is heavily low-pass filtered, where the highest speech frequencies observed in the signal are generally found near 2.7 kHz.
+
+The only processing performed after the signal is recorded is pre-emphasis and low-pass filtering, which could be easily built into the recording mechanism itself.  It is hypothesized that this method of passive noise removal via recording speech from the ear canal, plus the minimal modification of pre-emphasis and low-pass filtering, will demonstrate similar gains over noisy speech achieved by many of the other techniques described above.
 
 
 % Another tool used is the exploitation of any prior knowledge about the distortion (\cite{li:14}); this is prior knowledge that is utilized during the training stage, not knowledge about the noise during the testing stage.  Some methods include learning the mapping between noisy and non-noisy pairs of acoustic signals.  This mapping is then extended to novel noisy utterances during testing.  This is used in feature domain space to enhance a noisy speech feature to then send to the model.  
@@ -229,10 +277,8 @@ Not much time will be spent describing existing model space domain compensation 
 % %Implicit vs Explicit Distortion Modelling
 % 
 % Explicit distortion modelling uses a ``physical model'' which allows for high performance with few distortion parameters. An example of an explicit distortion model would be spectral subtraction, discussed earlier.  It seems obvious that spectral subtraction, when matched with an agreeable signal that best utilizes its noise removal abilities, would result in more accurate speech recognition.  Consequently, other noise reduction methods that \textit{explicitly} specify the distortion tend to perform well.
-
-
-[\textbf{Read \cite{paliwal:12}, find out where to put it in above discussion, introduces MMSE (minimum mean square error). \cite{zhang:17}, 4 that it is still considered to be the best ``general purpose'' noise-removal tool.}]
-
+%
+%
 % \textbf{For examples of what this distortion model actually is, go to the primary literature:}
 % Y. Zhao and B. H. Juang, “A comparative study of noise estimation
 % algorithms for VTS-based robust speech recognition,” in
@@ -254,17 +300,12 @@ Not much time will be spent describing existing model space domain compensation 
 % Comput., Speech, Lang.
 % , vol. 23, no. 3, pp. 389–405, 2009.
 
-There are two primary categories of utilizing neural networks to account for noisy speech, ``mapping methods'' and ``masking methods''.  Mapping methods primarily fall underneath the umbrella of feature-space methods.  This involves finding the non-linear function that maps the noisy speech to the clean speech.  In neural network terms, the noisy speech is the input to some type of neural network (eg. DNN, CNN, RNN, etc.) and the (intended) output is an approximation of the clean speech.  Due to the complexity of speech in the temporal domain, the input to the neural network usually comes from one of the later input transformations, such as from the spectral or cepstral domains (\cite{zhang:17}).
-
-Masking-based approaches work similarly to a traditional filter, albeit learned via a neural network. These are also performed as a feature-space tool.  An `Ideal Ratio Mask' will learn the ratio (value between 0 and 1) of the clean speech to the noisy speech.  The function can be learned - via an neural network architecture - between the noisy speech signal and the masking value.  Most beneficial when using spectral or cepstral features as input, a masking value is learned for each set of features.  These masking values are then multiplied elementwise to each feature in the set, at that time index within the signal, ie. a method very similar to that of a traditional filter (\cite{zhang:17}).
-
-There are also a few model-based approaches using neural networks for noise robust ASR.  Most widely used is multi-condition training (\cite{seltzer:13,zhang:17}, which, similar to multi-style training originally developed by \cite{lippmann:87}, uses an collection of training data which exhibits a wide range of noise conditions.  Another method, similar to methods used in non-neural network approaches, involves adapting the already trained acoustic model with a small subset of noisy data.  However, as doing so can inadvertently result in significant overfitting, \cite{mirsamadi:15} has developed a technique unique to neural networks that - instead of slightly adjusting all weights, adds an additional layer to the neural network with its own weights, instead of modifying all weights.  This largely avoids the issue of overfitting, while increasing the model's robustness to noise.
-
-Much work is also turning to combine modifications in the feature space domain, with modififications in the model space domain (\cite{weninger:13}).  Most simply, this takes the form of using the feature-enhanced data output from feature-based noise removal as training data itself for the acoustic model.
 
 
-There are also techniques that employ multiple microphones as source-separation technique to separate the speech source from any extraneous noise sources.  The study at hand does not use multiple microphones, and so this will be discusses as only a reference.  Beamforming (\cite{veen:88}) has become a central technique to using microphone arrays in source separation (\cite{hori:15,zhang:17}).
-This is done by calculating the direction of arrival of the different sound sources, taking into account the distance between the two (or more) microphones, and the time of arrival of the different sources in each signal recorded by the microphone.  Neural networks have also been employed to aid and enhance the beamforming process (\cite{heyman:15,sivasankaran:15,heyman:16}).  
+
+
+
+ 
 
 
 
@@ -309,31 +350,133 @@ This is done by calculating the direction of arrival of the different sound sour
 
 
 
-\section{Experiment 2: ASR of Ear-Recorded and Noisy Mouth-Recorded Speech}
+\section{Experiment 3: ASR of Ear-Recorded and Noisy Mouth-Recorded Speech}\label{expt3}
 
-While there are many proposed techniques, discussed in Section \ref{chap3:background}, that have been used to modify the acoustic features of noisy speech, or to modify the acoustic model to compensate for noise, noise-robust ASR is still imperfect, and requires additional advances to ASR technology (\cite{zhang:17}).  This particular study proposes the new technique of using speech recorded from the inside of the ear canal.  This would be classified as a feature space modification in the temporal domain, prior to any processing.  Rather than using significant computation to acheive the noise reduction, this study employs purely passive mechanisms (ie. tissues in the head, earplug, ear muffs) to reduce noise.  
+While there are many proposed techniques, discussed in Section \ref{chap3:background}, that have been used to modify the acoustic features of noisy speech, or to modify the acoustic model to compensate for noise, noise-robust ASR is still imperfect and requires additional advances to ASR technology (\cite{zhang:17}).  This particular study proposes the new technique of using speech recorded from the inside of the ear canal.  This would be classified as a feature space modification in the temporal domain, prior to any processing.  Rather than using significant computation to achieve the noise reduction, this study employs purely passive mechanisms (ie. tissues in the head, earplug, ear muffs) to reduce noise.  
 
-As described previously in Chapter 2\ref{chapter2}, very simple signal enhancement techniques (ie. pre-emphasis and band-pass filtering)\footnote{These are simple enough to be built into an electrical chip to be performed in real-time, requiring no actual computation.} are then applied to the recorded signal to produce an enhanced signal with relatively little noise and one that is very similar to what could be recorded at the mouth (below 2.7 kHz).
+As described previously in Chapter 2\ref{chapter2}, very simple signal enhancement techniques (ie. pre-emphasis and band-pass filtering)\footnote{These are simple enough to be hard-wired into an electrical chip to be performed in real-time, requiring no actual computation.} are then applied to the recorded signal to produce an enhanced signal with relatively little noise and one that is very similar (below 2.7 kHz) to what could be recorded at the mouth.
 
 \subsection{Stimuli}
 
-Recordings from twenty speakers, ten male and ten female, from the data collection experiment in Chapter 2\ref{chapter2} were used as test data for this experiment.  This included 30 distint sentences from each speaker, each with 5 different noise conditions (bus, cafe, pedestrian, street, factory), 3 different noise levels (60dB, 70dB, 80dB), and a `clean' (no noise) condition.  This results in 16 iterations of each distict sentence, for each speaker, totalling 480 sentences per speaker, 4800 sentences for each gender group, and 9600 total test sentences.
+Recordings from twenty speakers, ten male and ten female, from the data collection experiment in Chapter 2\ref{chapter2} comprises the test data for this experiment.  This included 30 distinct sentences from each speaker, each with 5 different noise conditions (bus, cafe, pedestrian, street, factory) with 3 different noise levels (60dB, 70dB, 80dB), plus an additional `clean' (no noise) condition.  This results in 16 iterations of each distinct sentence (30), for each microphone location (2), resulting in 960 utterances for each of 20 speakers, totaling 19200 test utterances.  There are 9600 ear-recorded utterances (6 hours, 55 minutes)\footnote{Time estimates are calculated from an average utterance duration of ~2.6 seconds}, 9000 mouth-recorded noisy utterances (6 hours, 30 minutes), and 600 mouth-recorded clean utterances (26 minutes).
+
+Two additional datasets were used.  One was recorded from the mouth with the intention to obtain speech with a lower SNR - described in Chapter 4\ref{chapter4}, Section \ref{chap4:methods:stimuli}.  The other was the dataset (recorded at the same time) of ear signals combined with the mouth signals from the dataset above; the low-frequency ear-recorded signal was combined with the high-frequency components of the mouth-recorded signal, described in Chapter 4\ref{chapter4}, Section \ref{F0-methods}.
+For these two datasets, each contained two speakers, one male and one female.  The dataset of speech combined from ear- and mouth-recorded signals contains 80 distinct utterances, each repeated 5 times (the `clean' speech condition was removed) by each of 2 speakers, totaling 800 utterances.  The dataset of speech recorded at the mouth in noisy conditions contains 80 distinct utterances, each repeated 5 times (again, the `clean' speech condition was removed) by each of 2 speakers, totaling 800 utterances.  These datasets were recorded simultaneously at the ear and at the mouth, from the same two speakers.
 
 \subsection{Design}
 
-The existing \textbf{OPEN SLR} acoustic model will be used to test the collected data.  \textbf{This acoustic model has not been trained on significantly noisy data}.  This will primarily test the performance between the ear-recorded and noisy mouth-recorded speech, but also between the different noise conditions and noise levels.  Both the ear-recorded and noisy mouth data will then be enhanced using the well-established advanced front end (AFE, \cite{etsi:02}) technique, and will be retested on the same, unchanged acoustic model.
+The existing deep neural network (DNN) acoustic model trained on 960 hours of speech from the LibriSpeech corpus (published and described in \cite{panayotov:15}) was used to test the collected data.  As described in \cite{panayotov:15}, the 960 hours of data, collected from the audio transcripts of books from the LibriVox website, was divided into two groups - `clean' and `other'.  This designation was chosen by preliminarily running an acoustic model trained on Wall Street Journal data (WSJ, \cite{paul:92}) on the LibriSpeech utterances. The set was split down the middle, with the half containing lower WERs designated at the `clean' set, and those with higher WERs designated as the `other' set.  Data from both sets were used in training the LibriSpeech acoustic model.
 
-It is quite possible that, due to the ear-recorded speech only containing information below 3 kHz, that the existing acoustic model in its current state will have poor recognition of these sentences.  If this is the case, the same acoustic model will be adapted with ear-recorded and low-pass filtered additional setnences (not from the 30 test sentences, nor from any of the speakers being tested).  A total of \textbf{XXX} distinct sentences from \textbf{XX} additional speakers were used for adaptation of the acoustic model, totalling \textbf{XXX} sentences used for adaptaiton.  The same 9600 sentences from the same 20 speakers were used again for test data.
+Additionally, the ASR setup utilized the language models from \cite{panayotov:15}, trained on the LibriSpeech corpus.  To verify the current set-up of the acoustic and language models, the experimenter performed a replication of \cite{panayotov:15}'s experiment using LibriSpeech's ``test-clean'' and ``test-other'' datasets.  Afterwards, the experimenter used the the same acoustic and language models to recognize the speech data collected for this study described in Chapter 2\ref{chapter2}. This primarily tested the performance between the ear-recorded and noisy mouth-recorded speech, but also between the different noise conditions and noise levels.  The experimenter also tested the data collected for, and described in Chater 4\ref{chapter4}, containing very noisy mouth-recorded data and the data combination of mouth- and ear-recorded speech.
+%It is likely that, due to the ear-recorded speech only containing information below 3 kHz, that the existing acoustic model in its current state will have poor recognition of these sentences, and quite possibly will not outperform the noisy speech using the LibriSpeech models, particularly due to the relatively high SNR noisy speech.  
 
-\subsection{Procedure}
+%Due to this assumption, 
+
+
+%Both the ear-recorded and noisy mouth data will then be enhanced using the well-established advanced front end (AFE, \cite{etsi:02}) technique, and will be retested on the same, unchanged acoustic model.
+
+%A common practice in ASR research is to use a relatively small subset of data to adapt an existing acoustic model to better fit the style of data currently being used.  As additional training was used on a subset of human listeners in the experiment in Chapter 4\ref{chapter4} Section \ref{}, this training will be used in an attempt to modify the acoustic model to better recognize the ear-recorded speech.  The same DNN LibriSpeech acoustic model will be adapted with ear-recorded, low-pass filtered additional utterances (not from the 30 test sentences, nor from any of the speakers being tested).  A total of 50 distinct sentences repeated in 5 noise conditions from 4 additional speakers were used for adaptation of the acoustic model, totalling 1000 utterances used for adaptation.  The total duration of these utterances combined is approximately 44 minutes. The same 19200 utterances from the same 20 speakers were used again as test data.
+
+
 
 \subsection{Results}
 
+The experimenter used LibriSpeech test data on the configured acoustic and language models specified above.  Table \ref{tab:sanity-check} demonstrates that accuracy similar to the published results was achieved, and the acoustic and language model set up was verified.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{| c || c | c | c | c |} \hline
+Language Models & Clean Publ. & Clean Repl. & Other Publ. & Other Repl. \\ \hline\hline
+3-gram, thresh. 3e-7 & 8.02 & 9.15 & 19.41 & 23.76 \\ \hline
+3-gram, thresh. 1e-7 & 7.21 & 8.20 & 17.66 & 21.55 \\ \hline
+3-gram, unpruned & 5.74 & 6.50 & 14.77 & 18.37 \\ \hline
+4-gram, unpruned & 5.51 & 6.20 & 13.97 & 17.53 \\ \hline
+\end{tabular}
+\end{center}
+\caption{The `Language Models' column specifies the Language Model (LM) used in each row; two LMs are simply the 3-gram model which was pruned to the specified threshold.  `Publ.' columns list the performance listed in the published paper, and `Repl.' columns contain the replication performance achieved in the present study.  `Clean' and `Other' refer to the clean (2707 utterances) and `noisy' (5968 utterances) LibriSpeech test datasets. All LMs utilize the 960-hour LibriSpeech DNN acoustic model.  All values are given as WER.}\label{tab:sanity-check}
+\end{table}
+
+The experimenter then used data collected in the present study, described in Chapter 2\ref{chapter2} with the same acoustic and language models.  Table \ref{tab:basic-run} shows these results.  This table combines all noisy speech at the mouth into a single `Noisy Mouth' category and all speech collected at the ear into a single `Ear Speech' category.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{| c || c | c | c |} \hline
+Language Models & Clean Mouth & Noisy Mouth & Ear Speech \\ \hline\hline
+3-gram, prune thresh. 3e-7 & 16.74 & 51.04 & 84.10 \\ \hline
+3-gram, prune thresh. 1e-7 & 14.01 & 49.11 & 83.55 \\ \hline
+3-gram, unpruned & 9.52 & 44.49 & 82.29 \\ \hline
+4-gram, unpruned & 9.38 & 44.31 & 82.47 \\ \hline
+\end{tabular}
+\end{center}
+\caption{The `Language Models' column specifies the Language Model (LM) used in each row; two LMs are simply the 3-gram model which was pruned to the specified threshold.  ``Clean Mouth'' includes only the sentences recorded at the mouth with no noise, versus ``Noisy Mouth'', which includes all other [noisy] sentences recorded at the mouth. ``Ear Speech'' contains all ear-recorded utterances.  All LMs utilize the 960-hour LibriSpeech DNN acoustic model.  All values are given as WER.}\label{tab:basic-run}
+\end{table}
+
+Table \ref{tab:split-wer-noise} separates out the noisy mouth-recorded speech into its different noise types and noise levels.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{| c || c | c | c | c | c || c |} \hline
+ & Bus & Cafe & Pedestrian & Street & Factory & Totals \\ \hline\hline
+60 dB & 21.51 & 20.33 & 18.64 & 19.05 & 17.93 & \textbf{19.49} \\ \hline
+70 dB & 41.74 & 32.93 & 32.02 & 36.49 & 29.96 & \textbf{34.63} \\ \hline
+80 dB & 88.20 & 73.39 & 75.64 & 85.00 & 71.43 & \textbf{78.73} \\ \hline\hline
+Totals & \textbf{50.48} & \textbf{42.22} & \textbf{42.10} & \textbf{46.85} & \textbf{39.77} & \textbf{44.28} \\ \hline
+\end{tabular}
+\end{center}
+\caption{These are only from the highest-performing (4-gram) language model, utilizing the 960-hour LibriSpeech DNN acoustic model.  Each row is a different noise level, and each column a different noise type (excluding the `clean' noise type).  Totals (averages) for each category are given in the bottom-most row and the right-most column.  The overall average differs slightly from the joint noise WER value given in Table \ref{tab:basic-run}, but the difference can be attributed to rounding estimations. All values are given as WER.}\label{tab:split-wer-noise}
+\end{table}
+
+The experimenter performed another test using two sets of data created in Chapter 4\ref{chapter4}.  One includes the very noisy speech collected for the experiment in Chapter 4\ref{chapter4}.  This speech was re-recorded in a way that resulted in a lower SNR; for more details, refer to Section \ref{chap4:methods:stimuli}.    
+
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{| c || c | c |} \hline
+Language Models & Ear/Mouth Combined & Extra Noisy Mouth \\ \hline\hline
+3-gram, prune thresh. 3e-7 & 85.18 & 98.32 \\ \hline
+3-gram, prune thresh. 1e-7 & 84.66 & 99.14 \\ \hline
+3-gram, unpruned & 84.04 & 99.03 \\ \hline
+4-gram, unpruned & 83.90 & 99.41 \\ \hline
+\end{tabular}
+\end{center}
+\caption{The `Language Models' column specifies the Language Model (LM) used in each row; two LMs are simply the 3-gram model which was pruned to the specified threshold.  The `Ear/Mouth Combined' column contains the results from the dataset using speech reconstructed from low-frequency ear-signal and high frequency mouth-signal parts.  The `Extra Noisy Mouth' column contains results from the re-recorded mouth speech (described in Section \ref{chap4:methods:stimuli}), with a lower SNR.  Note that the data used in these tests are different than those used in previous tests displayed in Tables \ref{tab:basic-run} and \ref{tab:split-wer-noise}. All LMs utilize the 960-hour LibriSpeech DNN acoustic model.  All values are given as WER.}\label{tab:follow-up-asr}
+\end{table}
+
+%After retraining the 
+The other data set combined the low-passed ear-recorded speech (approximately 0-2.7 kHz) with the very noisy speech from the same utterance, high-pass filtered from approximately 2.7 kHz to 8 kHz.  The WER results are given in Table \ref{tab:follow-up-asr}.
+
+
 \section{Discussion}
+
+The results indicate, broadly, that the ear-recorded speech (cf. Table \ref{tab:basic-run}) (which has been pre-emphasized and low-pass filtered $<$ 2.7 kHz) performs minimally better than two of the 80dB noise conditions - the bus and street background noises (cf. Tables \ref{tab:basic-run} and \ref{tab:split-wer-noise}) - but none of the other conditions.  Performing better than other conditions achieving 80+\% WER does not offer much in terms of benefit, as there is minimal recognition happening in either case.  This is clear in Table \ref{tab:basic-run}, noting how little improvement is seen when more extensive language models are used.  There is not much natural language that the acoustic model uncovers which can be improved by the language model.
+
+The ear-recorded speech falls well below the performance of the ASR system on the speech in the 60- and 70- dB conditions.  The 60 dB condition demonstrates that the SNR in this condition was very high, noting that its performance was only 10\% WER short of the clean-speech condition - occurring with no other noise-reducing measures taken.  And this - the lack of other noise-reducing measures applied to the noisy speech - is yet another reason why the ear-recorded speech falls behind; after other noise-reduction transforms are applied, the noisy speech will be even more easily recognizable.
+
+The noisy speech recorded at the mouth in Chapter 4\ref{chapter4} to obtain a lower SNR for the noisy speech condition (cf. Table \ref{tab:follow-up-asr}) served its purpose.  As expected, performance drops substantially to near zero accuracy (cf. Table \ref{tab:follow-up-asr}), regardless of the language model.  Again, this is without the application of any noise enhancement techniques.
+
+The experimenter used the data from the human speech perception experiment, described in Chapter 4\ref{chapter4}, Section \ref{F0-methods}, to test whether reintroducing noisy upper frequencies to the ear-recorded signal resulted in an improvement in ASR accuracy.  Although using different speakers with a slightly different set of sentences, on its surface, the combination appears to offer no benefit over the low-pass filtered ear-recorded speech alone.  Results indicate an approximate 1\% increase in WER over the regular low-pass filtered ear-recorded speech (cf. Tables \ref{tab:basic-run}, \ref{tab:follow-up-asr}).
+
+However, rather than adding noisy upper frequencies to the ear-recorded speech, it can also be thought of as replacing the noisy lower frequencies of the mouth recorded speech with the lower frequencies of the clean, ear-recorded speech.  To this degree, adding in clean lower frequencies results in an improvement of nearly 16\% WER over the noisy mouth data (which was recorded simultaneously with the ear-recorded speech).  This is accomplished without the application of additional noise-removal processing.
 
 \subsection{Limitations and Future Research}
 
-This study utilized noise that was by and large stationary in amplitude.  This was intentional, to test the proof of concept and to test the extent (amplitude) of noise the proposed method can handle.  In theory, as has been shown in Chapter 2\ref{chapter2} that the noise does not have a dramatic effect on speech recorded from the ear, variations and modulations in the amplitude of the noise (and hence the SNR of the speech recorded at the mouth) should have no effect on the speech recorded at the ear.  Nevertheless, this should be investigated.  The recent CHiME Challenge (2016) has incorporated amplitude varying noise into their task, and similar tests could be performed by collecting another data set of speech recorded from participants' ears, with amplitude varying noise.
+The low-pass filtered ear-recorded data was run using an ASR system trained for full frequency speech on data ranging from 0 to 8 kHz.  The results make it clear that models trained on ``normal'' speech will not perform well on ear-recorded speech devoid of significant modification.  If future researchers collected enough additional speech from the ear to amass a corpus of adequate size for adapting an existing acoustic model or training a new model, performance would be expected to improve.  The degree to which performance would improve depends on the amount of critical speech information in the higher frequencies that do not make it into the ear-recorded signal.  I hypothesize that there would be enough speech information below 2.7 kHz to substantially improve ASR performance with acoustic model adaption or retraining.
+
+Considering the possibility of using a combination of low-frequency ear-recorded speech and high-frequency noisy mouth-recorded speech, existing noise-removal methods may be able to utilize the relatively clean low-frequency speech harmonics to ``clean'' the high-frequency, noisy harmonics.  This would result in a much more uniform signal across the frequency spectrum and likely much lower WERs.
+
+In many of the ear-recorded signals, one can observe a small amount of noise reaching the microphone and appearing in the signal.  One advantage of using speech recorded from the ear (either in isolation or combination with high-frequency mouth-recorded speech) is that, due to affecting the signal at the lowest level of processing (in the temporal domain) prior to any level of higher processing (eg. in the spectral or power domains), many of the discussed feature enhancement techniques, such as AFE and MMSE-MME (discussed in Section \ref{chap3:background}), can be applied to this signal.  Despite the noise in these signals, the ear-recorded signal retains a very high SNR, and I hypothesize that these noise removal techniques would work quite well.
+
+Another potential method to further eliminate any noise that reaches an ear-recorded signal would be to use beamforming on input signals from two different microphones, one in each ear.  This method can utilize the difference in temporal arrival of the same sound source in different microphones to tease apart the multiple sources and identify the speech source; the speech source will arrive at both ear canals at the same time (each canal is the same distance from the vocal tract), whereas noise sources will likely not arrive at both in-ear microphones simultaneously.
+
+This study utilized noise that was by and large stationary in amplitude.  This was intentional, to test the proof of concept and to test the extent of noise reduction the proposed method can accomplish.  In theory, as has been shown in Chapters 2\ref{chapter2} and 4\ref{chapter4}, that the noise does not have a dramatic effect on speech recorded from the ear, variations and modulations in the amplitude of the noise (and the SNR of the speech recorded at the mouth) should have little effect on the speech recorded at the ear.  Nevertheless, any future research in this area should incorporate noise that fluctuates in both type and loudness.  The recent CHiME Challenge (2016) has incorporated amplitude-varying noise into their task, and similar tests could be performed by collecting another data set of speech recorded from speakers' ears, with amplitude-varying background noise to determine if amplitude variance has an effect on ear-recorded speech.
+
+\subsection{Summary}
+
+Many methods of noise-reduction have been developed over the last several decades, and much improvement has been seen recently, particularly for signals with a higher SNR (\cite{zhang:17}).  Nevertheless, lower SNR speech,especially that with a negative SNR, still proves to be a challenge for modern ASR systems.  The proposed method of recording the speech from the inside of the ear canal does offer a noise-reduction benefit, but also significantly filters out the higher frequencies within the speech signal.  The results above demonstrate that enough speech information that the ASR acoustic model relies upon is filtered out of the higher frequencies to substantially reduce ASR recognition performance of ear-recorded speech, even more-so than noisy speech with a moderate SNR.  The ear-recorded speech does outperform very noisy, low SNR speech data (prior to any noise-reduction methods performed on the noisy speech), but neither data's accuracy is suitable for any real-life ASR application.  
+
+However, adding low-frequency ear-recorded speech, which is mostly devoid of noise, to the noisy mouth-recorded signal (replacing the noisy low-frequency speech in that signal) does substantially improve performance.  This improvement can be seen prior to the application of any further noise-reduction method or signal enhancement method.
+
+It is also possible for future research, with substantial ear-recorded data, to adapt or train an acoustic model on that style of speech.  If this could be accomplished with success, adequate recognition could be achieved solely through ear-recorded speech, without the need to use it in combination with the noisy speech signal from the mouth.  It is clear that additional steps are necessary to determine the full extent of benefit that can be achieved by using ear-recorded signals for noise robust ASR systems.
 
 
 

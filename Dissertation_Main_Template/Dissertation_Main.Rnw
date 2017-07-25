@@ -51,15 +51,6 @@
 %\usepackage{mathtime}			% Times for letters; Belleek math.
 %
 \usepackage{wrapfig}
-
-\newenvironment{lydiawrapfigure}
- {%
-%  \setlength{\intextsep}{0pt}% <--- Wrong!
-  \setlength{\columnsep}{15pt}%
-  \wrapfloat{figure}%
- }
- {\endwrapfloat}
- 
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{tipa}
@@ -70,6 +61,10 @@
 \usepackage{breakurl}
 \usepackage{mathtools}
 \usepackage{amsmath}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
 % \usepackage[normalem]{ulem}
 % \usepackage{xyling,comment}			% AMS Math (advanced math typesetting)
 % includecomment{delall}
@@ -189,7 +184,7 @@ library(cowplot)
 
 %ADD: Copy/Paste Content from all 5 chapters:
 
-%\include{Chapter_1}
+\include{./chapter_1_Introduction}
 %\include{chapter_2}
 %\include{chapter_3}
 %\include{chapter_4}
