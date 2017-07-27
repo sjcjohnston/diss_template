@@ -67,15 +67,15 @@
 \usepackage{graphicx}
 \usepackage{natbib}			% natbib is available on most systems, and is
 					% terribly handy.
-					
+
 %May need to remove! Trying to fix nocite{*} biblography problem:
-					% If you want to use a different Bibliography package, 
+					% If you want to use a different Bibliography package,
 					% you should be able to, just change this
 					% and the \bibliographystyle command below.  Be warned
 					% that you may need to do a little hacking to get
 					% the REFERENCES item to show up in your TOC.
 
-% Compatibility with the AASTEX package 
+% Compatibility with the AASTEX package
 % of the American Astronomical Society.
 %\usepackage{deluxetable}		% Allows use of AASTEX deluxe tables
 %\usepackage{aastex_hack}		% Allows other AASTEX functionality.
@@ -95,7 +95,7 @@
   \wrapfloat{figure}%
  }
  {\endwrapfloat}
- 
+
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{tipa}
@@ -110,29 +110,29 @@
 % \usepackage{xyling,comment}			% AMS Math (advanced math typesetting)
 % includecomment{delall}
 % %\excludecomment{delall}
-% 
+%
 % %default: don't show edits
-% 
+%
 % \newcommand{\add}[1]{#1}
 % \newcommand{\del}[1]{}
 % \newcommand{\delni}[1]{}
-% \newcommand{\addtab}{}
-% 
-% %block to show edits controlled by include/exclude-comment above
-% \begin{delall}
-% %added stuff
-% \renewcommand{\add}[1]{\textcolor{blue}{#1}}
-% %added table
-% \renewcommand{\addtab}{\color{blue}}
-% %deleted stuff
-% \renewcommand{\del}[1]{\textcolor{red}{\sout{#1}}}
-% \renewcommand{\delni}[1]{\noindent\textcolor{red}{\sout{#1}}}
-% \end{delall}
+\newcommand{\addtab}{}
+
+%block to show edits controlled by include/exclude-comment above
+\begin{delall}
+%added stuff
+\renewcommand{\add}[1]{\textcolor{blue}{#1}}
+%added table
+\renewcommand{\addtab}{\color{blue}}
+%deleted stuff
+\renewcommand{\del}[1]{\textcolor{red}{\sout{#1}}}
+\renewcommand{\delni}[1]{\noindent\textcolor{red}{\sout{#1}}}
+\end{delall}
 
 %\usepackage{lscape}			% Used for making fitting large tables in by putting them landscape
-%\usepackage{refs}			
+%\usepackage{refs}
 %
-% If you are using hyper-ref (recommended), this command must go after all 
+% If you are using hyper-ref (recommended), this command must go after all
 % other package inclusions (from the hyperref package documentation).
 % The purpose of hyperref is to make the PDF created extensively
 % cross-referenced.

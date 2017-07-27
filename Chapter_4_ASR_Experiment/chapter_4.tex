@@ -87,15 +87,6 @@
 %\usepackage{mathtime}			% Times for letters; Belleek math.
 %
 \usepackage{wrapfig}
-
-\newenvironment{lydiawrapfigure}
- {%
-%  \setlength{\intextsep}{0pt}% <--- Wrong!
-  \setlength{\columnsep}{15pt}%
-  \wrapfloat{figure}%
- }
- {\endwrapfloat}
- 
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{tipa}
@@ -106,6 +97,10 @@
 \usepackage{breakurl}
 \usepackage{mathtools}
 \usepackage{amsmath}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
 % \usepackage[normalem]{ulem}
 % \usepackage{xyling,comment}			% AMS Math (advanced math typesetting)
 % includecomment{delall}
@@ -161,10 +156,10 @@
 
 
 
-\chapter{Automatic Speech Recognition of Ear-Recorded Speech\label{chapter3}}
+\chapter{Automatic Speech Recognition of Ear-Recorded Speech\label{chapter4}}
 
 
-\section{Introduction}
+\section{Introduction}\label{chap4:introduction}
 
 The automatic recognition of human speech by a computer has been a subject of interest spanning decades.  Humans first and foremost communicate their ideas via speech and human language, and teaching computers to be able to take verbal instructions would make interaction with them much easier for a majority of the population, particularly the elderly and disabled.  Since this task has been a subject of much study for over half a century, and is only recently gaining much success, it is important to briefly discuss these successes and the challenges that still remain.
 
@@ -172,10 +167,10 @@ The automatic recognition of human speech by a computer has been a subject of in
 
 % Insert bit about it being still not perfect?
 The present study proposes a new technique to be used in the advancement of noise-robust automatic speech recognition (ASR).
-The experiment in Chapter 2\ref{chapter2} collected ear-recorded speech data, which aimed to overcome the difficulty of accurately perceiving speech in a noisy environment, for recognition both by computer (ASR) or by human speech perception.  This collected data will be used in an experiment utilizing the standard open-source ASR system Kaldi (\cite{povey:11}) with the standard, freely-available acoustic model developed from the LibriSpeech corpus (\cite{panayotov:15}).
+The experiment in Chapter \ref{chapter2} collected ear-recorded speech data, which aimed to overcome the difficulty of accurately perceiving speech in a noisy environment, for recognition both by computer (ASR) or by human speech perception.  This collected data will be used in an experiment utilizing the standard open-source ASR system Kaldi (\cite{povey:11}) with the standard, freely-available acoustic model developed from the LibriSpeech corpus (\cite{panayotov:15}).
 
 \section{Background}
-\label{chap3:background}
+\label{chap4:background}
 
 % Things to hit on:
 % - Base-level Acoustics-to-Features
@@ -191,7 +186,7 @@ The experiment in Chapter 2\ref{chapter2} collected ear-recorded speech data, wh
 % - Try to find continued issue with electronically identifying speech in noise
 % - Emphasize unpredictability of noise, and unknown amplitude - how ear-recorded speech may be able to `protect' against this unpredicatability
 
-% The basics of the acoustics of speech was discussed at the beginning of Chapter 2\ref{chapter2}.  As a recap, speech contains voiced and voiceless sounds.  The voiceless sounds are generally produced by turbulence - air moving rapidly through a small openning in the vocal tract.  The voiced sounds are more complex, and contain harmonics (acoustic energy focused in very narrow bands of frequency).  Certain harmonics (out of the full set of harmonics in the voiced signal) contain more energy than the other harmonics; these regions in the frequency spectrum with harmonics containing greater energy are called formants, and this is where much of the speech information comes from.
+% The basics of the acoustics of speech was discussed at the beginning of Chapter \ref{chapter2}.  As a recap, speech contains voiced and voiceless sounds.  The voiceless sounds are generally produced by turbulence - air moving rapidly through a small openning in the vocal tract.  The voiced sounds are more complex, and contain harmonics (acoustic energy focused in very narrow bands of frequency).  Certain harmonics (out of the full set of harmonics in the voiced signal) contain more energy than the other harmonics; these regions in the frequency spectrum with harmonics containing greater energy are called formants, and this is where much of the speech information comes from.
 % 
 % The human auditory system does a remarkable job of finding these acoustic features and interpreting them, but a computer does not have an inherent auditory system and (as of now) needs to be told what to look for.  Simply put, via a microphone, computers receive a series of digits (numbers) which correspond to the amount of pressure at a given point in time.  
 % %
@@ -212,33 +207,33 @@ where $x$ is the clean speech signal, $h$ is any convolution (eg. room reverbera
 
 %Multi-style training, what it is (training with multiple types of noise) - it is ineffective.  Older - paper cited was written in 1987. \cite{li:14}, \cite{lippmann:87}.
 
-The categorization of noise-robustness techniques utilized by hundreds of researchers over the years is difficult, but, broadly, two domains can be outlined (\cite{li:14,zhang:17}).  The first is the ``feature-space'' domain, which focuses on front-end processing of the signal $y$ itself.  The second group utilizes the ``model space'' domain, or the back-end processing that modifies the acoustic model to account for any noise in the signal $y$.  Feature space is the part of the ASR process where an acoustic vector is transformed into `features' describing salient parts the acoustic signal that the ASR model will receive as input.  Model space, consequently, then, comes after feature space in the ASR process, and encompasses the acoustic model parameters, methods of training the model, etc.  
+The categorization of noise-robustness techniques utilized by hundreds of researchers over the years is difficult, but, broadly, two domains can be outlined (\cite{li:14,zhang:17}).  The first is the `feature-space' domain, which focuses on front-end processing of the signal $y$ itself.  The second group utilizes the `model-space' domain, or the back-end processing that modifies the acoustic model to account for any noise in the signal $y$.  Feature space is the part of the ASR process where an acoustic vector is transformed into `features' describing salient parts the acoustic signal that the ASR model will receive as input.  Model space, consequently, then, comes after feature space in the ASR process, and encompasses the acoustic model parameters, methods of training the model, etc.  
 
 Noise can be accounted for in either the feature space domain or the model space domain, or both.  In the feature domain, noise is dealt with, and the signal is enhanced, prior to sending the features to the acoustic model for recognition.  These modifications are made without altering the acoustic model parameters, resulting in low computation cost.  In the model space, acoustic parameters themselves can be modified in accordance with the noisy signal.  This generally results in high computation cost when training the acoustic model.  There is normally a trade-off between the two domains: one of computation efficiency and performance. Model space alterations often yielding higher performance improvement, while feature space alterations are less computationally intensive (\cite{li:14}).
 Advances in neural network technology have also lent itself to application in noise-robust ASR.  These have provided additional methods of tackling the problem.
 
 \subsection{Feature Space Domain}
 
-In the feature space domain of noise-robust ASR processing, there are a number of broad techniques, including (a) noise-resistant features, (b) feature normalization, and  (c) feature compensation.  Noise resistant features are, quite simply, features in the acoustic signal which are not sensitive to environmental changes.  Many researchers have proposed many methods of signal derivation that incorporate features of the human auditory system, including Perceptual Linear Prediction (PLP, \cite{hermansky:85}), introducing the ``auditory spectrum'' and explicit formant information into ASR processing, and Relative Spectral processing (RASTA) applied to PLP (\cite{hermansky:92}), making PLP less sensitive to slow varying speech information and more sensitive to the more rapid-varying transitions of speech, which is important in human speech perception (\cite{willi:17}).  \cite{kim:99} attempts to model functions of the cochlea and auditory nerve. These methods are quite effective at dealing with short-term, stationary, additive noise (\cite{zhang:17}).  More recent methods include SPARK (\cite{fazel:12}, 1369), which is ``neurobiologically inspired'' by ``auditory receptive fields'' and ``local competitive behavior'', and that proposed by \cite{moritz:15}, which emulates the amplitude modulation found in mammalian auditory cortexes.  These are just a selection of methods incorporating biologically based noise resistant features, which generally outperform ``vanilla'' MFCC methods. The fact that these features can be quite complex to generate, and the parameters difficult to set, makes it hard to utilize a combination of them, preventing widespread usage and incorporation with other techniques.  A straightforward relation between the cleaned features and noisy speech is also difficult to derive due to the complexity involved in the feature calculation (\cite{li:14}).
+In the feature space domain of noise-robust ASR processing, there are a number of broad techniques, including (a) noise-resistant features, (b) feature normalization, and  (c) feature compensation.  Noise resistant features are, quite simply, features in the acoustic signal which are not sensitive to environmental changes.  Many researchers have proposed many methods of signal derivation that incorporate features of the human auditory system, including Perceptual Linear Prediction (PLP, \cite{hermansky:85}), introducing the `auditory spectrum' and explicit formant information into ASR processing, and Relative Spectral processing (RASTA) applied to PLP (\cite{hermansky:92}), making PLP less sensitive to slow varying speech information and more sensitive to the more rapid-varying transitions of speech, which is important in human speech perception (\cite{willi:17}).  \cite{kim:99} attempts to model functions of the cochlea and auditory nerve. These methods are quite effective at dealing with short-term, stationary, additive noise (\cite{zhang:17}).  More recent methods include SPARK (\cite{fazel:12}, 1369), which is ``neurobiologically inspired'' by ``auditory receptive fields'' and ``local competitive behavior'', and that proposed by \cite{moritz:15}, which emulates the amplitude modulation found in mammalian auditory cortexes.  These are just a selection of methods incorporating biologically based noise resistant features, which generally outperform `vanilla' MFCC methods. The fact that these features can be quite complex to generate, and the parameters difficult to set, makes it hard to utilize a combination of them, preventing widespread usage and incorporation with other techniques.  A straightforward relation between the cleaned features and noisy speech is also difficult to derive due to the complexity involved in the feature calculation (\cite{li:14}).
 
 Feature normalization (b) generally involves normalizing cepstral feature vectors in the form of cepstral mean normalization (CMN) and cepstral mean and variance normalization (CMVN).  CMN involves finding the mean values out of all cepstral vectors (\cite{atal:74}).  All cepstral vectors are then normalized, such that the mean cepstral value becomes zero.  CMN primarily eliminates reverberation and channel-related distortion, but signals with noise and no channel distortion also see improvement (\cite{droppo:08}).  CMVN takes the mean and normalizes it together with the co-variance of the cepstral vectors, yielding improved performance on speech data with additive noise (\cite{viikki:98}).
 These methods do not work in real-time, however, as they require cepstral vectors from the entire utterance in order to calculate means and variances.
 
 Feature compensation (c) actually attempts to remove the noise from the noisy speech signal, allowing for use of traditional features. Spectral subtraction (\cite{boll:79} is an intuitive method of removing noise by taking a small window of the waveform, turning the linear signal into the spectral domain, and subtracting an existing or estimated noise spectrum $n$ from a noisy speech spectrum $y$, leaving a spectrum of clean speech $x$.  This is then converted back into the time domain, and the process is repeated all along the waveform.  Spectral subtraction often estimates the noise by looking at sections of the observed signal that do not contain speech information.  
 
-This method still has several problems (\cite{li:14}). First and foremost, the location of speech in the signal in a noisy environment is difficult to detect, which consequently affects the ability to accurately compute a noise average. It also requires relatively stationary, slow-variation noise; noise that changes quickly can have a different average spectrum during the portion of the signal containing speech than the portion of the signal in which the noisy spectrum was calculated.  Furthermore, this is only an average of the noise, and not exactly the noise itself.  This subtraction of the average can inadvertently have an additive noise effect by producing extraneous acoustic artifacts in the ``clean'' signal which were not there to begin with (\cite{berouti:79}).
+This method still has several problems (\cite{li:14}). First and foremost, the location of speech in the signal in a noisy environment is difficult to detect, which consequently affects the ability to accurately compute a noise average. It also requires relatively stationary, slow-variation noise; noise that changes quickly can have a different average spectrum during the portion of the signal containing speech than the portion of the signal in which the noisy spectrum was calculated.  Furthermore, this is only an average of the noise, and not exactly the noise itself.  This subtraction of the average can inadvertently have an additive noise effect by producing extraneous acoustic artifacts in the `clean' signal which were not there to begin with (\cite{berouti:79}).
 
 Wiener filtering (\cite{lim:79}) is another method used to remove noise from a signal.  As opposed to spectral subtraction, however, this is a linear filter that works without the need to convert the signal into spectra.  However, this method also requires an estimation of the noise.  Furthermore, it does not do well in very low SNR environments, as it generally results in suppression and dampening of the entire signal, and not just the noise (\cite{li:14}).
 
-More standard, is the ``advanced front-end'' (AFE) ensemble proposed in \cite{etsi:02}.  It yields more than 50\% improvement over standard MFCC features alone, and has become a frequent baseline for comparison in noisy ASR research.  It is composed of three separate `tools': two-stage Mel-warped Wiener filtering, SNR-dependent waveform processing, and blind equalization (cf. \cite{agarwal:99,macho:02,macho:01,mauuary:98}).
+More standard, is the `advanced front-end' (AFE) ensemble proposed in \cite{etsi:02}.  It yields more than 50\% improvement over standard MFCC features alone, and has become a frequent baseline for comparison in noisy ASR research.  It is composed of three separate `tools': two-stage Mel-warped Wiener filtering, SNR-dependent waveform processing, and blind equalization (cf. \cite{agarwal:99,macho:02,macho:01,mauuary:98}).
 
 Most of the heavy work of the AFE ensemble is performed by the Mel-warped Wiener filtering (\cite{agarwal:99,li:14}).  This filter differs from the more standard Wiener filter in that it uses the Mel-frequency power spectrum in the Wiener filter calculations, as opposed to the linear signal, the result of which is then converted back into the time domain.  The filter is applied once, and then a second time to remove residual noise.  SNR-dependent waveform processing (SDWP, \cite{macho:01}) assumes that the noise remains relatively constant, whereas the speech signal causes variation in the amplitude of the signal.  SDWP uses this assumption to dampen portions of the signal with a relatively constant and low SNR compared with the high SNR (ie, speech-less versus speech-bearing) portions of the signal, which are amplified.  Blind equalization serves to eliminate convolutional (eg. reverberant) distortion from the signal (\cite{mauuary:98}).
 
-Considered to be the best ``general purpose'' noise-removal tool (\cite{zhang:17}, 4) using traditional (non-neural network) techniques, the minimum mean square error (MMSE) magnitude modulation estimator (MME) was developed by \cite{paliwal:12}, and based on the acoustic modulation estimator (AME) first proposed by \cite{ephraim:84}.  The approach utilizes the spectral modulation magnitude domain, rather than the spectral frequency domain (as is used in the AME method), which is where much of its success originates.
+Considered to be the best `general-purpose' noise-removal tool (\cite{zhang:17}, 4) using traditional (non-neural network) techniques, the minimum mean square error (MMSE) magnitude modulation estimator (MME) was developed by \cite{paliwal:12}, and based on the acoustic modulation estimator (AME) first proposed by \cite{ephraim:84}.  The approach utilizes the spectral modulation magnitude domain, rather than the spectral frequency domain (as is used in the AME method), which is where much of its success originates.
 
 \subsection{Feature Space Domain: Neural Networks}
 
-Broadly, there are two primary categories of utilizing neural networks to account for noisy speech: ``mapping methods'' and ``masking methods'' (\cite{zhang:17}).  Mapping methods involve finding the non-linear function that maps the noisy speech to the clean speech.  In neural network terms, the noisy speech is the input to some type of neural network (eg. Deep Neural Network (NN), Convolutional NN, Recurrent NN, etc.) and the (intended) output is an approximation of the clean speech.  Due to the complexity of speech in the temporal domain, the input to the neural network usually comes from one of the higher-processed input transformations, such as from the spectral or cepstral domains.
+Broadly, there are two primary categories of utilizing neural networks to account for noisy speech: `mapping methods' and `masking methods' (\cite{zhang:17}).  Mapping methods involve finding the non-linear function that maps the noisy speech to the clean speech.  In neural network terms, the noisy speech is the input to some type of neural network (eg. Deep Neural Network (NN), Convolutional NN, Recurrent NN, etc.) and the (intended) output is an approximation of the clean speech.  Due to the complexity of speech in the temporal domain, the input to the neural network usually comes from one of the higher-processed input transformations, such as from the spectral or cepstral domains.
 
 Masking-based approaches work similarly to a traditional filter, albeit learned via a neural network. A method using an `Ideal Ratio Mask' will use a neural network to learn the ratio (value between 0 and 1) of the presence of clean speech to noise.  %The neural network then ``learns'' this masking ratio value that can be applied to the noisy speech signal $y$ to ideally return the clean speech $x$ as output.  
 This process is most beneficial when using spectral or cepstral features as inputs.  These calculated masking ratio values are then multiplied element-wise to each spectral or cepstral feature (from the noisy signal $y$) at every time index, returning the estimation of the clean speech $x$ as output (\cite{zhang:17}).
@@ -264,7 +259,7 @@ The direction of arrival of the different sound sources is calculated, taking in
 Most research over the past few decades has focused on feature space domain modifications.  This is likely due to the intensive computation required by many model space domain techniques.  Leading feature-space techniques include MMSE-MME (\cite{paliwal:12}) and AFE (\cite{etsi:02}). %which is often used as a standard baseline for comparison with new feature space modifications.  
 Model space domain approaches include adjusting the acoustic model parameters, often using a form of MLLR (\cite{leggetter:95}), which can also take the form of fMLLR in the feature space domain.  In the last few years, the advent of neural networks has seen further improvement in both feature and model space domains.  Other recent approaches have combined feature and model space modifications (joint model training), and the use of multiple microphones into a microphone input array has also become more mainstream. The recent CHiME challenges (\cite{chime:16}) have incorporated the use of multi-channel ASR input as well as single channel input as part of its task.
 
-Most of these employed feature and model space techniques that are used to account for noise are still forced to make estimations about noise type, SNR, and noise location in the signal.  As would be expected, as SNR decreases, and as noise becomes more variable (non-stationary), these methods begin to falter.  Chapter 2\ref{chapter2} proposes a method of collecting speech in noisy environments (recording speech from the inside of the ear canal) that is hypothesized to be largely immune to noise type and the stationarity (or lack thereof) of noise.  It does not require any noise estimation or inference.  It would be classified as a form of feature-space modification, affecting the signal in the temporal domain before it even reaches the microphone.  The only drawback encountered is that the speech in the recorded signal is heavily low-pass filtered, where the highest speech frequencies observed in the signal are generally found near 2.7 kHz.
+Most of these employed feature and model space techniques that are used to account for noise are still forced to make estimations about noise type, SNR, and noise location in the signal.  As would be expected, as SNR decreases, and as noise becomes more variable (non-stationary), these methods begin to falter.  Chapter \ref{chapter2} proposed a method of collecting speech in noisy environments (recording speech from the inside of the ear canal) that is hypothesized to be largely immune to noise type and the stationarity (or lack thereof) of noise.  It does not require any noise estimation or inference.  It would be classified as a form of feature-space modification, affecting the signal in the temporal domain before it even reaches the microphone.  The only drawback encountered is that the speech in the recorded signal is heavily low-pass filtered, where the highest speech frequencies observed in the signal are generally found near 2.7 kHz.
 
 The only processing performed after the signal is recorded is pre-emphasis and low-pass filtering, which could be easily built into the recording mechanism itself.  It is hypothesized that this method of passive noise removal via recording speech from the ear canal, plus the minimal modification of pre-emphasis and low-pass filtering, will demonstrate similar gains over noisy speech achieved by many of the other techniques described above.
 
@@ -352,36 +347,43 @@ The only processing performed after the signal is recorded is pre-emphasis and l
 
 \section{Experiment 3: ASR of Ear-Recorded and Noisy Mouth-Recorded Speech}\label{expt3}
 
-While there are many proposed techniques, discussed in Section \ref{chap3:background}, that have been used to modify the acoustic features of noisy speech, or to modify the acoustic model to compensate for noise, noise-robust ASR is still imperfect and requires additional advances to ASR technology (\cite{zhang:17}).  This particular study proposes the new technique of using speech recorded from the inside of the ear canal.  This would be classified as a feature space modification in the temporal domain, prior to any processing.  Rather than using significant computation to achieve the noise reduction, this study employs purely passive mechanisms (ie. tissues in the head, earplug, ear muffs) to reduce noise.  
+While there are many proposed techniques, discussed in Section \ref{chap4:background}, that have been used to modify the acoustic features of noisy speech, or to modify the acoustic model to compensate for noise, noise-robust ASR is still imperfect and requires additional advances to ASR technology (\cite{zhang:17}).  This particular study proposes the new technique of using speech recorded from the inside of the ear canal.  This would be classified as a feature space modification in the temporal domain, prior to any processing.  Rather than using significant computation to achieve the noise reduction, this study employs purely passive mechanisms (ie. tissues in the head, earplug, earmuffs) to reduce noise.  
 
-As described previously in Chapter 2\ref{chapter2}, very simple signal enhancement techniques (ie. pre-emphasis and band-pass filtering)\footnote{These are simple enough to be hard-wired into an electrical chip to be performed in real-time, requiring no actual computation.} are then applied to the recorded signal to produce an enhanced signal with relatively little noise and one that is very similar (below 2.7 kHz) to what could be recorded at the mouth.
+As described previously in Chapter \ref{chapter2}, very simple signal enhancement techniques (ie. pre-emphasis and band-pass filtering)\footnote{These are simple enough to be hard-wired into an electrical chip to be performed in real-time, requiring no actual computation.} are then applied to the recorded signal to produce an enhanced signal with relatively little noise and one that is very similar (below 2.7 kHz) to what could be recorded at the mouth in absence of noise.
 
 \subsection{Stimuli}
+\label{chap4:methods:stimuli}
 
-Recordings from twenty speakers, ten male and ten female, from the data collection experiment in Chapter 2\ref{chapter2} comprises the test data for this experiment.  This included 30 distinct sentences from each speaker, each with 5 different noise conditions (bus, cafe, pedestrian, street, factory) with 3 different noise levels (60dB, 70dB, 80dB), plus an additional `clean' (no noise) condition.  This results in 16 iterations of each distinct sentence (30), for each microphone location (2), resulting in 960 utterances for each of 20 speakers, totaling 19200 test utterances.  There are 9600 ear-recorded utterances (6 hours, 55 minutes)\footnote{Time estimates are calculated from an average utterance duration of ~2.6 seconds}, 9000 mouth-recorded noisy utterances (6 hours, 30 minutes), and 600 mouth-recorded clean utterances (26 minutes).
+Recordings from twenty speakers, ten male and ten female, from the data collection experiment in Chapter \ref{chapter2} comprised the test data for this experiment.  This included 30 distinct sentences from each speaker, each with 5 different noise conditions (bus, cafe, pedestrian, street, factory) with 3 different noise levels (60dB, 70dB, 80dB), plus an additional `clean' (no noise) condition.  This resulted in 16 iterations of each distinct sentence (30), for each microphone location (2), which resulted in 960 utterances for each of 20 speakers, totaling 19200 test utterances.  There were 9600 ear-recorded utterances (6 hours, 55 minutes)\footnote{Time estimates are calculated from an average utterance duration of ~2.6 seconds}, 9000 mouth-recorded noisy utterances (6 hours, 30 minutes), and 600 mouth-recorded clean utterances (26 minutes).
 
-Two additional datasets were used.  One was recorded from the mouth with the intention to obtain speech with a lower SNR - described in Chapter 4\ref{chapter4}, Section \ref{chap4:methods:stimuli}.  The other was the dataset (recorded at the same time) of ear signals combined with the mouth signals from the dataset above; the low-frequency ear-recorded signal was combined with the high-frequency components of the mouth-recorded signal, described in Chapter 4\ref{chapter4}, Section \ref{F0-methods}.
+Two additional datasets were used.  One was recorded from the mouth with the intention to obtain speech with a lower SNR - described in Chapter \ref{chapter3}, Section \ref{chap3:methods:stimuli}.  The other was the dataset (recorded at the same time) of ear signals combined with the mouth signals from the dataset above; the low-frequency ear-recorded signal was combined with the high-frequency components of the mouth-recorded signal, described in Chapter \ref{chapter3}, Section \ref{F0-methods}.
 For these two datasets, each contained two speakers, one male and one female.  The dataset of speech combined from ear- and mouth-recorded signals contains 80 distinct utterances, each repeated 5 times (the `clean' speech condition was removed) by each of 2 speakers, totaling 800 utterances.  The dataset of speech recorded at the mouth in noisy conditions contains 80 distinct utterances, each repeated 5 times (again, the `clean' speech condition was removed) by each of 2 speakers, totaling 800 utterances.  These datasets were recorded simultaneously at the ear and at the mouth, from the same two speakers.
 
-\subsection{Design}
+\subsection{Design and Procedure}
+\label{chap4:methods:design}
 
 The existing deep neural network (DNN) acoustic model trained on 960 hours of speech from the LibriSpeech corpus (published and described in \cite{panayotov:15}) was used to test the collected data.  As described in \cite{panayotov:15}, the 960 hours of data, collected from the audio transcripts of books from the LibriVox website, was divided into two groups - `clean' and `other'.  This designation was chosen by preliminarily running an acoustic model trained on Wall Street Journal data (WSJ, \cite{paul:92}) on the LibriSpeech utterances. The set was split down the middle, with the half containing lower WERs designated at the `clean' set, and those with higher WERs designated as the `other' set.  Data from both sets were used in training the LibriSpeech acoustic model.
 
-Additionally, the ASR setup utilized the language models from \cite{panayotov:15}, trained on the LibriSpeech corpus.  To verify the current set-up of the acoustic and language models, the experimenter performed a replication of \cite{panayotov:15}'s experiment using LibriSpeech's ``test-clean'' and ``test-other'' datasets.  Afterwards, the experimenter used the the same acoustic and language models to recognize the speech data collected for this study described in Chapter 2\ref{chapter2}. This primarily tested the performance between the ear-recorded and noisy mouth-recorded speech, but also between the different noise conditions and noise levels.  The experimenter also tested the data collected for, and described in Chater 4\ref{chapter4}, containing very noisy mouth-recorded data and the data combination of mouth- and ear-recorded speech.
-%It is likely that, due to the ear-recorded speech only containing information below 3 kHz, that the existing acoustic model in its current state will have poor recognition of these sentences, and quite possibly will not outperform the noisy speech using the LibriSpeech models, particularly due to the relatively high SNR noisy speech.  
+Additionally, the ASR setup utilized the language models from \cite{panayotov:15}, trained on the LibriSpeech corpus.  To verify the current set-up of the acoustic and language models, the author performed a replication of \cite{panayotov:15}'s experiment using LibriSpeech's `test-clean' and `test-other' datasets.  Afterwards, the same acoustic and language models were used to recognize the speech data collected for this study described in Chapter \ref{chapter2}. This primarily tested the performance between the ear-recorded and noisy mouth-recorded speech, but also between the different noise conditions and noise levels.  The author also tested the data collected for, and described in Chapter \ref{chapter3}, containing very noisy mouth-recorded data and the data combination of mouth- and ear-recorded speech.
+It is likely that, due to the ear-recorded speech only containing information below 3 kHz, that the existing acoustic model in its current state will have poor recognition of these sentences, and quite possibly will not outperform the noisy speech using the LibriSpeech models, particularly due to the relatively high SNR noisy speech.
+
+A common method of improving ASR performance on speech with different characteristics (eg. in noise, with different dialects, etc.) is to train the ASR acoustic model on speech in that domain.  This also mimics the process utilized by the human auditory system to `adapt' its acoustic model to better recognize an adverse condition using `training'; this was used in the human speech perception task described in Chapter \ref{chapter3} and Section \ref{sec:chap3-review}.  Rather than recording enough ear-recorded speech to train a model, the a subset of 75 hours of the 100-hour dataset from the LibriSpeech corpus was used.  The speech in this dataset was lowpassed with the exact same filter used on the ear-recorded speech - 2.5 kHz with a 500 Hz slope.  A speaker-adapted GMM-HMM model was trained on this data.  Due to resource constraints, computationally and otherwise, only the subset of the 100-hour dataset was used (not 960 hour), and a DNN model was not trained from the GMM model.
+
+Furthermore, the ear-recorded stimuli were modified for a final test.  This combined the pre-emphasized, ear-recorded speech, which is lowpass filtered to 2.5 kHz with a 500 Hz slope, with the simultaneous speech recorded at the mouth, which was bandpass filtered from 3.0 kHz to 8.0 kHz, with a 500 Hz slope in either direction\footnote{The mouth-recorded speech was already lowpass filtered to 8.0 kHz.}. This same transformation was performed on the ear-recorded stimuli for a follow-up human speech perception task in Chapter \ref{chapter3}.  The motivation behind this transformation is that it will re-introduce some high-frequency speech information which is not present in the ear-recorded signal alone.
 
 %Due to this assumption, 
 
 
 %Both the ear-recorded and noisy mouth data will then be enhanced using the well-established advanced front end (AFE, \cite{etsi:02}) technique, and will be retested on the same, unchanged acoustic model.
 
-%A common practice in ASR research is to use a relatively small subset of data to adapt an existing acoustic model to better fit the style of data currently being used.  As additional training was used on a subset of human listeners in the experiment in Chapter 4\ref{chapter4} Section \ref{}, this training will be used in an attempt to modify the acoustic model to better recognize the ear-recorded speech.  The same DNN LibriSpeech acoustic model will be adapted with ear-recorded, low-pass filtered additional utterances (not from the 30 test sentences, nor from any of the speakers being tested).  A total of 50 distinct sentences repeated in 5 noise conditions from 4 additional speakers were used for adaptation of the acoustic model, totalling 1000 utterances used for adaptation.  The total duration of these utterances combined is approximately 44 minutes. The same 19200 utterances from the same 20 speakers were used again as test data.
+%A common practice in ASR research is to use a relatively small subset of data to adapt an existing acoustic model to better fit the style of data currently being used.  As additional training was used on a subset of human listeners in the experiment in Chapter 3\ref{chapter3} Section \ref{}, this training will be used in an attempt to modify the acoustic model to better recognize the ear-recorded speech.  The same DNN LibriSpeech acoustic model will be adapted with ear-recorded, low-pass filtered additional utterances (not from the 30 test sentences, nor from any of the speakers being tested).  A total of 50 distinct sentences repeated in 5 noise conditions from 4 additional speakers were used for adaptation of the acoustic model, totalling 1000 utterances used for adaptation.  The total duration of these utterances combined is approximately 44 minutes. The same 19200 utterances from the same 20 speakers were used again as test data.
 
 
 
 \subsection{Results}
+\label{chap4:results}
 
-The experimenter used LibriSpeech test data on the configured acoustic and language models specified above.  Table \ref{tab:sanity-check} demonstrates that accuracy similar to the published results was achieved, and the acoustic and language model set up was verified.
+LibriSpeech test data was used on the existing acoustic and language models specified above to verify the Kaldi ASR system was configured correctly.  Table \ref{tab:sanity-check} demonstrates that accuracy near the published results was achieved, and the acoustic and language model set-up was verified.
 
 \begin{table}[h]
 \begin{center}
@@ -396,7 +398,7 @@ Language Models & Clean Publ. & Clean Repl. & Other Publ. & Other Repl. \\ \hlin
 \caption{The `Language Models' column specifies the Language Model (LM) used in each row; two LMs are simply the 3-gram model which was pruned to the specified threshold.  `Publ.' columns list the performance listed in the published paper, and `Repl.' columns contain the replication performance achieved in the present study.  `Clean' and `Other' refer to the clean (2707 utterances) and `noisy' (5968 utterances) LibriSpeech test datasets. All LMs utilize the 960-hour LibriSpeech DNN acoustic model.  All values are given as WER.}\label{tab:sanity-check}
 \end{table}
 
-The experimenter then used data collected in the present study, described in Chapter 2\ref{chapter2} with the same acoustic and language models.  Table \ref{tab:basic-run} shows these results.  This table combines all noisy speech at the mouth into a single `Noisy Mouth' category and all speech collected at the ear into a single `Ear Speech' category.
+The author then used data collected in the present study, described in Chapter \ref{chapter2} with the same acoustic and language models.  Table \ref{tab:basic-run} shows these results.  This table combines all noisy speech at the mouth into a single `Noisy Mouth' category and all speech collected at the ear into a single `Ear Speech' category.
 
 \begin{table}[h]
 \begin{center}
@@ -408,73 +410,173 @@ Language Models & Clean Mouth & Noisy Mouth & Ear Speech \\ \hline\hline
 4-gram, unpruned & 9.38 & 44.31 & 82.47 \\ \hline
 \end{tabular}
 \end{center}
-\caption{The `Language Models' column specifies the Language Model (LM) used in each row; two LMs are simply the 3-gram model which was pruned to the specified threshold.  ``Clean Mouth'' includes only the sentences recorded at the mouth with no noise, versus ``Noisy Mouth'', which includes all other [noisy] sentences recorded at the mouth. ``Ear Speech'' contains all ear-recorded utterances.  All LMs utilize the 960-hour LibriSpeech DNN acoustic model.  All values are given as WER.}\label{tab:basic-run}
+\caption{The `Language Models' column specifies the Language Model (LM) used in each row; two LMs are simply the 3-gram model which was pruned to the specified threshold.  `Clean Mouth' includes only the sentences recorded at the mouth with no noise, versus `Noisy Mouth', which includes all other [noisy] sentences recorded at the mouth. `Ear Speech' contains all ear-recorded utterances.  All LMs utilize the 960-hour LibriSpeech DNN acoustic model.  All values are given as WER.}\label{tab:basic-run}
 \end{table}
 
-Table \ref{tab:split-wer-noise} separates out the noisy mouth-recorded speech into its different noise types and noise levels.
+A simple comparison of clean mouth-recorded speech and the simultaneous (clean) ear-recorded speech is located in Table \ref{tab:clean-wers}.
 
 \begin{table}[h]
 \begin{center}
-\begin{tabular}{| c || c | c | c | c | c || c |} \hline
- & Bus & Cafe & Pedestrian & Street & Factory & Totals \\ \hline\hline
-60 dB & 21.51 & 20.33 & 18.64 & 19.05 & 17.93 & \textbf{19.49} \\ \hline
-70 dB & 41.74 & 32.93 & 32.02 & 36.49 & 29.96 & \textbf{34.63} \\ \hline
-80 dB & 88.20 & 73.39 & 75.64 & 85.00 & 71.43 & \textbf{78.73} \\ \hline\hline
-Totals & \textbf{50.48} & \textbf{42.22} & \textbf{42.10} & \textbf{46.85} & \textbf{39.77} & \textbf{44.28} \\ \hline
+\begin{tabular}{| c | c |} \hline
+ Mouth-Recorded, Clean & Ear-Recorded, Clean \\ \hline\hline
+ 9.38 & 79.30 \\ \hline
 \end{tabular}
 \end{center}
-\caption{These are only from the highest-performing (4-gram) language model, utilizing the 960-hour LibriSpeech DNN acoustic model.  Each row is a different noise level, and each column a different noise type (excluding the `clean' noise type).  Totals (averages) for each category are given in the bottom-most row and the right-most column.  The overall average differs slightly from the joint noise WER value given in Table \ref{tab:basic-run}, but the difference can be attributed to rounding estimations. All values are given as WER.}\label{tab:split-wer-noise}
+\caption{A comparison of ASR performance on mouth-recorded speech and ear-recorded speech with no background noise. These values are obtained from the highest-performing (4-gram) language model, utilizing the 960-hour LibriSpeech DNN acoustic model - both trained using the LibriSpeech corpus.  All values are give as WER.}\label{tab:clean-wers}
 \end{table}
 
-The experimenter performed another test using two sets of data created in Chapter 4\ref{chapter4}.  One includes the very noisy speech collected for the experiment in Chapter 4\ref{chapter4}.  This speech was re-recorded in a way that resulted in a lower SNR; for more details, refer to Section \ref{chap4:methods:stimuli}.    
-
+Table \ref{tab:split-wer-noise} separates out the noisy mouth-recorded speech and ear-recorded speech into the different noise types and noise levels.
 
 \begin{table}[h]
 \begin{center}
-\begin{tabular}{| c || c | c |} \hline
-Language Models & Ear/Mouth Combined & Extra Noisy Mouth \\ \hline\hline
-3-gram, prune thresh. 3e-7 & 85.18 & 98.32 \\ \hline
-3-gram, prune thresh. 1e-7 & 84.66 & 99.14 \\ \hline
-3-gram, unpruned & 84.04 & 99.03 \\ \hline
-4-gram, unpruned & 83.90 & 99.41 \\ \hline
+\begin{tabular}{| c || c | c | c | c | c | c | c | c | c | c | c | c |} \hline
+      & \multicolumn{2}{|c|}{Bus} & \multicolumn{2}{|c|}{Cafe} & \multicolumn{2}{|c|}{Ped.} & \multicolumn{2}{|c|}{Street} & \multicolumn{2}{|c|}{Factory} \\ \hline
+      & Mth & Ear & Mth & Ear & Mth & Ear & Mth & Ear & Mth & Ear \\ \hline\hline
+60 dB & 21.5 & 81.1 & 20.3 & 82.1 & 18.6 & 81.5 & 19.0 & 81.4 & 17.9 & 80.6  \\ \hline
+70 dB & 41.7 & 81.8 & 32.9 & 80.6 & 32.0 & 82.7 & 36.4 & 82.0 & 29.9 & 81.8  \\ \hline
+80 dB & 88.2 & 83.0 & 73.3 & 82.6 & 75.6 & 85.0 & 85.0 & 85.7 & 71.4 & 85.0 \\ \hline
 \end{tabular}
 \end{center}
-\caption{The `Language Models' column specifies the Language Model (LM) used in each row; two LMs are simply the 3-gram model which was pruned to the specified threshold.  The `Ear/Mouth Combined' column contains the results from the dataset using speech reconstructed from low-frequency ear-signal and high frequency mouth-signal parts.  The `Extra Noisy Mouth' column contains results from the re-recorded mouth speech (described in Section \ref{chap4:methods:stimuli}), with a lower SNR.  Note that the data used in these tests are different than those used in previous tests displayed in Tables \ref{tab:basic-run} and \ref{tab:split-wer-noise}. All LMs utilize the 960-hour LibriSpeech DNN acoustic model.  All values are given as WER.}\label{tab:follow-up-asr}
+\caption{These values are obtained from the highest-performing (4-gram) language model, utilizing the 960-hour LibriSpeech DNN acoustic model - both trained using the LibriSpeech corpus.  Each row is a different noise level, and each column a different noise type (excluding the `clean' noise type), with each sub-column comparing the performance on mouth-recorded speech in that condition with ear-recorded speech in that condition.  All values are given as WER.}\label{tab:split-wer-noise}
 \end{table}
+% \begin{table}[h]
+% \begin{center}
+% \begin{tabular}{| c || c | c | c | c | c | c | c | c | c | c | c | c |} \hline
+%       & \multicolumn{2}{|c|}{Bus} & \multicolumn{2}{|c|}{Cafe} & \multicolumn{2}{|c|}{Ped.} & \multicolumn{2}{|c|}{Street} & \multicolumn{2}{|c|}{Factory} \\ \hline
+%       & Mth & Ear & Mth & Ear & Mth & Ear & Mth & Ear & Mth & Ear \\ \hline\hline
+% 60 dB & 21.5 & 81.18 & 20.3 & 82.17 & 18.6 & 81.55 & 19.0 & 81.43 & 17.9 & 80.66  \\ \hline
+% 70 dB & 41.7 & 81.88 & 32.9 & 80.66 & 32.0 & 82.71 & 36.4 & 82.05 & 29.9 & 81.82  \\ \hline
+% 80 dB & 88.2 & 83.08 & 73.3 & 82.62 & 75.6 & 85.00 & 85.0 & 85.72 & 71.4 & 85.02 \\ \hline
+% \end{tabular}
+% \end{center}
+% \caption{These values are obtained from the highest-performing (4-gram) language model, utilizing the 960-hour LibriSpeech DNN acoustic model - both trained using the LibriSpeech corpus.  Each row is a different noise level, and each column a different noise type (excluding the `clean' noise type), with each subcolumn comparing the performance on mouth-recorded speech in that condition with ear-recorded speech in that condition.  All values are given as WER.}\label{tab:split-wer-noise}
+% \end{table}
+% \begin{table}[h]
+% \begin{center}
+% \begin{tabular}{| c || c | c | c | c | c || c |} \hline
+%  & Bus & Cafe & Pedestrian & Street & Factory & Totals \\ \hline\hline
+% 60 dB & 21.51 & 20.33 & 18.64 & 19.05 & 17.93 & \textbf{19.49} \\ \hline
+% 70 dB & 41.74 & 32.93 & 32.02 & 36.49 & 29.96 & \textbf{34.63} \\ \hline
+% 80 dB & 88.20 & 73.39 & 75.64 & 85.00 & 71.43 & \textbf{78.73} \\ \hline\hline
+% Totals & \textbf{50.48} & \textbf{42.22} & \textbf{42.10} & \textbf{46.85} & \textbf{39.77} & \textbf{44.28} \\ \hline
+% \end{tabular}
+% \end{center}
+% \caption{These are only from the highest-performing (4-gram) language model, utilizing the 960-hour LibriSpeech DNN acoustic model.  Each row is a different noise level, and each column a different noise type (excluding the `clean' noise type).  Totals (averages) for each category are given in the bottom-most row and the right-most column.  The overall average differs slightly from the joint noise WER value given in Table \ref{tab:basic-run}, but the difference can be attributed to rounding estimations. All values are given as WER.}\label{tab:split-wer-noise}
+% \end{table}
+
+% The experimenter performed another test using two sets of data created in Chapter \ref{chapter3}.  One includes the very noisy speech collected for the experiment in Chapter \ref{chapter3}.  This speech was re-recorded in a way that resulted in a lower SNR; for more details, refer to Section \ref{chap3:methods:stimuli}.    
+% 
+% 
+% \begin{table}[h]
+% \begin{center}
+% \begin{tabular}{| c || c | c |} \hline
+% Language Models & Ear/Mouth Combined & Extra Noisy Mouth \\ \hline\hline
+% 3-gram, prune thresh. 3e-7 & 85.18 & 98.32 \\ \hline
+% 3-gram, prune thresh. 1e-7 & 84.66 & 99.14 \\ \hline
+% 3-gram, unpruned & 84.04 & 99.03 \\ \hline
+% 4-gram, unpruned & 83.90 & 99.41 \\ \hline
+% \end{tabular}
+% \end{center}
+% \caption{The `Language Models' column specifies the Language Model (LM) used in each row; two LMs are simply the 3-gram model which was pruned to the specified threshold.  The `Ear/Mouth Combined' column contains the results from the dataset using speech reconstructed from low-frequency ear-signal and high frequency mouth-signal parts.  The `Extra Noisy Mouth' column contains results from the re-recorded mouth speech (described in Section \ref{chap3:methods:stimuli}), with a lower SNR.  Note that the data used in these tests are different than those used in previous tests displayed in Tables \ref{tab:basic-run} and \ref{tab:split-wer-noise}. All LMs utilize the 960-hour LibriSpeech DNN acoustic model.  All values are given as WER.}\label{tab:follow-up-asr}
+% \end{table}
 
 %After retraining the 
-The other data set combined the low-passed ear-recorded speech (approximately 0-2.7 kHz) with the very noisy speech from the same utterance, high-pass filtered from approximately 2.7 kHz to 8 kHz.  The WER results are given in Table \ref{tab:follow-up-asr}.
+% The other data set combined the low-passed ear-recorded speech (approximately 0-2.7 kHz) with the very noisy speech from the same utterance, high-pass filtered from approximately 2.7 kHz to 8 kHz.  The WER results are given in Table \ref{tab:follow-up-asr}.
+
+A new model was trained using a 75-hour subset of the 100-hour portion of the LibriSpeech training corpus.  This speech was lowpass filtered at 2.5 kHz with a 500 Hz slope - the same filtering applied to the ear-recorded speech.  A GMM-HMM acoustic model was trained using the LibriSpeech training recipe for Kaldi.  A larger training set was not used - and a neural-net-based acoustic model was not trained - due to computational resource limitations.  The basic performance of this model on the pre-emphasized and filtered ear-recorded speech is given in Table \ref{tab:retrainedGMM}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c||p{2cm}|p{2cm}|p{2cm}|p{2cm}|} \hline
+ Language Models & 3-gram, prune thresh. 3e-7 & 3-gram, prune thresh. 1e-7 & 3-gram, unpruned & 4-gram, unpruned \\ \hline\hline
+ Ear Speech Performance & 92.5 & 92.5 & 92.5 & 92.8 \\ \hline
+\end{tabular}
+\end{center}
+\caption{The performance obtained from the acoustic model trained on 75-hours of mouth-recorded speech which had been lowpass filtered to 2.5 kHz with a 500 Hz slope.  All values are in WER.}\label{tab:retrainedGMM}
+\end{table}
+
+A final test was performed which manipulated the ear-recorded signal by adding a bandpass-filtered mouth recorded signal (3.0-8.0 kHz with a 500Hz slope) to the lowpass-filtered ear-recorded signal.  This `hybrid' signal was tested using the original DNN acoustic model trained on 960-hour LibriSpeech data.  The results are presented in Table \ref{tab:hybrid-wers} alongside the noisy mouth-recorded speech for comparison (the mouth-recorded results already appeared in Table \ref{tab:split-wer-noise}).  The hybrid ear-recorded data is labeled as `E/M'.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{| c || c | c | c | c | c | c | c | c | c | c | c | c |} \hline
+      & \multicolumn{2}{|c|}{Bus} & \multicolumn{2}{|c|}{Cafe} & \multicolumn{2}{|c|}{Ped.} & \multicolumn{2}{|c|}{Street} & \multicolumn{2}{|c|}{Factory} \\ \hline
+      & Mth & E/M & Mth & E/M & Mth & E/M & Mth & E/M & Mth & E/M \\ \hline\hline
+60 dB & 21.5 & 52.7 & 20.3 & 51.1 & 18.6 & 52.2 & 19.0 & 51.3 & 17.9 & 51.8  \\ \hline
+70 dB & 41.7 & 58.8 & 32.9 & 54.3 & 32.0 & 55.1 & 36.4 & 56.1 & 29.9 & 53.4  \\ \hline
+80 dB & 88.2 & 78.7 & 73.3 & 70.0 & 75.6 & 71.8 & 85.0 & 74.2 & 71.4 & 71.5  \\ \hline
+\end{tabular}
+\end{center}
+\caption{These values are obtained from the highest-performing (4-gram) language model, utilizing the 960-hour LibriSpeech DNN acoustic model - both trained using the LibriSpeech corpus.  Each row is a different noise level, and each column a different noise type (excluding the `clean' noise type), with each sub-column listing the performance of mouth-recorded speech (Mth) or `hybrid' ear-recorded speech (E/M) in the same condition.  All values are given as WER.}\label{tab:hybrid-wers}
+\end{table}
+% \begin{table}[h]
+% \begin{center}
+% \begin{tabular}{| c || c | c | c | c | c | c | c | c | c | c | c | c |} \hline
+%       & \multicolumn{2}{|c|}{Bus} & \multicolumn{2}{|c|}{Cafe} & \multicolumn{2}{|c|}{Ped.} & \multicolumn{2}{|c|}{Street} & \multicolumn{2}{|c|}{Factory} \\ \hline
+%       & Mth & E/M & Mth & E/M & Mth & E/M & Mth & E/M & Mth & E/M \\ \hline\hline
+% 60 dB & 21.5 & 52.77 & 20.3 & 51.16 & 18.6 & 52.23 & 19.0 & 51.38 & 17.9 & 51.82  \\ \hline
+% 70 dB & 41.7 & 58.80 & 32.9 & 54.30 & 32.0 & 55.10 & 36.4 & 56.16 & 29.9 & 53.49  \\ \hline
+% 80 dB & 88.2 & 78.78 & 73.3 & 70.04 & 75.6 & 71.82 & 85.0 & 74.21 & 71.4 & 71.51  \\ \hline
+% \end{tabular}
+% \end{center}
+% \caption{These values are obtained from the highest-performing (4-gram) language model, utilizing the 960-hour LibriSpeech DNN acoustic model - both trained using the LibriSpeech corpus.  Each row is a different noise level, and each column a different noise type (excluding the `clean' noise type), with each sub-column listing the performance of mouth-recorded speech (Mth) or `hybrid' ear-recorded speech (E/M) in the same condition.  All values are given as WER.}\label{tab:hybrid-wers}
+% \end{table}
+
+These tables demonstrate that, in all but a few noisy conditions, an ASR system will more easily recognize noisy speech than it will ear-recorded speech.  
+
+
 
 
 \section{Discussion}
+\label{chap4:discussion}
 
-The results indicate, broadly, that the ear-recorded speech (cf. Table \ref{tab:basic-run}) (which has been pre-emphasized and low-pass filtered $<$ 2.7 kHz) performs minimally better than two of the 80dB noise conditions - the bus and street background noises (cf. Tables \ref{tab:basic-run} and \ref{tab:split-wer-noise}) - but none of the other conditions.  Performing better than other conditions achieving 80+\% WER does not offer much in terms of benefit, as there is minimal recognition happening in either case.  This is clear in Table \ref{tab:basic-run}, noting how little improvement is seen when more extensive language models are used.  There is not much natural language that the acoustic model uncovers which can be improved by the language model.
+The results indicate, broadly, that the ear-recorded speech (which has been pre-emphasized and low-pass filtered $<$ 2.7 kHz) performs, at best, minimally better than only the bus noise type in 80 dB background noise (cf. Table \ref{tab:split-wer-noise}) - but does not outperform noisy mouth-recorded speech in any of the other conditions.  Performing better than other conditions achieving 80+\% WER does not offer much in terms of benefit, as there is minimal recognition happening in either case.  This is clear in Table \ref{tab:basic-run}, noting how little improvement is seen when more extensive language models are used.  There is not much natural language that the acoustic model uncovers which can be improved by the language model.
 
-The ear-recorded speech falls well below the performance of the ASR system on the speech in the 60- and 70- dB conditions.  The 60 dB condition demonstrates that the SNR in this condition was very high, noting that its performance was only 10\% WER short of the clean-speech condition - occurring with no other noise-reducing measures taken.  And this - the lack of other noise-reducing measures applied to the noisy speech - is yet another reason why the ear-recorded speech falls behind; after other noise-reduction transforms are applied, the noisy speech will be even more easily recognizable.
+The ear-recorded speech falls well below the performance of the ASR system on the speech in the 60- and 70- dB conditions.  The 60 dB condition demonstrates that the SNR in this condition was very high, noting that its performance was only 10\% WER short of the clean-speech condition - occurring with no other noise-reducing measures taken.  And this - the lack of other noise-reducing measures applied to the noisy speech - is yet another reason why the ear-recorded speech falls behind; if other noise-reduction transforms were to be applied, the noisy speech would be even more easily recognizable by an ASR system.
 
-The noisy speech recorded at the mouth in Chapter 4\ref{chapter4} to obtain a lower SNR for the noisy speech condition (cf. Table \ref{tab:follow-up-asr}) served its purpose.  As expected, performance drops substantially to near zero accuracy (cf. Table \ref{tab:follow-up-asr}), regardless of the language model.  Again, this is without the application of any noise enhancement techniques.
+The results provided in Table \ref{tab:split-wer-noise} demonstrate that noise does reach the in-ear microphone.  For each consecutively louder noise level, performance of ear-recorded speech drops slightly, though not nearly as significantly as the noisy mouth recorded speech.  These WERs are promising in that external noise itself does not appear to greatly affect recognition of ear-recorded speech.  Of course, if the WERs for the ear-recorded speech were to improve substantially, there may be a large effect of noise.
 
-The experimenter used the data from the human speech perception experiment, described in Chapter 4\ref{chapter4}, Section \ref{F0-methods}, to test whether reintroducing noisy upper frequencies to the ear-recorded signal resulted in an improvement in ASR accuracy.  Although using different speakers with a slightly different set of sentences, on its surface, the combination appears to offer no benefit over the low-pass filtered ear-recorded speech alone.  Results indicate an approximate 1\% increase in WER over the regular low-pass filtered ear-recorded speech (cf. Tables \ref{tab:basic-run}, \ref{tab:follow-up-asr}).
+% Discuss training model
 
-However, rather than adding noisy upper frequencies to the ear-recorded speech, it can also be thought of as replacing the noisy lower frequencies of the mouth recorded speech with the lower frequencies of the clean, ear-recorded speech.  To this degree, adding in clean lower frequencies results in an improvement of nearly 16\% WER over the noisy mouth data (which was recorded simultaneously with the ear-recorded speech).  This is accomplished without the application of additional noise-removal processing.
+The newly trained model abysmally failed to recognize a vast majority of the speech (cf. Table \ref{tab:retrainedGMM}).  It is true that the model used was trained on significantly less data (75-hours) than the model used for other tests (960-hours).  If additional training data were used and if a DNN (rather than GMM) model were trained, results would be expected to improve.  The degree to which they would improve is unknown, but the author hypothesizes that the amount of training data is not the primary cause of poor performance.
 
-\subsection{Limitations and Future Research}
+More likely, using lowpass-filtered mouth-recorded speech in an effort to mimic the lowpassed ear-recorded speech is not sufficient.  There may be unseen differences between the two signals that prevent the acoustic model from learning the salient speech information cues that are present in ear-recorded speech.  Also possible is the fact that experimenter error was the cause for such a poor-performing acoustic model.
 
-The low-pass filtered ear-recorded data was run using an ASR system trained for full frequency speech on data ranging from 0 to 8 kHz.  The results make it clear that models trained on ``normal'' speech will not perform well on ear-recorded speech devoid of significant modification.  If future researchers collected enough additional speech from the ear to amass a corpus of adequate size for adapting an existing acoustic model or training a new model, performance would be expected to improve.  The degree to which performance would improve depends on the amount of critical speech information in the higher frequencies that do not make it into the ear-recorded signal.  I hypothesize that there would be enough speech information below 2.7 kHz to substantially improve ASR performance with acoustic model adaption or retraining.
+% Discuss Hybrid speech
 
-Considering the possibility of using a combination of low-frequency ear-recorded speech and high-frequency noisy mouth-recorded speech, existing noise-removal methods may be able to utilize the relatively clean low-frequency speech harmonics to ``clean'' the high-frequency, noisy harmonics.  This would result in a much more uniform signal across the frequency spectrum and likely much lower WERs.
+The newly-created stimuli from the lowpassed ear-recorded speech and the high-frequency bandpassed mouth-recorded speech offer slightly more promise. The accuracy of this `hybrid' ear-recorded speech manages to out-perform 4/5 noise types in the 80 dB noise level condition (cf. Table \ref{tab:hybrid-wers}).  However, when the lower noise level conditions (60 dB, 70 dB) are taken into account, the noisy mouth-recorded speech still obtains a substantially better WER.  
 
-In many of the ear-recorded signals, one can observe a small amount of noise reaching the microphone and appearing in the signal.  One advantage of using speech recorded from the ear (either in isolation or combination with high-frequency mouth-recorded speech) is that, due to affecting the signal at the lowest level of processing (in the temporal domain) prior to any level of higher processing (eg. in the spectral or power domains), many of the discussed feature enhancement techniques, such as AFE and MMSE-MME (discussed in Section \ref{chap3:background}), can be applied to this signal.  Despite the noise in these signals, the ear-recorded signal retains a very high SNR, and I hypothesize that these noise removal techniques would work quite well.
+When compared with the WER of the `normal' ear-recorded speech, the `hybrid' ear-recorded speech offers a reduction of over 10\% WER in most instances noise conditions, even with the simultaneous addition of 80 dB background noise in the higher frequencies. This is important to note, as it is evidence that the acoustic model relies partially on information in the higher frequencies.  The `hybrid' ear-recorded speech results in the 70 and 60 dB noise conditions makes this even more apparent.  In the 60 dB noise condition, the `hybrid' stimuli offer a nearly 30\% WER drop over the `normal' ear-recorded signals in the same condition.
 
-Another potential method to further eliminate any noise that reaches an ear-recorded signal would be to use beamforming on input signals from two different microphones, one in each ear.  This method can utilize the difference in temporal arrival of the same sound source in different microphones to tease apart the multiple sources and identify the speech source; the speech source will arrive at both ear canals at the same time (each canal is the same distance from the vocal tract), whereas noise sources will likely not arrive at both in-ear microphones simultaneously.
+Yet, as mentioned earlier, the performance of the `hybrid' 60- and 70 dB conditions still pales in comparison with the noisy speech 60- and 70 dB noise conditions.  This is remarkable, as, in theory, the ear-recorded speech is comparable to the mouth-recorded speech below 2.5 kHz.  Although if this were strictly the case, the `hybrid' ear-recorded speech should outperform the noisy mouth-recorded speech in every noise condition.  The `hybrid' signal is composed of (a) the low-frequency `clean' speech information recorded at the ear and (b) the high-frequency information in noise recorded at the mouth.  Since component (b) is part of the very signals the `hybrid' speech is being compared to, this means that component (a) must be causing the harm to performance.  If component (a) were simply the cleaned lower frequencies to the noisy speech signals, one would not expect a decrease in performance.
 
-This study utilized noise that was by and large stationary in amplitude.  This was intentional, to test the proof of concept and to test the extent of noise reduction the proposed method can accomplish.  In theory, as has been shown in Chapters 2\ref{chapter2} and 4\ref{chapter4}, that the noise does not have a dramatic effect on speech recorded from the ear, variations and modulations in the amplitude of the noise (and the SNR of the speech recorded at the mouth) should have little effect on the speech recorded at the ear.  Nevertheless, any future research in this area should incorporate noise that fluctuates in both type and loudness.  The recent CHiME Challenge (2016) has incorporated amplitude-varying noise into their task, and similar tests could be performed by collecting another data set of speech recorded from speakers' ears, with amplitude-varying background noise to determine if amplitude variance has an effect on ear-recorded speech.
+This supports the theory that using lowpass-filtered mouth-recorded speech to train a model for ear-recorded speech may not be sufficient, as there appears to be differences significant enough to seriously affect the ability of an acoustic model trained on the former to accurately infer information from the latter.  From the results of the human speech perception experiment in Chapter \ref{chapter3}, we know that humans are able to understand ear-recorded speech with a comparatively high degree of accuracy.  Future research may discover methods to further improve human recognition accuracy.  This means that speech information is indeed present in the ear-recorded speech signals,;it is then a matter of training an ASR system to find it.
+
+%The noisy speech recorded at the mouth in Chapter \ref{chapter3} to obtain a lower SNR for the noisy speech condition (cf. Table \ref{tab:follow-up-asr}) served its purpose.  As expected, performance drops substantially to near zero accuracy (cf. Table \ref{tab:follow-up-asr}), regardless of the language model.  Again, this is without the application of any noise enhancement techniques.
+
+% The experimenter used the data from the human speech perception experiment, described in Chapter \ref{chapter3}, Section \ref{F0-methods}, to test whether reintroducing noisy upper frequencies to the ear-recorded signal resulted in an improvement in ASR accuracy.  Although using different speakers with a slightly different set of sentences, on its surface, the combination appears to offer no benefit over the low-pass filtered ear-recorded speech alone.  Results indicate an approximate 1\% increase in WER over the regular low-pass filtered ear-recorded speech (cf. Tables \ref{tab:basic-run}, \ref{tab:follow-up-asr}).
+% 
+% However, rather than adding noisy upper frequencies to the ear-recorded speech, it can also be thought of as replacing the noisy lower frequencies of the mouth recorded speech with the lower frequencies of the clean, ear-recorded speech.  To this degree, adding in clean lower frequencies results in an improvement of nearly 16\% WER over the noisy mouth data (which was recorded simultaneously with the ear-recorded speech).  This is accomplished without the application of additional noise-removal processing.
+
+\subsection{Future Research}
+\label{chap4:future-research}
+
+The low-pass filtered ear-recorded data was run using an ASR system trained for full frequency speech on data ranging from 0 to 8 kHz.  The results make it clear that models trained on `normal' speech will not perform well on ear-recorded speech devoid of significant modification.  If future researchers collected enough additional speech from the ear to amass a corpus of adequate size for adapting an existing acoustic model or training a new model, performance would be expected to improve.  The degree to which performance would improve depends on the amount of critical speech information in the higher frequencies that do not make it into the ear-recorded signal.  The author hypothesizes that there would be enough speech information below 2.7 kHz to improve ASR performance with acoustic model adaption or retraining.
+
+Considering the possibility of using the `hybrid' speech, existing noise-removal methods may be able to utilize the relatively clean low-frequency speech harmonics to `clean' the high-frequency, noisy harmonics.  This would result in a much more uniform signal across the frequency spectrum and likely much lower WERs.
+
+In the ear-recorded signals, one can observe a small amount of noise reaching the microphone and appearing in the signal.  As with the mouth-recorded signals, although the effect is not nearly as stark, recognition of ear-recorded signals negatively correlates with the noise in the signal, ie. as noise increases, performance decreases.   If performance were to improve significantly, eg. by training an acoustic model on ear-recorded speech, many of the discussed feature enhancement techniques, such as AFE and MMSE-MME (cf. Section \ref{chap4:background}), could be applied to this signal.  The ear-recorded signals retain a very high SNR, and the author hypothesize that these noise removal techniques would work quite well, if general accuracy could be improved.
+
+% Another potential method to further eliminate any noise that reaches an ear-recorded signal would be to use beamforming on input signals from two different microphones, one in each ear.  This method can utilize the difference in temporal arrival of the same sound source in different microphones to tease apart the multiple sources and identify the speech source; the speech source will arrive at both ear canals at the same time (each canal is the same distance from the vocal tract), whereas noise sources will likely not arrive at both in-ear microphones simultaneously.
+
+This study utilized noise that was by and large stationary in amplitude.  This was intentional, to test the proof of concept and to test the extent of noise reduction the proposed method can accomplish.  In theory, as has been shown in Chapters \ref{chapter2} and \ref{chapter3}, that the noise does not have a dramatic effect on speech recorded from the ear, variations and modulations in the amplitude of the noise (and the SNR of the speech recorded at the mouth) should have little effect on the speech recorded at the ear.  Nevertheless, any future research in this area should incorporate noise that fluctuates in both type and loudness.  The recent CHiME Challenges (eg. \cite{chime:16}) have incorporated amplitude-varying noise into their task, and similar tests could be performed by collecting another data set of speech recorded from speakers' ears, with amplitude-varying background noise to determine if amplitude variance has an effect on ear-recorded speech.
 
 \subsection{Summary}
+\label{chap4:summary}
 
-Many methods of noise-reduction have been developed over the last several decades, and much improvement has been seen recently, particularly for signals with a higher SNR (\cite{zhang:17}).  Nevertheless, lower SNR speech,especially that with a negative SNR, still proves to be a challenge for modern ASR systems.  The proposed method of recording the speech from the inside of the ear canal does offer a noise-reduction benefit, but also significantly filters out the higher frequencies within the speech signal.  The results above demonstrate that enough speech information that the ASR acoustic model relies upon is filtered out of the higher frequencies to substantially reduce ASR recognition performance of ear-recorded speech, even more-so than noisy speech with a moderate SNR.  The ear-recorded speech does outperform very noisy, low SNR speech data (prior to any noise-reduction methods performed on the noisy speech), but neither data's accuracy is suitable for any real-life ASR application.  
+Many methods of noise-reduction have been developed over the last several decades, and much improvement has been seen recently, particularly for signals with a higher SNR (\cite{zhang:17}).  Nevertheless, lower SNR speech,especially that with a negative SNR, still proves to be a challenge for modern ASR systems.  The proposed method of recording the speech from the inside of the ear canal does offer a noise-reduction benefit, but also significantly filters out the higher frequencies within the speech signal.  The results above demonstrate that enough speech information relied upon by the ASR acoustic model is filtered out to substantially reduce ASR recognition performance of ear-recorded speech.  The tests also indicate that the low-frequency information in the ear-recorded signal may also differ enough from the low-frequency information in the mouth-recorded signal to exacerbate this performance deficit.  The ear-recorded speech does outperform very noisy, low SNR mouth-recorded speech data (prior to any noise-reduction methods performed on the noisy speech), but neither data's accuracy is suitable for any real-life ASR application.  
 
-However, adding low-frequency ear-recorded speech, which is mostly devoid of noise, to the noisy mouth-recorded signal (replacing the noisy low-frequency speech in that signal) does substantially improve performance.  This improvement can be seen prior to the application of any further noise-reduction method or signal enhancement method.
+% However, adding low-frequency ear-recorded speech, which is mostly devoid of noise, to the noisy mouth-recorded signal (replacing the noisy low-frequency speech in that signal) does substantially improve performance.  This improvement can be seen prior to the application of any further noise-reduction method or signal enhancement method.
 
 It is also possible for future research, with substantial ear-recorded data, to adapt or train an acoustic model on that style of speech.  If this could be accomplished with success, adequate recognition could be achieved solely through ear-recorded speech, without the need to use it in combination with the noisy speech signal from the mouth.  It is clear that additional steps are necessary to determine the full extent of benefit that can be achieved by using ear-recorded signals for noise robust ASR systems.
 

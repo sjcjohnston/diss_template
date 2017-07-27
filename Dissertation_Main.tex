@@ -82,6 +82,29 @@
 \usepackage{natbib}			% natbib is available on most systems, and is
 					% terribly handy.
 					
+					
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+					
+					
+					
 %May need to remove! Trying to fix nocite{*} biblography problem:
 					% If you want to use a different Bibliography package, 
 					% you should be able to, just change this
@@ -101,15 +124,6 @@
 %\usepackage{mathtime}			% Times for letters; Belleek math.
 %
 \usepackage{wrapfig}
-
-\newenvironment{lydiawrapfigure}
- {%
-%  \setlength{\intextsep}{0pt}% <--- Wrong!
-  \setlength{\columnsep}{15pt}%
-  \wrapfloat{figure}%
- }
- {\endwrapfloat}
- 
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{tipa}
@@ -120,6 +134,10 @@
 \usepackage{breakurl}
 \usepackage{mathtools}
 \usepackage{amsmath}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
 % \usepackage[normalem]{ulem}
 % \usepackage{xyling,comment}			% AMS Math (advanced math typesetting)
 % includecomment{delall}
@@ -224,9 +242,9 @@
 %ADD: Copy/Paste Content from all 5 chapters:
 
 \include{./Chapter_1_Introduction/chapter_1_Introduction}
-\include{./Chapter_2_Data_Collection_Experiment/chapter_2}
-\include{./Chapter_3_ASR_Experiment/chapter_3}
-\include{./Chapter_4_Human_Speech_Perception_Experiment/chapter_4}
+\include{./Chapter_2_Data_Collection_Experiment/chapter_2_diff}
+\include{./Chapter_3_Human_Speech_Perception_Experiment/chapter_3_diff}
+\include{./Chapter_4_ASR_Experiment/chapter_4_diff}
 \include{./Chapter_5_Discussion/chapter_5_Discussion}
 
 % ADD: Include the various appendices

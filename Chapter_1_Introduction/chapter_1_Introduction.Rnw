@@ -1,27 +1,27 @@
-%\Sexpr{set_parent(‘/Users/mwilli/Documents/Spring_2017/Dissertation_Document/Dissertation_Working_Directory_Draft/Dissertation_Main.Rnw')}
-
-<<chunk_options, echo=FALSE>>=
-# This is where we set basic knitr options.
-opts_chunk$set(echo=TRUE, message=FALSE, warning = FALSE, cache = FALSE, comment="")
-options(width=75) # This sets how wide the R printout can be.
-@
-
- <<setup-child, include=FALSE>>=
- set_parent('/home/sam/Dissertation/Dissertation_Template/Dissertation_Main_Template/Dissertation_Main.Rnw')
-@
-
-<<load_libraries, echo=FALSE>>=
-library(tidyr)
-library(dplyr)
-library(ggplot2)
-library(lme4)
-library(lsmeans)
-library(car)
-library(pbkrtest)
-library(xtable)
-library(cowplot)
-library(plyr)
-@
+% %\Sexpr{set_parent(‘/Users/mwilli/Documents/Spring_2017/Dissertation_Document/Dissertation_Working_Directory_Draft/Dissertation_Main.Rnw')}
+% 
+% <<chunk_options, echo=FALSE>>=
+% # This is where we set basic knitr options.
+% opts_chunk$set(echo=TRUE, message=FALSE, warning = FALSE, cache = FALSE, comment="")
+% options(width=75) # This sets how wide the R printout can be.
+% @
+% 
+%  <<setup-child, include=FALSE>>=
+%  set_parent('/home/sam/Dissertation/Dissertation_Template/Dissertation_Main_Template/Dissertation_Main.Rnw')
+% @
+% 
+% <<load_libraries, echo=FALSE>>=
+% library(tidyr)
+% library(dplyr)
+% library(ggplot2)
+% library(lme4)
+% library(lsmeans)
+% library(car)
+% library(pbkrtest)
+% library(xtable)
+% library(cowplot)
+% library(plyr)
+% @
 
 \chapter{Introduction\label{chapter1}}
 
@@ -29,11 +29,11 @@ Speech in a noisy background presents a challenge to the recognition of that spe
 
 This project presents a new approach to the problem.  It proposes that human speech can be recorded in a manner that largely eliminates the noise before it reaches the microphone recording the signal.  The microphone would be placed inside the ear canal of the speaker and would record speech as it is passed through the bone and tissue of the speaker's head.  The signal is expected to be distorted by passage through the head, but this distortion is hypothesized to be at least partially reversible.
 
-Section \ref{ch1:background} below describes the basic acoustics of sound, leading up to a brief overview of sound in noise.  Chapter 2\ref{chapter2} discusses the collection of ear-recorded speech, Chapter 3\ref{chapter3} describes a human speech perception experiment using ear-recorded speech, and Chapter 4\ref{chapter4} outlines an experiment testing the ability of an automatic speech recognition system to accurately recognize ear-recorded speech.  At the end of this chapter, Section \ref{ch1:diss-overview} will give a more detailed overview of the rest of the dissertation.
+Section \ref{ch1:background} below describes the basic acoustics of sound, leading up to a brief overview of sound in noise.  Chapter \ref{chapter2} discusses the collection of ear-recorded speech, Chapter \ref{chapter3} describes a human speech perception experiment using ear-recorded speech, and Chapter \ref{chapter4} outlines an experiment testing the ability of an automatic speech recognition system to accurately recognize ear-recorded speech.  At the end of this chapter, Section \ref{ch1:diss-overview} will give a more detailed overview of the rest of the dissertation.
 
 \section{Background}\label{ch1:background}
 
-Sound itself, along with the ability to perceive it, is a remarkable phenomenon.  Put simply, ``sound'' is the fluctuation of pressure in neighboring groups of particles over time. Most frequently sound is discussed in terms of the fluctuation of air pressure, because, as humans, we primarily receive sound into our ear canals through the medium of air, but sound can also travel through media of liquids and solids, or pass through any combination of the three.
+Sound itself, along with the ability to perceive it, is a remarkable phenomenon.  Put simply, `sound' is the fluctuation of pressure in neighboring groups of particles over time. Most frequently sound is discussed in terms of the fluctuation of air pressure, because, as humans, we primarily receive sound into our ear canals through the medium of air, but sound can also travel through media of liquids and solids, or pass through any combination of the three.
 
 There are primarily three components to sound: amplitude, frequency, and phase, which can be seen in Figure \ref{fig:basic-sound-wave}.  In a simple sound wave, the amplitude of sound corresponds to the peak intensity of the high pressure (and the lowest pressure) portions of a sound wave (cf. Fig. \ref{fig:basic-sound-amplitude}).  The frequency corresponds to the rate at which the high and low pressure portions of the signal fluctuate between one another (cf. Fig. \ref{fig:basic-sound-frequency}).  The phase of a wave is the location of the pressure level (relative to atmospheric pressure) in time (cf. Fig. \ref{fig:basic-sound-phase}).   
 
@@ -111,7 +111,7 @@ Certain harmonics will be dampened by the vocal tract, leaving others relatively
   \caption{Zoomed to a more standard 0-5kHz range.}
   \label{fig:spctgrm_citizen_5k}
 \end{subfigure}
-\caption{Spectrogram of the word ``citizens'' with phonetic transcription above.  Frequency is on the y-axis, time is on the x-axis, and amplitude is shown in grayscale on the graph; the darker an area of the graph, the greater the amplitude.}
+\caption{Spectrogram of the word `citizens' with phonetic transcription above.  Frequency is on the y-axis, time is on the x-axis, and amplitude is shown in grayscale on the graph; the darker an area of the graph, the greater the amplitude.}
 \label{fig:spctgrm_citizen}
 \end{figure}
 
@@ -120,7 +120,7 @@ For unvoiced speech, the information used to recognize and categorize the speech
 \begin{wrapfigure}{l}{0.5\textwidth}
 \centering
   \includegraphics[width=0.5\textwidth]{figure/spctgrm_s.png}
-  \caption{Spectrum of the initial /s/ in ``citizen''. Zoomed to range of 0-8kHz for visualization of high frequency energy.}
+  \caption{Spectrum of the initial /s/ in `citizens'. Zoomed to range of 0-8kHz for visualization of high frequency energy.}
   \label{fig:spctgrm_s}
 \end{wrapfigure}
 
@@ -194,7 +194,7 @@ In order for this complete negation to happen, the two waves need to be coming f
   \label{fig:sound-combined-shifted-phase}
 \end{subfigure}
 \end{center}
-\caption{Demonstration of the combination of the same two waves as in Fig. \ref{fig:sound-wav-addition}, where the phase of the 200 Hz wave in Fig. \ref{fig:sound-wave-B} was shifted slightly (cf. Fig. \ref{fig:wave-addition-200hz-shifted})}
+\caption{Demonstration of the combination of the same two waves as in Fig. \ref{fig:sound-wave-addition}, where the phase of the 200 Hz wave in Fig. \ref{fig:sound-wave-B} was shifted slightly (cf. Fig. \ref{fig:wave-addition-200hz-shifted})}
 \label{fig:sound-shifted-phase}
 \end{figure}
 
@@ -225,7 +225,7 @@ Nevertheless, there are still situations in which it is difficult to parse speec
 
 This relationship between speech and any background noise is called the signal to noise ration (SNR).  A complex signal with a higher signal to noise ratio (cf. Fig \ref{fig:signal-SNR-intro-high}) is generally easier to understand, because the amplitude of the speech (the `signal' of interest) is much greater than that of the noise.  Consequently a lower SNR (cf. Fig. \ref{fig:signal-SNR-intro-low}) results in speech that is more difficult to understand, because the amplitude of the speech is close to - or below - the amplitude of the background noise.
 
-This poses a problem for human listeners, but generally is more difficult to deal with in automatic speech recognition (ASR), since the electronic device does not contain a highly-skilled, built-in auditory cortex.  There are a number of ways which have been proposed to deal with noise in a speech signal, both for human and automatic speech recognition.  These will be discussed further in Chapters 3\ref{chapter3} and 4\ref{chapter4}.
+This poses a problem for human listeners, but generally is more difficult to deal with in automatic speech recognition (ASR), since the electronic device does not contain a highly-skilled, built-in auditory cortex.  There are a number of ways which have been proposed to deal with noise in a speech signal, both for human and automatic speech recognition.  These will be discussed further in Chapters \ref{chapter3} and \ref{chapter4}.
 
 \section{Overview of Dissertation}\label{ch1:diss-overview}
 
@@ -233,6 +233,6 @@ This report aims to explore a novel method of human speech perception and automa
 	
 The intention of this study is to determine a) if recording human speech from the inside of the ear canal can significantly reduce background noise in a signal, b) if intelligible speech, suitable for communication, can be collected from the inside of the ear canal, c) if humans find speech recorded from the ear canal more intelligible than speech in noisy conditions, and finally d) if ASR systems are able to recognize speech recorded in the ear canal with greater accuracy than speech recorded in noise.
 	
-Since currently there is no established corpus of data that contain speech recorded from the inside of the ear canal together with speech simultaneously recorded from the mouth in noisy environments, it was necessary to record speakers in this environment and create a new corpus.  The theory behind the acoustics of recording speech from the ear canal, as well as the process for developing this corpus are described in Chapter 2\ref{chapter2}, along with a discussion of the recorded speech.  Chapter 3\ref{chapter3} will outline a human perception experiment, tasking listeners with the transcription of various sentences of speech recorded at the mouth in noise in noise, and recorded from the ear.   Chapter 4\ref{chapter4} describes the use of this same speech with an ASR system, and its recognition performance.  Chapter 5\ref{chapter5} will summarize the previous chapters and engage in an overall discussion of the implications of the results, the limitations of the present experiments and methods, and suggestions for future research direction.
+Since currently there is no established corpus of data that contain speech recorded from the inside of the ear canal together with speech simultaneously recorded from the mouth in noisy environments, it was necessary to record speakers in this environment and create a new corpus.  The theory behind the acoustics of recording speech from the ear canal, as well as the process for developing this corpus are described in Chapter \ref{chapter2}, along with a discussion of the recorded speech.  Chapter \ref{chapter3} will outline a human perception experiment, tasking listeners with the transcription of various sentences of speech recorded at the mouth in noise in noise, and recorded from the ear.   Chapter \ref{chapter4} describes the use of this same speech with an ASR system, and its recognition performance.  Chapter \ref{chapter5} will summarize the previous chapters and engage in an overall discussion of the implications of the results, the limitations of the present experiments and methods, and suggestions for future research direction.
 
 
