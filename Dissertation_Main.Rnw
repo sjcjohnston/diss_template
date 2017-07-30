@@ -85,6 +85,7 @@
 \usepackage{mathtools}
 \usepackage{amsmath}
 \usepackage{array}
+\usepackage{courier}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 
@@ -128,7 +129,7 @@
 %HERE IS THE THING THAT NEEDS TO CHANGE TO GET LATEX TO WORK WITH RSTUDIO. USE pdftex instead of dvips.
 
 % Set up some values.
-\completetitle{Working Title: An approach to automatic and human speech recognition using ear-recorded speech.}
+\completetitle{An approach to automatic and human speech recognition using ear-recorded speech}
 \fullname{Samuel John Charles Johnston}			% Grad college wants your full name here.
 \degreename{Doctor of Philosophy}	% Title of your degree.
 
@@ -208,9 +209,9 @@ library(cowplot)
 %ADD: Copy/Paste Content from all 5 chapters:
 
 \include{./Chapter_1_Introduction/chapter_1_Introduction}
-\include{./Chapter_2_Data_Collection_Experiment/chapter_2_diff}
-\include{./Chapter_3_Human_Speech_Perception_Experiment/chapter_3_diff}
-\include{./Chapter_4_ASR_Experiment/chapter_4_diff}
+\include{./Chapter_2_Data_Collection_Experiment/chapter_2}
+\include{./Chapter_3_Human_Speech_Perception_Experiment/chapter_3}
+\include{./Chapter_4_ASR_Experiment/chapter_4}
 \include{./Chapter_5_Discussion/chapter_5_Discussion}
 
 % ADD: Include the various appendices
