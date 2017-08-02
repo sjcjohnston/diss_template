@@ -31,6 +31,12 @@
 \usepackage{graphicx}
 \usepackage{natbib}			% natbib is available on most systems, and is
 					% terribly handy.
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{decorations.pathmorphing} % noisy shapes
+\usetikzlibrary{fit}					% fitting shapes to coordinates
+\usetikzlibrary{backgrounds}	% drawing the background after the foreground
+
 					
 					
 %DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
@@ -149,7 +155,7 @@
 % graduate college when you submit the final version of the
 % dissertation to the University of Arizona.
 \approval
-{7 August 2017}		% Defense Date	
+{11 August 2017}		% Defense Date	
 {Mike Hammond}	% Dissertation Director
 {Mike Hammond}	% 1st committee member
 {Brad Story}		% 2nd committee member

@@ -1,160 +1,27 @@
-\documentclass[dissertation,copyright]{uathesis}
-\usepackage[]{graphicx}\usepackage[]{color}
-%% maxwidth is the original width if it is less than linewidth
-%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
-\makeatletter
-\def\maxwidth{ %
-  \ifdim\Gin@nat@width>\linewidth
-    \linewidth
-  \else
-    \Gin@nat@width
-  \fi
-}
-\makeatother
-
-\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
-\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
-\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
-\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
-\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
-\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
-\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
-\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
-\let\hlipl\hlkwb
-
-\usepackage{framed}
-\makeatletter
-\newenvironment{kframe}{%
- \def\at@end@of@kframe{}%
- \ifinner\ifhmode%
-  \def\at@end@of@kframe{\end{minipage}}%
-  \begin{minipage}{\columnwidth}%
- \fi\fi%
- \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
- \colorbox{shadecolor}{##1}\hskip-\fboxsep
-     % There is no \\@totalrightmargin, so:
-     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
- \MakeFramed {\advance\hsize-\width
-   \@totalleftmargin\z@ \linewidth\hsize
-   \@setminipage}}%
- {\par\unskip\endMakeFramed%
- \at@end@of@kframe}
-\makeatother
-
-\definecolor{shadecolor}{rgb}{.97, .97, .97}
-\definecolor{messagecolor}{rgb}{0, 0, 0}
-\definecolor{warningcolor}{rgb}{1, 0, 1}
-\definecolor{errorcolor}{rgb}{1, 0, 0}
-\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
-
-\usepackage{alltt}
-\newcommand{\SweaveOpts}[1]{}  % do not interfere with LaTeX
-\newcommand{\SweaveInput}[1]{} % because they are not real TeX commands
-\newcommand{\Sexpr}[1]{}       % will only be parsed by R
-
-
-%\documentclass[dissertation,CC-BY]{uathesis}
-%\documentclass[dissertation,CC-BY-SA]{uathesis}
-%documentclass[dissertation,CC-BY-ND]{uathesis}
-%\documentclass[thesis]{uathesis}
-%\documentclass[document]{uathesis}
-
-% Package Usage
-% These are the packages that we need
-\usepackage{booktabs}
-\usepackage{graphicx}
-\usepackage{natbib}			% natbib is available on most systems, and is
-					% terribly handy.
-					
-%May need to remove! Trying to fix nocite{*} biblography problem:
-					% If you want to use a different Bibliography package, 
-					% you should be able to, just change this
-					% and the \bibliographystyle command below.  Be warned
-					% that you may need to do a little hacking to get
-					% the REFERENCES item to show up in your TOC.
-
-% Compatibility with the AASTEX package 
-% of the American Astronomical Society.
-%\usepackage{deluxetable}		% Allows use of AASTEX deluxe tables
-%\usepackage{aastex_hack}		% Allows other AASTEX functionality.
-
-% These are other packages that you might find useful.
-% For controlling the fonts, see
-% http://www.math.uiuc.edu/~hartke/computer/latex/survey/survey.html
-% The following is a nice font set:
-%\usepackage{mathtime}			% Times for letters; Belleek math.
-%
-\usepackage{wrapfig}
-\usepackage{caption}
-\usepackage{subcaption}
-\usepackage{tipa}
-\usepackage{color,soul}
-\usepackage{url}
-\usepackage{blindtext}
-\usepackage[inline]{enumitem}
-\usepackage{breakurl}
-\usepackage{mathtools}
-\usepackage{amsmath}
-\usepackage{array}
-\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
-\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
-
-% \usepackage[normalem]{ulem}
-% \usepackage{xyling,comment}			% AMS Math (advanced math typesetting)
-% includecomment{delall}
-% %\excludecomment{delall}
+% %set_parent(‘/Users/mwilli/Documents/Spring_2017/Dissertation_Document/Dissertation_Working_Directory_Draft/Dissertation_Main.Rnw')
 % 
-% %default: don't show edits
+% <<chunk_options, echo=FALSE>>=
+% # This is where we set basic knitr options.
+% opts_chunk$set(echo=TRUE, message=FALSE, warning = TRUE, cache = FALSE, comment="")
+% options(width=75) # This sets how wide the R printout can be.
+% @
 % 
-% \newcommand{\add}[1]{#1}
-% \newcommand{\del}[1]{}
-% \newcommand{\delni}[1]{}
-% \newcommand{\addtab}{}
+%  <<setup-child, include=FALSE>>=
+%  set_parent('/home/sam/Dissertation/Dissertation_Template/Dissertation_Main_Template/Dissertation_Main.Rnw')
+% @
 % 
-% %block to show edits controlled by include/exclude-comment above
-% \begin{delall}
-% %added stuff
-% \renewcommand{\add}[1]{\textcolor{blue}{#1}}
-% %added table
-% \renewcommand{\addtab}{\color{blue}}
-% %deleted stuff
-% \renewcommand{\del}[1]{\textcolor{red}{\sout{#1}}}
-% \renewcommand{\delni}[1]{\noindent\textcolor{red}{\sout{#1}}}
-% \end{delall}
-
-%\usepackage{lscape}			% Used for making fitting large tables in by putting them landscape
-%\usepackage{refs}			
-%
-% If you are using hyper-ref (recommended), this command must go after all 
-% other package inclusions (from the hyperref package documentation).
-% The purpose of hyperref is to make the PDF created extensively
-% cross-referenced.
-
-%Also works! Change dvips to driverfallback=dvips.
-\usepackage[driverfallback=dvips,bookmarks,colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black]{hyperref}
-
-
-%Works!
-%\usepackage[pdftex,bookmarks,colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black]{hyperref}
-%HERE IS THE THING THAT NEEDS TO CHANGE TO GET LATEX TO WORK WITH RSTUDIO. USE pdftex instead of dvips.
-
-% Set up some values.
-\completetitle{Working Title: An approach to automatic and human speech recognition using ear-recorded speech.}
-\fullname{Samuel John Charles Johnston}			% Grad college wants your full name here.
-\degreename{Doctor of Philosophy}	% Title of your degree.
-
-
-
-\begin{document}
-%set_parent(‘/Users/mwilli/Documents/Spring_2017/Dissertation_Document/Dissertation_Working_Directory_Draft/Dissertation_Main.Rnw')
-
-
-
- 
-
-
+% <<load_libraries, echo=FALSE>>=
+% library(tidyr)
+% library(dplyr)
+% library(ggplot2)
+% library(lme4)
+% library(lsmeans)
+% library(car)
+% library(pbkrtest)
+% library(xtable)
+% library(cowplot)
+% library(plyr)
+% @
 
 
 
@@ -163,13 +30,14 @@
 
 \section{Introduction}
 
-The accuracy of automatic speech recognition (ASR) has significantly improved over the past several years; similar, but less dramatic improvements have been made regarding the challenging task of recognizing speech in noisy situations (\cite{zhang:17}).  The performance of the latter still falls below the accuracy that is able to be reached by most human listeners.  Even the human auditory system itself is only able to remove a limited amount of noise from a speech signal before that signal becomes completely unintelligible.  The primary issue arises from the fact that speech normally passes from a speaker's mouth into either the ear (human speech perception) or a microphone (ASR), but the passage of speech through the medium of air allows corruption of the signal by noise of unknown loudness and unpredictable source.  
+The accuracy of automatic speech recognition (ASR) has significantly improved over the past several years; similar, but less dramatic improvements have been made regarding the challenging task of recognizing speech in noisy environments (\cite{zhang:17}).  The performance of the latter still falls below the accuracy that most human listeners achieve.  Even human listeners and the auditory system has limits is only able to remove a limited amount of noise from a speech signal before that signal becomes completely unintelligible.  The primary issue arises from the fact that speech normally passes from a speaker's mouth into either the ear (human speech perception) or a microphone (ASR), but the passage of speech through the medium of air allows corruption of the signal by noise of unknown loudness and unpredictable source.  
 
-This research proposes eliminating, by and large, the passage of speech through air by recording the speech in an unconventional location - from the inside of the \textit{speaker's} ear canal.  Speech is not only emitted from the oral cavity, but it is widely known that the vibrations pass throughout the human body.  Using the ear canal as the source of speech adds the benefit that the entrance to the ear canal can be securely occluded behind the microphone (eg. with a noise reduction device such as an ear-plug).  Thus, ambient noise from the air will be be largely filtered out by the occlusion device and the human skull.
+This research proposed eliminating, by and large, the passage of speech through air by recording the speech in an unconventional location - from the inside of the \textit{speaker's} ear canal.  Speech is not only emitted from the oral cavity, but the vibrations also pass throughout the human body.  Using the ear canal as the source of speech adds the benefit that the entrance to the ear canal can be securely occluded behind the microphone (eg. with a noise reduction device such as an ear-plug).  Ambient noise from the air is largely filtered out by both the occlusion device and the human skull.
 
-Due to the very specific nature of the requirements for this study (namely, that the speech data recorded needs to be recorded from the ear), it is necessary to record data from scratch, rather than use an existing and more widely recognized corpus of speech.  The goal for this new corpus is to offer speech data recorded from the inside of the ear canal, as well as speech data recorded from the mouth, for comparison.  Both clean and noisy speech are desired.
-Owing to the variability that occurs when even the same speaker repeats the same sentence, speech critically needs to be recorded from the two locations simultaneously.  This allows for a more accurate comparison of the two signals.
-The initial experiment in Section \ref{expt1} below is a data collection experiment aimed to create a small corpus of speech data recorded under very specific conditions for use in the following two experiments (cf. Chapters \ref{chapter3} and \ref{chapter4}).  The next section explains the theory behind the assumption that usable speech can be collected from the inside of one's ear canal.
+Due to the very specific nature of the requirements for this study (that the speech data recorded needed to be recorded from the ear), it was necessary to record data from scratch, as the author was not aware of another corpus of ear-recorded speech that existed at the time of this study.  This corpus contains speech recorded from two microphones simultaneously: one placed at the mouth, and the other at the ear. The goal for this new corpus is to offer a comparison between these two recording locations. The recognition ability of humans and ASR systems on the ear-recorded speech could also be tested.  Both clean and noisy speech were desired.
+Owing to the variability that occurs when even the same speaker repeats the same sentence, speech critically needed to be recorded from the two locations simultaneously.  This allows for a more accurate comparison of the two signals.
+
+The initial experiment described in Section \ref{expt1} below was a data collection experiment.  It aimed to create a small corpus of speech recorded from the ear canal for use in the following two experiments (cf. Chapters \ref{chapter3} and \ref{chapter4}).  The next section explains the theory behind the assumption that usable speech can be collected from the inside of one's ear canal.
 
 \section{Background}
 
@@ -291,24 +159,25 @@ Another challenge is to obtain the dimensions of the ear canal needed in order t
   \label{fig:open-closed-tube}
 \end{figure}
 
-Once inside the ear canal with known approximate dimensions, it can either be modeled as an open-closed tube (if the ear is not plugged) or as a closed-closed tube (if the ear is plugged, cf. Figure \ref{fig:open-closed-tube}). This difference changes the resonance and reverberant structure of the ear canal, and will be discussed further in Section \ref{sec:OEBCspeech}.  
+Once inside the ear canal with known approximate dimensions, it can either be modeled as a uniform tube.  The acoustics of uniform tubes is usually thought of in terms of an open-open tube, an open-closed tube, or a closed-closed tube.  Each of these have different resonating characteristics. The human vocal tract, for example, is normally modeled as an open-closed tube, where one end (the glottis) is generally considered `closed' for modelling purposes, and the other (the mouth) is generally considered to be `open'.  Similarly, for the human ear, the tympanic membrane represents the `closed' end of the ear canal tube, and the ear canal opening at the concha, or pinna, is the `open' end (cf. Figure \ref{fig:open-closed-tube}).  It can also be modeled as a closed-closed tube if the ear is plugged (cf. Figure \ref{fig:open-closed-tube}). 
+This difference changes the resonance and reverberant structure of the ear canal, and will be discussed further in Section \ref{sec:OEBCspeech}.  
 
 %BC+EC-OE
 \subsection{Ear Canal Resonance on Bone-Conducted Speech}
 
-There have been many studies pertaining to ear canal resonance from bone conducted speech.  There are a few in particular (c.f. \cite{bekesy:48}, \cite{porschmann:00}, \cite{reinfeldt:10}) which use real human speech as the sound source and measure the human ear as an open-closed tube.
+There have been many studies pertaining to ear canal resonance from bone conducted speech.  There are a few in particular (c.f. \cite{bekesy:48}, \cite{porschmann:00}, \cite{reinfeldt:10}) who use real human speech as the sound source.
 %
-The acoustics of uniform tubes is usually thought of in terms of an open-open tube, an open-closed tube, or a closed-closed tube.  Each of these have different resonating characteristics. The human vocal tract, for example, is normally modeled as an open-closed tube, where one end (the glottis) is generally considered `closed' for modelling purposes, and the other (the mouth) is generally considered to be `open'.  Similarly, for the human ear, the tympanic membrane represents the `closed' end of the ear canal tube, and the ear canal opening at the concha, or pinna, is the `open' end (cf. Figure \ref{fig:open-closed-tube}).
+% The acoustics of uniform tubes is usually thought of in terms of an open-open tube, an open-closed tube, or a closed-closed tube.  Each of these have different resonating characteristics. The human vocal tract, for example, is normally modeled as an open-closed tube, where one end (the glottis) is generally considered `closed' for modelling purposes, and the other (the mouth) is generally considered to be `open'.  Similarly, for the human ear, the tympanic membrane represents the `closed' end of the ear canal tube, and the ear canal opening at the concha, or pinna, is the `open' end (cf. Figure \ref{fig:open-closed-tube}).
 
-\cite{porschmann:00}'s study is generally looking at the \textit{self-perception} of one's own voice, but in order to accomplish this devotes effort to looking at the bone conduction pathway separately.  A general 0.9 kHz resonance (with subsequent harmonic resonances) was found in the collected bone-conduction speech, with the amplitude gain generally present between 0.7 and 1.2 kHz.  This correlates with the 0.8-1.2 kHz range for the first resonance that others  (cf. \cite{hakansson:94}) have observed in mechanical-stimulated bone conduction studies. This would mean, in terms of speech, that one would expect to find higher amplitudes near the first formant.
+\cite{porschmann:00}'s study is generally looking at the \textit{self-perception} of one's own voice, but in order to accomplish this devotes effort to looking at the bone conduction pathway separately.  A general 0.9 kHz resonance (with subsequent harmonic resonances) was found in the collected bone-conduction speech, with the amplitude gain generally present between 0.7 and 1.2 kHz.  This correlates with the 0.8-1.2 kHz range for the first resonance that others (cf. \cite{hakansson:94}) have observed in mechanical-stimulated bone conduction studies. This would mean, in terms of speech, that one would expect to find higher amplitudes near the first formant.
 
 However, in this study only two phones were used (/s/ and /z/), and a masking threshold\footnote{The masking threshold technique involves playing a pure tone at different frequencies and amplitudes while the participant is phonating. The participant indicates when the tone becomes audible over their own speech. Knowing the amplitude of the tone allows the researcher to know the amplitude of the speech as one becomes audible over the other. Having this knowledge, the spectrum of speech as it is perceived by the speaker can to be mapped.} technique was used to determine the frequency spectrum of the transfer function of body conduction.  This is admittedly a rather subjective method of determining the spectrum.  
 
-\cite{reinfeldt:10}, on the other hand, use microphones to record the actual sound pressure level (SPL) of both air- and body-conducted speech. Furthermore, \cite{reinfeldt:10} used a more expansive and diverse set of phones.  While a resonance was found in generally the same frequency region for /s/ (and other phones) as that found by \cite{porschmann:00} (0.7 - 1.2 kHz), they discovered some distinct differences, which can be seen in Fig. \ref{BCrelAC}. Between each class that was used - voiceless sounds (/s/, /t/, /k/, and /tj/),  nasals (/m/ and /n/), and vowels (/i/, /e/, /a/, /o/) - a moderately similar frequency response is seen, yet there are some interesting distinctions to note (see Fig. \ref{BCrelACall}).
+\cite{reinfeldt:10}, on the other hand, use microphones to record the actual sound pressure level (SPL) of both air- and body-conducted speech. Furthermore, \cite{reinfeldt:10} used a more expansive and diverse set of phones.  While a resonance was found in generally the same frequency region for /s/ (and other phones) as that found by \cite{porschmann:00} (0.7 - 1.2 kHz), they discovered some distinct differences, which can be seen in Fig. \ref{BCrelAC}. Between each class that was used - voiceless sounds (/s/, /t/, /k/, and /tj/),  nasals (/m/ and /n/), and vowels (/i/, /e/, /a/, /o/) - a moderately similar frequency response is seen, yet there are some distinctions to note (see Fig. \ref{BCrelACall}).
 
 In particular, as can be seen in Fig. \ref{BCrelAC}, there is much inter-speaker variation within the body conduction of the same sound.  While it is difficult to track an individual speaker's relative spectral envelope within the figure, it appears that much of this difference, particularly in the lower frequencies, originates from a difference in amplitude, and not necessarily from different resonance locations along the frequency axis.  It is important to note that both Figs. \ref{BCrelAC} and \ref{BCrelACall} both contain \textit{relative} spectral envelopes - ie. the difference between the air-conducted and body-conducted components of speech, and do not contain an absolute frequency spectrum of body-conducted speech. 
 
-An interesting observation is that the /e/ vowel has a relatively flat response up to 500 Hz, and dips down to -5 dB around 1kHz.  This is in contrast with the phone /s/, which has a fairly high (yet falling) response below 500 Hz, and does not dip below -5 dB until nearly 4 kHz.  Compared with /e/, the body-conducted to air-conducted ratio for /s/ has a significant downward slope after 2000 Hz.  This is likely due to the fact that there is relatively little energy produced by /s/ in the low frequencies, allowing for a high ratio, which drops as the general energy of the phone increases.  This could indicate that most of the energy produced by a obstruent does not pass through to the ear canal (\cite{reinfeldt:10}).
+Another distinction is that the /e/ vowel has a relatively flat response up to 500 Hz, and dips down to -5 dB around 1kHz.  This is in contrast with the phone /s/, which has a fairly high (yet falling) response below 500 Hz, and does not dip below -5 dB until nearly 4 kHz.  Compared with /e/, the body-conducted to air-conducted ratio for /s/ has a significant downward slope after 2000 Hz.  This is likely due to the fact that there is relatively little energy produced by /s/ in the low frequencies, allowing for a high ratio, which drops as the general energy of the phone increases.  This could indicate that most of the energy produced by a obstruent does not pass through to the ear canal (\cite{reinfeldt:10}).
 
 \begin{figure}[h!]
 \includegraphics[width=1\textwidth]{figure/BCrelAC_e_s.png}
@@ -418,7 +287,7 @@ In summary, it is important to emphasize the key difference between measurements
 %CONCLUSION
 \subsection{Summary}
 
-The aforementioned studies on body conduction and the occlusion effect, as would be expected, have indicated a large amount of inter-person and inter-phoneme variability, and have shown the complexity involved in estimating the effect of body conduction and ear canal reverberance on speech entering the ear canal.  However, the transfer function from the vocal tract to the ear canal does have some standard characteristics, namely, the body and (occluded) ear canal act as a low-pass filter on speech, removing many of the higher frequencies which are within range of containing critical components for speech intelligibility.
+The aforementioned studies on body conduction and the occlusion effect, as would be expected, have indicated a large amount of inter-person and inter-phoneme variability, and have shown the complexity involved in estimating the effect of body conduction and ear canal reverberance on speech entering the ear canal.  However, the transfer function from the vocal tract to the ear canal does have some standard characteristics, namely, the body and (occluded) ear canal work in conjunction as a low-pass filter on speech, removing many of the higher frequencies which are within range of containing critical components for speech intelligibility.
 
 %CONCLUSION to expt 1 lit review
 
@@ -434,12 +303,12 @@ The methods described in this section, namely the models and transfer functions 
 This distortion is hypothesized to be, by and large, predictable (\cite{reinfeldt:10}), unlike ambient noise from the environment which is generally highly variable in both amplitude and form (\cite{zhang:17}). This prediction is that the signal recorded from the ear canal is expected to be heavily low-pass filtered above approximately 2kHz.  Minor transformations, such as pre-emphasizing the higher frequencies, are hypothesized to recover some of the information that is lost, resulting in speech that will perform better than a noisy signal collected at the mouth in both ASR and human speech perception tasks.
 Due to this, the technique of substituting potentially unanticipated, variable `environmental' noise with the anticipated `noise' of body conduction and the occlusion effect will allow for greater confidence that a usable signal could be recovered.    
 
-Section \ref{expt1} below describes the specific methods used to collect speech data from the mouth and the ear canal, and the analysis of the collected speech in an attempt to recover an intelligible signal with the knowledge outlined in this section.
+Section \ref{expt1} below describes the specific methods used to collect speech data from the mouth and the ear canal, and the analysis of the collected speech in an attempt to recover an intelligible signal with the knowledge outlined in this section.  These recovered signals were used in human speech perception and ASR experiments in Chapter \ref{chapter3} and \ref{chapter4}, respectively.
 
 
 \section{Experiment 1: Creating a dataset of ear-recorded speech}\label{expt1}
 
-There are numerous constraints and requirements for the speech recordings necessary for this task, and it was essential to create an original dataset for this study.  A small corpus was needed to be able to conduct ASR and Human speech perception experiments.  Primarily, a corpus needed to be created because there is no known dataset of speech in which the recording location is inside the ear canal; speech recorded from this location was the primary focus of these studies.  Secondly, in order to be comparable, the speech at the ear, and the speech at the mouth, needed to be recorded at the same time, in the same conditions.  This was mainly to determine, when comparing the results of ear-recorded and mouth-recorded speech, whether the ear or mouth-recorded speech performed better in the ASR and human speech perception tasks and to avoid potentially confounding variables that would occur if the two sets of speech were recorded separately. This is discussed further in Section \ref{chap2:methods:design} below.
+There are numerous constraints and requirements for the speech recordings necessary for this task, and it was essential to create an original dataset for this study.  This small corpus was used for creating stimuli ASR and human speech perception experiments.  Primarily, an original corpus needed to be created because there is no known dataset of speech in which the recording location is inside the ear canal; speech recorded from this location was the primary focus of these studies.  Secondly, in order to be comparable, the speech at the ear, and the speech at the mouth, needed to be recorded at the same time, in the same conditions.  This was mainly to determine, when comparing the results of ear-recorded and mouth-recorded speech, whether the ear or mouth-recorded speech performed better in the ASR and human speech perception tasks and to avoid potentially confounding variables that would occur if the two sets of speech were recorded separately. This is discussed further in Section \ref{chap2:methods:design} below.
 
 \subsection{Design}
 \label{chap2:methods:design}
@@ -455,7 +324,7 @@ Since human speech is variable in loudness, and amplitude will likely vary betwe
 An amplitude of 80 dB was chosen as a max loudness, rather than a higher noise level to achieve a lower SNR, in order to leave a wide margin between it and any (albeit remote) possibility of hearing damage suffered by participants.  A `clean' (no noise) condition was also utilized for each sentence.  This creates 16 different conditions (5 noise types * 3 noise levels + 1 `clean' condition).  
 
 \subsection{Stimuli}
-Thirty sentences were chosen from 3 Harvard Sentence lists\footnote{The `Harvard Sentences' dataset is comprised of 72 lists, each 10 sentences long, where each list of 10 sentences is phonetically balanced, where the proportion of each phone in the list corresponds with it's occurrence in the English language (\cite{harvardSents}).}.  Sentences were chosen from the Harvard Sentence dataset due to being phonetically balanced (the distribution of phonemes in each list proportional to their occurrence in English), to their prolific use in speech science research, and specifically their history of serving as stimuli for many speech corpora (cf. \cite{kabal:02,hu:07}, the latter being a noisy speech corpus).  Lists 14, 28, and 57 were used, and chosen semi-randomly, eliminating lists with potentially unfamiliar or rare words.  Each sentence occurs in all 16 conditions, resulting in 480 total stimuli.
+Thirty sentences were chosen from 3 Harvard Sentence lists\footnote{The `Harvard Sentences' dataset is comprised of 72 lists, each 10 sentences long, where each list of 10 sentences is phonetically balanced, where the proportion of each phone in the list corresponds with it's occurrence in the English language (\cite{harvardSents}).}.  Sentences were chosen from the Harvard Sentence dataset due to being phonetically balanced (the distribution of phonemes in each list proportional to their occurrence in English), to their prolific use in speech science research, and specifically their history of serving as stimuli for many speech corpora (cf. \cite{kabal:02,hu:07}, the latter being a noisy speech corpus).  Lists 14, 28, and 57 were used, and chosen semi-randomly, eliminating lists with potentially unfamiliar or rare words.  Each sentence occurs in all 16 conditions (5 noise types * 3 noise levels + 1 `clean' condition), resulting in 480 total stimuli.
 
   
 \subsection{Equipment}
@@ -475,13 +344,13 @@ Since the length of the plug is known, this was done by placing a measuring rod 
 
 \begin{wrapfigure}{R}{0.5\textwidth}
 \includegraphics[width=0.5\textwidth]{figure/earmuffSetup.JPG}
-\caption{The Countryman B2D directional lavalier microphone, with with the wind-break foam removed, and inserted into a blue ear-plug.}
+\caption{The 3M 30 NRR earmuffs, a wooden rod attached with adhesive tape, and a Countryman B2D directional lavalier microphone directed toward the location of the mouth.}
 \label{fig:micInsertPlug}
 \end{wrapfigure}
 
 \begin{wrapfigure}{L}{0.5\textwidth}
 \includegraphics[width=0.5\textwidth]{figure/micInsertPlug.JPG}
-\caption{The 3M 30 NRR earmuffs, a wooden rod attached with adhesive tape, and a Countryman B2D directional lavalier microphone directed toward the location of the mouth.}
+\caption{The Countryman B2D directional lavalier microphone, with with the wind-break foam removed, and inserted into a blue ear-plug.}
 \label{fig:earmuffSetup}
 \end{wrapfigure}
 
@@ -560,7 +429,7 @@ Each individual sentence was isolated in each recording with a Praat textgrid an
 As can be seen, the speech collected at the ear is heavily low-pass filtered, and the mouth speech by itself has much more speech information. However, there are still clear harmonics in the existing range in the ear-recorded speech, and most of the lower two formants can also be seen.  It should be noted that while the two signals - from the mouth and from the ear - appear to have the same loudness, this is due only to the gain adjustment on the recording device during the experiment.  The speech from the ear was consistently \textit{louder} than the speech from the mouth; on a scale of 0-10, the ear microphone gain was normally set anywhere between 2 and 4, while the mouth microphone gain was normally set anywhere between 4 and 6.
 
 
-A cross-correlation similarity metric was run on each ear-recorded/mouth-recorded pair for each participant speaker (excluding those which contained noise in the background).  The maximum value was obtained for each ear-recorded/mouth-recorded pair, was normalized, and then all values were averaged across speakers.  This is given in Equation \ref{norm_max_xcorr}:
+A cross-correlation similarity metric used to compare signals was run on each ear-recorded/mouth-recorded pair for each participant speaker (excluding those which contained noise in the background).  The maximum value was obtained for each ear-recorded/mouth-recorded pair, was normalized, and then all values were averaged across speakers.  This is given in Equation \ref{norm_max_xcorr}:
 %
 \begin{equation}\label{norm_max_xcorr}
 \sum_{k=1}^{K} \sum_{u=1}^{U} \dfrac{max(abs(xcorr(S^e_{uk}, S^m_{uk})))}{\sqrt{\sum {S^e_{uk}}^2}*\sqrt{\sum {S^m_{uk}}^2}}
@@ -568,7 +437,7 @@ A cross-correlation similarity metric was run on each ear-recorded/mouth-recorde
 %
 where $K$ is the number of participants, $U$ is the number of utterances, $S^e$ refers to the ear-recorded signal, $S^m$ refers to the mouth-recorded signal, and $xcorr$ is the cross-correlation function. If $S^e_{uk}$ and $S^m_{uk}$ are identical signals, the fractional portion of Equation \ref{norm_max_xcorr} will return a `1'.  The average normalized maximum cross-correlation value for ear-recorded speech compared with mouth-recorded speech is 0.358.
 
-When noise is present, it can be seen in Figs. \ref{spctgrmNarrowMouthNoise_35} and \ref{spctgrmNarrowEarNoise_35} that the noise does not affect the ear-recorded signal nearly as much.  There appears to be some of the louder noise (seen in the mouth-recorded speech in Fig. \ref{spctgrmNarrowMouthNoise_35}) present in the upper frequencies of the ear-recorded speech, but it is significantly dampened and the signal has an overall higher speech to noise ratio (SNR).
+When noise is present, it can be visually observed in Figs. \ref{spctgrmNarrowMouthNoise_35} and \ref{spctgrmNarrowEarNoise_35} that the noise level is lower for ear-recorded speech.  There appears to be some of the louder noise (seen in the mouth-recorded speech in Fig. \ref{spctgrmNarrowMouthNoise_35}) present in the upper frequencies of the ear-recorded speech, but it is significantly dampened and the signal has an overall higher speech to noise ratio (SNR).
 
 It should also be noted that the SNR in Fig. \ref{spctgrmNarrowMouthNoise_35} is much higher than originally intended.  For this particular example, the speech was recorded with an 80dB noise background, with the intent of obtaining a -10dB SNR.  Instead, the SNR for the sentence in Fig. \ref{spctgrmNarrowMouthNoise_35} is +6dB\footnote{The SNR was calculated by using background noises recorded in isolation in the soundbooth.  These were recorded at 60, 70, and 80 dB in the same soundbooth, with the same conditions and set up as a normal recording.  The noisy speech sound file was passed through a Hilbert Envelope, and a threshold was applied in order to extract just the speech data.  The RMS values of both the speech and raw noise vectors were calculated, averaged, and then used in the SNR calculation.  For explicit code, see Appendix E\ref{appendixE}}.  Unfortunately, this was widespread. This is attributed to a) the participant speaking louder than anticipated, resulting in a higher speech threshold, and b) the directionality of the microphone used eliminated much more background noise than anticipated.
 
@@ -630,7 +499,7 @@ To be certain, the ear speech was pre-emphasized, seen in Fig. \ref{spctgrmNarro
 \end{figure}
 It appears that while those fainter harmonics in the lower mid-range frequencies are more pronounced, there is no new speech information in the upper frequencies that makes it past the noise threshold.
 
-This ear-recorded signal was then low-pass filtered at 2500 Hz with a 500 Hz smoothing slope. To further emphasize the higher frequencies in the available range (and to smooth over the 'muffled' attribute a bit), the sound was pre-emphasized a second time (after filtering).  This can be seen in Figure \ref{spctgrmNarrowEarNoisePrempFiltPremp_35}, next to the noisy mouth speech for comparison in Figure \ref{spctgrmNarrowMouthNoise_35_compare}.  The average normalized maximum cross-correlation (Equation \ref{norm_max_xcorr}) was calculated for these transformed ear-recorded signals and the mouth-recorded signals (excluding the signals with noise), which yielded a value of 0.674 - an increase of 0.316 over that of the untransformed ear-recorded speech.
+This ear-recorded signal was then low-pass filtered at 2500 Hz with a 500 Hz smoothing slope. To further emphasize the higher frequencies in the available range (and to smooth over the 'muffled' attribute a bit), the sound was pre-emphasized a second time (after filtering).  This can be seen in Figure \ref{spctgrmNarrowEarNoisePrempFiltPremp_35}, next to the noisy mouth speech for comparison in Figure \ref{spctgrmNarrowMouthNoise_35_compare}.  The average normalized maximum cross-correlation (Equation \ref{norm_max_xcorr}) was calculated for these transformed ear-recorded signals and the mouth-recorded signals (excluding the signals with noise), which yielded a value of similarity value of 0.674 - an increase of 0.316 over that of the untransformed ear-recorded speech.
 
 The author compiled the coded survey questions\footnote{As mentioned at the end of Section \ref{chap2:methods:procedure}, the actual question in the survey for Question 1 was ``Can you describe your experience with wearing the experimental set-up?'' Responses were coded according to their answer to Question 1 - as it appears in Table \ref{tab:survey-results}} and answers, which are located in Table \ref{tab:survey-results}.
 
@@ -728,6 +597,3 @@ Limited benefits might be seen from a sound or sound-category specific alteratio
 
 
 
-\bibliographystyle{apa}
-\bibliography{DissRefs.bib}
-\end{document}

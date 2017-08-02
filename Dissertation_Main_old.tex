@@ -81,6 +81,35 @@
 \usepackage{graphicx}
 \usepackage{natbib}			% natbib is available on most systems, and is
 					% terribly handy.
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{decorations.pathmorphing} % noisy shapes
+\usetikzlibrary{fit}					% fitting shapes to coordinates
+\usetikzlibrary{backgrounds}	% drawing the background after the foreground
+
+					
+					
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+					
+					
 					
 %May need to remove! Trying to fix nocite{*} biblography problem:
 					% If you want to use a different Bibliography package, 
@@ -112,6 +141,7 @@
 \usepackage{mathtools}
 \usepackage{amsmath}
 \usepackage{array}
+\usepackage{courier}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 
@@ -155,7 +185,7 @@
 %HERE IS THE THING THAT NEEDS TO CHANGE TO GET LATEX TO WORK WITH RSTUDIO. USE pdftex instead of dvips.
 
 % Set up some values.
-\completetitle{Working Title: An approach to automatic and human speech recognition using ear-recorded speech.}
+\completetitle{An approach to automatic and human speech recognition using ear-recorded speech}
 \fullname{Samuel John Charles Johnston}			% Grad college wants your full name here.
 \degreename{Doctor of Philosophy}	% Title of your degree.
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -175,7 +205,7 @@
 % graduate college when you submit the final version of the
 % dissertation to the University of Arizona.
 \approval
-{7 August 2017}		% Defense Date	
+{11 August 2017}		% Defense Date	
 {Mike Hammond}	% Dissertation Director
 {Mike Hammond}	% 1st committee member
 {Brad Story}		% 2nd committee member
@@ -219,8 +249,8 @@
 %ADD: Copy/Paste Content from all 5 chapters:
 
 \include{./Chapter_1_Introduction/chapter_1_Introduction}
-\include{./Chapter_2_Data_Collection_Experiment/chapter_2_old}
-\include{./Chapter_3_Human_Speech_Perception_Experiment/chapter_3_old}
+\include{./Chapter_2_Data_Collection_Experiment/chapter_2}
+\include{./Chapter_3_Human_Speech_Perception_Experiment/chapter_3}
 \include{./Chapter_4_ASR_Experiment/chapter_4}
 \include{./Chapter_5_Discussion/chapter_5_Discussion}
 
