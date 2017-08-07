@@ -1,0 +1,123 @@
+% %set_parent(‘/Users/mwilli/Documents/Spring_2017/Dissertation_Document/Dissertation_Working_Directory_Draft/Dissertation_Main.Rnw')
+% 
+% <<chunk_options, echo=FALSE>>=
+% # This is where we set basic knitr options.
+% opts_chunk$set(echo=TRUE, message=FALSE, warning = FALSE, cache = FALSE, comment="")
+% options(width=75) # This sets how wide the R printout can be.
+% @
+% 
+%  <<setup-child, include=FALSE>>=
+%  set_parent('/home/sam/Dissertation/Dissertation_Template/Dissertation_Main_Template/Dissertation_Main.Rnw')
+% @
+% 
+% <<load_libraries, echo=FALSE>>=
+% library(tidyr)
+% library(dplyr)
+% library(ggplot2)
+% library(lme4)
+% library(lsmeans)
+% library(car)
+% library(pbkrtest)
+% library(xtable)
+% library(cowplot)
+% library(plyr)
+% @
+
+
+% \begin{document}
+\chapter*{Appendix A}\label{appendixA}
+
+This appendix provides survey responses (columns 1-4) and demographic and measurement data (columns 5-16) taken both during the data collection experiment in Chapter \ref{chapter2} (cf. Table \ref{tab:expt1-data}) and additional participants for stimuli in Chapters \ref{chapter3} and \ref{chapter4} (cf. Table \ref{tab:expt2-stims}).
+
+Table \ref{tab:expt1-data} below lists the subjects who were run in the initial data collection experiment whose data were used as stimuli for the ASR experiment in Chapter \ref{chapter4}.  Table \ref{tab:expt2-stims} provides additional subject data.  Data from subjects 74 and 75 were used as stimuli for the human speech perception experiment (cf. Chapter \ref{chapter3}).  Data from subjects 72 and 73, in addition to subjects 74 and 75, was used as stimuli in the ASR experiment (cf. Chapter \ref{chapter4}), but only for the acoustic model trained on the ear-recorded speech from Table \ref{tab:expt1-data}.   
+
+Any `-' in a cell indicates that, for the surveys, the response was not relevant, or otherwise that the value was missed or unable to be recorded.  All survey questions (1-4) are coded on a 1-5 Likert Scale.  For explanation, reference the Legend in Table \ref{appAlegend} below.
+
+\begin{table}
+\centering
+\begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}\hline
+%\begin{tabular}{|p{0.5cm}|p{0.25cm}|p{0.25cm}|p{0.25cm}|p{0.25cm}|p{0.25cm}|p{0.25cm}|p{0.25cm}|p{0.25cm}|p{0.35cm}|p{0.35cm}|p{0.35cm}|p{0.35cm}|p{0.45cm}|p{0.45cm}|p{0.35cm}|p{0.45cm}|p{0.35cm}|p{0.35cm}|p{0.35cm}|} \hline
+%\text{subj_num}&\text{q1}&\text{q2}&\text{q3}&\text{q4}&\text{sex}&\text{1lang}&\text{2lang}&\text{hear_status}&\text{seal_compr}&\text{cerumen}&\text{plug_diam}&\text{plug_depth}&\text{OE_vol}&\text{ME_vol}&\text{ME_func}&\text{tip_diff}&\text{plug_depth2}&\text{Note} \\ \hline
+ & 1  &  2  &  3  &  4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16   \\ \hline\hline
+\textbf{$027$} & $2$ & $5$ & $5$ & $4$ & $m$ & Sp & $n$ & $n$ & $y$ & $13$ & $10$ & $1.3$ & $0.8$ & $n$ & $0$ & $10$ \\ \hline
+\textbf{$031$} & $-$ & $4$ & $5$ & $5$ & $f$ & $-$ & $n$ & $y$ & $y$ & $13$ & $3$ & $1.5$ & $0.6$ & $n$ & $1$ & $3$ \\ \hline
+\textbf{$035$} & $3$ & $3$ & $3$ & $1$ & $f$ & $-$ & $n$ & $y$ & $n$ & $11$ & $6$ & $1.6$ & $0.5$ & $n$ & $1$ & $7$ \\ \hline
+\textbf{$037$} & $2$ & $5$ & $3$ & $5$ & $f$ & Si & $n$ & $y$ & $n$ & $12$ & $2$ & $2.2$ & $0.9$ & $a$ & $0$ & $3$  \\ \hline
+\textbf{$039$} & $-$ & $5$ & $5$ & $3$ & $m$ & $-$ & $n$ & $y$ & $n$ & $13$ & $8$ & $2.0$ & $0.7$ & $n$ & $0$ & $8$ \\ \hline
+\textbf{$042$} & $-$ & $3$ & $2$ & $5$ & $f$ & $-$ & $n$ & $y$ & $n$ & $9$ & $11$ & $1.3$ & $1.2$ & $n$ & $0$ & $-$ \\ \hline
+\textbf{$043$} & $4$ & $5$ & $5$ & $5$ & $f$ & $-$ & $n$ & $y$ & $y$ & $12$ & $7$ & $1.4$ & $0.4$ & $a$ & $0$ & $8$  \\ \hline
+\textbf{$046$} & $3$ & $4$ & $2$ & $3$ & $m$ & $-$ & $n$ & $y$ & $y$ & $13$ & $8$ & $2.6$ & $1.7$ & $n$ & $-2$ & $8$ \\ \hline
+\textbf{$047$} & $4$ & $4$ & $5$ & $2$ & $m$ & Sp & $n$ & $y$ & $y$ & $11$ & $4$ & $1.5$ & $1.0$ & $n$ & $-1$ & $4$ \\ \hline
+\textbf{$049$} & $3$ & $2$ & $5$ & $5$ & $m$ & $-$ & $n$ & $n$ & $y$ & $15$ & $5$ & $2.9$ & $1.3$ & $n$ & $1$ & $4$ \\ \hline
+\textbf{$050$} & $-$ & $2$ & $3$ & $5$ & $f$ & $-$ & $n$ & $y$ & $n$ & $13$ & $11$ & $1.6$ & $0.6$ & $n$ & $-$ & $11$ \\ \hline
+\textbf{$051$} & $5$ & $4$ & $5$ & $1$ & $f$ & Sp & $n$ & $n$ & $n$ & $12$ & $5$ & $1.6$ & $1.5$ & $n$ & $0$ & $5$ \\ \hline
+\textbf{$054$} & $3$ & $4$ & $5$ & $5$ & $f$ & Sp & $n$ & $y$ & $y$ & $11$ & $4$ & $1.8$ & $0.5$ & $n$ & $0$ & $5$ \\ \hline
+\textbf{$055$} & $4$ & $4$ & $3$ & $4$ & $m$ & $-$ & $n$ & $n$ & $y$ & $11$ & $4$ & $1.9$ & $1.1$ & $n$ & $0$ & $3$  \\ \hline
+\textbf{$057$} & $-$ & $5$ & $5$ & $1$ & $f$ & Sp & $n$ & $y$ & $n$ & $12$ & $6$ & $1.6$ & $0.7$ & $n$ & $0$ & $6$ \\ \hline
+\textbf{$061$} & $4$ & $4$ & $5$ & $4$ & $f$ & $-$ & $n$ & $y$ & $n$ & $10$ & $5$ & $1.0$ & $0.8$ & $n$ & $0$ & $6$ \\ \hline
+\textbf{$063$} & $3$ & $4$ & $3$ & $5$ & $m$ & $-$ & $n$ & $n$ & $y$ & $13$ & $4$ & $3.4$ & $1.6$ & $n$ & $1$ & $3$  \\ \hline
+\textbf{$065$} & $5$ & $4$ & $2$ & $1$ & $m$ & Sp & $n$ & $n$ & $n$ & $12$ & $6$ & $1.9$ & $4.9$ & $a$ & $-1$ & $6$  \\ \hline
+\textbf{$067$} & $3$ & $5$ & $5$ & $1$ & $m$ & $-$ & $n$ & $y$ & $y$ & $13$ & $5$ & $2.3$ & $1.4$ & $n$ & $-1$ & $5$ \\ \hline
+\textbf{$070$} & $4$ & $3$ & $1$ & $5$ & $m$ & $-$ & $n$ & $n$ & $y$ & $10$ & $6$ & $1.8$ & $1.4$ & $n$ & $-1$ & $6$ \\ \hline
+%$-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$  \\ \hline
+\end{tabular}
+\caption{Twenty participants whose data was collected in Chapter \ref{chapter2} and used in the ASR experiments in Chapter \ref{chapter4}.}\label{tab:expt1-data}
+\end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}\hline
+\textbf{$072$} & $5$ & $4$ & $5$ & $5$ & $f$ & $-$ & $n$ & $y$ & $n$ & $11$ & $6$ & $0.8$ & $0.5$ & $n$ & $0$ & $7$ \\ \hline
+\textbf{$073$} & $4$ & $4$ & $5$ & $5$ & $m$ & $-$ & $n$ & $n$ & $y$ & $13$ & $9$ & $1.0$ & $0.9$ & $n$ & $0$ & $9$ \\ \hline
+\textbf{$074$} & $-$ & $4$ & $5$ & $5$ & $m$ & $-$ & $n$ & $n$ & $y$ & $11$ & $-$ & $1.4$ & $0.9$ & $n$ & $-1$ & $-$  \\ \hline
+\textbf{$075$} & $3$ & $4$ & $2$ & $3$ & $f$ & $-$ & $n$ & $y$ & $y$ & $13$ & $5$ & $1.6$ & $0.7$ & $n$ & $1$ & $5$ \\ \hline
+\end{tabular}
+\caption{Data from additional four subjects.  Subjects 74 and 75 were used for the human speech perception experiment (Chapter \ref{chapter4}), and all four were used for the ASR test involving the acoustic model trained on the data from Table \ref{tab:expt1-data}.}\label{tab:expt2-stims}
+\end{table}
+
+\begin{table}
+\begin{tabular}{c|p{13cm}}
+  & \textbf{Legend} \\
+1 & Survey question regarding headgear setup; 1=painful/very uncomfortable (head gear), 5=no problem \\
+2 & Survey question regarding sound of own voice; 1=very annoying/uncomfortable (voice), 5=no problem \\
+3 & Survey question regarding liklihood of using in-ear mic; 1=No, would not use; 5=Yes, would use \\
+4 & Survey question regarding increased likelihood of using in-ear mic if earmuffs not required; 1=No, 5=Yes \\
+5 & Sex: [F]emale/[M]male \\
+6 & $2^{nd}$ language: Sp=Spanish; Si=Singhalese \\
+7 & Hearing status: [n]ormal; [a]bnormal\\
+8 & Potential earmuff seal compromise (eg. glasses, thick hair, etc.): [y]es/[n]o  \\
+9 & Cerumen presence: [y]es/[n]o \\
+10 & Plug diameter in mm \\
+11 & Plug depth in mm inside ear (subtracted from standard length of 18mm)\\
+12 & Volume measure of outer ear canal in mL \\
+13 & Volume measure of middle ear in mL \\
+14 & Middle Ear Function: [n]ormal/[a]bnormal; explicit in note \\
+15 & Distance of mic sticking out of plug in mm (negative if mic-end inside plug) \\
+16 & $2^{nd}$ measurement of plug depth in mm, after experiment to note any change \\
+\end{tabular}
+\caption{}\label{appAlegend}
+\end{table}
+
+\begin{center}
+\begin{tabular}{c|p{12cm}}
+      & \textbf{Notes} \\
+*037* & There is a rise on the left side of ME function peak \\
+*043* & There was some minor erratic variation on the left of the ME function peak \\
+*055* & Gain increase for ear-recorded channel before sentence 6 \\
+*063* & Possible warped ME Analyzer measurements \\
+*065* & Warped ME Analyzer measurements \\
+*072* & Recorded with one noise level (80dB) and 80 distinct sentences (rather than 30) and mic pointed to mouth \\
+*073* & Recorded with one noise level (80dB) and 80 distinct sentences (rather than 30) and mic pointed to mouth \\
+*074* & Recorded with one noise level (80dB) and 80 distinct sentences (rather than 30) and mic pointed to loudspeaker \\
+*075* & Recorded with one noise level (80dB) and 80 distinct sentences (rather than 30) and mic pointed to loudspeaker \\
+\end{tabular}
+\end{center}
+
+
+% % Create the References list
+% %\bibliographystyle{uabibnat}
+% \bibliographystyle{apa}
+% \bibliography{Diss_Bib}
+% 
+% %\printbibliography
+% \end{document}

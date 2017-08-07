@@ -92,8 +92,11 @@
 \usepackage{amsmath}
 \usepackage{array}
 \usepackage{courier}
+\definecolor{Gray}{gray}{0.85}
+\newcolumntype{a}{>{\columncolor{Gray}}c}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+% \newcolumntype{L}{>{$}l<{$}}
 
 % \usepackage[normalem]{ulem}
 % \usepackage{xyling,comment}			% AMS Math (advanced math typesetting)
@@ -135,7 +138,7 @@
 %HERE IS THE THING THAT NEEDS TO CHANGE TO GET LATEX TO WORK WITH RSTUDIO. USE pdftex instead of dvips.
 
 % Set up some values.
-\completetitle{An approach to automatic and human speech recognition using ear-recorded speech}
+\completetitle{An Approach to Automatic and Human Speech Recognition Using Ear-Recorded Speech}
 \fullname{Samuel John Charles Johnston}			% Grad college wants your full name here.
 \degreename{Doctor of Philosophy}	% Title of your degree.
 
@@ -214,15 +217,16 @@ library(cowplot)
 
 %ADD: Copy/Paste Content from all 5 chapters:
 
-\include{./Chapter_1_Introduction/chapter_1_Introduction}
+\include{./Chapter_1_Introduction/chapter_1}
 \include{./Chapter_2_Data_Collection_Experiment/chapter_2}
 \include{./Chapter_3_Human_Speech_Perception_Experiment/chapter_3}
 \include{./Chapter_4_ASR_Experiment/chapter_4}
-\include{./Chapter_5_Discussion/chapter_5_Discussion}
+\include{./Chapter_5_Discussion/chapter_5}
 
 % ADD: Include the various appendices
-%\appendix
-%\include{appendix_A}
+\appendix
+\include{./AppendixA/appendixA}
+\include{./AppendixB/appendixB}
 
 %Don't Change:
 % Switch the spacing to single-spaced for the references

@@ -1,0 +1,261 @@
+% %\Sexpr{set_parent(‘/Users/mwilli/Documents/Spring_2017/Dissertation_Document/Dissertation_Working_Directory_Draft/Dissertation_Main.Rnw')}
+% 
+% <<chunk_options, echo=FALSE>>=
+% # This is where we set basic knitr options.
+% opts_chunk$set(echo=TRUE, message=FALSE, warning = FALSE, cache = FALSE, comment="")
+% options(width=75) # This sets how wide the R printout can be.
+% @
+% 
+%  <<setup-child, include=FALSE>>=
+%  set_parent('/home/sam/Dissertation/Dissertation_Template/Dissertation_Main_Template/Dissertation_Main.Rnw')
+% @
+% 
+% <<load_libraries, echo=FALSE>>=
+% library(tidyr)
+% library(dplyr)
+% library(ggplot2)
+% library(lme4)
+% library(lsmeans)
+% library(car)
+% library(pbkrtest)
+% library(xtable)
+% library(cowplot)
+% library(plyr)
+% @
+
+\chapter*{Appendix B}\label{appendixB}
+
+
+\section{Overview}
+
+This Appendix contains some code used for calculations described in the main report text.  Section \ref{matlab-code} contains code used for calculating the SNR of different speech audio (cf. Section \ref{chap2:observations}).  Section \ref{python-code} contains code used for calculating the WER for the human speech perception experiment results (cf. Section \ref{chap3:results}).
+
+\section{Matlab Code for SNR Calculation}\label{matlab-code}
+
+\subsection{Find a Signal's SNR - Main Function}
+
+\begin{verbatim}
+function [speech_file_path, SNRdB] = FindSignalSNR( speech_file_path, noise_file_path )
+%  Calculate the SNR for a noisy speech file via comparing RMS values
+%  between the aligned speech and noise signals
+%  S. Johnston
+%  04.06.17
+%  Input:
+%      speech_file_path = path to the audio file of speech
+%      noise_file_path = path to the noise file containing the background noise in the speech file
+%  Output:
+%      speech_file_path = path to the audio file of speech for which SNR was calculated
+%      SNRdB = SNR of the current speech audio in decibels
+
+[speech_file,Fs] = audioread(speech_file_path);
+[noise_file,~] = audioread(noise_file_path);
+
+% Align and fit noise to given file
+aligned_noise_file = AlignNoise(speech_file,noise_file);
+SNRdB = CalculateSNR(speech_file, aligned_noise_file, Fs);
+\end{verbatim}
+
+
+\subsection{Time-Alignment of Audio}
+
+\begin{verbatim}
+function [ aligned_noise_vector ] = AlignNoise( speech_vector, noise_vector )
+%  Aligns and crops the noise vector to match the noise in the speech sound file
+%  S. Johnston
+%  04.06.17
+%  Input:
+%      speech_vector = vector of speech audio samples
+%      noise_vector = vector of noise audio samples
+%  Output:
+%      aligned_noise_vector = noise_vector that has been shifted and sliced to align with the speech vector
+
+[C, lag] = xcorr(noise_vector, speech_vector);
+[~,I] = max(abs(C));
+sampleDiff = abs(lag(I));
+
+aligned_noise_vector = noise_vector(sampleDiff:(sampleDiff + length(speech_vector)));
+\end{verbatim}
+
+
+\subsection{SNR Calculation}
+
+\begin{verbatim}
+function [ SNRdB ] = CalculateSNR( speech_vector, noise_vector, Fs )
+%   Calculate the SNR for a given pair of sounds, speech and noise
+%   Returns a rounded integer for SNR
+%   S. Johnston
+%   04.06.17
+%   Input: 
+%      speech_vector = aligned speech sample vector, 
+%      noise_vector = aligned noise vector, 
+%      Fs = signal sampling frequency
+%  Output:
+%      SNRdB = SNR in decibels
+
+dt = 0.01;
+
+% Calculate Hilbert Envelope
+[~, ~, env] = HilbertEnvelope(speech_vector, Fs);
+threshold = 0.025;
+env_thresh = env-threshold;
+env_thresh(env_thresh<0) = 0;
+[i,j] = find(env1(:)>0);
+
+% Only use the part of the speech vector pertaining to the Hilbert Envelope
+speech_vector = speech_vector(i);
+
+% Find RMS values
+[noise_rms,~] = FindRMS(noise_vector, Fs, dt);
+[speech_rms,~] = FindRMS(speech_vector, Fs, dt);
+
+% Calculate SNR
+SNR = ( mean(speech_rms) / mean(noise_rms) )^2;
+
+% Convert to dB
+SNRdB = 10*log10(SNR);
+\end{verbatim}
+
+\subsection{Hanning Window Calculation}
+
+\begin{verbatim}
+function [env,env2,env3] = HilbertEnvelope(sig,fs);
+%HilbertEnvelope.m
+%10.21.16
+%Author: B. Story
+%Calculates the Hilbert amplitude envelope of a signal
+%input: sig = single channel signal, fs = sampling freq of signal
+
+\%---calulate coeffs for butterworth envelope filters ----
+[b,a] = butter(5,25/(fs/2));
+[d,c] = butter(3,8/(fs/2));
+
+hsig = hilbert(sig);
+env = sqrt(real(hsig).^2 + imag(hsig).^2);
+
+env2 = (filtfilt(b,a,env));
+env3 = (filtfilt(d,c,env2));
+\end{verbatim}
+
+
+\subsection{RMS Calculation}
+
+\begin{verbatim}
+function [rms,t] = FindRMS(sig,fs,dt)
+%FindRMS.m
+%04.03.17
+%B. Story, U. Arizona
+%calculates rms values of signal in time period defined by dt
+%INPUTS
+%sig = signal
+%fs = sampling freq
+%dt = time window over which to calculate RMS values; dt = 0.01 is
+%recommended
+%OUTPUTS
+%rms = vector of rms values
+%t = time vector for plotting (e.g., plot(t,rms) )
+
+
+N = round(dt*fs);
+dtn = N/fs;
+rms = [];
+
+j = 1;
+for i = 1:N:length(sig)-N
+  x = sig(i:(i-1)+N);
+  x = x .^ 2;
+  x = mean(x);
+  x = sqrt(x);
+      rms(j) = x;
+    t(j) = (dtn/2) + (j-1)*dtn;
+  j = j+1;
+end;
+\end{verbatim}
+
+
+\section{Python Code for WER Calculation}\label{python-code}
+
+This code was borrowed from http://progfruits.blogspot.com/2014/02/word-error-rate-wer-and-word.html on April 28th, 2017.  This script was used in the calculation of word error rate (WER) for the human perception study (cf. Chapter \ref{chapter3}).  The WER calculation for the ASR studies in Chapter \ref{chapter4} was performed with Kaldi's built-in scoring algorithms.
+
+\begin{verbatim}
+def wer(ref, hyp):
+
+  # Reference sentence and hypothesis sentence
+  r = ref.split()
+  h = hyp.split()
+
+  DEL_PENALTY = 1
+  INS_PENALTY = 1
+  SUB_PENALTY = 1
+
+  #costs will holds the costs, like in the Levenshtein distance algorithm
+  costs = [[0 for inner in range(len(h)+1)] for outer in range(len(r)+1)]
+  # backtrace will hold the operations we've done.
+  # so we could later backtrace, like the WER algorithm requires us to.
+  backtrace = [[0 for inner in range(len(h)+1)] for outer in range(len(r)+1)]
+
+  OP_OK = 0
+  OP_SUB = 1
+  OP_INS = 2
+  OP_DEL = 3
+   
+  # First column represents the case where we achieve zero
+  # hypothesis words by deleting all reference words.
+  for i in range(1, len(r)+1):
+    costs[i][0] = DEL_PENALTY*i
+    backtrace[i][0] = OP_DEL
+     
+  # First row represents the case where we achieve the hypothesis
+  # by inserting all hypothesis words into a zero-length reference.
+  for j in range(1, len(h) + 1):
+    costs[0][j] = INS_PENALTY * j
+    backtrace[0][j] = OP_INS
+   
+  # computation
+  for i in range(1, len(r)+1):
+    for j in range(1, len(h)+1):
+      if r[i-1] == h[j-1]:
+        costs[i][j] = costs[i-1][j-1]
+        backtrace[i][j] = OP_OK
+      else:
+        substitutionCost = costs[i-1][j-1] + SUB_PENALTY # penalty is always 1
+        insertionCost   = costs[i][j-1] + INS_PENALTY   # penalty is always 1
+        deletionCost   = costs[i-1][j] + DEL_PENALTY   # penalty is always 1
+         
+        costs[i][j] = min(substitutionCost, insertionCost, deletionCost)
+        if costs[i][j] == substitutionCost:
+          backtrace[i][j] = OP_SUB
+        elif costs[i][j] == insertionCost:
+          backtrace[i][j] = OP_INS
+        else:
+          backtrace[i][j] = OP_DEL
+         
+  # back trace though the best route:
+  i = len(r)
+  j = len(h)
+  numSub = 0
+  numDel = 0
+  numIns = 0
+  numCor = 0
+  
+  while i > 0 or j > 0:
+    if backtrace[i][j] == OP_OK:
+      numCor += 1
+      i-=1
+      j-=1
+    elif backtrace[i][j] == OP_SUB:
+      numSub +=1
+      i-=1
+      j-=1
+    elif backtrace[i][j] == OP_INS:
+      numIns += 1
+      j-=1
+    elif backtrace[i][j] == OP_DEL:
+      numDel += 1
+      i-=1
+
+  wer_result = round( (numSub + numDel + numIns) / (float) (len(r)), 3)
+  return wer_result
+
+\end{verbatim}
+
+
