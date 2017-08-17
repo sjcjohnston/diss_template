@@ -148,7 +148,7 @@ There are many other methods theorized to be a part of the auditory system's abi
 
 Eventually, with enough background noise and masking, the methods listed above for releasing the masking fail and recognition begins to break down.  Under the most simple conditions to measure - steady-state noise - \cite{ding:13} reported that when listening to speech in noise, human self-reported intelligibility ratings did not drop significantly until the SNR reached approximately -3 dB, where intelligibility dropped to about 55\%;  it did not reach 0\% self-reported intelligibility until the signal had -9 dB SNR.
 
-This subjective measure was backed by a study performed by \cite{gilbert:13}, who used the PRESTO corpus (\cite{garofolo:93}) to test sentence intelligibility among 121 native English speakers.  \cite{gilbert:13} found that - similar to \cite{ding:13} - the median score (at the 50th percentile) of speech with a -3dB SNR had about 55\% accuracy.  At +3 dB SNR, the median score increased to approximately 88\% accuracy.
+This subjective measure was backed by a study performed by \cite{gilbert:13}, who used the PRESTO corpus (\cite{garofolo:93}) to test sentence intelligibility among 121 native English speakers.  \cite{gilbert:13} found that - similar to \cite{ding:13} - the median score (at the 50th percentile) of speech with a -3 dB SNR had about 55\% accuracy.  At +3 dB SNR, the median score increased to approximately 88\% accuracy.
 
 \cite{ding:13} mentioned that there was great inter-speaker variation among the self-reported, subjective perception of intelligibility of an utterance; this was similarly supported by \cite{gilbert:13}. The latter showed that, averaging over all SNR conditions (-5, -3, 0, +3 dB), the variability between speaker's accuracy scores had a range of almost 36\% for a given item.  A retest performed with a subgroup of the original participants on the same dataset yielded a similar (~34\%) range of variability in accuracy.  
 
@@ -188,7 +188,7 @@ After the additional stimuli were gathered, a human speech perception experiment
 To remedy the problem of the noisy speech being \textit{too} intelligible and having a high SNR, 
 two additional participants (one male, one female) were recorded following the procedure in the initial data collection experiment presented in Chapter \ref{chapter2}, Section \ref{expt1}.  The list of stimuli was increased to 80 sentences (eight Harvard Sentence lists\footnote{This included the previous three lists, 14, 28, and 57, as well as lists 21, 29, 37, 53, and 68. These additional lists were pseudo-randomly chosen, as were the original three lists, to contain words that would be readily recognizable by the participant population.}) to provide more reaction data from this present experiment.  
 
-To decrease the SNR, during recording the directional microphone was pointed away from the mouth of the participants, and directed toward the loudspeaker (see Fig. \ref{fig:overallSetUp_new}).  This differs from the options for remedying the problem of high SNR listed in Chapter \ref{chapter2} Section \ref{chap2:limitations}.  Of these options, (a) - having the speaker intentionally lower their spoken volume - and (b) - increasing the background noise - were deemed unreliable and impractical.  
+  
 %
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
@@ -197,6 +197,7 @@ To decrease the SNR, during recording the directional microphone was pointed awa
   \label{fig:overallSetUp_new}
 \end{wrapfigure}
 %
+To decrease the SNR, during recording the directional microphone was pointed away from the mouth of the participants, and directed toward the loudspeaker (see Fig. \ref{fig:overallSetUp_new}).  This differs from the options for remedying the problem of high SNR listed in Chapter \ref{chapter2} Section \ref{chap2:limitations}.  Of these options, (a) - having the speaker intentionally lower their spoken volume - and (b) - increasing the background noise - were deemed unreliable and impractical.
 Option (c) - using an omnidirectional microphone - was not considered for this small data collection task due to the lack of availability of omni-directional microphones that fit the size and specification requirements.  In an effort to keep the signals recorded in both locations comparable, the same microphones with the exact same frequency responses were needed.  Swapping out only the microphone recording speech at the mouth would introduce a confound if the microphone recording from the ear were not also changed.
 
 Regardless, pointing the directional microphone towards the loudspeaker still resulted in some of the limitations outlined in Section \ref{chap2:limitations} in Chapter \ref{chapter2}.  
@@ -268,7 +269,7 @@ After the experiment, the researcher double checked the participant answers for 
 \section{Results}
 \label{chap3:results}
 
-<<Exp_1_Data, echo=FALSE, results='asis'>>=
+<<Exp_1_Data, echo=FALSE, message=FALSE, warning=FALSE, results='asis'>>=
 
 #Visualize Exp.1 Data:
 library(ez)
@@ -462,7 +463,7 @@ By-subjects ($S$) and by-items ($I$) ANOVAs were performed (cf. Table \ref{tab:a
 The main effects of all three factors were significant (cf. Table \ref{tab:anova1}).  Two, two-way interactions were significant: speaker gender \textbf{x} mic location, and noise-type \textbf{x} mic location. The two way interaction between speaker gender and noise type was not significant, nor was the three-way interaction between speaker gender, mic location, and noise type.
   
 
-<<ANOVA1_results, echo=FALSE, results='asis'>>=
+<<ANOVA1_results, echo=FALSE, message=FALSE, warning=FALSE, results='asis'>>=
 by_subj_ez_anova$ANOVA$ges <- NULL
 by_item_ez_anova$ANOVA$ges <- NULL
 
@@ -583,7 +584,7 @@ Since there is a statistical difference in the main effect of noise, and since t
 
 There are significant main effects of noise type and mic location (cf. Table \ref{tab:anova2}).  The main effect of speaker gender is only significant in the by-subjects ANOVA, but is not significant in the by-items ANOVAs.  There are two significant two-way interactions of speaker gender \textbf{x} mic location and noise type \textbf{x} mic location, but no significant interaction of speaker gender \textbf{x} noise type, and no significant three-way interaction.  
 
-<<ANOVA2_results, echo=FALSE, results='asis'>>=
+<<ANOVA2_results, echo=FALSE, message=FALSE, warning=FALSE, results='asis'>>=
 by_subj_ez_anova2$ANOVA$ges <- NULL
 by_item_ez_anova2$ANOVA$ges <- NULL
 
@@ -698,26 +699,26 @@ Out of all condition combinations in Figures \ref{fig:female-split} and \ref{fig
 \begin{figure}[h!]
 \centering
 %\textbf{Female Speech}
-<<All-Factors-Female, echo=FALSE, results='asis'>>=
+<<All-Factors-Female, echo=FALSE, message=FALSE, warning=FALSE, results='asis'>>=
 par(mar=c(4,5,0,0))
 boxplot(wer~mic_location*noise_type,col=c("white","lightgray"),female, names=c("Ear\nClean","Mouth\nClean","Ear\nBus","Mouth\nBus","Ear\nCafe","Mouth\nCafe","Ear\nPedest.","Mouth\nPedest.","Ear\nStreet","Mouth\nStreet","Ear\nFactory","Mouth\nFactory"),ylab="WER", las=2) #, cex.axis=1.5) #, cex.lab=2.0)
 @
-\caption{Comparison of ear-recorded and mouth-recorded speech at every level of noise type, for the female-spoken stimuli.  White bars signify ear-recorded speech, and grey bars signify mouth-recorded speech.}\label{fig:female-split}
+\caption{Comparison of ear-recorded and mouth-recorded speech at every level of noise type, for the \textbf{female}-spoken stimuli.  White bars signify ear-recorded speech, and grey bars signify mouth-recorded speech.}\label{fig:female-split}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
 %\textbf{Male Speech}
-<<All-Factors-Male, echo=FALSE, results='asis'>>=
+<<All-Factors-Male, echo=FALSE, message=FALSE, warning=FALSE, results='asis'>>=
 par(mar=c(4,5,0,0))
 boxplot(wer~mic_location*noise_type,col=c("white","lightgray"),male, names=c("Ear\nClean","Mouth\nClean","Ear\nBus","Mouth\nBus","Ear\nCafe","Mouth\nCafe","Ear\nPedest.","Mouth\nPedest.","Ear\nStreet","Mouth\nStreet","Ear\nFactory","Mouth\nFactory"),ylab="WER", las=2 ) #, cex.lab=2.0)
 @
-\caption{Comparison of ear-recorded and mouth-recorded speech at every level of noise type, for the male-spoken stimuli.  White bars signify ear-recorded speech, and grey bars signify mouth-recorded speech.}\label{fig:male-split}
+\caption{Comparison of ear-recorded and mouth-recorded speech at every level of noise type, for the \textbf{male}-spoken stimuli.  White bars signify ear-recorded speech, and grey bars signify mouth-recorded speech.}\label{fig:male-split}
 \end{figure}
 
 % 0Discuss Mic vs Ear results basic
 
-Despite being more similar than their mouth recorded counterparts, there is still an observable difference between the ear recorded speech with no noise, and ear recorded speech in noisy conditions.  Most noise conditions recorded from the ear achieve a lower quartile boundary near 0\%, but the upper quartile boundary for most nears 60\% WER.  The median WER for noise conditions generally falls at or slightly below 30\%. 
+Despite being more similar than their mouth-recorded counterparts, there is still an observable difference between the ear-recorded speech with no noise, and ear-recorded speech in noisy conditions.  Most noise conditions recorded from the ear achieve a lower quartile boundary near 0\%, but the upper quartile boundary for most nears 60\% WER.  The median WER for noise conditions generally falls at or slightly below 30\%. 
 Even though there is a higher WER than the ear-recorded no-noise condition, the ear-recorded speech in noise appears to be quite consistent across noise categories.  This is very different from the mouth-recorded speech in noise, which vary considerably between noise conditions. Again, this trends toward supporting hypothesis (b), that noise presence and noise type will have a statistically greater effect on mouth-recorded speech than ear-recorded speech.
 
 % 1Discuss significant interaction of noise and mic, and significant simple effect of noise for all mic locs except ear for male
@@ -725,7 +726,7 @@ These observations are backed by the statistical results.  There was also a stat
 
 For the male-spoken data, this trend continued when the `clean' condition was included in the analysis.  There was no simple effect of noise, ie. no statistical difference between any of the noise levels, including `clean' speech, when the speech was recorded at the ear.  This differed from the recognition of the female-spoken speech, which found a statistical difference of noise type when the `clean' condition was included versus when it was not.  This indicated that some level of noise must be present in the ear-recorded signal in order for a statistical difference to be elicited.  It is worth noting that the female speaker's hair introduced a potential compromise to the seal of the earmuffs used in the experiment (cf. Appendix \ref{appendixA}) possibly allowing greater amounts of noise into the ear-recorded signal, which may be able to explain the gender difference. Emphasizing what was written above, there was still no difference of noise type when the `clean' condition was removed from the analysis.  This broadly indicated that the presence of noise has an effect (at least for the female speaker), but that the different types of noise did not have any effect.
 
-Regarding the simple effects of noise at the mouth, as previously mentioned, there were statistical effects found for both genders, regardless of whether `clean' speech was included in the analysis.  This demonstrated that the different noise types have different effects on human speech recognition.  The exact reasons why performance differed for different levels of noise was not a primary concern of this study.  The different levels were primarily included to test the above effect, ie. \textit{whether} performance differs with noise type when speech is recorded at the mouth (it did), and \textit{whether} it differs for different noise types when recorded at the ear (it did not).   Visually, in Figures \ref{fig:female-split} and \ref{fig:male-split}, the bus noise condition appeared to be the most difficult background noise from which to parse speech, and the factory background noise appears to be the easiest.  Further analysis of these particular differences was not pursued.
+Regarding the simple effects of noise at the mouth, as previously mentioned, there were statistical effects found for both genders, regardless of whether `clean' speech was included in the analysis.  This demonstrated that the different noise types have different effects on human speech recognition.  The exact reasons why performance differed for different levels of noise was not a primary concern of this study.  The different levels were primarily included to test the above effect, ie. \textit{whether} performance differs with noise type when speech is recorded at the mouth (it did), and \textit{whether} it differs for different noise types when recorded at the ear (it did not).  Visually, in Figures \ref{fig:female-split} and \ref{fig:male-split}, the bus noise condition appeared to be the most difficult background noise from which to parse speech, and the factory background noise appears to be the easiest.  Further analysis of these particular differences was not pursued.
 
 
 
@@ -807,16 +808,17 @@ Since the ability to recognize ear-recorded speech, even in noise, is quite cons
 % \label{fig:noiseXmic2}
 % \end{figure}
 
-To visualize whether the performance of participants generally improves over time, scatterplots in Figures \ref{fig:linear_performance_m} and \ref{fig:linear_performance_e} graph participants' chronological performance with mouth-recorded and ear-recorded speech over the course of the experiment.
+
 %
 \begin{figure}[ht]%{L}{0.5\textwidth}
 \centering
 %\textbf{Regression over Chronological Performance}
 \begin{subfigure}{0.47\textwidth}
-<<line_graph_chrono_m, echo=FALSE, results='asis'>>=
+\centering
+<<line_graph_chrono_m, echo=FALSE, message=FALSE, warning=FALSE, results='asis'>>=
 data1 <- read.csv("/home/sam/Dissertation/line_graph_combined_results_mouth.csv")
 par(mar=c(5,5,1,1))
-plot(data1$sent_num, data1$wer, pch = 16, cex = 1.3, col = "black", main = "Linear Regression of performance over time", xlab = "Stimulus Presentation Order", ylab = "WER", cex.lab=1.5)
+plot(data1$sent_num, data1$wer, pch = 16, cex = 1.3, col = "black", xlab = "Stimulus Presentation Order", ylab = "WER", cex.lab=1.5)
 mod_m = lm(wer~sent_num, data=data1)
 abline(mod_m)
 mod_m_rs = summary(mod_m)$r.squared
@@ -826,10 +828,11 @@ mod_m_rs = summary(mod_m)$r.squared
 \end{subfigure}
 \hfill
 \begin{subfigure}{0.47\textwidth}%{L}{0.5\textwidth}
-<<line_graph_chrono, echo=FALSE, results='asis'>>=
+\centering
+<<line_graph_chrono, echo=FALSE, message=FALSE, warning=FALSE, results='asis'>>=
 data1 <- read.csv("/home/sam/Dissertation/line_graph_combined_results_ear.csv")
 par(mar=c(5,5,1,1))
-plot(data1$sent_num, data1$wer, pch = 16, cex = 1.3, col = "black", main = "Linear Regression of performance over time", xlab = "Stimulus Presentation Order", ylab = "WER", cex.lab=1.5)
+plot(data1$sent_num, data1$wer, pch = 16, cex = 1.3, col = "black", xlab = "Stimulus Presentation Order", ylab = "WER", cex.lab=1.5)
 mod = lm(wer~sent_num, data=data1)
 abline(mod)
 mod_rs = summary(mod)$r.squared
@@ -840,9 +843,9 @@ mod_rs = summary(mod)$r.squared
 \caption{A linear regression line fit to a plot of WER (y-axis) and stimulus in chronological order (x-axis).  The x-axis is the order of the responses; ie. `1' on the x-axis is the first response given by the participants.  This is not broken down by gender or noise-type.}
 \end{figure}
 %
-Linear regression models were fit onto the mouth-recorded data (slope=$\Sexpr{coef(mod_m)[2]}$, $R^2$=$\Sexpr{mod_m_rs}$, $p<0.001$), and the ear-recorded data (slope=$\Sexpr{coef(mod)[2]}$, $R^2$=$\Sexpr{mod_rs}$, $p>0.05$). 
+To visualize whether the performance of participants generally improves over time, scatterplots in Figures \ref{fig:linear_performance_m} and \ref{fig:linear_performance_e} graph participants' chronological performance with mouth-recorded and ear-recorded speech over the course of the experiment.  Linear regression models were fit onto the mouth-recorded data (slope=$\Sexpr{coef(mod_m)[2]}$, $R^2$=$\Sexpr{mod_m_rs}$, $p<0.001$), and the ear-recorded data (slope=$\Sexpr{coef(mod)[2]}$, $R^2$=$\Sexpr{mod_rs}$, $p>0.05$). 
 
-It is important to note the linear scales both for both axes, particularly the y-axis, as an explanation for why the slope values themselves are so small (ie. the y-axis range is from \textit{0.0} to \textit{1.2}).  The primary take away from both graphs and both fitted regression models in Figures \ref{fig:linear_performance_m} and \ref{fig:linear_performance_e} is that participants' recognition ability seems to improve statistically over the course of the experiment for mouth-recorded (noisy) speech, but not ear-recorded speech.  It could be possible that there are statistical gains by the noisy speech simply due to greater room for improvement, but it could also be due to the presence of high frequency speech information in the signal which leads to better recognition. The mouth-recorded speech beneath the noise is `normal', containing full-bandwidth information that the participant would be accustomed to listening for.  If participants are able to use any training received to release the noise mask, this improvement over time is the expected effect.  However, as already seen, the overall performance on noisy, mouth recorded speech still falls well below that of ear-recorded speech, even at the chronological end of the experiment (cf. Figs. \ref{fig:linear_performance_m} and \ref{fig:linear_performance_e}).
+It is important to note the linear scales both for both axes, particularly the y-axis, as an explanation for why the slope values themselves are so small (ie. the y-axis range is from \textit{0.0} to \textit{1.2}).  The primary take away from both graphs and both fitted regression models in Figures \ref{fig:linear_performance_m} and \ref{fig:linear_performance_e} is that participants' recognition ability seems to improve statistically over the course of the experiment for mouth-recorded (noisy) speech, but not ear-recorded speech.  It could be possible that there are statistical gains by the noisy speech simply due to greater room for improvement, but it could also be due to the presence of high frequency speech information in the signal which leads to better recognition. The mouth-recorded speech beneath the noise is `normal', containing full-bandwidth information that the participant would be accustomed to listening for.  If participants are able to use any training received to release the noise mask, this improvement over time is the expected effect.  However, as already seen, the overall performance on noisy, mouth-recorded speech still falls well below that of ear-recorded speech, even at the chronological end of the experiment (cf. Figs. \ref{fig:linear_performance_m} and \ref{fig:linear_performance_e}).
 
 %Of particular interest for the goals of this study, is the fact that - although very modest - there is improvement in recognition of ear-recorded speech that appears to correlate with an increase in exposure time to the ear-recorded speech.  That is, as more ear-recorded speech is heard, participants see modest gains in their ability to correctly recognize and transcribe it.  
 One potential reason that there may not have been a statistical `training' effect for ear-recorded speech over the course of the experiment is that the participant was not given feedback or the correct answer.  It has been shown (\cite{davis:05}) that such feedback can improve and speed up the training process when listeners are able to correctly identify what was said.  This will be discussed further in Section \ref{chap3:follow-up-expts} below, and a follow up investigation will be conducted pertaining to this.
@@ -861,7 +864,7 @@ Based on the implications of these findings, a short story was read aloud and re
 These two investigations were designed as pilot studies for future research, and did not contain the number of subjects required to place each participant into one of the 24 counter-balanced groups.  Therefore no statistical analysis was conducted for either investigation.  %In light of this, these could be thought of as `pilot' studies for future research.  
 Because there were no individual statistical results, and because the two studies were mostly of interest when compared with the results from the primary study, the methods sections (Sections \ref{F0-methods} and \ref{training-methods}) for both studies are consecutive, and any discussion of results is withheld until Section \ref{chap3:glob_discussion}.
 
-% for the participants in this follow-up investigation to listen to prior to completing the experiment itself. This speech will be modified in the same manner as the ear-recorded speech in the primary study (pre-emphasized, low-pass filtered 0 to 2.5 kHz with a 500 Hz slope, and pre-emphasized).  This recording did not combine the ear-recorded speech with the higher frequencies of the mouth recorded speech (as in the `F0' investigation above).  This brief story will serve as a training for participants in preparation for the actual task. 
+% for the participants in this follow-up investigation to listen to prior to completing the experiment itself. This speech will be modified in the same manner as the ear-recorded speech in the primary study (pre-emphasized, low-pass filtered 0 to 2.5 kHz with a 500 Hz slope, and pre-emphasized).  This recording did not combine the ear-recorded speech with the higher frequencies of the mouth-recorded speech (as in the `F0' investigation above).  This brief story will serve as a training for participants in preparation for the actual task. 
 
 
 \section{`F0' Investigation Methods}
@@ -894,7 +897,7 @@ The procedure of this task was exactly the same as the initial perception experi
 
 %\begin{wrapfigure}{L}{0.75\textwidth}
 
-<<F0_boxplot_noise, echo=FALSE, results='asis'>>=
+<<F0_boxplot_noise, echo=FALSE, message=FALSE, warning=FALSE, results='asis'>>=
 F0data <- read.csv("/home/sam/Dissertation/combined_results_C.csv")
 
 # ensure column names have the correct name (I think this just renames the columns in the data structure)
@@ -990,7 +993,7 @@ The participants entered the sound booth and were presented with a transcript of
 % \subsection{`Training' Results and Discussion}
 
 
-<<perc_boxplot_noise, echo=FALSE, results='asis'>>=
+<<perc_boxplot_noise, echo=FALSE, message=FALSE, warning=FALSE, results='asis'>>=
 perc_data <- read.csv("/home/sam/Dissertation/combined_results_R.csv")
 # ensure column names have the correct name (I think this just renames the columns in the data structure)
 colnames(perc_data)[1]="subject"
@@ -1056,7 +1059,7 @@ attach(perc_data)
 Looking into the differences between the primary study and the two follow-up studies, Figures \ref{fig:female-all} and \ref{fig:male-all} split the results by gender into female-speaker and male-speaker data, respectively.  Given that no change was actually made to the audio of the mouth-recorded speech between these different experiments, there is expected to be no substantial observable difference between the three studies, in each mouth-recorded condition, which is largely what is seen.  There is, of course, variation among the WERs on mouth-recorded signals, but this is not expected to be significant if tested statistically.  It is possible that the study involving the training task, exposing listeners to degraded speech, would help `train' their auditory system to be more perceptive overall, but this is not expected to result in significant benefit.
 
 
-<<3_experiment_data_setup, echo=FALSE, results='asis'>>=
+<<3_experiment_data_setup, echo=FALSE, message=FALSE, warning=FALSE, results='asis'>>=
 mydata1 = cbind(mydata, style='A')
 F0data1 = cbind(F0data, style='C')
 perc_data1 = cbind(perc_data, style='R')
@@ -1085,7 +1088,7 @@ allFemaleData = rbind(mydata_female,F0_female,training_female)
 \begin{figure}[h!]
 \centering
 %\textbf{Female Speech}
-<<boxplot_noiseXmicXall_female, echo=FALSE, results='asis'>>=
+<<boxplot_noiseXmicXall_female, echo=FALSE, message=FALSE, warning=FALSE, results='asis'>>=
 par(mar=c(6,4,0,0))
 boxplot(wer~style*mic_location*noise_type,col=c("gray88","darkseagreen1","steelblue1","gray56","darkseagreen","steelblue"),allFemaleData, names=c("Clean.E.P","Clean.H.F0","Clean.E.T","Clean.M.P","Clean.M.F0","Clean.M.T","Bus.E.P","Bus.H.F0","Bus.E.T","Bus.M.P","Bus.M.F0","Bus.M.T","Cafe.E.P","Cafe.H.F0","Cafe.E.T","Cafe.M.P","Cafe.M.F0","Cafe.M.T","Ped.E.P","Ped.H.F0","Ped.E.T","Ped.M.P","Ped.M.F0","Ped.M.T","Street.E.P","Street.H.F0","Street.E.T","Street.M.P","Street.M.F0","Street.M.T","Fact.E.P","Fact.H.F0","Fact.E.T","Fact.M.P","Fact.M.F0","Fact.M.T"),ylab="WER",las=2)
 @
@@ -1096,7 +1099,7 @@ boxplot(wer~style*mic_location*noise_type,col=c("gray88","darkseagreen1","steelb
 \begin{figure}[h!]
 \centering
 %\textbf{Male Speech}
-<<boxplot_noiseXmicXall_male, echo=FALSE, results='asis'>>=
+<<boxplot_noiseXmicXall_male, echo=FALSE, message=FALSE, warning=FALSE, results='asis'>>=
 par(mar=c(6,4,0,0))
 boxplot(wer~style*mic_location*noise_type,col=c("gray88","darkseagreen1","steelblue1","gray56","darkseagreen","steelblue"),allMaleData, names=c("Clean.E.P","Clean.H.F0","Clean.E.T","Clean.M.P","Clean.M.F0","Clean.M.T","Bus.E.P","Bus.H.F0","Bus.E.T","Bus.M.P","Bus.M.F0","Bus.M.T","Cafe.E.P","Cafe.H.F0","Cafe.E.T","Cafe.M.P","Cafe.M.F0","Cafe.M.T","Ped.E.P","Ped.H.F0","Ped.E.T","Ped.M.P","Ped.M.F0","Ped.M.T","Street.E.P","Street.H.F0","Street.E.T","Street.M.P","Street.M.F0","Street.M.T","Fact.E.P","Fact.H.F0","Fact.E.T","Fact.M.P","Fact.M.F0","Fact.M.T"),ylab="WER",las=2)
 @
@@ -1111,7 +1114,7 @@ There were variances in the recognition of ear-recorded speech in the different 
 
 While unlikely a major component, a single, different (male) voice was used for the training story in this follow-up study.  It was possible that the use of only one voice did not provide listeners with an adequate variety of vocal variations to make proper inferences about the distortion.  It is also important to consider the use of at least one male and at least one female voice during training, to avoid a potential gender effect.
 
-Additionally, this task assumed full attention, yet it is uncertain how much actual attention participants were devoting to listening to the training story.  Rather than a `read-along' training task, an interactive task may capture more attention than passive listening and reading.  The interactive task could be structured as a forced decision task, providing multiple choice answers to an ear recorded sentence they hear.  Alternatively, it could be structured (as in the experiment itself) to force listeners to `fill-in-the-blank' with what they thought was spoken, then provide listeners with the feedback in the form of the answer.  
+Additionally, this task assumed full attention, yet it is uncertain how much actual attention participants were devoting to listening to the training story.  Rather than a `read-along' training task, an interactive task may capture more attention than passive listening and reading.  The interactive task could be structured as a forced decision task, providing multiple choice answers to an ear-recorded sentence they hear.  Alternatively, it could be structured (as in the experiment itself) to force listeners to `fill-in-the-blank' with what they thought was spoken, then provide listeners with the feedback in the form of the answer.  
 
 Regardless of the training task employed, the listener should be given the ability to replay the same sound multiple times, which was not done in the present training task.  The length of time in a `read-along' training task, or the number of training sentences in an interactive training task, would also likely have an effect on sentence recognition during the experiment.  This should be determined carefully in any follow-up research.
 

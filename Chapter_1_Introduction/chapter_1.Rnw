@@ -56,7 +56,9 @@ Section \ref{ch1:background} below describes the basic acoustics of sound.  This
 
 Sound itself, along with the ability to perceive it, is a remarkable phenomenon.  Put simply, `sound' is the fluctuation of pressure in neighboring groups of particles over time. Most frequently sound is discussed in terms of the fluctuation of air pressure, because, as humans, we primarily receive sound into our ear canals through the medium of air, but sound can also travel through liquids and solids, or pass through any combination of the three.
 
-There are primarily three components to sound: amplitude, frequency, and phase (\cite{rosen:91}), which can be seen in Figure \ref{fig:basic-sound-wave}.  In a simple sound wave, the amplitude of sound corresponds to the peak intensity of the high pressure (and the lowest pressure) portions of a sound wave (cf. Fig. \ref{fig:basic-sound-amplitude}).  The frequency corresponds to the rate at which the high and low pressure portions of the signal fluctuate between one another (cf. Fig. \ref{fig:basic-sound-frequency}).  The phase of a wave is the location of the pressure level (relative to atmospheric pressure) at a given moment in time (cf. Fig. \ref{fig:basic-sound-phase}).   
+There are primarily three components to sound: amplitude, frequency, and phase (\cite{rosen:91}), which can be seen in Figure \ref{fig:basic-sound-wave}.  In a simple sound wave, the amplitude of sound corresponds to the peak intensity of the high pressure (and the lowest pressure) portions of a sound wave (cf. Fig. \ref{fig:basic-sound-amplitude}).  The frequency corresponds to the rate at which the high and low pressure portions of the signal fluctuate between one another (cf. Fig. \ref{fig:basic-sound-frequency}).  The phase of a wave is the location of the pressure level (relative to atmospheric pressure) at a given moment in time (cf. Fig. \ref{fig:basic-sound-phase}).
+
+This latter characteristic - phase, while important when dealing with interacting waves from multiple sources, is often not taken into account in speech science due to both its complexity and the fact that phase does not encode critical speech information.  The human auditory system primarily makes use of the other two characteristics of sound - amplitude and frequency.
 
 \begin{figure}[H]
 \begin{subfigure}{0.5\textwidth}
@@ -83,11 +85,10 @@ There are primarily three components to sound: amplitude, frequency, and phase (
 \label{fig:basic-sound-wave}
 \end{figure}
 
-This latter characteristic - phase, while important when dealing with interacting waves from multiple sources, is often not taken into account in speech science due to both its complexity and the fact that phase does not encode critical speech information.  The human auditory system primarily makes use of the other two characteristics of sound - amplitude and frequency.
 
 \subsection{Overview of Anatomy and Physiology of the Peripheral Auditory System}
 
-Prior to discussing the acoustic structure of speech, it is important to become familiar with the basic peripheral auditory system.  The peripheral auditory system is generally grouped into three primary categories, the outer ear, the middle ear, and the inner ear (cf. Figure \ref{fig:ear-anatomy}).  The outer ear includes the pinna, the external auditory canal (EAC), and the tympanic membrane (ie. the eardrum).  Air-transmitted sound vibrations, ie. pressure fluctuations, enter the ear canal through the opening at the pinna.  These then travel along the canal to vibrate the tympanic membrane, which passes the energy to the middle ear.  The middle ear includes the ossicles within the middle ear cavity.  The ossicles form a chain of three very small bones leading from the tympanic membrane to the cochlea. The external sound vibrations impose an oscillating force on the tympanic membrane, setting it into motion. This results in displacement at the ossicular chain, which then transforms the vibrations into a traveling wave passing along the basilar membrane within the fluid-filled cochlea of the inner ear (\cite{rosen:91}).
+Prior to discussing the acoustic structure of speech, it is important to become familiar with the basic peripheral auditory system.  The peripheral auditory system is generally grouped into three primary categories, the outer ear, the middle ear, and the inner ear (cf. Figure \ref{fig:ear-anatomy}).  The outer ear includes the pinna, the ear canal, and the tympanic membrane (ie. the eardrum).  Air-transmitted sound vibrations, ie. pressure fluctuations, enter the ear canal through the opening at the pinna.  These then travel along the canal to vibrate the tympanic membrane, which passes the energy to the middle ear.  The middle ear includes the ossicles within the middle ear cavity.  The ossicles form a chain of three very small bones leading from the tympanic membrane to the cochlea. The external sound vibrations impose an oscillating force on the tympanic membrane, setting it into motion. This results in displacement at the ossicular chain, which then transforms the vibrations into a traveling wave passing along the basilar membrane within the fluid-filled cochlea of the inner ear (\cite{rosen:91}).
 
 \begin{figure}[H]
 \centering
@@ -96,7 +97,7 @@ Prior to discussing the acoustic structure of speech, it is important to become 
   \label{fig:ear-anatomy}
 \end{figure}
 
-The inner ear is composed of the cochlea, the semicircular canals (and vestibule), and the auditory and vestibular nerves.  The semicircular canals, vestibule, and vestibular nerve don't play a part in audition (their primary function regards balance sensitivity).  The cochlea, a hard `shell' filled with fluid, receives the vibrations passed to it by way of the middle ear ossicles.%\footnote{The peripheral auditory system uses gas, solid, and liquid media to transmit acoustic vibrations.}  
+The inner ear is composed of the cochlea, and the semicircular canals and auditory and vestibular nerves (the latter three are not pictured).  The semicircular canals, and vestibular nerve don't play a part in audition (their primary function regards balance sensitivity).  The cochlea, a hard `shell' filled with fluid, receives the vibrations passed to it by way of the middle ear ossicles.%\footnote{The peripheral auditory system uses gas, solid, and liquid media to transmit acoustic vibrations.}  
 The vibrations are passed into the fluid of the cochlea and travel along its length, transmitting hydro-mechanical energy to cells on the basilar membrane that are able to detect the displacement of the fluid by means of sensory membranes.  The basilar membrane serves as the base on which these sensory cells are fixed.  Depending on the location of the sensory cells along the basilar membrane, they respond to a different frequency of `sound', ie. fluid pressure fluctuation.  This placement of sensory cells `tuned' to detect a particular frequency band is called tonotopic organization.  This essentially allows the cochlea to perform a Fourier Transform - which extracts all the different frequency components from a wave - of the sound that is transmitted to it.  The auditory nerve carries electrical impulses from these sensory cells into the auditory cortex of the brain (\cite{rosen:91,celesia:15}). 
 
 Of interest to this present study is the outer ear.  Typically, as described above, vibrations from the air will enter the ear canal through the opening at the pinna. Frequently, these vibrations take the form of human speech.
@@ -108,7 +109,7 @@ Of interest to this present study is the outer ear.  Typically, as described abo
 
 The structure of human speech draws from a collection of individual sounds (phonemes) that are strung together, encoding words, sentences, and more abstractly, meaning.  Each human language uses a subset of all possible phonemes.  Each phoneme is either considered `voiced' or `unvoiced'.  The acoustic properties of sounds in these two categories differ greatly (\cite{ladefoged:14}).
 
-Voiced speech is composed of narrow bands of acoustic energy, called harmonics, 
+
 %
 \begin{wrapfigure}{l}{0.5\textwidth}
 \centering
@@ -117,19 +118,20 @@ Voiced speech is composed of narrow bands of acoustic energy, called harmonics,
   \label{fig:spctrm5k}
 \end{wrapfigure}
 %
-located along a frequency spectrum (cf. Fig \ref{fig:spctrm5k}).  In this sense, speech is considered a `complex' sound, because it is composed of energy at multiple frequencies.  Certain harmonics will be dampened by the vocal tract, leaving others relatively unfiltered.  A group of neighboring harmonics containing more energy than other harmonics are called formants.  The location, shape, and transition over time of these formants (among other more minor features) encodes speech information for voiced sounds.  This can be visualized in a spectrogram (cf. Fig. \ref{fig:spctgrm_citizen}).
+Voiced speech is composed of narrow bands of acoustic energy, called harmonics, located along a frequency spectrum (cf. Fig \ref{fig:spctrm5k}).  In this sense, speech is considered a `complex' sound, because it is composed of energy at multiple frequencies.  Certain harmonics will be dampened by the vocal tract, leaving others relatively unfiltered.  A group of neighboring harmonics containing more energy than other harmonics are called formants.  The location, shape, and transition over time of these formants (among other more minor features) encodes speech information for voiced sounds.  This can be visualized in a spectrogram (cf. Fig. \ref{fig:spctgrm_citizen}).
+
 
 \begin{figure}[H]
 \begin{subfigure}{\textwidth}
   \centering
-  \includegraphics[width=0.8\textwidth]{figure/spctgrm1k.png}
+  \includegraphics[width=0.85\textwidth]{figure/spctgrm1k.png}
   \caption{Zoomed to the 0-1kHz range for better visualization of harmonics.}
   \label{fig:spctgrm_citizen_1k}
 \end{subfigure}%
 \hfill
 \begin{subfigure}{0.95\textwidth}
   \centering
-  \includegraphics[width=0.8\textwidth]{figure/spctgrm5k.png}
+  \includegraphics[width=0.85\textwidth]{figure/spctgrm5k.png}
   \caption{Zoomed to a more standard 0-5kHz range.}
   \label{fig:spctgrm_citizen_5k}
 \end{subfigure}
@@ -138,14 +140,14 @@ located along a frequency spectrum (cf. Fig \ref{fig:spctrm5k}).  In this sense,
 \end{figure}
 
 For unvoiced speech, the information used to recognize and categorize the speech sound is likely found in the turbulent frication generally centered in higher frequencies (cf. Fig. \ref{fig:spctgrm_s}), although some of the information can be found in lower frequencies or found in surrounding voiced information, such as formant transitions into and out of the sound (\cite{halle:57,lindblom:63,stevens:78,willi:17}).  Generally, most speech information used by the human auditory system can be found in frequencies below 5.0-8.0 kHz.
-%
+
 \begin{wrapfigure}{l}{0.5\textwidth}
 \centering
   \includegraphics[width=0.5\textwidth]{figure/spctgrm_s.png}
   \caption{Spectrum of the initial /s/ in `citizens'. Zoomed to range of 0-8 kHz for visualization of high frequency energy.}
   \label{fig:spctgrm_s}
 \end{wrapfigure}
-
+%
 The human auditory cortex has the remarkable ability to (a) transduce these sounds, which often only last from tens to a few hundreds of milliseconds in duration, (b) partition the stream of sounds into their respective words, and (c) string the words together into a sentence and pull meaning from it - all in real time (\cite{celesia:15}).  Nevertheless there are occasionally recognition errors, which can occur anywhere along this auditory chain.  %The `lowest' level in this chain in which errors occur is the recognition and identification of sounds in the auditory cortex.  
 There are a host of reasons why these errors might occur, yet the studies presented throughout this dissertation focus on additive noise interfering with the speech signal or signal distortion via passage of speech through a speaker's head.
 
@@ -197,6 +199,10 @@ As previously mentioned, phase does not play a significant role in human auditio
 
 It is not very often that two waves of the exact same frequency and amplitude, with exactly opposing phase, meet in such a way to completely negate.  However, varying degrees of negation and alteration occur constantly due to phase and interacting sound waves.  For example, if the 100 Hz wave from Figure \ref{fig:sound-wave-addition} were combined with a 200Hz wave with a slightly shifted phase, a different wave would be produced, seen in Figure \ref{fig:sound-combined-shifted-phase}.  
 
+The combination of waves from multiple sound sources increases greatly in complexity as the number of sources increases, and the as sounds originating from a single source is itself complex (ie. containing multiple frequency elements), such as speech.  Speech rarely occurs in isolation from from all external, interacting sound, yet we are still able to largely understand speech in everyday environments; for example, it is generally easy for humans to understand the speech of an interlocutor while sitting on a bench at a park.
+
+The auditory system is well tuned to identify separate sources, even complex ones, like speech. Despite the shifted phase in Figure \ref{fig:sound-shifted-phase}, the human auditory system would still be able to detect and identify two separate waves.  While it undoubtedly plays a part, the differences in phase of combined signals does not normally completely negate a signal, nor render it unintelligible.  It is for this reason, and the complexity of phase calculations, that most efforts to remove noise from speech ignore the phase component.
+
 \begin{figure}[H]
 \begin{subfigure}{0.5\textwidth}
   \includegraphics[width=\textwidth]{figure/wave-out-of-phase.png}
@@ -221,9 +227,7 @@ It is not very often that two waves of the exact same frequency and amplitude, w
 \label{fig:sound-shifted-phase}
 \end{figure}
 
-The combination of waves from multiple sound sources increases greatly in complexity as the number of sources increases, and the as sounds originating from a single source is itself complex (ie. containing multiple frequency elements), such as speech.  Speech rarely occurs in isolation from from all external, interacting sound, yet we are still able to largely understand speech in everyday environments; for example, it is generally easy for humans to understand the speech of an interlocutor while sitting on a bench at a park.
 
-The auditory system is well tuned to identify separate sources, even complex ones, like speech. Despite the shifted phase in Figure \ref{fig:sound-shifted-phase}, the human auditory system would still be able to detect and identify two separate waves.  While it undoubtedly plays a part, the differences in phase of combined signals does not normally completely negate a signal, nor render it unintelligible.  It is for this reason, and the complexity of phase calculations, that most efforts to remove noise from speech ignore the phase component.
 
 \subsection{Difficulties of Speech in Noise}\label{sec:snr-difficult}
 
@@ -239,6 +243,6 @@ This report aims to explore a novel method of human speech perception and automa
 	
 The intention of this study is to determine a) if recording human speech from the inside of the ear canal can significantly reduce background noise in a signal, b) if intelligible speech, suitable for communication, can be collected from the inside of the ear canal, c) if humans find speech recorded from the ear canal more intelligible than speech in noisy conditions, and finally d) if ASR systems are able to recognize speech recorded in the ear canal with greater accuracy than speech recorded in noise.
 	
-Since at the time, there was no established corpus of data that contains speech recorded from the inside of the ear canal together with speech simultaneously recorded from the mouth in noisy environments, it was necessary to record sounds from speakers in this environment and create a new corpus.  The theory behind the acoustics of recording speech from the ear canal, as well as the process for developing this corpus are described in Chapter \ref{chapter2}, along with a discussion of the recorded speech.  Chapter \ref{chapter3} will outline a human perception experiment, tasking listeners with the transcription of various sentences of speech recorded both at the mouth in noise, and from a sealed ear canal.   Chapter \ref{chapter4} describes the use of this same speech with an ASR system, and its recognition performance.  Chapter \ref{chapter5} will summarize the previous chapters and engage in an overall discussion of the implications of the results, the limitations of the present experiments and methods, and suggestions for future research direction.
+Since at the time, there was no established corpus of data that contains speech recorded from the inside of the ear canal together with speech simultaneously recorded from the mouth in noisy environments, it was necessary to record sounds from speakers in this environment and create a new corpus.  The theory behind the acoustics of recording speech from the ear canal, as well as the process for developing this corpus are described in Chapter \ref{chapter2}, along with a discussion of the recorded speech.  Chapter \ref{chapter3} will outline a human perception experiment, tasking listeners with the transcription of various sentences of speech recorded both at the mouth in noise, and from a sealed ear canal.  Chapter \ref{chapter4} describes the use of this same speech with an ASR system, and its recognition performance.  Chapter \ref{chapter5} will summarize the previous chapters and engage in an overall discussion of the implications of the results, the limitations of the present experiments and methods, and suggestions for future research direction.
 
 

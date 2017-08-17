@@ -28,9 +28,9 @@
 % \appendix
 \chapter{Data Collection and Survey Measurements}\label{appendixA}
 
-This appendix provides survey responses (columns 1-4) and demographic and measurement data (columns 5-16) taken both during the data collection experiment in Chapter \ref{chapter2} (cf. Table \ref{tab:expt1-data}) and additional participants for stimuli in Chapters \ref{chapter3} and \ref{chapter4} (cf. Table \ref{tab:expt2-stims}).
+This appendix provides coded survey responses (columns 1-4) and demographic and measurement data (columns 5-16) taken both during the data collection experiment in Chapter \ref{chapter2} (cf. Table \ref{tab:expt1-data}) and additional participants for stimuli in Chapter \ref{chapter3} (cf. Table \ref{tab:expt2-stims}).
 
-Table \ref{tab:expt1-data} below lists the subjects who were run in the initial data collection experiment whose data were used as stimuli for the ASR experiment in Chapter \ref{chapter4}.  Table \ref{tab:expt2-stims} provides additional subject data.  Data from subjects 74 and 75 were used as stimuli for the human speech perception experiment (cf. Chapter \ref{chapter3}).  Data from subjects 72 and 73, in addition to subjects 74 and 75, was used as stimuli in the ASR experiment (cf. Chapter \ref{chapter4}), but only for the acoustic model trained on the ear-recorded speech from Table \ref{tab:expt1-data}.   
+Table \ref{tab:expt1-data} below lists the subjects who were run in the initial data collection experiment whose data were used as stimuli for the ASR experiment in Chapter \ref{chapter4}.  Table \ref{tab:expt2-stims} provides additional subject data.  Data from subjects 74 and 75 were used as stimuli for the human speech perception experiment (cf. Chapter \ref{chapter3}).  %Data from subjects 72 and 73, in addition to subjects 74 and 75, was used as stimuli in the ASR experiment (cf. Chapter \ref{chapter4}), but only for the acoustic model trained on the ear-recorded speech from Table \ref{tab:expt1-data}.   
 
 Any `-' in a cell indicates that, for the surveys, the response was not relevant, or otherwise that the value was missed or unable to be recorded.  All survey questions (1-4) are coded on a 1-5 Likert Scale.  For explanation, reference the Legend in Table \ref{appAlegend} below.
 
@@ -68,8 +68,8 @@ Any `-' in a cell indicates that, for the surveys, the response was not relevant
 \begin{table}
 \centering
 \begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}\hline
-\textbf{$072$} & $5$ & $4$ & $5$ & $5$ & $f$ & $-$ & $n$ & $y$ & $n$ & $11$ & $6$ & $0.8$ & $0.5$ & $n$ & $0$ & $7$ \\ \hline
-\textbf{$073$} & $4$ & $4$ & $5$ & $5$ & $m$ & $-$ & $n$ & $n$ & $y$ & $13$ & $9$ & $1.0$ & $0.9$ & $n$ & $0$ & $9$ \\ \hline
+%\textbf{$072$} & $5$ & $4$ & $5$ & $5$ & $f$ & $-$ & $n$ & $y$ & $n$ & $11$ & $6$ & $0.8$ & $0.5$ & $n$ & $0$ & $7$ \\ \hline
+%\textbf{$073$} & $4$ & $4$ & $5$ & $5$ & $m$ & $-$ & $n$ & $n$ & $y$ & $13$ & $9$ & $1.0$ & $0.9$ & $n$ & $0$ & $9$ \\ \hline
 \textbf{$074$} & $-$ & $4$ & $5$ & $5$ & $m$ & $-$ & $n$ & $n$ & $y$ & $11$ & $-$ & $1.4$ & $0.9$ & $n$ & $-1$ & $-$  \\ \hline
 \textbf{$075$} & $3$ & $4$ & $2$ & $3$ & $f$ & $-$ & $n$ & $y$ & $y$ & $13$ & $5$ & $1.6$ & $0.7$ & $n$ & $1$ & $5$ \\ \hline
 \end{tabular}
@@ -108,8 +108,8 @@ Any `-' in a cell indicates that, for the surveys, the response was not relevant
 *055* & Gain increase for ear-recorded channel before sentence 6 \\
 *063* & Possible warped ME Analyzer measurements \\
 *065* & Warped ME Analyzer measurements \\
-*072* & Recorded with one noise level (80dB) and 80 distinct sentences (rather than 30) and mic pointed to mouth \\
-*073* & Recorded with one noise level (80dB) and 80 distinct sentences (rather than 30) and mic pointed to mouth \\
+%*072* & Recorded with one noise level (80dB) and 80 distinct sentences (rather than 30) and mic pointed to mouth \\
+%*073* & Recorded with one noise level (80dB) and 80 distinct sentences (rather than 30) and mic pointed to mouth \\
 *074* & Recorded with one noise level (80dB) and 80 distinct sentences (rather than 30) and mic pointed to loudspeaker \\
 *075* & Recorded with one noise level (80dB) and 80 distinct sentences (rather than 30) and mic pointed to loudspeaker \\
 \end{tabular}

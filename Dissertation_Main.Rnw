@@ -227,15 +227,15 @@ library(cowplot)
 %ADD: Copy/Paste Content from all 5 chapters:
 
 \include{./Chapter_1_Introduction/chapter_1}
-% \include{./Chapter_2_Data_Collection_Experiment/chapter_2}
-% \include{./Chapter_3_Human_Speech_Perception_Experiment/chapter_3}
-% \include{./Chapter_4_ASR_Experiment/chapter_4}
-% \include{./Chapter_5_Discussion/chapter_5}
+\include{./Chapter_2_Data_Collection_Experiment/chapter_2}
+\include{./Chapter_3_Human_Speech_Perception_Experiment/chapter_3}
+\include{./Chapter_4_ASR_Experiment/chapter_4}
+\include{./Chapter_5_Discussion/chapter_5}
 % 
 % % ADD: Include the various appendices
-% \appendix
-% \include{./AppendixA/appendixA}
-% \include{./AppendixB/appendixB}
+\appendix
+\include{./AppendixA/appendixA}
+\include{./AppendixB/appendixB}
 
 %Don't Change:
 % Switch the spacing to single-spaced for the references
