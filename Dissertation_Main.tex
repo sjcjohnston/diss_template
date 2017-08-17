@@ -130,6 +130,7 @@
 %\usepackage{mathtime}			% Times for letters; Belleek math.
 %
 \usepackage{wrapfig}
+\usepackage{float}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{tipa}
@@ -142,11 +143,19 @@
 \usepackage{amsmath}
 \usepackage{array}
 \usepackage{courier}
+\usepackage[annataritalic]{tengwarscript}
+\usepackage[toc,page]{appendix}
 \definecolor{Gray}{gray}{0.85}
 \newcolumntype{a}{>{\columncolor{Gray}}c}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 % \newcolumntype{L}{>{$}l<{$}}
+\usepackage{listings}
+\lstset{
+basicstyle=\small\ttfamily,
+columns=flexible,
+breaklines=true
+}
 
 % \usepackage[normalem]{ulem}
 % \usepackage{xyling,comment}			% AMS Math (advanced math typesetting)
@@ -252,15 +261,15 @@
 %ADD: Copy/Paste Content from all 5 chapters:
 
 \include{./Chapter_1_Introduction/chapter_1}
-\include{./Chapter_2_Data_Collection_Experiment/chapter_2}
-\include{./Chapter_3_Human_Speech_Perception_Experiment/chapter_3}
-\include{./Chapter_4_ASR_Experiment/chapter_4}
-\include{./Chapter_5_Discussion/chapter_5}
-
-% ADD: Include the various appendices
-\appendix
-\include{./AppendixA/appendixA}
-\include{./AppendixB/appendixB}
+% \include{./Chapter_2_Data_Collection_Experiment/chapter_2}
+% \include{./Chapter_3_Human_Speech_Perception_Experiment/chapter_3}
+% \include{./Chapter_4_ASR_Experiment/chapter_4}
+% \include{./Chapter_5_Discussion/chapter_5}
+% 
+% % ADD: Include the various appendices
+% \appendix
+% \include{./AppendixA/appendixA}
+% \include{./AppendixB/appendixB}
 
 %Don't Change:
 % Switch the spacing to single-spaced for the references

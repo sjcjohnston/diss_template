@@ -25,7 +25,8 @@
 
 
 % \begin{document}
-\chapter*{Appendix A}\label{appendixA}
+% \appendix
+\chapter{Data Collection and Survey Measurements}\label{appendixA}
 
 This appendix provides survey responses (columns 1-4) and demographic and measurement data (columns 5-16) taken both during the data collection experiment in Chapter \ref{chapter2} (cf. Table \ref{tab:expt1-data}) and additional participants for stimuli in Chapters \ref{chapter3} and \ref{chapter4} (cf. Table \ref{tab:expt2-stims}).
 
@@ -72,7 +73,7 @@ Any `-' in a cell indicates that, for the surveys, the response was not relevant
 \textbf{$074$} & $-$ & $4$ & $5$ & $5$ & $m$ & $-$ & $n$ & $n$ & $y$ & $11$ & $-$ & $1.4$ & $0.9$ & $n$ & $-1$ & $-$  \\ \hline
 \textbf{$075$} & $3$ & $4$ & $2$ & $3$ & $f$ & $-$ & $n$ & $y$ & $y$ & $13$ & $5$ & $1.6$ & $0.7$ & $n$ & $1$ & $5$ \\ \hline
 \end{tabular}
-\caption{Data from additional four subjects.  Subjects 74 and 75 were used for the human speech perception experiment (Chapter \ref{chapter4}), and all four were used for the ASR test involving the acoustic model trained on the data from Table \ref{tab:expt1-data}.}\label{tab:expt2-stims}
+\caption{Data from additional four subjects.  Subjects 74 and 75 were used for the human speech perception experiment (Chapter \ref{chapter4}), and subjects 73 abd 75 were used for the ASR test involving the acoustic model trained on the ear-recorded data from Table \ref{tab:expt1-data}.}\label{tab:expt2-stims}
 \end{table}
 
 \begin{table}
@@ -95,9 +96,10 @@ Any `-' in a cell indicates that, for the surveys, the response was not relevant
 15 & Distance of mic sticking out of plug in mm (negative if mic-end inside plug) \\
 16 & $2^{nd}$ measurement of plug depth in mm, after experiment to note any change \\
 \end{tabular}
-\caption{}\label{appAlegend}
+\caption{Lengend for Tables \ref{tab:expt1-data} and \ref{tab:expt2-stims}, describing the values in the different columns.  Each row corresponds to a column number.}\label{appAlegend}
 \end{table}
 
+\begin{table}
 \begin{center}
 \begin{tabular}{c|p{12cm}}
       & \textbf{Notes} \\
@@ -111,8 +113,9 @@ Any `-' in a cell indicates that, for the surveys, the response was not relevant
 *074* & Recorded with one noise level (80dB) and 80 distinct sentences (rather than 30) and mic pointed to loudspeaker \\
 *075* & Recorded with one noise level (80dB) and 80 distinct sentences (rather than 30) and mic pointed to loudspeaker \\
 \end{tabular}
+\caption{Extra notes for certain participants' data from Tables \ref{tab:expt1-data} and \ref{tab:expt2-stims}.}
 \end{center}
-
+\end{table}
 
 % % Create the References list
 % %\bibliographystyle{uabibnat}

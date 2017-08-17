@@ -563,8 +563,8 @@ THE UNIVERSITY OF ARIZONA
 \chapter*{THE UNIVERSITY OF ARIZONA\\GRADUATE COLLEGE}
 
 As members of the Dissertation Committee, we certify that we have
-read the \MakeLowercase{\ThesisType} prepared by \FullName \\
-entitled \CompleteTitle \\
+read the \MakeLowercase{\ThesisType} prepared by \FullName 
+entitled \CompleteTitle 
 and recommend that it be accepted as fulfilling the
 \MakeLowercase{\ThesisType} requirement for the Degree of \DegreeName.
 

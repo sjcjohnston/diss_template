@@ -4,7 +4,7 @@
 % # This is where we set basic knitr options.
 % opts_chunk$set(echo=TRUE, message=FALSE, warning = FALSE, cache = FALSE, comment="")
 % options(width=75) # This sets how wide the R printout can be
-% 
+% @
 % 
 %  <<setup-child, include=FALSE>>=
 %  set_parent('/home/sam/Dissertation/Dissertation_Template/Dissertation_Main_Template/Dissertation_Main.Rnw')
@@ -30,7 +30,7 @@
 
 \section{Introduction}\label{chap3:introduction}
 
-This chapter introduces a human speech perception experiment in which humans' ability to accurately recognize ear-recorded and noisy mouth-recorded speech is compared.  In Chapter \ref{chapter2}, a data collection experiment was run to record speech recorded in both locations (at the mouth and in the ear) simultaneously.  The speech recorded from the ear was modified via pre-emphasis and low-pass filtering in order to make it more intelligible.  Further details about this study can be found in Section \ref{expt1} of Chapter \ref{chapter2}.
+This chapter presents a human speech perception experiment in which humans' ability to accurately recognize ear-recorded and noisy mouth-recorded speech is compared.  In Chapter \ref{chapter2}, a data collection experiment was run to record speech recorded in both locations (at the mouth and in the ear) simultaneously.  The speech recorded from the ear was modified via pre-emphasis and low-pass filtering in order to make it more intelligible.  Further details about this study can be found in Section \ref{expt1} of Chapter \ref{chapter2}.
 
 In order to judge the usefulness and intelligibility of the modified sounds recorded at the ear, it was necessary to run a human perception task using these recordings as stimuli.  Of primary interest to this task was whether the speech recorded at the ear in a noisy condition (a) had resulted in a sufficient reduction in the ambient noise level, and (b) was markedly more intelligible that speech recorded at the \textit{mouth} in a noisy condition.
 
@@ -41,7 +41,7 @@ In order to judge the usefulness and intelligibility of the modified sounds reco
 %   - Demonstrating why speech in noise is difficult for humans to understand (mechanically? neurologically?)
 %   - Explain the average/expected performance of Humans when recognizing speech in noise
 %   - Show the variability in ability to understand speech in noise by different speakers.
-Human listeners' inability to understand a speech utterance can occur from an information loss that might be caused by any of a host of factors.  For example, information can be lost in the domain of time (eg. an intermittent signal), from loss of intensity (eg. due to distance from the source), as well as the from distortion of the source itself, such as a speech impediment (\cite{mattys:12}).  Of particular interest to the present study is the difficulty for human listeners to understand a speech signal due to excessive, additive background noise from sources other than the desired speech signal.
+Human listeners' inability to understand a speech utterance can occur from an information loss that might be caused by any of a host of factors.  For example, information can be lost in the domain of time (eg. an intermittent signal), from loss of intensity (eg. due to distance from the source), as well as the from distortion of the source itself, such as disordered speech (\cite{mattys:12}).  Of particular interest to the present study is the difficulty for human listeners to understand a speech signal due to excessive, additive background noise from sources other than the desired speech signal.
 
 The ability of the human auditory system to hear and differentiate multiple sources of sound from a single pressure wave is often given the term `auditory scene analysis' (\cite{bregman:94}).  The term `scene analysis' was borrowed from the visual domain, implying the separation of a `scene' (be it auditory or visual) into its component objects (again, be they auditory or visual). For the purposes of this study, this background discusses the human auditory ability to find multiple sound sources from a temporal stream of air pressure fluctuations (ie. sound) reaching the tympanic membrane.
 
@@ -56,7 +56,7 @@ To visualize the auditory scene, note the waveform (ie. the graph of air pressur
 %
 It is composed of all environmental sounds contributing to the air pressure fluctuation at the tympanic membrane\footnote{Note that this is for illustration purposes; the waveform will obviously look different when shaped by a given environment and the human ear canal before reaching the tympanic membrane.}.
 
-However, using the framework of auditory scene analysis, the human auditory system is able to separate this input signal into its various sources, or `auditory objects'.  The auditory system separates the above waveform into its actual component sources of human speech, and the sounds of a sheep, cow, and horse, seen in Figure \ref{fig:animal_multichannel}; ``The normal auditory system exhibits a remarkable ability to parse these complex scenes'' (\cite{middlebrooks:17}, 2).
+However, using the framework of auditory scene analysis, the human auditory system is able to separate this input signal into its various sources, or `auditory objects'.  The auditory system separates the above waveform into its actual component sources of human speech as well as the sounds of a sheep, cow, and horse, seen in Figure \ref{fig:animal_multichannel}; ``The normal auditory system exhibits a remarkable ability to parse these complex scenes'' (\cite{middlebrooks:17}, 2).
 
 Of course, there reaches a point at which the auditory system fails and can
 %
@@ -67,7 +67,7 @@ Of course, there reaches a point at which the auditory system fails and can
   \label{fig:animal_multichannel}
 \end{figure}
 %
- no longer differentiate all sources. Pertaining to the present research, there reaches a point at which the auditory system cannot recognize the information in a human speech signal when embedded with background noise from one or more additional sources.  The following section reviews the acoustics of speech in noise in more depth .
+ no longer differentiate all sources. Pertaining to the present research, there reaches a point at which the auditory system cannot recognize the information in a human speech signal when embedded with background noise from one or more additional sources with similar frequency compositions.  The following section reviews the acoustics of speech in noise in more depth .
   
 \subsection{Acoustics of Speech in Noise}
 \label{bkgrnd:speech_in_noise}
@@ -79,7 +79,7 @@ The masking process can be broken down into two forms: energetic masking and inf
 
 Informational masking can be broadly thought of as difficulties relating to memory, linguistic processing, and the like, oftentimes generalized to speech-on-speech noise.  \cite{mattys:10} failed to find informational masking in a cross-linguistic task, and so it is possible that informational masking could be limited to situations in which the masking speech is intelligible. This type of masking is thought to occur primarily in the `higher auditory processes' in the brain.
 
-An instance of both energetic and informational masking can be visualized in a diagram of overlapping speech presented in \cite{middlebrooks:17}, and seen in Figure \ref{fig:sos-masked-spctgrms}.
+An instance of both energetic and informational masking can be visualized in a diagram of overlapping speech presented in \cite{middlebrooks:17}, and seen in Figure \ref{fig:sos-masked-spctgrms}. Utterance (C) in the figure is the desired `voice', leaving utterance (B) the masking element.  In (D), one can see the voice (red), the areas of masking in which there is direct frequency and temporal overlap (green), and the remainder of the masking speech (blue). Of course this is never so nicely differentiated, and the resulting acoustic information that the auditory system receives can be seen in (A), in which no source is differentiated.  This is primarily a form of energetic masking (competition for lower-level processing), though upper level processing is required to take meaning from the desired voice, which is masked informationally by the competing voice with its own information.
 %
 \begin{figure}[h!]
 \centering
@@ -88,9 +88,9 @@ An instance of both energetic and informational masking can be visualized in a d
   \label{fig:sos-masked-spctgrms}
 \end{figure}
 %
-Utterance (C) in the figure is the desired `voice', leaving utterance (B) the masking element.  In (D), one can see the voice (red), the areas of masking in which there is direct frequency and temporal overlap (green), and the remainder of the masking speech (blue). Of course this is never so nicely differentiated, and the resulting acoustic information that the auditory system receives can be seen in (A), in which no source is differentiated.  This is primarily a form of energetic masking (competition for lower-level processing), though upper level processing is required to take meaning from the desired voice, which is masked informationally by the competing voice with its own information.
 
-The five different background noises used in the study described in Chapter \ref{chapter2} (data collection of speech recorded at the ear) energetically mask the voice in the signal.  A small (5 second) portion of the spectrogram of each sound can be seen in Figure \ref{fig:bkgrnd-noises}.  These sounds don not produce any competing linguistic informational content themselves which mask the desired voice (the `caf\'{e}' noise, seen in Figure \ref{fig:cafe-bkgrnd}, does contain speech babble, none of it intelligible), and so masking occurs by producing energy at the same time as - and in the same frequency range as - the recorded voice.
+
+The five different background noises used in the study described in Chapter \ref{chapter2} (data collection of speech recorded at the ear) energetically mask the voice in the signal.  A small (5 second) portion of the spectrogram of each sound can be seen in Figure \ref{fig:bkgrnd-noises}.  These sounds do not produce any competing linguistic informational content themselves which mask the desired voice (the `caf\'{e}' noise, seen in Figure \ref{fig:cafe-bkgrnd}, does contain speech babble, none of it intelligible), and so masking occurs by producing energy at the same time as - and in the same frequency range as - the recorded voice.
 
 \begin{figure}[h!]
 \begin{subfigure}{0.475\linewidth}
@@ -150,9 +150,9 @@ Eventually, with enough background noise and masking, the methods listed above f
 
 This subjective measure was backed by a study performed by \cite{gilbert:13}, who used the PRESTO corpus (\cite{garofolo:93}) to test sentence intelligibility among 121 native English speakers.  \cite{gilbert:13} found that - similar to \cite{ding:13} - the median score (at the 50th percentile) of speech with a -3dB SNR had about 55\% accuracy.  At +3 dB SNR, the median score increased to approximately 88\% accuracy.
 
-\cite{ding:13} mentioned that there was great inter-speaker variation among the self-reported, subjective perception of intelligibility of an utterance; this was also supported by \cite{gilbert:13}'s results. The latter showed that, averaging over all SNR conditions (-5, -3, 0, +3 dB), the variability between speaker's accuracy scores had a range of almost 36\% for a given item.  A retest performed with a subgroup of the original participants on the same dataset yielded a similar (~34\%) range of variability in accuracy.  
+\cite{ding:13} mentioned that there was great inter-speaker variation among the self-reported, subjective perception of intelligibility of an utterance; this was also supported by the results in \cite{gilbert:13}. The latter showed that, averaging over all SNR conditions (-5, -3, 0, +3 dB), the variability between speaker's accuracy scores had a range of almost 36\% for a given item.  A retest performed with a subgroup of the original participants on the same dataset yielded a similar (~34\%) range of variability in accuracy.  
 
-\cite{francis:10} discussed how listening to speech in background noise places extra demands on working memory, as does listening to degraded speech (\cite{francis:09}).  The diversion of working memory to acoustic processing can be particularly detrimental to performance when a listener simultaneously works on other computation, eg. syntactic and semantic parsing (eg. phrase or sentence recognition \cite{caplan:99}). \cite{tamati:13} tested a group of high-performing hearers of speech in noise against a separate group of low-performing hearers (all had `normal' hearing) using several different working- and short-term memory tasks.  Not surprisingly, the group of listeners who are able to better hear speech in noise also perform statistically better on the working memory tasks.  Working- and short-term memory are by no means the only indicators of perceptual performance.
+\cite{francis:10} discussed how listening to speech in background noise places extra demands on working memory, as does listening to degraded speech (\cite{francis:09}).  The diversion of working memory to acoustic processing can be particularly detrimental to performance when a listener simultaneously works on other computations, eg. syntactic and semantic parsing (eg. phrase or sentence recognition \cite{caplan:99}). \cite{tamati:13} tested a group of high-performing listeners of speech in noise against a separate group of low-performing listeners (all had `normal' hearing) using several different working- and short-term memory tasks.  Not surprisingly, the group of listeners who are able to better hear speech in noise also perform statistically better on the working memory tasks.  Working- and short-term memory are by no means the only indicators of perceptual performance.
 
 
 \subsection{Summary}
@@ -161,7 +161,7 @@ Speech in noisy environments presents a challenge for recognition.  Competing ac
 
 The auditory system employs many methods to release the desired voice from masking.  These include binaural hearing, the use of acoustic transitions, the use of pitch information, and many others.  Practice recognizing speech in a specific adverse condition allows a listener to improve their recognition accuracy when listening to that adverse condition in the future.  Despite these tools of the auditory system, it is often the case that the background noise is too loud for them to work effectively.  Studies by \cite{ding:13} and \cite{gilbert:13} indicated the range of SNRs in which human speech perception begins to falter substantially.
 
-They also described very high variability in the performance of of participants when listening to speech in noise; other research (eg. \cite{tamati:13}) has suggested that the variability between the working-memory capacity of listeners may in part contribute to the variability in their ability to recognize speech in noise.
+They also described very high variability in the performance of participants when listening to speech in noise; other research (eg. \cite{tamati:13}) has suggested that the variability between the working-memory capacity of listeners may in part contribute to the variability in their ability to recognize speech in noise.
 
 The task presented in Section \ref{expt2} below aimed to compare listeners ability to understand speech in noise, recorded from the mouth, with their ability to understand speech recorded at the ear.  The author hypothesized that, despite missing information from the mid- to high-frequency portion of the spectrum, the ear-recorded speech would be sufficiently devoid of noise to provide a significant improvement in recognition over the noisy mouth-recorded speech.  After the primary experiment, two follow-up investigations were conducted, taking advantage of the auditory system's ability to use pitch (F0) information and to benefit from prior exposure to a particular adverse condition.  These studies were designed as pilot studies for future research, and neither contain data from enough participants to run statistics.  Due to this, only potential conclusions could be made, and further study will be needed to fully explore these techniques. 
 
@@ -173,14 +173,14 @@ The task presented in Section \ref{expt2} below aimed to compare listeners abili
 %FREQUENCY as release of energetic masking AS IMPETUS FOR COMBINATION STIMULI
 
 
-\section{Experiment 2: Human Speech Perception in Noise}
+\section{Experiment 2: Speech Intelligibility in Noise}
 \label{expt2}
 
-The results from the \cite{ding:13} and \cite{gilbert:13} studies indicated that the 50\% intelligibility threshold (ie. participants correctly identified 50\% of the speech) in their studies occurred at -3 db SNR.  The average SNR for the 80 dB noise condition in the Chapter \ref{chapter2} Section \ref{expt1} data collection experiment was +12 dB SNR for the noisy mouth-recorded speech.  This is 15 dB SNR \textit{above} the 50\% threshold identified by \cite{ding:13} and \cite{gilbert:13}.  At this level of SNR, it is unlikely that listeners will encounter much masking from the noise in the signal that won't be overcome.
+The results from the \cite{ding:13} and \cite{gilbert:13} studies indicated that the 50\% intelligibility threshold (ie. participants correctly identified 50\% of the speech) in their studies occurred at -3 dB SNR.  The average SNR for the 80 dB noise condition in the Chapter \ref{chapter2} Section \ref{expt1} data collection experiment was +12 dB SNR for the noisy mouth-recorded speech.  This was 15 dB SNR \textit{above} the 50\% threshold identified by \cite{ding:13} and \cite{gilbert:13}.  At this level of SNR, it was unlikely that listeners would encounter much masking from the noise in the signal that wouldn't be overcome.
 
-After testing two pilot participants on the speech collected, the researcher deemed that the speech in the noisy background (described in Chapter \ref{chapter2}) did not have a sufficient SNR to pose a challenge to listeners.  This conclusion was drawn because the average performance on noisy speech for these two pilot participants (using word error rate (WER)\footnote{The lower the error rate, the more accurate}) was at a very low 10\%.  This utilized only the 80 dB noise condition.  The average \textit{non}-noisy mouth-recorded speech was only slightly more accurate at 7\% word error rate. The cause, as alluded to before, was likely that the SNR ratio was not low enough, explained in more detail in Section \ref{chap2:limitations}.  Due to this, additional stimuli were created from two additional speakers with lower SNRs (cf. Section \ref{chap3:methods:stimuli}).
+After testing two pilot participants on the speech collected, it was clear that the speech in the noisy background (described in Chapter \ref{chapter2}) did not have a sufficient SNR to pose a challenge to listeners.  This conclusion was made because the average performance on noisy speech for these two pilot participants (using word error rate (WER)\footnote{The lower the error rate, the more accurate}) was at a very low 10\%.  This utilized only the 80 dB noise condition.  The average \textit{non}-noisy mouth-recorded speech was only slightly more accurate at 7\% word error rate. The cause, alluded to previously, was likely that the SNR ratio was not low enough, explained in more detail in Section \ref{chap2:limitations}.  Due to this, additional stimuli were created from two additional speakers with lower SNRs (cf. Section \ref{chap3:methods:stimuli}).
 
-After the additional stimuli were gathered, a human speech perception experiment was run on the data in order to better understand and compare the ability of the auditory system to accurately comprehend the speech with a noisy background and the speech distorted by passage through the speaker's head, modified with pre-emphasis and low-pass filtering.  As a control, participants would also listen to the normal, clean speech recorded at the mouth.
+After the additional stimuli were gathered, a human speech perception experiment was run on the data in order to better understand and compare the ability of the auditory system to accurately comprehend the speech with a noisy background and the speech distorted by passage through the speaker's head, modified with pre-emphasis and low-pass filtering.  As a control, participants also listened to the normal, clean speech recorded at the mouth.
 
 \subsection{Stimulus Generation}
 \label{chap3:methods:stimuli}
@@ -230,10 +230,10 @@ It shared the same issue as the omnidirectional microphone, namely that pointing
   \caption{Recording at the ear from the first set of experiments (in Chapter \ref{chapter2}); all recording conditions for the ear were the same as in the second group of recordings.}
   \label{fig:spectOldEarNoise}
 \end{subfigure}
-\caption{The sentence ``A cramp is no small danger on a swim''. In Figs. \ref{fig:spectNewMouthNoise} and \ref{fig:spectNewEarNoise}, spoken by the male speaker, recorded at the mouth with 80 dB `bus' noise and simultaneously at the ear, respectively.  In Figs. \ref{fig:spectOldMouthNoise} and \ref{fig:spectOldEarNoise}, spoken by a female speaker, recorded at the mouth with 80 dB `bus' background noise and simultaneously at the ear, respectively.}
+\caption{The sentence ``A cramp is no small danger on a swim''. New recordings in Figs. \ref{fig:spectNewMouthNoise} and \ref{fig:spectNewEarNoise}, spoken by the male speaker, recorded at the mouth and simultaneously at the ear, both with 80 dB `bus' background noise.  Old recordings in Figs. \ref{fig:spectOldMouthNoise} and \ref{fig:spectOldEarNoise}, spoken by a female speaker, recorded at the mouth with 80 dB `bus' background noise and simultaneously at the ear, respectively.}
 \end{figure}
 
-Note that unlike the previous data collection experiment (cf. Chapter \ref{chapter2}, Section \ref{expt1}), there was only one one noise \textit{level} - 80 dB.  Data for the 60 and 70 dB noise level conditions were not collected for these two speakers.  All previously used background noise types (bus, caf\'{e}, pedestrian area, street, factory) were used for this data collection task as well.
+Note that unlike the previous data collection experiment (cf. Chapter \ref{chapter2}, Section \ref{expt1}), there was only one one noise \textit{level} - 80 dB.  Data for the 60 and 70 dB noise level conditions were not collected for these two speakers.  All previously used background noise types (bus, caf\'{e}, pedestrian area, street, factory) were used for this data collection task.
 
 The SNR was calculated for the male speaker using the code specified in Chapter \ref{chapter2} Section \ref{chap2:observations}.  This yielded an average value of slightly below +1 dB SNR for the noisy speech recorded with 80 dB background noise.  This was substantially lower than the 80 dB condition in the data collection experiment with an average SNR of +12 dB.  At that time, the female speaker's SNR was not calculated.  This was later (cf. Sections \ref{chap3:discussion}, \ref{chap3:future-research}) deemed to be an obvious mistake, as the female speaker's SNR was much higher than the male speaker's SNR at approximately +8 dB SNR.  It was likely that the female speaker spoke louder than the male speaker during the experiment, which resulted in the difference.
 
@@ -241,7 +241,7 @@ The SNR was calculated for the male speaker using the code specified in Chapter 
 \subsection{Design}
 \label{chap3:methods:design}
 
-The experiment had three factors - gender of speaker\footnote{This was included to test if there is an effect of gender of the speaker on listeners' perception in noise or on transmission of speech through the head and into the ear canal, due to the difference in male and female vocal tract and aural anatomy.} \textbf{x} microphone location \textbf{x} noise type - resulting in a 2x2x6 experiment.  There were two genders (female, male), two mic locations (recording at the ear, recording at the mouth), and six noise types (bus, caf\'{e}, pedestrian, street, factory, and no noise (clean)).  Since the ability to understand speech in noise is quite variable between individuals (cf. \cite{ding:13,gilbert:13}), the design of this experiment was a within-subjects experiment.  This meant that each of the 2x2x6 (ie. 24) conditions needed to be heard by each participant.  The sessions that were re-recorded utilized 80 distinct sentences, which allowed for three sentences to appear in each of the 24 conditions, totaling 72 sentences used in the experiment.  The eight remaining sentences were used as a `training' set intended to get the participants used to the task itself, rather than to acclimate them to the type of speech that they would hear.
+The experiment had three factors - gender of speaker\footnote{This was included to test if there is an effect of gender of the speaker on listeners' perception in noise or on transmission of speech through the head and into the ear canal, due to the difference in male and female vocal tract and aural anatomy.} \textbf{x} microphone location \textbf{x} noise type - resulting in a 2x2x6 experiment.  There were two genders (female, male), two mic locations (recording at the EAC, recording at the mouth), and six noise types (bus, caf\'{e}, pedestrian, street, factory, and no noise (clean)).  Since the ability to understand speech in noise is quite variable between individuals (cf. \cite{ding:13,gilbert:13}), the experiment was based on a within-subjects design.  This meant that each of the 2x2x6 (ie. 24) conditions needed to be heard by each participant.  The sessions that were re-recorded utilized 80 distinct sentences, which allowed for three sentences to appear in each of the 24 conditions, totaling 72 sentences used in the experiment.  The eight remaining sentences were used as a `training' set intended to get the participants accustomed to the task itself, rather than to acclimate them to the type of speech that they would hear.
 
 Since a given participant could not hear the same sentence twice without introducing a training confound, and since each sentence was recorded in each of the 24 conditions\footnote{72 distinct sentences * 24 conditions = 1728 total sentence recordings}, this necessitated the use of 24 counter-balanced groups to ensure that each one of the 1728 sentences was heard by at least one participant listener.  For example, items (sentences) 1, 2, and 3 occurred in Condition \#1 (eg. female speaker, mic at the mouth, with bus background noise) in counter-balanced group \#1 for Participant \#1. Participant \#2 saw counter-balanced group \#2, which placed items (sentences) 1, 2, and 3 in Condition \#2 (eg. female speaker, mic at the mouth, with caf\'{e} background noise).  Each three-item (sentence) grouping always appeared together in a condition, ie. item (sentence) groupings always appeared together in a counter-balanced group.  
 
@@ -250,7 +250,7 @@ However, once the sentences were assigned to a particular condition, the order o
 \subsection{Participants}
 \label{chap3:methods:participants}
 
-Twenty-four native speakers of English with self-reported normal hearing participated in the experiment. Each participant was placed into a separate counter-balanced group, as specified above in Section \ref{chap3:methods:design}.  This left each counter-balanced group with one participant.
+Twenty-four native speakers of English with self-reported normal hearing participated in the experiment. These participants did not include anyone with familiarity with the stimuli.  Each participant was placed into a separate counter-balanced group, as specified above in Section \ref{chap3:methods:design}.  This left each counter-balanced group with one participant.
 
 \subsection{Equipment}
 \label{chap3:methods:equipment}
@@ -260,9 +260,9 @@ The experiment was conducted in a soundbooth with a pair of over-the-ear headpho
 \subsection{Procedure}
 \label{chap3:methods:procedure}
 
-The participant was seated in the sound booth in front of a keyboard and computer monitor\footnote{The computer monitor was outside the soundbooth, and did not produce noise interfering with the task.} with a pair of headphones, and was given a set of instructions. They were told that they would hear each utterance only once, and that each utterance contained only real English words; they were told it was possible for a sentence to not be a `complete' sentence.  The researcher forewarned them that many of the sentences they would hear would be noisy and difficult to understand. They were instructed to write all words they heard, even if what was heard did not make syntactic sense, or if the words were not adjacent (eg. if only the first and last words of the sentence were heard). They were given 18 seconds to type their response, beginning at the onset of the utterance audio, before their answer was locked in.
+The participant was seated in the sound booth in front of a keyboard and computer monitor\footnote{The computer monitor was outside the soundbooth, and did not produce noise interfering with the task.} with a pair of headphones, and was given a set of instructions. They were told that they would hear each utterance only once, and that each utterance contained only real English words; they were told it was possible for a sentence to not be a `complete' sentence so as to not bias them towards `filling in' words syntactically or semantically.  The researcher forewarned them that many of the sentences they would hear would be noisy and difficult to understand. They were instructed to type all words they heard, even if what was heard did not make syntactic sense, or if the words were not adjacent (eg. if only the first and last words of the sentence were heard). They were given 18 seconds to type their response, beginning at the onset of the utterance audio, before their answer was locked in.
 
-The participant was told that the first set of eight utterances they heard were part of a `training' set intended to familiarize them with the task. The same eight sentences were heard by every participant.  None of the utterances from the training set were used in the analysis.  Once they they finished the initial set, participants were able to ask if they had any questions.  Afterwards, they began the primary task in the soundbooth.  They would hear one of the sentences, and type their answer in a text box.  When finished with their answer, they would either click to advance to the next sentence, or, if they ran into the time limit, they were prevented from modifying their answer.  The software prompted them to click another button to advance, and did not advance automatically.
+The participant was told that the first set of eight utterances they heard were part of a `training' set intended to familiarize them with the task. The same eight sentences were heard by every participant.  None of the utterances from the training set were used in the analysis.  Once they they finished the initial set, participants were asked if they had any questions.  Afterwards, they began the primary task in the soundbooth.  They would hear one of the sentences, and type their answer in a text box.  When finished with their answer, they would either click to advance to the next sentence, or, if they ran into the time limit, they were prevented from modifying their answer.  The software prompted them to click another button to advance, and did not advance automatically.
 
 After the experiment, the researcher double checked the participant answers for correct spelling.  Only obvious errors were modified (eg. `teh' to `the', `crakers' to `crackers', `mantle' to `mantel'), while ambiguous errors were left as-is (eg. `blo' was not changed to `block', `finde' was not changed to `fine').  Numbers were also lexicalized (eg. `30' to `thirty').  Punctuation was removed for ease of analysis and calculation of word error rate.
 
@@ -270,7 +270,36 @@ After the experiment, the researcher double checked the participant answers for 
 \section{Results}
 \label{chap3:results}
 
-The word error rate (WER) for each (spell-checked) response for each participant was calculated. The code for the WER calculation can be found in Appendix B\ref{appendixB}
+\begin{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following objects are masked from mydata (pos = 3):\\\#\# \\\#\#\ \ \ \  group, mic\_location, noise\_type, sentence, sentence\_number,\\\#\#\ \ \ \  speaker\_gender, subject, wer\\\#\# \\\#\# The following objects are masked from mydata (pos = 3):\\\#\# \\\#\#\ \ \ \  group, mic\_location, noise\_type, sentence, sentence\_number,\\\#\#\ \ \ \  speaker\_gender, subject, wer}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following objects are masked from mydata (pos = 4):\\\#\# \\\#\#\ \ \ \  group, mic\_location, noise\_type, sentence, sentence\_number,\\\#\#\ \ \ \  speaker\_gender, subject, wer}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following objects are masked from mydata (pos = 3):\\\#\# \\\#\#\ \ \ \  group, mic\_location, noise\_type, sentence, sentence\_number,\\\#\#\ \ \ \  speaker\_gender, subject, wer}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following objects are masked from mydata (pos = 4):\\\#\# \\\#\#\ \ \ \  group, mic\_location, noise\_type, sentence, sentence\_number,\\\#\#\ \ \ \  speaker\_gender, subject, wer}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following objects are masked from mydata (pos = 5):\\\#\# \\\#\#\ \ \ \  group, mic\_location, noise\_type, sentence, sentence\_number,\\\#\#\ \ \ \  speaker\_gender, subject, wer}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following objects are masked from mydata (pos = 3):\\\#\# \\\#\#\ \ \ \  group, mic\_location, noise\_type, sentence, sentence\_number,\\\#\#\ \ \ \  speaker\_gender, subject, wer}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following objects are masked from mydata (pos = 4):\\\#\# \\\#\#\ \ \ \  group, mic\_location, noise\_type, sentence, sentence\_number,\\\#\#\ \ \ \  speaker\_gender, subject, wer}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following objects are masked from mydata (pos = 5):\\\#\# \\\#\#\ \ \ \  group, mic\_location, noise\_type, sentence, sentence\_number,\\\#\#\ \ \ \  speaker\_gender, subject, wer}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following objects are masked from mydata (pos = 6):\\\#\# \\\#\#\ \ \ \  group, mic\_location, noise\_type, sentence, sentence\_number,\\\#\#\ \ \ \  speaker\_gender, subject, wer}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Collapsing data to cell means. *IF* the requested effects are a subset of the full design, you must use the "{}within\_full"{} argument, else results may be inaccurate.}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: You have removed one or more levels from variable "{}noise\_type"{}. Refactoring for ANOVA.}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Collapsing data to cell means. *IF* the requested effects are a subset of the full design, you must use the "{}within\_full"{} argument, else results may be inaccurate.}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: You have removed one or more levels from variable "{}noise\_type"{}. Refactoring for ANOVA.}}\end{kframe}
+
+The word error rate (WER) for each response (after obvious typographical errors were fixed) for each participant was calculated. The code for the WER calculation can be found in Appendix B\ref{appendixB}
 
 A 3-way, within-subjects ANOVA was performed with the collected data - 72 sentences from each of the 24 participants. Factors included the gender (of the speaker of the pre-recorded stimulus; male, female), the recording (mic) location (at the mouth, at the ear), and background noise type (no noise, bus, caf\'{e}, pedestrian area, street, factory) - 2\textbf{x}2\textbf{x}6 design.  WER was the dependent variable.  An ANOVA was chosen to test for statistical significance over an LME due to the large number of conditions in the study; the reported results from the ANOVA were much more concise, whereas the LME would have required a substantial amount of re-leveling comparison tests.  
 
@@ -282,7 +311,7 @@ The main effects of all three factors were significant (cf. Table \ref{tab:anova
   
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Sun Aug  6 18:41:46 2017
+% Wed Aug 16 08:40:00 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{llrrrrl}
@@ -305,7 +334,7 @@ S & speaker\_gender & 1 & 23 & 6.69 & 0.02 & * \\
   I & speaker\_gender:noise\_type:mic\_location & 5 & 355 & 1.86 & 0.10 &  \\ 
    \hline
 \end{tabular}
-\caption{ANOVA for by-subjects (S) and by-items (I) analysis of the three-factor, within-subjects experiment. `ANOVA' indicates by-subject (S) or by-item (I) analysis, `Effect' lists the factor(s) tested, `DFn' and `DFd' refer to the degrees of freedom numerator and denominator, `F' is the F-score, `p' is the p-value, and `*' marks a significant p-value.} 
+\caption{ANOVA for by-subjects (S) and by-items (I) analysis of the three-factor, within-subjects experiment. Columns: `ANOVA' indicates by-subject (S) or by-item (I) analysis, `Effect' lists the factor(s) tested, `DFn' and `DFd' refer to the degrees of freedom numerator and denominator, `F' is the F-score, `p' is the p-value, and `*' marks a significant p-value.} 
 \label{tab:anova1}
 \end{table}
 
@@ -371,7 +400,7 @@ Since there is a statistical difference in the main effect of noise, and since t
 There are significant main effects of noise type and mic location (cf. Table \ref{tab:anova2}).  The main effect of speaker gender is only significant in the by-subjects ANOVA, but is not significant in the by-items ANOVAs.  There are two significant two-way interactions of speaker gender \textbf{x} mic location and noise type \textbf{x} mic location, but no significant interaction of speaker gender \textbf{x} noise type, and no significant three-way interaction.  
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
-% Sun Aug  6 18:41:47 2017
+% Wed Aug 16 08:40:01 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{llrrrrl}
@@ -394,12 +423,12 @@ S & speaker\_gender & 1 & 23 & 5.26 & 0.03 & * \\
   I & speaker\_gender:noise\_type:mic\_location & 4 & 284 & 1.35 & 0.25 &  \\ 
    \hline
 \end{tabular}
-\caption{ANOVA for by-subjects (S) and by-items (I) analysis of the three-factor, within-subjects experiment; the level of `no noise' has been removed from the noise type factor. `ANOVA' indicates by-subject (S) or by-item (I) analysis, `Effect' lists the factor(s) tested, `DFn' and `DFd' refer to the degrees of freedom numerator and denominator, `F' is the F-score, `p' is the p-value, and `*' marks a significant p-value.} 
+\caption{ANOVA for by-subjects (S) and by-items (I) analysis of the three-factor, within-subjects experiment; the level of `no noise' has been removed from the noise type factor. Columns: `ANOVA' indicates by-subject (S) or by-item (I) analysis, `Effect' lists the factor(s) tested, `DFn' and `DFd' refer to the degrees of freedom numerator and denominator, `F' is the F-score, `p' is the p-value, and `*' marks a significant p-value.} 
 \label{tab:anova2}
 \end{table}
 
 
-As before, the factor of gender was split, and two two-way ANOVAs were run for the factors of noise type and microphone location, at each level of speaker gender (female, male).  The ANOVA with the male data has significant main effects of noise and microphone location, with $p<0.005$ in all conditions, but there was no significant interaction of noise type and microphone location ($F_{subj}(4,92)=1.54, p>0.1$; $F_{item}(4,284)=2.11, p>0.05$).  The ANOVA for the female data contained a significant main effect of microphone location ($F_{subj}(1,23)=107.31, p<0.001$; $F_{item}(1,71)=130.26, p<0.001$) and a significant interaction of microphone location \textbf{x} noise type ($F_{subj}(4,92)=5.2, p<0.005$; $F_{item}(4,284)=3.51, p<0.001$), but no main effect of noise type ($F_{subj}(4,92)=2.63, p>0.05$; $F_{item}(4,284)=2.66, p<0.05$).
+As before, the factor of gender was split, and two two-way ANOVAs were run for the factors of noise type and microphone location, at each level of speaker gender (female, male).  The ANOVA with the male data had significant main effects of noise and microphone location, with $p<0.005$ in all conditions, but there was no significant interaction of noise type and microphone location ($F_{subj}(4,92)=1.54, p>0.1$; $F_{item}(4,284)=2.11, p>0.05$).  The ANOVA for the female data contained a significant main effect of microphone location ($F_{subj}(1,23)=107.31, p<0.001$; $F_{item}(1,71)=130.26, p<0.001$) and a significant interaction of microphone location \textbf{x} noise type ($F_{subj}(4,92)=5.2, p<0.005$; $F_{item}(4,284)=3.51, p<0.001$), but no main effect of noise type ($F_{subj}(4,92)=2.63, p>0.05$; $F_{item}(4,284)=2.66, p<0.05$).
 
 The simple effects for microphone location were calculated, and as before, all were significant with $p<0.005$.  The simple effects of noise were calculated, and there were significant effects of noise type for both levels of gender with the microphone at the mouth, $p<0.005$.  However, there were no significant effects of noise (again, this test excludes the `no noise' condition) for either gender when the microphone was placed in the ear (female: ($F_{subj}<1; F_{item}<1$); male: ($F_{subj}(4,92)=1.06, p>0.1$; $F_{item}(4,284)=1.10, p>0.1$)).
 
@@ -446,7 +475,7 @@ The simple effects for microphone location were calculated, and as before, all w
 % -- Mention the computer screen distraction.
 
 
-The primary hypotheses from Chapter \ref{chapter2} included (a) that the signal recorded from the ear, pre-emphasized, filtered, and pre-emphasized again, would be intelligible by human listeners, and (b) that it would be more intelligible than speech with a noisy background, ie. that environmental noise would have very little effect on the signal.  The results in Section \ref{chap3:results} above show a statistical difference between the WERs of the sentence transcriptions of the speech recorded in every simple effect of microphone location in every condition, ie. recognition of speech recorded form the ear canal is statistically different than the recognition of speech recorded at the mouth in the tested conditions.  This can be seen more clearly in the graphs containing all levels of data, Figures \ref{fig:female-split} and \ref{fig:male-split}.  The noisy (non-clean) speech recorded at the ear has a significantly lower transcription WER than the noisy speech recorded at the mouth, splitting over all noise conditions.  This finding seems to validate hypothesis (b), that noise has does not have as much of an effect on the ear-recorded signal as it does on the mouth recorded signal.
+The primary hypotheses from Chapter \ref{chapter2} included (a) that the signal recorded from the ear, pre-emphasized, filtered, and pre-emphasized again, would be intelligible by human listeners, and (b) that it would be more intelligible than speech with a noisy background, ie. that environmental noise would have very little effect on the signal.  The results in Section \ref{chap3:results} above show a statistical difference between the WERs of the sentence transcriptions of the speech recorded in every single effect of microphone location in every condition, ie. recognition of speech recorded form the ear canal is statistically different than the recognition of speech recorded at the mouth in the tested conditions.  This can be seen more clearly in the graphs containing all levels of data, Figures \ref{fig:female-split} and \ref{fig:male-split}.  The noisy (non-clean) speech recorded at the ear has a significantly lower transcription WER than the noisy speech recorded at the mouth, splitting over all noise conditions.  This finding seems to validate hypothesis (b), that noise has does not have as much of an effect on the ear-recorded signal as it does on the mouth recorded signal.
 
 There is a significant simple effect of microphone location at the level of `no noise', as well.  The effect goes in the opposite direction, as the clean ear-recorded speech has a \textit{higher} WER than the clean mouth-recorded speech.  This appears to give a partial validation of hypothesis (a); while the ear-recorded speech is intelligible by human listeners, is is not \textit{as} intelligible as mouth-recorded speech with little or no noise.
 
@@ -454,6 +483,8 @@ Out of all condition combinations in Figures \ref{fig:female-split} and \ref{fig
 
 
 \begin{figure}[h!]
+\centering
+\textbf{Female Speech}
 
 \includegraphics[width=\maxwidth]{figure/All-Factors-Female-1} 
 
@@ -461,6 +492,8 @@ Out of all condition combinations in Figures \ref{fig:female-split} and \ref{fig
 \end{figure}
 
 \begin{figure}[h!]
+\centering
+\textbf{Male Speech}
 
 \includegraphics[width=\maxwidth]{figure/All-Factors-Male-1} 
 
@@ -473,19 +506,19 @@ Despite being more similar than their mouth recorded counterparts, there is stil
 Even though there is a higher WER than the ear-recorded no-noise condition, the ear-recorded speech in noise appears to be quite consistent across noise categories.  This is very different from the mouth-recorded speech in noise, which vary considerably between noise conditions. Again, this trends toward supporting hypothesis (b), that noise presence and noise type will have a statistically greater effect on mouth-recorded speech than ear-recorded speech.
 
 % 1Discuss significant interaction of noise and mic, and significant simple effect of noise for all mic locs except ear for male
-These observations are backed by the statistical results.  There was also a statistical interaction of noise type \textbf{x} microphone location, and this remained even when the `clean' condition was removed from the dataset, except the interaction disappears when only the male-spoken data is tested after being split by gender.  In looking at the simple effect of noise for the mouth-recorded level of microphone location, there is a statistical difference for both genders, both when the `clean' condition is left in the analysis as well as when it is removed.  This is both clear in Figures \ref{fig:female-split} and \ref{fig:male-split} and intuitive; different types of noise with different qualities will affect recognition in different ways.  This can be contrasted with the simple effects of noise for both genders at the ear (excluding the `clean' condition); there is no statistical difference in recognition (WER) across the levels of noise when the the speech was recorded from the ear.  This indicates that while a noise presence hampers transcription ability and increases WER in ear-recorded conditions, the varying qualities of the different background noises were dampened to the point of having a significantly lesser effect than that which occurs in the mouth-recorded speech.
+These observations are backed by the statistical results.  There was also a statistical interaction of noise type \textbf{x} microphone location, and this remained even when the `clean' condition was removed from the dataset, except the interaction disappeared when only the male-spoken data was tested after being split by gender.  In looking at the simple effect of noise for the mouth-recorded level of microphone location, there was a statistical difference for both genders, both when the `clean' condition was left in the analysis as well as when it was removed.  This is clear in Figures \ref{fig:female-split} and \ref{fig:male-split}; different types of noise with different qualities affect recognition in different ways.  This can be contrasted with the simple effects of noise for both genders at the ear (excluding the `clean' condition); there was no statistical difference in recognition (WER) across the levels of noise when the the speech was recorded from the ear.  This indicated that while a noise presence hampers transcription ability and increases WER in ear-recorded conditions, the varying qualities of the different background noises were dampened to the point of having a significantly lesser effect than that which occurs in the mouth-recorded speech.
 
-For the male-spoken data, this trend continued when the `clean' condition was included in the analysis.  There was no simple effect of noise, ie. no statistical difference between any of the noise levels, including `clean' speech, when the speech was recorded at the ear.  This differs from the recognition of the female-spoken speech, which finds a statistical difference of noise type when the `clean' condition is included versus when it is not.  This indicates that some level of noise must be present in the ear-recorded signal in order for a statistical difference to be elicited.  It is worth noting that the female speaker's hair introduced a potential compromise to the seal of the earmuffs used in the experiment (cf. Appendix \ref{appendixA}), which may be able to explain the gender difference. Emphasizing what is written above, there is still no difference of noise type when the `clean' condition is removed from the analysis.
+For the male-spoken data, this trend continued when the `clean' condition was included in the analysis.  There was no simple effect of noise, ie. no statistical difference between any of the noise levels, including `clean' speech, when the speech was recorded at the ear.  This differed from the recognition of the female-spoken speech, which found a statistical difference of noise type when the `clean' condition was included versus when it was not.  This indicated that some level of noise must be present in the ear-recorded signal in order for a statistical difference to be elicited.  It is worth noting that the female speaker's hair introduced a potential compromise to the seal of the earmuffs used in the experiment (cf. Appendix \ref{appendixA}), which may be able to explain the gender difference. Emphasizing what was written above, there was still no difference of noise type when the `clean' condition was removed from the analysis.  This broadly indicated that the presence of noise has an effect (at least for the female speaker), but that the different types of noise did not have any effect.
 
-Regarding the simple effects of noise at the mouth, as previously mentioned, there are statistical effects found for both genders, regardless of whether `clean' speech is included in the analysis.  This demonstrates that the different noise types have different effects on human speech recognition.  The exact reasons why performance differs for different levels of noise is not a primary concern of this study.  The different levels were primarily included to test the above effect, ie. \textit{whether} performance differs with noise type when speech is recorded at the mouth (it does), and \textit{whether} it differs for different noise types when recorded at the ear (it does not).   Visually, in Figures \ref{fig:female-split} and \ref{fig:male-split}, the bus noise condition appears to be the most difficult background noise from which to parse speech, and the factory background noise appears to be the easiest.  Further analysis of these particular differences is not pursued.
+Regarding the simple effects of noise at the mouth, as previously mentioned, there were statistical effects found for both genders, regardless of whether `clean' speech was included in the analysis.  This demonstrated that the different noise types have different effects on human speech recognition.  The exact reasons why performance differed for different levels of noise was not a primary concern of this study.  The different levels were primarily included to test the above effect, ie. \textit{whether} performance differs with noise type when speech is recorded at the mouth (it did), and \textit{whether} it differs for different noise types when recorded at the ear (it did not).   Visually, in Figures \ref{fig:female-split} and \ref{fig:male-split}, the bus noise condition appeared to be the most difficult background noise from which to parse speech, and the factory background noise appears to be the easiest.  Further analysis of these particular differences was not pursued.
 
 
 
 % 4Talking about Speaker Gender X Mic Loc interaction, and different dB SNR.  Highlight the differences in the plots above, especially the clean condition
-A statistical interaction of speaker gender \textbf{x} mic location is found in both ANOVAs, with the `clean' noise condition and without.  
+A statistical interaction of speaker gender \textbf{x} mic location was found in both ANOVAs, with the `clean' noise condition and without.  
 Looking at the boxplots in Figures \ref{fig:female-split} and \ref{fig:male-split}, it can be visualized that gender affects the recognition of speech at each of the recording locations differently (in the ear, in front of the mouth).  Based on this plot, it would appear that the female ear-recorded speech offers less intelligibility \textit{benefit} over the speech recorded at the mouth, while the male voice offers more benefit. It was previously mentioned that one possibility for the drop in performance of the female, ear-recorded speech was that there was a potential earmuff seal compromise due to the participant's hair.  
 
-It is also very possible that ear-recorded speech by females does not result in as high of recognition performance as that of male-speech.  One simple hypothesis is that there are fewer harmonics in female-speech than in male-speech below the low-pass filter cutoff.  It may also be due to differences in the anatomy of the head, although it is unlikely due to ear canal size, as the size of the outer ear canal recorded for both speakers was rather similar (male speaker: 1.4 mL; female speaker: 1.6 mL)\footnote{Cf. Appendix \ref{appendixA}}.  These have potential implications for hypothesis (a), that speech recorded at the ear is intelligible, and this difference should be investigated further.
+It is also very possible that ear-recorded speech by females does not result in as high of recognition performance as that of male-speech.  One simple hypothesis is that there are fewer harmonics in female-speech than in male-speech below the low-pass filter cutoff, resulting in less speech information.  Along the same line, this particular cut-off was low enough to potentially eliminate part of the third formant for some sounds in female speech.  It might also be due to differences in the anatomy of the head; however, it was unlikely due to ear canal size, as the size of the outer ear canal recorded for both speakers was relatively similar (male speaker: 1.4 mL; female speaker: 1.6 mL)\footnote{Cf. Appendix \ref{appendixA}}.  These have potential implications for hypothesis (a), that speech recorded at the ear is intelligible, and this difference should be investigated further.
 %
 % \begin{wrapfigure}{R}{0.5\textwidth}
 % <<Mic-location_simple, echo=FALSE, results='asis'>>=
@@ -500,7 +533,7 @@ It is also very possible that ear-recorded speech by females does not result in 
 There is also a difference between both genders for speech recorded at the mouth.
 However, recall that - in the instance of these two particular speakers - gender is confounded with SNR.  The average female speaker's SNR for noisy, mouth-recorded speech was higher than the male speaker's SNR for noisy, mouth-recorded speech.  As previously mentioned in Section \ref{chap3:methods:design}, the only noise level used for the stimuli in this task was 80 dB; this was constant for both participants, and so it was likely that the female participant spoke louder than the male participant.  The male speaker averaged less than +1 dB SNR and the female speaker averaged over +8 dB SNR, using the SNR calculation script mentioned previously in Section \ref{chap2:observations} and found in Appendix B\ref{appendixB}.
 
-This difference in SNR likely partially contributed to the observed statistical interaction.  If the SNR is high (as it was for the noisy, mouth-recorded female speech), the human auditory system can utilize the methods it has to `release the masking' in an effective manner.  The likelihood that the observed statistical difference was caused by the two speakers' differing SNRs makes sense, as the major difference in listener performance between the two speaker genders occurs within the noisy, mouth-recorded speech (cf. Figs. \ref{fig:female-split} and \ref{fig:male-split}).  Unfortunately, as gender is confounded with SNR, this can only be speculated.
+This difference in SNR likely partially contributed to the observed statistical interaction.  If the SNR is high (as it was for the noisy, mouth-recorded female speech), the human auditory system can utilize the methods it has to `release the masking' in an effective manner.  The likelihood that the observed statistical difference was caused by the two speakers' differing SNRs makes sense, as the major difference in listener performance between the two speaker genders occurs within the noisy, mouth-recorded speech (cf. Figs. \ref{fig:female-split} and \ref{fig:male-split}).  This increase in SNR would have had a greater effect for mouth-recorded speech, but not as much for EAC-recorded speech.  A higher SNR should have led to greater intelligibility for EAC-recorded speech as well, but the opposite is seen.  Unfortunately, as gender is confounded with SNR, this can only be speculated.
 
 
 
@@ -562,6 +595,8 @@ Since the ability to recognize ear-recorded speech, even in noise, is quite cons
 To visualize whether the performance of participants generally improves over time, scatterplots graph participant's chronological performance with mouth-recorded and ear-recorded speech over the course of the experiment in Figures \ref{fig:linear_performance_m} and \ref{fig:linear_performance_e}. 
 %
 \begin{figure}[ht]%{L}{0.5\textwidth}
+\centering
+\textbf{Regression over Chronological Performance}
 \begin{subfigure}{0.47\textwidth}
 
 \includegraphics[width=\maxwidth]{figure/line_graph_chrono_m-1} 
@@ -577,7 +612,7 @@ To visualize whether the performance of participants generally improves over tim
 \caption{Scatterplot of all participants' WER values for responses to speech recorded at the ear.}
 \label{fig:linear_performance_e}
 \end{subfigure}
-\caption{The x-axis is the order of the responses; eg. `1 on the x-axis is the first response given by the participants.  The x-axis only corresponds to order of response, and does not indicate the specific noise type or gender of the speaker.  A line was fitted to the data using linear regression.}
+\caption{A linear regression line fit to a plot of WER (y-axis) and stimulus in chronological order (x-axis).  The x-axis is the order of the responses; ie. `1' on the x-axis is the first response given by the participants.  This is not broken down by gender or noise-type.}
 \end{figure}
 %
 Linear regression models were fit onto the mouth-recorded data (slope=$-0.0048728$, $R^2$=$0.0175763$, $p<0.001$), and the ear-recorded data (slope=$-0.0016076$, $R^2$=$0.003146$, $p>0.05$). 
@@ -593,12 +628,12 @@ One potential reason that there may not have been a statistical `training' effec
 
 To expand on the previous study, two additional investigations were performed to give insights into possible future research directions.  The impetus for the first investigation was \cite{bird:97}, which demonstrated that fundamental frequency (F0) is a tool used by the auditory system to separate a desired source from masking noise.  This follow up proposed to recombine the very clear, lower frequencies from the ear-recorded speech with the `noisy' upper frequencies recorded at the mouth.  
 
-The hypothesis was that the auditory system would use the clear fundamental frequency harmonic information in the lower frequencies to extract the upper harmonics out of the noise.  Accuracy was predicted to improve over that of the low-pass filtered, `muffled', ear speech (which many participants subjectively observed to be annoying and difficult to understand), as more high frequency information will be present and available for listeners' auditory systems.  This speech sacrificed the advantage of being completely or nearly `noise-free', to sound more natural.  Additionally, since the ear-recorded speech consisted of very clean harmonics, it was hypothesized that this speech, combined with the higher frequency mouth recorded speech in the `clean' condition, would perform equally to its mouth-recorded counterpart in the `clean' condition. This is referred to throughout as the `F0' investigation.
+The hypothesis was that the auditory system would use the clear fundamental frequency harmonic information in the lower frequencies to extract the upper harmonics out of the noise.  Accuracy was predicted to improve over that of the low-pass filtered, `muffled', ear speech (which many participants subjectively observed to be annoying and difficult to understand), as more high frequency information was present and available for listeners' auditory systems.  This speech sacrificed the advantage of being completely or nearly `noise-free', to sound more natural.  Additionally, since the ear-recorded speech consisted of very clean harmonics, it was hypothesized that this speech, combined with the higher frequency mouth recorded speech in the `clean' condition, would perform equally to its mouth-recorded counterpart in the `clean' condition. This is referred to throughout as the `F0' investigation.
 
 The second investigation was based on the concept of `training' discussed earlier.  This presumed that the auditory system can learn to adapt to understand speech in a degraded signal better with experience.  According to \cite{mattys:12}, significant learning has occurred with even a small number of training trials.  \cite{davis:05} demonstrated that during training, successful recognition of a degraded signal, more than unsuccessful recognition of a degraded signal, helped participants recognize a similar signal later on.  
 Based on the implications of these findings, a short story was read aloud and recorded from inside the ear canal; this served as training for participants in a follow-up investigation.  Since the type of distortion from the ear-recorded signal was regular and predictable, it was hypothesized that those who have listened to the training story would perform better on ear-recorded speech than those who had not received training (ie. those in the primary study). This is referred to throughout as the `training' investigation.
 
-These two investigations did not contain a full (24) number of subjects to place each participant into a counter-balanced group as these were designed as pilot studies for future research.  Therefore no statistical analysis was conducted for either investigation.  %In light of this, these could be thought of as `pilot' studies for future research.  
+These two investigations were designed as pilot studies for future research, and did not contain the number of subjects required to place each participant into one of the 24 counter-balanced groups.  Therefore no statistical analysis was conducted for either investigation.  %In light of this, these could be thought of as `pilot' studies for future research.  
 Because there were no individual statistical results, and because the two studies were primarily of interest when compared with the results from the primary study, the methods sections (Sections \ref{F0-methods} and \ref{training-methods}) for both studies are consecutive, and any discussion of results is withheld until Section \ref{chap3:glob_discussion}.
 
 % for the participants in this follow-up investigation to listen to prior to completing the experiment itself. This speech will be modified in the same manner as the ear-recorded speech in the primary study (pre-emphasized, low-pass filtered 0 to 2.5 kHz with a 500 Hz slope, and pre-emphasized).  This recording did not combine the ear-recorded speech with the higher frequencies of the mouth recorded speech (as in the `F0' investigation above).  This brief story will serve as a training for participants in preparation for the actual task. 
@@ -610,14 +645,14 @@ Because there were no individual statistical results, and because the two studie
 \subsection{Stimuli}\label{F0-stimuli}
 
 The stimuli used for this investigation consisted of the same 80 Harvard Sentences produced by the same speakers in the primary study above (Section \ref{expt3}).
-No modification was performed to the sentences recorded at the mouth.  For the sentences recorded at the ear, the same modifications as before (pre-emphasis, low-pass filtering from 0 to 2.5 kHz with a 500 Hz slope, and a second pre-emphasis) were performed, but afterwards, the simultaneously recorded speech from the mouth was filtered and combined with the ear-recorded speech.  The speech from the mouth was bandpass filtered between 3.0 kHz and 8.0 kHz, with a 500Hz slope.  
+No modification was performed to the sentences recorded at the mouth.  For the sentences recorded at the ear, the same modifications as before (pre-emphasis, low-pass filtering from 0 to 2.5 kHz with a 500 Hz slope, and a second pre-emphasis) were performed, but afterwards, the simultaneously recorded speech from the mouth was filtered and combined with the ear-recorded speech.  The speech from the mouth was bandpass filtered between 3.0 kHz and 8.0 kHz, with a 500Hz slope on either side (note, the mouth-recorded speech was already filtered at 0-8 kHz).  
 
 This allowed for an overlap of the frequencies from the mouth-recorded speech and the low-pass filtered ear-recorded speech.  The two signals were converted to a stereo signal, and then combined into a mono signal.  This resulted in relatively clean speech below approximately 2.7 kHz, and noisy speech above approximately 2.7 kHz, as seen in Figure \ref{fig:combined-signal}.
 
 \begin{figure}[h]
 \centering
   \includegraphics[width=\textwidth]{figure/combined-signal_labeled.png}
-  \caption{A spectrogram of the sentence ``A cramp is no small danger on a swim''.  The low-pass filtered ear-recorded signal (0 - 2.5 kHz with a 500 Hz slope) was combined with the simultaneous [noisy] mouth signal, which was bandpass filtered at a higher frequency.  The arrow indicates the location of overlap, above which the mouth-recorded signal is dominant, and below which the ear-recorded signal is dominant.}
+  \caption{A spectrogram of the sentence ``A cramp is no small danger on a swim''.  The low-pass filtered ear-recorded signal (0 - 2.5 kHz with a 500 Hz slope) was combined with the simultaneous [noisy] mouth signal, which was bandpass filtered at a higher frequency (3 - 8 kHz with a 500 Hz slope).  The arrow indicates the location of overlap, above which the mouth-recorded signal is dominant, and below which the ear-recorded signal is dominant.}
   \label{fig:combined-signal}
 \end{figure}
 %
@@ -928,27 +963,31 @@ Looking into the differences between the primary study and the two follow-up stu
 
 
 \begin{figure}[h!]
+\centering
+\textbf{Female Speech}
 
 \includegraphics[width=\maxwidth]{figure/boxplot_noiseXmicXall_female-1} 
 
-\caption{Boxplot displaying the average word error rate (WER) averaged over each participant for the interaction of every noise type by the mic location, for all three studies; this is data for only recognition on utterances by the female speaker. WER is the variable on the y-axis, and noise type by mic location is on the x-axis. (`P',gray,`Primary' study); (`F0',green,`F0' study); (`T',blue,`Training' study); (`E',lighter color,`Ear-recorded'); (`M',darker color,`Mouth-recorded'). `EH' = Ear-recorded with reintroduction of high frequencies (from mouth-recorded speech).}
+\caption{Boxplot displaying the average word error rate (WER) averaged over each participant for the interaction of every noise type by the mic location, for all three studies; this is data for only recognition on utterances by the female speaker. WER is the variable on the y-axis, and noise type by mic location is on the x-axis. (`P'=gray=`Primary' study); (`F0'=green=`F0' study); (`T'=blue=`Training' study); (`E'=lighter color=`Ear-recorded'); (`M'=darker color=`Mouth-recorded'); (`H' = Ear-recorded Hybrid speech with reintroduction of high frequencies from mouth-recorded speech).}
 \label{fig:female-all}
 \end{figure}
 
 \begin{figure}[h!]
+\centering
+\textbf{Male Speech}
 
 \includegraphics[width=\maxwidth]{figure/boxplot_noiseXmicXall_male-1} 
 
-\caption{Boxplot displaying the average word error rate (WER) averaged over each participant for the interaction of every noise type by the mic location, for all three studies; this is data for only recognition on utterances by the male speaker. WER is the variable on the y-axis, and noise type by mic location is on the x-axis. (`P',gray,`Primary' study); (`F0',green,`F0' study); (`T',blue,`Training' study); (`E',lighter color,`Ear-recorded'); (`M',darker color,`Mouth-recorded'). `EH' = Ear-recorded with reintroduction of high frequencies (from mouth-recorded speech).}
+\caption{Boxplot displaying the average word error rate (WER) averaged over each participant for the interaction of every noise type by the mic location, for all three studies; this is data for only recognition on utterances by the male speaker. WER is the variable on the y-axis, and noise type by mic location is on the x-axis. (`P'=gray=`Primary' study); (`F0'=green=`F0' study); (`T'=blue=`Training' study); (`E'=lighter color=`Ear-recorded'); (`M'=darker color=`Mouth-recorded'); (`H' = Ear-recorded Hybrid speech with reintroduction of high frequencies from mouth-recorded speech).}
 \label{fig:male-all}
 \end{figure}
 
 
 The performance on ear-recorded speech in the `F0' study (green boxes; light=ear-recorded, dark=mouth-recorded) could have potentially improved or worsened, as upper frequencies were reintroduced, but additional noise was also introduced.  However, the performance on ear-recorded speech from the `training' study (blue boxes; light=ear-recorded, dark=mouth-recorded) was not be expected to be higher than that of the primary study (gray boxes; light=ear-recorded, dark=mouth-recorded), because the stimuli in both studies are exactly the same.  
 
-There are variances in the recognition of ear-recorded speech in the different conditions, and an increased variance between the individual levels of noise type.  This could in part be due to the addition of noise into the `F0' signals along with the higher frequency, but it would not be expected to affect the data from the `training' study as there was not a significant effect in the primary study (again, the stimuli in these two studies was exactly the same).  Variances aside, the `Training' study seems to result in essentially the same results the primary study.  A full-fledged study with more participants is certainly needed to be able to make any inferences about the benefits of this particular training procedure, but the results shown here do not indicate much improvement.  There are a number of potential factors that may have, or could in the future affect the ability of listeners to fully benefit from the training offered.  
+There were variances in the recognition of ear-recorded speech in the different conditions, and an increased variance between the individual levels of noise type.  This could in part be due to the addition of noise into the `F0' signals along with the higher frequency, but it would not be expected to affect the data from the `training' study as there was not a significant effect in the primary study (again, the stimuli in these two studies was exactly the same).  Variances aside, the `Training' study seemed to obtain essentially the same results as the primary study.  A full-fledged study with more participants is certainly needed to be able to make any inferences about the benefits of this particular training procedure, but the results shown here did not indicate much improvement.  There are a number of potential factors that may have, or could in the future affect the ability of listeners to fully benefit from the training offered.  
 
-While unlikely a major component, a single, different (male) voice was used for the training story in this follow-up study.  It is possible that the use of only one voice did not provide listeners with an adequate variety of vocal variations to make proper inferences about the distortion.  It is also important to consider the use of at least one male and at least one female voice during training, to avoid a potential gender effect.
+While unlikely a major component, a single, different (male) voice was used for the training story in this follow-up study.  It was possible that the use of only one voice did not provide listeners with an adequate variety of vocal variations to make proper inferences about the distortion.  It is also important to consider the use of at least one male and at least one female voice during training, to avoid a potential gender effect.
 
 Additionally, while for this task full attention was assumed, it is uncertain how much actual attention participants were devoting to listening to the training story.  Rather than a `read-along' training task, a more interactive task may capture more attention than passive listening and reading.  The interactive task could be structured as a forced decision task, providing multiple choice answers to an ear recorded sentence they hear.  Alternatively, it could be structured (as in the experiment itself) to force listeners to `fill-in-the-blank' with what they thought was spoken, then provide listeners with the feedback in the form of the answer.  
 
@@ -970,7 +1009,7 @@ The `F0' experiment, also displayed in Figures \ref{fig:female-all} and \ref{fig
 
 In the conditions in which there is noise, it was uncertain whether there would be benefit - and if so, to what degree - of re-incorporating noisy upper frequencies.  There did not seem to be a decrease in recognition accuracy for ear-recorded speech in this study, but the only substantial benefit occurred with the female-speaker data, for caf\'{e} and street background noises.  While for every other noise type (except the male speaker's caf\'{e} background), the median WER is lower for the `F0' study data than for that of the primary study, the difference between the two does not seem visually substantial.
 
-There is often important (though, perhaps, not critical) speech information above the approximately 2.7 kHz low-pass cutoff imposed on the stand-alone ear-recorded speech.  This would be expected, as a standard bandpassed signal for a telephone reaches up to 3.5 kHz (compared with approx. 2.7 kHz), and there are still those who have difficulty with its intelligibility.  The noisy upper frequencies which were added back into the ear-recorded signal contain this important information, but it is also accompanied by unpredictable noise.  There is some promise that this benefited recognition, but the improvement seen here is only marginal.
+There is often important speech information above the approximately 2.7 kHz low-pass cutoff imposed on the stand-alone ear-recorded speech.  This would be expected, as a standard bandpassed signal for a telephone reaches up to 3.5 kHz (compared with approx. 2.7 kHz), and there are still those who have difficulty with its intelligibility\footnote{Furthermore, with telephone bandwidth speech, the fundamental frequency of speech is cut off (as the lower range for the bandwidth is 0.3 kHz).}.  The noisy upper frequencies which were added back into the ear-recorded signal contain this important information, but it is also accompanied by unpredictable noise.  There is some promise that this benefited recognition, but the improvement seen here is marginal.
 
 Further investigation, of course, is still needed, as these preliminary WERs from the F0 study are from only five listeners.  Additionally, this method is still (albeit to a lesser degree) at the mercy of the ambient noise, and one would expect that as the SNR decreases (ie. as the noise level increases), this method will become less effective, and the auditory system poorer at extracting the high frequency speech information from the noise.  The range of SNRs at which this method becomes ineffective, as well statistically demonstrating its effectiveness in general, will need to be determined with future research.
 
@@ -1025,5 +1064,5 @@ In summary, speech recorded at the ear, via the process described in Chapter \re
 
 The additional follow-up study using training to help listeners become more accustomed to the ear-recorded speech did not demonstrate much performance over training.  The study which recombined the high frequency information from the mouth-recorded speech with the low-pass filtered ear-recorded speech indicates, at best, marginal improvement over low-pass filtered ear-recorded signals by themselves.
 
-It is important to emphasize that the results from both the follow-up studies were not statistically tested, simply because they did not contain enough participants to run statistics.  Future research should expand on these preliminary results, conducting more thorough and statistical experimentation\footnote{Speech data from this experiment can be found at http://www.openslr.org/}.  There are certainly more stimulus modifications to explore that exploit the auditory system's innate ability to release it from the masking of ambient noise.
+It is important to emphasize that the results from both the follow-up studies were not statistically tested, simply because they did not contain enough participants to run statistics.  Future research should expand on these preliminary results, conducting more thorough and statistical experimentation.  There are certainly more stimulus modifications to explore that exploit the auditory system's innate ability to release it from the masking of ambient noise.
 

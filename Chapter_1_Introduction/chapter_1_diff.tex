@@ -25,37 +25,40 @@
 
 \chapter{Introduction\label{chapter1}}
 
-Speech in a noisy background presents a challenge to the recognition of that speech both by human listeners and by computers tasked with recognizing human speech (termed automatic speech recognition).  Years of research have resulted in many solutions, though none so far have completely solved the problem.  Most approaches have taken the route of trying to remove noise from a signal that is already corrupted with noise.
+Speech in a noisy background presents a challenge \DIFdelbegin \DIFdel{to the }\DIFdelend \DIFaddbegin \DIFadd{for }\DIFaddend recognition of that speech both by human listeners and by computers tasked with \DIFdelbegin \DIFdel{recognizing }\DIFdelend \DIFaddbegin \DIFadd{understanding }\DIFaddend human speech (\DIFdelbegin \DIFdel{termed }\DIFdelend automatic speech recognition\DIFaddbegin \DIFadd{; ASR}\DIFaddend ).  Years of research have resulted in \DIFdelbegin \DIFdel{many solutions, though none so far have }\DIFdelend \DIFaddbegin \DIFadd{a variety of solutions, that have not }\DIFaddend completely solved the problem.  Most approaches have taken the route of trying to remove noise from a signal that is already corrupted with noise.
 
-\DIFaddbegin \DIFadd{Figure \ref{fig:signal-SNR-intro} demonstrates the problem.  The dark horizontal bands seen in the spectrogram in each figure are part of the speech signal.  In Figure \ref{fig:signal-SNR-intro-low}, these are clearly visible above the background noise.  By contrast, in Figure \ref{fig:signal-SNR-intro-high}, these dark horizontal bands are more difficult to see.  The amplitude (level of darkness in the spectrogram) of the noise at various frequencies drowns out the speech signal, making it more difficult to hear.  In the noisy signal, there is more competing information that makes it difficult for both humans - and computers - to differentiate what is noise and what is speech.  This will be discussed in more depth in Section \ref{sec:snr-difficult}.
-}
+Figure \ref{fig:signal-SNR-intro} demonstrates the problem.  The dark horizontal bands seen in the spectrogram in each figure are part of the speech signal.  In Figure \ref{fig:signal-SNR-intro-low}, these are clearly visible above the background noise.  By contrast, in Figure \ref{fig:signal-SNR-intro-high}, these dark horizontal bands are more difficult to see.  The amplitude (level of darkness in the spectrogram) of the noise at various frequencies drowns out the speech signal, making it more difficult to hear.  In the noisy signal, there is more competing information that makes it difficult for both humans - and computers - to differentiate what is noise and what is speech.  This will be discussed in more depth in Section \ref{sec:snr-difficult}.
 
 \begin{figure}[h!]
 \centering
 \begin{subfigure}{0.75\textwidth}
   \includegraphics[width=.9\textwidth]{figure/signal-SNR-intro-low.png}
-  \caption{\DIFaddFL{A sentence spoken with a high level of background noise, resulting in a }\textit{\DIFaddFL{low}} \DIFaddFL{SNR.}}
+  \caption{A sentence spoken with a high level of background noise, resulting in a \textit{low} SNR.}
   \label{fig:signal-SNR-intro-low}
 \end{subfigure}
-%DIF > 
+%
 \begin{subfigure}{0.75\textwidth}
   \includegraphics[width=.9\textwidth]{figure/signal-SNR-intro-high.png}
-  \caption{\DIFaddFL{A sentence spoken with a low level of background noise, resulting in a }\textit{\DIFaddFL{high}} \DIFaddFL{SNR.}}
+  \caption{A sentence spoken with a low level of background noise, resulting in a \textit{high} SNR.}
   \label{fig:signal-SNR-intro-high}
 \end{subfigure}
-\caption{\DIFaddFL{Waveforms and spectrograms of the sentence ``The glow deepened in the eyes of the sweet girl.''}}
+\caption{Waveforms and spectrograms of the sentence ``The glow deepened in the eyes of the sweet girl.''}
 \label{fig:signal-SNR-intro}
 \end{figure}
 
-\DIFaddend This project presents a new approach to the problem.  It proposes that human speech can be recorded in a manner that largely eliminates the noise before it reaches the microphone recording the signal.  The microphone would be placed inside the ear canal of the speaker and would record speech as it is passed through the bone and tissue of the speaker's head.  The signal is expected to be distorted by passage through the head, but the speech in the signal is expected to be recoverable.
+This project presents a new approach to the problem.  It proposes that human speech can be recorded in a manner that largely eliminates the noise before it reaches the microphone recording the signal.  The microphone would be placed inside the ear canal of the speaker and would record speech as it is passed through the bone and tissue of the speaker's head.  The signal is expected to be distorted by passage through the head, but the speech in the signal is expected to be recoverable.  \DIFaddbegin \DIFadd{This has potential wide-ranging application, including human-to-human electronic communication in loud workplaces (eg. factory floor, airport tarmac), as well as human-to-computer interactions, as the use of artificial intelligence becomes more widespread and mainstream, including in such noisy workplace environments.
+}\DIFaddend 
 
 Section \ref{ch1:background} below describes the basic acoustics of sound.  This is intended to be a general background to acoustics and interfering sound waves, leading up to a brief overview of sound in noise. Chapter \ref{chapter2} discusses the collection of ear-recorded speech, Chapter \ref{chapter3} describes a human speech perception experiment using ear-recorded speech, and Chapter \ref{chapter4} outlines an experiment testing the ability of an automatic speech recognition system to accurately recognize ear-recorded speech.  At the end of this chapter, Section \ref{ch1:diss-overview} gives a more detailed overview of the rest of the dissertation.
 
 \section{Background}\label{ch1:background}
 
-Sound itself, along with the ability to perceive it, is a remarkable phenomenon.  Put simply, `sound' is the fluctuation of pressure in neighboring groups of particles over time. Most frequently sound is discussed in terms of the fluctuation of air pressure, because, as humans, we primarily receive sound into our ear canals through the medium of air, but sound can also travel through media of liquids and solids, or pass through any combination of the three.
+Sound itself, along with the ability to perceive it, is a remarkable phenomenon.  Put simply, `sound' is the fluctuation of pressure in neighboring groups of particles over time. Most frequently sound is discussed in terms of the fluctuation of air pressure, because, as humans, we primarily receive sound into our ear canals through the medium of air, but sound can also travel through \DIFdelbegin \DIFdel{media of }\DIFdelend liquids and solids, or pass through any combination of the three.
 
-There are primarily three components to sound: amplitude, frequency, and phase, which can be seen in Figure \ref{fig:basic-sound-wave}.  In a simple sound wave, the amplitude of sound corresponds to the peak intensity of the high pressure (and the lowest pressure) portions of a sound wave (cf. Fig. \ref{fig:basic-sound-amplitude}).  The frequency corresponds to the rate at which the high and low pressure portions of the signal fluctuate between one another (cf. Fig. \ref{fig:basic-sound-frequency}).  The phase of a wave is the location of the pressure level (relative to atmospheric pressure) in time (cf. Fig. \ref{fig:basic-sound-phase}).   
+There are primarily three components to sound: amplitude, frequency, and phase, which can be seen in Figure \ref{fig:basic-sound-wave} \DIFaddbegin \DIFadd{(\mbox{%DIFAUXCMD
+\cite{rosen:91}
+}%DIFAUXCMD
+)}\DIFaddend .  In a simple sound wave, the amplitude of sound corresponds to the peak intensity of the high pressure (and the lowest pressure) portions of a sound wave (cf. Fig. \ref{fig:basic-sound-amplitude}).  The frequency corresponds to the rate at which the high and low pressure portions of the signal fluctuate between one another (cf. Fig. \ref{fig:basic-sound-frequency}).  The phase of a wave is the location of the pressure level (relative to atmospheric pressure) \DIFaddbegin \DIFadd{at a given moment }\DIFaddend in time (cf. Fig. \ref{fig:basic-sound-phase}).   
 
 \begin{figure}[h!]
 \begin{subfigure}{0.5\textwidth}
@@ -82,11 +85,11 @@ There are primarily three components to sound: amplitude, frequency, and phase, 
 \label{fig:basic-sound-wave}
 \end{figure}
 
-This latter characteristic - phase, while important when dealing with interacting waves from multiple sources, is often not taken into in speech science due to both its complexity and the fact that phase does not encode any speech information.  The human auditory system primarily makes use of the other two characteristics of sound - amplitude and frequency.
+This latter characteristic - phase, while important when dealing with interacting waves from multiple sources, is often not taken into \DIFaddbegin \DIFadd{account }\DIFaddend in speech science due to both its complexity and the fact that phase does not encode any speech information.  The human auditory system primarily makes use of the other two characteristics of sound - amplitude and frequency.
 
 \subsection{Overview of Anatomy and Physiology of the Peripheral Auditory System}
 
-Prior to discussing the acoustic structure of speech, it is important to become familiar with the basic peripheral auditory system.  The peripheral auditory system is generally grouped into three primary categories, the outer ear, the middle ear, and the inner ear (cf. Figure \ref{fig:ear-anatomy}).  The outer ear includes the pinna, the ear canal tube, and the tympanic membrane (ie. the eardrum).  Air-transmitted sound vibrations, ie. pressure fluctuations, enter the ear canal through the opening at the pinna.  These then travel along the canal to vibrate the tympanic membrane, which passes the energy to the middle ear.  The middle ear includes the ossicles within the middle ear cavity.  The ossicles are a chain of three very small bones leading from the tympanic membrane to the cochlea. The external sound vibrations hit the tympanic membrane, are passed along the ossicle chain, which then sends these vibrations to the inner ear (\cite{rosen:91}).
+Prior to discussing the acoustic structure of speech, it is important to become familiar with the basic peripheral auditory system.  The peripheral auditory system is generally grouped into three primary categories, the outer ear, the middle ear, and the inner ear (cf. Figure \ref{fig:ear-anatomy}).  The outer ear includes the pinna, the \DIFdelbegin \DIFdel{ear canal tube}\DIFdelend \DIFaddbegin \DIFadd{external auditory canal (EAC)}\DIFaddend , and the tympanic membrane (ie. the eardrum).  Air-transmitted sound vibrations, ie. pressure fluctuations, enter the ear canal through the opening at the pinna.  These then travel along the canal to vibrate the tympanic membrane, which passes the energy to the middle ear.  The middle ear includes the ossicles within the middle ear cavity.  The ossicles \DIFdelbegin \DIFdel{are }\DIFdelend \DIFaddbegin \DIFadd{form }\DIFaddend a chain of three very small bones leading from the tympanic membrane to the cochlea. The external sound vibrations \DIFdelbegin \DIFdel{hit }\DIFdelend \DIFaddbegin \DIFadd{impose an oscillating force on }\DIFaddend the tympanic membrane, \DIFdelbegin \DIFdel{are passed along the ossicle }\DIFdelend \DIFaddbegin \DIFadd{setting it into motion. This results in displacement at the ossicular }\DIFaddend chain, which then \DIFdelbegin \DIFdel{sends these vibrations to }\DIFdelend \DIFaddbegin \DIFadd{transforms the vibrations into a traveling wave passing along the basilar membrane within the fluid-filled cochlea in }\DIFaddend the inner ear (\cite{rosen:91}).
 
 \begin{figure}[h]
 \centering
@@ -95,27 +98,36 @@ Prior to discussing the acoustic structure of speech, it is important to become 
   \label{fig:ear-anatomy}
 \end{figure}
 
-The inner ear is composed of the cochlea, the semicircular canals (and vestibule), and the auditory and vestibular nerves.  The semicircular canals, vestibule, and vestibular nerve don't play a part in audition (their primary function regards balance sensitivity).  The cochlea, a hard `shell' filled with fluid receives the vibrations passed along through the middle ear ossicles.\footnote{The peripheral auditory system uses gas, solid, and liquid media to transmit acoustic vibrations.}  The vibrations are passed into the fluid cochlea and travel along the length of the cochlea, transmitting acoustic energy to cells that are able to detect the amplitude of the vibrations.  Depending on the location of a cell along the length of the cochlea, it will pick up a different frequency of sound.  The auditory nerve carries electrical impulses from these cells into the auditory cortex of the brain. 
+The inner ear is composed of the cochlea, the semicircular canals (and vestibule), and the auditory and vestibular nerves.  The semicircular canals, vestibule, and vestibular nerve don't play a part in audition (their primary function regards balance sensitivity).  The cochlea, a hard `shell' filled with fluid\DIFaddbegin \DIFadd{, }\DIFaddend receives the vibrations passed \DIFdelbegin \DIFdel{along through }\DIFdelend \DIFaddbegin \DIFadd{to it by way of }\DIFaddend the middle ear ossicles.\DIFdelbegin \footnote{\DIFdel{The peripheral auditory system uses gas, solid, and liquid media to transmit acoustic vibrations.}}  %DIFAUXCMD
+\addtocounter{footnote}{-1}%DIFAUXCMD
+\DIFdelend %DIF > \footnote{The peripheral auditory system uses gas, solid, and liquid media to transmit acoustic vibrations.}  
+The vibrations are passed into the fluid \DIFaddbegin \DIFadd{of the }\DIFaddend cochlea and travel along \DIFdelbegin \DIFdel{the lengthof the cochlea, transmitting acoustic }\DIFdelend \DIFaddbegin \DIFadd{its length, transmitting hydro-mechanical }\DIFaddend energy to cells \DIFaddbegin \DIFadd{on the basilar membrane }\DIFaddend that are able to detect the \DIFdelbegin \DIFdel{amplitude of the vibrations}\DIFdelend \DIFaddbegin \DIFadd{displacement of the fluid by means of sensory membranes.  The basilar membrane serves as the base on which these sensory cells are fixed}\DIFaddend .  Depending on the location of \DIFdelbegin \DIFdel{a cell along the length of the cochlea, it will pick up a different frequency of sound}\DIFdelend \DIFaddbegin \DIFadd{the sensory cells along the basilar membrane, they respond to a different frequency of `sound', ie. fluid pressure fluctuation.  This placement of sensory cells `tuned' to detect a particular frequency band is called tonotopic organization.  This essentially allows the cochlea to perform a Fourier Transform, which extracts all the different frequency components from a wave, of the sound that is transmitted to it}\DIFaddend .  The auditory nerve carries electrical impulses from these \DIFaddbegin \DIFadd{sensory }\DIFaddend cells into the auditory cortex of the brain \DIFaddbegin \DIFadd{(\mbox{%DIFAUXCMD
+\cite{rosen:91,celesia:15}
+}%DIFAUXCMD
+)}\DIFaddend . 
 
-Of interest to this present study is the relatively simple outer ear.  Typically, as described above, vibrations from the air will enter the ear canal through the opening at the pinna. Frequently, these vibrations take the form of human speech.
+Of interest to this present study is the \DIFdelbegin \DIFdel{relatively simple }\DIFdelend outer ear.  Typically, as described above, vibrations from the air will enter the ear canal through the opening at the pinna. Frequently, these vibrations take the form of human speech.
 
 %However, vibrations from one's own speech are also transmitted via the bone, cartilage, and tissue of the head.  Regardless of source, sound vibrations entering into the ear canal will be altered by the shape of the ear canal, described more below.
 
 
 \subsection{Acoustic Structure of Human Speech}
 
-The structure of human speech draws from a collection of individual sounds (phonemes) that are strung together, encoding words, sentences, and more abstractly, meaning.  Each human language uses a subset of all possible phonemes.  Each phoneme is either considered `voiced' or `unvoiced'.  The acoustic properties of sounds in these two categories differ greatly.
+The structure of human speech draws from a collection of individual sounds (phonemes) that are strung together, encoding words, sentences, and more abstractly, meaning.  Each human language uses a subset of all possible phonemes.  Each phoneme is either considered `voiced' or `unvoiced'.  The acoustic properties of sounds in these two categories differ greatly \DIFaddbegin \DIFadd{(\mbox{%DIFAUXCMD
+\cite{ladefoged:14}
+}%DIFAUXCMD
+)}\DIFaddend .
 
-Voiced speech is composed of narrow bands of acoustic energy, called harmonics, located along a frequency spectrum (cf. fig \ref{fig:spctrm5k}).  In this sense, speech is considered a `complex' sound, because it is composed of multiple, simultaneous frequencies.
+Voiced speech is composed of narrow bands of acoustic energy, called harmonics, located along a frequency spectrum (cf. \DIFdelbegin \DIFdel{fig }\DIFdelend \DIFaddbegin \DIFadd{Fig }\DIFaddend \ref{fig:spctrm5k}).  In this sense, speech is considered a `complex' sound, because it is composed of \DIFdelbegin \DIFdel{multiple, simultaneous }\DIFdelend \DIFaddbegin \DIFadd{energy at multiple }\DIFaddend frequencies.
 %
 \begin{wrapfigure}{l}{0.5\textwidth}
 \centering
   \includegraphics[width=0.5\textwidth]{figure/spctrm5k.png}
-  \caption{Spectrum of the middle of an /I/ vowel.  Each `spike' is a separate narrow band of frequency, called a harmonic.}
+  \caption{Spectrum of the middle of an /I/ vowel.  Each `\DIFdelbegin \DIFdel{spike}\DIFdelend \DIFaddbegin \DIFadd{hump}\DIFaddend ' is a separate narrow band of frequency, called a harmonic.}
   \label{fig:spctrm5k}
 \end{wrapfigure}
 %
-Certain harmonics will be dampened by the vocal tract, leaving others relatively unfiltered.  A group of neighboring harmonics containing more energy than other harmonics are called formants.  The location, shape, and transition over time of these formants (among other more minor features) are what encodes speech information for voiced sounds.  This can be easily visualized in a spectrogram (cf. Fig. \ref{fig:spctgrm_citizen}).
+Certain harmonics will be dampened by the vocal tract, leaving others relatively unfiltered.  A group of neighboring harmonics containing more energy than other harmonics are called formants.  The location, shape, and transition over time of these formants (among other more minor features) \DIFdelbegin \DIFdel{are what }\DIFdelend encodes speech information for voiced sounds.  This can be \DIFdelbegin \DIFdel{easily }\DIFdelend visualized in a spectrogram (cf. Fig. \ref{fig:spctgrm_citizen}).
 
 \begin{figure}[h!]
 \begin{subfigure}{0.95\textwidth}
@@ -135,20 +147,29 @@ Certain harmonics will be dampened by the vocal tract, leaving others relatively
 \label{fig:spctgrm_citizen}
 \end{figure}
 
-For unvoiced speech, the information used to recognize and categorize the speech sound is likely found in either the turbulent frication generally centered in higher frequencies (cf. Fig. \ref{fig:spctgrm_s}, although some of the information can be found in lower frequencies), or found in the voiced information in the transitions into and out of the sound (\cite{halle:57,lindblom:63,stevens:78,willi:17}).  Generally, most speech information used by the human auditory system can be found in frequencies below 5.0-8.0 kHz.
+For unvoiced speech, the information used to recognize and categorize the speech sound is likely found in either the turbulent frication generally centered in higher frequencies (cf. Fig. \ref{fig:spctgrm_s}\DIFaddbegin \DIFadd{)}\DIFaddend , although some of the information can be found in lower frequencies \DIFdelbegin \DIFdel{), }\DIFdelend or found in the voiced information\DIFdelbegin \DIFdel{in the }\DIFdelend \DIFaddbegin \DIFadd{, such as formant }\DIFaddend transitions into and out of the sound (\cite{halle:57,lindblom:63,stevens:78,willi:17}).  Generally, most speech information used by the human auditory system can be found in frequencies below 5.0-8.0 kHz.
 %
 \begin{wrapfigure}{l}{0.5\textwidth}
 \centering
   \includegraphics[width=0.5\textwidth]{figure/spctgrm_s.png}
-  \caption{Spectrum of the initial /s/ in `citizens'. Zoomed to range of 0-8kHz for visualization of high frequency energy.}
+  \caption{Spectrum of the initial /s/ in `citizens'. Zoomed to range of \DIFdelbegin \DIFdel{0-8kHz }\DIFdelend \DIFaddbegin \DIFadd{0-8 kHz }\DIFaddend for visualization of high frequency energy.}
   \label{fig:spctgrm_s}
 \end{wrapfigure}
 
-The human auditory system has the remarkable ability to (a) identify these sounds, which often only last from tens to a few hundreds of milliseconds in duration, (b) partition the stream of sounds into their respective words, and (c) string the words together into a sentence and pull meaning from it - all in real time.  Nevertheless there are occasionally recognition errors, which can occur anywhere along this auditory chain.  The `lowest' level in this chain that errors occur is the recognition and identification of sounds.  There are a host of reasons why this might occur, yet this focuses on additive noise interfering with the speech signal and signal distortion via passage of speech through a speaker's head.
+The human auditory system \DIFaddbegin \DIFadd{(including the central nervous system) }\DIFaddend has the remarkable ability to (a) \DIFdelbegin \DIFdel{identify }\DIFdelend \DIFaddbegin \DIFadd{transduce }\DIFaddend these sounds, which often only last from tens to a few hundreds of milliseconds in duration, (b) partition the stream of sounds into their respective words, and (c) string the words together into a sentence and pull meaning from it - all in real time \DIFaddbegin \DIFadd{(\mbox{%DIFAUXCMD
+\cite{celesia:15}
+}%DIFAUXCMD
+)}\DIFaddend .  Nevertheless there are occasionally recognition errors, which can occur anywhere along this auditory chain.  The `lowest' level in this chain \DIFdelbegin \DIFdel{that }\DIFdelend \DIFaddbegin \DIFadd{in which }\DIFaddend errors occur is the recognition and identification of sounds \DIFaddbegin \DIFadd{in the auditory cortex}\DIFaddend .  There are a host of reasons why \DIFdelbegin \DIFdel{this }\DIFdelend \DIFaddbegin \DIFadd{these errors }\DIFaddend might occur, yet \DIFdelbegin \DIFdel{this }\DIFdelend \DIFaddbegin \DIFadd{the studies presented in this paper }\DIFaddend focuses on additive noise interfering with the speech signal and signal distortion via passage of speech through a speaker's head.
 
-\subsection{Acoustics of Multiple Signals}
+\DIFdelbegin %DIFDELCMD < \subsection{Acoustics of Multiple Signals}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \subsection{Acoustics of Complex Signals}
+\DIFaddend 
 
-As previously mentioned, we as humans use the amplitude and frequency of pressure fluctuations to perceive sound. When sound travels through a medium from source \textit{A}, there is nothing that prevents these pressure fluctuations of source \textit{A} from acoustically mixing with the pressure fluctuations originating from source \textit{B}.  For example, in Figure \ref{fig:sound-wave-addition} source \textit{A} produces a simple wave with a frequency of 100 Hz.  Source \textit{B} produces a simple wave with a frequency of 200 Hz.  If the waves from the two sources reach each other and overlap, a single wave results that looks like that in Figure \ref{fig:sound-wave-addition-combined}.  This sound wave now has two components - a tone at 100 Hz and a tone at 200 Hz.
+\DIFdelbegin \DIFdel{As previously mentioned, we as humans }\DIFdelend \DIFaddbegin \DIFadd{Humans }\DIFaddend use the amplitude and frequency of pressure fluctuations to perceive sound \DIFaddbegin \DIFadd{(\mbox{%DIFAUXCMD
+\cite{rosen:91}
+}%DIFAUXCMD
+)}\DIFaddend . When sound travels through a medium from source \textit{A}, there is nothing that prevents these pressure fluctuations of source \textit{A} from acoustically mixing with the pressure fluctuations originating from source \textit{B}.  For example, in Figure \ref{fig:sound-wave-addition} source \textit{A} produces a simple wave with a frequency of 100 Hz.  Source \textit{B} produces a simple wave with a frequency of 200 Hz.  If the waves from the two sources reach each other and overlap, a single wave results that looks like that in Figure \ref{fig:sound-wave-addition-combined}.  This sound wave now has two components - a tone at 100 Hz and a tone at 200 Hz.
 
 \begin{figure}[h!]
 \begin{subfigure}{0.5\textwidth}
@@ -175,7 +196,7 @@ As previously mentioned, we as humans use the amplitude and frequency of pressur
 \label{fig:sound-wave-addition}
 \end{figure}
 
-As previously mentioned, phase does not play a significant role in human audition, but can affect a wave resulting from the addition of multiple sound sources.  Say that source \textit{B} produces instead a wave the same frequency and amplitude as the wave from source \textit{A}, but they are completely `out of phase', ie. the pressure value of the waves at any given time is in direct opposition (cf. Figure \ref{fig:wave-out-of-phase}).  If these waves are combined, it results in a complete elimination of sound (cf. Fig. \ref{fig:wave-out-of-phase-added}).
+As previously mentioned, phase does not play a significant role in human audition, but \DIFdelbegin \DIFdel{can affect }\DIFdelend \DIFaddbegin \DIFadd{is a factor in the formation of }\DIFaddend a wave resulting from the addition of multiple sound sources.  Say that source \textit{B} \DIFdelbegin \DIFdel{produces instead a wave }\DIFdelend \DIFaddbegin \DIFadd{(cf. Figure \ref{fig:wave-out-of-phase}) produces, instead, a wave of }\DIFaddend the same frequency and amplitude as the wave from source \textit{A}, but they are completely `out of phase', ie. the pressure value of the waves at any given time is in direct opposition\DIFdelbegin \DIFdel{(cf. Figure \ref{fig:wave-out-of-phase})}\DIFdelend .  If these waves are combined, it results in a complete elimination of sound (cf. Fig. \ref{fig:wave-out-of-phase-added}).
 
 \begin{figure}[h!]
 \begin{subfigure}{0.5\textwidth}
@@ -192,7 +213,7 @@ As previously mentioned, phase does not play a significant role in human auditio
 \caption{Demonstration of the combination of two completely out-of-phase waves with the same amplitude and frequency.}
 \end{figure}
 
-It is not very often that two waves of the exact same frequency and amplitude, with exactly opposing phase, meet in such a way to completely negate.  However, varying degrees of negation occur frequently due to phase.  For example, if the 100 Hz wave from Figure \ref{fig:sound-wave-addition} were combined with a 200Hz wave with a slightly shifted phase, a different wave would be produced, seen in Figure \ref{fig:sound-combined-shifted-phase}.  
+It is not very often that two waves of the exact same frequency and amplitude, with exactly opposing phase, meet in such a way to completely negate.  However, varying degrees of negation \DIFdelbegin \DIFdel{occur frequently }\DIFdelend \DIFaddbegin \DIFadd{and alteration occur constantly }\DIFaddend due to phase \DIFaddbegin \DIFadd{and interacting sound waves}\DIFaddend .  For example, if the 100 Hz wave from Figure \ref{fig:sound-wave-addition} were combined with a 200Hz wave with a slightly shifted phase, a different wave would be produced, seen in Figure \ref{fig:sound-combined-shifted-phase}.  
 
 \begin{figure}[h!]
 \begin{subfigure}{0.5\textwidth}
@@ -214,57 +235,24 @@ It is not very often that two waves of the exact same frequency and amplitude, w
   \label{fig:sound-combined-shifted-phase}
 \end{subfigure}
 \end{center}
-\caption{Demonstration of the combination of the same two waves as in Fig. \ref{fig:sound-wave-addition}, where the phase of the 200 Hz wave in Fig. \ref{fig:sound-wave-B} was shifted slightly (cf. Fig. \ref{fig:wave-addition-200hz-shifted})}
+\caption{Demonstration of the combination of the \DIFdelbeginFL \DIFdelFL{same two }\DIFdelendFL waves \DIFdelbeginFL \DIFdelFL{as }\DIFdelendFL in Fig. \ref{fig:sound-wave-addition}, where the phase of the 200 Hz wave in Fig. \ref{fig:sound-wave-B} was shifted slightly (cf. Fig. \ref{fig:wave-addition-200hz-shifted})}
 \label{fig:sound-shifted-phase}
 \end{figure}
 
-The combination of waves from multiple sound sources increases greatly in complexity as the number of sources increases, and the sounds originating from the sources are complex (ie. containing multiple frequency elements), such as speech.  Speech rarely occurs in isolation from from all external sound, yet we are still to largely understand speech in everyday environments; for example it is generally easy for humans to understand the speech of an interlocutor while sitting on a bench at a park.
+The combination of waves from multiple sound sources increases greatly in complexity as the number of sources increases, and the sounds originating from the sources are complex (ie. containing multiple frequency elements), such as speech.  Speech rarely occurs in isolation from from all external sound, yet we are still \DIFaddbegin \DIFadd{able }\DIFaddend to largely understand speech in everyday environments; for example it is generally easy for humans to understand the speech of an interlocutor while sitting on a bench at a park.
 
-The auditory system is actually quite skilled at identifying separate sources, even complex ones, like speech. Despite the shifted phase in Figure \ref{fig:sound-shifted-phase}, the human auditory system would still be able to detect and identify two separate waves.  While it undoubtedly plays a part, the differences in phase of combined signals does not normally completely negate a signal, nor render it unintelligible.  It is for this reason, and the complexity of phase calculations, that most efforts to remove speech from noise ignore the phase component.
+The auditory system is \DIFdelbegin \DIFdel{actually quite skilled at identifying }\DIFdelend \DIFaddbegin \DIFadd{well tuned to identify }\DIFaddend separate sources, even complex ones, like speech. Despite the shifted phase in Figure \ref{fig:sound-shifted-phase}, the human auditory system would still be able to detect and identify two separate waves.  While it undoubtedly plays a part, the differences in phase of combined signals does not normally completely negate a signal, nor render it unintelligible.  It is for this reason, and the complexity of phase calculations, that most efforts to remove speech from noise ignore the phase component.
 
-\subsection{Difficulties of Speech in Noise}\DIFaddbegin \label{sec:snr-difficult}
-\DIFaddend 
+\subsection{Difficulties of Speech in Noise}\label{sec:snr-difficult}
 
-Nevertheless, there are still situations in which it is difficult to parse speech in noise.  This is most often due to signals with energy at similar frequencies that overlap.  The greater the amplitude of a signal at frequencies overlapping with those of speech, the more difficult the speech will be to understand.  This can be visualized in the spectrograms of the sentence ``A rich farm is rare in this sandy waste.'' in Figure \ref{fig:signal-SNR-intro}.  \DIFdelbegin \DIFdel{In }\DIFdelend \DIFaddbegin \DIFadd{As demonstrated before in }\DIFaddend Figure \ref{fig:signal-SNR-intro-high}, the amplitude, or loudness, of the noise is well below that of speech, which would likely be easily understand by a listener.  Figure \ref{fig:signal-SNR-intro-low} has a much greater noise amplitude level compared to the amplitude level of speech and consequently would likely be more difficult for a listener to understand.
-\DIFdelbegin %DIFDELCMD < 
+Nevertheless, there are still situations in which it is difficult to parse speech in noise.  This is most often due to signals with energy at similar frequencies that overlap.  The greater the amplitude of a signal at frequencies overlapping with those of speech, the more difficult the speech will be to understand.  This can be visualized in the spectrograms of the sentence ``A rich farm is rare in this sandy waste.'' in Figure \ref{fig:signal-SNR-intro}.  As demonstrated before in Figure \ref{fig:signal-SNR-intro-high}, the amplitude, \DIFdelbegin \DIFdel{or loudness, }\DIFdelend of the noise is well below that of speech, which would likely be easily understand by a listener.  Figure \ref{fig:signal-SNR-intro-low} \DIFdelbegin \DIFdel{has }\DIFdelend \DIFaddbegin \DIFadd{depicts }\DIFaddend a much greater noise amplitude level compared to the amplitude level of speech and consequently would likely be more difficult for a listener to understand.
 
-%DIFDELCMD < \begin{figure}[h!]
-%DIFDELCMD < \centering
-%DIFDELCMD < \begin{subfigure}{0.75\textwidth}
-%DIFDELCMD <   \includegraphics[width=.9\textwidth]{figure/signal-SNR-intro-high.png}
-%DIFDELCMD <   %%%
-%DIFDELCMD < \caption{%
-{%DIFAUXCMD
-\DIFdel{A sentence spoken with a low level of background noise, resulting in a }\textit{\DIFdel{high}} %DIFAUXCMD
-\DIFdel{SNR.}}
-  %DIFAUXCMD
-%DIFDELCMD < \label{fig:signal-SNR-intro-high}
-%DIFDELCMD < \end{subfigure}
-%DIFDELCMD < %%%
-%DIF < 
-%DIFDELCMD < \begin{subfigure}{0.75\textwidth}
-%DIFDELCMD <   \includegraphics[width=.9\textwidth]{figure/signal-SNR-intro-low.png}
-%DIFDELCMD <   %%%
-%DIFDELCMD < \caption{%
-{%DIFAUXCMD
-\DIFdel{A sentence spoken with a high level of background noise, resulting in a }\textit{\DIFdel{low}} %DIFAUXCMD
-\DIFdel{SNR.}}
-  %DIFAUXCMD
-%DIFDELCMD < \label{fig:signal-SNR-intro-low}
-%DIFDELCMD < \end{subfigure}
-%DIFDELCMD < %%%
-%DIFDELCMD < \caption{%
-{%DIFAUXCMD
-\DIFdel{Waveforms and spectrograms of the sentence ``A rich farm is rare in this sandy waste''.}}
-%DIFAUXCMD
-%DIFDELCMD < \label{fig:signal-SNR-intro}
-%DIFDELCMD < \end{figure}
-%DIFDELCMD < %%%
-\DIFdelend 
+This relationship between speech and any background noise is called the signal to noise \DIFdelbegin \DIFdel{ration }\DIFdelend \DIFaddbegin \DIFadd{ratio }\DIFaddend (SNR).  A complex signal with a higher signal to noise ratio (cf. Fig \ref{fig:signal-SNR-intro-high}) is generally easier to understand, because the amplitude of the speech (the `signal' of interest) is much greater than that of the noise.  Consequently a lower SNR (cf. Fig. \ref{fig:signal-SNR-intro-low}) results in speech that is more difficult to understand, because the amplitude of the speech is close to - or below - the amplitude of the background noise\DIFaddbegin \DIFadd{, and often they have a similar frequency content.  Noise occurring a similar frequency region to the desired speech signal is said to `mask' the speech; this is described in more detail in Chapter \ref{chapter3} (\mbox{%DIFAUXCMD
+\cite{mattys:12}
+}%DIFAUXCMD
+)}\DIFaddend .
 
-This relationship between speech and any background noise is called the signal to noise ration (SNR).  A complex signal with a higher signal to noise ratio (cf. Fig \ref{fig:signal-SNR-intro-high}) is generally easier to understand, because the amplitude of the speech (the `signal' of interest) is much greater than that of the noise.  Consequently a lower SNR (cf. Fig. \ref{fig:signal-SNR-intro-low}) results in speech that is more difficult to understand, because the amplitude of the speech is close to - or below - the amplitude of the background noise.
-
-This poses a problem for human listeners, but generally is more difficult to deal with in automatic speech recognition (ASR), since the electronic device does not contain a highly-skilled, built-in auditory cortex.  There are a number of ways which have been proposed to deal with noise in a speech signal, both for human and automatic speech recognition.  These will be discussed further in Chapters \ref{chapter3} and \ref{chapter4}.
+This poses a problem for human listeners \DIFaddbegin \DIFadd{in very low SNR environments}\DIFaddend , but generally is more difficult to deal with in automatic speech recognition (ASR), since the \DIFdelbegin \DIFdel{electronic device }\DIFdelend \DIFaddbegin \DIFadd{computational system }\DIFaddend does not contain a highly-skilled, built-in auditory cortex.  There are a number of ways which have been proposed to deal with noise in a speech signal, both for human and automatic speech recognition.  These will be discussed further in Chapters \ref{chapter3} and \ref{chapter4}.
 
 \section{Overview of Dissertation}\label{ch1:diss-overview}
 
@@ -272,6 +260,6 @@ This report aims to explore a novel method of human speech perception and automa
 
 The intention of this study is to determine a) if recording human speech from the inside of the ear canal can significantly reduce background noise in a signal, b) if intelligible speech, suitable for communication, can be collected from the inside of the ear canal, c) if humans find speech recorded from the ear canal more intelligible than speech in noisy conditions, and finally d) if ASR systems are able to recognize speech recorded in the ear canal with greater accuracy than speech recorded in noise.
 
-Since currently there is no established corpus of data that contain speech recorded from the inside of the ear canal together with speech simultaneously recorded from the mouth in noisy environments, it was necessary to record speakers in this environment and create a new corpus.  The theory behind the acoustics of recording speech from the ear canal, as well as the process for developing this corpus are described in Chapter \ref{chapter2}, along with a discussion of the recorded speech.  Chapter \ref{chapter3} will outline a human perception experiment, tasking listeners with the transcription of various sentences of speech recorded at the mouth in noise in noise, and recorded from the ear.   Chapter \ref{chapter4} describes the use of this same speech with an ASR system, and its recognition performance.  Chapter \ref{chapter5} will summarize the previous chapters and engage in an overall discussion of the implications of the results, the limitations of the present experiments and methods, and suggestions for future research direction.
+Since currently there is no established corpus of data that \DIFdelbegin \DIFdel{contain }\DIFdelend \DIFaddbegin \DIFadd{contains }\DIFaddend speech recorded from the inside of the ear canal together with speech simultaneously recorded from the mouth in noisy environments, it was necessary to record \DIFaddbegin \DIFadd{sounds from }\DIFaddend speakers in this environment and create a new corpus.  The theory behind the acoustics of recording speech from the ear canal, as well as the process for developing this corpus are described in Chapter \ref{chapter2}, along with a discussion of the recorded speech.  Chapter \ref{chapter3} will outline a human perception experiment, tasking listeners with the transcription of various sentences of speech recorded at the mouth in noise\DIFdelbegin \DIFdel{in noise}\DIFdelend , and recorded from \DIFdelbegin \DIFdel{the ear}\DIFdelend \DIFaddbegin \DIFadd{a sealed external auditory canal (EAC)}\DIFaddend .   Chapter \ref{chapter4} describes the use of this same speech with an ASR system, and its recognition performance.  Chapter \ref{chapter5} will summarize the previous chapters and engage in an overall discussion of the implications of the results, the limitations of the present experiments and methods, and suggestions for future research direction.
 
 

@@ -22,8 +22,8 @@
 % library(cowplot)
 % library(plyr)
 % @
-
-\chapter*{Appendix B}\label{appendixB}
+% \appendix
+\chapter{SNR and WER calculation code}\label{appendixB}
 
 
 \section{Overview}
@@ -34,7 +34,7 @@ This Appendix contains some code used for calculations described in the main rep
 
 \subsection{Find a Signal's SNR - Main Function}
 
-\begin{verbatim}
+\begin{lstlisting}
 function [speech_file_path, SNRdB] = FindSignalSNR( speech_file_path, noise_file_path )
 %  Calculate the SNR for a noisy speech file via comparing RMS values
 %  between the aligned speech and noise signals
@@ -53,12 +53,12 @@ function [speech_file_path, SNRdB] = FindSignalSNR( speech_file_path, noise_file
 % Align and fit noise to given file
 aligned_noise_file = AlignNoise(speech_file,noise_file);
 SNRdB = CalculateSNR(speech_file, aligned_noise_file, Fs);
-\end{verbatim}
+\end{lstlisting}
 
 
-\subsection{Time-Alignment of Audio}
+\subsection{Time-Alignment of Audio}\label{app:time-align}
 
-\begin{verbatim}
+\begin{lstlisting}
 function [ aligned_noise_vector ] = AlignNoise( speech_vector, noise_vector )
 %  Aligns and crops the noise vector to match the noise in the speech sound file
 %  S. Johnston
@@ -74,20 +74,20 @@ function [ aligned_noise_vector ] = AlignNoise( speech_vector, noise_vector )
 sampleDiff = abs(lag(I));
 
 aligned_noise_vector = noise_vector(sampleDiff:(sampleDiff + length(speech_vector)));
-\end{verbatim}
+\end{lstlisting}
 
 
 \subsection{SNR Calculation}
 
-\begin{verbatim}
+\begin{lstlisting}
 function [ SNRdB ] = CalculateSNR( speech_vector, noise_vector, Fs )
 %   Calculate the SNR for a given pair of sounds, speech and noise
 %   Returns a rounded integer for SNR
 %   S. Johnston
 %   04.06.17
-%   Input: 
-%      speech_vector = aligned speech sample vector, 
-%      noise_vector = aligned noise vector, 
+%   Input:
+%      speech_vector = aligned speech sample vector,
+%      noise_vector = aligned noise vector,
 %      Fs = signal sampling frequency
 %  Output:
 %      SNRdB = SNR in decibels
@@ -113,11 +113,11 @@ SNR = ( mean(speech_rms) / mean(noise_rms) )^2;
 
 % Convert to dB
 SNRdB = 10*log10(SNR);
-\end{verbatim}
+\end{lstlisting}
 
-\subsection{Hanning Window Calculation}
+\subsection{Hilbert Envelope Calculation}
 
-\begin{verbatim}
+\begin{lstlisting}
 function [env,env2,env3] = HilbertEnvelope(sig,fs);
 %HilbertEnvelope.m
 %10.21.16
@@ -125,7 +125,7 @@ function [env,env2,env3] = HilbertEnvelope(sig,fs);
 %Calculates the Hilbert amplitude envelope of a signal
 %input: sig = single channel signal, fs = sampling freq of signal
 
-\%---calulate coeffs for butterworth envelope filters ----
+%---calulate coeffs for butterworth envelope filters ----
 [b,a] = butter(5,25/(fs/2));
 [d,c] = butter(3,8/(fs/2));
 
@@ -134,12 +134,12 @@ env = sqrt(real(hsig).^2 + imag(hsig).^2);
 
 env2 = (filtfilt(b,a,env));
 env3 = (filtfilt(d,c,env2));
-\end{verbatim}
+\end{lstlisting}
 
 
 \subsection{RMS Calculation}
 
-\begin{verbatim}
+\begin{lstlisting}
 function [rms,t] = FindRMS(sig,fs,dt)
 %FindRMS.m
 %04.03.17
@@ -169,14 +169,14 @@ for i = 1:N:length(sig)-N
     t(j) = (dtn/2) + (j-1)*dtn;
   j = j+1;
 end;
-\end{verbatim}
+\end{lstlisting}
 
 
 \section{Python Code for WER Calculation}\label{python-code}
 
 This code was borrowed from http://progfruits.blogspot.com/2014/02/word-error-rate-wer-and-word.html on April 28th, 2017.  This script was used in the calculation of word error rate (WER) for the human perception study (cf. Chapter \ref{chapter3}).  The WER calculation for the ASR studies in Chapter \ref{chapter4} was performed with Kaldi's built-in scoring algorithms.
 
-\begin{verbatim}
+\begin{lstlisting}
 def wer(ref, hyp):
 
   # Reference sentence and hypothesis sentence
@@ -197,19 +197,19 @@ def wer(ref, hyp):
   OP_SUB = 1
   OP_INS = 2
   OP_DEL = 3
-   
+
   # First column represents the case where we achieve zero
   # hypothesis words by deleting all reference words.
   for i in range(1, len(r)+1):
     costs[i][0] = DEL_PENALTY*i
     backtrace[i][0] = OP_DEL
-     
+
   # First row represents the case where we achieve the hypothesis
   # by inserting all hypothesis words into a zero-length reference.
   for j in range(1, len(h) + 1):
     costs[0][j] = INS_PENALTY * j
     backtrace[0][j] = OP_INS
-   
+
   # computation
   for i in range(1, len(r)+1):
     for j in range(1, len(h)+1):
@@ -220,7 +220,7 @@ def wer(ref, hyp):
         substitutionCost = costs[i-1][j-1] + SUB_PENALTY # penalty is always 1
         insertionCost   = costs[i][j-1] + INS_PENALTY   # penalty is always 1
         deletionCost   = costs[i-1][j] + DEL_PENALTY   # penalty is always 1
-         
+
         costs[i][j] = min(substitutionCost, insertionCost, deletionCost)
         if costs[i][j] == substitutionCost:
           backtrace[i][j] = OP_SUB
@@ -228,7 +228,7 @@ def wer(ref, hyp):
           backtrace[i][j] = OP_INS
         else:
           backtrace[i][j] = OP_DEL
-         
+
   # back trace though the best route:
   i = len(r)
   j = len(h)
@@ -236,7 +236,7 @@ def wer(ref, hyp):
   numDel = 0
   numIns = 0
   numCor = 0
-  
+
   while i > 0 or j > 0:
     if backtrace[i][j] == OP_OK:
       numCor += 1
@@ -256,6 +256,6 @@ def wer(ref, hyp):
   wer_result = round( (numSub + numDel + numIns) / (float) (len(r)), 3)
   return wer_result
 
-\end{verbatim}
+\end{lstlisting}
 
 

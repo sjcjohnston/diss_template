@@ -1,0 +1,275 @@
+% Sample Dissertation, Thesis, or Document %
+%            for use with the              %
+%  University of Arizona Thesis Class,     %
+%               uathesis.cls               %
+%------------------------------------------%
+
+% We'll use the uathesis document class (duh).  The uncommented line
+% below will produce a Dissertation, the others would produce a Thesis
+% or a Document.  There are other options available to you like turning
+% on the copyright statement and replacing the year on the title page
+% with a "generated on" stamp (handy for early drafts).  To find out
+% what the available options are, take a look into the uathesis.cls
+% file and look for the \DeclareOption commands near the top of that
+% file.
+% There are five copyright options.  Copyright, no copyright, and three
+% different Creative Commons licences.  Use the one you want (If you go
+% Creative Commons, I (DM) think the CC-BY-ND makes the most sense)  See
+% uathesis.cls for the reason why the non-commercial licenses are not
+% included.
+%\documentclass[dissertation]{uathesis}
+\documentclass[dissertation,copyright]{uathesis}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+%\documentclass[dissertation,CC-BY]{uathesis}
+%\documentclass[dissertation,CC-BY-SA]{uathesis}
+%documentclass[dissertation,CC-BY-ND]{uathesis}
+%\documentclass[thesis]{uathesis}
+%\documentclass[document]{uathesis}
+
+% Package Usage
+% These are the packages that we need
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{natbib}			% natbib is available on most systems, and is
+					% terribly handy.
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{decorations.pathmorphing} % noisy shapes
+\usetikzlibrary{fit}					% fitting shapes to coordinates
+\usetikzlibrary{backgrounds}	% drawing the background after the foreground
+
+					
+					
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+					
+					
+					
+%May need to remove! Trying to fix nocite{*} biblography problem:
+					% If you want to use a different Bibliography package, 
+					% you should be able to, just change this
+					% and the \bibliographystyle command below.  Be warned
+					% that you may need to do a little hacking to get
+					% the REFERENCES item to show up in your TOC.
+
+% Compatibility with the AASTEX package 
+% of the American Astronomical Society.
+%\usepackage{deluxetable}		% Allows use of AASTEX deluxe tables
+%\usepackage{aastex_hack}		% Allows other AASTEX functionality.
+
+% These are other packages that you might find useful.
+% For controlling the fonts, see
+% http://www.math.uiuc.edu/~hartke/computer/latex/survey/survey.html
+% The following is a nice font set:
+%\usepackage{mathtime}			% Times for letters; Belleek math.
+%
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tipa}
+\usepackage{color,soul}
+\usepackage{url}
+\usepackage{blindtext}
+\usepackage[inline]{enumitem}
+\usepackage{breakurl}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{courier}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
+% \usepackage[normalem]{ulem}
+% \usepackage{xyling,comment}			% AMS Math (advanced math typesetting)
+% includecomment{delall}
+% %\excludecomment{delall}
+% 
+% %default: don't show edits
+% 
+% \newcommand{\add}[1]{#1}
+% \newcommand{\del}[1]{}
+% \newcommand{\delni}[1]{}
+% \newcommand{\addtab}{}
+% 
+% %block to show edits controlled by include/exclude-comment above
+% \begin{delall}
+% %added stuff
+% \renewcommand{\add}[1]{\textcolor{blue}{#1}}
+% %added table
+% \renewcommand{\addtab}{\color{blue}}
+% %deleted stuff
+% \renewcommand{\del}[1]{\textcolor{red}{\sout{#1}}}
+% \renewcommand{\delni}[1]{\noindent\textcolor{red}{\sout{#1}}}
+% \end{delall}
+
+%\usepackage{lscape}			% Used for making fitting large tables in by putting them landscape
+%\usepackage{refs}			
+%
+% If you are using hyper-ref (recommended), this command must go after all 
+% other package inclusions (from the hyperref package documentation).
+% The purpose of hyperref is to make the PDF created extensively
+% cross-referenced.
+
+%Also works! Change dvips to driverfallback=dvips.
+\usepackage[driverfallback=dvips,bookmarks,colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black]{hyperref}
+
+
+%Works!
+%\usepackage[pdftex,bookmarks,colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black]{hyperref}
+%HERE IS THE THING THAT NEEDS TO CHANGE TO GET LATEX TO WORK WITH RSTUDIO. USE pdftex instead of dvips.
+
+% Set up some values.
+\completetitle{An approach to automatic and human speech recognition using ear-recorded speech}
+\fullname{Samuel John Charles Johnston}			% Grad college wants your full name here.
+\degreename{Doctor of Philosophy}	% Title of your degree.
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+
+% Set up the title page
+\maketitlepage
+{DEPARTMENT OF LINGUISTICS}	% Title of your department.
+{2017}							
+
+% Insert the approval form.  Note that for electronic submission
+% of your Ph. D. dissertation, you must bring *two* copies of the
+% approval page to your final defense.  These must be signed by
+% the committee.  Make two photocopies: one for Pam and the other
+% for your records.  Then, bring the two signed originals to the
+% graduate college when you submit the final version of the
+% dissertation to the University of Arizona.
+\approval
+{11 August 2017}		% Defense Date	
+{Mike Hammond}	% Dissertation Director
+{Mike Hammond}	% 1st committee member
+{Brad Story}		% 2nd committee member
+{Natasha Warner}		% 3rd committee member
+{David Velenovsky}		% 4th committee member
+{}		% 5th committee member
+
+% Include the ``Statement by Author'' for Dissertations
+\statementbyauthor
+% If this is a Thesis, use the following form, with your thesis director's
+% name and title in the square brackets like so (you should also omit the 
+% approval form insertion above):
+%\statementbyauthor[Jane M. Doe\\Professor of Chemistry]
+
+% Include the ``Acknowledgements''
+\incacknowledgements{acknowledgements}
+
+% Include the ``Dedication''
+\incdedication{dedication}
+
+% Create a ``Table of Contents''
+\tableofcontents
+
+% Create a ``List of Figures''
+\listoffigures
+
+% Create a ``List of Tables''
+\listoftables
+
+% Include the ``Abstract''
+\incabstract{abstract}
+
+
+
+
+
+
+% Include the various chapters:
+
+
+%ADD: Copy/Paste Content from all 5 chapters:
+
+\include{./Chapter_1_Introduction/chapter_1}
+\include{./Chapter_2_Data_Collection_Experiment/chapter_2}
+\include{./Chapter_3_Human_Speech_Perception_Experiment/chapter_3}
+\include{./Chapter_4_ASR_Experiment/chapter_4}
+\include{./Chapter_5_Discussion/chapter_5}
+
+% ADD: Include the various appendices
+%\appendix
+%\include{appendix_A}
+
+%Don't Change:
+% Switch the spacing to single-spaced for the references
+\renewcommand{\baselinestretch}{1}		% chaning the value
+\small\normalsize						% switch size to make the value take
+
+%ADD: List of references (nocite{___}) from Chapter_6_References.
+
+%%%% MAKE SURE TO COPY OVER NEW Diss_Bib.bib file from Chapter_6_References. %%%%%%%%%
+
+% Create the References list
+\bibliographystyle{apa}
+\bibliography{DissRefs.bib}
+
+
+\end{document}

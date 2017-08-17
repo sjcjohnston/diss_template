@@ -27,6 +27,25 @@
 
 Speech in a noisy background presents a challenge to the recognition of that speech both by human listeners and by computers tasked with recognizing human speech (termed automatic speech recognition).  Years of research have resulted in many solutions, though none so far have completely solved the problem.  Most approaches have taken the route of trying to remove noise from a signal that is already corrupted with noise.
 
+Figure \ref{fig:signal-SNR-intro} demonstrates the problem.  The dark horizontal bands seen in the spectrogram in each figure are part of the speech signal.  In Figure \ref{fig:signal-SNR-intro-low}, these are clearly visible above the background noise.  By contrast, in Figure \ref{fig:signal-SNR-intro-high}, these dark horizontal bands are more difficult to see.  The amplitude (level of darkness in the spectrogram) of the noise at various frequencies drowns out the speech signal, making it more difficult to hear.  In the noisy signal, there is more competing information that makes it difficult for both humans - and computers - to differentiate what is noise and what is speech.  This will be discussed in more depth in Section \ref{sec:snr-difficult}.
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{0.75\textwidth}
+  \includegraphics[width=.9\textwidth]{figure/signal-SNR-intro-low.png}
+  \caption{A sentence spoken with a high level of background noise, resulting in a \textit{low} SNR.}
+  \label{fig:signal-SNR-intro-low}
+\end{subfigure}
+%
+\begin{subfigure}{0.75\textwidth}
+  \includegraphics[width=.9\textwidth]{figure/signal-SNR-intro-high.png}
+  \caption{A sentence spoken with a low level of background noise, resulting in a \textit{high} SNR.}
+  \label{fig:signal-SNR-intro-high}
+\end{subfigure}
+\caption{Waveforms and spectrograms of the sentence ``The glow deepened in the eyes of the sweet girl.''}
+\label{fig:signal-SNR-intro}
+\end{figure}
+
 This project presents a new approach to the problem.  It proposes that human speech can be recorded in a manner that largely eliminates the noise before it reaches the microphone recording the signal.  The microphone would be placed inside the ear canal of the speaker and would record speech as it is passed through the bone and tissue of the speaker's head.  The signal is expected to be distorted by passage through the head, but the speech in the signal is expected to be recoverable.
 
 Section \ref{ch1:background} below describes the basic acoustics of sound.  This is intended to be a general background to acoustics and interfering sound waves, leading up to a brief overview of sound in noise. Chapter \ref{chapter2} discusses the collection of ear-recorded speech, Chapter \ref{chapter3} describes a human speech perception experiment using ear-recorded speech, and Chapter \ref{chapter4} outlines an experiment testing the ability of an automatic speech recognition system to accurately recognize ear-recorded speech.  At the end of this chapter, Section \ref{ch1:diss-overview} gives a more detailed overview of the rest of the dissertation.
@@ -202,26 +221,9 @@ The combination of waves from multiple sound sources increases greatly in comple
 
 The auditory system is actually quite skilled at identifying separate sources, even complex ones, like speech. Despite the shifted phase in Figure \ref{fig:sound-shifted-phase}, the human auditory system would still be able to detect and identify two separate waves.  While it undoubtedly plays a part, the differences in phase of combined signals does not normally completely negate a signal, nor render it unintelligible.  It is for this reason, and the complexity of phase calculations, that most efforts to remove speech from noise ignore the phase component.
 
-\subsection{Difficulties of Speech in Noise}
+\subsection{Difficulties of Speech in Noise}\label{sec:snr-difficult}
 
-Nevertheless, there are still situations in which it is difficult to parse speech in noise.  This is most often due to signals with energy at similar frequencies that overlap.  The greater the amplitude of a signal at frequencies overlapping with those of speech, the more difficult the speech will be to understand.  This can be visualized in the spectrograms of the sentence ``A rich farm is rare in this sandy waste.'' in Figure \ref{fig:signal-SNR-intro}.  In Figure \ref{fig:signal-SNR-intro-high}, the amplitude, or loudness, of the noise is well below that of speech, which would likely be easily understand by a listener.  Figure \ref{fig:signal-SNR-intro-low} has a much greater noise amplitude level compared to the amplitude level of speech and consequently would likely be more difficult for a listener to understand.
-
-\begin{figure}[h!]
-\centering
-\begin{subfigure}{0.75\textwidth}
-  \includegraphics[width=.9\textwidth]{figure/signal-SNR-intro-high.png}
-  \caption{A sentence spoken with a low level of background noise, resulting in a \textit{high} SNR.}
-  \label{fig:signal-SNR-intro-high}
-\end{subfigure}
-%
-\begin{subfigure}{0.75\textwidth}
-  \includegraphics[width=.9\textwidth]{figure/signal-SNR-intro-low.png}
-  \caption{A sentence spoken with a high level of background noise, resulting in a \textit{low} SNR.}
-  \label{fig:signal-SNR-intro-low}
-\end{subfigure}
-\caption{Waveforms and spectrograms of the sentence ``A rich farm is rare in this sandy waste''.}
-\label{fig:signal-SNR-intro}
-\end{figure}
+Nevertheless, there are still situations in which it is difficult to parse speech in noise.  This is most often due to signals with energy at similar frequencies that overlap.  The greater the amplitude of a signal at frequencies overlapping with those of speech, the more difficult the speech will be to understand.  This can be visualized in the spectrograms of the sentence ``A rich farm is rare in this sandy waste.'' in Figure \ref{fig:signal-SNR-intro}.  As demonstrated before in Figure \ref{fig:signal-SNR-intro-high}, the amplitude, or loudness, of the noise is well below that of speech, which would likely be easily understand by a listener.  Figure \ref{fig:signal-SNR-intro-low} has a much greater noise amplitude level compared to the amplitude level of speech and consequently would likely be more difficult for a listener to understand.
 
 This relationship between speech and any background noise is called the signal to noise ration (SNR).  A complex signal with a higher signal to noise ratio (cf. Fig \ref{fig:signal-SNR-intro-high}) is generally easier to understand, because the amplitude of the speech (the `signal' of interest) is much greater than that of the noise.  Consequently a lower SNR (cf. Fig. \ref{fig:signal-SNR-intro-low}) results in speech that is more difficult to understand, because the amplitude of the speech is close to - or below - the amplitude of the background noise.
 

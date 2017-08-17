@@ -1,7 +1,7 @@
 % Sample Dissertation, Thesis, or Document %
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL Dissertation_Main_old.tex   Wed Jul 26 23:05:27 2017
-%DIF ADD Dissertation_Main.tex       Tue Aug  1 22:37:08 2017
+%DIF DEL Dissertation_Main_old.tex   Fri Aug  4 22:24:40 2017
+%DIF ADD Dissertation_Main.tex       Fri Aug  4 22:25:51 2017
 %            for use with the              %
 %  University of Arizona Thesis Class,     %
 %               uathesis.cls               %
@@ -84,37 +84,35 @@
 \usepackage{graphicx}
 \usepackage{natbib}			% natbib is available on most systems, and is
 					% terribly handy.
-%DIF 84a84-112
-\usepackage{tikz} %DIF > 
-\usepackage{pgfplots} %DIF > 
-\usetikzlibrary{decorations.pathmorphing} % noisy shapes %DIF > 
-\usetikzlibrary{fit}					% fitting shapes to coordinates %DIF > 
-\usetikzlibrary{backgrounds}	% drawing the background after the foreground %DIF > 
- %DIF > 
-					 %DIF > 
-					 %DIF > 
-%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF %DIF > 
-%DIF UNDERLINE PREAMBLE %DIF PREAMBLE %DIF > 
-\RequirePackage[normalem]{ulem} %DIF PREAMBLE %DIF > 
-\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE %DIF > 
-\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE %DIF > 
-\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE %DIF > 
-%DIF SAFE PREAMBLE %DIF PREAMBLE %DIF > 
-\providecommand{\DIFaddbegin}{} %DIF PREAMBLE %DIF > 
-\providecommand{\DIFaddend}{} %DIF PREAMBLE %DIF > 
-\providecommand{\DIFdelbegin}{} %DIF PREAMBLE %DIF > 
-\providecommand{\DIFdelend}{} %DIF PREAMBLE %DIF > 
-%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE %DIF > 
-\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE %DIF > 
-\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE %DIF > 
-\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE %DIF > 
-\providecommand{\DIFaddendFL}{} %DIF PREAMBLE %DIF > 
-\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE %DIF > 
-\providecommand{\DIFdelendFL}{} %DIF PREAMBLE %DIF > 
-%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF %DIF > 
-					 %DIF > 
-					 %DIF > 
-%DIF -------
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{decorations.pathmorphing} % noisy shapes
+\usetikzlibrary{fit}					% fitting shapes to coordinates
+\usetikzlibrary{backgrounds}	% drawing the background after the foreground
+
+					
+					
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+					
+					
 					
 %May need to remove! Trying to fix nocite{*} biblography problem:
 					% If you want to use a different Bibliography package, 
@@ -146,9 +144,7 @@
 \usepackage{mathtools}
 \usepackage{amsmath}
 \usepackage{array}
-%DIF 115a144
-\usepackage{courier} %DIF > 
-%DIF -------
+\usepackage{courier}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 
@@ -192,10 +188,10 @@
 %HERE IS THE THING THAT NEEDS TO CHANGE TO GET LATEX TO WORK WITH RSTUDIO. USE pdftex instead of dvips.
 
 % Set up some values.
-%DIF 158c188
-%DIF < \completetitle{Working Title: An approach to automatic and human speech recognition using ear-recorded speech.}
+%DIF 188c188
+%DIF < \completetitle{An approach to automatic and human speech recognition using ear-recorded speech}
 %DIF -------
-\completetitle{An approach to automatic and human speech recognition using ear-recorded speech} %DIF > 
+\completetitle{An Approach to Automatic and Human Speech Recognition Using Ear-Recorded Speech} %DIF > 
 %DIF -------
 \fullname{Samuel John Charles Johnston}			% Grad college wants your full name here.
 \degreename{Doctor of Philosophy}	% Title of your degree.
@@ -241,7 +237,7 @@
 % graduate college when you submit the final version of the
 % dissertation to the University of Arizona.
 \approval
-{\DIFdelbegin \DIFdel{7 }\DIFdelend \DIFaddbegin \DIFadd{11 }\DIFaddend August 2017}		% Defense Date	
+{11 August 2017}		% Defense Date	
 {Mike Hammond}	% Dissertation Director
 {Mike Hammond}	% 1st committee member
 {Brad Story}		% 2nd committee member
@@ -284,18 +280,16 @@
 
 %ADD: Copy/Paste Content from all 5 chapters:
 
-\include{./Chapter_1_Introduction/chapter_1_Introduction}
-\DIFdelbegin %DIFDELCMD < \include{./Chapter_2_Data_Collection_Experiment/chapter_2_old}
-%DIFDELCMD < \include{./Chapter_3_Human_Speech_Perception_Experiment/chapter_3_old}
-%DIFDELCMD < %%%
-\DIFdelend \DIFaddbegin \include{./Chapter_2_Data_Collection_Experiment/chapter_2}
-\include{./Chapter_3_Human_Speech_Perception_Experiment/chapter_3}
-\DIFaddend \include{./Chapter_4_ASR_Experiment/chapter_4}
-\include{./Chapter_5_Discussion/chapter_5_Discussion}
+\include{./Chapter_1_Introduction/chapter_1_diff}
+\include{./Chapter_2_Data_Collection_Experiment/chapter_2_diff}
+\include{./Chapter_3_Human_Speech_Perception_Experiment/chapter_3_diff}
+\include{./Chapter_4_ASR_Experiment/chapter_4_diff}
+\include{./Chapter_5_Discussion/chapter_5_diff}
 
 % ADD: Include the various appendices
-%\appendix
-%\include{appendix_A}
+\appendix
+\include{./AppendixA/appendixA}
+\include{./AppendixB/appendixB}
 
 %Don't Change:
 % Switch the spacing to single-spaced for the references
