@@ -18,7 +18,57 @@
 % uathesis.cls for the reason why the non-commercial licenses are not
 % included.
 %\documentclass[dissertation]{uathesis}
-\documentclass[dissertation,copyright]{uathesis}
+\documentclass[dissertation,copyright]{uathesis}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
 %\documentclass[dissertation,CC-BY]{uathesis}
 %\documentclass[dissertation,CC-BY-SA]{uathesis}
 %documentclass[dissertation,CC-BY-ND]{uathesis}
@@ -106,9 +156,6 @@ basicstyle=\small\ttfamily,
 columns=flexible,
 breaklines=true
 }
-% \usepackage{draftwatermark}
-% \SetWatermarkText{DRAFT}
-% \SetWatermarkScale{4}
 
 % \usepackage[normalem]{ulem}
 % \usepackage{xyling,comment}			% AMS Math (advanced math typesetting)
@@ -153,7 +200,7 @@ breaklines=true
 \completetitle{An Approach to Automatic and Human Speech Recognition Using Ear-Recorded Speech}
 \fullname{Samuel John Charles Johnston}			% Grad college wants your full name here.
 \degreename{Doctor of Philosophy}	% Title of your degree.
-
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
 
@@ -203,25 +250,9 @@ breaklines=true
 % Include the ``Abstract''
 \incabstract{abstract}
 
-<<chunk_options, echo=FALSE>>=
-# This is where we set basic knitr options.
-opts_chunk$set(echo=TRUE, message=FALSE, warning = FALSE, cache = FALSE, comment="")
-options(width=75) # This sets how wide the R printout can be.
-@
 
-<<load_libraries, echo=FALSE>>=
-library(plyr)
-library(tidyr)
-library(dplyr)
-library(ggplot2)
-library(lme4)
-library(lsmeans)
-library(car)
-library(pbkrtest)
-library(xtable)
-library(cowplot)
 
-@
+
 
 
 % Include the various chapters:
@@ -234,7 +265,7 @@ library(cowplot)
 \include{./Chapter_3_Human_Speech_Perception_Experiment/chapter_3}
 \include{./Chapter_4_ASR_Experiment/chapter_4}
 \include{./Chapter_5_Discussion/chapter_5}
-%
+% 
 % % ADD: Include the various appendices
 \appendix
 \include{./AppendixA/appendixA}

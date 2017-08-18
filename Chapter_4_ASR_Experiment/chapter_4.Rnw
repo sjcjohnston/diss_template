@@ -583,8 +583,6 @@ Language Models & Clean Publ. & Clean Repl. & Other Publ. & Other Repl. \\ \hlin
 \caption{All values are given as \% WER.  The `Language Models' column specifies the Language Model (LM) used in each row; the first two LMs are simply the 3-gram model which was pruned to the specified threshold.  `Publ.' columns list the performance listed in the published paper, and `Repl.' columns contain the replication performance achieved in the present study.  `Clean' and `Other' refer to the clean (2707 utterances) and `noisy' (5968 utterances) LibriSpeech test datasets. All LMs utilize the 960-hour LibriSpeech DNN acoustic model.}\label{tab:sanity-check}
 \end{table}
 
-The author then used data collected in the present study, described in Chapter \ref{chapter2}, with the same LibriSpeech acoustic and language models.  All references to `ear-recorded speech' in this chapter refer specifically to the processed (pre-emphasized, low-pass filtered, pre-emphasized) ear-recorded speech.  Table \ref{tab:basic-run} shows these results.  This table combines all noisy speech at the mouth into a single `Noisy Mouth' category and all speech collected at the ear into a single `Ear Speech' category.  Table \ref{tab:split-wer-noise} separates out the noisy mouth-recorded speech and ear-recorded speech into the different noise types and noise levels.
-
 % All 20 subjs; combined results for clean MRS, noisy MRS, and ERS on LibriSpeech data.
 \begin{table}[h]
 \begin{center}
@@ -598,6 +596,10 @@ Language Models & Clean Mouth & Noisy Mouth & Ear Speech \\ \hline\hline
 \end{center}
 \caption{All values are given as \% WER. The `Language Models' column specifies the Language Model (LM) used in each row; the first two LMs are simply the 3-gram model which was pruned to the specified threshold.  `Clean Mouth' includes only the sentences recorded at the mouth with no noise, versus `Noisy Mouth', which includes all other [noisy] sentences recorded at the mouth. `Ear Speech' contains all ear-recorded utterances.  All LMs utilize the 960-hour LibriSpeech DNN acoustic model.}\label{tab:basic-run}
 \end{table}
+
+The author then used data collected in the present study, described in Chapter \ref{chapter2}, with the same LibriSpeech acoustic and language models.  All references to `ear-recorded speech' in this chapter refer specifically to the processed (pre-emphasized, low-pass filtered, pre-emphasized) ear-recorded speech.  Table \ref{tab:basic-run} shows these results.  This table combines all noisy speech at the mouth into a single `Noisy Mouth' category and all speech collected at the ear into a single `Ear Speech' category.  Table \ref{tab:split-wer-noise} separates out the noisy mouth-recorded speech and ear-recorded speech into the different noise types and noise levels.
+
+
 
 % A simple comparison of clean mouth-recorded speech and the simultaneous (clean) ear-recorded speech is located in Table \ref{tab:clean-wers}.
 % 
@@ -627,6 +629,19 @@ Language Models & Clean Mouth & Noisy Mouth & Ear Speech \\ \hline\hline
 \caption{All values are given as \% WER. These values are obtained from the highest-performing (4-gram) language model, utilizing the 960-hour LibriSpeech DNN acoustic model - both trained using the LibriSpeech corpus.  Each row is a different noise level, and each column a different noise type (excluding the `clean' noise type), with each sub-column comparing the performance on mouth-recorded speech in the indicated condition with ear-recorded speech in the indicated condition.}\label{tab:split-wer-noise}
 \end{table}
 
+% All 20 subjs; LibriSpeech AM with full-bandwidth MRS, and Hybrid E/M speech
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{| c || c | c | c | c | c | c | c | c | c | c | c | c |} \hline
+      & \multicolumn{2}{|c|}{Bus} & \multicolumn{2}{|c|}{Cafe} & \multicolumn{2}{|c|}{Ped.} & \multicolumn{2}{|c|}{Street} & \multicolumn{2}{|c|}{Factory} \\ \hline
+      & Mth & E/M & Mth & E/M & Mth & E/M & Mth & E/M & Mth & E/M \\ \hline\hline
+60 dB & 16.6 & 64.5 & 15.9 & 63.9 & 14.9 & 63.2 & 16.4 & 62.3 & 14.6 & 63.8  \\ \hline
+70 dB & 35.5 & 66.6 & 27.0 & 62.6 & 27.3 & 64.3 & 32.3 & 62.9 & 24.7 & 63.9  \\ \hline
+80 dB & 89.5 & 82.4 & 74.3 & 72.5 & 75.1 & 73.5 & 83.9 & 77.1 & 70.7 & 73.0  \\ \hline
+\end{tabular}
+\end{center}
+\caption{All values are given as \% WER. These values are obtained from the highest-performing (4-gram) language model, utilizing the 960-hour LibriSpeech DNN acoustic model - both trained using the LibriSpeech corpus.  Each row is a different noise level, and each column a different noise type (excluding the `clean' noise type), with each sub-column listing the performance of mouth-recorded speech (Mth) or `hybrid' ear-recorded speech (E/M) in the indicated condition.}\label{tab:hybrid-wers}
+\end{table}
 % The experimenter performed another test using two sets of data created in Chapter \ref{chapter3}.  One includes the very noisy speech collected for the experiment in Chapter \ref{chapter3}.  This speech was re-recorded in a way that resulted in a lower SNR; for more details, refer to Section \ref{chap3:methods:stimuli}.    
 % 
 % 
@@ -646,19 +661,7 @@ Language Models & Clean Mouth & Noisy Mouth & Ear Speech \\ \hline\hline
 
 Another test was performed which manipulated the ear-recorded signal by adding in high-frequency information from a bandpass filtered mouth-recorded signal (3.0-8.0 kHz with a 500Hz slope).  This `hybrid' signal was tested using the same DNN acoustic model trained on 960-hour LibriSpeech data.  The results are presented in Table \ref{tab:hybrid-wers} alongside the noisy mouth-recorded speech for comparison (the mouth-recorded results already appeared in Table \ref{tab:split-wer-noise}).  The hybrid ear-recorded data is labeled as `E/M'.
 
-% All 20 subjs; LibriSpeech AM with full-bandwidth MRS, and Hybrid E/M speech
-\begin{table}[h]
-\begin{center}
-\begin{tabular}{| c || c | c | c | c | c | c | c | c | c | c | c | c |} \hline
-      & \multicolumn{2}{|c|}{Bus} & \multicolumn{2}{|c|}{Cafe} & \multicolumn{2}{|c|}{Ped.} & \multicolumn{2}{|c|}{Street} & \multicolumn{2}{|c|}{Factory} \\ \hline
-      & Mth & E/M & Mth & E/M & Mth & E/M & Mth & E/M & Mth & E/M \\ \hline\hline
-60 dB & 16.6 & 64.5 & 15.9 & 63.9 & 14.9 & 63.2 & 16.4 & 62.3 & 14.6 & 63.8  \\ \hline
-70 dB & 35.5 & 66.6 & 27.0 & 62.6 & 27.3 & 64.3 & 32.3 & 62.9 & 24.7 & 63.9  \\ \hline
-80 dB & 89.5 & 82.4 & 74.3 & 72.5 & 75.1 & 73.5 & 83.9 & 77.1 & 70.7 & 73.0  \\ \hline
-\end{tabular}
-\end{center}
-\caption{All values are given as \% WER. These values are obtained from the highest-performing (4-gram) language model, utilizing the 960-hour LibriSpeech DNN acoustic model - both trained using the LibriSpeech corpus.  Each row is a different noise level, and each column a different noise type (excluding the `clean' noise type), with each sub-column listing the performance of mouth-recorded speech (Mth) or `hybrid' ear-recorded speech (E/M) in the indicated condition.}\label{tab:hybrid-wers}
-\end{table}
+
 % \begin{table}[h]
 % \begin{center}
 % \begin{tabular}{| c || c | c | c | c | c | c | c | c | c | c | c | c |} \hline
@@ -672,6 +675,19 @@ Another test was performed which manipulated the ear-recorded signal by adding i
 % \caption{These values are obtained from the highest-performing (4-gram) language model, utilizing the 960-hour LibriSpeech DNN acoustic model - both trained using the LibriSpeech corpus.  Each row is a different noise level, and each column a different noise type (excluding the `clean' noise type), with each sub-column listing the performance of mouth-recorded speech (Mth) or `hybrid' ear-recorded speech (E/M) in the same condition.  All values are given as WER.}\label{tab:hybrid-wers}
 % \end{table}
 
+% All 20 main subjs, LS-lowpass with ERS, and normal LibriSpeech with full-bandwidth MRS
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{| c || c | c | c | c | c | c | c | c | c | c | c | c |} \hline
+      & \multicolumn{2}{|c|}{Bus} & \multicolumn{2}{|c|}{Cafe} & \multicolumn{2}{|c|}{Ped.} & \multicolumn{2}{|c|}{Street} & \multicolumn{2}{|c|}{Factory} \\ \hline
+      & Mth & Ear & Mth & Ear & Mth & Ear & Mth & Ear & Mth & Ear \\ \hline\hline
+60 dB & 20.3 & 58.1 & 18.7 & 57.4 & 17.8 & 58.8 & 19.8 & 56.5 & 17.9 & 58.2  \\ \hline
+70 dB & 43.3 & 60.4 & 33.6 & 58.7 & 32.8 & 59.2 & 36.8 & 59.4 & 32.2 & 59.0  \\ \hline
+80 dB & 91.5 & 69.9 & 77.4 & 66.1 & 78.8 & 68.8 & 85.6 & 69.8 & 76.2 & 65.8  \\ \hline
+\end{tabular}
+\end{center}
+\caption{All values are in \% WER. The performance obtained for the ear-recorded speech is from using the acoustic model trained on 100-hours of LibriSpeech mouth-recorded speech which had been low-pass filtered to 2.5 kHz with a 500 Hz slope; all results are from the use of the (4-gram) language model.  The mouth-recorded speech was tested on LibriSpeech's 100-hour DNN acoustic model.  Each row is a different noise level, and each column a different noise type (excluding the `clean' noise type), with each sub-column contrasting the performance on mouth-recorded speech (Mth; using the original 100-hour LibriSpeech DNN acoustic model on full-bandwidth data) with ear-recorded speech (Ear; using the newly trained acoustic model).}\label{tab:retrainedDNN}
+\end{table}
 
 A new model was trained using the 100-hour `clean' portion of the LibriSpeech training corpus.  This [mouth-recorded] LibriSpeech data was low-pass filtered at 2.5 kHz with a 500 Hz slope - the same filtering that is applied to the ear-recorded speech.  A DNN acoustic model was trained using the LibriSpeech training recipe for Kaldi. The basic performance of this model on the pre-emphasized and filtered ear-recorded speech is given in Table \ref{tab:retrainedDNN}.
 
@@ -705,10 +721,6 @@ To offer a more accurate comparison of the improvement offered by low-passed tra
 \caption{All values are in \% WER. The performance obtained is from testing ear-recorded speech on the 100-hour LibriSpeech DNN acoustic model (`LS'), and testing ear-recorded speech the acoustic model trained on 100-hours of LibriSpeech data which had been low-pass filtered to 2.5 kHz with a 500 Hz slope (`LLS').  The results are from the 4-gram language model.  Each row is a different noise level, and each column a different noise type (excluding the `clean' noise type).}\label{tab:100HrDNNcmp}
 \end{table}
 
-To determine if an acoustic model trained on low-pass filtered mouth-recorded speech was able to better recognize low-passed mouth-recorded speech with greater accuracy than ear-recorded speech, another test was performed.  This filtered the noisy mouth-recorded speech\footnote{This was first tested on the 960-hour DNN model; results can be found in Table \ref{tab:split-wer-noise}.} from the data collection in Chapter \ref{chapter2} using a 2.5 kHz low-pass filter with a 500 Hz slope - the same filter used on both the ear-recorded test data and the mouth-recorded speech used to train the Low-passed LibriSpeech acoustic model.  These results, compared with the ear-recorded results tested on the same Low-passed LibriSpeech model, can be found in Table \ref{tab:lp-ers-mrs}.
-
-The results of testing the low-pass filtered mouth-recorded speech on the 100-hour DNN acoustic model trained with low-pass filtered mouth-recorded speech were compared with the full-bandwidth mouth-recorded speech tested on the full-bandwidth 100-hour DNN acoustic model.  This comparison is displayed in Table \ref{tab:lp-mrs-fb-mrs}.
-
 % All 20 main subjs, using the 100-hr LS-lowpass AM, ERS and MRS-filtered comparison
 \begin{table}[h]
 \begin{center}
@@ -722,8 +734,6 @@ The results of testing the low-pass filtered mouth-recorded speech on the 100-ho
 \end{center}
 \caption{All values are in \% WER. The performance obtained is from the acoustic model trained on 100-hours of LibriSpeech data which had been low-pass filtered to 2.5 kHz with a 500 Hz slope, using the 4-gram LM. Each row is a different noise level, and each column a different noise type (excluding the `clean' noise type), with each sub-column comparing the performance on ear-recorded speech (Ear) with \textit{low-pass filtered} mouth-recorded speech (Mth). This test was performed to determine if there were a difference between the recognition of filtered mouth-recorded speech and filtered ear-recorded speech - both signals filtered to the same exact frequency bandwith - using the acoustic model which was trained on filtered mouth-recorded speech.}\label{tab:lp-ers-mrs}
 \end{table}
-
-
 
 % All 20 main subjs, using the 100-hr LS-lowpass AM with MRS-filt, and normal 100-hour LibriSpeech with MRS  ***********LS 100-STANDARD NOISY MOUTH TEST***********
 \begin{table}[h]
@@ -739,14 +749,20 @@ The results of testing the low-pass filtered mouth-recorded speech on the 100-ho
 \caption{All values are in \% WER. The performance obtained is from testing mouth-recorded speech on the 100-hour LibriSpeech DNN acoustic model (`LS'), and testing low-passed mouth-recorded speech on the acoustic model trained on 100-hours of LibriSpeech data which had been low-pass filtered to 2.5 kHz with a 500 Hz slope (`LLS').  The results are from the 4-gram language model.  Each row is a different noise level, and each column a different noise type (excluding the `clean' noise type).}\label{tab:lp-mrs-fb-mrs}
 \end{table}
 
+To determine if an acoustic model trained on low-pass filtered mouth-recorded speech was able to better recognize low-passed mouth-recorded speech with greater accuracy than ear-recorded speech, another test was performed.  This filtered the noisy mouth-recorded speech\footnote{This was first tested on the 960-hour DNN model; results can be found in Table \ref{tab:split-wer-noise}.} from the data collection in Chapter \ref{chapter2} using a 2.5 kHz low-pass filter with a 500 Hz slope - the same filter used on both the ear-recorded test data and the mouth-recorded speech used to train the Low-passed LibriSpeech acoustic model.  These results, compared with the ear-recorded results tested on the same Low-passed LibriSpeech model, can be found in Table \ref{tab:lp-ers-mrs}.
+
+The results of testing the low-pass filtered mouth-recorded speech on the 100-hour DNN acoustic model trained with low-pass filtered mouth-recorded speech were compared with the full-bandwidth mouth-recorded speech tested on the full-bandwidth 100-hour DNN acoustic model.  This comparison is displayed in Table \ref{tab:lp-mrs-fb-mrs}.
+
+
+
 For comparison, both the LibriSpeech and Low-pass LibriSpeech models were used on the clean ear-recorded and mouth-recorded speech signals.  These results can be seen in Table \ref{tab:final-clean-speech}.
 
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{| c || c | c | c |} \hline
 Language Models & Ear-Clean & Mouth-Clean & Low-pass Mouth-Clean \\ \hline\hline
-LS & 78.06 & 9.44 & ---- \\ \hline
-LLS & 54.03 & ---- & 18.45 \\ \hline
+LS & 78.06 & 9.44 & --- \\ \hline
+LLS & 54.03 & --- & 18.45 \\ \hline
 \end{tabular}
 \end{center}
 \caption{All values are in \% WER.  Each column refers to the test data which was used, the rows correspond to the Acoustic Model that was used: `LS' for the 100-hour DNN LibriSpeech model and `LLS' for 100-hour DNN Low-passed LibriSpeech model. All presented results are from the use of the 4-gram Language Model.}\label{tab:final-clean-speech}

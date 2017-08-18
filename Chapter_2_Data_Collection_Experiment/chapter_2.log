@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.5.15)  16 AUG 2017 23:36
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.5.15)  17 AUG 2017 13:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -40861,7 +40861,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.420 \caption
-              {The -30 dB NRR   earmuffs, a rod attached to the   earmuffs, ...
+              {The -30 dB NRR earmuffs, a rod attached to the earmuffs, and ...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -52081,7 +52081,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.602   \caption
-                {Spectrum of pre-emphasized ear-recorded speech; taken from ...
+                {Spectrum of pre-emphasized ear-recorded speech; from `/\ae/...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -52536,7 +52536,7 @@ Overfull \hbox (7.22223pt too wide) in paragraph at lines 573--607
  []
 
 
-Overfull \hbox (416.53886pt too wide) in paragraph at lines 573--607
+Overfull \hbox (377.43344pt too wide) in paragraph at lines 573--607
 []\OML/cmm/m/it/10 reemp:png[][]$
  []
 
@@ -60754,7 +60754,7 @@ Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
 \@footnotetext ...tins {\reset@font \footnotesize 
                                                   \interlinepenalty \interfo...
-l.750 ... nothing compromised the   earmuff seal.}
+l.750 ...at nothing compromised the earmuff seal.}
                                                   , despite being the most `...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -60765,7 +60765,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \@footnotetext ...}\color@begingroup \@makefntext 
                                                   {\rule \z@ \footnotesep \i...
-l.750 ... nothing compromised the   earmuff seal.}
+l.750 ...at nothing compromised the earmuff seal.}
                                                   , despite being the most `...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -61714,13 +61714,6 @@ Missing character: There is no B in font nullfont!
 Missing character: There is no N in font nullfont!
 Missing character: There is no R in font nullfont!
 Missing character: There is no R in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no f in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no , in font nullfont!
 Missing character: There is no h in font nullfont!
@@ -64189,9 +64182,9 @@ Overfull \hbox (10.86105pt too wide) in paragraph at lines 760--761
 Here is how much of TeX's memory you used:
  117 strings out of 493304
  1729 string characters out of 6139871
- 72415 words of memory out of 5000000
+ 72407 words of memory out of 5000000
  3671 multiletter control sequences out of 15000+600000
  4294 words of font info for 16 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 24i,7n,26p,1446b,119s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 24i,7n,26p,1429b,119s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!

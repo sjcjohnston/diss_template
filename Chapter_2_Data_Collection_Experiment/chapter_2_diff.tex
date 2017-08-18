@@ -30,17 +30,17 @@
 
 \section{Introduction}
 
-The accuracy of automatic speech recognition (ASR) has significantly improved over the past several years; similar, but less dramatic improvements have been made regarding the challenging task of recognizing speech in noisy environments (\cite{zhang:17}).  The performance of the latter still falls below the accuracy that most human listeners achieve.  Even human listeners and the human auditory system has limits and is only able to remove a certain amount of noise from a speech signal before that signal becomes completely unintelligible \DIFaddbegin \DIFadd{(\mbox{%DIFAUXCMD
+The accuracy of automatic speech recognition (ASR) has significantly improved over the past several years; similar, but less dramatic improvements have been made regarding the challenging task of recognizing speech in noisy environments (\cite{zhang:17}).  The performance of the latter still falls below the accuracy that most human listeners achieve.  Even \DIFdelbegin \DIFdel{human listeners and }\DIFdelend the human auditory system has limits and is only able to remove a certain amount of noise from a speech signal before that signal becomes completely unintelligible \DIFaddbegin \DIFadd{(\mbox{%DIFAUXCMD
 \cite{gilbert:13}
 }%DIFAUXCMD
 )}\DIFaddend .  The primary issue arises from the fact that speech normally passes from a speaker's mouth into either the ear (human speech perception) or a microphone (ASR), but the passage of speech through the \DIFdelbegin \DIFdel{medium of airallows }\DIFdelend \DIFaddbegin \DIFadd{free field (air) allows the }\DIFaddend corruption of the signal by noise of unknown \DIFdelbegin \DIFdel{loudness }\DIFdelend \DIFaddbegin \DIFadd{amplitude }\DIFaddend and unpredictable source.  
 
 This research proposed eliminating, by and large, the passage of speech through \DIFdelbegin \DIFdel{air }\DIFdelend \DIFaddbegin \DIFadd{the free field }\DIFaddend by recording the speech in an unconventional location - from the inside of the \textit{speaker's} ear canal.  Speech is not only emitted from the oral cavity, but the vibrations also pass throughout the human body.  Using the ear canal as the source of speech adds the benefit that the entrance to the ear canal can be securely occluded behind the microphone (eg. with a noise reduction device such as an ear-plug).  Ambient noise from the air is largely filtered out by both the occlusion device and the human skull.
 
-Due to the very specific nature of the requirements for this study (that the speech data recorded needed to be recorded from the ear), it was necessary to record data from scratch, as the author was not aware of another corpus of ear-recorded speech that existed at the time of this study.  This corpus aimed to collect speech recorded from a microphone placed at the mouth (in noisy and clean environments), and another microphone placed at the ear (in the same environments). Owing to the variability that occurs when even the same speaker repeats the same sentence, speech critically needed to be recorded from the two locations simultaneously.  \DIFdelbegin \DIFdel{The goal for this new corpus is to offer }\DIFdelend \DIFaddbegin \DIFadd{This new corpus offers }\DIFaddend a comparison between these two recording locations, and \DIFdelbegin \DIFdel{simultaneously recorded speech allows for }\DIFdelend \DIFaddbegin \DIFadd{by recording the speech from both locations simultaneously, }\DIFaddend a more accurate comparison.  The goal for this corpus was to be used for testing humans' and ASR ability to understand speech in noise compared with their ability to understand speech recorded from the ear canal.
+Due to the very specific nature of the requirements for this study (\DIFaddbegin \DIFadd{namely, }\DIFaddend that the speech data \DIFdelbegin \DIFdel{recorded }\DIFdelend needed to be recorded from the ear), it was necessary to record data from scratch, as the author was not aware of another corpus of ear-recorded speech that existed at the time of this study.  This corpus aimed to collect speech recorded from a microphone placed at the mouth (in noisy and clean environments), and another microphone placed at the ear (in the same environments). Owing to the variability that occurs when even the same speaker repeats the same sentence, speech critically needed to be recorded from the two locations simultaneously.  \DIFdelbegin \DIFdel{The goal for this new corpus is to offer }\DIFdelend \DIFaddbegin \DIFadd{This new corpus offers }\DIFaddend a comparison between these two recording locations, and \DIFdelbegin \DIFdel{simultaneously recorded speech allows for }\DIFdelend \DIFaddbegin \DIFadd{- by recording the speech from both locations simultaneously - }\DIFaddend a more accurate comparison.  The goal for this corpus was to be used for testing humans' and ASR ability to understand speech in noise compared with their ability to understand speech recorded from the ear canal.
 
 
-The \DIFaddbegin \DIFadd{purpose of the }\DIFaddend initial experiment described in Section \ref{expt1} below was \DIFdelbegin \DIFdel{a data collection experiment.  It aimed }\DIFdelend to create this corpus of speech recorded from the ear canal and from the mouth for use in the following two experiments (cf. Chapters \ref{chapter3} and \ref{chapter4}).  The next section explains the theory behind the assumption that usable speech can be collected from \DIFdelbegin \DIFdel{the inside of }\DIFdelend \DIFaddbegin \DIFadd{inside }\DIFaddend one's ear canal.
+The \DIFaddbegin \DIFadd{purpose of the }\DIFaddend initial experiment described in Section \ref{expt1} below was \DIFdelbegin \DIFdel{a data collection experiment.  It aimed }\DIFdelend to create this corpus of \DIFdelbegin \DIFdel{speech recorded from the ear canal and from the mouth }\DIFdelend \DIFaddbegin \DIFadd{`ear-recorded' speech and `mouth-recorded' speech }\DIFaddend for use in the following two experiments (cf. Chapters \ref{chapter3} and \ref{chapter4}).  The next section explains the theory behind the assumption that usable speech can be collected from \DIFdelbegin \DIFdel{the inside of }\DIFdelend \DIFaddbegin \DIFadd{inside }\DIFaddend one's ear canal.
 
 \section{Background}
 
@@ -89,10 +89,25 @@ The \DIFaddbegin \DIFadd{purpose of the }\DIFaddend initial experiment described
 % Discussion about Body/Bone conduction (mechanical)
 % \subsection{Bone Conduction}
 
-The speech vibrations of a person's own voice \DIFdelbegin \DIFdel{will }\DIFdelend propagate throughout the head and body.% (cf. Fig. \ref{fig:bekesyBodyTransfer}).  
-Of interest for the present study, these waves \DIFdelbegin \DIFdel{will }\DIFdelend pass through the tissue in the head, and enter into the ear canal, where they \DIFdelbegin \DIFdel{will }\DIFdelend \DIFaddbegin \DIFadd{can }\DIFaddend be recorded. % This brief section will discuss some of the known properties 
+The speech vibrations of a person's own voice \DIFdelbegin \DIFdel{will }\DIFdelend propagate throughout the head and body. % (cf. Fig. \ref{fig:bekesyBodyTransfer}).  
+Of interest \DIFdelbegin \DIFdel{for }\DIFdelend \DIFaddbegin \DIFadd{to }\DIFaddend the present study, these waves \DIFdelbegin \DIFdel{will }\DIFdelend pass through the tissue in the head, and enter into the ear canal, where they \DIFdelbegin \DIFdel{will }\DIFdelend \DIFaddbegin \DIFadd{can }\DIFaddend be recorded. % This brief section will discuss some of the known properties 
 
-Bone conduction of acoustic vibrations through a human head has been well studied (cf. \cite{allen:60}, \cite{hakansson:94}, \cite{stenfelt:00}, \cite{reinfeldt:10}, etc); however most of these studies have involved attaching a mechanical vibration device to an animal head or a cadaver skull, or using a vibrating piston on a live human participant, allowing for precise manipulation of the input signal.  
+Bone conduction of acoustic vibrations through a human head has been well studied (cf. \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
+\cite{allen:60}
+}%DIFAUXCMD
+, \mbox{%DIFAUXCMD
+\cite{hakansson:94}
+}%DIFAUXCMD
+, \mbox{%DIFAUXCMD
+\cite{stenfelt:00}
+}%DIFAUXCMD
+, \mbox{%DIFAUXCMD
+\cite{reinfeldt:10}
+}%DIFAUXCMD
+}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{allen:60,tonndorf:66,hakansson:94,stenfelt:00,reinfeldt:10}
+}%DIFAUXCMD
+}\DIFaddend , etc); however most of these studies have involved attaching a mechanical vibration device to an animal head or a cadaver skull, or using a vibrating piston on a live human participant, allowing for precise manipulation of the input signal.  
 Many of these early \DIFdelbegin \DIFdel{studies mecanical=}\DIFdelend \DIFaddbegin \DIFadd{mechanical }\DIFaddend stimulus studies (most performed on cats or other mammals) \DIFdelbegin \DIFdel{do show }\DIFdelend \DIFaddbegin \DIFadd{demonstrated }\DIFaddend that the sound generated by bone conduction propagating into the ear canal is dominated by low-frequency noise (\cite{tonndorf:72}).
 
 %The acoustic vibrations resulting from the mechanical device positioned on the head propagate to and are recorded by a recording device on a different location on the head.  
@@ -108,16 +123,10 @@ A few (cf. \cite{bekesy:48}, \cite{hansen:97b}, \cite{porschmann:00}, and \cite{
 The many studies that use a simple mechanically-created vibration as a stimulus do so in part because the use of speech as a source is inherently messy.  This is due to the fact that speech 
 \DIFdelbegin \DIFdel{is 
 }\DIFdelend \begin{enumerate*}[label={\alph*)}]
-  \item  is not as easily manipulated as a simple mechanically-created vibration \DIFaddbegin \DIFadd{(\mbox{%DIFAUXCMD
-\cite{}
-}%DIFAUXCMD
-)}\DIFaddend ,
-  \item  contains far more frequency components than a simple mechanically-created vibration \DIFaddbegin \DIFadd{(\mbox{%DIFAUXCMD
-\cite{}
-}%DIFAUXCMD
-)}\DIFaddend , and 
+  \item  \DIFdelbegin \DIFdel{is not as easily }\DIFdelend \DIFaddbegin \DIFadd{can not be as precisely }\DIFaddend manipulated as a \DIFdelbegin \DIFdel{simple }\DIFdelend mechanically-created vibration,
+  \item  contains far more frequency components than a \DIFdelbegin \DIFdel{simple }\DIFdelend mechanically-created vibration \DIFaddbegin \DIFadd{with a single operating frequency}\DIFaddend , and 
   \item  takes multiple pathways to get to the ear: from the vocal \DIFdelbegin \DIFdel{chords}\DIFdelend \DIFaddbegin \DIFadd{folds}\DIFaddend , through tissue, and into the ear canal, and also from vibrations in the air all along the vocal tract\footnote{The speech sound is filtered differently at different locations along the vocal tract}, through the solid medium of the head\footnote{Although, of course, the head is composed of different tissues with different densities and acoustic resonances}, and back into the medium of air inside the ear canal \DIFaddbegin \DIFadd{(\mbox{%DIFAUXCMD
-\cite{}
+\cite{bekesy:60}
 }%DIFAUXCMD
 )}\DIFaddend .
 \end{enumerate*}
@@ -152,10 +161,10 @@ The many studies that use a simple mechanically-created vibration as a stimulus 
 % Discussion about EAC resonance Theory
 \subsection{Modelling Ear Canal Resonance}
 % \begingroup
-We've discussed that a speech signal can reach the ear canal by passing through bone and tissue.  This section will describe what happens to the signal when it reaches the ear canal. 
+\DIFdelbegin \DIFdel{We've discussed that a }\DIFdelend \DIFaddbegin \DIFadd{A }\DIFaddend speech signal can reach the ear canal by passing through \DIFaddbegin \DIFadd{the free field (air), as well as the solid medium of }\DIFaddend bone and tissue.  This section will describe what happens to the signal when it reaches the ear canal \DIFaddbegin \DIFadd{via the latter pathway}\DIFaddend . 
 
 There have been many investigations of the resonating characteristics and amplitude response of the ear canal.  One such project was performed by \cite{stinson:89}, which studied fifteen human ear canals.  Their aim was to produce a model \DIFdelbegin \DIFdel{which could }\DIFdelend \DIFaddbegin \DIFadd{to }\DIFaddend replicate the effect that the ear canal has on acoustics.
-One challenge in producing such a model is the considerable variability in the shape of the canal - both between subjects as well as between the right and left ear canal of a single subject (\cite{stinson:89}).  These differences are apparent in curvature, length, volume, and cross-sectional diameter throughout the ear canal.  \cite{stinson:89} created silicon ear molds for each of the ear canals, which were used to generate three different computational models: one following the contours and dimensions of their ear molds exactly, another following the dimensions of the ear mold, but straightening contours and curvatures as if along a central axis, and the third as if the ear canal were a uniform tube with the same length and volume of the ear canal molds and previous models\DIFdelbegin \DIFdel{(see Fig. \ref{fig:eac_modelling}).}\DIFdelend \DIFaddbegin \DIFadd{.%DIF >  (see Fig. \ref{fig:eac_modelling}).  
+One challenge in producing such a model is the considerable variability in the shape of the canal - both between subjects as well as between the right and left ear canal of a single subject (\cite{stinson:89}).  These differences are apparent in curvature, length, volume, and cross-sectional diameter throughout the ear canal.  \cite{stinson:89} created silicon ear molds for each of the ear canals, which were used to generate three different computational models: \DIFdelbegin \DIFdel{one }\DIFdelend \DIFaddbegin \DIFadd{the first }\DIFaddend following the contours and dimensions of their ear molds exactly, another following the dimensions of the ear mold, but straightening contours and curvatures as if along a central axis, and the third as if the ear canal were a uniform tube with the same length and volume of the ear canal molds and previous models\DIFdelbegin \DIFdel{(see Fig. \ref{fig:eac_modelling}).}\DIFdelend \DIFaddbegin \DIFadd{.%DIF >  (see Fig. \ref{fig:eac_modelling}).  
 }\DIFaddend They noted that most significant differences between these models' spectral predictions of ear canal resonance occur above \DIFdelbegin \DIFdel{6kHz}\DIFdelend \DIFaddbegin \DIFadd{6 kHz}\DIFaddend .
 
 %DIF < 
@@ -189,39 +198,55 @@ diagrams three different models of the ear canal resonance.  The bold line is ba
 %DIF >  \end{figure}
 %DIF >  %
 
-Another challenge is to obtain the dimensions of the ear canal needed in order to treat it as a uniform tube, ie the length and diameter. Immittance measurements are widely used in audiology, and involve emitting a \DIFdelbegin \DIFdel{chirp or }\DIFdelend \DIFaddbegin \DIFadd{continuous low-frequency probe }\DIFaddend tone into a pressurized ear canal.  The \DIFdelbegin \DIFdel{chirp then bounces }\DIFdelend \DIFaddbegin \DIFadd{probe then reflects }\DIFaddend back from the tympanic membrane (assumed to have infinite impedance in a pressurized canal) and can be recorded (\cite{ballachanda:97}, 415): ``The sound pressure developed inside a rigid cavity from a known sound source is directly related to the volume of the cavity".  Therefore, the volume of the ear canal can be inferred for a subject using immittance testing without the need for invasive measurements (eg. using a silicon mold).  Making an assumption about either an `average' diameter or an `average' length of the ear canal would allow for the approximate calculation of the other dimension, given the measured volume. The average length of the ear canal has been cited from 23 mm (\cite{rosen:91}) up to approximately 29 mm (\cite{stinson:89}) for a straight tube. The average diameter for the ear canal is approximately 7.1 mm (\cite{salvinelli:91}).
+Another challenge is to obtain the dimensions of the ear canal needed in order to treat it as a uniform tube\DIFdelbegin \DIFdel{, ie the length and diameter}\DIFdelend . Immittance measurements are widely used in audiology, and involve emitting a \DIFdelbegin \DIFdel{chirp or }\DIFdelend \DIFaddbegin \DIFadd{continuous low-frequency probe }\DIFaddend tone into a pressurized ear canal.  The \DIFdelbegin \DIFdel{chirp then bounces }\DIFdelend \DIFaddbegin \DIFadd{probe then reflects }\DIFaddend back from the tympanic membrane (assumed to have infinite impedance in a pressurized canal) and can be recorded (\cite{ballachanda:97}, 415): ``The sound pressure developed inside a rigid cavity from a known sound source is directly related to the volume of the cavity".  Therefore, the volume of the ear canal can be inferred for a subject using immittance testing without the need for invasive measurements (eg. using a silicon mold).  Making an assumption about either an `average' diameter or an `average' length of the ear canal would allow for the approximate calculation of the other dimension, given the measured volume. The average length of the ear canal has been cited from 23 mm (\cite{rosen:91}) up to approximately 29 mm (\cite{stinson:89}) for a straight tube. The average diameter for the ear canal is approximately 7.1 mm (\cite{salvinelli:91}).
 %These ear canal dimensions can then be plugged into any one of several models designed to approximate the ear canal dimensions.
 
 Since much of the acoustic information for distinguishing speech sounds is located below 6 kHz, and the various resonance models developed by \cite{stinson:89} are very similar below 6 kHz, several (cf. \cite{stinson:89,hansen:97b,stenfelt:07}) who have made efforts to model the ear canal, have chosen to simply treat it as if it were a uniform tube.  Treating the ear canal model as a uniform tube, as opposed to incorporating the nuances of its diameter and curvature, will not have much effect on the output of a model, and greatly simplifies the \DIFdelbegin \DIFdel{calcultions}\DIFdelend \DIFaddbegin \DIFadd{calculations}\DIFaddend .
 
-\begin{figure}[h!]
-\centering
+\DIFdelbegin %DIFDELCMD < \begin{figure}[h!]
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \begin{figure}[t!]
+\DIFaddendFL \centering
   \includegraphics{figure/open-closed-tube.png}
   \caption{A diagram showing an example of an open-closed tube (top) and a closed-closed tube (bottom).  Applied to the case at hand, the closed end (on the right) in both figures would be the tympanic membrane.  The opening at the left (top) is the entrance to the ear canal, which can be plugged (bottom).}
   \label{fig:open-closed-tube}
 \end{figure}
 
-The acoustics of uniform tubes is usually thought of in terms of an open-open tube, an open-closed tube, or a closed-closed tube.  Each of these have different \DIFdelbegin \DIFdel{resonating }\DIFdelend \DIFaddbegin \DIFadd{resonant }\DIFaddend characteristics. The human vocal tract, for example, is normally modeled as an open-closed tube, where one end (the glottis) is generally considered `closed' for modelling purposes, and the other (the mouth) is generally considered to be `open'.  Similarly, for the human ear, the tympanic membrane represents the `closed' end of the ear canal tube, and the ear canal opening at the concha, or pinna, is the `open' end (cf. Figure \ref{fig:open-closed-tube}).  It can also be modeled as a closed-closed tube if the ear is plugged (cf. Figure \ref{fig:open-closed-tube}). \DIFdelbegin \DIFdel{This }\DIFdelend \DIFaddbegin \DIFadd{The }\DIFaddend difference changes the resonance and reverberant structure of the ear canal\DIFdelbegin \DIFdel{, and will be }\DIFdelend \DIFaddbegin \DIFadd{.  This is }\DIFaddend discussed further in Section \ref{sec:OEBCspeech}.  
+The acoustics of uniform tubes is usually thought of in terms of an open-open tube, an open-closed tube, or a closed-closed tube.  Each of these have different \DIFdelbegin \DIFdel{resonating }\DIFdelend \DIFaddbegin \DIFadd{resonant }\DIFaddend characteristics. The human vocal tract, for example, is normally modeled as an open-closed tube, where one end (the glottis) is generally considered `closed' for modelling purposes, and the other (the mouth) is generally considered to be `open'.  Similarly, for the human ear, the tympanic membrane represents the `closed' end of the ear canal tube, and the ear canal opening at the concha, or pinna, is the `open' end (cf. Figure \ref{fig:open-closed-tube}).  It can also be modeled as a closed-closed tube if the ear is plugged (cf. Figure \ref{fig:open-closed-tube}). This difference changes the resonance and reverberant structure of the ear canal\DIFdelbegin \DIFdel{, and will be }\DIFdelend \DIFaddbegin \DIFadd{.  This is }\DIFaddend discussed further in Section \ref{sec:OEBCspeech}.  
 
 %BC+EC-OE
 % \subsection{Ear Canal Resonance on Bone-Conducted Speech}
 
-The resonances of ear canal can be modeled as if the canal were a uniform tube, without much loss in accuracy.  This has been determined by modelling tones at different frequencies emanating from the entrance of the ear, recorded at the tympanic membrane, and noting the change in resonant frequency.  However, there are a few (c.f. \cite{bekesy:48}, \cite{porschmann:00}, \cite{reinfeldt:10}) who \DIFdelbegin \DIFdel{use }\DIFdelend \DIFaddbegin \DIFadd{used }\DIFaddend real human speech as the sound source, and bone-conduction as the medium \DIFaddbegin \DIFadd{through which it is transmitted into the canal}\DIFaddend .  This would result \DIFdelbegin \DIFdel{is }\DIFdelend \DIFaddbegin \DIFadd{in }\DIFaddend speech \textit{not} emitted at the entrance to the ear canal, but entering the ear canal through the ear canal walls.
+The resonances of \DIFaddbegin \DIFadd{the }\DIFaddend ear canal can be modeled as if the canal were a uniform tube, without much loss in accuracy.  This has been determined by modelling tones at different frequencies emanating from the entrance of the ear, recorded at the tympanic membrane, and noting the change in resonant frequency.  However, there are a few (c.f. \cite{bekesy:48}, \cite{porschmann:00}, \cite{reinfeldt:10}) who \DIFdelbegin \DIFdel{use }\DIFdelend \DIFaddbegin \DIFadd{used }\DIFaddend real human speech as the sound source, and bone-conduction as the medium \DIFaddbegin \DIFadd{through which it is transmitted into the canal}\DIFaddend .  This would result \DIFdelbegin \DIFdel{is }\DIFdelend \DIFaddbegin \DIFadd{in }\DIFaddend speech \textit{not} emitted at the entrance to the ear canal, but entering the ear canal through the ear canal walls.
 %
 % The acoustics of uniform tubes is usually thought of in terms of an open-open tube, an open-closed tube, or a closed-closed tube.  Each of these have different resonating characteristics. The human vocal tract, for example, is normally modeled as an open-closed tube, where one end (the glottis) is generally considered `closed' for modelling purposes, and the other (the mouth) is generally considered to be `open'.  Similarly, for the human ear, the tympanic membrane represents the `closed' end of the ear canal tube, and the ear canal opening at the concha, or pinna, is the `open' end (cf. Figure \ref{fig:open-closed-tube}).
 
-\cite{porschmann:00} \DIFdelbegin \DIFdel{'s study }\DIFdelend is generally looking at the \textit{self-perception} of one's own voice, but in order to accomplish this devotes effort to looking at the bone conduction pathway separately.  A general 0.9 kHz resonance (with subsequent harmonic resonances) was found in the collected bone-conduction speech, generally present between 0.7 and 1.2 kHz.  This correlates with the 0.8-1.2 kHz range for the first resonance that others (cf. \cite{hakansson:94}) have observed in mechanical-stimulated bone conduction studies. This would mean, in terms of speech, that one would expect to find higher relative amplitudes near the first formant.
+\cite{porschmann:00} \DIFdelbegin \DIFdel{'s study }\DIFdelend is generally looking at the \textit{self-perception} of one's own voice, but in order to accomplish this devotes effort to looking at the bone conduction pathway separately.  \DIFdelbegin \DIFdel{A general }\DIFdelend \DIFaddbegin \DIFadd{An approximate }\DIFaddend 0.9 kHz resonance (with subsequent harmonic resonances) was found in the \DIFdelbegin \DIFdel{collected bone-conduction }\DIFdelend \DIFaddbegin \DIFadd{bone-conducted }\DIFaddend speech, generally present between 0.7 and 1.2 kHz.  This correlates with the 0.8 \DIFdelbegin \DIFdel{-1.2 }\DIFdelend \DIFaddbegin \DIFadd{- 1.2 }\DIFaddend kHz range for the first resonance that others (cf. \cite{hakansson:94}) have observed in mechanical-stimulated bone conduction studies. This would mean, in terms of speech, that one would expect to find higher relative amplitudes near the first formant.
 
-However, in this study only two \DIFdelbegin \DIFdel{phones }\DIFdelend \DIFaddbegin \DIFadd{phonemes }\DIFaddend were used (/s/ and /z/), and a masking threshold\footnote{The masking threshold technique involves playing a pure tone at different frequencies and amplitudes while the participant is phonating. The participant indicates when the tone becomes audible over their own speech. Knowing the amplitude of the tone allows the researcher to know the amplitude of the speech as one becomes audible over the other. Having this knowledge, the spectrum of speech as it is perceived by the speaker can to be mapped.} technique was used to determine the frequency spectrum of the transfer function of body conduction.  This is admittedly a rather subjective method of determining the spectrum.  
+However, in this study only two \DIFdelbegin \DIFdel{phones }\DIFdelend \DIFaddbegin \DIFadd{phonemes }\DIFaddend were used (/s/ and /z/), and a masking threshold\footnote{The masking threshold technique involves playing a pure tone at different frequencies and amplitudes while the participant is phonating. The participant indicates when the tone becomes audible over their own speech. Knowing the amplitude of the tone allows the researcher to know the \DIFdelbegin \DIFdel{amplitude }\DIFdelend \DIFaddbegin \DIFadd{perceived loudness }\DIFaddend of the \DIFaddbegin \DIFadd{the speaker's own }\DIFaddend speech as one becomes audible over the other. Having this knowledge, the spectrum of speech as it \DIFdelbegin \DIFdel{is }\DIFdelend \DIFaddbegin \DIFadd{was }\DIFaddend perceived by the speaker can \DIFdelbegin \DIFdel{to }\DIFdelend be mapped.} technique was used to determine the frequency spectrum of the transfer function of body conduction.  This is admittedly a rather subjective method of determining the spectrum.  
 
-\cite{reinfeldt:10}, use microphones to record the actual sound pressure level (SPL) of both air- and body-conducted speech. Furthermore, \cite{reinfeldt:10} used a more diverse set of \DIFdelbegin \DIFdel{phones}\DIFdelend \DIFaddbegin \DIFadd{phonemes}\DIFaddend .  A resonance was found in generally the same frequency region for /s/ (and other \DIFdelbegin \DIFdel{phones}\DIFdelend \DIFaddbegin \DIFadd{phonemes}\DIFaddend ) as that found by \cite{porschmann:00} (0.7 - 1.2 kHz) and \cite{hakansson:94} (0.8 - 1.2 kHz). %, they discovered some distinct differences, which can be seen in Fig. \ref{BCrelAC}. 
-Between each class that was used - voiceless sounds (/s/, /t/, /k/, and /tj/),  nasals (/m/ and /n/), and vowels (/i/, /e/, /\DIFdelbegin \DIFdel{a}\DIFdelend \DIFaddbegin \DIFadd{\textipa{A}}\DIFaddend /, /o/) - a moderately similar frequency response is seen, yet there are some distinctions to note. %(see Fig. \ref{BCrelACall}).
+\cite{reinfeldt:10}, use microphones to record the actual sound pressure level (SPL) of both air- and body-conducted speech. Furthermore, \cite{reinfeldt:10} used a more diverse set of \DIFdelbegin \DIFdel{phones}\DIFdelend \DIFaddbegin \DIFadd{phonemes than previous studies}\DIFaddend .  A resonance was found in generally the same frequency region for /s/ (and other \DIFdelbegin \DIFdel{phones}\DIFdelend \DIFaddbegin \DIFadd{phonemes}\DIFaddend ) as that found by \cite{porschmann:00} (0.7 - 1.2 kHz) and \cite{hakansson:94} (0.8 - 1.2 kHz). %, they discovered some distinct differences, which can be seen in Fig. \ref{BCrelAC}. 
+Between each \DIFaddbegin \DIFadd{sound }\DIFaddend class that was used - voiceless sounds (/s/, /t/, /k/, and /tj/),  nasals (/m/ and /n/), and vowels (/i/, /e/, /\DIFdelbegin \DIFdel{a}\DIFdelend \DIFaddbegin \DIFadd{\textipa{A}}\DIFaddend /, /o/) - a moderately similar frequency response is seen\DIFdelbegin \DIFdel{, yet there are some distinctions to note. %DIF < (see Fig. \ref{BCrelACall}).
+}%DIFDELCMD < 
 
-In particular, %as can be seen in Fig. \ref{BCrelAC}, 
-there is much inter-speaker variation within the body conduction of the same sound.  %While it is difficult to track an individual speaker's relative spectral envelope within the figure, 
-It appears that much of this difference, particularly in the lower frequencies, originates from a difference in amplitude, and not necessarily from different resonance locations along the frequency axis.  %It is important to note that both Figs. \ref{BCrelAC} and \ref{BCrelACall} both contain \textit{relative} spectral envelopes - ie. the difference between the air-conducted and body-conducted components of speech, and do not contain an absolute frequency spectrum of body-conducted speech. 
+%DIFDELCMD < %%%
+\DIFdel{In particular, %DIF < as can be seen in Fig. \ref{BCrelAC}, 
+there is much inter-speaker variation within the body conduction of }\DIFdelend \DIFaddbegin \DIFadd{. %DIF > , yet there are some distinctions to note. %(see Fig. \ref{BCrelACall}).
+These frequency responses are given in \mbox{%DIFAUXCMD
+\cite{reinfeldt:10}
+}%DIFAUXCMD
+as the relative amplitude of bone conducted speech when compared with the air-conducted component of speech.  When the response is positive, }\DIFaddend the \DIFdelbegin \DIFdel{same sound.  %DIF < While it is difficult to track an individual speaker's relative spectral envelope within the figure, 
+It appears that much of this difference, particularly in the lower frequencies, originates from a difference in amplitude, and not necessarily from different resonance locations along the frequency axis.
+%DIF < It is important to note that both Figs. \ref{BCrelAC} and \ref{BCrelACall} both contain \textit{relative} spectral envelopes - ie. the difference between the air-conducted and body-conducted components of speech, and do not contain an absolute frequency spectrum of body-conducted speech. 
+}\DIFdelend \DIFaddbegin \DIFadd{bone-conducted signal dominates, but when the response is negative, the air-conducted component has greater energy.
+}\DIFaddend 
 
-Another distinction is that the /e/ vowel has a relatively flat response up to 500 Hz, and dips down to -5 dB around \DIFdelbegin \DIFdel{1kHz}\DIFdelend \DIFaddbegin \DIFadd{1 kHz}\DIFaddend .  This is in contrast with the phone /s/, which has a fairly high (yet falling) response below 500 Hz, and does not dip below -5 dB until nearly 4 kHz.  Compared with /e/, the body-conducted to air-conducted ratio for /s/ has a significant downward slope after 2000 Hz.  This is likely due to the fact that there is relatively little energy produced by /s/ in the low frequencies, allowing for a high ratio, which drops as the general energy of the phone increases.  This could indicate that most of the energy produced by a obstruent does not pass through to the ear canal (\cite{reinfeldt:10}).
+\DIFdelbegin \DIFdel{Another distinction }\DIFdelend %DIF >  In particular, %as can be seen in Fig. \ref{BCrelAC}, 
+%DIF >  there is much inter-speaker variation within the body conduction of the same sound.  %While it is difficult to track an individual speaker's relative spectral envelope within the figure, 
+%DIF >  It appears that much of this difference, particularly in the lower frequencies, originates from a difference in amplitude, and not necessarily from different resonance locations along the frequency axis.  %It is important to note that both Figs. \ref{BCrelAC} and \ref{BCrelACall} both contain \textit{relative} spectral envelopes - ie. the difference between the air-conducted and body-conducted components of speech, and do not contain an absolute frequency spectrum of body-conducted speech. 
+\DIFaddbegin 
+
+\DIFadd{Overall, there is much variability between subjects; yet there are some salient distinctions to note.  One }\DIFaddend is that the /e/ vowel has a relatively flat response up to 500 Hz, and dips down to -5 dB around \DIFdelbegin \DIFdel{1kHz}\DIFdelend \DIFaddbegin \DIFadd{1 kHz}\DIFaddend .  This is in contrast with the phone /s/, which has a fairly high (yet falling) response below 500 Hz, and does not dip below -5 dB until nearly 4 kHz.  Compared with /e/, the body-conducted to air-conducted ratio for /s/ has a significant downward slope after 2000 Hz.  This is likely due to the fact that there is relatively little energy produced by /s/ in the low frequencies, allowing for a high ratio, which drops as the general energy of the phone increases.  This could indicate that most of the energy produced by a obstruent does not pass through to the ear canal (\cite{reinfeldt:10}).
 
 % \begin{figure}[h!]
 % \includegraphics[width=1\textwidth]{figure/BCrelAC_e_s.png}
@@ -238,7 +263,14 @@ More specific dichotomies can be found between sounds within the same class. For
 }%DIFAUXCMD
 }\DIFaddend are backed by \cite{bekesy:60}, who also noted %diagrammed 
 the relative difference in amplitude in the ear canal between the air-conduction and body-conduction of vowels, %(cf. Fig. \ref{bekesyPhoneDiff}), 
-which also supports this hypothesis.  There was much inter-speaker variability in the previous studies, but \DIFdelbegin \DIFdel{the bone-conducted vowels appeared to have }\DIFdelend \DIFaddbegin \DIFadd{one common characteristic is that the higher vowels had }\DIFaddend the least relative reduction in amplitude\DIFdelbegin \DIFdel{are the higher vowels}\DIFdelend .  Since the functions of other high sonorants (eg. /u/) are not given, we cannot be certain if this is a \DIFdelbegin \DIFdel{phone-specific }\DIFdelend \DIFaddbegin \DIFadd{phoneme-specific }\DIFaddend difference, or if it can be generalized to other sounds with a [high] articulation in which the tongue is close to the roof of the mouth.  This latter generalization would make sense, as the oral cavity is more `closed', trapping energy inside the cavity resulting in more reverberations passing through the head and into the ear canal.
+\DIFdelbegin \DIFdel{which also supports this hypothesis.  
+}\DIFdelend \DIFaddbegin \DIFadd{that follow a similar pattern.  
+}
+
+\DIFaddend There was much inter-speaker variability in the previous studies, but \DIFdelbegin \DIFdel{the bone-conducted vowels appeared to have the least relative }\DIFdelend \DIFaddbegin \DIFadd{one common characteristic is that the higher vowels had the least }\textit{\DIFadd{relative}} \DIFaddend reduction in amplitude\DIFdelbegin \DIFdel{are the higher vowels}\DIFdelend .  Since the functions of other high sonorants (eg. /u/) are not given \DIFdelbegin \DIFdel{, we }\DIFdelend \DIFaddbegin \DIFadd{by \mbox{%DIFAUXCMD
+\cite{reinfeldt:10}
+}%DIFAUXCMD
+, one }\DIFaddend cannot be certain if this is a \DIFdelbegin \DIFdel{phone-specific }\DIFdelend \DIFaddbegin \DIFadd{phoneme-specific }\DIFaddend difference, or if it can be generalized to other sounds with a [high] articulation in which the tongue is close to the roof of the mouth.  This latter generalization would make sense, as the oral cavity is more `closed', trapping energy inside the cavity resulting in more reverberations passing through the head and into the ear canal.
 %
 % \begin{wrapfigure}{l!}{0.5\textwidth}
 % % \begin{figure}
@@ -251,7 +283,7 @@ which also supports this hypothesis.  There was much inter-speaker variability i
 On the surface, it appears that the more energy that is lost to air conduction during the production of low vowels (ie. from a more `open' articulation), the less energy is transferred into the surrounding tissue.
 %\footnote{\cite{bekesy:60} does not break down relative amplitude by frequency.}
 
-Here it is important to re-emphasize that these transforms are given as body-conducted amplitude \textit{relative to} air-conducted amplitude for the given phone, and do not reflect the absolute air- and body-conducted amplitude of phones compared with one another.  For example, /\DIFdelbegin \DIFdel{a}\DIFdelend \DIFaddbegin \DIFadd{\textipa{A}}\DIFaddend / is a relatively loud air-conducted sound due to its open articulation, and this loud air-conducted component may cause its \textit{relative} body-conducted component to appear quieter than the other vowels, when in reality it is possible that the body-conducted component of both vowels have the same absolute amplitude.  Neither \cite{bekesy:60} nor \cite{reinfeldt:10} give information about body-conducted components in relation to one another, and so a direct comparison between two bone-conducted phones cannot be conducted.
+Here it is important to re-emphasize that these transforms are given as body-conducted amplitude \textit{relative to} air-conducted amplitude for the given phone, and do not reflect the absolute air- and body-conducted amplitude of phones compared with one another.  For example, /\DIFdelbegin \DIFdel{a}\DIFdelend \DIFaddbegin \DIFadd{\textipa{A}}\DIFaddend / is a relatively loud air-conducted sound due to its open articulation, and this loud air-conducted component may cause its \textit{relative} body-conducted component to appear quieter than the other vowels, when in reality it is possible that the body-conducted component of both vowels have the same absolute amplitude.  Neither \cite{bekesy:60} nor \cite{reinfeldt:10} give information about body-conducted components in relation to one another, and so a direct comparison \DIFaddbegin \DIFadd{is not available }\DIFaddend between two bone-conducted phones\DIFdelbegin \DIFdel{cannot be conducted}\DIFdelend .
 
 This section has discussed the resonance of the ear canal, focusing on bone-conducted speech within the ear canal.  The following section will describe the effects that the closure of the ear canal - turning an open-closed tube into a closed-closed tube - has on the resonance of the bone-conducted voice.
 
@@ -289,7 +321,7 @@ reported that when the ear canal is closed, the increase in amplitude within the
 }%DIFDELCMD < 
 
 %DIFDELCMD < %%%
-\DIFdelend There are also differences based on the location of \textit{occlusion}\DIFdelbegin \DIFdel{within the ear canal}\DIFdelend , ie. how deep a plug is placed in the ear canal.  This affects the resonant frequencies that play a part in the shape of the higher frequencies, due to the different depths of plug insertion resulting in `tubes' of different lengths.  Another effect of plug depth is that, the deeper a plug is inserted into the ear canal, the less surface area there is in the canal for acoustic vibrations to enter.  \DIFdelbegin %DIFDELCMD < 
+\DIFdelend There are also differences based on the location of \textit{occlusion}\DIFdelbegin \DIFdel{within the ear canal}\DIFdelend , ie. how deep a plug is placed in the ear canal.  This affects the \DIFdelbegin \DIFdel{resonant frequencies }\DIFdelend \DIFaddbegin \DIFadd{resonances of the tube }\DIFaddend that play a part in the shape of the higher frequencies, due to the different depths of plug insertion resulting in `tubes' of different lengths.  Another effect of plug depth is that, the deeper a plug is inserted into the ear canal, the less surface area there is in the canal for acoustic vibrations to enter.  \DIFdelbegin %DIFDELCMD < 
 
 %DIFDELCMD < %%%
 \DIFdel{\mbox{%DIFAUXCMD
@@ -321,7 +353,7 @@ indicated that the effect of plug depth on the amplitude of a signal does not di
 }\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
 \cite{stenfelt:07}
 }%DIFAUXCMD
-}\DIFaddend , who found the greatest \DIFdelbegin \DIFdel{OE with the }\DIFdelend \DIFaddbegin \DIFadd{occlusion effect with the shallow insertion ear-plugs, and not the }\DIFaddend supra-aural earmuff.  \cite{dean:00} \DIFdelbegin \DIFdel{do }\DIFdelend \DIFaddbegin \DIFadd{did }\DIFaddend not mention the size of earmuff used, but \cite{stenfelt:07} \DIFdelbegin \DIFdel{report }\DIFdelend \DIFaddbegin \DIFadd{reported }\DIFaddend the use of a `large' and `small' earmuff, with the latter providing a greater \DIFdelbegin \DIFdel{OE }\DIFdelend \DIFaddbegin \DIFadd{occlusion effect }\DIFaddend than the former; both \DIFdelbegin \DIFdel{are still }\DIFdelend \DIFaddbegin \DIFadd{of these occlusion effects produced an rise in amplitude }\DIFaddend below that of the shallow-insertion ear-plugs.
+}\DIFaddend , who found the greatest \DIFdelbegin \DIFdel{OE with the }\DIFdelend \DIFaddbegin \DIFadd{occlusion effect with the shallow insertion ear-plugs, and not the }\DIFaddend supra-aural earmuff.  \cite{dean:00} \DIFdelbegin \DIFdel{do }\DIFdelend \DIFaddbegin \DIFadd{did }\DIFaddend not mention the size of earmuff used, but \cite{stenfelt:07} \DIFdelbegin \DIFdel{report }\DIFdelend \DIFaddbegin \DIFadd{reported }\DIFaddend the use of a `large' and `small' earmuff, with the latter providing a greater \DIFdelbegin \DIFdel{OE }\DIFdelend \DIFaddbegin \DIFadd{occlusion effect }\DIFaddend than the former; both \DIFdelbegin \DIFdel{are still }\DIFdelend \DIFaddbegin \DIFadd{of these occlusion effects produced a rise in amplitude }\DIFaddend below that of the shallow-insertion ear-plugs.
 \DIFaddbegin \DIFadd{However, \mbox{%DIFAUXCMD
 \cite{dean:00}
 }%DIFAUXCMD
@@ -356,7 +388,7 @@ resonance around 1-2kHz. }\DIFdelend \DIFaddbegin \DIFadd{the resonance around 1
 }\DIFaddend 
 
 
-\DIFdelbegin \DIFdel{However, there is }\DIFdelend \DIFaddbegin \DIFadd{There is also }\DIFaddend a variance in the \DIFdelbegin \DIFdel{OE }\DIFdelend \DIFaddbegin \DIFadd{occlusion effect }\DIFaddend - if using a mechanically-created vibration - depending on the location of \DIFaddbegin \DIFadd{mechanical }\DIFaddend stimulation.  This difference is most present in the lower frequencies (\cite{dean:00}), where the relative amplitude increase of body-conducted sound versus air-conducted sound appears to be the greatest, but this difference tends to wash out when slightly higher frequencies are reached\footnote{\cite{dean:00} found that the greatest relative amplitude increase occurs near 250 Hz, but the gain disappears when 1000 Hz is reached.}.  Each \DIFaddbegin \DIFadd{stimulation }\DIFaddend site in \cite{stenfelt:07} \DIFdelbegin \DIFdel{'s study }\DIFdelend yielded a slightly different frequency response for the occlusion effect.  Stimulation at the mastoid generally resulted in a greater increase in very low frequencies below 1 kHz.  This is one limitation of using a mechanical stimulus - it cannot be assumed to accurately model the occlusion effect of speech, since the observed effect differs depending on the location of the mechanical \DIFdelbegin \DIFdel{sitmulus}\DIFdelend \DIFaddbegin \DIFadd{stimulus}\DIFaddend .
+\DIFdelbegin \DIFdel{However, there is }\DIFdelend \DIFaddbegin \DIFadd{There is also }\DIFaddend a variance in the \DIFdelbegin \DIFdel{OE }\DIFdelend \DIFaddbegin \DIFadd{occlusion effect }\DIFaddend - if using a mechanically-created vibration - depending on the location of \DIFaddbegin \DIFadd{mechanical }\DIFaddend stimulation.  This difference is most present in the lower frequencies (\cite{dean:00}), where the relative amplitude increase of body-conducted sound versus air-conducted sound appears to be the greatest, but this difference tends to wash out when slightly higher frequencies are reached\footnote{\cite{dean:00} found that the greatest relative amplitude increase occurs near 250 Hz, but the \DIFdelbegin \DIFdel{gain }\DIFdelend \DIFaddbegin \DIFadd{difference largely }\DIFaddend disappears when 1000 Hz is reached.}.  Each \DIFaddbegin \DIFadd{stimulation }\DIFaddend site in \cite{stenfelt:07} \DIFdelbegin \DIFdel{'s study }\DIFdelend yielded a slightly different frequency response for the occlusion effect \DIFaddbegin \DIFadd{as well}\DIFaddend .  Stimulation at the mastoid generally resulted in a greater increase in very low frequencies below 1 kHz.  This is one limitation of using a mechanical stimulus - it cannot be assumed to accurately model the occlusion effect of speech, since the observed effect differs depending on the location of the mechanical \DIFdelbegin \DIFdel{sitmulus}\DIFdelend \DIFaddbegin \DIFadd{stimulus}\DIFaddend .
 
 
 In contrast to \DIFdelbegin \DIFdel{the mechanical source studiesabove}\DIFdelend \DIFaddbegin \DIFadd{these studies}\DIFaddend , \cite{hansen:97b} tested the \DIFdelbegin \DIFdel{OE }\DIFdelend \DIFaddbegin \DIFadd{occlusion effect }\DIFaddend using one's own voice as the input source.  %\cite{hansen:97b} presents a graph comparing three spectra calculated from continuous speech from three separate publications (From \cite{wimmer:86}, \cite{thorup:96}, and \cite{may:92}, Fig. \ref{fig:hansenAverageOEa}).  
@@ -385,12 +417,24 @@ In contrast to \DIFdelbegin \DIFdel{the mechanical source studiesabove}\DIFdelen
 % \label{fig:hansenAverageOE}
 % \end{wrapfigure}
 %
-\DIFdelbegin \DIFdel{The study conducted its own }\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
-\cite{hansen:97}
+The \DIFdelbegin \DIFdel{study conducted its own tests }\DIFdelend \DIFaddbegin \DIFadd{tests performed by \mbox{%DIFAUXCMD
+\cite{hansen:97b}
 }%DIFAUXCMD
-conducted }\DIFaddend tests %(seen in Fig. \ref{fig:hansenAverageOEb}), 
-which, by and large, agree with %the 
-previous studies (\cite{wimmer:86}, \cite{thorup:96}, and \cite{may:92}).  \cite{hansen:97b} found, among much variation, that there was a substantial increase in amplitude below approximately 1 kHz\DIFdelbegin \DIFdel{, which }\DIFdelend \DIFaddbegin \DIFadd{.  This }\DIFaddend dropped to around 0 dB amplitude increase relative to air-conducted speech \DIFdelbegin \DIFdel{, which held }\DIFdelend \DIFaddbegin \DIFadd{from 1 kHz upward, holding }\DIFaddend steady until approximately 2 kHz.  Between 2 kHz and approximately 5 kHz, there is a large dip\DIFdelbegin \DIFdel{, which above }\DIFdelend \DIFaddbegin \DIFadd{.  Above }\DIFaddend 5 kHz\DIFdelbegin \DIFdel{appears to result in another increase in }\DIFdelend \DIFaddbegin \DIFadd{, there is another rise in relative amplitude }\DIFaddend amplitude.  \cite{hansen:97b} developed a model of the \DIFdelbegin \DIFdel{OE }\DIFdelend \DIFaddbegin \DIFadd{occlusion effect }\DIFaddend which largely agrees with these measurements, ie. very loud low frequencies, dampened mid-range frequencies, and another increase in frequencies above 5 kHz.
+}\DIFaddend %(seen in Fig. \ref{fig:hansenAverageOEb}), 
+\DIFdelbegin \DIFdel{which, }\DIFdelend by and large \DIFdelbegin \DIFdel{, }\DIFdelend agree with %the 
+previous studies (\cite{wimmer:86}, \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
+\cite{thorup:96}
+}%DIFAUXCMD
+, and \mbox{%DIFAUXCMD
+\cite{may:92}
+}%DIFAUXCMD
+}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{may:92}
+}%DIFAUXCMD
+, and \mbox{%DIFAUXCMD
+\cite{thorup:96}
+}%DIFAUXCMD
+}\DIFaddend ).  \cite{hansen:97b} found, among much variation, that there was a substantial increase in amplitude below approximately 1 kHz\DIFdelbegin \DIFdel{, which }\DIFdelend \DIFaddbegin \DIFadd{.  This }\DIFaddend dropped to around 0 dB amplitude increase relative to air-conducted speech \DIFdelbegin \DIFdel{, which held }\DIFdelend \DIFaddbegin \DIFadd{from 1 kHz upward, holding }\DIFaddend steady until approximately 2 kHz.  Between 2 kHz and approximately 5 kHz, there is a large dip\DIFdelbegin \DIFdel{, which above }\DIFdelend \DIFaddbegin \DIFadd{.  Above }\DIFaddend 5 kHz\DIFdelbegin \DIFdel{appears to result in another increase in }\DIFdelend \DIFaddbegin \DIFadd{, there is another rise in relative }\DIFaddend amplitude.  \cite{hansen:97b} developed a model of the \DIFdelbegin \DIFdel{OE }\DIFdelend \DIFaddbegin \DIFadd{occlusion effect }\DIFaddend which largely agrees with these measurements, ie. very loud low frequencies, dampened mid-range frequencies, and another increase in frequencies above 5 kHz.
 
 The increase in amplitude of the voice in the ear due to occlusion can also influence the manner in which speech is spoken.  This can be seen clearly by the \DIFdelbegin \DIFdel{OE}\DIFdelend \DIFaddbegin \DIFadd{occlusion effect}\DIFaddend 's influence on the Lombard effect (\cite{lombard:11,lane:71}).  The Lombard effect is the tendency of humans to speak louder in noise due to noise interrupting the normal feedback loop of speech, ie. speakers do not hear themselves nearly as well in noise as they do normally, and so they speak louder (and clearer) to compensate.  However, recent research by \cite{brungart:12} demonstrated that the Lombard effect disappears when a participant is wearing ear-plugs in a noisy environment.  This is actually due to the presence of the \DIFdelbegin \DIFdel{OE}\DIFdelend \DIFaddbegin \DIFadd{occlusion effect}\DIFaddend , and the increase in amplitude of one's own voice by closing off the entrance to the ear canal.  Instead of an interruption in, or lack of, feedback, the occlusion provides the speaker with much louder feedback.  \cite{brungart:12} found that speakers wearing ear-plugs in a noisy environment actually speak \textit{quieter} than those without ear-plugs, \textit{regardless} of the actual noise-attenuation by the ear-plugs.  This indicates that it isn't necessarily the lack of noise that prompts speakers to speak at a lower volume, but rather the presence of occlusion and the consequent increase in amplitude of their own voice.
 
@@ -400,9 +444,9 @@ Yet despite an increase in overall amplitude of the voice, the \DIFdelbegin \DIF
 
 %% Allaying concerns of the effect of jaw movement on the occlusion effect.
 \cite{hansen:97b} found several phone-specific differences in the occlusion effect\DIFdelbegin \DIFdel{(OE)}\DIFdelend . It is ambiguous as to whether the differences are solely due to the differences in the transforms of phones as a result of body conduction (as seen above in \cite{reinfeldt:10}), or if there are sound-specific differences introduced within the ear canal or by the occlusion effect itself.  
-Some have posited that variability could critically stem from the placement of the jaw bone during speech next to the external auditory meatus, and as that changes as the jaw moves up and down for `higher' or `lower' phones (eg. /i/ vs /\DIFdelbegin \DIFdel{a}\DIFdelend \DIFaddbegin \DIFadd{\textipa{A}}\DIFaddend /). The placement of the jaw bone, as it moves changes the impedance characteristics of the vibration of the mandible against the temporal bone that houses the meatus (\cite{bekesy:60}).  \cite{allen:60} studied the \DIFdelbegin \DIFdel{OE }\DIFdelend \DIFaddbegin \DIFadd{occlusion effect }\DIFaddend on participants with a unilateral resection of the mandible (one side of the jaw has been removed), and found essentially no distinction between the \DIFdelbegin \DIFdel{OE }\DIFdelend \DIFaddbegin \DIFadd{occlusion effect }\DIFaddend in either ear (ie. with a mandibular joint adjacent to the cartilage of the ear canal or without).
+Some have posited that variability could \DIFdelbegin \DIFdel{critically }\DIFdelend stem from the placement of the jaw bone during speech next to the external auditory meatus, \DIFdelbegin \DIFdel{and as that changes as the jaw }\DIFdelend \DIFaddbegin \DIFadd{as contact with the jaw bone changes as it }\DIFaddend moves up and down for `higher' or `lower' phones (eg. /i/ vs /\DIFdelbegin \DIFdel{a}\DIFdelend \DIFaddbegin \DIFadd{\textipa{A}}\DIFaddend /). The \DIFdelbegin \DIFdel{placement }\DIFdelend \DIFaddbegin \DIFadd{movement }\DIFaddend of the jaw bone \DIFdelbegin \DIFdel{, as it moves }\DIFdelend changes the impedance characteristics of the vibration of the mandible against the temporal bone that houses the meatus (\cite{bekesy:60}).  \cite{allen:60} studied the \DIFdelbegin \DIFdel{OE }\DIFdelend \DIFaddbegin \DIFadd{occlusion effect }\DIFaddend on participants with a unilateral resection of the mandible (one side of the jaw has been removed), and found essentially no distinction between the \DIFdelbegin \DIFdel{OE }\DIFdelend \DIFaddbegin \DIFadd{occlusion effect }\DIFaddend in either ear (ie. with a mandibular joint adjacent to the cartilage \DIFaddbegin \DIFadd{and bone }\DIFaddend of the ear canal or without).
 
-Yet, \cite{hansen:97b}) found that a change in shape of the ear canal due to different jaw positions can create an acoustic `leak" between the ear canal wall and the occlusion device; the occlusion effect, obviously, behaves differently when there are different sized `leaks' resulting in different levels of partial occlusion. 
+\DIFdelbegin \DIFdel{Yet, }\DIFdelend \cite{hansen:97b}) found that \DIFaddbegin \DIFadd{additionally, }\DIFaddend a change in shape of the ear canal due to different jaw positions can create an acoustic `leak" between the ear canal wall and the occlusion device; the occlusion effect, obviously, behaves differently when there are different sized `leaks' resulting in different levels of partial occlusion. 
 \cite{hansen:97b} diagrams cross sections of the ear canal with the jaw at different positions; between a closed jaw and \DIFdelbegin \DIFdel{5mm }\DIFdelend \DIFaddbegin \DIFadd{5 mm }\DIFaddend of opening, there is relatively little difference between the shapes of the ear canal.  Since \cite{borghese:97} found that the jaw moves relatively little vertical distance during actual speech (max opening approx. 6 mm), it can be assumed that the ear canal changes shape negligibly during normal speech with a snug-fitting occlusion device. 
 
 In summary, %it is important to emphasize the key difference between measurements from an open ear canal and those from an occluded ear canal, which can largely be seen between Figs. \ref{BCrelACall} and \ref{fig:hansenAverageOEa}.  
@@ -412,7 +456,7 @@ this section introduced the occlusion effect and its expected frequency response
 %CONCLUSION
 \subsection{Summary}
 
-The aforementioned studies on bone conduction, ear canal resonance, and the occlusion effect, as would be expected, have indicated a large amount of inter-person and inter-phoneme variability and have shown the complexity involved in estimating the effect of body conduction and ear canal reverberance on speech entering the ear canal.  However, the transfer function from the vocal tract to the ear canal does have some standard characteristics, namely, the body and (occluded) ear canal work in conjunction as a low-pass filter on speech, removing many of the higher frequencies which are within range of containing critical components for speech intelligibility.  The occlusion of the ear canal allows these lower frequencies to be fully realized.
+The aforementioned studies on bone conduction, ear canal resonance, and the occlusion effect, as would be expected, have indicated a large amount of inter-person and inter-phoneme variability and have shown the complexity involved in estimating the effect of body conduction and ear canal reverberance on speech entering the ear canal.  However, the transfer function from the vocal tract to the ear canal does have some standard characteristics, namely, the body and (occluded) ear canal work in conjunction as a low-pass filter on speech, removing many of the higher frequencies which \DIFdelbegin \DIFdel{are within range of containing }\DIFdelend \DIFaddbegin \DIFadd{may contain }\DIFaddend critical components for speech intelligibility.  The occlusion of the ear canal allows these lower frequencies \DIFaddbegin \DIFadd{passed by the head's transfer function }\DIFaddend to be fully realized.
 
 %CONCLUSION to expt 1 lit review
 
@@ -426,21 +470,25 @@ The aforementioned studies on bone conduction, ear canal resonance, and the occl
 The methods described in this section, namely the models and transfer functions used by \cite{hansen:97b}, \cite{stenfelt:07}, and \cite{reinfeldt:10}, predict a general relative emphasis in the lower frequencies (below 2 kHz) when the ear canal is occluded, and a drop in frequencies above that range (with a rise above 5 kHz).  With this knowledge, it appears that it may be possible for recoverable speech information to be recorded from inside the ear canal.  While the skull will prevent much ambient noise from reaching a microphone placed in the ear canal, an occlusion device would need to be placed at the opening of the canal to aid in dampening the noise.  This occlusion results in the \DIFdelbegin \DIFdel{distortion }\DIFdelend \DIFaddbegin \DIFadd{filtering }\DIFaddend described above.
 
 This \DIFdelbegin \DIFdel{distortion }\DIFdelend \DIFaddbegin \DIFadd{filtering }\DIFaddend is hypothesized to be, by and large, predictable (\cite{hansen:97b,reinfeldt:10}), unlike ambient noise from the environment which is generally highly variable in both amplitude and form (\cite{zhang:17}). This prediction is that the signal recorded from the ear canal is expected to be heavily low-pass filtered above approximately \DIFdelbegin \DIFdel{2kHz}\DIFdelend \DIFaddbegin \DIFadd{2 kHz}\DIFaddend .  Minor transformations, such as pre-emphasizing the higher frequencies, are hypothesized to recover some of the information that is lost, resulting in speech that will perform better than a noisy signal collected at the mouth in both ASR and human speech perception tasks.
-Due to this, the technique of substituting potentially unanticipated, variable `environmental' noise with the anticipated `noise' of body conduction and the occlusion effect will allow for greater confidence that a usable signal could be recovered.    
+Due to this, the technique of substituting potentially unanticipated, variable `environmental' noise with the anticipated `noise' of body conduction and the occlusion effect will allow for greater confidence that a usable signal could be recovered. 
 
 Section \ref{expt1} below describes the specific methods used to collect speech data from the mouth and the ear canal, and the analysis of the collected speech in an attempt to recover an intelligible signal with the knowledge outlined in this section.  These recovered signals were used in human speech perception and ASR experiments in Chapter \ref{chapter3} and \ref{chapter4}, respectively.
 
 
 \section{Experiment 1: Creating a dataset of ear-recorded speech}\label{expt1}
 
-There are numerous constraints and requirements for the speech recordings necessary for this task, and it was essential to create an original dataset for this study.  This small corpus was used for creating stimuli ASR and human speech perception experiments.  Primarily, an original corpus needed to be created because there is no known dataset of speech in which the recording location is inside the ear canal; speech recorded from this location was the primary focus of these studies.  Secondly, in order to be comparable, the speech at the ear, and the speech at the mouth, needed to be recorded at the same time, in the same conditions.  This was mainly to determine, when comparing the results of ear-recorded and mouth-recorded speech, whether the ear or mouth-recorded speech performed better in the ASR and human speech perception tasks and to avoid potentially confounding variables that would occur if the two sets of speech were recorded separately. This is discussed further in Section \ref{chap2:methods:design} below.
+There are numerous constraints and requirements for the speech recordings necessary for \DIFdelbegin \DIFdel{this task, and }\DIFdelend \DIFaddbegin \DIFadd{the experiments in Chapters \ref{chapter3} and \ref{chapter4}, and so }\DIFaddend it was essential to create an original dataset for this study.  This small corpus was used for creating stimuli ASR and human speech perception experiments.  Primarily, an original corpus needed to be created because there is no known dataset of speech in which the recording location is inside the ear canal; speech recorded from this location was the primary focus of these studies.  Secondly, in order to be comparable, the speech at the ear, and the speech at the mouth, needed to be recorded at the same time, in the same conditions.  This was mainly to determine \DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{- }\DIFaddend when comparing the results of ear-recorded and mouth-recorded speech \DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{- }\DIFaddend whether the ear or mouth-recorded speech performed better in the ASR and human speech perception tasks and to avoid potentially confounding variables that would occur if the two sets of speech were recorded separately. This is discussed further in Section \ref{chap2:methods:design} below.
 
 \subsection{Design}
 \label{chap2:methods:design}
 
-The goal of this experiment was to create a dataset of recordings, both from the mouth, in noisy conditions, and from inside the ear in the same conditions.  These recordings were needed to \DIFdelbegin \DIFdel{test the following (previously mentioned) hypotheses}\DIFdelend \DIFaddbegin \DIFadd{answer the following questions}\DIFaddend : (a) whether recording speech from the ear, external noise would be completely or largely eliminated, while simultaneously recorded speech from the mouth had a noisy background, (b) whether the speech from the ear was more intelligible and recognizable by an ASR system than noisy speech, and (c) whether the speech from the ear is more intelligible and recognizable by humans than noisy speech. 
+The goal of this experiment was to create a dataset of recordings, both from the mouth \DIFdelbegin \DIFdel{, }\DIFdelend in noisy conditions \DIFdelbegin \DIFdel{, }\DIFdelend and from inside the ear in the same conditions.  These recordings were needed to \DIFdelbegin \DIFdel{test the following (previously mentioned) hypotheses}\DIFdelend \DIFaddbegin \DIFadd{answer the following questions}\DIFaddend : (a) whether \DIFdelbegin \DIFdel{recording speech from the ear, }\DIFdelend external noise would be completely or largely eliminated \DIFdelbegin \DIFdel{, while simultaneously recorded }\DIFdelend \DIFaddbegin \DIFadd{when recording }\DIFaddend speech from the \DIFdelbegin \DIFdel{mouth had a noisy background}\DIFdelend \DIFaddbegin \DIFadd{ear}\DIFaddend , (b) whether the speech from the ear \DIFdelbegin \DIFdel{was }\DIFdelend \DIFaddbegin \DIFadd{is }\DIFaddend more intelligible and recognizable by \DIFdelbegin \DIFdel{an ASR system than noisy speech}\DIFdelend \DIFaddbegin \DIFadd{humans than simultaneous noisy speech recorded at the mouth}\DIFaddend , and (c) whether the speech from the ear \DIFdelbegin \DIFdel{is }\DIFdelend \DIFaddbegin \DIFadd{would be }\DIFaddend more intelligible and recognizable by \DIFdelbegin \DIFdel{humans }\DIFdelend \DIFaddbegin \DIFadd{an ASR system }\DIFaddend than noisy speech. 
 
-In alignment with the CHiME challenge\footnote{The CHiME challenge tasks researchers to improve upon or surpass the performance of a baseline automatic speech recognizer used on noisy speech data.} guidelines, this study uses different types of background noise at different noise levels.  The noises used include the four sounds (bus, caf\'{e}, pedestrian area, \& street) from the \cite{chime:16}, plus a `factory' noise track.  A short portion of the audio with relatively level amplitude was extracted from each sound file to be played in the background.  Relatively level amplitude was used to allow for a more accurate comparison of the different SNR levels. Furthermore, if a sound file varied in amplitude, it would confound the recognition tasks as to whether a certain word is difficult to recognize, or the noise level that occurred at that portion in the sentence was a hindrance to accurate recognition.\footnote{The exact portions of the sounds which were used are available online, along with the rest of the data at http://www.openslr.org/}
+In alignment with the CHiME challenge\footnote{The CHiME challenge tasks researchers to improve upon or surpass the performance of a baseline automatic speech recognizer used on noisy speech data.} guidelines, this study uses different types of background noise at different noise levels.  The noises used include the four sounds (bus, caf\'{e}, pedestrian area, \& street) from the \cite{chime:16}, plus a `factory' noise track.  A short portion of the audio with relatively level amplitude was extracted from each sound file to be played in the background.  Relatively level amplitude was used to allow for a more accurate comparison of the different SNR levels. Furthermore, if a sound file varied in amplitude, it would confound the recognition tasks\DIFdelbegin \DIFdel{as to }\DIFdelend \DIFaddbegin \DIFadd{, eg. }\DIFaddend whether a certain word \DIFaddbegin \DIFadd{or set of phonemes }\DIFaddend is difficult to recognize, or the noise level that occurred at that portion in the sentence was \DIFdelbegin \DIFdel{a }\DIFdelend \DIFaddbegin \DIFadd{relatively loud and the primary }\DIFaddend hindrance to accurate recognition.
+\DIFdelbegin \footnote{\DIFdel{The exact portions of the sounds which were used are available online, along with the rest of the data at http://www.openslr.org/}}
+%DIFAUXCMD
+\addtocounter{footnote}{-1}%DIFAUXCMD
+\DIFdelend 
 
 Many existing works in ASR and human speech recognition in noise use multiple SNR levels to demonstrate the effectiveness of the technique of noise removal (eg. \cite{braun:16}).  This is generally done by adding a noise signal to already recorded clean speech, giving the researcher acute control over the SNR.  Recording the noise while simultaneously recording the speech was necessary to demonstrate the ability of the ear canal recording location to remove ambient noise.  Due to this need, it was determined that noise would be played from a loudspeaker at pre-determined decibel levels.  
 
@@ -449,12 +497,12 @@ Since human speech is variable in loudness, and amplitude will likely vary betwe
 An amplitude of 80 dB was chosen as a max loudness, rather than a higher noise level to achieve a lower SNR, in order to leave a wide margin between it and any (albeit remote) possibility of hearing damage suffered by participants.  A `clean' (no noise) condition was also utilized for each sentence.  This creates 16 different conditions (5 noise types * 3 noise levels + 1 `clean' condition).  
 
 \subsection{Stimuli}
-Thirty sentences were chosen from \DIFdelbegin \DIFdel{3 }\DIFdelend \DIFaddbegin \DIFadd{three }\DIFaddend Harvard Sentence lists\footnote{The `Harvard Sentences' dataset \DIFdelbegin \DIFdel{is comprised of }\DIFdelend \DIFaddbegin \DIFadd{comprises }\DIFaddend 72 lists, each 10 sentences long, where each list of 10 sentences is phonetically balanced, where the proportion of each phone in the list corresponds with it's occurrence in the English language (\cite{harvardSents}).}.  Sentences were chosen from the Harvard Sentence dataset due to being phonetically balanced (the distribution of phonemes in each list proportional to their occurrence in English), to their prolific use in speech science research, and specifically their history of serving as stimuli for many speech corpora (cf. \cite{kabal:02,hu:07}, the latter being a noisy speech corpus).  Lists 14, 28, and 57 were used, and chosen semi-randomly, eliminating lists with potentially unfamiliar or rare words.  Each sentence occurs in all 16 conditions (5 noise types * 3 noise levels + 1 `clean' condition), resulting in 480 total stimuli.
+Thirty sentences were chosen from \DIFdelbegin \DIFdel{3 }\DIFdelend \DIFaddbegin \DIFadd{three }\DIFaddend Harvard Sentence lists\footnote{The `Harvard Sentences' dataset is comprised of 72 lists, each 10 sentences long, where each list of 10 sentences is phonetically balanced, \DIFdelbegin \DIFdel{where }\DIFdelend \DIFaddbegin \DIFadd{with }\DIFaddend the proportion of each phone in the list \DIFdelbegin \DIFdel{corresponds }\DIFdelend \DIFaddbegin \DIFadd{corresponding }\DIFaddend with \DIFdelbegin \DIFdel{it's }\DIFdelend \DIFaddbegin \DIFadd{its }\DIFaddend occurrence in the English language (\cite{harvardSents}).}.  Sentences were chosen from the Harvard Sentence dataset due to being phonetically balanced (the distribution of phonemes in each list proportional to their occurrence in English), \DIFaddbegin \DIFadd{and due }\DIFaddend to their prolific use in speech science research, and specifically their history of serving as stimuli for many speech corpora (cf. \cite{kabal:02,hu:07}, the latter being a noisy speech corpus).  Lists 14, 28, and 57 were used, and chosen semi-randomly, eliminating lists with potentially unfamiliar or rare words.  Each sentence occurs in all 16 conditions (5 noise types * 3 noise levels + 1 `clean' condition), resulting in 480 total stimuli.
 
   
 \subsection{Equipment}
 
-The experiment took place in a large soundbooth.  To create the artificially noisy environment a Yamaha MS101 III loudspeaker was \DIFdelbegin \DIFdel{hooked }\DIFdelend \DIFaddbegin \DIFadd{connected }\DIFaddend to an HP ProBook 6470b laptop.  A sound pressure level meter (SPL meter; Larson Davis Model 831) with a PCB Piezotronics Model 377B20 condenser microphone (omnidirectional) was placed 1 meter from the loudspeaker and measured the sound pressure to verify each of the three noise levels for each of the 5 noise types. A Grason-Stadler GSI Typstar \DIFdelbegin \DIFdel{Middle Ear Analyzer }\DIFdelend \DIFaddbegin \DIFadd{middle ear analyzer }\DIFaddend was used to measure the ear canal volume and test for plug leaks.  Two Countryman B2D directional lavalier microphones with fixed XLR connections were used to record the mouth speech and the ear speech.  These were \DIFdelbegin \DIFdel{hooked up }\DIFdelend \DIFaddbegin \DIFadd{connected }\DIFaddend to a PreSonus Digital Audio Firebox preamplifier, which was connected via TRS cables to a Zoom H6 Handy Recorder. A pair of 3M Professional Peltor Earmuffs with an noise reduction rating (NRR)) of -30 dB SPL were worn by the participants during the experiment.
+The experiment took place in a large soundbooth.  To create the artificially noisy environment a Yamaha MS101 III loudspeaker was \DIFdelbegin \DIFdel{hooked }\DIFdelend \DIFaddbegin \DIFadd{connected }\DIFaddend to an HP ProBook 6470b laptop.  A sound pressure level meter (SPL meter; Larson Davis Model 831) with a PCB Piezotronics Model 377B20 condenser microphone (omnidirectional) was placed 1 meter from the loudspeaker and measured the sound pressure to verify each of the three noise levels for each of the 5 noise types. A Grason-Stadler GSI Typstar \DIFdelbegin \DIFdel{Middle Ear Analyzer }\DIFdelend \DIFaddbegin \DIFadd{middle ear analyzer }\DIFaddend was used to measure the ear canal volume and test for plug leaks.  Two Countryman B2D directional lavalier microphones with fixed XLR connections were used to record the \DIFdelbegin \DIFdel{mouth speech and the earspeech}\DIFdelend \DIFaddbegin \DIFadd{signals from the mouth and ear}\DIFaddend .  These were \DIFdelbegin \DIFdel{hooked up }\DIFdelend \DIFaddbegin \DIFadd{connected }\DIFaddend to a PreSonus Digital Audio Firebox preamplifier, which was connected via TRS cables to a Zoom H6 Handy Recorder. A pair of 3M Professional Peltor Earmuffs with an noise reduction rating (NRR)) of -30 dB SPL were worn by the participants during the experiment.
 
 
 \subsection{Participants}\DIFaddbegin \label{chap2:methods:participants}
@@ -463,7 +511,7 @@ The experiment took place in a large soundbooth.  To create the artificially noi
 
 \begin{itemize}
 \item{The participant read all sentences in all conditions (no condition was accidentally missed)}
-\item{The participant read all instances of a given sentence in approximately the same manner (eg. duration, intonation)}
+\item{The participant read all instances of a given sentence in approximately the same manner (eg. consistent duration, intonation)}
 \item{The participant was a fluent speaker of American English (to standardize recognition experiments)}
 \item{The plug did not move during the recording experiment}
 \item{The ear was completely clean of cerumen}
@@ -483,32 +531,73 @@ The participants were initially asked a few preliminary demographic questions\fo
 The distance from the end of the ear-plug to where it was enclosed by the ear canal was measured to determine how far the plug was inserted in the ear canal.
 Since the length of the plug is known, this was done by placing a measuring rod against the cavity of the concha to measure how far the plug was sticking out of the ear, from which the insertion depth can be calculated. The decision to treat the cavity of the concha as the `end" of the ear canal was taken from \cite{stenfelt:07}, who made molds of ear canals, and treated the rapid increase in volume (where the cavity of the concha began) as the end to the ear canal.  This measure allowed for the calculation of the depth of insertion of the ear-plug.
 
+
+
 \begin{wrapfigure}{R}{0.5\textwidth}
-\includegraphics[width=0.5\textwidth]{figure/earmuffSetup.JPG}
-\caption{The 3M 30 NRR earmuffs, a wooden rod attached with adhesive tape, and a Countryman B2D directional lavalier microphone directed toward the location of the mouth.}
+\DIFdelbegin %DIFDELCMD < \includegraphics[width=0.5\textwidth]{figure/earmuffSetup.JPG}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \includegraphics[width=0.5\textwidth]{figure/overallSetUp.png}
+\DIFaddend \caption{\DIFaddbegin \DIFadd{A diagram of the basic equipment set up for the experiment.  }\DIFaddend The \DIFdelbegin \DIFdel{3M 30 NRR earmuffs, a wooden rod attached with adhesive tape, and a Countryman B2D directional lavalier }\DIFdelend \DIFaddbegin \DIFadd{in-ear }\DIFaddend microphone \DIFdelbegin \DIFdel{directed toward }\DIFdelend \DIFaddbegin \DIFadd{is placed under }\DIFaddend the \DIFdelbegin \DIFdel{location of }\DIFdelend \DIFaddbegin \DIFadd{headphones in }\DIFaddend the \DIFdelbegin \DIFdel{mouth}\DIFdelend \DIFaddbegin \DIFadd{right ear}\DIFaddend .}
+\DIFdelbegin %DIFDELCMD < \label{fig:micInsertPlug}
+%DIFDELCMD < \end{wrapfigure}
+%DIFDELCMD < 
+
+%DIFDELCMD < \begin{wrapfigure}{L}{0.5\textwidth}
+%DIFDELCMD < \includegraphics[width=0.5\textwidth]{figure/micInsertPlug.JPG}
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{The Countryman B2D directional lavalier microphone, with with the wind-break foam removed, and inserted into a blue ear-plug.}}
+%DIFAUXCMD
+%DIFDELCMD < \label{fig:earmuffSetup}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \label{fig:overallSetUp}
+\DIFaddend \end{wrapfigure}
+\DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{The Middle Ear Analyzer hose }\DIFdelend \DIFaddbegin \DIFadd{The middle ear analyzer probe }\DIFaddend was then removed from the ear-plug - which was carefully left in place to ensure a continuous seal.  The participants then moved to a seat located in front of a computer monitor (cf. Fig \ref{fig:overallSetUp} for set-up diagram).  The participants were then instructed as to the proceedings of the rest of the experiment. \DIFdelbegin \DIFdel{One }\DIFdelend \DIFaddbegin \DIFadd{The foam wind-screen was removed from one }\DIFaddend of the two microphones\DIFdelbegin \DIFdel{was taken, the wind-break foam removed, and }\DIFdelend \DIFaddbegin \DIFadd{, and the microphone }\DIFaddend was snugly inserted into the ear-plug.  A mark on the microphone cable was used to ensure the end of the microphone was fully inserted to the end of the ear-plug (cf. Fig. \ref{fig:micInsertPlug}).  
+There were several instances where the microphone was inserted deeper than, or just shy of, the end of the ear-plug; the variance was within +/\DIFdelbegin \DIFdel{-2mm }\DIFdelend \DIFaddbegin \DIFadd{-2 mm }\DIFaddend depth (cf. Appendix \ref{appendixA}).  The earmuffs were placed over both ears.  Occasionally, participants had glasses, or thick hair, which may have slightly compromised the seal.  A note was taken of this. Necessarily, the cord for this microphone also ran from the microphone inside the ear-plug, out underneath the earmuff seal to the pre-amplifier.  This was assumed to not significantly effect the earmuff seal.
+
+
+
+
+\DIFdelbegin %DIFDELCMD < \begin{wrapfigure}{R}{0.5\textwidth}
+%DIFDELCMD < \includegraphics[width=0.5\textwidth]{figure/overallSetUp.png}
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{A diagram of the basic equipment set up for the experiment.  The in-ear microphone is placed under the headphones in the right ear.}}
+%DIFAUXCMD
+%DIFDELCMD < \label{fig:overallSetUp}
+%DIFDELCMD < \end{wrapfigure}
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend A wooden rod was attached to the earmuffs, which extended forward, beside the participants' face.  
+The second microphone was attached to this wooden rod via the lavalier clip at the level of the participants' mouth.  The microphone was directed toward their mouth (cf. Fig \ref{fig:earmuffSetup}).  
+The placement of the microphone on the wooden rod was adjusted to be exactly 10cm away from the participants' infra-nasal depression.  At this point, the participants were asked to adjust the placement of their chair so that the microphone on the wooden rod would be approximately 1 meter from the loudspeaker. 
+%DIF > 
+\DIFaddbegin \begin{wrapfigure}{L}{0.5\textwidth}
+\includegraphics[width=0.5\textwidth]{figure/micInsertPlug.JPG}
+\caption{\DIFadd{The Countryman B2D directional lavalier microphone, with with the wind-break foam removed, and inserted into a blue ear-plug.}}
 \label{fig:micInsertPlug}
 \end{wrapfigure}
+%DIF > 
+\DIFaddend Due to the length of the experiment ($~$45min), no effort was made to discourage minor shifting in body position.  The loudspeaker was on another table to the right of the participants, perpendicular to the direction of the microphone facing the mouth (cf. Fig. \ref{fig:overallSetUp}).
 
-\begin{wrapfigure}{L}{0.5\textwidth}
-\includegraphics[width=0.5\textwidth]{figure/micInsertPlug.JPG}
-\caption{The Countryman B2D directional lavalier microphone, with with the wind-break foam removed, and inserted into a blue ear-plug.}
+Both microphones were connected directly to the preamplifier through a fixed (non-changeable) XLR connection.  Both channels were set to the same gain on the preamplifier.  Two TRS cables took each microphone signal from the preamplifier to the recorder.  Both channels were adjusted to appropriate (different) gain levels on the recorder itself to achieve a similar \DIFdelbegin \DIFdel{loudness }\DIFdelend \DIFaddbegin \DIFadd{amplitude }\DIFaddend for both signals and prevent clipping.  These adjustments were made once the participants were situated, but before beginning the recording.
+
+Once recording, an in-house computer program was used to display the stimuli sentences on a second monitor and to play the background noises.  For each sentence, the participants saw the clean-condition (no noise) first.  The researcher was in the soundbooth with the participants listening through a pair of headphones connected to the preamplifier.  
+The participants were asked to repeat the sentence twice to develop a rhythm, at a normal, conversational loudness, with a normal, declarative intonation.  \DIFaddbegin \DIFadd{For each of the following 15 iterations of the sentence (one for each noise-type/noise-level combination) the participants were instructed to read the sentence aloud only once.  }\DIFaddend The researcher asked the participants to repeat the sentence again in \DIFdelbegin \DIFdel{this }\DIFdelend \DIFaddbegin \DIFadd{a }\DIFaddend condition if the rhythm or intonation of the \DIFdelbegin \DIFdel{two sentences }\DIFdelend \DIFaddbegin \DIFadd{sentence }\DIFaddend did not match \DIFaddbegin \DIFadd{those preceding it}\DIFaddend , or if the participants stumbled over a word.  \DIFdelbegin \DIFdel{Each of the following 15 iterations of the sentence (one for each noise-type/noise-level combination) the participants were instructed to read the sentence aloud only once.  }\DIFdelend Out of the loudspeaker \DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{- }\DIFaddend placed 1 meter from the \DIFdelbegin \DIFdel{participants, }\DIFdelend \DIFaddbegin \DIFadd{mouth-microphone - }\DIFaddend each of the background noises \DIFdelbegin \DIFdel{were }\DIFdelend \DIFaddbegin \DIFadd{was }\DIFaddend emitted to coincide with \DIFdelbegin \DIFdel{an iteration of the sentence.  If the rhythm of the spoken sentence varied noticeably, or if the participant stumbled over a word, the researcher again asked the participants to repeat the sentencefor that condition}\DIFdelend \DIFaddbegin \DIFadd{a spoken sentence}\DIFaddend .  The sentences were not randomized, 
+%DIF > 
+\DIFaddbegin \begin{wrapfigure}{h!}{0.5\textwidth}
+\includegraphics[width=0.5\textwidth]{figure/earmuffSetup.JPG}
+\caption{\DIFadd{The -30 dB NRR   earmuffs, a rod attached to the   earmuffs, and a microphone directed toward the mouth.}}
 \label{fig:earmuffSetup}
 \end{wrapfigure}
-
-The \DIFdelbegin \DIFdel{Middle Ear Analyzer hose }\DIFdelend \DIFaddbegin \DIFadd{middle ear analyzer probe }\DIFaddend was then removed from the ear-plug - which was carefully left in place to ensure a continuous seal.  The participants then moved to a seat located in front of a computer monitor (cf. Fig \ref{fig:overallSetUp} for set-up diagram).  The participants were then instructed as to the proceedings of the rest of the experiment. \DIFdelbegin \DIFdel{One }\DIFdelend \DIFaddbegin \DIFadd{The foam wind-screen was removed from one }\DIFaddend of the two microphones\DIFdelbegin \DIFdel{was taken, the wind-break foam removed, and }\DIFdelend \DIFaddbegin \DIFadd{, and the microphone }\DIFaddend was snugly inserted into the ear-plug.  A mark on the microphone cable was used to ensure the end of the microphone was fully inserted to the end of the ear-plug (cf. Fig. \ref{fig:micInsertPlug}).  There were several instances where the microphone was inserted deeper than, or just shy of, the end of the ear-plug; the variance was within +/\DIFdelbegin \DIFdel{-2mm }\DIFdelend \DIFaddbegin \DIFadd{-2 mm }\DIFaddend depth (cf. Appendix \ref{appendixA}).  The earmuffs were placed over both ears.  Occasionally, participants had glasses, or thick hair, which may have slightly compromised the seal.  A note was taken of this. Necessarily, the cord for this microphone also ran from the microphone inside the ear-plug, out underneath the earmuff seal to the pre-amplifier.  This was assumed to not significantly effect the earmuff seal.
-
-\begin{wrapfigure}{R}{0.5\textwidth}
-\includegraphics[width=0.5\textwidth]{figure/overallSetUp.png}
-\caption{A diagram of the basic equipment set up for the experiment.  The in-ear microphone is placed under the headphones in the right ear.}
-\label{fig:overallSetUp}
-\end{wrapfigure}
-
-A wooden rod was attached to the earmuffs, which extended forward, beside the participants' face.  The second microphone was attached to this wooden rod via the lavalier clip at the level of the participants' mouth.  The microphone was directed toward their mouth (cf. Fig \ref{fig:earmuffSetup}).  
-The placement of the microphone on the wooden rod was adjusted to be exactly 10cm away from the participants' infra-nasal depression.  At this point, the participants were asked to adjust the placement of their chair so that the microphone on the wooden rod would be approximately 1 meter from the loudspeaker. Due to the length of the experiment ($~$45min), no effort was made to discourage minor shifting in body position.  The loudspeaker was on another table to the right of the participants, perpendicular to the direction of the microphone facing the mouth (cf. Fig. \ref{fig:overallSetUp}).
-
-Both microphones were connected directly to the preamplifier through a fixed (non-changeable) XLR connection.  Both channels were set to the same gain on the preamplifier.  Two TRS cables took each microphone signal from the preamplifier to the recorder.  Both channels were adjusted to appropriate (different) gain levels on the recorder itself to achieve a similar loudness for both signals and prevent clipping.  These adjustments were made once the participants were situated, but before beginning the recording.
-
-Once recording, an in-house computer program was used to display the stimuli sentences on a second monitor and to play the background noises.  For each sentence, the participants saw the clean-condition (no noise) first.  The researcher was in the soundbooth with the participants listening through a pair of headphones connected to the preamplifier.  The participants were asked to repeat the sentence twice to develop a rhythm, at a normal, conversational loudness, with a normal, declarative intonation.  The researcher asked the participants to repeat the sentence again in this condition if the rhythm or intonation of the two sentences did not match, or if the participants stumbled over a word.  Each of the following 15 iterations of the sentence (one for each noise-type/noise-level combination) the participants were instructed to read the sentence aloud only once.  Out of the loudspeaker, placed 1 meter from the participants, each of the background noises were emitted to coincide with an iteration of the sentence.  If the rhythm of the spoken sentence varied noticeably, or if the participant stumbled over a word, the researcher again asked the participants to repeat the sentence for that condition.  The sentences were not randomized, ie. all 16 iterations of a sentence occurred consecutively\footnote{This was done to help the researcher ensure a similar intonation and rhythm for each iteration of the same sentence.}. \textit{Within} each sentence group (after the `clean' condition, which always occurred first), all the noise conditions were randomized. The researcher advanced each stimulus on the display for the participants.
+%DIF > 
+\DIFaddend ie. all 16 iterations of a sentence occurred consecutively\footnote{This was done to help the researcher ensure a similar intonation and rhythm for each iteration of the same sentence.}. \textit{Within} each sentence group (after the `clean' condition, which always occurred first), all the noise conditions were randomized. The researcher advanced each stimulus on the display for the participants.
 
 To help the participants notice when a sentence had been advanced - as when wearing the noise reduction earmuffs, participants were often not aware when the noise condition changed - the number of the sentence condition was displayed underneath the stimulus (1-16).  This had the unintended consequence of occasionally producing a mild list-intonation, as participants were aware of the final repetition of a given sentence (ie. the number `16' appeared beneath the sentence). 
 
@@ -534,7 +623,7 @@ Participants were instructed to give as much detail in their answers as desired,
 \DIFdelbegin \DIFdel{The answers to the first question that were provided by participants generally addressed the comfort of the experimental set-up (ie. the ear-mic and earmuffs).  The researcher used the more specific question -``Did you find the experimental set-up (ie. the ear-mic and earmuffs) uncomfortable?'' - to code the answers. The answers were coded using a Likert scale with a range of 1-5, where `5' is `yes - definitely' and `1' is `no - definitely not'.
 }\DIFdelend %DIF >  The answers to the first question that were provided by participants generally addressed the comfort of the experimental set-up (ie. the ear-mic and earmuffs).  The researcher used the more specific question -``Did you find the experimental set-up (ie. the ear-mic and earmuffs) uncomfortable?'' - to code the answers. The answers were coded using a Likert scale with a range of 1-5, where `5' is `yes - definitely' and `1' is `no - definitely not'.
 
-Sentences were identified and extracted using Praat.  A number of subjects (more than 20) were recorded, but in an attempt to meet a number of conditions, only 20 participants used for analysis in this study \DIFdelbegin \DIFdel{.  These conditions included:
+Sentences were identified and extracted using Praat.  A number of subjects (more than 20) were recorded, but in an attempt to meet a number of conditions, \DIFaddbegin \DIFadd{speech from }\DIFaddend only 20 participants \DIFaddbegin \DIFadd{were }\DIFaddend used for analysis in this study \DIFdelbegin \DIFdel{.  These conditions included:
 }%DIFDELCMD < \begin{itemize}
 %DIFDELCMD < \item{Read all sentences in all conditions (no condition was missed)}
 %DIFDELCMD < \item{Read all sentences of a given sentence approximately the same}
@@ -554,83 +643,132 @@ Sentences were identified and extracted using Praat.  A number of subjects (more
 
 \section{Discussion and Observations of Collected Speech}\label{chap2:observations}
 
-Each individual sentence was isolated in each recording with \DIFdelbegin \DIFdel{a Praat textgrid and extracted}\DIFdelend \DIFaddbegin \DIFadd{boundaries in a Praat TextGrid.  Sentences were identified using the mouth-recorded signal, and a limited window of `non-speech' silence or noise was allowed on either side of the spoken sentence.  Since the mouth-recorded and ear-recorded signals were simultaneous, the same TextGrid was used to extract individual sound files for both signals}\DIFaddend .  This resulted in a sound file for each sentence, for each participant, for both the mouth-recorded and ear-recorded speech\DIFaddbegin \DIFadd{; each simultaneous (mouth/ear-recorded) signal had exactly the same duration, since the same TextGrid boundaries were used to extract both}\DIFaddend .  Figures \ref{spctgrmNarrowMouth_35}, \ref{spctgrmWideMouth_35}, \ref{spctgrmNarrowEar_35}, and \ref{spctgrmWideEar_35} show the narrow and wide band spectrograms for ear- and mouth-recorded speech from participant 35, a female, for a `clean' example of the sentence ``A cramp is no small danger on a swim''.  These two examples are fairly representative of the speech collected from each location.
+Each individual sentence was isolated in each recording with \DIFdelbegin \DIFdel{a Praat textgrid and extracted}\DIFdelend \DIFaddbegin \DIFadd{boundaries in a Praat TextGrid.  Sentences were identified using the mouth-recorded signal, and a limited window of `non-speech' silence or noise was allowed on either side of the spoken sentence.  Since the mouth-recorded and ear-recorded signals were simultaneous, the same TextGrid was used to extract individual sound files for both signals}\DIFaddend .  This resulted in a sound file for each sentence, for each participant, for both the mouth-recorded and ear-recorded speech\DIFaddbegin \DIFadd{; each simultaneous (mouth/ear-recorded) signal had exactly the same duration, since the same TextGrid boundaries were used to extract both}\DIFaddend .  Figures \ref{spctgrmNarrowMouth_35}, \ref{spctgrmWideMouth_35}, \ref{spctgrmNarrowEar_35}, and \ref{spctgrmWideEar_35} show the narrow and wide band spectrograms for \DIFdelbegin \DIFdel{ear- and mouth-recorded speech from participant 35, a female, for }\DIFdelend a `clean' example of the sentence ``A cramp is no small danger on a swim''\DIFaddbegin \DIFadd{, recorded at both the ear and the mouth from participant 35, a female}\DIFaddend .  These two examples are fairly representative of the speech collected from each location.
 
-\begin{figure}[h!]
-\centering
-\DIFdelbeginFL %DIFDELCMD < \begin{subfigure}{.475\textwidth}
-%DIFDELCMD <   %%%
-\DIFdelendFL \DIFaddbeginFL \begin{subfigure}{\textwidth}
-  \DIFaddendFL \centering
-  \includegraphics[width=1\linewidth]{figure/spctgrmNarrowMouth_35.pdf}
-  \caption{Narrow band spectrogram of speech recorded at the mouth.}
-  \label{spctgrmNarrowMouth_35}
-\end{subfigure}%
-\DIFdelbeginFL %DIFDELCMD < \hfill
+\DIFdelbegin %DIFDELCMD < \begin{figure}[h!]
+%DIFDELCMD < \centering
 %DIFDELCMD < \begin{subfigure}{.475\textwidth}
+%DIFDELCMD <   \centering
+%DIFDELCMD <   \includegraphics[width=1\linewidth]{figure/spctgrmNarrowMouth_35.pdf}
 %DIFDELCMD <   %%%
-\DIFdelendFL %DIF >  \hfill
-\DIFaddbeginFL 
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{Narrow band spectrogram of speech recorded at the mouth.}}
+  %DIFAUXCMD
+%DIFDELCMD < \label{spctgrmNarrowMouth_35}
+%DIFDELCMD < \end{subfigure}%%%
+%DIF < 
+%DIFDELCMD < \hfill
+%DIFDELCMD < \begin{subfigure}{.475\textwidth}
+%DIFDELCMD <   \centering
+%DIFDELCMD <   \includegraphics[width=1\linewidth]{figure/spctgrmWideMouth_35.pdf}
+%DIFDELCMD <   %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{Wide band spectrogram of speech recorded at the mouth.}}
+  %DIFAUXCMD
+%DIFDELCMD < \label{spctgrmWideMouth_35}
+%DIFDELCMD < \end{subfigure}
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{Both (\ref{spctgrmNarrowMouth_35}) and (\ref{spctgrmWideMouth_35}) are the same sentence, ``A cramp is no small danger on a swim'', spoken by a female participant. This is the exact same sentence spoken at the exact same time as that in Fig. \ref{fig:spect_ear}.}}
+%DIFAUXCMD
+%DIFDELCMD < \label{fig:spect_mouth}
+%DIFDELCMD < \end{figure}
+%DIFDELCMD < 
 
+%DIFDELCMD < \begin{figure}[b!]
+%DIFDELCMD < \centering
+%DIFDELCMD < \begin{subfigure}{0.475\textwidth}
+%DIFDELCMD <   \centering
+%DIFDELCMD <   \includegraphics[width=1\linewidth]{figure/spctgrmNarrowEar_35.pdf}
+%DIFDELCMD <   %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{Narrow band spectrogram of speech recorded from inside the ear canal.}}
+  %DIFAUXCMD
+%DIFDELCMD < \label{spctgrmNarrowEar_35}
+%DIFDELCMD < \end{subfigure}%%%
+%DIF < 
+%DIFDELCMD < \hfill
+%DIFDELCMD < \begin{subfigure}{0.475\textwidth}
+%DIFDELCMD <   \centering
+%DIFDELCMD <   \includegraphics[width=1\linewidth]{figure/spctgrmWideEar_35.pdf}
+%DIFDELCMD <   %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{Wide band spectrogram of speech recorded from inside the ear canal.}}
+  %DIFAUXCMD
+%DIFDELCMD < \label{spctgrmWideEar_35}
+%DIFDELCMD < \end{subfigure}
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{Both (\ref{spctgrmNarrowEar_35}) and (\ref{spctgrmWideEar_35}) are the same sentence, ``A cramp is no small danger on a swim'', spoken by a female participant. This is the exact same sentence spoken at the exact same time as that in Fig. \ref{fig:spect_mouth}.}}
+%DIFAUXCMD
+%DIFDELCMD < \label{fig:spect_ear}
+%DIFDELCMD < \end{figure}
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend As can be seen, the speech collected at the ear is heavily low-pass filtered, and the \DIFdelbegin \DIFdel{mouth speech by itself has }\DIFdelend \DIFaddbegin \DIFadd{mouth-recorded speech contains }\DIFaddend much more speech information. However, there are still clear harmonics in the existing range in the ear-recorded speech, and \DIFdelbegin \DIFdel{most }\DIFdelend \DIFaddbegin \DIFadd{much }\DIFaddend of the lower two formants can also be seen.  It should be noted that while the two signals - from the mouth and from the ear - appear to have the same \DIFdelbegin \DIFdel{loudness}\DIFdelend \DIFaddbegin \DIFadd{intensity}\DIFaddend , this is due only to the gain adjustment on the recording device during the experiment.  The speech from the ear \DIFdelbegin \DIFdel{was consistently }\textit{\DIFdel{louder}} %DIFAUXCMD
+\DIFdelend \DIFaddbegin \DIFadd{had consistently greater intensity }\DIFaddend than the speech from the mouth; on a scale of 0-10, the ear microphone gain was normally set \DIFdelbegin \DIFdel{anywhere }\DIFdelend between 2 and 4, while the mouth microphone gain was \DIFdelbegin \DIFdel{normally set anywhere }\DIFdelend \DIFaddbegin \DIFadd{set }\DIFaddend between 4 and 6.
+
+\DIFaddbegin \begin{figure}[H]
+\centering
 \begin{subfigure}{\textwidth}
-  \DIFaddendFL \centering
-  \includegraphics[width=1\linewidth]{figure/spctgrmWideMouth_35.pdf}
-  \caption{Wide band spectrogram of speech recorded at the mouth.}
+  \centering
+  \includegraphics[width=0.75\linewidth]{figure/spctgrmNarrowMouth_35.pdf}
+  \caption{\DIFaddFL{Narrow band spectrogram of speech recorded at the mouth.}}
+  \label{spctgrmNarrowMouth_35}
+\end{subfigure}%DIF > 
+%DIF >  \hfill
+\\[2ex]
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=0.75\linewidth]{figure/spctgrmWideMouth_35.pdf}
+  \caption{\DIFaddFL{Wide band spectrogram of speech recorded at the mouth.}}
   \label{spctgrmWideMouth_35}
 \end{subfigure}
-\caption{Both (\ref{spctgrmNarrowMouth_35}) and (\ref{spctgrmWideMouth_35}) are the same sentence, ``A cramp is no small danger on a swim'', spoken by a female participant. This is the exact same sentence spoken at the exact same time as that in Fig. \ref{fig:spect_ear}.}
+\caption{\DIFaddFL{Both (\ref{spctgrmNarrowMouth_35}) and (\ref{spctgrmWideMouth_35}) are the same sentence, ``A cramp is no small danger on a swim'', spoken by a female participant. This is the exact same sentence spoken at the exact same time as that in Fig. \ref{fig:spect_ear}.}}
 \label{fig:spect_mouth}
 \end{figure}
 
-
-\DIFdelbegin %DIFDELCMD < \begin{figure}[b!]
-%DIFDELCMD < %%%
-\DIFdelend \DIFaddbegin \begin{figure}[h!]
-\DIFaddendFL \centering
-\DIFdelbeginFL %DIFDELCMD < \begin{subfigure}{0.475\textwidth}
-%DIFDELCMD <   %%%
-\DIFdelendFL \DIFaddbeginFL \begin{subfigure}{\textwidth} %DIF > 0.475
-  \DIFaddendFL \centering
-  \includegraphics[width=1\linewidth]{figure/spctgrmNarrowEar_35.pdf}
-  \caption{Narrow band spectrogram of speech recorded from inside the ear canal.}
+\begin{figure}[H]
+\centering
+\begin{subfigure}{\textwidth} %DIF > 0.475
+  \centering
+  \includegraphics[width=0.75\linewidth]{figure/spctgrmNarrowEar_35.pdf}
+  \caption{\DIFaddFL{Narrow band spectrogram of speech recorded from inside the ear canal.}}
   \label{spctgrmNarrowEar_35}
-\end{subfigure}%
-\DIFdelbeginFL %DIFDELCMD < \hfill
-%DIFDELCMD < \begin{subfigure}{0.475\textwidth}
-%DIFDELCMD <   %%%
-\DIFdelendFL %DIF >  \hfill
-\DIFaddbeginFL 
-
+\end{subfigure}%DIF > 
+%DIF >  \hfill
+\\[2ex]
 \begin{subfigure}{\textwidth}
-  \DIFaddendFL \centering
-  \includegraphics[width=1\linewidth]{figure/spctgrmWideEar_35.pdf}
-  \caption{Wide band spectrogram of speech recorded from inside the ear canal.}
+  \centering
+  \includegraphics[width=0.75\linewidth]{figure/spctgrmWideEar_35.pdf}
+  \caption{\DIFaddFL{Wide band spectrogram of speech recorded from inside the ear canal.}}
   \label{spctgrmWideEar_35}
 \end{subfigure}
-\caption{Both (\ref{spctgrmNarrowEar_35}) and (\ref{spctgrmWideEar_35}) are the same sentence, ``A cramp is no small danger on a swim'', spoken by a female participant. This is the exact same sentence spoken at the exact same time as that in Fig. \ref{fig:spect_mouth}.}
+\caption{\DIFaddFL{Both (\ref{spctgrmNarrowEar_35}) and (\ref{spctgrmWideEar_35}) are the same sentence, ``A cramp is no small danger on a swim'', spoken by a female participant. This is the exact same sentence spoken at the exact same time as that in Fig. \ref{fig:spect_mouth}.}}
 \label{fig:spect_ear}
 \end{figure}
 
 
-As can be seen, the speech collected at the ear is heavily low-pass filtered, and the mouth speech by itself has much more speech information. However, there are still clear harmonics in the existing range in the ear-recorded speech, and \DIFdelbegin \DIFdel{most }\DIFdelend \DIFaddbegin \DIFadd{much }\DIFaddend of the lower two formants can also be seen.  It should be noted that while the two signals - from the mouth and from the ear - appear to have the same \DIFdelbegin \DIFdel{loudness}\DIFdelend \DIFaddbegin \DIFadd{intensity}\DIFaddend , this is due only to the gain adjustment on the recording device during the experiment.  The speech from the ear \DIFdelbegin \DIFdel{was consistently }\textit{\DIFdel{louder}} %DIFAUXCMD
-\DIFdelend \DIFaddbegin \DIFadd{had consistently greater intensity }\DIFaddend than the speech from the mouth; on a scale of 0-10, the ear microphone gain was normally set \DIFdelbegin \DIFdel{anywhere }\DIFdelend between 2 and 4, while the mouth microphone gain was \DIFdelbegin \DIFdel{normally set anywhere }\DIFdelend \DIFaddbegin \DIFadd{set }\DIFaddend between 4 and 6.
-
-A \DIFaddbegin \DIFadd{Long-Term Average Spectrum (LTAS) was calculated for both ear-recorded speech and mouth-recorded speech, averaging over all male speakers and separately over all female speakers.  Figure \ref{} shows the LTAS for the male speakers, along with the relative amplitude difference between the ear-recorded and mouth-recorded speech.  Figure \ref{} displays the LTAS and difference function for all female speakers.  Both have the same basic characteristics - while the mouth-recorded speech has a relatively level LTAS across the frequency spectrum, the ear-recorded speech is heavily low-pass filtered.  The ear-recorded signal dominates in the low-frequencies, but is overtaken by the mouth-recorded signal at only about 500 Hz.  
-}
-
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \begin{subfigure}{\textwidth} %DIF > 0.475
   \centering
-  \includegraphics[width=1\linewidth]{figure/female_LTAS.png}
+  \includegraphics[width=0.75\linewidth]{figure/female_LTAS.png}
   \caption{\DIFaddFL{Two Long-Term Average Spectra (LTAS), red for ear-recorded speech and black for mouth-recorded speech, averaged over all `clean' female-spoken sentences.}}
   \label{female_LTAS}
 \end{subfigure}%DIF > 
 %DIF >  \hfill
-
+\\[2ex]
 \begin{subfigure}{\textwidth}
   \centering
-  \includegraphics[width=1\linewidth]{figure/female_rel_dB.png}
+  \includegraphics[width=0.75\linewidth]{figure/female_rel_dB.png}
   \caption{\DIFaddFL{The difference ratio between the ear-recorded speech (red) and mouth-recorded speech (black) in Fig. \ref{female_LTAS}.}}
   \label{female_rel_dB}
 \end{subfigure}
@@ -638,19 +776,19 @@ A \DIFaddbegin \DIFadd{Long-Term Average Spectrum (LTAS) was calculated for both
 \label{fig:female_LTAS}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \begin{subfigure}{\textwidth} %DIF > 0.475
   \centering
-  \includegraphics[width=1\linewidth]{figure/male_LTAS.png}
+  \includegraphics[width=0.75\linewidth]{figure/male_LTAS.png}
   \caption{\DIFaddFL{Two Long-Term Average Spectra (LTAS), red for ear-recorded speech and black for mouth-recorded speech, averaged over all `clean' male-spoken sentences.}}
   \label{male_LTAS}
 \end{subfigure}%DIF > 
 %DIF >  \hfill
-
+\\[2ex]
 \begin{subfigure}{\textwidth}
   \centering
-  \includegraphics[width=1\linewidth]{figure/male_rel_dB.png}
+  \includegraphics[width=0.75\linewidth]{figure/male_rel_dB.png}
   \caption{\DIFaddFL{The difference ratio between the ear-recorded speech (red) and mouth-recorded speech (black) in Fig. \ref{male_LTAS}.}}
   \label{male_rel_dB}
 \end{subfigure}
@@ -658,27 +796,30 @@ A \DIFaddbegin \DIFadd{Long-Term Average Spectrum (LTAS) was calculated for both
 \label{fig:male_LTAS}
 \end{figure}
 
+\DIFadd{A Long-Term Average Spectrum (LTAS) was calculated for both ear-recorded speech and mouth-recorded speech, averaging over all female speakers and separately over all male speakers.  Figure \ref{fig:female_LTAS} shows the LTAS for the female speakers, along with the relative amplitude difference between the ear-recorded and mouth-recorded speech.  Figure \ref{fig:male_LTAS} displays the LTAS and difference function for all male speakers.  Both have the same basic characteristics - while the mouth-recorded speech has a relatively level LTAS across the frequency spectrum, the ear-recorded speech is heavily low-pass filtered.  The ear-recorded signal dominates in the low-frequencies, but is overtaken by the mouth-recorded signal at only about 500 Hz.
+}
+
 \DIFadd{While the existing literature supports the heavy low-pass filter effect (cf. \mbox{%DIFAUXCMD
 \cite{stenfelt:07,reinfeldt:10}
 }%DIFAUXCMD
-), the recorded signals appear to be quite low-pass filtered.  The drop in amplitude for these signals is immediate as the frequency increases, whereas \mbox{%DIFAUXCMD
+), the recorded signals appear to be more low-pass filtered than described.  The drop in amplitude for these signals is immediate as the frequency increases, whereas \mbox{%DIFAUXCMD
 \cite{hansen:97b}
 }%DIFAUXCMD
 (also \mbox{%DIFAUXCMD
-\cite{wimmer:86,thorup:96,may:92}
+\cite{wimmer:86,may:92,thorup:96}
 }%DIFAUXCMD
-, among others) predicted higher amplitude until approximately 1 kHz.  The sharp decline in amplitude levels briefly slightly above 1 kHz, and an argument could be made that this is the `resonance' of the ear canal that was identified between 0.7 and 1.2 kHz by \mbox{%DIFAUXCMD
+, among others) predicted higher amplitude until approximately 1 kHz.  The sharp decline in amplitude levels briefly slightly at 1 kHz, and an argument could be made that this is the `resonance' of the ear canal that was identified between 0.7 and 1.2 kHz by \mbox{%DIFAUXCMD
 \cite{porschmann:00}
 }%DIFAUXCMD
 and \mbox{%DIFAUXCMD
 \cite{hakansson:94}
 }%DIFAUXCMD
-, among others, but this is only speculation.  %DIF > One possibility is the depth of the plug.  \cite{dean:01} and \cite{stenfelt:07} both found that the occlusion effect intensified toward the lower frequencies as the plug depth increased, and the range of amplified frequencies became lower and lower.
+, among others, although this is only speculation.  %DIF > One possibility is the depth of the plug.  \cite{dean:01} and \cite{stenfelt:07} both found that the occlusion effect intensified toward the lower frequencies as the plug depth increased, and the range of amplified frequencies became lower and lower.
 }
 
 %DIF > While the LTAS averaged over male speakers compared with female speakers appears to be similar, there are more noticeable differences when comparing individual subjects.  This can be observed in Figure \ref{}. 
 
-\DIFadd{A }\DIFaddend cross-correlation similarity metric used to compare signals was run on each ear-recorded/mouth-recorded pair for each participant speaker (excluding those which contained noise in the background).  \DIFdelbegin \DIFdel{The }\DIFdelend \DIFaddbegin \DIFadd{Recall that these signals were recorded simultaneously, and were also extracted using the same Praat TextGrid boundaries.  Additionally, the signals were time-aligned using a variation of the Matlab code found in Appendix Section \ref{app:time-align}.  This normally resulted in an additional shift of $<$10 samples.  For the cross-correlation calculation, the }\DIFaddend maximum value was obtained for each ear-recorded/mouth-recorded pair, was normalized, and then all values were averaged across speakers.  This is given in Equation \ref{norm_max_xcorr}:
+\DIFaddend A cross-correlation similarity metric used to compare signals was run on each ear-recorded/mouth-recorded pair for each participant speaker (excluding those which contained noise in the background).  \DIFdelbegin \DIFdel{The maximum value was obtained }\DIFdelend \DIFaddbegin \DIFadd{Recall that these signals were recorded simultaneously, and were also extracted using the same Praat TextGrid boundaries.  Additionally, the signals were time-aligned using a variation of the Matlab code found in Appendix Section \ref{app:time-align}.  This normally resulted in a shift of $<$10 samples.  For the cross-correlation calculation, the maximum value }\DIFaddend for each ear-recorded/mouth-recorded pair \DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{was obtained, this value }\DIFaddend was normalized, and then all \DIFaddbegin \DIFadd{normalized }\DIFaddend values were averaged across speakers.  This is \DIFdelbegin \DIFdel{given }\DIFdelend \DIFaddbegin \DIFadd{shown }\DIFaddend in Equation \ref{norm_max_xcorr}:
 %
 \begin{equation}\label{norm_max_xcorr}
 \sum_{k=1}^{K} \sum_{u=1}^{U} \DIFdelbegin %DIFDELCMD < \dfrac{max(abs(xcorr(S^e_{uk}, S^m_{uk})))}{\sqrt{\sum {S^e_{uk}}^2}*\sqrt{\sum {S^m_{uk}}^2}}
@@ -686,53 +827,85 @@ and \mbox{%DIFAUXCMD
 \DIFdelend \DIFaddbegin \dfrac{max(abs(xcorr(s^e_{uk}, s^m_{uk})))}{\sqrt{\sum {s^e_{uk}}^2}*\sqrt{\sum {s^m_{uk}}^2}}
 \DIFaddend \end{equation}
 %
-where $K$ is the number of participants, $U$ is the number of utterances, \DIFdelbegin \DIFdel{$S^e$ }\DIFdelend \DIFaddbegin \DIFadd{$s^e$ }\DIFaddend refers to the ear-recorded signal \DIFdelbegin \DIFdel{, $S^m$ }\DIFdelend \DIFaddbegin \DIFadd{in the time domain, $s^m$ }\DIFaddend refers to the mouth-recorded signal \DIFaddbegin \DIFadd{in the time domain}\DIFaddend , and $xcorr$ is the cross-correlation function. If \DIFdelbegin \DIFdel{$S^e_{uk}$ and $S^m_{uk}$ }\DIFdelend \DIFaddbegin \DIFadd{$s^e_{uk}$ and $s^m_{uk}$ }\DIFaddend are identical signals, the fractional portion of Equation \ref{norm_max_xcorr} will return a `1'.  The average normalized maximum cross-correlation value for ear-recorded speech compared with mouth-recorded speech is 0.358.
+where $K$ is the number of participants, $U$ is the number of utterances, \DIFdelbegin \DIFdel{$S^e$ }\DIFdelend \DIFaddbegin \DIFadd{$s^e$ }\DIFaddend refers to the ear-recorded signal \DIFdelbegin \DIFdel{, $S^m$ }\DIFdelend \DIFaddbegin \DIFadd{in the time domain, $s^m$ }\DIFaddend refers to the mouth-recorded signal \DIFaddbegin \DIFadd{in the time domain}\DIFaddend , and $xcorr$ is the cross-correlation function. If \DIFdelbegin \DIFdel{$S^e_{uk}$ and $S^m_{uk}$ }\DIFdelend \DIFaddbegin \DIFadd{$s^e_{uk}$ and $s^m_{uk}$ }\DIFaddend are identical signals, the fractional portion of Equation \ref{norm_max_xcorr} will return a `\DIFdelbegin \DIFdel{1}\DIFdelend \DIFaddbegin \DIFadd{$1$}\DIFaddend '.  The \DIFaddbegin \DIFadd{less similar $s^e_{uk}$ and $s^m_{uk}$ are, the closer the value will be to $0$. The }\DIFaddend average normalized maximum cross-correlation value for ear-recorded speech compared with mouth-recorded speech is 0.358.
 
-When noise is present, it can be visually observed in Figs. \ref{spctgrmNarrowMouthNoise_35} and \ref{spctgrmNarrowEarNoise_35} that the noise level is lower for ear-recorded speech.  There appears to be some of the louder noise (seen in the mouth-recorded speech in Fig. \ref{spctgrmNarrowMouthNoise_35}) present in the upper frequencies of the ear-recorded speech, but it is significantly dampened and the signal has an overall higher speech to noise ratio (SNR).
+When noise is present, it can be visually observed in Figs. \ref{spctgrmNarrowMouthNoise_35} and \ref{spctgrmNarrowEarNoise_35} that the noise level is lower for ear-recorded speech.  There appears to be \DIFdelbegin \DIFdel{some of the }\DIFdelend louder noise (seen in the mouth-recorded speech in Fig. \ref{spctgrmNarrowMouthNoise_35}) \DIFaddbegin \DIFadd{that is }\DIFaddend present in the upper frequencies of the ear-recorded speech, but it is significantly dampened and the signal has an overall higher speech to noise ratio (SNR).
 
-It should also be noted that the SNR in Fig. \ref{spctgrmNarrowMouthNoise_35} is much higher than originally intended.  For this particular example, the speech was recorded with an 80dB noise background, with the intent of obtaining a -10dB SNR.  Instead, the SNR for the sentence in Fig. \ref{spctgrmNarrowMouthNoise_35} is +6dB\footnote{The SNR was calculated by using background noises recorded in isolation in the soundbooth.  These were recorded at 60, 70, and 80 dB in the same soundbooth, with the same conditions and set up as a normal recording.  The noisy speech sound file was passed through a Hilbert Envelope, and a threshold was applied in order to extract just the speech data.  The RMS values of both the speech and raw noise vectors were calculated, averaged, and then used in the SNR calculation.  For explicit code, see Appendix B\ref{appendixB}}.  Unfortunately, this was widespread. This is attributed to a) the participant speaking louder than anticipated, resulting in a higher speech threshold, and b) the directionality of the microphone used eliminated much more background noise than anticipated.
+It should also be noted that the SNR in Fig. \ref{spctgrmNarrowMouthNoise_35} is much higher than originally intended.  For this particular example, the speech was recorded with an \DIFdelbegin \DIFdel{80dB }\DIFdelend \DIFaddbegin \DIFadd{80 dB }\DIFaddend noise background, with the intent of obtaining a \DIFdelbegin \DIFdel{-10dB }\DIFdelend \DIFaddbegin \DIFadd{-10 dB }\DIFaddend SNR.  Instead, the SNR for the sentence in Fig. \ref{spctgrmNarrowMouthNoise_35} is +\DIFdelbegin \DIFdel{6dB}\DIFdelend \DIFaddbegin \DIFadd{6 dB SNR}\DIFaddend \footnote{The SNR was calculated by using background noises recorded in isolation in the soundbooth.  These were recorded at 60, 70, and 80 dB in the same soundbooth, with the same conditions and set up as a normal recording.  The noisy speech sound file was passed through a Hilbert Envelope, and a threshold was applied in order to extract just the speech data.  The RMS values of both the speech and raw noise vectors were calculated, averaged, and then used in the SNR calculation.  For explicit code, see Appendix \DIFdelbegin \DIFdel{B}\DIFdelend \ref{appendixB}}.  Unfortunately, this was widespread. This is attributed to \DIFdelbegin \DIFdel{a) }\DIFdelend \DIFaddbegin \DIFadd{both }\DIFaddend the participant speaking louder than anticipated, \DIFdelbegin \DIFdel{resulting in a higher speech threshold, and b) }\DIFdelend the directionality of the microphone\DIFdelbegin \DIFdel{used }\DIFdelend \DIFaddbegin \DIFadd{, which }\DIFaddend eliminated much more background noise than anticipated.
 
-\begin{figure}[h!]
-\centering
-\DIFdelbeginFL %DIFDELCMD < \begin{subfigure}{0.475\textwidth}
-%DIFDELCMD <   %%%
-\DIFdelendFL \DIFaddbeginFL \begin{subfigure}{\textwidth}
-  \DIFaddendFL \centering
-  \includegraphics[width=1\linewidth]{figure/spctgrmNarrowMthNoise_35.pdf}
-  \caption{Narrow band spectrogram of speech recorded at the mouth, with 80dB `bus' noise playing in the background.}
-  \label{spctgrmNarrowMouthNoise_35}
-\end{subfigure}%
-\DIFdelbeginFL %DIFDELCMD < \hfill
+
+
+\DIFdelbegin %DIFDELCMD < \begin{figure}[h!]
+%DIFDELCMD < \centering
 %DIFDELCMD < \begin{subfigure}{0.475\textwidth}
+%DIFDELCMD <   \centering
+%DIFDELCMD <   \includegraphics[width=1\linewidth]{figure/spctgrmNarrowMthNoise_35.pdf}
 %DIFDELCMD <   %%%
-\DIFdelendFL %DIF >  \hfill
-\DIFaddbeginFL 
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{Narrow band spectrogram of speech recorded at the mouth, with 80dB `bus' noise playing in the background.}}
+  %DIFAUXCMD
+%DIFDELCMD < \label{spctgrmNarrowMouthNoise_35}
+%DIFDELCMD < \end{subfigure}%%%
+%DIF < 
+%DIFDELCMD < \hfill
+%DIFDELCMD < \begin{subfigure}{0.475\textwidth}
+%DIFDELCMD <   \centering
+%DIFDELCMD <   \includegraphics[width=1\linewidth]{figure/spctgrmNarrowEarNoise_35.pdf}
+%DIFDELCMD <   %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{Narrow band spectrogram of speech recorded inside the ear canal, with 80dB `bus' noise playing in the background.}}
+  %DIFAUXCMD
+%DIFDELCMD < \label{spctgrmNarrowEarNoise_35}
+%DIFDELCMD < \end{subfigure}
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{Both \ref{spctgrmNarrowMouthNoise_35} and \ref{spctgrmNarrowEarNoise_35} were of the sentence ``A cramp is no small danger on a swim'', spoken by a female participant, recorded simultaneously.}}
+%DIFAUXCMD
+%DIFDELCMD < \label{fig:noise_mth_ear}
+%DIFDELCMD < \end{figure}
+%DIFDELCMD < 
 
+%DIFDELCMD < %%%
+\DIFdel{In an }\DIFdelend \DIFaddbegin \DIFadd{In another }\DIFaddend attempt to see if there was recoverable information in the higher frequencies of the ear signal, the spectrogram range was increased from \DIFdelbegin \DIFdel{5kHz to 20kHz }\DIFdelend \DIFaddbegin \DIFadd{5 kHz to 20 kHz }\DIFaddend (see Fig. \ref{spctgrmEarNarrow20kHz}). There is certainly acoustic energy that makes it to the higher frequencies, but noticeable harmonic energy is not present, nor does any of the visible acoustic energy appear to correlate with the speech seen in the lower frequencies.  This contrasts with the results shown in \cite{hansen:97b}, which indicated that there was \DIFdelbegin \DIFdel{an }\DIFdelend \DIFaddbegin \DIFadd{a }\DIFaddend rise in amplitude above approximately 5 kHz.
+\DIFdelbegin \DIFdel{To be certain, the ear speech was pre-emphasized, seen in Fig. \ref{spctgrmNarrowEarNoisePremp_35}, which seems to confirm the lack of high-frequency speech information. 
+}\DIFdelend \DIFaddbegin 
+
+\begin{figure}[H]
+\centering
 \begin{subfigure}{\textwidth}
-  \DIFaddendFL \centering
-  \includegraphics[width=1\linewidth]{figure/spctgrmNarrowEarNoise_35.pdf}
-  \caption{Narrow band spectrogram of speech recorded inside the ear canal, with 80dB `bus' noise playing in the background.}
+  \centering
+  \includegraphics[width=0.8\linewidth]{figure/spctgrmNarrowMthNoise_35.pdf}
+  \caption{\DIFaddFL{Narrow band spectrogram of speech recorded at the mouth, with 80 dB `bus' noise playing in the background.}}
+  \label{spctgrmNarrowMouthNoise_35}
+\end{subfigure}%DIF > 
+%DIF >  \hfill
+\\[2ex]
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=0.8\linewidth]{figure/spctgrmNarrowEarNoise_35.pdf}
+  \caption{\DIFaddFL{Narrow band spectrogram of speech recorded inside the ear canal, with 80 dB `bus' noise playing in the background.}}
   \label{spctgrmNarrowEarNoise_35}
 \end{subfigure}
-\caption{Both \ref{spctgrmNarrowMouthNoise_35} and \ref{spctgrmNarrowEarNoise_35} were of the sentence ``A cramp is no small danger on a swim'', spoken by a female participant, recorded simultaneously.  \DIFaddbeginFL \DIFaddFL{The high-energy bands at 2 kHz and in the frequency spectrum are characteristic of the bus background noise (cf. Fig. \ref{fig:bkgrnd-noises}).}\DIFaddendFL }
+\caption{\DIFaddFL{Both \ref{spctgrmNarrowMouthNoise_35} and \ref{spctgrmNarrowEarNoise_35} are spectrograms of the sentence ``A cramp is no small danger on a swim'', spoken by a female participant, recorded simultaneously.  The high-energy bands at 2 kHz and above in frequency spectrum are characteristic of the bus background noise (cf. Fig. \ref{fig:bkgrnd-noises}).}}
 \label{fig:noise_mth_ear}
 \end{figure}
 
-In an attempt to see if there was recoverable information in the higher frequencies of the ear signal, the spectrogram range was increased from \DIFdelbegin \DIFdel{5kHz to 20kHz }\DIFdelend \DIFaddbegin \DIFadd{5 kHz to 20 kHz }\DIFaddend (see Fig. \ref{spctgrmEarNarrow20kHz}). There is certainly acoustic energy that makes it to the higher frequencies, but noticeable harmonic energy is not present, nor does any of the visible acoustic energy appear to correlate with the speech seen in the lower frequencies.  This contrasts with the results shown in \cite{hansen:97b}, which indicated that there was \DIFdelbegin \DIFdel{an }\DIFdelend \DIFaddbegin \DIFadd{a }\DIFaddend rise in amplitude above approximately 5 kHz.
-To be certain, the ear speech was pre-emphasized, seen in Fig. \ref{spctgrmNarrowEarNoisePremp_35}, which seems to confirm the lack of high-frequency speech information. 
-\begin{figure}[h!]
+\DIFaddend \begin{figure}[h!]
 \centering
 \begin{subfigure}{0.475\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{figure/spctgrmEarNarrow20kHz.pdf}
-  \caption{Narrow band spectrogram of ear-recorded speech with 80dB `bus' background noise.}
+  \caption{Narrow band spectrogram of ear-recorded speech with \DIFdelbeginFL \DIFdelFL{80dB }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{80 dB }\DIFaddendFL `bus' background noise.}
   \label{spctgrmEarNarrow20kHz}
 \end{subfigure}%
 \hfill
 \begin{subfigure}{0.475\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{figure/spctgrmNarrowEarNoisePremp.pdf}
-  \caption{Narrow band spectrogram of ear-recorded speech with 80dB `bus' noise.  The signal has been pre-emphasized.}
+  \caption{Narrow band spectrogram of ear-recorded speech with \DIFdelbeginFL \DIFdelFL{80dB }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{80 dB }\DIFaddendFL `bus' noise.  The signal has been pre-emphasized.}
   \label{spctgrmNarrowEarNoisePremp_35}
 \end{subfigure}
 % \caption{Narrow band spectrogram of ear-recorded speech from 0-20kHz to look for possible speech information in higher frequencies, of the sentence ``A cramp is no small danger on a swim'' spoken by a female participant. Note, the noise only extends to 8kHz.}
@@ -752,39 +925,44 @@ To be certain, the ear speech was pre-emphasized, seen in Fig. \ref{spctgrmNarro
   \caption{Spectrum of pre-emphasized ear-recorded speech; taken from the `/\ae/' in `cramp'.}
   \label{spctrmEar20kPreemp}
 \end{subfigure}
-\caption{Narrow band spectrograms (\ref{spctgrmEarNarrow20kHz} and \ref{spctgrmNarrowEarNoisePremp_35}) of ear-recorded speech from 0-20 kHz to look for possible speech information in higher frequencies, of the sentence ``A cramp is no small danger on a swim'' spoken by a female participant. Note, the noise only extends to \DIFdelbeginFL \DIFdelFL{8kHz}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{8 kHz}\DIFaddendFL . Underneath (\ref{spctrmEar20kHz} and \ref{spctrmEar20kPreemp}) are two spectra from the same speaker and same sentence, normal and pre-emphasized, respectively.}
+\caption{Narrow band spectrograms (\ref{spctgrmEarNarrow20kHz} and \ref{spctgrmNarrowEarNoisePremp_35}) of ear-recorded speech from 0-20 kHz to look for possible speech information in higher frequencies\DIFdelbeginFL \DIFdelFL{, of the }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{. The }\DIFaddendFL sentence ``A cramp is no small danger on a swim'' spoken by a female participant. Note, the noise only extends to \DIFdelbeginFL \DIFdelFL{8kHz}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{8 kHz}\DIFaddendFL . Underneath (\ref{spctrmEar20kHz} and \ref{spctrmEar20kPreemp}) are two spectra from the same speaker and same sentence, normal and pre-emphasized, respectively.}
 \end{figure}
 
 \DIFdelbegin %DIFDELCMD < \begin{figure}[b!]
-%DIFDELCMD < %%%
-\DIFdelend \DIFaddbegin \begin{figure}[h!]
-\DIFaddendFL \centering
-\DIFdelbeginFL %DIFDELCMD < \begin{subfigure}{0.475\textwidth}
-%DIFDELCMD <   %%%
-\DIFdelendFL \DIFaddbeginFL \begin{subfigure}{\textwidth}
-  \DIFaddendFL \centering
-  \includegraphics[width=1\linewidth]{figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf}
-  \caption{The ear-recorded speech, pre-emphasized, filtered at 2500 Hz with 500Hz slope, and pre-emphasized again.}
-  \label{spctgrmNarrowEarNoisePrempFiltPremp_35}
-\end{subfigure}%
-\DIFdelbeginFL %DIFDELCMD < \hfill
+%DIFDELCMD < \centering
 %DIFDELCMD < \begin{subfigure}{0.475\textwidth}
+%DIFDELCMD <   \centering
+%DIFDELCMD <   \includegraphics[width=1\linewidth]{figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf}
 %DIFDELCMD <   %%%
-\DIFdelendFL %DIF >  \hfill
-\DIFaddbeginFL 
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{The ear-recorded speech, pre-emphasized, filtered at 2500 Hz with 500Hz slope, and pre-emphasized again.}}
+  %DIFAUXCMD
+%DIFDELCMD < \label{spctgrmNarrowEarNoisePrempFiltPremp_35}
+%DIFDELCMD < \end{subfigure}%%%
+%DIF < 
+%DIFDELCMD < \hfill
+%DIFDELCMD < \begin{subfigure}{0.475\textwidth}
+%DIFDELCMD <   \centering
+%DIFDELCMD <   \includegraphics[width=1\linewidth]{figure/spctgrmNarrowMthNoise_35.pdf}
+%DIFDELCMD <   %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{The noisy spectrogram of the mouth-recorded speech; previously seen in \ref{spctgrmNarrowMouthNoise_35}, repeated here for ease of comparison.}}
+  %DIFAUXCMD
+%DIFDELCMD < \label{spctgrmNarrowMouthNoise_35_compare}
+%DIFDELCMD < \end{subfigure}
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{Narrow band spectrogram of ``A cramp is no small danger on a swim'' recorded at the ear (\ref{spctgrmNarrowEarNoisePrempFiltPremp_35}) and the mouth (\ref{spctgrmNarrowMouthNoise_35_compare}) and spoken by a female participant, with 80dB bus noise in the background.}}
+%DIFAUXCMD
+%DIFDELCMD < \label{fig:ear_pfp}
+%DIFDELCMD < \end{figure}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \DIFadd{Recall the transfer function in Figs \ref{female_rel_dB} and \ref{male_rel_dB}.  Since the curvature in these plots roughly resembles de-emphasis, the ear-recorded speech was pre-emphasized to partially reverse the filtering effects of the head; this can be seen in Figure \ref{spctgrmNarrowEarNoisePremp_35}. The resulting signals seem to further confirm the lack of high-frequency speech information. }\DIFaddend It appears that while \DIFdelbegin \DIFdel{those }\DIFdelend \DIFaddbegin \DIFadd{the }\DIFaddend fainter harmonics in the lower mid-range frequencies are more pronounced, there is no new speech information in the upper frequencies that makes it past the noise threshold.
 
-\begin{subfigure}{\textwidth}
-  \DIFaddendFL \centering
-  \includegraphics[width=1\linewidth]{figure/spctgrmNarrowMthNoise_35.pdf}
-  \caption{The noisy spectrogram of the mouth-recorded speech; previously seen in \ref{spctgrmNarrowMouthNoise_35}, repeated here for ease of comparison.}
-  \label{spctgrmNarrowMouthNoise_35_compare}
-\end{subfigure}
-\caption{Narrow band spectrogram of ``A cramp is no small danger on a swim'' recorded at the ear (\ref{spctgrmNarrowEarNoisePrempFiltPremp_35}) and the mouth (\ref{spctgrmNarrowMouthNoise_35_compare}) and spoken by a female participant, with 80dB bus noise in the background.}
-\label{fig:ear_pfp}
-\end{figure}
-It appears that while those fainter harmonics in the lower mid-range frequencies are more pronounced, there is no new speech information in the upper frequencies that makes it past the noise threshold.
-
-This ear-recorded signal was then low-pass filtered at 2500 Hz with a 500 Hz smoothing slope. To further emphasize the higher frequencies in the available range (and to smooth over the 'muffled' attribute a bit), the sound was pre-emphasized a second time (after filtering).  This can be seen in Figure \ref{spctgrmNarrowEarNoisePrempFiltPremp_35}, next to the noisy mouth speech for comparison in Figure \ref{spctgrmNarrowMouthNoise_35_compare}.  The average normalized maximum cross-correlation (Equation \ref{norm_max_xcorr}) was calculated for these transformed ear-recorded signals and the mouth-recorded signals (excluding the signals with noise), which yielded a value of similarity value of 0.674 - an increase of 0.316 over that of the untransformed ear-recorded speech.
+This ear-recorded signal was then low-pass filtered at \DIFdelbegin \DIFdel{2500 Hz }\DIFdelend \DIFaddbegin \DIFadd{2.5 kHz }\DIFaddend with a 500 Hz smoothing slope. To further emphasize the higher frequencies in the available range (and to \DIFdelbegin \DIFdel{smooth over the }\DIFdelend \DIFaddbegin \DIFadd{eliminate the remaining }\DIFaddend 'muffled' \DIFdelbegin \DIFdel{attribute a bit}\DIFdelend \DIFaddbegin \DIFadd{characteristic}\DIFaddend ), the sound was pre-emphasized a second time (after filtering).  This can be seen in Figure \ref{spctgrmNarrowEarNoisePrempFiltPremp_35}, next to the noisy \DIFdelbegin \DIFdel{mouth }\DIFdelend \DIFaddbegin \DIFadd{mouth-recorded }\DIFaddend speech for comparison in Figure \ref{spctgrmNarrowMouthNoise_35_compare}.  The average normalized maximum cross-correlation (Equation \ref{norm_max_xcorr}) was calculated for these transformed ear-recorded signals \DIFdelbegin \DIFdel{and }\DIFdelend \DIFaddbegin \DIFadd{with }\DIFaddend the mouth-recorded signals (excluding the signals with noise), which yielded a \DIFdelbegin \DIFdel{value of }\DIFdelend similarity value of 0.674 - an increase of 0.316 over that of the untransformed ear-recorded speech.
 
 To test this difference statistically, a two-factor, by-subjects mixed design and by-items within-subjects ANOVA was performed, with speaker gender (female, male) and processing level (raw, processed) as the two factors.  Table \ref{tab:anova_data-collection} shows no significant interaction of speaker gender \textbf{x} processing level and no main effect of speaker gender for the by-subjects ANOVA, though the by-items analysis finds significance.  Both by-subjects and by-items ANOVAs found a significant main effect of processing level.
 
@@ -793,7 +971,7 @@ To test this difference statistically, a two-factor, by-subjects mixed design an
 
 % latex table generated in R 3.4.1 by xtable 1.8-2 package
 %DIF <  Mon Aug  7 18:50:12 2017
-%DIF >  Tue Aug 15 10:08:55 2017
+%DIF >  Wed Aug 16 23:36:48 2017
 \begin{table}[ht]
 \centering
 \begin{tabular}{llrrrrl}
@@ -813,25 +991,57 @@ S & speaker\_gender & 1 & 18 & 2.49 & 0.13 &  \\
 \end{table}
 
 
+\DIFdelbegin %DIFDELCMD < \begin{figure}[h!]
+%DIFDELCMD < 
 
-\begin{figure}[h!]
-\DIFaddbeginFL \centering
-\textbf{\DIFaddFL{Cross-Correlation of Ear- and Mouth-Recorded Speech}}
-\DIFaddendFL 
+%DIFDELCMD < \includegraphics[width=\maxwidth]{figure/Xcorr-boxplot-1} 
+%DIFDELCMD < 
 
-\includegraphics[width=\maxwidth]{figure/Xcorr-boxplot-1} 
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{Comparison of raw ear-recorded speech and `processed' ear-recorded speech at each level of gender.  White bars signify raw ear-recorded speech, and grey bars signify processed ear-recorded speech. All compared data was from the `clean' condition.}}%DIFAUXCMD
+%DIFDELCMD < \label{fig:data-collection-viz}
+%DIFDELCMD < \end{figure}
+%DIFDELCMD < 
 
-\caption{Comparison of raw ear-recorded speech and `processed' ear-recorded speech at each level of gender.  White bars signify raw ear-recorded speech, and grey bars signify processed ear-recorded speech. All compared data was from the `clean' condition.}\label{fig:data-collection-viz}
-\end{figure}
-
-The graph in Figure \ref{fig:data-collection-viz} displays the data broken up by processing level and speaker gender.  It is apparent that there is a large increase in correlation between the `clean' mouth-recorded speech and the `clean' ear-recorded speech after the ear-recorded speech was processed.  This indicates that the processing of the speech via pre-emphasis, low-pass filtering, and a second \DIFdelbegin \DIFdel{application }\DIFdelend \DIFaddbegin \DIFadd{round }\DIFaddend of pre-emphasis has resulted in speech that is more similar to speech that could be recorded at the mouth.
+%DIFDELCMD < %%%
+\DIFdelend The graph in Figure \ref{fig:data-collection-viz} displays the data broken up by processing level and speaker gender.  It is apparent that there is a large increase in correlation between the `clean' mouth-recorded speech and the `clean' ear-recorded speech after the ear-recorded speech was processed.  This indicates that the processing of the speech via pre-emphasis, low-pass filtering, and a second \DIFdelbegin \DIFdel{application }\DIFdelend \DIFaddbegin \DIFadd{round }\DIFaddend of pre-emphasis has resulted in speech that is more similar to speech that could be recorded at the mouth.
 
 \DIFdelbegin %DIFDELCMD < \subsection{Survey Responses}
 %DIFDELCMD < %%%
-\DIFdelend %DIF >  \subsection{Survey Responses}
-The author compiled the coded survey questions \DIFdelbegin \footnote{\DIFdel{As mentioned at the end of Section \ref{chap2:methods:procedure}, the actual question in the survey for Question 1 was ``Can you describe your experience with wearing the experimental set-up?'' Responses were coded according to their answer to Question 1 - as it appears in Table \ref{tab:survey-results}}} %DIFAUXCMD
+\DIFdelend \DIFaddbegin \begin{figure}[H]
+\centering
+
+\includegraphics[width=\maxwidth]{figure/Xcorr-boxplot-1} 
+
+\caption{\DIFaddFL{Comparison of raw ear-recorded speech and `processed' ear-recorded speech at each level of gender.  White bars signify raw ear-recorded speech, and grey bars signify processed ear-recorded speech. All compared data was from the `clean' condition.}}\label{fig:data-collection-viz}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=0.8\linewidth]{figure/spctgrmNarrowEarNoisePrempFiltPremp.pdf}
+  \caption{\DIFaddFL{The ear-recorded speech, pre-emphasized, filtered at 2.5 kHz with 500 Hz slope, and pre-emphasized again.}}
+  \label{spctgrmNarrowEarNoisePrempFiltPremp_35}
+\end{subfigure}%DIF > 
+%DIF >  \hfill
+\\[2ex]
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=0.8\linewidth]{figure/spctgrmNarrowMthNoise_35.pdf}
+  \caption{\DIFaddFL{The noisy spectrogram of the mouth-recorded speech; previously seen in \ref{spctgrmNarrowMouthNoise_35}, repeated here for ease of comparison.}}
+  \label{spctgrmNarrowMouthNoise_35_compare}
+\end{subfigure}
+\caption{\DIFaddFL{Narrow band spectrogram of ``A cramp is no small danger on a swim'' recorded at the ear (\ref{spctgrmNarrowEarNoisePrempFiltPremp_35}) and the mouth (\ref{spctgrmNarrowMouthNoise_35_compare}) and spoken by a female participant, with 80 dB bus noise in the background.}}
+\label{fig:ear_pfp}
+\end{figure}
+
+%DIF >  \subsection{Survey Responses}
+\DIFaddend The author compiled the coded survey questions \DIFdelbegin \footnote{\DIFdel{As mentioned at the end of Section \ref{chap2:methods:procedure}, the actual question in the survey for Question 1 was ``Can you describe your experience with wearing the experimental set-up?'' Responses were coded according to their answer to Question 1 - as it appears in Table \ref{tab:survey-results}}} %DIFAUXCMD
 \addtocounter{footnote}{-1}%DIFAUXCMD
-\DIFdel{and answers, which are located in Table \ref{tab:survey-results}. }%DIFDELCMD < 
+\DIFdel{and answers , which are located in Table \ref{tab:survey-results}. }%DIFDELCMD < 
 
 %DIFDELCMD < \begin{table}
 %DIFDELCMD < \centering
@@ -846,7 +1056,7 @@ The author compiled the coded survey questions \DIFdelbegin \footnote{\DIFdel{As
 \DIFdel{4  }%DIFDELCMD < \\ \hline
 %DIFDELCMD < %%%
 \DIFdel{Did you }\DIFdelend %DIF > \footnote{As mentioned at the end of Section \ref{chap2:methods:procedure}, the actual question in the survey for Question 1 was ``Can you describe your experience with wearing the experimental set-up?'' Responses were coded according to their answer to Question 1 - as it appears in Table \ref{tab:survey-results}} 
-\DIFaddbegin \DIFadd{and answers. %DIF > , which are located in Table \ref{tab:survey-results}.
+\DIFaddbegin \DIFadd{and answers collected by each participant after the experiment. %DIF > , which are located in Table \ref{tab:survey-results}.
 %DIF >  \begin{table}
 %DIF >  \centering
 %DIF >  \begin{tabular}{ |p{9cm}|M{1.7cm}|M{1.7cm}| } \hline
@@ -883,7 +1093,7 @@ Qualitatively, participants were slightly more likely than not to describe the e
 \DIFdel{The mean response for each of the questions hovers slightly above the median response of `3'.  Most participants found the recording set-up to be rather uncomfortable; the earmuffs in particular seemed to play a role in the discomfort, as most participants would me more inclined to use the system if earmuffs weren't required.  Participants seem split as to whether }\DIFdelend \DIFaddbegin \DIFadd{their own voice annoying.  This latter fact is a consequence of the occlusion effect, and is echoed by many who wear canal-occluding hearing aids (\mbox{%DIFAUXCMD
 \cite{hansen:97a}
 }%DIFAUXCMD
-).  Participants also described that }\DIFaddend they would be \DIFdelbegin \DIFdel{willing to use the device in a real-life application (Q3).  The mode is rather high (5) given the mean (3.51), which could be due in part to participant response bias (ie. desiring to provide an `acceptable' response)}\DIFdelend \DIFaddbegin \DIFadd{more likely to use such a recording equipment if the noise-reduction ear muffs were not required}\DIFaddend .
+).  Participants also described that }\DIFaddend they would be \DIFdelbegin \DIFdel{willing to use the device in a real-life application (Q3).  The mode is rather high (5) given the mean (3.51), which could be due in part to participant response bias (ie. desiring to provide an `acceptable' response)}\DIFdelend \DIFaddbegin \DIFadd{more likely to use such recording equipment if the noise-reduction   earmuffs were not required}\DIFaddend .
 
 
 %\section{Discussion}
@@ -892,82 +1102,156 @@ Qualitatively, participants were slightly more likely than not to describe the e
 \label{chap2:limitations}
 
 During data collection, there were several issues that affected the quality of speech.  
-The particular recorder which was used, when the gain knobs were turned up into the slightly higher range, would produce a low-frequency humming sound (cf. Figure \ref{fig:low_freq_hum}).  This was much more prominent for the mouth-recorded signals, as the gain for this channel was turned up higher.  Since the headphones \DIFdelbegin \DIFdel{the researcher used }\DIFdelend \DIFaddbegin \DIFadd{used by the researcher to monitor to the participants' speech }\DIFaddend were plugged into the preamplifier, this was not noticed until most participants were already recorded.
+The particular recorder which was used \DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{would produce a low-frequency humming sound }\DIFaddend when the gain knobs were turned up into the slightly higher range \DIFdelbegin \DIFdel{, would produce a low-frequency humming sound }\DIFdelend (cf. Figure \ref{fig:low_freq_hum}).  This was much more prominent for the mouth-recorded signals, as the gain for this channel was turned up higher.  Since the headphones \DIFdelbegin \DIFdel{the researcher used }\DIFdelend \DIFaddbegin \DIFadd{used by the researcher to monitor to the participants' speech }\DIFaddend were plugged into the preamplifier, this was not noticed until most participants were already recorded.
 
-\begin{figure}[h!]
-\centering
-\DIFdelbeginFL %DIFDELCMD < \begin{subfigure}{0.475\textwidth}
-%DIFDELCMD <   %%%
-\DIFdelendFL \DIFaddbeginFL \begin{subfigure}{\textwidth}
-  \DIFaddendFL \centering
-  \includegraphics[width=1\linewidth]{figure/low_frequency_hum.png}
-  \caption{The low frequency hum in the mouth-recorded signal.  It can be seen at 120 Hz and subsequent harmonics with decaying amplitude.}
-  \label{fig:low_freq_hum-mouth}
-\end{subfigure}%
-\DIFdelbeginFL %DIFDELCMD < \hfill
+\DIFdelbegin %DIFDELCMD < \begin{figure}[h!]
+%DIFDELCMD < \centering
 %DIFDELCMD < \begin{subfigure}{0.475\textwidth}
+%DIFDELCMD <   \centering
+%DIFDELCMD <   \includegraphics[width=1\linewidth]{figure/low_frequency_hum.png}
 %DIFDELCMD <   %%%
-\DIFdelendFL %DIF >  \hfill
-\DIFaddbeginFL 
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{The low frequency hum in the mouth-recorded signal.  It can be seen at 120 Hz and subsequent harmonics with decaying amplitude.}}
+  %DIFAUXCMD
+%DIFDELCMD < \label{fig:low_freq_hum-mouth}
+%DIFDELCMD < \end{subfigure}%%%
+%DIF < 
+%DIFDELCMD < \hfill
+%DIFDELCMD < \begin{subfigure}{0.475\textwidth}
+%DIFDELCMD <   \centering
+%DIFDELCMD <   \includegraphics[width=1\linewidth]{figure/low_frequency_hum-ear.png}
+%DIFDELCMD <   %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{The low frequency hum in the ear-recorded signal. As in Figure \ref{fig:low_freq_hum-mouth}, it can be seen at 120 Hz and subsequent harmonics.}}
+  %DIFAUXCMD
+%DIFDELCMD < \label{fig:low_freq_hum-ear}
+%DIFDELCMD < \end{subfigure}
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{Spectrograms of a low frequency hum introduced by the recorder at 120 Hz and subsequent harmonics in both mouth (Fig. \ref{fig:low_freq_hum-mouth}) and ear (Fig. \ref{fig:low_freq_hum-ear}) recorded signals. The hum in Fig. \ref{fig:low_freq_hum-ear} is less prominent than in Fig. \ref{fig:low_freq_hum-mouth} due to the gain on the recorder being lower.  The range of frequency is 0-1kHz.}}
+%DIFAUXCMD
+%DIFDELCMD < \label{fig:low_freq_hum}
+%DIFDELCMD < \end{figure}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \DIFadd{In addition, the presence of this tone could have artificially increased the correlation between the ear-recorded signals and the mouth-recorded signals.  Since the comparison displayed in Figure \ref{fig:data-collection-viz} is between raw and pre-emphasized ear-recorded signals, both of which have the interfering tone, the comparison is still valid, although the values themselves are likely skewed upwards.
+}\DIFaddend 
 
+On a physical level, the ear-plugs which were used are fairly standard audiological silicone ear-plugs, which had a hole in the middle that was the correct size to fit the microphones that were used.  The degree of noise damping these plugs offer is unknown, as they are not inherently designed for noise reduction.  It is very likely that a better NRR ear-plug could be found and used in conjunction with the \DIFdelbegin \DIFdel{30dB }\DIFdelend \DIFaddbegin \DIFadd{30 dB }\DIFaddend NRR earmuffs to achieve a greater noise reduction at even higher noise levels.
+
+\DIFaddbegin \begin{figure}[H]
+\centering
 \begin{subfigure}{\textwidth}
-  \DIFaddendFL \centering
-  \includegraphics[width=1\linewidth]{figure/low_frequency_hum-ear.png}
-  \caption{The low frequency hum in the ear-recorded signal. As in Figure \ref{fig:low_freq_hum-mouth}, it can be seen at 120 Hz and subsequent harmonics.}
+  \centering
+  \includegraphics[width=0.8\linewidth]{figure/low_frequency_hum.png}
+  \caption{\DIFaddFL{The low frequency hum in the mouth-recorded signal.  It can be seen at 120 Hz and subsequent harmonics with decaying amplitude.}}
+  \label{fig:low_freq_hum-mouth}
+\end{subfigure}%DIF > 
+%DIF >  \hfill
+\\[2ex]
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=0.8\linewidth]{figure/low_frequency_hum-ear.png}
+  \caption{\DIFaddFL{The low frequency hum in the ear-recorded signal. As in Figure \ref{fig:low_freq_hum-mouth}, it can be seen at 120 Hz and subsequent harmonics.}}
   \label{fig:low_freq_hum-ear}
 \end{subfigure}
-\caption{Spectrograms of a low frequency hum introduced by the recorder at 120 Hz and subsequent harmonics in both mouth (Fig. \ref{fig:low_freq_hum-mouth}) and ear (Fig. \ref{fig:low_freq_hum-ear}) recorded signals. The hum in Fig. \ref{fig:low_freq_hum-ear} is less prominent than in Fig. \ref{fig:low_freq_hum-mouth} due to the gain on the recorder being lower.  The range of frequency is \DIFdelbeginFL \DIFdelFL{0-1kHz}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{0-1 kHz}\DIFaddendFL .}
+\caption{\DIFaddFL{Spectrograms of a low frequency hum introduced by the recorder at 120 Hz and subsequent harmonics in both mouth (Fig. \ref{fig:low_freq_hum-mouth}) and ear (Fig. \ref{fig:low_freq_hum-ear}) recorded signals. The hum in Fig. \ref{fig:low_freq_hum-ear} is less prominent than in Fig. \ref{fig:low_freq_hum-mouth} due to the gain on the recorder being lower.  The range of frequency is 0-1 kHz.}}
 \label{fig:low_freq_hum}
 \end{figure}
 
-\DIFaddbegin \DIFadd{In addition, the presence of this tone could have artificially increased the correlation between the EAC-recorded signals and the mouth recorded signals.  Since the comparison displayed in Figure \ref{fig:data-collection-viz} is between raw and pre-emphasized ear-recorded signals, both of which have the interfering tone, the comparison is still valid, although the values themselves are likely skewed upwards.
-}
-
-\DIFaddend On a physical level, the ear-plugs which were used are fairly standard audiological silicone ear-plugs, which had a hole in the middle that was the correct size to fit the microphones that were used.  The degree of noise damping these plugs offer is unknown, as they are not inherently designed for noise reduction.  It is very likely that a better NRR ear-plug could be found and used in conjunction with the 30dB NRR earmuffs to achieve a greater noise reduction at even higher noise levels.
-
-As mentioned previously, the primary limitation is that the background noise was not loud enough to be able to fit into the SNR ratios desired (+10 dB SNR, 0 dB SNR, -10 dB SNR).  Instead, what was recorded was an average (across all speakers) of 31, 23, and 12 dB SNR for the 60, 70, and 80 dB condition, respectively; The 60 dB noise condition reached as high as +40 dB SNR, and the lowest 80 dB noise condition SNR was +5 dB. The three noise levels can be seen in the spectrograms in Figure \ref{fig:noise_level_limitation} for the bus background noise.  Note that the noise level can barely be observed in the lowest noise condition in Fig. \ref{fig:limitation_bus_60}.
-
-The three options to remedy this would be to a) ask the participants to speak more quietly, b) increase the volume of the loudspeaker, or c) use omnidirectonal microphones.  Options (a) and (c) are more appealing, as it continues to keep the ambient noise outside the range of amplitude which could possibly damage hearing.  However, in the case of (a), it is difficult for a participant to consciously modify their loudness and keep that consistent for the duration of the experiment; the need to repeat sentences spoken above a certain amplitude would drastically increase the length of time of the experiment.  Additionally, it would be difficult for the researcher monitoring the speech to determine whether or not the speech was an appropriate loudness, particularly with the additive background noise playing at the same time.  
-
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \begin{subfigure}{0.475\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{figure/spctgrm_cramp_bus_60.png}
-  \caption{The sentence ``A cramp is no small danger on a swim'' with bus background noise at 60 dB. SNR for this utterance is +28 dB.}
+  \caption{\DIFaddFL{The sentence ``A cramp is no small danger on a swim'' with bus background noise at 60 dB. SNR for this utterance is +28 dB.}}
   \label{fig:limitation_bus_60}
-\end{subfigure}%
+\end{subfigure}%DIF > 
 \hfill
 \begin{subfigure}{0.475\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{figure/spctgrm_cramp_bus_70.png}
-  \caption{The sentence ``A cramp is no small danger on a swim'' with bus background noise at 70 dB. SNR for this utterance is +19 dB.}
+  \caption{\DIFaddFL{The sentence ``A cramp is no small danger on a swim'' with bus background noise at 70 dB. SNR for this utterance is +19 dB.}}
   \label{fig:limitation_bus_70}
 \end{subfigure}
-%
+%DIF > 
 \begin{center}
 \begin{subfigure}{0.475\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{figure/spctgrm_cramp_bus_80.png}
-  \caption{The sentence ``A cramp is no small danger on a swim'' with bus background noise at 80 dB. SNR for this utterance is +6 dB.}
+  \caption{\DIFaddFL{The sentence ``A cramp is no small danger on a swim'' with bus background noise at 80 dB. SNR for this utterance is +6 dB.}}
   \label{fig:limitation_bus_80}
 \end{subfigure}
 \end{center}
-\caption{Spectrograms of the sentence ``A cramp is no small danger on a swim'' with bus background noise at 60 dB (\ref{fig:limitation_bus_60}), 70 dB(\DIFdelbeginFL \DIFdelFL{\ref{fig:limitation_bus_60}}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{\ref{fig:limitation_bus_70}}\DIFaddendFL ), and 80 dB (\DIFdelbeginFL \DIFdelFL{\ref{fig:limitation_bus_60}}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{\ref{fig:limitation_bus_80}}\DIFaddendFL ). The directional microphone filtered out most of the noise in the lower two noise level conditions.}
+\caption{\DIFaddFL{Spectrograms of the sentence ``A cramp is no small danger on a swim'' with bus background noise at 60 dB (\ref{fig:limitation_bus_60}), 70 dB(\ref{fig:limitation_bus_70}), and 80 dB (\ref{fig:limitation_bus_80}). The directional microphone filtered out most of the noise in the lower two noise level conditions.}}
 \label{fig:noise_level_limitation}
 \end{figure}
 
-Option (b) - increasing the noise level itself - is less appealing in that it results in a higher risk for hearing damage, despite being the most `authentic' scenario, testing the directional microphones' capabilities at the mouth and ear to eliminate noise.  Given the SNR of +6dB for the 80dB noise condition (with some 80dB noise conditions having upwards of +10dB SNR), this would mean increasing the ambient noise from 80dB to 96-100dB in order to achieve the -10dB SNR that was originally desired.  Even a 0dB SNR would require a +10 dB increase to 90dB ambient noise in order to turn the observed +10dB SNR into 0dB SNR. The risk to participants is substantially mitigated by the use of 30dB NRR earmuffs, however at noises of this magnitude, it would be difficult to find a location which insulated the sound from affecting a significant radius outside the sound booth.  It is also very likely that a different loudspeaker would be required to reach the needed amplitudes without clipping.
+\DIFaddend As mentioned previously, the primary limitation is that the background noise was not loud enough to be able to fit into the SNR ratios desired (+10 dB SNR, 0 dB SNR, -10 dB SNR).  Instead, what was recorded was an average (across all speakers) of 31, 23, and 12 dB SNR for the 60, 70, and 80 dB condition, respectively\DIFdelbegin \DIFdel{; }\DIFdelend \DIFaddbegin \DIFadd{.  }\DIFaddend The 60 dB noise condition reached as high as +40 dB SNR, and the lowest 80 dB noise condition SNR was +5 dB. The three noise levels can be seen in the spectrograms in Figure \ref{fig:noise_level_limitation} for the bus background noise.  Note that the noise level can barely be observed in the lowest noise condition in Fig. \ref{fig:limitation_bus_60}.
 
-Option (c) - using an omnidirectional microphone - does not rely on speakers' ability to modulate their voice, nor does it introduce additional risk by increasing the ambient noise.  The only drawback, as mentioned above, is that the use of an omni-directional microphone results in an unfair comparison between the mouth-recorded speech and ear-recorded speech.  Any real-life application will use a directional microphone at the mouth with the intention of eliminating as much ambient noise as possible.  Nevertheless, this is likely the best option for future research in this area, given the restrictions described above.
+The three options to remedy this would be to a) ask the participants to speak more quietly, b) increase the volume of the loudspeaker, or c) use omnidirectonal microphones.  Options (a) and (c) are more appealing, as it continues to keep the ambient noise outside the range of amplitude which could possibly damage hearing.  However, in the case of (a), it is difficult for a participant to consciously modify their loudness and keep that consistent for the duration of the experiment; the need to repeat sentences spoken above a certain amplitude would drastically increase the length of time of the experiment.  Additionally, it would be difficult for the researcher monitoring the speech to determine whether or not the speech was an appropriate loudness, particularly with the additive background noise playing at the same time.  
+
+\DIFdelbegin %DIFDELCMD < \begin{figure}[h!]
+%DIFDELCMD < \centering
+%DIFDELCMD < \begin{subfigure}{0.475\textwidth}
+%DIFDELCMD <   \centering
+%DIFDELCMD <   \includegraphics[width=1\linewidth]{figure/spctgrm_cramp_bus_60.png}
+%DIFDELCMD <   %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{The sentence ``A cramp is no small danger on a swim'' with bus background noise at 60 dB. SNR for this utterance is +28 dB.}}
+  %DIFAUXCMD
+%DIFDELCMD < \label{fig:limitation_bus_60}
+%DIFDELCMD < \end{subfigure}%%%
+%DIF < 
+%DIFDELCMD < \hfill
+%DIFDELCMD < \begin{subfigure}{0.475\textwidth}
+%DIFDELCMD <   \centering
+%DIFDELCMD <   \includegraphics[width=1\linewidth]{figure/spctgrm_cramp_bus_70.png}
+%DIFDELCMD <   %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{The sentence ``A cramp is no small danger on a swim'' with bus background noise at 70 dB. SNR for this utterance is +19 dB.}}
+  %DIFAUXCMD
+%DIFDELCMD < \label{fig:limitation_bus_70}
+%DIFDELCMD < \end{subfigure}
+%DIFDELCMD < %%%
+%DIF < 
+%DIFDELCMD < \begin{center}
+%DIFDELCMD < \begin{subfigure}{0.475\textwidth}
+%DIFDELCMD <   \centering
+%DIFDELCMD <   \includegraphics[width=1\linewidth]{figure/spctgrm_cramp_bus_80.png}
+%DIFDELCMD <   %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{The sentence ``A cramp is no small danger on a swim'' with bus background noise at 80 dB. SNR for this utterance is +6 dB.}}
+  %DIFAUXCMD
+%DIFDELCMD < \label{fig:limitation_bus_80}
+%DIFDELCMD < \end{subfigure}
+%DIFDELCMD < \end{center}
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdel{Spectrograms of the sentence ``A cramp is no small danger on a swim'' with bus background noise at 60 dB (\ref{fig:limitation_bus_60}), 70 dB(\ref{fig:limitation_bus_60}), and 80 dB (\ref{fig:limitation_bus_60}). The directional microphone filtered out most of the noise in the lower two noise level conditions.}}
+%DIFAUXCMD
+%DIFDELCMD < \label{fig:noise_level_limitation}
+%DIFDELCMD < \end{figure}
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend Option (b) - increasing the noise level itself - is less appealing in that it results in a higher risk for hearing damage\DIFaddbegin \footnote{\DIFadd{The 3M Professional   earmuffs had the lowest frequency-dependent SNR rating of -21 dB at 125 Hz.  This would technically allow ambient noise up to approximately 105 dB prior to encountering a risk for hearing damage while wearing the   earmuffs.  Greater care would be required to ensure the   earmuffs were properly fitted and that nothing compromised the   earmuff seal.}}\DIFaddend , despite being the most `authentic' scenario, \DIFaddbegin \DIFadd{ie. }\DIFaddend testing the directional microphones' capabilities at the mouth and ear to eliminate noise.  Given the SNR of +\DIFdelbegin \DIFdel{6dB for the 80dB }\DIFdelend \DIFaddbegin \DIFadd{6 dB for the 80 dB }\DIFaddend noise condition (with some \DIFdelbegin \DIFdel{80dB }\DIFdelend \DIFaddbegin \DIFadd{80 dB }\DIFaddend noise conditions having upwards of +\DIFdelbegin \DIFdel{10dB }\DIFdelend \DIFaddbegin \DIFadd{10 dB }\DIFaddend SNR), this would mean increasing the ambient noise from \DIFdelbegin \DIFdel{80dB to 96-100dB }\DIFdelend \DIFaddbegin \DIFadd{80 dB to 96-100 dB }\DIFaddend in order to achieve the \DIFdelbegin \DIFdel{-10dB }\DIFdelend \DIFaddbegin \DIFadd{-10 dB }\DIFaddend SNR that was originally desired.  Even a \DIFdelbegin \DIFdel{0dB }\DIFdelend \DIFaddbegin \DIFadd{0 dB }\DIFaddend SNR would require a +10 dB increase to \DIFdelbegin \DIFdel{90dB }\DIFdelend \DIFaddbegin \DIFadd{90 dB }\DIFaddend ambient noise in order to turn the observed \DIFaddbegin \DIFadd{(approximate) }\DIFaddend +\DIFdelbegin \DIFdel{10dB SNR into 0dB }\DIFdelend \DIFaddbegin \DIFadd{10 dB SNR into 0 dB }\DIFaddend SNR. The risk to participants is substantially mitigated by the use of \DIFdelbegin \DIFdel{30dB }\DIFdelend \DIFaddbegin \DIFadd{30 dB }\DIFaddend NRR   earmuffs, however at noises of this magnitude, it would be difficult to find a location which insulated the sound from affecting a significant radius outside the sound booth.  It is also very likely that a \DIFdelbegin \DIFdel{different }\DIFdelend \DIFaddbegin \DIFadd{more robust }\DIFaddend loudspeaker would be required to reach the needed amplitudes without clipping.
+
+Option (c) - using an omnidirectional microphone - does not rely on speakers' ability to modulate their voice, nor does it introduce additional risk by increasing the ambient noise.  The only drawback, as mentioned above, is that the use of an \DIFdelbegin \DIFdel{omni-directional }\DIFdelend \DIFaddbegin \DIFadd{omnidirectional }\DIFaddend microphone results in an unfair comparison between the mouth-recorded speech and ear-recorded speech.  Any real-life application will use a directional microphone at the mouth with the intention of eliminating as much ambient noise as possible.  Nevertheless, this is likely the best option for future research in this area, given the restrictions described above.
 
 \section{Summary}\label{chap2:summary}
 
-Despite some speaker variation, the speech recorded from inside the ear canal contains information up to approximately 2700Hz.  This upper cut-off frequency was in the same range described by the aforementioned literature.  Two, very basic acoustic transformations (pre-emphasis and bandpass filtering) were used in an attempt to create a more intelligible signal from the speech collected at the ear.
+Despite some speaker variation, the speech recorded from inside the ear canal contains information up to approximately \DIFdelbegin \DIFdel{2700Hz}\DIFdelend \DIFaddbegin \DIFadd{2.7 kHz}\DIFaddend .  This upper cut-off frequency was in the same range described by the aforementioned literature\DIFaddbegin \DIFadd{, although the low mid-range frequencies were dampened much more than the literature described}\DIFaddend .  Two, very basic acoustic transformations (pre-emphasis and bandpass filtering) were used in an attempt to create a more intelligible signal from the speech collected at the ear.
 %, the heavily lowpass filtered speech becomes remarkably intelligible, considering the location of recording and the minimal post-processing effort required. 
 
 %Given the relatively well-preserved lower frequency speech information that is present in the signal, no further acoustic transformation to these frequencies is deemed necessary\footnote{E.g. such as a spectral subtraction technique based on the frequency responses given in the literature by \cite{hansen:97b} and \cite{reinfeldt:10}, among others.}.  
-Limited benefits might be seen from a sound or sound-category specific alteration, particularly among fricative sounds and those with the majority of speech information located in frequencies above 2700Hz.  It seems unlikely though, that spectral subtraction (eg. using the filters proposed by \cite{hansen:97b} and \cite{reinfeldt:10}) or a similar method would offer much additional benefit, as much of the upper frequencies were dampened beyond the existing noise level (c.f. Fig. \ref{spctgrmEarNarrow20kHz}).  However, it is hypothesized, given the transformed data collected at the ear, that enough information is present for the speech to be recognizable.  This hypothesis will be tested in a human perception experiment, described in Chapter \ref{chapter3}, and an ASR experiment, described in Chapter \ref{chapter4}, below.
+Limited benefits might be seen from a sound or sound-category specific alteration, particularly among fricative sounds and those with the majority of speech information located in frequencies above \DIFdelbegin \DIFdel{2700Hz}\DIFdelend \DIFaddbegin \DIFadd{2.7 kHz}\DIFaddend .  It seems unlikely though, that \DIFdelbegin \DIFdel{spectral subtraction }\DIFdelend \DIFaddbegin \DIFadd{a reverse spectral subtraction of sorts }\DIFaddend (eg. using the \DIFdelbegin \DIFdel{filters }\DIFdelend \DIFaddbegin \DIFadd{explicit transfer functions }\DIFaddend proposed by \cite{hansen:97b} and \cite{reinfeldt:10}) or a similar method would offer much additional benefit, as much of the upper frequencies were dampened beyond the existing noise level (c.f. Fig. \ref{spctgrmEarNarrow20kHz}).  However, it is hypothesized, given the transformed data collected at the ear, that enough information is present for the speech to be recognizable.  This hypothesis will be tested in a human perception experiment, described in Chapter \ref{chapter3}, and an ASR experiment, described in Chapter \ref{chapter4}, below.
 
 
 

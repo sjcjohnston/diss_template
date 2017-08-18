@@ -879,7 +879,7 @@ This allowed for an overlap of the frequencies from the mouth-recorded speech an
 
 \begin{figure}[h]
 \centering
-  \includegraphics[width=\textwidth]{figure/combined-signal_labeled.png}
+  \includegraphics[width=\textwidth]{figure/combined-signal.png}
   \caption{A spectrogram of the sentence ``A cramp is no small danger on a swim''.  The low-pass filtered ear-recorded signal (0 - 2.5 kHz with a 500 Hz slope) was combined with the simultaneous [noisy] mouth signal, which was bandpass filtered at a higher frequency (3 - 8 kHz with a 500 Hz slope).  The arrow indicates the location of overlap, above which the mouth-recorded signal is dominant, and below which the ear-recorded signal is dominant.}
   \label{fig:combined-signal}
 \end{figure}
